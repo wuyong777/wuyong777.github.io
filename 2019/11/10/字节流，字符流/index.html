@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JAVA," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.IO流1.1 IO的分类根据数据的流向(以内存为基准)分为：输入流和输出流  输入流：把数据从 其他设备 上读取到 内存 中的流    输出流：把数据从 内存 中写出到 其他设备 上的流      根据数据的类型分为：字节流和字符流    字节流：以字节为单位，读写数据的流   字符流：以字符为单位，读写数据的流 1.2 IO的体系2. 字节流2.1 字节输出流【OutputStream】2.">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字节流，字符流">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81&#x2F;index.html">
+<meta property="og:site_name" content="秋枫の博客">
+<meta property="og:description" content="1.IO流1.1 IO的分类根据数据的流向(以内存为基准)分为：输入流和输出流  输入流：把数据从 其他设备 上读取到 内存 中的流    输出流：把数据从 内存 中写出到 其他设备 上的流      根据数据的类型分为：字节流和字符流    字节流：以字节为单位，读写数据的流   字符流：以字符为单位，读写数据的流 1.2 IO的体系2. 字节流2.1 字节输出流【OutputStream】2.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mnx1YR.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu3kS1.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu1XQ0.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu3SwF.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu3Ey6.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu1zeU.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu3iWR.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu1Lzq.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu1vLT.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu3AQx.md.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mu1jyV.md.png">
+<meta property="og:updated_time" content="2019-11-10T05:58:07.497Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;Mnx1YR.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/10/字节流，字符流/"/>
+
+
+
+
+
+  <title>字节流，字符流 | 秋枫の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">秋枫の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hubee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Rose.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋枫の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">字节流，字符流</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T10:38:03+08:00">
+                2019-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-IO流"><a href="#1-IO流" class="headerlink" title="1.IO流"></a>1.IO流</h1><h2 id="1-1-IO的分类"><a href="#1-1-IO的分类" class="headerlink" title="1.1 IO的分类"></a>1.1 IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
+<ul>
+<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
+<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
+</ul>
+<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
+<ul>
+<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
+<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="1-2-IO的体系"><a href="#1-2-IO的体系" class="headerlink" title="1.2 IO的体系"></a>1.2 IO的体系</h2><img src="https://s2.ax1x.com/2019/11/10/Mnx1YR.png" alt="图片"><h1 id="2-字节流"><a href="#2-字节流" class="headerlink" title="2. 字节流"></a>2. 字节流</h1><h2 id="2-1-字节输出流【OutputStream】"><a href="#2-1-字节输出流【OutputStream】" class="headerlink" title="2.1 字节输出流【OutputStream】"></a>2.1 字节输出流【OutputStream】</h2><img src="https://s2.ax1x.com/2019/11/10/Mu3kS1.md.png" alt="图片"><h2 id="2-2-FileOutputStream类"><a href="#2-2-FileOutputStream类" class="headerlink" title="2.2 FileOutputStream类"></a>2.2 FileOutputStream类</h2><h3 id="2-2-1-构造方法"><a href="#2-2-1-构造方法" class="headerlink" title="2.2.1 构造方法"></a>2.2.1 构造方法</h3><img src="https://s2.ax1x.com/2019/11/10/Mu1XQ0.md.png" alt="图片"><h3 id="2-2-2-写出字节数据"><a href="#2-2-2-写出字节数据" class="headerlink" title="2.2.2 写出字节数据"></a>2.2.2 写出字节数据</h3></li>
+</ul>
+<ol>
+<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
+<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
+<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="2-2-3-数据追加续写"><a href="#2-2-3-数据追加续写" class="headerlink" title="2.2.3 数据追加续写"></a>2.2.3 数据追加续写</h3><img src="https://s2.ax1x.com/2019/11/10/Mu3SwF.md.png" alt="图片"><h3 id="2-2-4-写出换行"><a href="#2-2-4-写出换行" class="headerlink" title="2.2.4 写出换行"></a>2.2.4 写出换行</h3></li>
+</ol>
+<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
+<h2 id="2-3-字节输入流【InputStream】"><a href="#2-3-字节输入流【InputStream】" class="headerlink" title="2.3 字节输入流【InputStream】"></a>2.3 字节输入流【InputStream】</h2><p><img src="https://s2.ax1x.com/2019/11/10/Mu3Ey6.md.png" alt="图片"></p>
+<h2 id="2-4-FileIntputStream类"><a href="#2-4-FileIntputStream类" class="headerlink" title="2.4 FileIntputStream类"></a>2.4 FileIntputStream类</h2><h3 id="2-4-1-构造方法"><a href="#2-4-1-构造方法" class="headerlink" title="2.4.1 构造方法"></a>2.4.1 构造方法</h3><p><img src="https://s2.ax1x.com/2019/11/10/Mu1zeU.md.png" alt="图片"></p>
+<h3 id="2-4-2-读取字节数据"><a href="#2-4-2-读取字节数据" class="headerlink" title="2.4.2 读取字节数据"></a>2.4.2 读取字节数据</h3><ol>
+<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="3-字符流"><a href="#3-字符流" class="headerlink" title="3. 字符流"></a>3. 字符流</h1><h2 id="3-1-字符输出流【Writer】"><a href="#3-1-字符输出流【Writer】" class="headerlink" title="3.1 字符输出流【Writer】"></a>3.1 字符输出流【Writer】</h2><img src="https://s2.ax1x.com/2019/11/10/Mu3iWR.md.png" alt="图片"> <h2 id="3-2-FileWriter类"><a href="#3-2-FileWriter类" class="headerlink" title="3.2 FileWriter类"></a>3.2 FileWriter类</h2><h3 id="3-2-1-构造方法"><a href="#3-2-1-构造方法" class="headerlink" title="3.2.1 构造方法"></a>3.2.1 构造方法</h3><img src="https://s2.ax1x.com/2019/11/10/Mu1Lzq.md.png" alt="图片"><h3 id="3-2-2-写出字符数据"><a href="#3-2-2-写出字符数据" class="headerlink" title="3.2.2 写出字符数据"></a>3.2.2 写出字符数据</h3></li>
+<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
+<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
+<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
+<li>续写和换行：操作类似于FileOutputStream<h3 id="3-2-3-关闭和刷新"><a href="#3-2-3-关闭和刷新" class="headerlink" title="3.2.3 关闭和刷新"></a>3.2.3 关闭和刷新</h3><img src="https://s2.ax1x.com/2019/11/10/Mu1vLT.md.png" alt="图片"></li>
+</ol>
+<h2 id="3-3-字符输入流【Reader】"><a href="#3-3-字符输入流【Reader】" class="headerlink" title="3.3 字符输入流【Reader】"></a>3.3 字符输入流【Reader】</h2><p><img src="https://s2.ax1x.com/2019/11/10/Mu3AQx.md.png" alt="图片"></p>
+<h2 id="3-4-FileReader类"><a href="#3-4-FileReader类" class="headerlink" title="3.4  FileReader类"></a>3.4  FileReader类</h2><h3 id="3-4-1-构造方法"><a href="#3-4-1-构造方法" class="headerlink" title="3.4.1 构造方法"></a>3.4.1 构造方法</h3><p><img src="https://s2.ax1x.com/2019/11/10/Mu1jyV.md.png" alt="图片"></p>
+<h3 id="3-4-2-读取字节数据"><a href="#3-4-2-读取字节数据" class="headerlink" title="3.4.2 读取字节数据"></a>3.4.2 读取字节数据</h3><ol>
+<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
+</ol>
+<h1 id="4-Properties类"><a href="#4-Properties类" class="headerlink" title="4.Properties类"></a>4.Properties类</h1><ol>
+<li>构造方法</li>
+</ol>
+<ul>
+<li><code>public Properties()</code> :创建一个空的属性列表</li>
+</ul>
+<ol start="2">
+<li>基本的存储方法</li>
+</ol>
+<ul>
+<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
+<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
+<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
+</ul>
+<ol start="3">
+<li>与流相关的方法 </li>
+</ol>
+<ul>
+<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
+<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"> JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/" rel="next" title="File类，递归">
+                <i class="fa fa-chevron-left"></i> File类，递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/10/%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81/" rel="prev" title="缓冲流，转换流，序列化流，打印流">
+                缓冲流，转换流，序列化流，打印流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/Rose.jpg"
+                alt="Hubee" />
+            
+              <p class="site-author-name" itemprop="name">Hubee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wuyong777" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wuyongts@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-IO流"><span class="nav-number">1.</span> <span class="nav-text">1.IO流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-IO的分类"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 IO的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-IO的体系"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 IO的体系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-字节流"><span class="nav-number">2.</span> <span class="nav-text">2. 字节流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-字节输出流【OutputStream】"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 字节输出流【OutputStream】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-FileOutputStream类"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 FileOutputStream类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-构造方法"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-写出字节数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 写出字节数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-数据追加续写"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 数据追加续写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-写出换行"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.2.4 写出换行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-字节输入流【InputStream】"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 字节输入流【InputStream】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-FileIntputStream类"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 FileIntputStream类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-构造方法"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.4.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-读取字节数据"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.4.2 读取字节数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-字符流"><span class="nav-number">3.</span> <span class="nav-text">3. 字符流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-字符输出流【Writer】"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 字符输出流【Writer】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-FileWriter类"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 FileWriter类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-构造方法"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-写出字符数据"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 写出字符数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-关闭和刷新"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 关闭和刷新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-字符输入流【Reader】"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 字符输入流【Reader】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-FileReader类"><span class="nav-number">3.4.</span> <span class="nav-text">3.4  FileReader类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-构造方法"><span class="nav-number">3.4.1.</span> <span class="nav-text">3.4.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-读取字节数据"><span class="nav-number">3.4.2.</span> <span class="nav-text">3.4.2 读取字节数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Properties类"><span class="nav-number">4.</span> <span class="nav-text">4.Properties类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hubee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
