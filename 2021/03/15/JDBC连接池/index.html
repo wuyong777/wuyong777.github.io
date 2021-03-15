@@ -79,23 +79,16 @@
 
 
 
-<meta name="description" content="1.异常1.1 异常体系与分类 1.2 Throwable中的常用方法 2.异常的处理2.1 抛出异常throw throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。 使用格式： throw new 异常类名(参数)2.2 声明异常throws 字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。">
+<meta name="description" content="今日内容1. 数据库连接池  2. Spring JDBC : JDBC Template数据库连接池 概念：其实就是一个容器(集合)，存放数据库连接的容器。 实现： 标准接口：DataSource   javax.sql包下的 获取连接：getConnection() 归还连接：Connection.close()      C3P0：数据库连接池技术 步骤：   导入jar包 (两个) c3p">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异常">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;%E5%BC%82%E5%B8%B8&#x2F;index.html">
+<meta property="og:title" content="JDBC连接池">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;15&#x2F;JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.异常1.1 异常体系与分类 1.2 Throwable中的常用方法 2.异常的处理2.1 抛出异常throw throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。 使用格式： throw new 异常类名(参数)2.2 声明异常throws 字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。">
+<meta property="og:description" content="今日内容1. 数据库连接池  2. Spring JDBC : JDBC Template数据库连接池 概念：其实就是一个容器(集合)，存放数据库连接的容器。 实现： 标准接口：DataSource   javax.sql包下的 获取连接：getConnection() 归还连接：Connection.close()      C3P0：数据库连接池技术 步骤：   导入jar包 (两个) c3p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzZdA.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzVZd.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzFMD.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzkse.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzAqH.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzeII.md.png">
-<meta property="og:updated_time" content="2019-11-08T14:44:39.873Z">
+<meta property="og:updated_time" content="2021-03-15T13:01:15.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzZdA.md.png">
 
 
 
@@ -125,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/08/异常/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/03/15/JDBC连接池/"/>
 
 
 
 
 
-  <title>异常 | 秋枫の博客</title>
+  <title>JDBC连接池 | 秋枫の博客</title>
   
 
 
@@ -250,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/%E5%BC%82%E5%B8%B8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hubee">
@@ -267,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">异常</h1>
+          <h1 class="post-title" itemprop="name headline">JDBC连接池</h1>
         
 
         <div class="post-meta">
@@ -279,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T22:07:42+08:00">
-                2019-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-15T19:43:12+08:00">
+                2021-03-15
               </time>
             
 
@@ -339,22 +332,110 @@
       
 
       
-        <h1 id="1-异常"><a href="#1-异常" class="headerlink" title="1.异常"></a>1.异常</h1><h2 id="1-1-异常体系与分类"><a href="#1-1-异常体系与分类" class="headerlink" title="1.1 异常体系与分类"></a>1.1 异常体系与分类</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzZdA.md.png" alt="图片"></p>
-<h2 id="1-2-Throwable中的常用方法"><a href="#1-2-Throwable中的常用方法" class="headerlink" title="1.2 Throwable中的常用方法"></a>1.2 Throwable中的常用方法</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzVZd.md.png" alt="图片"></p>
-<h1 id="2-异常的处理"><a href="#2-异常的处理" class="headerlink" title="2.异常的处理"></a>2.异常的处理</h1><h2 id="2-1-抛出异常throw"><a href="#2-1-抛出异常throw" class="headerlink" title="2.1 抛出异常throw"></a>2.1 抛出异常throw</h2><ul>
-<li>throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。</li>
-<li>使用格式： <code>throw new 异常类名(参数)</code><h2 id="2-2-声明异常throws"><a href="#2-2-声明异常throws" class="headerlink" title="2.2 声明异常throws"></a>2.2 声明异常throws</h2></li>
-<li>字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。</li>
-<li>使用格式：<code>修饰符 返回值类型 方法名(参数) throws 异常类名1,异常类名2…{ }</code></li>
+        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 数据库连接池
+
+2. Spring JDBC : JDBC Template</code></pre><h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ol>
+<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
+<li>实现：<ul>
+<li>标准接口：DataSource   javax.sql包下的<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()</li>
 </ul>
-<h2 id="2-3-捕获异常try…catch"><a href="#2-3-捕获异常try…catch" class="headerlink" title="2.3 捕获异常try…catch"></a>2.3 捕获异常try…catch</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzFMD.md.png" alt="图片"></p>
-<h2 id="2-4-ﬁnally代码块"><a href="#2-4-ﬁnally代码块" class="headerlink" title="2.4 ﬁnally代码块"></a>2.4 ﬁnally代码块</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzkse.md.png" alt="图片"></p>
-<h1 id="3-异常的注意事项"><a href="#3-异常的注意事项" class="headerlink" title="3.异常的注意事项"></a>3.异常的注意事项</h1><p><img src="https://s2.ax1x.com/2019/11/08/MZzAqH.md.png" alt="图片"><br><img src="https://s2.ax1x.com/2019/11/08/MZzeII.md.png" alt="图片"></p>
-<h1 id="4-自定义异常"><a href="#4-自定义异常" class="headerlink" title="4.自定义异常"></a>4.自定义异常</h1><p>异常类如何定义: </p>
-<ol>
-<li>自定义一个编译期异常: 自定义类 并继承于 java.lang.Exception </li>
-<li>自定义一个运行时期的异常类: 自定义类 并继承于 java.lang.RuntimeException</li>
+</li>
+</ul>
+</li>
 </ol>
+<h3 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h3><ul>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
+<li>定义配置文件：</li>
+</ol>
+<ul>
+<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
+<li>路径：直接将文件放在src目录下即可。</li>
+</ul>
+<ol start="3">
+<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
+<li>获取连接： getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建数据库连接池对象</span></span><br><span class="line"> DataSource ds  = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line"><span class="comment">//2. 获取连接对象</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+<h3 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h3></li>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 druid-1.0.9.jar</li>
+<li>定义配置文件：<ul>
+<li>是properties形式的</li>
+<li>可以叫任意名称，可以放在任意目录下</li>
+</ul>
+</li>
+<li>加载配置文件。Properties</li>
+<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
+<li>获取连接：getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<pre><code class="java"><span class="comment">//加载配置文件</span>
+Properties pro = <span class="keyword">new</span> Properties();
+InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);
+pro.load(is);
+<span class="comment">//获取连接池对象</span>
+DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+<span class="comment">//获取连接</span>
+Connection conn = ds.getConnection();</code></pre>
+</li>
+</ul>
+<h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><ul>
+<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
+<li>步骤：<blockquote>
+<ol>
+<li>导入jar包</li>
+<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+</ol>
+<ul>
+<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
+</ul>
+<ol start="3">
+<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</ol>
+<ul>
+<li><p>update():执行DML语句。增、删、改语句</p>
+</li>
+<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
+<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
+</ul>
+</li>
+<li><p>queryForList():查询结果将结果集封装为list集合</p>
+<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
+</ul>
+</li>
+<li><p>query():查询结果，将结果封装为JavaBean对象</p>
+<ul>
+<li><p>query的参数：RowMapper</p>
+<ul>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>queryForObject()：查询结果，将结果封装为对象</p>
+<ul>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -385,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/07/Map/" rel="next" title="Map">
-                <i class="fa fa-chevron-left"></i> Map
+              <a href="/2021/03/13/JDBC%E6%80%BB%E7%BB%93/" rel="next" title="JDBC总结">
+                <i class="fa fa-chevron-left"></i> JDBC总结
               </a>
             
           </div>
@@ -394,10 +475,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/08/%E7%BA%BF%E7%A8%8B/" rel="prev" title="线程">
-                线程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -548,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-异常"><span class="nav-number">1.</span> <span class="nav-text">1.异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-异常体系与分类"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 异常体系与分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Throwable中的常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Throwable中的常用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-异常的处理"><span class="nav-number">2.</span> <span class="nav-text">2.异常的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-抛出异常throw"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 抛出异常throw</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-声明异常throws"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 声明异常throws</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-捕获异常try…catch"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 捕获异常try…catch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-ﬁnally代码块"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 ﬁnally代码块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-异常的注意事项"><span class="nav-number">3.</span> <span class="nav-text">3.异常的注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-自定义异常"><span class="nav-number">4.</span> <span class="nav-text">4.自定义异常</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.1.</span> <span class="nav-text">数据库连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C3P0：数据库连接池技术"><span class="nav-number">1.1.1.</span> <span class="nav-text">C3P0：数据库连接池技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Druid：数据库连接池实现技术，由阿里巴巴提供"><span class="nav-number">1.1.2.</span> <span class="nav-text">Druid：数据库连接池实现技术，由阿里巴巴提供</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.1.3.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
