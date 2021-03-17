@@ -87,15 +87,15 @@
 <meta property="og:site_name" content="秋枫の博客">
 <meta property="og:description" content="1.异常1.1 异常体系与分类 1.2 Throwable中的常用方法 2.异常的处理2.1 抛出异常throw throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。 使用格式： throw new 异常类名(参数)2.2 声明异常throws 字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzZdA.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzVZd.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzFMD.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzkse.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzAqH.md.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzeII.md.png">
-<meta property="og:updated_time" content="2019-11-08T14:44:39.873Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;yctx.PNG">
+<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cyff.PNG">
+<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;trycatch.PNG">
+<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;finally.PNG">
+<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;zy1.PNG">
+<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;zy2.PNG">
+<meta property="og:updated_time" content="2021-03-17T17:39:04.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;MZzZdA.md.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;yctx.PNG">
 
 
 
@@ -339,17 +339,17 @@
       
 
       
-        <h1 id="1-异常"><a href="#1-异常" class="headerlink" title="1.异常"></a>1.异常</h1><h2 id="1-1-异常体系与分类"><a href="#1-1-异常体系与分类" class="headerlink" title="1.1 异常体系与分类"></a>1.1 异常体系与分类</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzZdA.md.png" alt="图片"></p>
-<h2 id="1-2-Throwable中的常用方法"><a href="#1-2-Throwable中的常用方法" class="headerlink" title="1.2 Throwable中的常用方法"></a>1.2 Throwable中的常用方法</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzVZd.md.png" alt="图片"></p>
+        <h1 id="1-异常"><a href="#1-异常" class="headerlink" title="1.异常"></a>1.异常</h1><h2 id="1-1-异常体系与分类"><a href="#1-1-异常体系与分类" class="headerlink" title="1.1 异常体系与分类"></a>1.1 异常体系与分类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yctx.PNG" alt=""></p>
+<h2 id="1-2-Throwable中的常用方法"><a href="#1-2-Throwable中的常用方法" class="headerlink" title="1.2 Throwable中的常用方法"></a>1.2 Throwable中的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyff.PNG" alt=""></p>
 <h1 id="2-异常的处理"><a href="#2-异常的处理" class="headerlink" title="2.异常的处理"></a>2.异常的处理</h1><h2 id="2-1-抛出异常throw"><a href="#2-1-抛出异常throw" class="headerlink" title="2.1 抛出异常throw"></a>2.1 抛出异常throw</h2><ul>
 <li>throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。</li>
 <li>使用格式： <code>throw new 异常类名(参数)</code><h2 id="2-2-声明异常throws"><a href="#2-2-声明异常throws" class="headerlink" title="2.2 声明异常throws"></a>2.2 声明异常throws</h2></li>
 <li>字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。</li>
 <li>使用格式：<code>修饰符 返回值类型 方法名(参数) throws 异常类名1,异常类名2…{ }</code></li>
 </ul>
-<h2 id="2-3-捕获异常try…catch"><a href="#2-3-捕获异常try…catch" class="headerlink" title="2.3 捕获异常try…catch"></a>2.3 捕获异常try…catch</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzFMD.md.png" alt="图片"></p>
-<h2 id="2-4-ﬁnally代码块"><a href="#2-4-ﬁnally代码块" class="headerlink" title="2.4 ﬁnally代码块"></a>2.4 ﬁnally代码块</h2><p><img src="https://s2.ax1x.com/2019/11/08/MZzkse.md.png" alt="图片"></p>
-<h1 id="3-异常的注意事项"><a href="#3-异常的注意事项" class="headerlink" title="3.异常的注意事项"></a>3.异常的注意事项</h1><p><img src="https://s2.ax1x.com/2019/11/08/MZzAqH.md.png" alt="图片"><br><img src="https://s2.ax1x.com/2019/11/08/MZzeII.md.png" alt="图片"></p>
+<h2 id="2-3-捕获异常try…catch"><a href="#2-3-捕获异常try…catch" class="headerlink" title="2.3 捕获异常try…catch"></a>2.3 捕获异常try…catch</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/trycatch.PNG" alt=""></p>
+<h2 id="2-4-ﬁnally代码块"><a href="#2-4-ﬁnally代码块" class="headerlink" title="2.4 ﬁnally代码块"></a>2.4 ﬁnally代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/finally.PNG" alt=""></p>
+<h1 id="3-异常的注意事项"><a href="#3-异常的注意事项" class="headerlink" title="3.异常的注意事项"></a>3.异常的注意事项</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zy1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zy2.PNG" alt=""></p>
 <h1 id="4-自定义异常"><a href="#4-自定义异常" class="headerlink" title="4.自定义异常"></a>4.自定义异常</h1><p>异常类如何定义: </p>
 <ol>
 <li>自定义一个编译期异常: 自定义类 并继承于 java.lang.Exception </li>
