@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="今日内容1. AJAX： 2. JSONAJAX：1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML     1. 异步和同步：客户端和服务器端相互通信的基础上         * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。         * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客">
+<meta name="description" content="今日内容1. AJAX 2. JSONAJAX：概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML 异步和同步：客户端和服务器端相互通信的基础上   同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。  异步：客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。    Ajax 是">
 <meta name="keywords" content="AJAX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AJAX和JSON">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;AJAX%E5%92%8CJSON&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="今日内容1. AJAX： 2. JSONAJAX：1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML     1. 异步和同步：客户端和服务器端相互通信的基础上         * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。         * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客">
+<meta property="og:description" content="今日内容1. AJAX 2. JSONAJAX：概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML 异步和同步：客户端和服务器端相互通信的基础上   同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。  异步：客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。    Ajax 是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-23T07:16:56.502Z">
+<meta property="og:updated_time" content="2021-03-23T12:33:34.876Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -332,186 +332,148 @@
       
 
       
-        <h2 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h2><pre><code>1. AJAX：
-2. JSON</code></pre><h1 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h1><pre><code>1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML
-    1. 异步和同步：客户端和服务器端相互通信的基础上
-        * 客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。
-        * 客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。
+        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. AJAX
+2. JSON</code></pre><h2 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h2><h3 id="概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML"><a href="#概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML" class="headerlink" title="概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML"></a>概念： <code>ASynchronous JavaScript And XML</code>    异步的JavaScript 和 XML</h3><ol>
+<li>异步和同步：客户端和服务器端相互通信的基础上</li>
+</ol>
+<ul>
+<li><p>同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</p>
+</li>
+<li><p>异步：客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</p>
+</li>
+</ul>
+<ol start="2">
+<li>Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
+</ol>
+<h3 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h3><h4 id="原生的JS实现方式（了解）"><a href="#原生的JS实现方式（了解）" class="headerlink" title="原生的JS实现方式（了解）"></a>原生的JS实现方式（了解）</h4><h4 id="JQeury实现方式"><a href="#JQeury实现方式" class="headerlink" title="JQeury实现方式"></a>JQeury实现方式</h4><ol>
+<li><code>$.ajax()</code></li>
+</ol>
+<ul>
+<li>语法：<code>$.ajax({键值对})</code>;<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//使用$.ajax()发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">	url:<span class="string">"ajaxServlet1111"</span> , <span class="comment">// 请求路径</span></span><br><span class="line"></span><br><span class="line">	type:<span class="string">"POST"</span> , <span class="comment">//请求方式</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//data: "username=jack&amp;age=23",//请求参数</span></span><br><span class="line">	data:&#123;<span class="string">"username"</span>:<span class="string">"jack"</span>,<span class="string">"age"</span>:<span class="number">23</span>&#125;,</span><br><span class="line"></span><br><span class="line">	success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">	alert(data);</span><br><span class="line">	 &#125;,<span class="comment">//响应成功后的回调函数</span></span><br><span class="line"></span><br><span class="line">	error:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">"出错啦..."</span>)</span><br><span class="line">	 &#125;,<span class="comment">//表示如果请求响应出现错误，会执行的回调函数</span></span><br><span class="line">		</span><br><span class="line">	dataType:<span class="string">"text"</span><span class="comment">//设置接受到的响应数据的格式</span></span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>2.<code>$.get()</code>：发送get请求</p>
+<ul>
+<li>语法：<code>$.get(url, [data], [callback], [type])</code></li>
+<li>参数：<ul>
+<li>url：请求路径</li>
+<li>data：请求参数</li>
+<li>callback：回调函数</li>
+<li>type：响应结果的类型</li>
+</ul>
+</li>
+</ul>
+<p>3.<code>$.post()</code>：发送post请求</p>
+<ul>
+<li>语法：<code>$.post(url, [data], [callback], [type])</code></li>
+<li>参数：<ul>
+<li>url：请求路径</li>
+<li>data：请求参数</li>
+<li>callback：回调函数</li>
+<li>type：响应结果的类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h2><h3 id="概念：-JavaScript-Object-Notation-JavaScript对象表示法"><a href="#概念：-JavaScript-Object-Notation-JavaScript对象表示法" class="headerlink" title="概念： JavaScript Object Notation   JavaScript对象表示法"></a>概念： <code>JavaScript Object Notation</code>   JavaScript对象表示法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Person p = <span class="keyword">new</span> Person();</span><br><span class="line">p.setName(<span class="string">"张三"</span>);</span><br><span class="line">p.setAge(<span class="number">23</span>);</span><br><span class="line">p.setGender(<span class="string">"男"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = &#123;<span class="string">"name"</span>:<span class="string">"张三"</span>,<span class="string">"age"</span>:<span class="number">23</span>,<span class="string">"gender"</span>:<span class="string">"男"</span>&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>json现在多用于存储和交换文本信息的语法</p>
+</li>
+<li><p>进行数据的传输</p>
+</li>
+<li><p>JSON 比 XML 更小、更快，更易解析。</p>
+</li>
+</ul>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><ol>
+<li>基本规则           </li>
+</ol>
+<ul>
+<li><p>数据在名称/值对中：json数据是由键值对构成的</p>
+<ul>
+<li>键用引号(单双都行)引起来，也可以不使用引号</li>
+<li>值得取值类型：</li>
+</ul>
+<ol>
+<li><p>数字（整数或浮点数）</p>
+</li>
+<li><p>字符串（在双引号中）</p>
+</li>
+<li><p>逻辑值（true 或 false）</p>
+</li>
+<li><p>数组（在方括号中）    <code>{&quot;persons&quot;:[{},{}]}</code></p>
+</li>
+<li><p>对象（在花括号中） <code>{&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}</code></p>
+</li>
+<li><p>null</p>
+<ul>
+<li><p>数据由逗号分隔：多个键值对由逗号分隔</p>
+</li>
+<li><p>花括号保存对象：使用{}定义json 格式</p>
+</li>
+<li><p>方括号保存数组：[]</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>获取数据:<ol>
+<li><code>json对象.键名</code></li>
+<li><code>json对象[&quot;键名&quot;]</code></li>
+<li><code>数组对象[索引]</code></li>
+<li>遍历<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//1.定义基本格式</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="attr">age</span>: <span class="number">23</span>, <span class="string">'gender'</span>: <span class="literal">true</span>&#125;;</span><br><span class="line">		</span><br><span class="line"><span class="keyword">var</span> ps = [&#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="string">"age"</span>: <span class="number">23</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span>: <span class="string">"李四"</span>, <span class="string">"age"</span>: <span class="number">24</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span>: <span class="string">"王五"</span>, <span class="string">"age"</span>: <span class="number">25</span>, <span class="string">"gender"</span>: <span class="literal">false</span>&#125;];</span><br><span class="line">		</span><br><span class="line"><span class="comment">//获取person对象中所有的键和值</span></span><br><span class="line"><span class="comment">//for in 循环</span></span><br><span class="line"><span class="comment">/* for(var key in person)&#123;</span></span><br><span class="line"><span class="comment">//这样的方式获取不行。因为相当于  person."name"</span></span><br><span class="line"><span class="comment">//alert(key + ":" + person.key);</span></span><br><span class="line"><span class="comment"> alert(key+":"+person[key]);</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//获取ps中的所有值</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ps.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> p = ps[i];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> p)&#123;</span><br><span class="line"></span><br><span class="line">		alert(key+<span class="string">":"</span>+p[key]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 [1] 
-        通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
-        传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="JSON数据和Java对象的相互转换"><a href="#JSON数据和Java对象的相互转换" class="headerlink" title="JSON数据和Java对象的相互转换"></a>JSON数据和Java对象的相互转换</h3><ul>
+<li><code>JSON解析器</code>：常见的解析器：Jsonlib，Gson，fastjson，<code>jackson</code></li>
+</ul>
+<ol>
+<li><p>JSON转为Java对象</p>
+<ol>
+<li>导入jackson的相关jar包</li>
+<li><code>创建Jackson核心对象 ObjectMapper</code></li>
+<li><code>调用ObjectMapper的相关方法</code>进行转换<ol>
+<li><code>readValue(json字符串数据,Class)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Java对象转换JSON</p>
+<ol>
+<li><p>使用步骤：</p>
+<ol>
+<li>导入jackson的相关jar包</li>
+<li>创建Jackson核心对象 ObjectMapper</li>
+<li>调用ObjectMapper的相关方法进行转换<br>转换方法：</li>
+</ol>
+<ul>
+<li><code>writeValue(参数1，obj):</code><br>参数1：<br>File：将obj对象转换为JSON字符串，并保存到指定的文件中<br>Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中<br>OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</li>
+<li><code>writeValueAsString(obj)</code>:将对象转为json字符串</li>
+</ul>
+</li>
+<li><p>注解：</p>
+<ol>
+<li><code>@JsonIgnore</code>：排除属性。</li>
+<li><code>@JsonFormat</code>：属性值得格式化<code>@JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)</code></li>
+</ol>
+</li>
+<li><p>复杂java对象转换</p>
+<ol>
+<li>List：数组</li>
+<li>Map：对象格式一致</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"><a href="#服务器响应的数据，在客户端使用时，要想当做json数据格式使用。" class="headerlink" title="服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"></a>服务器响应的数据，在客户端使用时，要想当做json数据格式使用。</h3><p>有两种解决方案：</p>
+<ol>
+<li><code>$.get(type):将最后一个参数type指定为&quot;json&quot;</code></li>
+<li>在服务器端设置MIME类型<br><code>response.setContentType(&quot;application/json;charset=utf-8&quot;);</code></li>
+</ol>
 
-        提升用户的体验
-
-2. 实现方式：
-    1. 原生的JS实现方式（了解）
-                 //1.创建核心对象
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {// code for IE6, IE5
-                    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-                }
-
-                //2. 建立连接
-                /*
-                    参数：
-                        1. 请求方式：GET、POST
-                            * get方式，请求参数在URL后边拼接。send方法为空参
-                            * post方式，请求参数在send方法中定义
-                        2. 请求的URL：
-                        3. 同步或异步请求：true（异步）或 false（同步）
-
-                 */
-                xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username=tom&quot;,true);
-
-                //3.发送请求
-                xmlhttp.send();
-
-                //4.接受并处理来自服务器的响应结果
-                //获取方式 ：xmlhttp.responseText
-                //什么时候获取？当服务器响应成功后再获取
-
-                //当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。
-                xmlhttp.onreadystatechange=function()
-                {
-                    //判断readyState就绪状态是否为4，判断status响应状态码是否为200
-                    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
-                    {
-                       //获取服务器的响应结果
-                        var responseText = xmlhttp.responseText;
-                        alert(responseText);
-                    }
-                }
-    2. JQeury实现方式
-        1. $.ajax()
-            * 语法：$.ajax({键值对});
-             //使用$.ajax()发送异步请求
-                $.ajax({
-                    url:&quot;ajaxServlet1111&quot; , // 请求路径
-                    type:&quot;POST&quot; , //请求方式
-                    //data: &quot;username=jack&amp;age=23&quot;,//请求参数
-                    data:{&quot;username&quot;:&quot;jack&quot;,&quot;age&quot;:23},
-                    success:function (data) {
-                        alert(data);
-                    },//响应成功后的回调函数
-                    error:function () {
-                        alert(&quot;出错啦...&quot;)
-                    },//表示如果请求响应出现错误，会执行的回调函数
-
-                    dataType:&quot;text&quot;//设置接受到的响应数据的格式
-                });
-        2. $.get()：发送get请求
-            * 语法：$.get(url, [data], [callback], [type])
-                * 参数：
-                    * url：请求路径
-                    * data：请求参数
-                    * callback：回调函数
-                    * type：响应结果的类型
-
-        3. $.post()：发送post请求
-            * 语法：$.post(url, [data], [callback], [type])
-                * 参数：
-                    * url：请求路径
-                    * data：请求参数
-                    * callback：回调函数
-                    * type：响应结果的类型</code></pre><h1 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h1><pre><code>1. 概念： JavaScript Object Notation        JavaScript对象表示法
-    Person p = new Person();
-    p.setName(&quot;张三&quot;);
-    p.setAge(23);
-    p.setGender(&quot;男&quot;);
-
-    var p = {&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:23,&quot;gender&quot;:&quot;男&quot;};
-
-    * json现在多用于存储和交换文本信息的语法
-    * 进行数据的传输
-    * JSON 比 XML 更小、更快，更易解析。
-
-2. 语法：
-    1. 基本规则
-        * 数据在名称/值对中：json数据是由键值对构成的
-            * 键用引号(单双都行)引起来，也可以不使用引号
-            * 值得取值类型：
-                1. 数字（整数或浮点数）
-                2. 字符串（在双引号中）
-                3. 逻辑值（true 或 false）
-                4. 数组（在方括号中）    {&quot;persons&quot;:[{},{}]}
-                5. 对象（在花括号中） {&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}
-                6. null
-        * 数据由逗号分隔：多个键值对由逗号分隔
-        * 花括号保存对象：使用{}定义json 格式
-        * 方括号保存数组：[]
-    2. 获取数据:
-        1. json对象.键名
-        2. json对象[&quot;键名&quot;]
-        3. 数组对象[索引]
-        4. 遍历
-                 //1.定义基本格式
-                var person = {&quot;name&quot;: &quot;张三&quot;, age: 23, &apos;gender&apos;: true};
-
-                var ps = [{&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true},
-                    {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true},
-                    {&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false}];
-
-
-
-
-                //获取person对象中所有的键和值
-                //for in 循环
-               /* for(var key in person){
-                    //这样的方式获取不行。因为相当于  person.&quot;name&quot;
-                    //alert(key + &quot;:&quot; + person.key);
-                    alert(key+&quot;:&quot;+person[key]);
-                }*/
-
-               //获取ps中的所有值
-                for (var i = 0; i &lt; ps.length; i++) {
-                    var p = ps[i];
-                    for(var key in p){
-                        alert(key+&quot;:&quot;+p[key]);
-                    }
-                }
-
-
-3. JSON数据和Java对象的相互转换
-
-    * JSON解析器：
-        * 常见的解析器：Jsonlib，Gson，fastjson，jackson
-
-    1. JSON转为Java对象
-        1. 导入jackson的相关jar包
-        2. 创建Jackson核心对象 ObjectMapper
-        3. 调用ObjectMapper的相关方法进行转换
-            1. readValue(json字符串数据,Class)
-    2. Java对象转换JSON
-        1. 使用步骤：
-            1. 导入jackson的相关jar包
-            2. 创建Jackson核心对象 ObjectMapper
-            3. 调用ObjectMapper的相关方法进行转换
-                1. 转换方法：
-                    * writeValue(参数1，obj):
-                        参数1：
-                            File：将obj对象转换为JSON字符串，并保存到指定的文件中
-                            Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中
-                            OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中
-                    * writeValueAsString(obj):将对象转为json字符串
-
-                2. 注解：
-                    1. @JsonIgnore：排除属性。
-                    2. @JsonFormat：属性值得格式化
-                        * @JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)
-
-                3. 复杂java对象转换
-                    1. List：数组
-                    2. Map：对象格式一致</code></pre><h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><pre><code>* 校验用户名是否存在
-    1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：
-        1. $.get(type):将最后一个参数type指定为&quot;json&quot;
-        2. 在服务器端设置MIME类型
-            response.setContentType(&quot;application/json;charset=utf-8&quot;);</code></pre>
       
     </div>
     
@@ -704,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AJAX："><span class="nav-number"></span> <span class="nav-text">AJAX：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON："><span class="nav-number"></span> <span class="nav-text">JSON：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例："><span class="nav-number"></span> <span class="nav-text">案例：</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX："><span class="nav-number">1.1.</span> <span class="nav-text">AJAX：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML"><span class="nav-number">1.1.1.</span> <span class="nav-text">概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方式："><span class="nav-number">1.1.2.</span> <span class="nav-text">实现方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生的JS实现方式（了解）"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">原生的JS实现方式（了解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JQeury实现方式"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">JQeury实现方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON："><span class="nav-number">1.2.</span> <span class="nav-text">JSON：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念：-JavaScript-Object-Notation-JavaScript对象表示法"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念： JavaScript Object Notation   JavaScript对象表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法："><span class="nav-number">1.2.2.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON数据和Java对象的相互转换"><span class="nav-number">1.2.3.</span> <span class="nav-text">JSON数据和Java对象的相互转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"><span class="nav-number">1.2.4.</span> <span class="nav-text">服务器响应的数据，在客户端使用时，要想当做json数据格式使用。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
