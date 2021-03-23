@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaWeb," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今日内容：1. Servlet 2. HTTP协议Servlet：  server applet* 概念：运行在服务器端的小程序     * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。     * 将来我们自定义一个类，实现Servlet接口，复写方法。   * 快速入门：     1. 创建JavaEE项目     2. 定义一个类，实现Servlet">
+<meta name="keywords" content="JavaWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet和HTTP">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;Servlet%E5%92%8CHTTP&#x2F;index.html">
+<meta property="og:site_name" content="秋枫の博客">
+<meta property="og:description" content="今日内容：1. Servlet 2. HTTP协议Servlet：  server applet* 概念：运行在服务器端的小程序     * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。     * 将来我们自定义一个类，实现Servlet接口，复写方法。   * 快速入门：     1. 创建JavaEE项目     2. 定义一个类，实现Servlet">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-03-23T06:53:19.732Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/03/23/Servlet和HTTP/"/>
+
+
+
+
+
+  <title>Servlet和HTTP | 秋枫の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">秋枫の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/23/Servlet%E5%92%8CHTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hubee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Rose.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋枫の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Servlet和HTTP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-23T14:07:38+08:00">
+                2021-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. Servlet
+2. HTTP协议</code></pre><h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><pre><code>* 概念：运行在服务器端的小程序
+    * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。
+    * 将来我们自定义一个类，实现Servlet接口，复写方法。
+
+
+* 快速入门：
+    1. 创建JavaEE项目
+    2. 定义一个类，实现Servlet接口
+        * public class ServletDemo1 implements Servlet
+    3. 实现接口中的抽象方法
+    4. 配置Servlet
+         在web.xml中配置：
+        &lt;!--配置Servlet --&gt;
+        &lt;servlet&gt;
+            &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
+            &lt;servlet-class&gt;cn.itcast.web.servlet.ServletDemo1&lt;/servlet-class&gt;
+        &lt;/servlet&gt;
+
+        &lt;servlet-mapping&gt;
+            &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
+            &lt;url-pattern&gt;/demo1&lt;/url-pattern&gt;
+        &lt;/servlet-mapping&gt;
+
+* 执行原理：
+    1. 当服务器接受到客户端浏览器的请求后，会解析请求URL路径，获取访问的Servlet的资源路径
+    2. 查找web.xml文件，是否有对应的&lt;url-pattern&gt;标签体内容。
+    3. 如果有，则在找到对应的&lt;servlet-class&gt;全类名
+    4. tomcat会将字节码文件加载进内存，并且创建其对象
+    5. 调用其方法
+
+* Servlet中的生命周期方法：
+    1. 被创建：执行init方法，只执行一次
+        * Servlet什么时候被创建？
+            * 默认情况下，第一次被访问时，Servlet被创建
+            * 可以配置执行Servlet的创建时机。
+                * 在&lt;servlet&gt;标签下配置
+                    1. 第一次被访问时，创建
+                        * &lt;load-on-startup&gt;的值为负数
+                    2. 在服务器启动时，创建
+                        * &lt;load-on-startup&gt;的值为0或正整数
+
+
+        * Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的
+            * 多个用户同时访问时，可能存在线程安全问题。
+            * 解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对修改值
+
+    2. 提供服务：执行service方法，执行多次
+        * 每次访问Servlet时，Service方法都会被调用一次。
+    3. 被销毁：执行destroy方法，只执行一次
+        * Servlet被销毁时执行。服务器关闭时，Servlet被销毁
+        * 只有服务器正常关闭时，才会执行destroy方法。
+        * destroy方法在Servlet被销毁之前执行，一般用于释放资源
+
+* Servlet3.0：
+    * 好处：
+        * 支持注解配置。可以不需要web.xml了。
+
+    * 步骤：
+        1. 创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml
+        2. 定义一个类，实现Servlet接口
+        3. 复写方法
+        4. 在类上使用@WebServlet注解，进行配置
+            * @WebServlet(&quot;资源路径&quot;)
+
+
+            @Target({ElementType.TYPE})
+            @Retention(RetentionPolicy.RUNTIME)
+            @Documented
+            public @interface WebServlet {
+                String name() default &quot;&quot;;//相当于&lt;Servlet-name&gt;
+
+                String[] value() default {};//代表urlPatterns()属性配置
+
+                String[] urlPatterns() default {};//相当于&lt;url-pattern&gt;
+
+                int loadOnStartup() default -1;//相当于&lt;load-on-startup&gt;
+
+                WebInitParam[] initParams() default {};
+
+                boolean asyncSupported() default false;
+
+                String smallIcon() default &quot;&quot;;
+
+                String largeIcon() default &quot;&quot;;
+
+                String description() default &quot;&quot;;
+
+                String displayName() default &quot;&quot;;
+            }</code></pre><h2 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h2><pre><code>1. IDEA会为每一个tomcat部署的项目单独建立一份配置文件
+    * 查看控制台的log：Using CATALINA_BASE:   &quot;C:\Users\fqy\.IntelliJIdea2018.1\system\tomcat\_itcast&quot;
+
+2. 工作空间项目    和     tomcat部署的web项目
+    * tomcat真正访问的是“tomcat部署的web项目”，&quot;tomcat部署的web项目&quot;对应着&quot;工作空间项目&quot; 的web目录下的所有资源
+    * WEB-INF目录下的资源不能被浏览器直接访问。
+3. 断点调试：使用&quot;小虫子&quot;启动 dubug 启动</code></pre><h2 id="Servlet："><a href="#Servlet：" class="headerlink" title="Servlet："></a>Servlet：</h2><pre><code>1. 概念
+2. 步骤
+3. 执行原理
+4. 生命周期
+5. Servlet3.0 注解配置
+6. Servlet的体系结构    
+    Servlet -- 接口
+        |
+    GenericServlet -- 抽象类
+        |
+    HttpServlet  -- 抽象类
+
+    * GenericServlet：将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象
+        * 将来定义Servlet类时，可以继承GenericServlet，实现service()方法即可
+
+    * HttpServlet：对http协议的一种封装，简化操作
+        1. 定义类继承HttpServlet
+        2. 复写doGet/doPost方法
+
+7. Servlet相关配置
+    1. urlpartten:Servlet访问路径
+        1. 一个Servlet可以定义多个访问路径 ： @WebServlet({&quot;/d4&quot;,&quot;/dd4&quot;,&quot;/ddd4&quot;})
+        2. 路径定义规则：
+            1. /xxx：路径匹配
+            2. /xxx/xxx:多层路径，目录结构
+            3. *.do：扩展名匹配</code></pre><h2 id="HTTP："><a href="#HTTP：" class="headerlink" title="HTTP："></a>HTTP：</h2><pre><code>* 概念：Hyper Text Transfer Protocol 超文本传输协议
+    * 传输协议：定义了，客户端和服务器端通信时，发送数据的格式
+    * 特点：
+        1. 基于TCP/IP的高级协议
+        2. 默认端口号:80
+        3. 基于请求/响应模型的:一次请求对应一次响应
+        4. 无状态的：每次请求之间相互独立，不能交互数据
+
+    * 历史版本：
+        * 1.0：每一次请求响应都会建立新的连接
+        * 1.1：复用连接
+
+* 请求消息数据格式
+    1. 请求行
+        请求方式 请求url 请求协议/版本
+        GET /login.html    HTTP/1.1
+
+        * 请求方式：
+            * HTTP协议有7中请求方式，常用的有2种
+                * GET：
+                    1. 请求参数在请求行中，在url后。
+                    2. 请求的url长度有限制的
+                    3. 不太安全
+                * POST：
+                    1. 请求参数在请求体中
+                    2. 请求的url长度没有限制的
+                    3. 相对安全
+    2. 请求头：客户端浏览器告诉服务器一些信息
+        请求头名称: 请求头值
+        * 常见的请求头：
+            1. User-Agent：浏览器告诉服务器，我访问你使用的浏览器版本信息
+                * 可以在服务器端获取该头的信息，解决浏览器的兼容性问题
+
+            2. Referer：http://localhost/login.html
+                * 告诉服务器，我(当前请求)从哪里来？
+                    * 作用：
+                        1. 防盗链：
+                        2. 统计工作：
+    3. 请求空行
+        空行，就是用于分割POST请求的请求头，和请求体的。
+    4. 请求体(正文)：
+        * 封装POST请求消息的请求参数的
+
+    * 字符串格式：
+        POST /login.html    HTTP/1.1
+        Host: localhost
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Referer: http://localhost/login.html
+        Connection: keep-alive
+        Upgrade-Insecure-Requests: 1
+
+        username=zhangsan    
+
+
+* 响应消息数据格式</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaWeb/" rel="tag"> JavaWeb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/03/23/Web%E6%A6%82%E8%BF%B0/" rel="next" title="Web概述">
+                <i class="fa fa-chevron-left"></i> Web概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/03/23/Request%E5%92%8CResponce/" rel="prev" title="Request和Responce">
+                Request和Responce <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">  
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+          </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/Rose.jpg"
+                alt="Hubee" />
+            
+              <p class="site-author-name" itemprop="name">Hubee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wuyong777" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wuyongts@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容："><span class="nav-number">1.</span> <span class="nav-text">今日内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet：-server-applet"><span class="nav-number">1.1.</span> <span class="nav-text">Servlet：  server applet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA与tomcat的相关配置"><span class="nav-number">1.2.</span> <span class="nav-text">IDEA与tomcat的相关配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet："><span class="nav-number">1.3.</span> <span class="nav-text">Servlet：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP："><span class="nav-number">1.4.</span> <span class="nav-text">HTTP：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+      <!--网易云插件-->
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+      src="//music.163.com/outchain/player?type=0&id=6657348266&auto=0&height=66"></iframe>
+      <!--网易云插件-->
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hubee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

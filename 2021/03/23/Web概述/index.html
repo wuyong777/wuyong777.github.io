@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaWeb," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今日内容1. web相关概念 2. web服务器软件：Tomcatweb相关概念软件架构 C&#x2F;S：客户端&#x2F;服务器端 B&#x2F;S：浏览器&#x2F;服务器端  资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析 如： html,css,JavaScript   动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静">
+<meta name="keywords" content="JavaWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web概述">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;Web%E6%A6%82%E8%BF%B0&#x2F;index.html">
+<meta property="og:site_name" content="秋枫の博客">
+<meta property="og:description" content="今日内容1. web相关概念 2. web服务器软件：Tomcatweb相关概念软件架构 C&#x2F;S：客户端&#x2F;服务器端 B&#x2F;S：浏览器&#x2F;服务器端  资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析 如： html,css,JavaScript   动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-03-23T06:51:27.699Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/03/23/Web概述/"/>
+
+
+
+
+
+  <title>Web概述 | 秋枫の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">秋枫の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/23/Web%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hubee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Rose.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="秋枫の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web概述</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-23T13:54:05+08:00">
+                2021-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. web相关概念
+2. web服务器软件：Tomcat</code></pre><h2 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h2><h3 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h3><ol>
+<li><code>C/S：</code>客户端/服务器端</li>
+<li><code>B/S：</code>浏览器/服务器端</li>
+</ol>
+<h3 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h3><ol>
+<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
+<li>如： <code>html,css,JavaScript</code></li>
+</ul>
+</li>
+<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
+<li>如：<code>servlet/jsp,php,asp....</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h3><ol>
+<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
+<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
+<li>传输协议：规定了数据传输的规则</li>
+</ol>
+<ul>
+<li>基础协议：<ol>
+<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
+<li><code>UDP</code>: 不安全协议。 速度快</li>
+</ol>
+</li>
+</ul>
+<h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
+<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
+<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
+<li>web容器</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>常见的java相关的web服务器软件：<ul>
+<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
+</ul>
+<h3 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h3><ol>
+<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
+</li>
+<li><p>安装：解压压缩包即可</p>
+<ul>
+<li>注意：安装目录建议不要有中文和空格</li>
+</ul>
+</li>
+<li><p>卸载：删除目录即可</p>
+</li>
+<li><p>启动：</p>
+</li>
+</ol>
+<ul>
+<li><p>bin/startup.bat ,双击运行该文件即可</p>
+</li>
+<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
+</li>
+<li><p>可能遇到的问题：</p>
+<ol>
+<li><p>黑窗口一闪而过：</p>
+<ul>
+<li>原因： 没有正确配置JAVA_HOME环境变量</li>
+<li>解决方案：正确配置JAVA_HOME环境变量</li>
+</ul>
+</li>
+<li><p>启动报错：</p>
+<ol>
+<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
+<li><code>netstat -ano</code></li>
+</ul>
+</li>
+<li>温柔：修改自身的端口号<ul>
+<li><code>conf/server.xml</code></li>
+<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>关闭：<ol>
+<li>正常关闭：<ul>
+<li><code>bin/shutdown.bat</code></li>
+<li><code>ctrl+c</code></li>
+</ul>
+</li>
+<li>强制关闭：<ul>
+<li>点击启动窗口的×</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>配置:</li>
+</ol>
+<ul>
+<li><p>部署项目的方式：</p>
+<ol>
+<li>直接将项目放到<code>webapps目录</code>下即可。</li>
+</ol>
+<ul>
+<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
+<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
+</ul>
+<ol start="2">
+<li>配置<code>conf/server.xml</code>文件<br><code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></li>
+</ol>
+<ul>
+<li><code>docBase</code>:项目存放的路径</li>
+<li><code>path</code>：虚拟目录</li>
+</ul>
+<ol start="3">
+<li>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br><code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></li>
+</ol>
+<ul>
+<li>虚拟目录：xml文件的名称</li>
+</ul>
+</li>
+<li><p><strong>目录结构</strong></p>
+<ul>
+<li>java动态项目的目录结构：  </li>
+</ul>
+<p>  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaWeb/" rel="tag"> JavaWeb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/" rel="next" title="Bootstrap入门">
+                <i class="fa fa-chevron-left"></i> Bootstrap入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/03/23/Servlet%E5%92%8CHTTP/" rel="prev" title="Servlet和HTTP">
+                Servlet和HTTP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">  
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+          </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/Rose.jpg"
+                alt="Hubee" />
+            
+              <p class="site-author-name" itemprop="name">Hubee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wuyong777" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wuyongts@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web相关概念"><span class="nav-number">1.1.</span> <span class="nav-text">web相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件架构"><span class="nav-number">1.1.1.</span> <span class="nav-text">软件架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源分类"><span class="nav-number">1.1.2.</span> <span class="nav-text">资源分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络通信三要素"><span class="nav-number">1.1.3.</span> <span class="nav-text">网络通信三要素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器软件："><span class="nav-number">1.2.</span> <span class="nav-text">web服务器软件：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat：web服务器软件"><span class="nav-number">1.2.1.</span> <span class="nav-text">Tomcat：web服务器软件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+      <!--网易云插件-->
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+      src="//music.163.com/outchain/player?type=0&id=6657348266&auto=0&height=66"></iframe>
+      <!--网易云插件-->
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hubee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
