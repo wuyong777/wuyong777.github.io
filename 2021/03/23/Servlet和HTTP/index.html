@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="今日内容：1. Servlet 2. HTTP协议Servlet：  server applet* 概念：运行在服务器端的小程序     * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。     * 将来我们自定义一个类，实现Servlet接口，复写方法。   * 快速入门：     1. 创建JavaEE项目     2. 定义一个类，实现Servlet">
+<meta name="description" content="今日内容：1. Servlet 2. HTTP协议Servlet：  server applet概念:运行在服务器端的小程序 Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。 将来我们自定义一个类，实现Servlet接口，复写方法。  快速入门： 创建JavaEE项目 定义一个类，实现Servlet接口public class ServletDemo1 imp">
 <meta name="keywords" content="JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet和HTTP">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;Servlet%E5%92%8CHTTP&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="今日内容：1. Servlet 2. HTTP协议Servlet：  server applet* 概念：运行在服务器端的小程序     * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。     * 将来我们自定义一个类，实现Servlet接口，复写方法。   * 快速入门：     1. 创建JavaEE项目     2. 定义一个类，实现Servlet">
+<meta property="og:description" content="今日内容：1. Servlet 2. HTTP协议Servlet：  server applet概念:运行在服务器端的小程序 Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。 将来我们自定义一个类，实现Servlet接口，复写方法。  快速入门： 创建JavaEE项目 定义一个类，实现Servlet接口public class ServletDemo1 imp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-23T06:53:19.732Z">
+<meta property="og:updated_time" content="2021-03-23T08:31:19.816Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -333,183 +333,244 @@
 
       
         <h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. Servlet
-2. HTTP协议</code></pre><h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><pre><code>* 概念：运行在服务器端的小程序
-    * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。
-    * 将来我们自定义一个类，实现Servlet接口，复写方法。
+2. HTTP协议</code></pre><h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><h3 id="概念-运行在服务器端的小程序"><a href="#概念-运行在服务器端的小程序" class="headerlink" title="概念:运行在服务器端的小程序"></a>概念:运行在服务器端的小程序</h3><ul>
+<li>Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。</li>
+<li>将来我们自定义一个类，实现Servlet接口，复写方法。</li>
+</ul>
+<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ol>
+<li>创建JavaEE项目</li>
+<li>定义一个类，实现Servlet接口<br><code>public class ServletDemo1 implements Servlet</code></li>
+<li>实现接口中的抽象方法</li>
+<li>配置Servlet:在<code>web.xml</code>中配置<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--配置Servlet --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>cn.itcast.web.servlet.ServletDemo1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/demo1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<h3 id="执行原理："><a href="#执行原理：" class="headerlink" title="执行原理："></a>执行原理：</h3><ol>
+<li><p>当服务器接受到客户端浏览器的请求后，会<code>解析请求URL路径，</code>获取访问的Servlet的资源路径</p>
+</li>
+<li><p>查找web.xml文件，是否有对应的<code>&lt;url-pattern&gt;</code>标签体内容。</p>
+</li>
+<li><p>如果有，则在找到对应的<code>&lt;servlet-class&gt;全类名</code></p>
+</li>
+<li><p>tomcat会将字节码文件加载进内存，并且创建其对象</p>
+</li>
+<li><p>调用其方法</p>
+</li>
+</ol>
+<h3 id="Servlet中的生命周期方法："><a href="#Servlet中的生命周期方法：" class="headerlink" title="Servlet中的生命周期方法："></a>Servlet中的<code>生命周期</code>方法：</h3><ol>
+<li>被创建：执行<code>init方法，只执行一次</code></li>
+</ol>
+<ul>
+<li>Servlet什么时候被创建？<ul>
+<li>默认情况下，第一次被访问时，Servlet被创建</li>
+<li>可以配置执行Servlet的创建时机。在<code>&lt;servlet&gt;标签</code>下配置<ol>
+<li>第一次被访问时，创建</li>
+</ol>
+<ul>
+<li><code>&lt;load-on-startup&gt;</code>的值为负数</li>
+</ul>
+<ol start="2">
+<li>在服务器启动时，创建</li>
+</ol>
+<ul>
+<li><code>&lt;load-on-startup&gt;</code>的值为0或正整数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，<code>Servlet是单例的</code><ul>
+<li>多个用户同时访问时，可能存在线程安全问题。</li>
+<li>解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对其修改值</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>提供服务：执行<code>service方法，执行多次</code></li>
+</ol>
+<ul>
+<li>每次访问Servlet时，Service方法都会被调用一次。</li>
+</ul>
+<ol start="3">
+<li>被销毁：执行<code>destroy方法，只执行一次</code></li>
+</ol>
+<ul>
+<li><p>Servlet被销毁时执行。服务器关闭时，Servlet被销毁</p>
+</li>
+<li><p>只有服务器正常关闭时，才会执行destroy方法。</p>
+</li>
+<li><p>destroy方法在Servlet被销毁之前执行，一般用于释放资源</p>
+</li>
+</ul>
+<h3 id="Servlet3-0"><a href="#Servlet3-0" class="headerlink" title="Servlet3.0"></a><code>Servlet3.0</code></h3><ul>
+<li><p><code>支持注解配置。</code>可以不需要web.xml</p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li><p>创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml</p>
+</li>
+<li><p>定义一个类，实现Servlet接口</p>
+</li>
+<li><p>复写方法</p>
+</li>
+<li><p>在类上使用@WebServlet注解，<code>@WebServlet(&quot;资源路径&quot;)</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h3><ol>
+<li><p>IDEA会为每一个tomcat部署的项目单独建立一份配置文件</p>
+<ul>
+<li>查看控制台的log：<code>Using CATALINA_BASE:</code>  </li>
+</ul>
+</li>
+<li><p>工作空间项目 和 tomcat部署的web项目<br> *<code>tomcat真正访问的是“tomcat部署的web项目”，</code>“tomcat部署的web项目”对应着”工作空间项目” 的web目录下的所有资源</p>
+<p> *<code>WEB-INF目录下的资源不能被浏览器直接访问。</code></p>
+</li>
+<li><p>断点调试：使用”小虫子”启动 dubug 启动</p>
+</li>
+</ol>
+<h3 id="Servlet的体系结构"><a href="#Servlet的体系结构" class="headerlink" title="Servlet的体系结构"></a>Servlet的体系结构</h3><pre><code>Servlet -- 接口
+    |
+GenericServlet -- 抽象类
+    |
+HttpServlet  -- 抽象类</code></pre><ul>
+<li><code>GenericServlet：</code>将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象</li>
+</ul>
+<ol>
+<li>将来定义Servlet类时，可以继承GenericServlet</li>
+<li>实现service()方法即可</li>
+</ol>
+<p>*<code>HttpServlet：</code>对http协议的一种封装，简化操作</p>
+<ol>
+<li>定义类继承HttpServlet</li>
+<li>复写doGet/doPost方法</li>
+</ol>
+<h2 id="HTTP："><a href="#HTTP：" class="headerlink" title="HTTP："></a>HTTP：</h2><h3 id="概念：Hyper-Text-Transfer-Protocol-超文本传输协议"><a href="#概念：Hyper-Text-Transfer-Protocol-超文本传输协议" class="headerlink" title="概念：Hyper Text Transfer Protocol 超文本传输协议"></a>概念：Hyper Text Transfer Protocol 超文本传输协议</h3><ul>
+<li>传输协议：定义了客户端和服务器端通信时，发送数据的格式<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3></li>
+</ul>
+<ol>
+<li><code>基于TCP/IP</code>的高级协议</li>
+<li><code>默认端口号:80</code></li>
+<li>基于请求/响应模型的:<code>一次请求对应一次响应</code></li>
+<li><code>无状态的</code>：每次请求之间相互独立，不能交互数据</li>
+</ol>
+<ul>
+<li>历史版本：<ul>
+<li>1.0：每一次请求响应都会建立新的连接</li>
+<li>1.1：复用连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="请求消息数据格式"><a href="#请求消息数据格式" class="headerlink" title="请求消息数据格式"></a><strong>请求消息数据格式</strong></h3><ol>
+<li><strong>请求行</strong><br>格式：请求方式 请求url 请求协议/版本<br><code>GET    /login.html     HTTP/1.1</code></li>
+</ol>
+<ul>
+<li>请求方式：</li>
+<li>HTTP协议有7中请求方式，常用的有2种</li>
+<li><code>GET：</code><ol>
+<li><code>请求参数在请求行中，在url后</code></li>
+<li>请求的url长度有限制的</li>
+<li>不太安全</li>
+</ol>
+</li>
+<li><code>POST：</code><ol>
+<li><code>请求参数在请求体中</code></li>
+<li>请求的url长度没有限制的</li>
+<li>相对安全</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><strong>请求头</strong>：客户端浏览器告诉服务器一些信息<br>格式：请求头名称: 请求头值</li>
+</ol>
+<ul>
+<li><p>常见的请求头：</p>
+<ol>
+<li><p><code>User-Agent：</code>浏览器告诉服务器，我访问你使用的浏览器版本信息</p>
+<ul>
+<li>可以在服务器端获取该头的信息，解决浏览器的兼容性问题</li>
+</ul>
+</li>
+<li><p><code>Referer：</code>告诉服务器，我(当前请求)从哪里来</p>
+<ul>
+<li>作用：</li>
+</ul>
+<ol>
+<li>防盗链：</li>
+<li>统计工作：</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li><p><strong>请求空行</strong></p>
+</li>
+<li><p><strong>请求体(正文)</strong>：</p>
+</li>
+</ol>
+<ul>
+<li><code>封装POST请求消息的请求参数的</code></li>
+<li>字符串格式：</li>
+</ul>
+<p><code>POST</code>    <code>/login.html</code>    <code>HTTP/1.1</code><br><code>Host:</code> localhost<br><code>User-Agent:</code> Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0<br><code>Accept:</code> text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8<br><code>Accept-Language:</code> zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br><code>Accept-Encoding:</code> gzip, deflate<br><code>Referer:</code> <a href="http://localhost/login.html" target="_blank" rel="noopener">http://localhost/login.html</a><br><code>Connection:</code> keep-alive<br><code>Upgrade-Insecure-Requests:</code> 1<br><code>username</code>=zhangsan    </p>
+<h3 id="响应消息数据格式"><a href="#响应消息数据格式" class="headerlink" title="响应消息数据格式"></a><strong>响应消息数据格式</strong></h3><ol>
+<li><strong>响应行</strong><br>格式：协议/版本 响应状态码 状态码描述</li>
+</ol>
+<p>响应状态码：3位数字,服务器告诉客户端浏览器本次请求和响应的</p>
+<ul>
+<li><code>分类(5种)</code>：<ol>
+<li><code>1xx：</code>服务器就收客户端消息，但没有接受完成，等待一段时间后，发送1xx多状态码</li>
+<li><code>2xx：</code>成功。<ul>
+<li>200</li>
+</ul>
+</li>
+<li><code>3xx：</code>重定向。<ul>
+<li>302 (重定向)</li>
+<li>304 (访问缓存)</li>
+</ul>
+</li>
+<li><code>4xx：</code>客户端错误。<ul>
+<li>404（请求路径没有对应的资源） </li>
+<li>405 (请求方式没有对应的doXxx方法）</li>
+</ul>
+</li>
+<li><code>5xx：</code>服务器端错误。<ul>
+<li>500 (服务器内部出现异常)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p><strong>响应头</strong>：</p>
+<ol>
+<li>格式：头名称：值</li>
+<li>常见的响应头：<ol>
+<li><code>Content-Type：</code>服务器告诉客户端本次响应体数据格式以及编码格式</li>
+<li><code>Content-disposition：</code>服务器告诉客户端以什么格式打开响应体数据</li>
+</ol>
+<ul>
+<li><code>值：</code></li>
+<li><code>in-line:</code>默认值,在当前页面内打开</li>
+<li><code>attachment;filename=xxx：</code>以附件形式打开响应体。文件下载</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>响应空行</strong></p>
+</li>
+<li><p><strong>响应体</strong>：传输的数据</p>
+</li>
+</ol>
+<ul>
+<li>字符串格式</li>
+</ul>
+<p><code>HTTP/1.1 200 OK</code><br><code>Content-Type:</code> text/html;charset=UTF-8<br><code>Content-Length:</code> 101<br><code>Date:</code> Wed, 06 Jun 2018 07:08:42 GMT<br><code>&lt;html&gt;</code><br>    <code>&lt;head&gt;</code><br>    <code>&lt;title&gt;$Title$&lt;/title&gt;</code><br>    <code>&lt;/head&gt;</code><br>    <code>&lt;body&gt;</code><br>    <code>hello , response</code><br>    <code>&lt;/body&gt;</code></p>
+</html>
 
-* 快速入门：
-    1. 创建JavaEE项目
-    2. 定义一个类，实现Servlet接口
-        * public class ServletDemo1 implements Servlet
-    3. 实现接口中的抽象方法
-    4. 配置Servlet
-         在web.xml中配置：
-        &lt;!--配置Servlet --&gt;
-        &lt;servlet&gt;
-            &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
-            &lt;servlet-class&gt;cn.itcast.web.servlet.ServletDemo1&lt;/servlet-class&gt;
-        &lt;/servlet&gt;
-
-        &lt;servlet-mapping&gt;
-            &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
-            &lt;url-pattern&gt;/demo1&lt;/url-pattern&gt;
-        &lt;/servlet-mapping&gt;
-
-* 执行原理：
-    1. 当服务器接受到客户端浏览器的请求后，会解析请求URL路径，获取访问的Servlet的资源路径
-    2. 查找web.xml文件，是否有对应的&lt;url-pattern&gt;标签体内容。
-    3. 如果有，则在找到对应的&lt;servlet-class&gt;全类名
-    4. tomcat会将字节码文件加载进内存，并且创建其对象
-    5. 调用其方法
-
-* Servlet中的生命周期方法：
-    1. 被创建：执行init方法，只执行一次
-        * Servlet什么时候被创建？
-            * 默认情况下，第一次被访问时，Servlet被创建
-            * 可以配置执行Servlet的创建时机。
-                * 在&lt;servlet&gt;标签下配置
-                    1. 第一次被访问时，创建
-                        * &lt;load-on-startup&gt;的值为负数
-                    2. 在服务器启动时，创建
-                        * &lt;load-on-startup&gt;的值为0或正整数
-
-
-        * Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的
-            * 多个用户同时访问时，可能存在线程安全问题。
-            * 解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对修改值
-
-    2. 提供服务：执行service方法，执行多次
-        * 每次访问Servlet时，Service方法都会被调用一次。
-    3. 被销毁：执行destroy方法，只执行一次
-        * Servlet被销毁时执行。服务器关闭时，Servlet被销毁
-        * 只有服务器正常关闭时，才会执行destroy方法。
-        * destroy方法在Servlet被销毁之前执行，一般用于释放资源
-
-* Servlet3.0：
-    * 好处：
-        * 支持注解配置。可以不需要web.xml了。
-
-    * 步骤：
-        1. 创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml
-        2. 定义一个类，实现Servlet接口
-        3. 复写方法
-        4. 在类上使用@WebServlet注解，进行配置
-            * @WebServlet(&quot;资源路径&quot;)
-
-
-            @Target({ElementType.TYPE})
-            @Retention(RetentionPolicy.RUNTIME)
-            @Documented
-            public @interface WebServlet {
-                String name() default &quot;&quot;;//相当于&lt;Servlet-name&gt;
-
-                String[] value() default {};//代表urlPatterns()属性配置
-
-                String[] urlPatterns() default {};//相当于&lt;url-pattern&gt;
-
-                int loadOnStartup() default -1;//相当于&lt;load-on-startup&gt;
-
-                WebInitParam[] initParams() default {};
-
-                boolean asyncSupported() default false;
-
-                String smallIcon() default &quot;&quot;;
-
-                String largeIcon() default &quot;&quot;;
-
-                String description() default &quot;&quot;;
-
-                String displayName() default &quot;&quot;;
-            }</code></pre><h2 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h2><pre><code>1. IDEA会为每一个tomcat部署的项目单独建立一份配置文件
-    * 查看控制台的log：Using CATALINA_BASE:   &quot;C:\Users\fqy\.IntelliJIdea2018.1\system\tomcat\_itcast&quot;
-
-2. 工作空间项目    和     tomcat部署的web项目
-    * tomcat真正访问的是“tomcat部署的web项目”，&quot;tomcat部署的web项目&quot;对应着&quot;工作空间项目&quot; 的web目录下的所有资源
-    * WEB-INF目录下的资源不能被浏览器直接访问。
-3. 断点调试：使用&quot;小虫子&quot;启动 dubug 启动</code></pre><h2 id="Servlet："><a href="#Servlet：" class="headerlink" title="Servlet："></a>Servlet：</h2><pre><code>1. 概念
-2. 步骤
-3. 执行原理
-4. 生命周期
-5. Servlet3.0 注解配置
-6. Servlet的体系结构    
-    Servlet -- 接口
-        |
-    GenericServlet -- 抽象类
-        |
-    HttpServlet  -- 抽象类
-
-    * GenericServlet：将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象
-        * 将来定义Servlet类时，可以继承GenericServlet，实现service()方法即可
-
-    * HttpServlet：对http协议的一种封装，简化操作
-        1. 定义类继承HttpServlet
-        2. 复写doGet/doPost方法
-
-7. Servlet相关配置
-    1. urlpartten:Servlet访问路径
-        1. 一个Servlet可以定义多个访问路径 ： @WebServlet({&quot;/d4&quot;,&quot;/dd4&quot;,&quot;/ddd4&quot;})
-        2. 路径定义规则：
-            1. /xxx：路径匹配
-            2. /xxx/xxx:多层路径，目录结构
-            3. *.do：扩展名匹配</code></pre><h2 id="HTTP："><a href="#HTTP：" class="headerlink" title="HTTP："></a>HTTP：</h2><pre><code>* 概念：Hyper Text Transfer Protocol 超文本传输协议
-    * 传输协议：定义了，客户端和服务器端通信时，发送数据的格式
-    * 特点：
-        1. 基于TCP/IP的高级协议
-        2. 默认端口号:80
-        3. 基于请求/响应模型的:一次请求对应一次响应
-        4. 无状态的：每次请求之间相互独立，不能交互数据
-
-    * 历史版本：
-        * 1.0：每一次请求响应都会建立新的连接
-        * 1.1：复用连接
-
-* 请求消息数据格式
-    1. 请求行
-        请求方式 请求url 请求协议/版本
-        GET /login.html    HTTP/1.1
-
-        * 请求方式：
-            * HTTP协议有7中请求方式，常用的有2种
-                * GET：
-                    1. 请求参数在请求行中，在url后。
-                    2. 请求的url长度有限制的
-                    3. 不太安全
-                * POST：
-                    1. 请求参数在请求体中
-                    2. 请求的url长度没有限制的
-                    3. 相对安全
-    2. 请求头：客户端浏览器告诉服务器一些信息
-        请求头名称: 请求头值
-        * 常见的请求头：
-            1. User-Agent：浏览器告诉服务器，我访问你使用的浏览器版本信息
-                * 可以在服务器端获取该头的信息，解决浏览器的兼容性问题
-
-            2. Referer：http://localhost/login.html
-                * 告诉服务器，我(当前请求)从哪里来？
-                    * 作用：
-                        1. 防盗链：
-                        2. 统计工作：
-    3. 请求空行
-        空行，就是用于分割POST请求的请求头，和请求体的。
-    4. 请求体(正文)：
-        * 封装POST请求消息的请求参数的
-
-    * 字符串格式：
-        POST /login.html    HTTP/1.1
-        Host: localhost
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0
-        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
-        Accept-Encoding: gzip, deflate
-        Referer: http://localhost/login.html
-        Connection: keep-alive
-        Upgrade-Insecure-Requests: 1
-
-        username=zhangsan    
-
-
-* 响应消息数据格式</code></pre>
       
     </div>
     
@@ -631,7 +692,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -642,7 +703,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -653,7 +714,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -702,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容："><span class="nav-number">1.</span> <span class="nav-text">今日内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet：-server-applet"><span class="nav-number">1.1.</span> <span class="nav-text">Servlet：  server applet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA与tomcat的相关配置"><span class="nav-number">1.2.</span> <span class="nav-text">IDEA与tomcat的相关配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet："><span class="nav-number">1.3.</span> <span class="nav-text">Servlet：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP："><span class="nav-number">1.4.</span> <span class="nav-text">HTTP：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容："><span class="nav-number">1.</span> <span class="nav-text">今日内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet：-server-applet"><span class="nav-number">1.1.</span> <span class="nav-text">Servlet：  server applet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-运行在服务器端的小程序"><span class="nav-number">1.1.1.</span> <span class="nav-text">概念:运行在服务器端的小程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速入门："><span class="nav-number">1.1.2.</span> <span class="nav-text">快速入门：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行原理："><span class="nav-number">1.1.3.</span> <span class="nav-text">执行原理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet中的生命周期方法："><span class="nav-number">1.1.4.</span> <span class="nav-text">Servlet中的生命周期方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet3-0"><span class="nav-number">1.1.5.</span> <span class="nav-text">Servlet3.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDEA与tomcat的相关配置"><span class="nav-number">1.1.6.</span> <span class="nav-text">IDEA与tomcat的相关配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet的体系结构"><span class="nav-number">1.1.7.</span> <span class="nav-text">Servlet的体系结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP："><span class="nav-number">1.2.</span> <span class="nav-text">HTTP：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念：Hyper-Text-Transfer-Protocol-超文本传输协议"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念：Hyper Text Transfer Protocol 超文本传输协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">1.2.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求消息数据格式"><span class="nav-number">1.2.3.</span> <span class="nav-text">请求消息数据格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应消息数据格式"><span class="nav-number">1.2.4.</span> <span class="nav-text">响应消息数据格式</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
