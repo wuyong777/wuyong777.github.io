@@ -153,6 +153,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Bootstrap入门</title>
+    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
+<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+</li>
+<li><p>优点：</p>
+</li>
+</ol>
+<ul>
+<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
+<li>响应式布局</li>
+</ul>
+<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
+<li><p>下载Bootstrap</p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
+</li>
+<li><p>安装jquery插件，因为js插件依赖于jquery</p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap HelloWorld<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，世界！!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS基础</title>
     <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
@@ -277,41 +312,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Bootstrap入门</title>
-    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
-<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
-</li>
-<li><p>优点：</p>
-</li>
-</ol>
-<ul>
-<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
-<li>响应式布局</li>
-</ul>
-<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
-<li><p>下载Bootstrap</p>
-</li>
-<li><p>解压</p>
-</li>
-<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
-</li>
-<li><p>安装jquery插件，因为js插件依赖于jquery</p>
-</li>
-<li><p>代码实现</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap HelloWorld<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，世界！!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Bootstrap</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Collection，泛型</title>
     <url>/2019/11/06/Collection%EF%BC%8C%E6%B3%9B%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="1-Collection集合"><a href="#1-Collection集合" class="headerlink" title="1.Collection集合"></a>1.Collection集合</h1><h2 id="1-1-集合概述"><a href="#1-1-集合概述" class="headerlink" title="1.1 集合概述"></a>1.1 集合概述</h2><ul>
@@ -402,6 +402,39 @@
 </ul>
 <p>比如：现已知Object类，String 类，Number类，Integer类，其中Number是Integer的父类</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Collection&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    Collection&lt;String&gt; list2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Collection&lt;Number&gt; list3 = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br><span class="line">    Collection&lt;Object&gt; list4 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">    </span><br><span class="line">    getElement(list1);</span><br><span class="line">    getElement(list2);<span class="comment">//报错</span></span><br><span class="line">    getElement(list3);</span><br><span class="line">    getElement(list4);<span class="comment">//报错</span></span><br><span class="line">  </span><br><span class="line">    getElement2(list1);<span class="comment">//报错</span></span><br><span class="line">    getElement2(list2);<span class="comment">//报错</span></span><br><span class="line">    getElement2(list3);</span><br><span class="line">    getElement2(list4);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 泛型的上限：此时的泛型?，必须是Number类型或者Number类型的子类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getElement1</span><span class="params">(Collection&lt;? extends Number&gt; coll)</span></span>&#123;&#125;</span><br><span class="line"><span class="comment">// 泛型的下限：此时的泛型?，必须是Number类型或者Number类型的父类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getElement2</span><span class="params">(Collection&lt;? <span class="keyword">super</span> Number&gt; coll)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>File类，递归</title>
+    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h1><h2 id="1-1-路径"><a href="#1-1-路径" class="headerlink" title="1.1 路径"></a>1.1 路径</h2><ul>
+<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
+<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="1-2-构造方法"><a href="#1-2-构造方法" class="headerlink" title="1.2 构造方法"></a>1.2 构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
+<p>小贴士：   </p>
+<ol>
+<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
+<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
+</ol>
+</blockquote>
+<h2 id="1-3-常用方法"><a href="#1-3-常用方法" class="headerlink" title="1.3 常用方法"></a>1.3 常用方法</h2></li>
+</ul>
+<ol>
+<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
+<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
+<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
+<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="2-递归"><a href="#2-递归" class="headerlink" title="2.递归"></a>2.递归</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="3-综合案例"><a href="#3-综合案例" class="headerlink" title="3.综合案例"></a>3.综合案例</h1><h2 id="3-1-文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#3-1-文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="3.1 文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>3.1 文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="3-2-文件过滤器优化"><a href="#3-2-文件过滤器优化" class="headerlink" title="3.2 文件过滤器优化"></a>3.2 文件过滤器优化</h2></li>
+</ol>
+<ul>
+<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
+<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
+</ul>
+<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -532,39 +565,6 @@
       </categories>
       <tags>
         <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>File类，递归</title>
-    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h1><h2 id="1-1-路径"><a href="#1-1-路径" class="headerlink" title="1.1 路径"></a>1.1 路径</h2><ul>
-<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
-<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="1-2-构造方法"><a href="#1-2-构造方法" class="headerlink" title="1.2 构造方法"></a>1.2 构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
-<p>小贴士：   </p>
-<ol>
-<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
-<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
-</ol>
-</blockquote>
-<h2 id="1-3-常用方法"><a href="#1-3-常用方法" class="headerlink" title="1.3 常用方法"></a>1.3 常用方法</h2></li>
-</ul>
-<ol>
-<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
-<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
-<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
-<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="2-递归"><a href="#2-递归" class="headerlink" title="2.递归"></a>2.递归</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="3-综合案例"><a href="#3-综合案例" class="headerlink" title="3.综合案例"></a>3.综合案例</h1><h2 id="3-1-文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#3-1-文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="3.1 文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>3.1 文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="3-2-文件过滤器优化"><a href="#3-2-文件过滤器优化" class="headerlink" title="3.2 文件过滤器优化"></a>3.2 文件过滤器优化</h2></li>
-</ol>
-<ul>
-<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
-<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
-</ul>
-<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -1200,6 +1200,237 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>JSP和EL_JSTL</title>
+    <url>/2021/03/23/JSP%E5%92%8CEL-JSTL/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JSP
+2. EL表达式
+3. JSTL标签</code></pre><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><ul>
+<li>Java Server Pages： java服务器端页面</li>
+<li>可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3>JSP本质上就是一个Servlet</li>
+</ul>
+<h3 id="JSP的脚本"><a href="#JSP的脚本" class="headerlink" title="JSP的脚本"></a>JSP的脚本</h3><p>JSP定义Java代码的方式</p>
+<ol>
+<li><p><code>&lt;%   %&gt;：</code><br>定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。</p>
+</li>
+<li><p><code>&lt;%!  %&gt;：</code><br>定义的java代码，在jsp转换后的java类的成员位置。</p>
+</li>
+<li><p><code>&lt;%=  %&gt;：</code><br>定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。</p>
+<h3 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释:"></a>JSP注释:</h3></li>
+<li><p>html注释：<code>&lt;!-- --&gt;:</code><br>只能注释html代码片段</p>
+</li>
+<li><p>jsp注释：<code>&lt;%-- --%&gt;：</code> 推荐使用<br>可以注释所有</p>
+</li>
+</ol>
+<h3 id="JSP三大指令"><a href="#JSP三大指令" class="headerlink" title="JSP三大指令"></a>JSP三大指令</h3><ol>
+<li>指令</li>
+</ol>
+<ul>
+<li><p>作用：用于配置JSP页面，导入资源文件</p>
+</li>
+<li><p>格式：<code>&lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %&gt;</code></p>
+</li>
+<li><p>分类：    </p>
+</li>
+</ul>
+<ol>
+<li><code>page</code>：配置JSP页面的</li>
+</ol>
+<ul>
+<li>contentType：等同于response.setContentType()<ol>
+<li>设置响应体的mime类型以及字符集</li>
+<li>设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</li>
+</ol>
+</li>
+<li>import：导包</li>
+<li>errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</li>
+<li>isErrorPage：标识当前也是是否是错误页面。<ul>
+<li>true：是，可以使用内置对象exception</li>
+<li>false：否。默认值。不可以使用内置对象exception </li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><code>include</code>：页面包含的。导入页面的资源文件</li>
+</ol>
+<ul>
+<li>&lt;%@include file=”top.jsp”%&gt;</li>
+</ul>
+<ol start="3">
+<li><code>taglib</code>：导入资源</li>
+</ol>
+<ul>
+<li>&lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</li>
+<li>prefix：前缀，自定义的<h3 id="JSP九大内置对象："><a href="#JSP九大内置对象：" class="headerlink" title="JSP九大内置对象："></a>JSP九大内置对象：</h3></li>
+<li><strong>在jsp页面中不需要获取和创建，可以直接使用的对象</strong></li>
+<li><strong>前四个为域对象</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>真实类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pageContext</td>
+<td>PageContext</td>
+<td>当前页面共享数据，还可以获取其他八个内置对象</td>
+</tr>
+<tr>
+<td>request</td>
+<td>HttpServletRequest</td>
+<td>一次请求访问的多个资源(转发)</td>
+</tr>
+<tr>
+<td>session</td>
+<td>HttpSession</td>
+<td>一次会话的多个请求间</td>
+</tr>
+<tr>
+<td>application</td>
+<td>ServletContext</td>
+<td>所有用户间共享数据</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Object</td>
+<td>当前页面(Servlet)的对象</td>
+</tr>
+<tr>
+<td>response</td>
+<td>HttpServletResponse</td>
+<td>响应对象 this</td>
+</tr>
+<tr>
+<td>out</td>
+<td>JspWriter</td>
+<td>输出对象，数据输出到页面上</td>
+</tr>
+<tr>
+<td>config</td>
+<td>ServletConfig</td>
+<td>Servlet的配置对象</td>
+</tr>
+<tr>
+<td>exception</td>
+<td>Throwable</td>
+<td>异常对象</td>
+</tr>
+</tbody></table>
+<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Expression Language 表达式语言</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>替换和简化jsp页面中java代码的编写</p>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><p>${表达式}</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>jsp默认支持el表达式的。如果要忽略el表达式        </p>
+<ol>
+<li>设置jsp中page指令中：isELIgnored=”true” 忽略当前jsp页面中所有的el表达式</li>
+<li>${表达式} ：忽略当前这个el表达式</li>
+</ol>
+<h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><ol>
+<li>运算：</li>
+</ol>
+<ul>
+<li>运算符：<ol>
+<li>算数运算符： + - * /(div) %(mod)</li>
+<li>比较运算符： &gt; &lt; &gt;= &lt;= == !=</li>
+<li>逻辑运算符： &amp;&amp;(and) ||(or) !(not)</li>
+<li>空运算符： empty<ul>
+<li>功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0</li>
+<li>${empty list}:判断字符串、集合、数组对象是否为null或者长度为0</li>
+<li>${not empty str}:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>获取值</p>
+<ol>
+<li><p><strong>EL表达式只能从域对象中获取值</strong></p>
+</li>
+<li><p>语法：<code>${域名称.键名}</code>：从指定域中获取指定键的值</p>
+<ul>
+<li>域名称：</li>
+</ul>
+<ol>
+<li>pageScope        –&gt; pageContext</li>
+<li>requestScope     –&gt; request</li>
+<li>sessionScope     –&gt; session</li>
+<li>applicationScope –&gt; application</li>
+</ol>
+<ul>
+<li>举例：在request域中存储了name=张三</li>
+<li>获取：<code>${requestScope.name}</code></li>
+</ul>
+</li>
+<li><p>获取对象、List集合、Map集合的值</p>
+<ol>
+<li>对象：<code>${域名称.键名.属性名}</code></li>
+</ol>
+<ul>
+<li>本质上会去调用对象的getter方法</li>
+</ul>
+<ol start="2">
+<li><p>List集合：<code>${域名称.键名[索引]}</code></p>
+</li>
+<li><p>Map集合：</p>
+</li>
+</ol>
+<ul>
+<li><code>${域名称.键名.key名称}</code></li>
+<li><code>${域名称.键名[&quot;key名称&quot;]}</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>4. 隐式对象：
+* EL表达式中有11个隐式对象
+* pageContext：可以获取jsp其他八个内置对象      
+如：`${pageContext.request.contextPath}`：动态获取虚拟目录</code></pre><h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>JavaServer Pages Tag Library  JSP标准标签库</p>
+<p>是由Apache组织提供的开源的免费的jsp标签    </p>
+<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>用于简化和替换jsp页面上的java代码        </p>
+<h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><ol>
+<li>导入jstl相关jar包</li>
+<li><code>引入标签库：taglib指令：  &lt;%@ taglib %&gt;</code></li>
+<li>使用标签</li>
+</ol>
+<h3 id="常用的JSTL标签"><a href="#常用的JSTL标签" class="headerlink" title="常用的JSTL标签"></a>常用的JSTL标签</h3><ol>
+<li><p>if:相当于java代码的if语句</p>
+<ol>
+<li>属性：</li>
+</ol>
+<ul>
+<li>test 必须属性，接受boolean表达式</li>
+<li>如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容</li>
+<li>一般情况下，test属性值会结合el表达式一起使用</li>
+</ul>
+<ol start="2">
+<li>注意：</li>
+</ol>
+<ul>
+<li>c:if标签没有else情况，想要else情况，则可以再定义一个c:if标签</li>
+</ul>
+</li>
+<li><p>choose:相当于java代码的switch语句</p>
+<ol>
+<li>使用choose标签声明—&gt;相当于switch声明</li>
+<li>使用when标签做判断—&gt;相当于case</li>
+<li>使用otherwise标签做其他情况的声明—&gt;相当于default</li>
+</ol>
+</li>
+<li><p>foreach:相当于java代码的for语句</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JQuery</title>
     <url>/2021/03/23/JQuery/</url>
     <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JQuery 基础
@@ -1599,310 +1830,6 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>JSP和EL_JSTL</title>
-    <url>/2021/03/23/JSP%E5%92%8CEL-JSTL/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JSP
-2. EL表达式
-3. JSTL标签</code></pre><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><ul>
-<li>Java Server Pages： java服务器端页面</li>
-<li>可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3>JSP本质上就是一个Servlet</li>
-</ul>
-<h3 id="JSP的脚本"><a href="#JSP的脚本" class="headerlink" title="JSP的脚本"></a>JSP的脚本</h3><p>JSP定义Java代码的方式</p>
-<ol>
-<li><p><code>&lt;%   %&gt;：</code><br>定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。</p>
-</li>
-<li><p><code>&lt;%!  %&gt;：</code><br>定义的java代码，在jsp转换后的java类的成员位置。</p>
-</li>
-<li><p><code>&lt;%=  %&gt;：</code><br>定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。</p>
-<h3 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释:"></a>JSP注释:</h3></li>
-<li><p>html注释：<code>&lt;!-- --&gt;:</code><br>只能注释html代码片段</p>
-</li>
-<li><p>jsp注释：<code>&lt;%-- --%&gt;：</code> 推荐使用<br>可以注释所有</p>
-</li>
-</ol>
-<h3 id="JSP三大指令"><a href="#JSP三大指令" class="headerlink" title="JSP三大指令"></a>JSP三大指令</h3><ol>
-<li>指令</li>
-</ol>
-<ul>
-<li><p>作用：用于配置JSP页面，导入资源文件</p>
-</li>
-<li><p>格式：<code>&lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %&gt;</code></p>
-</li>
-<li><p>分类：    </p>
-</li>
-</ul>
-<ol>
-<li><code>page</code>：配置JSP页面的</li>
-</ol>
-<ul>
-<li>contentType：等同于response.setContentType()<ol>
-<li>设置响应体的mime类型以及字符集</li>
-<li>设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</li>
-</ol>
-</li>
-<li>import：导包</li>
-<li>errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</li>
-<li>isErrorPage：标识当前也是是否是错误页面。<ul>
-<li>true：是，可以使用内置对象exception</li>
-<li>false：否。默认值。不可以使用内置对象exception </li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><code>include</code>：页面包含的。导入页面的资源文件</li>
-</ol>
-<ul>
-<li>&lt;%@include file=”top.jsp”%&gt;</li>
-</ul>
-<ol start="3">
-<li><code>taglib</code>：导入资源</li>
-</ol>
-<ul>
-<li>&lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</li>
-<li>prefix：前缀，自定义的<h3 id="JSP九大内置对象："><a href="#JSP九大内置对象：" class="headerlink" title="JSP九大内置对象："></a>JSP九大内置对象：</h3></li>
-<li><strong>在jsp页面中不需要获取和创建，可以直接使用的对象</strong></li>
-<li><strong>前四个为域对象</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>真实类型</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>pageContext</td>
-<td>PageContext</td>
-<td>当前页面共享数据，还可以获取其他八个内置对象</td>
-</tr>
-<tr>
-<td>request</td>
-<td>HttpServletRequest</td>
-<td>一次请求访问的多个资源(转发)</td>
-</tr>
-<tr>
-<td>session</td>
-<td>HttpSession</td>
-<td>一次会话的多个请求间</td>
-</tr>
-<tr>
-<td>application</td>
-<td>ServletContext</td>
-<td>所有用户间共享数据</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Object</td>
-<td>当前页面(Servlet)的对象</td>
-</tr>
-<tr>
-<td>response</td>
-<td>HttpServletResponse</td>
-<td>响应对象 this</td>
-</tr>
-<tr>
-<td>out</td>
-<td>JspWriter</td>
-<td>输出对象，数据输出到页面上</td>
-</tr>
-<tr>
-<td>config</td>
-<td>ServletConfig</td>
-<td>Servlet的配置对象</td>
-</tr>
-<tr>
-<td>exception</td>
-<td>Throwable</td>
-<td>异常对象</td>
-</tr>
-</tbody></table>
-<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Expression Language 表达式语言</p>
-<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>替换和简化jsp页面中java代码的编写</p>
-<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><p>${表达式}</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>jsp默认支持el表达式的。如果要忽略el表达式        </p>
-<ol>
-<li>设置jsp中page指令中：isELIgnored=”true” 忽略当前jsp页面中所有的el表达式</li>
-<li>${表达式} ：忽略当前这个el表达式</li>
-</ol>
-<h3 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h3><ol>
-<li>运算：</li>
-</ol>
-<ul>
-<li>运算符：<ol>
-<li>算数运算符： + - * /(div) %(mod)</li>
-<li>比较运算符： &gt; &lt; &gt;= &lt;= == !=</li>
-<li>逻辑运算符： &amp;&amp;(and) ||(or) !(not)</li>
-<li>空运算符： empty<ul>
-<li>功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0</li>
-<li>${empty list}:判断字符串、集合、数组对象是否为null或者长度为0</li>
-<li>${not empty str}:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li><p>获取值</p>
-<ol>
-<li><p><strong>EL表达式只能从域对象中获取值</strong></p>
-</li>
-<li><p>语法：<code>${域名称.键名}</code>：从指定域中获取指定键的值</p>
-<ul>
-<li>域名称：</li>
-</ul>
-<ol>
-<li>pageScope        –&gt; pageContext</li>
-<li>requestScope     –&gt; request</li>
-<li>sessionScope     –&gt; session</li>
-<li>applicationScope –&gt; application</li>
-</ol>
-<ul>
-<li>举例：在request域中存储了name=张三</li>
-<li>获取：<code>${requestScope.name}</code></li>
-</ul>
-</li>
-<li><p>获取对象、List集合、Map集合的值</p>
-<ol>
-<li>对象：<code>${域名称.键名.属性名}</code></li>
-</ol>
-<ul>
-<li>本质上会去调用对象的getter方法</li>
-</ul>
-<ol start="2">
-<li><p>List集合：<code>${域名称.键名[索引]}</code></p>
-</li>
-<li><p>Map集合：</p>
-</li>
-</ol>
-<ul>
-<li><code>${域名称.键名.key名称}</code></li>
-<li><code>${域名称.键名[&quot;key名称&quot;]}</code></li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<pre><code>4. 隐式对象：
-* EL表达式中有11个隐式对象
-* pageContext：可以获取jsp其他八个内置对象      
-如：`${pageContext.request.contextPath}`：动态获取虚拟目录</code></pre><h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><h3 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h3><p>JavaServer Pages Tag Library  JSP标准标签库</p>
-<p>是由Apache组织提供的开源的免费的jsp标签    </p>
-<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>用于简化和替换jsp页面上的java代码        </p>
-<h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><ol>
-<li>导入jstl相关jar包</li>
-<li><code>引入标签库：taglib指令：  &lt;%@ taglib %&gt;</code></li>
-<li>使用标签</li>
-</ol>
-<h3 id="常用的JSTL标签"><a href="#常用的JSTL标签" class="headerlink" title="常用的JSTL标签"></a>常用的JSTL标签</h3><ol>
-<li><p>if:相当于java代码的if语句</p>
-<ol>
-<li>属性：</li>
-</ol>
-<ul>
-<li>test 必须属性，接受boolean表达式</li>
-<li>如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容</li>
-<li>一般情况下，test属性值会结合el表达式一起使用</li>
-</ul>
-<ol start="2">
-<li>注意：</li>
-</ol>
-<ul>
-<li>c:if标签没有else情况，想要else情况，则可以再定义一个c:if标签</li>
-</ul>
-</li>
-<li><p>choose:相当于java代码的switch语句</p>
-<ol>
-<li>使用choose标签声明—&gt;相当于switch声明</li>
-<li>使用when标签做判断—&gt;相当于case</li>
-<li>使用otherwise标签做其他情况的声明—&gt;相当于default</li>
-</ol>
-</li>
-<li><p>foreach:相当于java代码的for语句</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java基础语法</title>
-    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
-<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
-<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
-<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
-<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
-<li>5.1 算术运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
-<ul>
-<li>5.2 赋值运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
-<ul>
-<li>5.3 比较运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
-<ul>
-<li>5.4 逻辑运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
-<ul>
-<li>5.5 三元运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
-<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
-<li>6.1 if语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
-<ul>
-<li>6.2 if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
-<ul>
-<li>6.3 if-else if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
-<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
-<li>7.1 switch语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
-<ul>
-<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
-</li>
-<li><p>7.3 break和continue的区别：</p>
-<ul>
-<li>break: 终止switch或者循环</li>
-<li>continue: 结束本次循环，继续下一次的循环 </li>
-</ul>
-</li>
-</ul>
-<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
-<li>8.1 for语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
-<ul>
-<li>8.2 while语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
-<ul>
-<li>8.3 do-while语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript基础</title>
     <url>/2021/03/15/JavaScript%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h1><ol>
@@ -2074,34 +2001,70 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Map</title>
-    <url>/2019/11/07/Map/</url>
-    <content><![CDATA[<h1 id="1-Map"><a href="#1-Map" class="headerlink" title="1.Map"></a>1.Map</h1><h2 id="1-1-Map常用子类"><a href="#1-1-Map常用子类" class="headerlink" title="1.1 Map常用子类"></a>1.1 Map常用子类</h2><ul>
-<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+    <title>Java基础语法</title>
+    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
+<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
+<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
+<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
+<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
+<li>5.1 算术运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
+<ul>
+<li>5.2 赋值运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
+<ul>
+<li>5.3 比较运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
+<ul>
+<li>5.4 逻辑运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
+<ul>
+<li>5.5 三元运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
+<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
+<li>6.1 if语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
+<ul>
+<li>6.2 if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
+<ul>
+<li>6.3 if-else if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
+<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
+<li>7.1 switch语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
+<ul>
+<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
 </li>
-<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+<li><p>7.3 break和continue的区别：</p>
+<ul>
+<li>break: 终止switch或者循环</li>
+<li>continue: 结束本次循环，继续下一次的循环 </li>
+</ul>
 </li>
 </ul>
-<h2 id="1-2-Map接口的常用方法"><a href="#1-2-Map接口的常用方法" class="headerlink" title="1.2 Map接口的常用方法"></a>1.2 Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
-<h2 id="1-3-Map集合遍历键找值方式"><a href="#1-3-Map集合遍历键找值方式" class="headerlink" title="1.3 Map集合遍历键找值方式"></a>1.3 Map集合遍历键找值方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。方法提示: keyset()   </p>
-</li>
-<li><p>遍历键的Set集合，得到每一个键。  </p>
-</li>
-<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
-</li>
-</ol>
-<h2 id="1-4-Entry键值对对象"><a href="#1-4-Entry键值对对象" class="headerlink" title="1.4 Entry键值对对象"></a>1.4 Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
-<h2 id="1-5-Map集合遍历键值对方式"><a href="#1-5-Map集合遍历键值对方式" class="headerlink" title="1.5 Map集合遍历键值对方式"></a>1.5 Map集合遍历键值对方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。方法提示: entrySet() 。   </p>
-</li>
-<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
-</li>
-<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
-</li>
-</ol>
+<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
+<li>8.1 for语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
+<ul>
+<li>8.2 while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
+<ul>
+<li>8.3 do-while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -2310,6 +2273,43 @@ Connection conn = ds.getConnection();</code></pre>
         1. 编译器
         2. 给解析程序用
     3. 注解不是程序的一部分，可以理解为注解就是一个标签</code></pre>]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Map</title>
+    <url>/2019/11/07/Map/</url>
+    <content><![CDATA[<h1 id="1-Map"><a href="#1-Map" class="headerlink" title="1.Map"></a>1.Map</h1><h2 id="1-1-Map常用子类"><a href="#1-1-Map常用子类" class="headerlink" title="1.1 Map常用子类"></a>1.1 Map常用子类</h2><ul>
+<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+</li>
+<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+</li>
+</ul>
+<h2 id="1-2-Map接口的常用方法"><a href="#1-2-Map接口的常用方法" class="headerlink" title="1.2 Map接口的常用方法"></a>1.2 Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
+<h2 id="1-3-Map集合遍历键找值方式"><a href="#1-3-Map集合遍历键找值方式" class="headerlink" title="1.3 Map集合遍历键找值方式"></a>1.3 Map集合遍历键找值方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。方法提示: keyset()   </p>
+</li>
+<li><p>遍历键的Set集合，得到每一个键。  </p>
+</li>
+<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
+</li>
+</ol>
+<h2 id="1-4-Entry键值对对象"><a href="#1-4-Entry键值对对象" class="headerlink" title="1.4 Entry键值对对象"></a>1.4 Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
+<h2 id="1-5-Map集合遍历键值对方式"><a href="#1-5-Map集合遍历键值对方式" class="headerlink" title="1.5 Map集合遍历键值对方式"></a>1.5 Map集合遍历键值对方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。方法提示: entrySet() 。   </p>
+</li>
+<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+</li>
+<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+</li>
+</ol>
+]]></content>
       <categories>
         <category>JavaSE</category>
       </categories>
@@ -3538,6 +3538,293 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>Object类，常用API</title>
+    <url>/2019/11/06/Object%E7%B1%BB%EF%BC%8C%E5%B8%B8%E7%94%A8API/</url>
+    <content><![CDATA[<h1 id="1-Object类"><a href="#1-Object类" class="headerlink" title="1.Object类"></a>1.Object类</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p><code>java.lang.Object</code>类是Java语言中所有类的父类。</p>
+<h2 id="1-2-常用方法"><a href="#1-2-常用方法" class="headerlink" title="1.2 常用方法"></a>1.2 常用方法</h2><ul>
+<li><code>public String toString()</code>：返回该对象的字符串表示。</li>
+<li><code>public boolean equals(Object obj)</code>：指示其他某个对象是否与此对象“相等”。</li>
+</ul>
+<h1 id="2-Objects类"><a href="#2-Objects类" class="headerlink" title="2.Objects类"></a>2.Objects类</h1><p>在<strong>JDK7</strong>添加了一个Objects工具类，Objects类中的equals方法就优化了空指针异常问题。方法如下：</p>
+<ul>
+<li><code>public static boolean equals(Object a, Object b)</code>:判断两个对象是否相等。</li>
+</ul>
+<h1 id="3-Date类"><a href="#3-Date类" class="headerlink" title="3.Date类"></a>3.Date类</h1><h2 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h2><p><code>java.util.Date</code>类，表示特定的瞬间，精确到毫秒。<br>其中有未过时的构造函数可以把毫秒值转成日期对象：</p>
+<ul>
+<li><code>public Date()</code>：分配Date对象并初始化此对象，以表示它的时间（精确到毫秒）。</li>
+<li><code>public Date(long date)</code>：分配Date对象并初始化此对象，以表示从1970年1月1日00:00:00 GMT）以来的指定毫秒数。</li>
+</ul>
+<blockquote>
+<p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoDate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建日期对象，获取当前的时间</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date()); <span class="comment">// Tue Jan 16 14:37:35 CST 2018</span></span><br><span class="line">        <span class="comment">// 创建日期对象，把指定的毫秒值转成日期对象</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date(<span class="number">0L</span>)); <span class="comment">// Thu Jan 01 08:00:00 CST 1970</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-常用方法"><a href="#3-2-常用方法" class="headerlink" title="3.2 常用方法"></a>3.2 常用方法</h2><ul>
+<li><code>public long getTime()</code> 把日期对象转换成对应的时间毫秒值。</li>
+</ul>
+<h1 id="4-DateFormat类"><a href="#4-DateFormat类" class="headerlink" title="4.DateFormat类"></a>4.DateFormat类</h1><h2 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1 概述"></a>4.1 概述</h2><p><code>java.text.DateFormat</code> 是日期/时间格式化子类的抽象类，通过这个类可以在Date对象与String对象之间进行来回转换。</p>
+<ul>
+<li><strong>格式化</strong>：按照指定的格式，从Date对象转换为String对象。</li>
+<li><strong>解析</strong>：按照指定的格式，从String对象转换为Date对象。</li>
+</ul>
+<h2 id="4-2-构造方法"><a href="#4-2-构造方法" class="headerlink" title="4.2 构造方法"></a>4.2 构造方法</h2><p>由于DateFormat为抽象类，不能直接使用，所以需要常用的子类<code>java.text.SimpleDateFormat</code>。这个类需要一个格式来指定格式化或解析的标准。构造方法为：</p>
+<ul>
+<li><code>public SimpleDateFormat(String pattern)</code>：用给定的模式和默认语言环境的日期格式符号构造SimpleDateFormat。</li>
+</ul>
+<p>参数pattern是一个字符串，代表日期时间的自定义格式。</p>
+<h2 id="4-3-常用的格式规则："><a href="#4-3-常用的格式规则：" class="headerlink" title="4.3 常用的格式规则："></a>4.3 常用的格式规则：</h2><table>
+<thead>
+<tr>
+<th>标识字母（区分大小写）</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>y</td>
+<td>年</td>
+</tr>
+<tr>
+<td>M</td>
+<td>月</td>
+</tr>
+<tr>
+<td>d</td>
+<td>日</td>
+</tr>
+<tr>
+<td>H</td>
+<td>时</td>
+</tr>
+<tr>
+<td>m</td>
+<td>分</td>
+</tr>
+<tr>
+<td>s</td>
+<td>秒</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>备注：更详细的格式规则，可以参考SimpleDateFormat类的API文档。</p>
+</blockquote>
+<p>创建SimpleDateFormat对象的代码如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoSimpleDateFormat</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 对应的日期格式如：2018-01-16 15:06:38</span></span><br><span class="line">        DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-4-常用方法"><a href="#4-4-常用方法" class="headerlink" title="4.4 常用方法"></a>4.4 常用方法</h2><p>DateFormat类的常用方法有：</p>
+<ul>
+<li><code>public String format(Date date)</code>：将Date对象格式化为字符串。</li>
+<li><code>public Date parse(String source)</code>：将字符串解析为Date对象。</li>
+</ul>
+<h1 id="5-Calendar类"><a href="#5-Calendar类" class="headerlink" title="5.Calendar类"></a>5.Calendar类</h1><h2 id="5-1-Calendar静态方法"><a href="#5-1-Calendar静态方法" class="headerlink" title="5.1 Calendar静态方法"></a>5.1 Calendar静态方法</h2><ul>
+<li><code>public static Calendar getInstance()</code>：使用默认时区和语言环境获得一个日历</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarInit</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-常用方法"><a href="#5-2-常用方法" class="headerlink" title="5.2 常用方法"></a>5.2 常用方法</h2><p>根据Calendar类的API文档，常用方法有：</p>
+<ul>
+<li><code>public int get(int field)</code>：返回给定日历字段的值。</li>
+<li><code>public void set(int field, int value)</code>：将给定的日历字段设置为给定值。</li>
+<li><code>public abstract void add(int field, int amount)</code>：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</li>
+<li><code>public Date getTime()</code>：返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date对象。</li>
+</ul>
+<p>Calendar类中提供很多成员常量，代表给定的日历字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>YEAR</td>
+<td>年</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>月（从0开始，可以+1使用）</td>
+</tr>
+<tr>
+<td>DAY_OF_MONTH</td>
+<td>月中的天（几号）</td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>时（12小时制）</td>
+</tr>
+<tr>
+<td>HOUR_OF_DAY</td>
+<td>时（24小时制）</td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>分</td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>秒</td>
+</tr>
+<tr>
+<td>DAY_OF_WEEK</td>
+<td>周中的天（周几，周日为1，可以-1使用）</td>
+</tr>
+</tbody></table>
+<h3 id="5-2-1-get-set方法"><a href="#5-2-1-get-set方法" class="headerlink" title="5.2.1 get/set方法"></a>5.2.1 get/set方法</h3><p>get方法用来获取指定字段的值，set方法用来设置指定字段的值，代码使用演示：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Calendar对象</span></span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        <span class="comment">// 设置年 </span></span><br><span class="line">        <span class="keyword">int</span> year = cal.get(Calendar.YEAR);</span><br><span class="line">        <span class="comment">// 设置月</span></span><br><span class="line">        <span class="keyword">int</span> month = cal.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 设置日</span></span><br><span class="line">        <span class="keyword">int</span> dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        cal.set(Calendar.YEAR, <span class="number">2020</span>);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2020年1月17日</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-2-add方法"><a href="#5-2-2-add方法" class="headerlink" title="5.2.2 add方法"></a>5.2.2 add方法</h3><p>add方法可以对指定日历字段的值进行加减操作，代码使用演示：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo08CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2018年1月17日</span></span><br><span class="line">        <span class="comment">// 使用add方法</span></span><br><span class="line">        cal.add(Calendar.DAY_OF_MONTH, <span class="number">2</span>); <span class="comment">// 加2天</span></span><br><span class="line">        cal.add(Calendar.YEAR, -<span class="number">3</span>); <span class="comment">// 减3年</span></span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2015年1月18日; </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-3-getTime方法"><a href="#5-2-3-getTime方法" class="headerlink" title="5.2.3 getTime方法"></a>5.2.3 getTime方法</h3><p>Calendar中的getTime方法并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo09CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        Date date = cal.getTime();</span><br><span class="line">        System.out.println(date); <span class="comment">// Tue Jan 16 16:03:09 CST 2018</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小贴士：</p>
+<p>​     西方星期的开始为周日，中国为周一。</p>
+<p>​     在Calendar类中，月份的表示是以0-11代表1-12月。</p>
+<p>​     日期是有大小关系的，时间靠后，时间越大。</p>
+</blockquote>
+<h1 id="6-System类"><a href="#6-System类" class="headerlink" title="6.System类"></a>6.System类</h1><p>常用方法：</p>
+<ul>
+<li><code>public static long currentTimeMillis()</code>：返回以毫秒为单位的当前时间。</li>
+<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
+</ul>
+<h2 id="6-1-currentTimeMillis方法"><a href="#6-1-currentTimeMillis方法" class="headerlink" title="6.1 currentTimeMillis方法"></a>6.1 currentTimeMillis方法</h2><p>获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       	<span class="comment">//获取当前时间毫秒值</span></span><br><span class="line">        System.out.println(System.currentTimeMillis()); <span class="comment">// 1516090531144</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-2-arraycopy方法"><a href="#6-2-arraycopy方法" class="headerlink" title="6.2 arraycopy方法"></a>6.2 arraycopy方法</h2><ul>
+<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数序号</th>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>src</td>
+<td>Object</td>
+<td>源数组</td>
+</tr>
+<tr>
+<td>2</td>
+<td>srcPos</td>
+<td>int</td>
+<td>源数组索引起始位置</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dest</td>
+<td>Object</td>
+<td>目标数组</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destPos</td>
+<td>int</td>
+<td>目标数组索引起始位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>length</td>
+<td>int</td>
+<td>复制元素个数</td>
+</tr>
+</tbody></table>
+<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><p>将src数组中前3个元素，复制到dest数组的前3个位置上<br>复制元素前：src数组元素[1,2,3,4,5]，dest数组元素[6,7,8,9,10]<br>复制元素后：src数组元素[1,2,3,4,5]，dest数组元素[1,2,3,9,10]</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemArrayCopy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">        System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">        <span class="comment">/*代码运行后：两个数组中的元素发生了变化</span></span><br><span class="line"><span class="comment">         src数组元素[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">         dest数组元素[1,2,3,9,10]</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-StringBuilder类"><a href="#7-StringBuilder类" class="headerlink" title="7.StringBuilder类"></a>7.StringBuilder类</h1><h2 id="7-1-字符串拼接问题"><a href="#7-1-字符串拼接问题" class="headerlink" title="7.1 字符串拼接问题"></a>7.1 字符串拼接问题</h2><p>由于String类的<strong>对象内容</strong>不可改变，所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Hello"</span>;</span><br><span class="line">        s += <span class="string">"World"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在API中对String类有这样的描述：字符串是常量，它们的值在创建后不能被更改。</p>
+<p>根据这句话分析我们的代码，其实总共产生了三个字符串，即<code>&quot;Hello&quot;</code>、<code>&quot;World&quot;</code>和<code>&quot;HelloWorld&quot;</code>。引用变量s首先指向<code>Hello</code>对象，最终指向拼接出来的新字符串对象，即<code>HelloWord</code> 。</p>
+<h2 id="7-2-常用方法"><a href="#7-2-常用方法" class="headerlink" title="7.2 常用方法"></a>7.2 常用方法</h2><p>StringBuilder常用的方法有2个：</p>
+<ul>
+<li><code>public StringBuilder append(...)</code>：添加任意类型数据的字符串形式，并返回当前对象自身。</li>
+<li><code>public String toString()</code>：将当前StringBuilder对象转换为String对象。</li>
+</ul>
+<h3 id="7-2-1-append方法"><a href="#7-2-1-append方法" class="headerlink" title="7.2.1 append方法"></a>7.2.1 append方法</h3><p>append方法具有多种重载形式，可以接收任意类型的参数。任何数据作为参数都会将对应的字符串内容添加到StringBuilder中。例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuilder</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		<span class="comment">//public StringBuilder append(任意类型)</span></span><br><span class="line">		StringBuilder builder2 = builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		<span class="comment">//对比一下</span></span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">		System.out.println(<span class="string">"builder2:"</span>+builder2);</span><br><span class="line">		System.out.println(builder == builder2); <span class="comment">//true</span></span><br><span class="line">	    <span class="comment">// 可以添加 任何类型</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		builder.append(<span class="string">"world"</span>);</span><br><span class="line">		builder.append(<span class="keyword">true</span>);</span><br><span class="line">		builder.append(<span class="number">100</span>);</span><br><span class="line">		<span class="comment">//链式编程</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>).append(<span class="string">"world"</span>).append(<span class="keyword">true</span>).append(<span class="number">100</span>);</span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-2-toString方法"><a href="#7-2-2-toString方法" class="headerlink" title="7.2.2 toString方法"></a>7.2.2 toString方法</h3><p>通过toString方法，StringBuilder对象将会转换为不可变的String对象。如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo16StringBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 链式创建</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>).append(<span class="string">"World"</span>).append(<span class="string">"Java"</span>);</span><br><span class="line">        <span class="comment">// 调用方法</span></span><br><span class="line">        String str = sb.toString();</span><br><span class="line">        System.out.println(str); <span class="comment">// HelloWorldJava</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-包装类"><a href="#8-包装类" class="headerlink" title="8.包装类"></a>8.包装类</h1><h2 id="8-1-基本类型与包装类"><a href="#8-1-基本类型与包装类" class="headerlink" title="8.1 基本类型与包装类"></a>8.1 基本类型与包装类</h2><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>对应的包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<h2 id="8-2-装箱与拆箱"><a href="#8-2-装箱与拆箱" class="headerlink" title="8.2 装箱与拆箱"></a>8.2 装箱与拆箱</h2><ul>
+<li><p><strong>装箱</strong>：从基本类型转换为对应的包装类对象。</p>
+</li>
+<li><p><strong>拆箱</strong>：从包装类对象转换为对应的基本类型。</p>
+<h2 id="8-3-自动装箱与自动拆箱"><a href="#8-3-自动装箱与自动拆箱" class="headerlink" title="8.3 自动装箱与自动拆箱"></a>8.3 自动装箱与自动拆箱</h2></li>
+</ul>
+<p>由于我们经常要做基本类型与包装类之间的转换，从Java 5（JDK 1.5）开始，基本类型与包装类的装箱、拆箱动作可以自动完成。</p>
+<h2 id="8-4-基本类型与字符串之间的转换"><a href="#8-4-基本类型与字符串之间的转换" class="headerlink" title="8.4 基本类型与字符串之间的转换"></a>8.4 基本类型与字符串之间的转换</h2><h3 id="8-4-1-基本类型转换为String"><a href="#8-4-1-基本类型转换为String" class="headerlink" title="8.4.1 基本类型转换为String"></a>8.4.1 基本类型转换为String</h3><p>   基本类型转换String总共有三种方式，其中最简单的一种方式为： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">基本类型直接与&quot;&quot;相连接即可；如：34+&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-4-2-String转换成对应的基本类型"><a href="#8-4-2-String转换成对应的基本类型" class="headerlink" title="8.4.2 String转换成对应的基本类型"></a>8.4.2 String转换成对应的基本类型</h3><p><strong>除Character类外</strong>，其他所有包装类都具有<strong>parseXxx静态方法</strong>可以将字符串参数转换为对应的基本类型，例如：</p>
+<ul>
+<li><p><code>public static int parseInt(String s)</code>：将字符串参数转换为对应的int基本类型。</p>
+</li>
+<li><p><code>public static double parseDouble(String s)</code>：将字符串参数转换为对应的double基本类型。</p>
+</li>
+<li><p>其他包装类省略</p>
+</li>
+</ul>
+<p>代码使用（仅以Integer类的静态方法parseXxx为例）如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo18WrapperParse</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = Integer.parseInt(<span class="string">"100"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mybatis</title>
     <url>/2021/03/23/Mybatis/</url>
     <content><![CDATA[<h1 id="0-环境说明"><a href="#0-环境说明" class="headerlink" title="0. 环境说明"></a>0. 环境说明</h1><ul>
@@ -3857,293 +4144,6 @@ Connection conn = ds.getConnection();</code></pre>
       </categories>
       <tags>
         <tag>Mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Object类，常用API</title>
-    <url>/2019/11/06/Object%E7%B1%BB%EF%BC%8C%E5%B8%B8%E7%94%A8API/</url>
-    <content><![CDATA[<h1 id="1-Object类"><a href="#1-Object类" class="headerlink" title="1.Object类"></a>1.Object类</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p><code>java.lang.Object</code>类是Java语言中所有类的父类。</p>
-<h2 id="1-2-常用方法"><a href="#1-2-常用方法" class="headerlink" title="1.2 常用方法"></a>1.2 常用方法</h2><ul>
-<li><code>public String toString()</code>：返回该对象的字符串表示。</li>
-<li><code>public boolean equals(Object obj)</code>：指示其他某个对象是否与此对象“相等”。</li>
-</ul>
-<h1 id="2-Objects类"><a href="#2-Objects类" class="headerlink" title="2.Objects类"></a>2.Objects类</h1><p>在<strong>JDK7</strong>添加了一个Objects工具类，Objects类中的equals方法就优化了空指针异常问题。方法如下：</p>
-<ul>
-<li><code>public static boolean equals(Object a, Object b)</code>:判断两个对象是否相等。</li>
-</ul>
-<h1 id="3-Date类"><a href="#3-Date类" class="headerlink" title="3.Date类"></a>3.Date类</h1><h2 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h2><p><code>java.util.Date</code>类，表示特定的瞬间，精确到毫秒。<br>其中有未过时的构造函数可以把毫秒值转成日期对象：</p>
-<ul>
-<li><code>public Date()</code>：分配Date对象并初始化此对象，以表示它的时间（精确到毫秒）。</li>
-<li><code>public Date(long date)</code>：分配Date对象并初始化此对象，以表示从1970年1月1日00:00:00 GMT）以来的指定毫秒数。</li>
-</ul>
-<blockquote>
-<p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoDate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建日期对象，获取当前的时间</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date()); <span class="comment">// Tue Jan 16 14:37:35 CST 2018</span></span><br><span class="line">        <span class="comment">// 创建日期对象，把指定的毫秒值转成日期对象</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date(<span class="number">0L</span>)); <span class="comment">// Thu Jan 01 08:00:00 CST 1970</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-常用方法"><a href="#3-2-常用方法" class="headerlink" title="3.2 常用方法"></a>3.2 常用方法</h2><ul>
-<li><code>public long getTime()</code> 把日期对象转换成对应的时间毫秒值。</li>
-</ul>
-<h1 id="4-DateFormat类"><a href="#4-DateFormat类" class="headerlink" title="4.DateFormat类"></a>4.DateFormat类</h1><h2 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1 概述"></a>4.1 概述</h2><p><code>java.text.DateFormat</code> 是日期/时间格式化子类的抽象类，通过这个类可以在Date对象与String对象之间进行来回转换。</p>
-<ul>
-<li><strong>格式化</strong>：按照指定的格式，从Date对象转换为String对象。</li>
-<li><strong>解析</strong>：按照指定的格式，从String对象转换为Date对象。</li>
-</ul>
-<h2 id="4-2-构造方法"><a href="#4-2-构造方法" class="headerlink" title="4.2 构造方法"></a>4.2 构造方法</h2><p>由于DateFormat为抽象类，不能直接使用，所以需要常用的子类<code>java.text.SimpleDateFormat</code>。这个类需要一个格式来指定格式化或解析的标准。构造方法为：</p>
-<ul>
-<li><code>public SimpleDateFormat(String pattern)</code>：用给定的模式和默认语言环境的日期格式符号构造SimpleDateFormat。</li>
-</ul>
-<p>参数pattern是一个字符串，代表日期时间的自定义格式。</p>
-<h2 id="4-3-常用的格式规则："><a href="#4-3-常用的格式规则：" class="headerlink" title="4.3 常用的格式规则："></a>4.3 常用的格式规则：</h2><table>
-<thead>
-<tr>
-<th>标识字母（区分大小写）</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>y</td>
-<td>年</td>
-</tr>
-<tr>
-<td>M</td>
-<td>月</td>
-</tr>
-<tr>
-<td>d</td>
-<td>日</td>
-</tr>
-<tr>
-<td>H</td>
-<td>时</td>
-</tr>
-<tr>
-<td>m</td>
-<td>分</td>
-</tr>
-<tr>
-<td>s</td>
-<td>秒</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>备注：更详细的格式规则，可以参考SimpleDateFormat类的API文档。</p>
-</blockquote>
-<p>创建SimpleDateFormat对象的代码如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoSimpleDateFormat</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 对应的日期格式如：2018-01-16 15:06:38</span></span><br><span class="line">        DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-4-常用方法"><a href="#4-4-常用方法" class="headerlink" title="4.4 常用方法"></a>4.4 常用方法</h2><p>DateFormat类的常用方法有：</p>
-<ul>
-<li><code>public String format(Date date)</code>：将Date对象格式化为字符串。</li>
-<li><code>public Date parse(String source)</code>：将字符串解析为Date对象。</li>
-</ul>
-<h1 id="5-Calendar类"><a href="#5-Calendar类" class="headerlink" title="5.Calendar类"></a>5.Calendar类</h1><h2 id="5-1-Calendar静态方法"><a href="#5-1-Calendar静态方法" class="headerlink" title="5.1 Calendar静态方法"></a>5.1 Calendar静态方法</h2><ul>
-<li><code>public static Calendar getInstance()</code>：使用默认时区和语言环境获得一个日历</li>
-</ul>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarInit</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-2-常用方法"><a href="#5-2-常用方法" class="headerlink" title="5.2 常用方法"></a>5.2 常用方法</h2><p>根据Calendar类的API文档，常用方法有：</p>
-<ul>
-<li><code>public int get(int field)</code>：返回给定日历字段的值。</li>
-<li><code>public void set(int field, int value)</code>：将给定的日历字段设置为给定值。</li>
-<li><code>public abstract void add(int field, int amount)</code>：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</li>
-<li><code>public Date getTime()</code>：返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date对象。</li>
-</ul>
-<p>Calendar类中提供很多成员常量，代表给定的日历字段：</p>
-<table>
-<thead>
-<tr>
-<th>字段值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>YEAR</td>
-<td>年</td>
-</tr>
-<tr>
-<td>MONTH</td>
-<td>月（从0开始，可以+1使用）</td>
-</tr>
-<tr>
-<td>DAY_OF_MONTH</td>
-<td>月中的天（几号）</td>
-</tr>
-<tr>
-<td>HOUR</td>
-<td>时（12小时制）</td>
-</tr>
-<tr>
-<td>HOUR_OF_DAY</td>
-<td>时（24小时制）</td>
-</tr>
-<tr>
-<td>MINUTE</td>
-<td>分</td>
-</tr>
-<tr>
-<td>SECOND</td>
-<td>秒</td>
-</tr>
-<tr>
-<td>DAY_OF_WEEK</td>
-<td>周中的天（周几，周日为1，可以-1使用）</td>
-</tr>
-</tbody></table>
-<h3 id="5-2-1-get-set方法"><a href="#5-2-1-get-set方法" class="headerlink" title="5.2.1 get/set方法"></a>5.2.1 get/set方法</h3><p>get方法用来获取指定字段的值，set方法用来设置指定字段的值，代码使用演示：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Calendar对象</span></span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        <span class="comment">// 设置年 </span></span><br><span class="line">        <span class="keyword">int</span> year = cal.get(Calendar.YEAR);</span><br><span class="line">        <span class="comment">// 设置月</span></span><br><span class="line">        <span class="keyword">int</span> month = cal.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 设置日</span></span><br><span class="line">        <span class="keyword">int</span> dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        cal.set(Calendar.YEAR, <span class="number">2020</span>);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2020年1月17日</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-2-add方法"><a href="#5-2-2-add方法" class="headerlink" title="5.2.2 add方法"></a>5.2.2 add方法</h3><p>add方法可以对指定日历字段的值进行加减操作，代码使用演示：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo08CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2018年1月17日</span></span><br><span class="line">        <span class="comment">// 使用add方法</span></span><br><span class="line">        cal.add(Calendar.DAY_OF_MONTH, <span class="number">2</span>); <span class="comment">// 加2天</span></span><br><span class="line">        cal.add(Calendar.YEAR, -<span class="number">3</span>); <span class="comment">// 减3年</span></span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2015年1月18日; </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-3-getTime方法"><a href="#5-2-3-getTime方法" class="headerlink" title="5.2.3 getTime方法"></a>5.2.3 getTime方法</h3><p>Calendar中的getTime方法并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo09CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        Date date = cal.getTime();</span><br><span class="line">        System.out.println(date); <span class="comment">// Tue Jan 16 16:03:09 CST 2018</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>小贴士：</p>
-<p>​     西方星期的开始为周日，中国为周一。</p>
-<p>​     在Calendar类中，月份的表示是以0-11代表1-12月。</p>
-<p>​     日期是有大小关系的，时间靠后，时间越大。</p>
-</blockquote>
-<h1 id="6-System类"><a href="#6-System类" class="headerlink" title="6.System类"></a>6.System类</h1><p>常用方法：</p>
-<ul>
-<li><code>public static long currentTimeMillis()</code>：返回以毫秒为单位的当前时间。</li>
-<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
-</ul>
-<h2 id="6-1-currentTimeMillis方法"><a href="#6-1-currentTimeMillis方法" class="headerlink" title="6.1 currentTimeMillis方法"></a>6.1 currentTimeMillis方法</h2><p>获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       	<span class="comment">//获取当前时间毫秒值</span></span><br><span class="line">        System.out.println(System.currentTimeMillis()); <span class="comment">// 1516090531144</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="6-2-arraycopy方法"><a href="#6-2-arraycopy方法" class="headerlink" title="6.2 arraycopy方法"></a>6.2 arraycopy方法</h2><ul>
-<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数序号</th>
-<th>参数名称</th>
-<th>参数类型</th>
-<th>参数含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>src</td>
-<td>Object</td>
-<td>源数组</td>
-</tr>
-<tr>
-<td>2</td>
-<td>srcPos</td>
-<td>int</td>
-<td>源数组索引起始位置</td>
-</tr>
-<tr>
-<td>3</td>
-<td>dest</td>
-<td>Object</td>
-<td>目标数组</td>
-</tr>
-<tr>
-<td>4</td>
-<td>destPos</td>
-<td>int</td>
-<td>目标数组索引起始位置</td>
-</tr>
-<tr>
-<td>5</td>
-<td>length</td>
-<td>int</td>
-<td>复制元素个数</td>
-</tr>
-</tbody></table>
-<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><p>将src数组中前3个元素，复制到dest数组的前3个位置上<br>复制元素前：src数组元素[1,2,3,4,5]，dest数组元素[6,7,8,9,10]<br>复制元素后：src数组元素[1,2,3,4,5]，dest数组元素[1,2,3,9,10]</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemArrayCopy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">        System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">        <span class="comment">/*代码运行后：两个数组中的元素发生了变化</span></span><br><span class="line"><span class="comment">         src数组元素[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">         dest数组元素[1,2,3,9,10]</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="7-StringBuilder类"><a href="#7-StringBuilder类" class="headerlink" title="7.StringBuilder类"></a>7.StringBuilder类</h1><h2 id="7-1-字符串拼接问题"><a href="#7-1-字符串拼接问题" class="headerlink" title="7.1 字符串拼接问题"></a>7.1 字符串拼接问题</h2><p>由于String类的<strong>对象内容</strong>不可改变，所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Hello"</span>;</span><br><span class="line">        s += <span class="string">"World"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在API中对String类有这样的描述：字符串是常量，它们的值在创建后不能被更改。</p>
-<p>根据这句话分析我们的代码，其实总共产生了三个字符串，即<code>&quot;Hello&quot;</code>、<code>&quot;World&quot;</code>和<code>&quot;HelloWorld&quot;</code>。引用变量s首先指向<code>Hello</code>对象，最终指向拼接出来的新字符串对象，即<code>HelloWord</code> 。</p>
-<h2 id="7-2-常用方法"><a href="#7-2-常用方法" class="headerlink" title="7.2 常用方法"></a>7.2 常用方法</h2><p>StringBuilder常用的方法有2个：</p>
-<ul>
-<li><code>public StringBuilder append(...)</code>：添加任意类型数据的字符串形式，并返回当前对象自身。</li>
-<li><code>public String toString()</code>：将当前StringBuilder对象转换为String对象。</li>
-</ul>
-<h3 id="7-2-1-append方法"><a href="#7-2-1-append方法" class="headerlink" title="7.2.1 append方法"></a>7.2.1 append方法</h3><p>append方法具有多种重载形式，可以接收任意类型的参数。任何数据作为参数都会将对应的字符串内容添加到StringBuilder中。例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuilder</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		<span class="comment">//public StringBuilder append(任意类型)</span></span><br><span class="line">		StringBuilder builder2 = builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		<span class="comment">//对比一下</span></span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">		System.out.println(<span class="string">"builder2:"</span>+builder2);</span><br><span class="line">		System.out.println(builder == builder2); <span class="comment">//true</span></span><br><span class="line">	    <span class="comment">// 可以添加 任何类型</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		builder.append(<span class="string">"world"</span>);</span><br><span class="line">		builder.append(<span class="keyword">true</span>);</span><br><span class="line">		builder.append(<span class="number">100</span>);</span><br><span class="line">		<span class="comment">//链式编程</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>).append(<span class="string">"world"</span>).append(<span class="keyword">true</span>).append(<span class="number">100</span>);</span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-2-2-toString方法"><a href="#7-2-2-toString方法" class="headerlink" title="7.2.2 toString方法"></a>7.2.2 toString方法</h3><p>通过toString方法，StringBuilder对象将会转换为不可变的String对象。如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo16StringBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 链式创建</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>).append(<span class="string">"World"</span>).append(<span class="string">"Java"</span>);</span><br><span class="line">        <span class="comment">// 调用方法</span></span><br><span class="line">        String str = sb.toString();</span><br><span class="line">        System.out.println(str); <span class="comment">// HelloWorldJava</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="8-包装类"><a href="#8-包装类" class="headerlink" title="8.包装类"></a>8.包装类</h1><h2 id="8-1-基本类型与包装类"><a href="#8-1-基本类型与包装类" class="headerlink" title="8.1 基本类型与包装类"></a>8.1 基本类型与包装类</h2><table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th>对应的包装类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>byte</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>short</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>int</td>
-<td><strong>Integer</strong></td>
-</tr>
-<tr>
-<td>long</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>float</td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>Double</td>
-</tr>
-<tr>
-<td>char</td>
-<td><strong>Character</strong></td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>Boolean</td>
-</tr>
-</tbody></table>
-<h2 id="8-2-装箱与拆箱"><a href="#8-2-装箱与拆箱" class="headerlink" title="8.2 装箱与拆箱"></a>8.2 装箱与拆箱</h2><ul>
-<li><p><strong>装箱</strong>：从基本类型转换为对应的包装类对象。</p>
-</li>
-<li><p><strong>拆箱</strong>：从包装类对象转换为对应的基本类型。</p>
-<h2 id="8-3-自动装箱与自动拆箱"><a href="#8-3-自动装箱与自动拆箱" class="headerlink" title="8.3 自动装箱与自动拆箱"></a>8.3 自动装箱与自动拆箱</h2></li>
-</ul>
-<p>由于我们经常要做基本类型与包装类之间的转换，从Java 5（JDK 1.5）开始，基本类型与包装类的装箱、拆箱动作可以自动完成。</p>
-<h2 id="8-4-基本类型与字符串之间的转换"><a href="#8-4-基本类型与字符串之间的转换" class="headerlink" title="8.4 基本类型与字符串之间的转换"></a>8.4 基本类型与字符串之间的转换</h2><h3 id="8-4-1-基本类型转换为String"><a href="#8-4-1-基本类型转换为String" class="headerlink" title="8.4.1 基本类型转换为String"></a>8.4.1 基本类型转换为String</h3><p>   基本类型转换String总共有三种方式，其中最简单的一种方式为： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">基本类型直接与&quot;&quot;相连接即可；如：34+&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="8-4-2-String转换成对应的基本类型"><a href="#8-4-2-String转换成对应的基本类型" class="headerlink" title="8.4.2 String转换成对应的基本类型"></a>8.4.2 String转换成对应的基本类型</h3><p><strong>除Character类外</strong>，其他所有包装类都具有<strong>parseXxx静态方法</strong>可以将字符串参数转换为对应的基本类型，例如：</p>
-<ul>
-<li><p><code>public static int parseInt(String s)</code>：将字符串参数转换为对应的int基本类型。</p>
-</li>
-<li><p><code>public static double parseDouble(String s)</code>：将字符串参数转换为对应的double基本类型。</p>
-</li>
-<li><p>其他包装类省略</p>
-</li>
-</ul>
-<p>代码使用（仅以Integer类的静态方法parseXxx为例）如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo18WrapperParse</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = Integer.parseInt(<span class="string">"100"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -4947,17 +4947,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>Spring</title>
-    <url>/2021/03/23/Spring/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpringMVC</title>
     <url>/2021/03/23/SpringMVC/</url>
     <content><![CDATA[]]></content>
@@ -4966,6 +4955,17 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>SpringMVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/2021/03/23/Spring/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
@@ -6077,61 +6077,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>面向对象思想</title>
-    <url>/2021/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="1-面向对象三大特性"><a href="#1-面向对象三大特性" class="headerlink" title="1. 面向对象三大特性"></a>1. 面向对象三大特性</h1><ol>
-<li><strong><code>封装</code></strong>       </li>
-</ol>
-<p>所谓封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。        </p>
-<p>简单的说，一个类就是一个封装了数据以及操作这些数据的代码的逻辑实体。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，对象对内部数据提供了不同级别的保护，以防止程序中无关的部分意外的改变或错误的使用了对象的私有部分。</p>
-<ol start="2">
-<li><strong><code>继承</code></strong></li>
-</ol>
-<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
-<p>通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。</p>
-<ol start="3">
-<li><strong><code>多态</code></strong></li>
-</ol>
-<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。</p>
-<p>这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
-<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
-<p><strong>多态的必要条件</strong></p>
-<p>为了实现运行期的多态，或者说是动态绑定，<strong><code>需要满足三个条件</code></strong>：</p>
-<ul>
-<li><p>有类继承或者接口实现</p>
-</li>
-<li><p>子类要重写父类的方法</p>
-</li>
-<li><p>父类的引用指向子类的对象</p>
-<h1 id="2-面向对象五大原则"><a href="#2-面向对象五大原则" class="headerlink" title="2. 面向对象五大原则"></a>2. 面向对象五大原则</h1></li>
-<li><p><em>S.O.L.I.D*</em></p>
-</li>
-</ul>
-<ol>
-<li><p><code>单一职责原则</code>（Single-Responsibility Principle）<br><code>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化。</code>单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。通常意义下的单一职责，就是指只有一种单一功能，不要为类实现过多的功能点，以保证实体只有一个引起它变化的原因。 专注，是一个人优良的品质；同样的，单一也是一个类的优良设计。交杂不清的职责将使得代码看起来特别别扭牵一发而动全身，有失美感和必然导致丑陋的系统错误风险。</p>
-</li>
-<li><p><code>开放封闭原则</code>（Open-Closed principle）<br><code>其核心思想是：软件实体应该是可扩展的，而不可修改的。</code>也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。让类依赖于固定的抽象，所以修改就是封闭的；而通过面向对象的继承和多态机制，又可以实现对抽象类的继承，通过覆写其方法来改变固有行为，实现新的拓展方法，所以就是开放的。 “需求总是变化”没有不变的软件，所以就需要用封闭开放原则来封闭变化满足需求，同时还能保持软件内部的封装体系稳定，不被需求的变化影响。</p>
-</li>
-<li><p><code>Liskov替换原则</code>（Liskov-Substitution Principle）<br><code>其核心思想是：子类必须能够替换其基类。</code>这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。 Liskov替换原则，主要着眼于对抽象和多态建立在继承的基础上，因此只有遵循了Liskov替换原则，才能保证继承复用是可靠地。实现的方法是面向接口编程：将公共部分抽象为基类接口或抽象类，通过Extract Abstract Class，在子类中通过覆写父类的方法实现新的方式支持同样的职责。 Liskov替换原则是关于继承机制的设计原则，违反了Liskov替换原则就必然导致违反开放封闭原则。 Liskov替换原则能够保证系统具有良好的拓展性，同时实现基于多态的抽象机制，能够减少代码冗余，避免运行期的类型判别。</p>
-</li>
-<li><p><code>接口隔离原则</code>（Interface-Segregation Principle）<br><code>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。</code> 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 接口有效地将细节和抽象隔离，体现了对抽象编程的一切好处，接口隔离强调接口的单一性。而胖接口存在明显的弊端，会导致实现的类型必须完全实现接口的所有方法、属性等；而某些时候，实现类型并非需要所有的接口定义，在设计上这是“浪费”，而且在实施上这会带来潜在的问题，对胖接口的修改将导致一连串的客户端程序需要修改，有时候这是一种灾难。在这种情况下，将胖接口分解为多个特点的定制化方法，使得客户端仅仅依赖于它们的实际调用的方法，从而解除了客户端不会依赖于它们不用的方法。 分离的手段主要有以下两种：1、委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2、多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
-</li>
-<li><p><code>依赖倒置原则</code>（Dependecy-Inversion Principle）<br><code>其核心思想是：依赖于抽象。</code>具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。 抽象的稳定性决定了系统的稳定性，因为抽象是不变的，依赖于抽象是面向对象设计的精髓，也是依赖倒置原则的核心。 依赖于抽象是一个通用的原则，而某些时候依赖于细节则是在所难免的，必须权衡在抽象和具体之间的取舍，方法不是一层不变的。依赖于抽象，就是对接口编程，不要对实现编程。<br>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的<code>金科玉律</code>，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。<code>不同的设计模式对应不同的需求，而设计原则则代表永恒的灵魂</code>，需要在实践中时时刻刻地遵守。     </p>
-</li>
-</ol>
-<p>参考链接：      </p>
-<ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>面向对象思想</category>
-      </categories>
-      <tags>
-        <tag>面向对象思想</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络一</title>
     <url>/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%80/</url>
     <content><![CDATA[<h1 id="1-计算机网络体系结构"><a href="#1-计算机网络体系结构" class="headerlink" title="1.计算机网络体系结构"></a>1.计算机网络体系结构</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/68747470733a2f2f63732d6e6f7465732d313235363130393739362e636f732e61702d6775616e677a686f752e6d7971636c6f75642e636f6d2f30666136633233372d613930392d346532612d613737312d3263353438356364386365302e706e67.png" alt=""></p>
@@ -6413,6 +6358,61 @@ IMAP 协议中客户端和服务器上的邮件保持同步，如果不手动删
       </categories>
       <tags>
         <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象思想</title>
+    <url>/2021/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="1-面向对象三大特性"><a href="#1-面向对象三大特性" class="headerlink" title="1. 面向对象三大特性"></a>1. 面向对象三大特性</h1><ol>
+<li><strong><code>封装</code></strong>       </li>
+</ol>
+<p>所谓封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。        </p>
+<p>简单的说，一个类就是一个封装了数据以及操作这些数据的代码的逻辑实体。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，对象对内部数据提供了不同级别的保护，以防止程序中无关的部分意外的改变或错误的使用了对象的私有部分。</p>
+<ol start="2">
+<li><strong><code>继承</code></strong></li>
+</ol>
+<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
+<p>通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。</p>
+<ol start="3">
+<li><strong><code>多态</code></strong></li>
+</ol>
+<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。</p>
+<p>这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
+<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
+<p><strong>多态的必要条件</strong></p>
+<p>为了实现运行期的多态，或者说是动态绑定，<strong><code>需要满足三个条件</code></strong>：</p>
+<ul>
+<li><p>有类继承或者接口实现</p>
+</li>
+<li><p>子类要重写父类的方法</p>
+</li>
+<li><p>父类的引用指向子类的对象</p>
+<h1 id="2-面向对象五大原则"><a href="#2-面向对象五大原则" class="headerlink" title="2. 面向对象五大原则"></a>2. 面向对象五大原则</h1></li>
+<li><p><em>S.O.L.I.D*</em></p>
+</li>
+</ul>
+<ol>
+<li><p><code>单一职责原则</code>（Single-Responsibility Principle）<br><code>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化。</code>单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。通常意义下的单一职责，就是指只有一种单一功能，不要为类实现过多的功能点，以保证实体只有一个引起它变化的原因。 专注，是一个人优良的品质；同样的，单一也是一个类的优良设计。交杂不清的职责将使得代码看起来特别别扭牵一发而动全身，有失美感和必然导致丑陋的系统错误风险。</p>
+</li>
+<li><p><code>开放封闭原则</code>（Open-Closed principle）<br><code>其核心思想是：软件实体应该是可扩展的，而不可修改的。</code>也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。让类依赖于固定的抽象，所以修改就是封闭的；而通过面向对象的继承和多态机制，又可以实现对抽象类的继承，通过覆写其方法来改变固有行为，实现新的拓展方法，所以就是开放的。 “需求总是变化”没有不变的软件，所以就需要用封闭开放原则来封闭变化满足需求，同时还能保持软件内部的封装体系稳定，不被需求的变化影响。</p>
+</li>
+<li><p><code>Liskov替换原则</code>（Liskov-Substitution Principle）<br><code>其核心思想是：子类必须能够替换其基类。</code>这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。 Liskov替换原则，主要着眼于对抽象和多态建立在继承的基础上，因此只有遵循了Liskov替换原则，才能保证继承复用是可靠地。实现的方法是面向接口编程：将公共部分抽象为基类接口或抽象类，通过Extract Abstract Class，在子类中通过覆写父类的方法实现新的方式支持同样的职责。 Liskov替换原则是关于继承机制的设计原则，违反了Liskov替换原则就必然导致违反开放封闭原则。 Liskov替换原则能够保证系统具有良好的拓展性，同时实现基于多态的抽象机制，能够减少代码冗余，避免运行期的类型判别。</p>
+</li>
+<li><p><code>接口隔离原则</code>（Interface-Segregation Principle）<br><code>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。</code> 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 接口有效地将细节和抽象隔离，体现了对抽象编程的一切好处，接口隔离强调接口的单一性。而胖接口存在明显的弊端，会导致实现的类型必须完全实现接口的所有方法、属性等；而某些时候，实现类型并非需要所有的接口定义，在设计上这是“浪费”，而且在实施上这会带来潜在的问题，对胖接口的修改将导致一连串的客户端程序需要修改，有时候这是一种灾难。在这种情况下，将胖接口分解为多个特点的定制化方法，使得客户端仅仅依赖于它们的实际调用的方法，从而解除了客户端不会依赖于它们不用的方法。 分离的手段主要有以下两种：1、委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2、多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
+</li>
+<li><p><code>依赖倒置原则</code>（Dependecy-Inversion Principle）<br><code>其核心思想是：依赖于抽象。</code>具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。 抽象的稳定性决定了系统的稳定性，因为抽象是不变的，依赖于抽象是面向对象设计的精髓，也是依赖倒置原则的核心。 依赖于抽象是一个通用的原则，而某些时候依赖于细节则是在所难免的，必须权衡在抽象和具体之间的取舍，方法不是一层不变的。依赖于抽象，就是对接口编程，不要对实现编程。<br>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的<code>金科玉律</code>，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。<code>不同的设计模式对应不同的需求，而设计原则则代表永恒的灵魂</code>，需要在实践中时时刻刻地遵守。     </p>
+</li>
+</ol>
+<p>参考链接：      </p>
+<ol>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>面向对象思想</category>
+      </categories>
+      <tags>
+        <tag>面向对象思想</tag>
       </tags>
   </entry>
 </search>
