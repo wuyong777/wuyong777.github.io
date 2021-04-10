@@ -1,158 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AJAX和JSON</title>
-    <url>/2021/03/23/AJAX%E5%92%8CJSON/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. AJAX
-2. JSON</code></pre><h2 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h2><h3 id="概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML"><a href="#概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML" class="headerlink" title="概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML"></a>概念： <code>ASynchronous JavaScript And XML</code>    异步的JavaScript 和 XML</h3><ol>
-<li>异步和同步：客户端和服务器端相互通信的基础上</li>
-</ol>
-<ul>
-<li><p>同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</p>
-</li>
-<li><p>异步：客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</p>
-</li>
-</ul>
-<ol start="2">
-<li>Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
-</ol>
-<h3 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h3><h4 id="原生的JS实现方式（了解）"><a href="#原生的JS实现方式（了解）" class="headerlink" title="原生的JS实现方式（了解）"></a>原生的JS实现方式（了解）</h4><h4 id="JQeury实现方式"><a href="#JQeury实现方式" class="headerlink" title="JQeury实现方式"></a>JQeury实现方式</h4><ol>
-<li><code>$.ajax()</code></li>
-</ol>
-<ul>
-<li>语法：<code>$.ajax({键值对})</code>;<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//使用$.ajax()发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">	url:<span class="string">"ajaxServlet1111"</span> , <span class="comment">// 请求路径</span></span><br><span class="line"></span><br><span class="line">	type:<span class="string">"POST"</span> , <span class="comment">//请求方式</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//data: "username=jack&amp;age=23",//请求参数</span></span><br><span class="line">	data:&#123;<span class="string">"username"</span>:<span class="string">"jack"</span>,<span class="string">"age"</span>:<span class="number">23</span>&#125;,</span><br><span class="line"></span><br><span class="line">	success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">	alert(data);</span><br><span class="line">	 &#125;,<span class="comment">//响应成功后的回调函数</span></span><br><span class="line"></span><br><span class="line">	error:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">"出错啦..."</span>)</span><br><span class="line">	 &#125;,<span class="comment">//表示如果请求响应出现错误，会执行的回调函数</span></span><br><span class="line">		</span><br><span class="line">	dataType:<span class="string">"text"</span><span class="comment">//设置接受到的响应数据的格式</span></span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>2.<code>$.get()</code>：发送get请求</p>
-<ul>
-<li>语法：<code>$.get(url, [data], [callback], [type])</code></li>
-<li>参数：<ul>
-<li>url：请求路径</li>
-<li>data：请求参数</li>
-<li>callback：回调函数</li>
-<li>type：响应结果的类型</li>
-</ul>
-</li>
-</ul>
-<p>3.<code>$.post()</code>：发送post请求</p>
-<ul>
-<li>语法：<code>$.post(url, [data], [callback], [type])</code></li>
-<li>参数：<ul>
-<li>url：请求路径</li>
-<li>data：请求参数</li>
-<li>callback：回调函数</li>
-<li>type：响应结果的类型</li>
-</ul>
-</li>
-</ul>
-<h2 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h2><h3 id="概念：-JavaScript-Object-Notation-JavaScript对象表示法"><a href="#概念：-JavaScript-Object-Notation-JavaScript对象表示法" class="headerlink" title="概念： JavaScript Object Notation   JavaScript对象表示法"></a>概念： <code>JavaScript Object Notation</code>   JavaScript对象表示法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Person p = <span class="keyword">new</span> Person();</span><br><span class="line">p.setName(<span class="string">"张三"</span>);</span><br><span class="line">p.setAge(<span class="number">23</span>);</span><br><span class="line">p.setGender(<span class="string">"男"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = &#123;<span class="string">"name"</span>:<span class="string">"张三"</span>,<span class="string">"age"</span>:<span class="number">23</span>,<span class="string">"gender"</span>:<span class="string">"男"</span>&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>json现在多用于存储和交换文本信息的语法</p>
-</li>
-<li><p>进行数据的传输</p>
-</li>
-<li><p>JSON 比 XML 更小、更快，更易解析。</p>
-</li>
-</ul>
-<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><ol>
-<li>基本规则           </li>
-</ol>
-<ul>
-<li><p>数据在名称/值对中：json数据是由键值对构成的</p>
-<ul>
-<li>键用引号(单双都行)引起来，也可以不使用引号</li>
-<li>值得取值类型：</li>
-</ul>
-<ol>
-<li><p>数字（整数或浮点数）</p>
-</li>
-<li><p>字符串（在双引号中）</p>
-</li>
-<li><p>逻辑值（true 或 false）</p>
-</li>
-<li><p>数组（在方括号中）    <code>{&quot;persons&quot;:[{},{}]}</code></p>
-</li>
-<li><p>对象（在花括号中） <code>{&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}</code></p>
-</li>
-<li><p>null</p>
-<ul>
-<li><p>数据由逗号分隔：多个键值对由逗号分隔</p>
-</li>
-<li><p>花括号保存对象：使用{}定义json 格式</p>
-</li>
-<li><p>方括号保存数组：[]</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li>获取数据:<ol>
-<li><code>json对象.键名</code></li>
-<li><code>json对象[&quot;键名&quot;]</code></li>
-<li><code>数组对象[索引]</code></li>
-<li>遍历<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//1.定义基本格式</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="attr">age</span>: <span class="number">23</span>, <span class="string">'gender'</span>: <span class="literal">true</span>&#125;;</span><br><span class="line">		</span><br><span class="line"><span class="keyword">var</span> ps = [&#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="string">"age"</span>: <span class="number">23</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span>: <span class="string">"李四"</span>, <span class="string">"age"</span>: <span class="number">24</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span>: <span class="string">"王五"</span>, <span class="string">"age"</span>: <span class="number">25</span>, <span class="string">"gender"</span>: <span class="literal">false</span>&#125;];</span><br><span class="line">		</span><br><span class="line"><span class="comment">//获取person对象中所有的键和值</span></span><br><span class="line"><span class="comment">//for in 循环</span></span><br><span class="line"><span class="comment">/* for(var key in person)&#123;</span></span><br><span class="line"><span class="comment">//这样的方式获取不行。因为相当于  person."name"</span></span><br><span class="line"><span class="comment">//alert(key + ":" + person.key);</span></span><br><span class="line"><span class="comment"> alert(key+":"+person[key]);</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//获取ps中的所有值</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ps.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> p = ps[i];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> p)&#123;</span><br><span class="line"></span><br><span class="line">		alert(key+<span class="string">":"</span>+p[key]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="JSON数据和Java对象的相互转换"><a href="#JSON数据和Java对象的相互转换" class="headerlink" title="JSON数据和Java对象的相互转换"></a>JSON数据和Java对象的相互转换</h3><ul>
-<li><code>JSON解析器</code>：常见的解析器：Jsonlib，Gson，fastjson，<code>jackson</code></li>
-</ul>
-<ol>
-<li><p>JSON转为Java对象</p>
-<ol>
-<li>导入jackson的相关jar包</li>
-<li><code>创建Jackson核心对象 ObjectMapper</code></li>
-<li><code>调用ObjectMapper的相关方法</code>进行转换<ol>
-<li><code>readValue(json字符串数据,Class)</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>Java对象转换JSON</p>
-<ol>
-<li><p>使用步骤：</p>
-<ol>
-<li>导入jackson的相关jar包</li>
-<li>创建Jackson核心对象 ObjectMapper</li>
-<li>调用ObjectMapper的相关方法进行转换<br>转换方法：</li>
-</ol>
-<ul>
-<li><code>writeValue(参数1，obj):</code><br>参数1：<br>File：将obj对象转换为JSON字符串，并保存到指定的文件中<br>Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中<br>OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</li>
-<li><code>writeValueAsString(obj)</code>:将对象转为json字符串</li>
-</ul>
-</li>
-<li><p>注解：</p>
-<ol>
-<li><code>@JsonIgnore</code>：排除属性。</li>
-<li><code>@JsonFormat</code>：属性值得格式化<code>@JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)</code></li>
-</ol>
-</li>
-<li><p>复杂java对象转换</p>
-<ol>
-<li>List：数组</li>
-<li>Map：对象格式一致</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"><a href="#服务器响应的数据，在客户端使用时，要想当做json数据格式使用。" class="headerlink" title="服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"></a>服务器响应的数据，在客户端使用时，要想当做json数据格式使用。</h3><p>有两种解决方案：</p>
-<ol>
-<li><code>$.get(type):将最后一个参数type指定为&quot;json&quot;</code></li>
-<li>在服务器端设置MIME类型<br><code>response.setContentType(&quot;application/json;charset=utf-8&quot;);</code></li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>AJAX</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Bootstrap入门</title>
     <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
@@ -309,6 +157,158 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AJAX和JSON</title>
+    <url>/2021/03/23/AJAX%E5%92%8CJSON/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. AJAX
+2. JSON</code></pre><h2 id="AJAX："><a href="#AJAX：" class="headerlink" title="AJAX："></a>AJAX：</h2><h3 id="概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML"><a href="#概念：-ASynchronous-JavaScript-And-XML-异步的JavaScript-和-XML" class="headerlink" title="概念： ASynchronous JavaScript And XML    异步的JavaScript 和 XML"></a>概念： <code>ASynchronous JavaScript And XML</code>    异步的JavaScript 和 XML</h3><ol>
+<li>异步和同步：客户端和服务器端相互通信的基础上</li>
+</ol>
+<ul>
+<li><p>同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</p>
+</li>
+<li><p>异步：客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</p>
+</li>
+</ul>
+<ol start="2">
+<li>Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
+</ol>
+<h3 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h3><h4 id="原生的JS实现方式（了解）"><a href="#原生的JS实现方式（了解）" class="headerlink" title="原生的JS实现方式（了解）"></a>原生的JS实现方式（了解）</h4><h4 id="JQeury实现方式"><a href="#JQeury实现方式" class="headerlink" title="JQeury实现方式"></a>JQeury实现方式</h4><ol>
+<li><code>$.ajax()</code></li>
+</ol>
+<ul>
+<li>语法：<code>$.ajax({键值对})</code>;<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//使用$.ajax()发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">	url:<span class="string">"ajaxServlet1111"</span> , <span class="comment">// 请求路径</span></span><br><span class="line"></span><br><span class="line">	type:<span class="string">"POST"</span> , <span class="comment">//请求方式</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//data: "username=jack&amp;age=23",//请求参数</span></span><br><span class="line">	data:&#123;<span class="string">"username"</span>:<span class="string">"jack"</span>,<span class="string">"age"</span>:<span class="number">23</span>&#125;,</span><br><span class="line"></span><br><span class="line">	success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">	alert(data);</span><br><span class="line">	 &#125;,<span class="comment">//响应成功后的回调函数</span></span><br><span class="line"></span><br><span class="line">	error:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="string">"出错啦..."</span>)</span><br><span class="line">	 &#125;,<span class="comment">//表示如果请求响应出现错误，会执行的回调函数</span></span><br><span class="line">		</span><br><span class="line">	dataType:<span class="string">"text"</span><span class="comment">//设置接受到的响应数据的格式</span></span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>2.<code>$.get()</code>：发送get请求</p>
+<ul>
+<li>语法：<code>$.get(url, [data], [callback], [type])</code></li>
+<li>参数：<ul>
+<li>url：请求路径</li>
+<li>data：请求参数</li>
+<li>callback：回调函数</li>
+<li>type：响应结果的类型</li>
+</ul>
+</li>
+</ul>
+<p>3.<code>$.post()</code>：发送post请求</p>
+<ul>
+<li>语法：<code>$.post(url, [data], [callback], [type])</code></li>
+<li>参数：<ul>
+<li>url：请求路径</li>
+<li>data：请求参数</li>
+<li>callback：回调函数</li>
+<li>type：响应结果的类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="JSON："><a href="#JSON：" class="headerlink" title="JSON："></a>JSON：</h2><h3 id="概念：-JavaScript-Object-Notation-JavaScript对象表示法"><a href="#概念：-JavaScript-Object-Notation-JavaScript对象表示法" class="headerlink" title="概念： JavaScript Object Notation   JavaScript对象表示法"></a>概念： <code>JavaScript Object Notation</code>   JavaScript对象表示法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Person p = <span class="keyword">new</span> Person();</span><br><span class="line">p.setName(<span class="string">"张三"</span>);</span><br><span class="line">p.setAge(<span class="number">23</span>);</span><br><span class="line">p.setGender(<span class="string">"男"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = &#123;<span class="string">"name"</span>:<span class="string">"张三"</span>,<span class="string">"age"</span>:<span class="number">23</span>,<span class="string">"gender"</span>:<span class="string">"男"</span>&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>json现在多用于存储和交换文本信息的语法</p>
+</li>
+<li><p>进行数据的传输</p>
+</li>
+<li><p>JSON 比 XML 更小、更快，更易解析。</p>
+</li>
+</ul>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><ol>
+<li>基本规则           </li>
+</ol>
+<ul>
+<li><p>数据在名称/值对中：json数据是由键值对构成的</p>
+<ul>
+<li>键用引号(单双都行)引起来，也可以不使用引号</li>
+<li>值得取值类型：</li>
+</ul>
+<ol>
+<li><p>数字（整数或浮点数）</p>
+</li>
+<li><p>字符串（在双引号中）</p>
+</li>
+<li><p>逻辑值（true 或 false）</p>
+</li>
+<li><p>数组（在方括号中）    <code>{&quot;persons&quot;:[{},{}]}</code></p>
+</li>
+<li><p>对象（在花括号中） <code>{&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}</code></p>
+</li>
+<li><p>null</p>
+<ul>
+<li><p>数据由逗号分隔：多个键值对由逗号分隔</p>
+</li>
+<li><p>花括号保存对象：使用{}定义json 格式</p>
+</li>
+<li><p>方括号保存数组：[]</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>获取数据:<ol>
+<li><code>json对象.键名</code></li>
+<li><code>json对象[&quot;键名&quot;]</code></li>
+<li><code>数组对象[索引]</code></li>
+<li>遍历<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//1.定义基本格式</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="attr">age</span>: <span class="number">23</span>, <span class="string">'gender'</span>: <span class="literal">true</span>&#125;;</span><br><span class="line">		</span><br><span class="line"><span class="keyword">var</span> ps = [&#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="string">"age"</span>: <span class="number">23</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span>: <span class="string">"李四"</span>, <span class="string">"age"</span>: <span class="number">24</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">		&#123;<span class="string">"name"</span>: <span class="string">"王五"</span>, <span class="string">"age"</span>: <span class="number">25</span>, <span class="string">"gender"</span>: <span class="literal">false</span>&#125;];</span><br><span class="line">		</span><br><span class="line"><span class="comment">//获取person对象中所有的键和值</span></span><br><span class="line"><span class="comment">//for in 循环</span></span><br><span class="line"><span class="comment">/* for(var key in person)&#123;</span></span><br><span class="line"><span class="comment">//这样的方式获取不行。因为相当于  person."name"</span></span><br><span class="line"><span class="comment">//alert(key + ":" + person.key);</span></span><br><span class="line"><span class="comment"> alert(key+":"+person[key]);</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//获取ps中的所有值</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ps.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> p = ps[i];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> p)&#123;</span><br><span class="line"></span><br><span class="line">		alert(key+<span class="string">":"</span>+p[key]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="JSON数据和Java对象的相互转换"><a href="#JSON数据和Java对象的相互转换" class="headerlink" title="JSON数据和Java对象的相互转换"></a>JSON数据和Java对象的相互转换</h3><ul>
+<li><code>JSON解析器</code>：常见的解析器：Jsonlib，Gson，fastjson，<code>jackson</code></li>
+</ul>
+<ol>
+<li><p>JSON转为Java对象</p>
+<ol>
+<li>导入jackson的相关jar包</li>
+<li><code>创建Jackson核心对象 ObjectMapper</code></li>
+<li><code>调用ObjectMapper的相关方法</code>进行转换<ol>
+<li><code>readValue(json字符串数据,Class)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Java对象转换JSON</p>
+<ol>
+<li><p>使用步骤：</p>
+<ol>
+<li>导入jackson的相关jar包</li>
+<li>创建Jackson核心对象 ObjectMapper</li>
+<li>调用ObjectMapper的相关方法进行转换<br>转换方法：</li>
+</ol>
+<ul>
+<li><code>writeValue(参数1，obj):</code><br>参数1：<br>File：将obj对象转换为JSON字符串，并保存到指定的文件中<br>Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中<br>OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</li>
+<li><code>writeValueAsString(obj)</code>:将对象转为json字符串</li>
+</ul>
+</li>
+<li><p>注解：</p>
+<ol>
+<li><code>@JsonIgnore</code>：排除属性。</li>
+<li><code>@JsonFormat</code>：属性值得格式化<code>@JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)</code></li>
+</ol>
+</li>
+<li><p>复杂java对象转换</p>
+<ol>
+<li>List：数组</li>
+<li>Map：对象格式一致</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"><a href="#服务器响应的数据，在客户端使用时，要想当做json数据格式使用。" class="headerlink" title="服务器响应的数据，在客户端使用时，要想当做json数据格式使用。"></a>服务器响应的数据，在客户端使用时，要想当做json数据格式使用。</h3><p>有两种解决方案：</p>
+<ol>
+<li><code>$.get(type):将最后一个参数type指定为&quot;json&quot;</code></li>
+<li>在服务器端设置MIME类型<br><code>response.setContentType(&quot;application/json;charset=utf-8&quot;);</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>AJAX</tag>
       </tags>
   </entry>
   <entry>
@@ -1085,121 +1085,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JDBC连接池</title>
-    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 数据库连接池
-
-2. Spring JDBC : JDBC Template</code></pre><h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ol>
-<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
-<li>实现：<ul>
-<li>标准接口：DataSource   javax.sql包下的<ul>
-<li>获取连接：getConnection()</li>
-<li>归还连接：Connection.close()</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h3><ul>
-<li><p>步骤：</p>
-<blockquote>
-<ol>
-<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
-<li>定义配置文件：</li>
-</ol>
-<ul>
-<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
-<li>路径：直接将文件放在src目录下即可。</li>
-</ul>
-<ol start="3">
-<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
-<li>获取连接： getConnection</li>
-</ol>
-</blockquote>
-</li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.创建数据库连接池对象</span></span><br><span class="line"> DataSource ds  = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line"><span class="comment">//2. 获取连接对象</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
-<h3 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h3></li>
-<li><p>步骤：</p>
-<blockquote>
-<ol>
-<li>导入jar包 druid-1.0.9.jar</li>
-<li>定义配置文件：<ul>
-<li>是properties形式的</li>
-<li>可以叫任意名称，可以放在任意目录下</li>
-</ul>
-</li>
-<li>加载配置文件。Properties</li>
-<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
-<li>获取连接：getConnection</li>
-</ol>
-</blockquote>
-</li>
-<li><p>代码：</p>
-<pre><code class="java"><span class="comment">//加载配置文件</span>
-Properties pro = <span class="keyword">new</span> Properties();
-InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);
-pro.load(is);
-<span class="comment">//获取连接池对象</span>
-DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-<span class="comment">//获取连接</span>
-Connection conn = ds.getConnection();</code></pre>
-</li>
-</ul>
-<h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><ul>
-<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
-<li>步骤：<blockquote>
-<ol>
-<li>导入jar包</li>
-<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
-</ol>
-<ul>
-<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
-</ul>
-<ol start="3">
-<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
-</ol>
-<ul>
-<li><p>update():执行DML语句。增、删、改语句</p>
-</li>
-<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
-<ul>
-<li>注意：这个方法查询的结果集长度只能是1</li>
-</ul>
-</li>
-<li><p>queryForList():查询结果将结果集封装为list集合</p>
-<ul>
-<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
-</ul>
-</li>
-<li><p>query():查询结果，将结果封装为JavaBean对象</p>
-<ul>
-<li><p>query的参数：RowMapper</p>
-<ul>
-<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
-<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>queryForObject()：查询结果，将结果封装为对象</p>
-<ul>
-<li>一般用于聚合函数的查询</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JQuery</title>
     <url>/2021/03/23/JQuery/</url>
     <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JQuery 基础
@@ -1599,6 +1484,121 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>JDBC连接池</title>
+    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 数据库连接池
+
+2. Spring JDBC : JDBC Template</code></pre><h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ol>
+<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
+<li>实现：<ul>
+<li>标准接口：DataSource   javax.sql包下的<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h3><ul>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
+<li>定义配置文件：</li>
+</ol>
+<ul>
+<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
+<li>路径：直接将文件放在src目录下即可。</li>
+</ul>
+<ol start="3">
+<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
+<li>获取连接： getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.创建数据库连接池对象</span></span><br><span class="line"> DataSource ds  = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line"><span class="comment">//2. 获取连接对象</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+<h3 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h3></li>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 druid-1.0.9.jar</li>
+<li>定义配置文件：<ul>
+<li>是properties形式的</li>
+<li>可以叫任意名称，可以放在任意目录下</li>
+</ul>
+</li>
+<li>加载配置文件。Properties</li>
+<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
+<li>获取连接：getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<pre><code class="java"><span class="comment">//加载配置文件</span>
+Properties pro = <span class="keyword">new</span> Properties();
+InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);
+pro.load(is);
+<span class="comment">//获取连接池对象</span>
+DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+<span class="comment">//获取连接</span>
+Connection conn = ds.getConnection();</code></pre>
+</li>
+</ul>
+<h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><ul>
+<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
+<li>步骤：<blockquote>
+<ol>
+<li>导入jar包</li>
+<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+</ol>
+<ul>
+<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
+</ul>
+<ol start="3">
+<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</ol>
+<ul>
+<li><p>update():执行DML语句。增、删、改语句</p>
+</li>
+<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
+<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
+</ul>
+</li>
+<li><p>queryForList():查询结果将结果集封装为list集合</p>
+<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
+</ul>
+</li>
+<li><p>query():查询结果，将结果封装为JavaBean对象</p>
+<ul>
+<li><p>query的参数：RowMapper</p>
+<ul>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>queryForObject()：查询结果，将结果封装为对象</p>
+<ul>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JSP和EL_JSTL</title>
     <url>/2021/03/23/JSP%E5%92%8CEL-JSTL/</url>
     <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JSP
@@ -1830,79 +1830,6 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Java基础语法</title>
-    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
-<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
-<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
-<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
-<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
-<li>5.1 算术运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
-<ul>
-<li>5.2 赋值运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
-<ul>
-<li>5.3 比较运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
-<ul>
-<li>5.4 逻辑运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
-<ul>
-<li>5.5 三元运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
-<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
-<li>6.1 if语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
-<ul>
-<li>6.2 if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
-<ul>
-<li>6.3 if-else if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
-<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
-<li>7.1 switch语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
-<ul>
-<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
-</li>
-<li><p>7.3 break和continue的区别：</p>
-<ul>
-<li>break: 终止switch或者循环</li>
-<li>continue: 结束本次循环，继续下一次的循环 </li>
-</ul>
-</li>
-</ul>
-<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
-<li>8.1 for语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
-<ul>
-<li>8.2 while语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
-<ul>
-<li>8.3 do-while语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript基础</title>
     <url>/2021/03/15/JavaScript%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h1><ol>
@@ -2071,6 +1998,79 @@ Connection conn = ds.getConnection();</code></pre>
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java基础语法</title>
+    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
+<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
+<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
+<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
+<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
+<li>5.1 算术运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
+<ul>
+<li>5.2 赋值运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
+<ul>
+<li>5.3 比较运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
+<ul>
+<li>5.4 逻辑运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
+<ul>
+<li>5.5 三元运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
+<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
+<li>6.1 if语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
+<ul>
+<li>6.2 if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
+<ul>
+<li>6.3 if-else if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
+<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
+<li>7.1 switch语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
+<ul>
+<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
+</li>
+<li><p>7.3 break和continue的区别：</p>
+<ul>
+<li>break: 终止switch或者循环</li>
+<li>continue: 结束本次循环，继续下一次的循环 </li>
+</ul>
+</li>
+</ul>
+<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
+<li>8.1 for语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
+<ul>
+<li>8.2 while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
+<ul>
+<li>8.3 do-while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -2273,6 +2273,43 @@ Connection conn = ds.getConnection();</code></pre>
         1. 编译器
         2. 给解析程序用
     3. 注解不是程序的一部分，可以理解为注解就是一个标签</code></pre>]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Map</title>
+    <url>/2019/11/07/Map/</url>
+    <content><![CDATA[<h1 id="1-Map"><a href="#1-Map" class="headerlink" title="1.Map"></a>1.Map</h1><h2 id="1-1-Map常用子类"><a href="#1-1-Map常用子类" class="headerlink" title="1.1 Map常用子类"></a>1.1 Map常用子类</h2><ul>
+<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+</li>
+<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+</li>
+</ul>
+<h2 id="1-2-Map接口的常用方法"><a href="#1-2-Map接口的常用方法" class="headerlink" title="1.2 Map接口的常用方法"></a>1.2 Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
+<h2 id="1-3-Map集合遍历键找值方式"><a href="#1-3-Map集合遍历键找值方式" class="headerlink" title="1.3 Map集合遍历键找值方式"></a>1.3 Map集合遍历键找值方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。方法提示: keyset()   </p>
+</li>
+<li><p>遍历键的Set集合，得到每一个键。  </p>
+</li>
+<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
+</li>
+</ol>
+<h2 id="1-4-Entry键值对对象"><a href="#1-4-Entry键值对对象" class="headerlink" title="1.4 Entry键值对对象"></a>1.4 Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
+<h2 id="1-5-Map集合遍历键值对方式"><a href="#1-5-Map集合遍历键值对方式" class="headerlink" title="1.5 Map集合遍历键值对方式"></a>1.5 Map集合遍历键值对方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。方法提示: entrySet() 。   </p>
+</li>
+<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+</li>
+<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+</li>
+</ol>
+]]></content>
       <categories>
         <category>JavaSE</category>
       </categories>
@@ -2757,43 +2794,6 @@ Connection conn = ds.getConnection();</code></pre>
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Map</title>
-    <url>/2019/11/07/Map/</url>
-    <content><![CDATA[<h1 id="1-Map"><a href="#1-Map" class="headerlink" title="1.Map"></a>1.Map</h1><h2 id="1-1-Map常用子类"><a href="#1-1-Map常用子类" class="headerlink" title="1.1 Map常用子类"></a>1.1 Map常用子类</h2><ul>
-<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
-</li>
-<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
-</li>
-</ul>
-<h2 id="1-2-Map接口的常用方法"><a href="#1-2-Map接口的常用方法" class="headerlink" title="1.2 Map接口的常用方法"></a>1.2 Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
-<h2 id="1-3-Map集合遍历键找值方式"><a href="#1-3-Map集合遍历键找值方式" class="headerlink" title="1.3 Map集合遍历键找值方式"></a>1.3 Map集合遍历键找值方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。方法提示: keyset()   </p>
-</li>
-<li><p>遍历键的Set集合，得到每一个键。  </p>
-</li>
-<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
-</li>
-</ol>
-<h2 id="1-4-Entry键值对对象"><a href="#1-4-Entry键值对对象" class="headerlink" title="1.4 Entry键值对对象"></a>1.4 Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
-<h2 id="1-5-Map集合遍历键值对方式"><a href="#1-5-Map集合遍历键值对方式" class="headerlink" title="1.5 Map集合遍历键值对方式"></a>1.5 Map集合遍历键值对方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。方法提示: entrySet() 。   </p>
-</li>
-<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
-</li>
-<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -3538,328 +3538,6 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Mybatis</title>
-    <url>/2021/03/23/Mybatis/</url>
-    <content><![CDATA[<h1 id="0-环境说明"><a href="#0-环境说明" class="headerlink" title="0. 环境说明"></a>0. 环境说明</h1><ul>
-<li>jdk 8+</li>
-<li>MySQL 8.0.18</li>
-<li>maven 3.5.0</li>
-<li>idea 2018<h1 id="1-Mybatis简介"><a href="#1-Mybatis简介" class="headerlink" title="1.Mybatis简介"></a>1.Mybatis简介</h1></li>
-</ul>
-<ol>
-<li><p>MyBatis 是一款优秀的<strong>持久层框架</strong>，它支持自定义 SQL、存储过程以及高级映射。</p>
-</li>
-<li><p>MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。</p>
-</li>
-<li><p>MyBatis 可以通过简单的 <strong>XML</strong> 或 <strong>注解</strong> 来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。</p>
-</li>
-</ol>
-<h1 id="2-第一个程序"><a href="#2-第一个程序" class="headerlink" title="2.第一个程序"></a>2.第一个程序</h1><ol>
-<li><p>Mysql建库,建表(<code>Blog</code>)</p>
-</li>
-<li><p>Maven构建项目，将下面的依赖代码置于 <code>pom.xml</code> 文件中：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>x.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connecter-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>x.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>编写MyBatis核心配置文件: <code>mybatis-config.xml</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 数据库配置文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"db.properties"</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--默认使用环境1--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--环境1--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development1"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--事务管理器--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--数据源--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--driver,url,username,password--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--mapper扫描路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/example/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>MyBatis工具类: <code>MybatisUtils.java</code></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> utils;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.io.Resources;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="comment">// SqlSessionFactory 工厂模式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MybatisUtils</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    从 XML 中构建 SqlSessionFactory</span></span><br><span class="line"><span class="comment">    每个基于 MyBatis 的应用都是以一个 SqlSessionFactory 的实例为核心的。SqlSessionFactory 的实例可以通过 SqlSessionFactoryBuilder 获得。</span></span><br><span class="line"><span class="comment">    而 SqlSessionFactoryBuilder 则可以从 XML 配置文件或一个预先配置的 Configuration 实例来构建出 SqlSessionFactory 实例。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    建议使用类路径下的资源文件进行配置。 但也可以使用任意的输入流（InputStream）实例，比如用文件路径字符串或 file:// URL 构造的输入流。</span></span><br><span class="line"><span class="comment">    MyBatis 包含一个名叫 Resources 的工具类，它包含一些实用方法，使得从类路径或其它位置加载资源文件更加容易。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SqlSessionFactory sqlSessionFactory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//读取配置文件 获取SqlSessionFactory对象</span></span><br><span class="line">        String resource = <span class="string">"mybatis-config.xml"</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">            sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    既然有了 SqlSessionFactory，顾名思义，我们可以从中获得 SqlSession 的实例。</span></span><br><span class="line"><span class="comment">    SqlSession 提供了在数据库执行 SQL 命令所需的所有方法。你可以通过 SqlSession 实例来直接执行已映射的 SQL 语句</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sqlSessionFactory.openSession();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>创建pojo(实体类): <code>Blog.java</code></p>
-</li>
-<li><p>编写Mapper(接口类)：<code>BlogMapper.java</code></p>
-</li>
-<li><p>编写<code>BlogMapper.xml</code>配置文件(定义sql等等)</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- namespace: BlogMapper.java 的全类名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"org.mybatis.example.BlogMapper"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- id：尽量和BlogMapper.java 的方法名一样。parameterType：参数类型。resultType：返回值类型 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span> <span class="attr">resultType</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">    select * from Blog where id = #&#123;id&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>在MyBatis核心配置文件<code>mybatis-config.xml</code>中<code>配置BlogMapper.xml路径</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--mapper扫描路径--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/example/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>编译测试运行</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectBlog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       SqlSession session = MybatisUtils.getSqlSession();</span><br><span class="line">       BlogMapper mapper = session.getMapper(BlogMapper.class);</span><br><span class="line">       Blog blog = mapper.selectBlog(<span class="number">101</span>);</span><br><span class="line">       System.out.println(blog);</span><br><span class="line">       session.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>Maven静态资源过滤问题</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="3-CRUD操作-XXXMapper-xml"><a href="#3-CRUD操作-XXXMapper-xml" class="headerlink" title="3.CRUD操作: XXXMapper.xml"></a>3.CRUD操作: <code>XXXMapper.xml</code></h1></li>
-<li><p>SQL 映射文件只有很少的几个顶级元素</p>
-</li>
-</ol>
-<ul>
-<li>insert – 映射插入语句</li>
-<li>delete – 映射删除语句</li>
-<li>update – 映射更新语句</li>
-<li>select – 映射查询语句</li>
-<li>等等</li>
-<li>详情点击：<a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#" target="_blank" rel="noopener">官方文档</a></li>
-</ul>
-<ol start="2">
-<li>总结</li>
-</ol>
-<ul>
-<li><code>增删改</code>需要提交事务：<code>session.commit();</code></li>
-<li>接口(Mapper)所有的普通参数，尽量都写上<code>@Param参数</code>，尤其是多个参数时，必须写上</li>
-<li>为了规范操作，在SQL的配置文件中，我们尽量将<code>Parameter参数</code>和<code>resultType</code>都写上</li>
-<li>有时候根据业务的需求，可以考虑使用<code>map传递参数</code>,调用方法时给map赋值</li>
-</ul>
-<h1 id="4-核心配置文件解析：mybatis-config-xml"><a href="#4-核心配置文件解析：mybatis-config-xml" class="headerlink" title="4.核心配置文件解析：mybatis-config.xml"></a>4.核心配置文件解析：<code>mybatis-config.xml</code></h1><ol>
-<li>配置文档的顶层结构如下：</li>
-</ol>
-<ul>
-<li><p>configuration（配置）</p>
-<ul>
-<li><p>properties（属性）</p>
-</li>
-<li><p>settings（设置）</p>
-</li>
-<li><p>typeAliases（类型别名）</p>
-</li>
-<li><p>typeHandlers（类型处理器）</p>
-</li>
-<li><p>objectFactory（对象工厂）</p>
-</li>
-<li><p>plugins（插件）</p>
-</li>
-<li><p>environments（环境配置）</p>
-<ul>
-<li>environment（环境变量）<ul>
-<li>transactionManager（事务管理器）</li>
-<li>dataSource（数据源）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>databaseIdProvider（数据库厂商标识）</p>
-</li>
-<li><p>mappers（映射器）     </p>
-<p>注意：注意<code>元素节点</code>的<code>顺序</code>！顺序不对会报错！</p>
-</li>
-</ul>
-<ol start="2">
-<li>常用配置</li>
-</ol>
-<ul>
-<li><p>properties（属性）</p>
-</li>
-<li><p>typeAliases（类型别名）</p>
-</li>
-<li><p>environments（环境配置）</p>
-</li>
-<li><p>mappers（映射器）</p>
-</li>
-<li><p>详情点击：<a href="https://mybatis.org/mybatis-3/zh/configuration.html#" target="_blank" rel="noopener">官方文档</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="5-作用域（Scope）和生命周期"><a href="#5-作用域（Scope）和生命周期" class="headerlink" title="5.作用域（Scope）和生命周期"></a>5.作用域（Scope）和生命周期</h1><ul>
-<li>理解不同作用域和生命周期类别是至关重要的，因为<code>错误的使用会导致非常严重的并发问题</code><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/20201108013733328.png" alt=""></li>
-</ul>
-<ol>
-<li>SqlSessionFactoryBuilder </li>
-</ol>
-<ul>
-<li>一旦创建了 SqlSessionFactory，就不再需要它了</li>
-<li>最佳作用域是方法作用域（也就是局部方法变量）</li>
-</ul>
-<ol start="2">
-<li>SqlSessionFactory   </li>
-</ol>
-<ul>
-<li>等同于数据库连接池</li>
-<li>SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例 </li>
-<li>最简单的就是使用单例模式或者静态单例模式</li>
-<li>SqlSessionFactory 的最佳作用域是应用作用域</li>
-</ul>
-<ol start="3">
-<li>SqlSession  </li>
-</ol>
-<ul>
-<li>相当于连接数据库的一次请求</li>
-<li>每个线程都应该有它自己的 SqlSession 实例。SqlSession 的实例不是线程安全的，因此是不能被共享的</li>
-<li>最佳的作用域是请求或方法作用域</li>
-<li>用完之后赶紧关闭，不要浪费资源占用，关闭操作放到 finally 块中<br>下面的示例就是一个确保 SqlSession 关闭的标准模式：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> (SqlSession session = sqlSessionFactory.openSession()) &#123;</span><br><span class="line"><span class="comment">// 你的应用逻辑代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  在所有代码中都遵循这种使用模式，可以保证所有数据库资源都能被正确地关闭。            </li>
-</ul>
-<ol start="4">
-<li>映射器(Mapper)实例<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/20201108015113276.png" alt=""></li>
-</ol>
-<ul>
-<li>映射器接口的实例是从 SqlSession 中获得的。从技术层面上来讲，任何映射器实例的最大作用域与请求它们的 SqlSession 相同。</li>
-<li>但<code>方法作用域才是映射器实例的最合适的作用域</code>。 也就是说，<code>映射器实例应该在调用它们的方法中被获取，使用完毕之后即可丢弃</code>。 </li>
-<li>映射器实例并不需要被显式地关闭。<br>最好将映射器放在方法作用域内。就像下面的例子一样：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> (SqlSession session = sqlSessionFactory.openSession()) &#123;</span><br><span class="line"> BlogMapper mapper = session.getMapper(BlogMapper.class);</span><br><span class="line"> <span class="comment">// 你的应用逻辑代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="6-ResultMap"><a href="#6-ResultMap" class="headerlink" title="6.ResultMap"></a>6.ResultMap</h1></li>
-</ul>
-<ol>
-<li>ResultMap 的设计思想</li>
-</ol>
-<ul>
-<li>对简单的语句做到零配置</li>
-<li>对于复杂一点的语句，只需要描述语句之间的关系就行了</li>
-</ul>
-<ol start="2">
-<li>解决数据库表的字段与实体类不一致问题<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"userResultMap"</span> <span class="attr">type</span>=<span class="string">"User"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- column:表的字段。property:实体类字段 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>  <span class="attr">column</span>=<span class="string">"user_id"</span> <span class="attr">property</span>=<span class="string">"id"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"user_name"</span> <span class="attr">property</span>=<span class="string">"username"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hashed_password"</span> <span class="attr">property</span>=<span class="string">"password"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- resultMap:值为resultMap的id属性值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultMap</span>=<span class="string">"userResultMap"</span>&gt;</span></span><br><span class="line">  select user_id, user_name, hashed_password</span><br><span class="line">  from some_table</span><br><span class="line">  where id = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="7-分页"><a href="#7-分页" class="headerlink" title="7.分页"></a>7.分页</h1></li>
-<li><code>XXXMapper.java</code>定义方法<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选择全部用户实现分页，map传参</span></span><br><span class="line"><span class="function">List&lt;User&gt; <span class="title">selectUser</span><span class="params">(Map&lt;String,Integer&gt; map)</span></span>;</span><br></pre></td></tr></table></figure></li>
-<li>编写<code>XXXMapper.xml</code><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- map传参 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUser"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span> <span class="attr">resultType</span>=<span class="string">"user"</span>&gt;</span></span><br><span class="line">  select * from user limit #&#123;startIndex&#125;,#&#123;pageSize&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>分页查询<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//分页查询 , 两个参数startIndex , pageSize</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSelectUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   SqlSession session = MybatisUtils.getSession();</span><br><span class="line">   UserMapper mapper = session.getMapper(UserMapper.class);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> currentPage = <span class="number">1</span>;  <span class="comment">//第几页</span></span><br><span class="line">   <span class="keyword">int</span> pageSize = <span class="number">10</span>;  <span class="comment">//每页显示几个</span></span><br><span class="line">   Map&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">   <span class="comment">//给map赋值</span></span><br><span class="line">   map.put(<span class="string">"startIndex"</span>,(currentPage-<span class="number">1</span>)*pageSize);</span><br><span class="line">   map.put(<span class="string">"pageSize"</span>,pageSize);</span><br><span class="line"></span><br><span class="line">   List&lt;User&gt; users = mapper.selectUser(map);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> (User user: users)&#123;</span><br><span class="line">       System.out.println(user);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">   session.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="8-日志"><a href="#8-日志" class="headerlink" title="8. 日志"></a>8. 日志</h1></li>
-</ol>
-<ul>
-<li>只演示使用LOG4J</li>
-</ul>
-<ol>
-<li>配置<code>mybatis-config.xml</code><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"LOG4J"</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>maven导入依赖jar包<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>编写 <code>log4j.properties</code>文件</li>
-</ol>
-<ul>
-<li><p>完整配置信息请百度/官网查询</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局日志配置</span></span><br><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">ERROR, stdout</span></span><br><span class="line"><span class="comment"># MyBatis 日志配置</span></span><br><span class="line"><span class="meta">log4j.logger.org.mybatis.example.BlogMapper</span>=<span class="string">TRACE</span></span><br><span class="line"><span class="comment"># 控制台输出</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%5p [%t] - %m%n</span></span><br><span class="line"><span class="meta">```</span>     <span class="string"></span></span><br><span class="line"><span class="meta">上述配置将使</span> <span class="string">Log4J 详细打印 org.mybatis.example.BlogMapper 的日志，对于应用的其它部分，只打印错误信息。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 9. Java注解</span></span><br><span class="line"><span class="meta">1.</span> <span class="string">mybatis最初配置信息是基于 XML ,映射语句(SQL)也是定义在 XML 中的。而到MyBatis 3提供了新的基于注解的配置。不幸的是，Java 注解的的表达力和灵活性十分有限。`最强大的 MyBatis 映射并不能用注解来构建`</span></span><br><span class="line"></span><br><span class="line"><span class="meta">2.</span> <span class="string">sql 类型主要分成 :</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@Insert ()</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@delete ()</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@update ()</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@select ()</span></span><br><span class="line"></span><br><span class="line"><span class="meta">*</span> <span class="string">举例: `UserMapper.java ` </span></span><br><span class="line">    <span class="meta">```java</span>    <span class="string"></span></span><br><span class="line">    <span class="attr">//查询全部用户</span></span><br><span class="line">    <span class="meta">@Select("select</span> <span class="string">id,name,pwd password from user")</span></span><br><span class="line">    <span class="attr">public</span> <span class="string">List&lt;User&gt; getAllUser();</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>详情点击：<a href="https://mybatis.org/mybatis-3/zh/java-api.html#sqlSessions" target="_blank" rel="noopener">官方文档</a></p>
-</li>
-</ul>
-<ol start="3">
-<li><p>利用<code>注解开发</code>就<code>不需要mapper.xml</code>映射文件了</p>
-</li>
-<li><p>使用<code>注解和配置文件协同开发</code>，才是MyBatis的最佳实践！</p>
-</li>
-<li><p><code>@param</code> 注解用于给方法参数起一个名字。以下是总结的使用原则</p>
-</li>
-</ol>
-<ul>
-<li>在方法接受多个参数的情况下，建议一定要使用@Param注解给参数命名。</li>
-<li>在方法只接受一个参数的情况下，可以不使用@Param。</li>
-<li>如果参数是 JavaBean ， 则不能使用@Param。</li>
-<li>不使用@Param注解时，参数只能有一个，并且是Javabean。</li>
-</ul>
-<h1 id="10-一对多和多对一处理"><a href="#10-一对多和多对一处理" class="headerlink" title="10.一对多和多对一处理"></a>10.一对多和多对一处理</h1><ul>
-<li>关联(<code>association</code>):一对一和多对一</li>
-<li>集合(<code>collection</code>)：一对多</li>
-</ul>
-<ol>
-<li>数据库表<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/640yyjdtye4653tegf.webp" alt=""></li>
-</ol>
-<ul>
-<li>需求一：获取所有学生及对应老师的信息</li>
-</ul>
-<ol>
-<li><p>XXXMapper<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afvdfvgbfadvavdfe.PNG" alt=""></p>
-</li>
-<li><p>StudentMapper.xml</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xxx.mapper.StudentMapper"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudents"</span> <span class="attr">resultMap</span>=<span class="string">"StudentTeacher"</span> &gt;</span></span><br><span class="line">  select s.id sid, s.name sname , t.name tname</span><br><span class="line">  from student s,teacher t</span><br><span class="line">  where s.tid = t.id</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"StudentTeacher"</span> <span class="attr">type</span>=<span class="string">"Student"</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- column为结果集的列名，可以随便取名 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"sid"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"sname"</span>/&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- JavaType为Student中关联对象的实体类的类型 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"teacher"</span> <span class="attr">javaType</span>=<span class="string">"Teacher"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"tname"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>需求二：获取老师及其所有学生的信息</li>
-</ul>
-<ol>
-<li>XXXMapper<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ddgehadvvstgwt3t4f3.PNG" alt=""></li>
-<li>TeacherMapper.xml<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xxx.mapper.TeacherMapper"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getTeacher"</span> <span class="attr">resultMap</span>=<span class="string">"TeacherStudent"</span>&gt;</span></span><br><span class="line">      select s.id sid, s.name sname , t.name tname, t.id tid</span><br><span class="line">      from student s,teacher t</span><br><span class="line">      where s.tid = t.id and t.id=#&#123;id&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"TeacherStudent"</span> <span class="attr">type</span>=<span class="string">"Teacher"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span>  <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"tname"</span>/&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- ofType为Teacher中List集合中的实体类的类型 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"students"</span> <span class="attr">ofType</span>=<span class="string">"Student"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"sid"</span> /&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"sname"</span> /&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"tid"</span> <span class="attr">column</span>=<span class="string">"tid"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="11-动态SQL"><a href="#11-动态SQL" class="headerlink" title="11.动态SQL"></a>11.动态SQL</h1></li>
-<li>什么是动态SQL：动态SQL指的是根据不同的查询条件 , 生成不同的Sql语句.</li>
-<li>借助功能强大的基于 OGNL 的表达式，MyBatis 3 替换了之前的大部分元素，大大精简了元素种类，现在要学习的元素种类比原来的一半还要少。     </li>
-</ol>
-<ul>
-<li>if</li>
-<li>choose (when, otherwise)</li>
-<li>trim (where, set)</li>
-<li>foreach</li>
-</ul>
-<ol start="3">
-<li>详情点击：<a href="https://mybatis.org/mybatis-3/zh/dynamic-sql.html" target="_blank" rel="noopener">官方文档</a></li>
-</ol>
-<h1 id="12-缓存"><a href="#12-缓存" class="headerlink" title="12.缓存"></a>12.缓存</h1><ol>
-<li>什么是缓存 [ <code>Cache</code> ]?</li>
-</ol>
-<ul>
-<li><p>存在内存中的临时数据。</p>
-</li>
-<li><p>将用户经常查询的数据放在缓存（内存）中，用户去查询数据就不用从磁盘上(关系型数据库数据文件)查询，从缓存中查询，从而提高查询效率，解决了高并发系统的性能问题。</p>
-</li>
-</ul>
-<ol start="2">
-<li>为什么使用缓存？</li>
-</ol>
-<ul>
-<li>减少和数据库的交互次数，减少系统开销，提高系统效率。</li>
-</ul>
-<ol start="3">
-<li>什么样的数据能使用缓存？</li>
-</ol>
-<ul>
-<li>经常查询并且不经常改变的数据。</li>
-</ul>
-<ol start="4">
-<li><code>MyBatis系统</code>中默认定义了两级缓存：<code>一级缓存</code>和<code>二级缓存</code></li>
-</ol>
-<ul>
-<li><p><code>默认</code>情况下，只有<code>一级缓存开启</code>。（<code>SqlSession级别的缓存，也称为本地缓存</code>）</p>
-</li>
-<li><p><code>二级缓存</code>需要手动开启和配置，他是<code>基于namespace级别的缓存</code>。</p>
-</li>
-<li><p>为了提高扩展性，MyBatis定义了缓存接口Cache。我们可以<code>通过实现Cache接口来自定义二级缓存</code></p>
-</li>
-</ul>
-<ol start="5">
-<li>一级缓存也叫本地缓存</li>
-</ol>
-<ul>
-<li><p>与数据库同一次会话期间查询到的数据会放在本地缓存中。</p>
-</li>
-<li><p>以后如果需要获取相同的数据，直接从缓存中拿，没必须再去查询数据库；</p>
-</li>
-<li><p>一级缓存是SqlSession级别的缓存，是一直开启的，我们关闭不了它；</p>
-</li>
-<li><p>一级缓存失效情况：没有使用到当前的一级缓存，效果就是，还需要再向数据库中发起一次查询请求！</p>
-</li>
-</ul>
-<ol start="6">
-<li>一级缓存失效的四种情况</li>
-</ol>
-<ul>
-<li><p><strong>sqlSession不同:</strong> 每个sqlSession中的缓存相互独立</p>
-</li>
-<li><p><strong>sqlSession相同，查询条件不同:</strong> 当前缓存中，不存在这个数据</p>
-</li>
-<li><p><strong>sqlSession相同，两次查询之间执行了增删改操作:</strong> 因为增删改操作可能会对当前数据产生影响</p>
-</li>
-<li><p><strong>sqlSession相同，手动清除一级缓存:</strong><code>session.clearCache();</code></p>
-</li>
-</ul>
-<h1 id="13-二级缓存"><a href="#13-二级缓存" class="headerlink" title="13. 二级缓存"></a>13. 二级缓存</h1><ol>
-<li><p>开启全局缓存 <code>mybatis-config.xml</code></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>去每个mapper.xml中配置使用二级缓存 <code>xxxMapper.xml</code></p>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">cache</span></span>
-<span class="tag"><span class="attr">eviction</span>=<span class="string">"FIFO"</span></span>
-<span class="tag"><span class="attr">flushInterval</span>=<span class="string">"60000"</span></span>
-<span class="tag"><span class="attr">size</span>=<span class="string">"512"</span></span>
-<span class="tag"><span class="attr">readOnly</span>=<span class="string">"true"</span>/&gt;</span>
-<span class="comment">&lt;!-- 这个更高级的配置创建了一个 FIFO(先进先出) 缓存，每隔 60 秒刷新，最多可以存储结果对象或列表的 512 个引用，而且返回的对象被认为是只读的，因此对它们进行修改可能会在不同线程中的调用者产生冲突。 --&gt;</span></code></pre>
-<p>详情点击：<a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#cache" target="_blank" rel="noopener">官方文档</a></p>
-<ol start="3">
-<li>结论</li>
-</ol>
-</li>
-</ol>
-<ul>
-<li><p>只要开启了二级缓存，我们在同一个Mapper中的查询，可以在二级缓存中拿到数据</p>
-</li>
-<li><p>查出的数据都会被默认先放在一级缓存中</p>
-</li>
-<li><p>只有会话提交或者关闭以后，一级缓存中的数据才会转到二级缓存中</p>
-</li>
-</ul>
-<p>参考链接：          </p>
-<ol>
-<li><a href="https://mybatis.org/mybatis-3/zh/index.html#" target="_blank" rel="noopener">https://mybatis.org/mybatis-3/zh/index.html#</a></li>
-<li><a href="https://www.kuangstudy.com/course" target="_blank" rel="noopener">https://www.kuangstudy.com/course</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>Mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Object类，常用API</title>
     <url>/2019/11/06/Object%E7%B1%BB%EF%BC%8C%E5%B8%B8%E7%94%A8API/</url>
     <content><![CDATA[<h1 id="1-Object类"><a href="#1-Object类" class="headerlink" title="1.Object类"></a>1.Object类</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p><code>java.lang.Object</code>类是Java语言中所有类的父类。</p>
@@ -4368,283 +4046,325 @@ zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><
       </tags>
   </entry>
   <entry>
-    <title>Scanner类,Random类,ArrayList类</title>
-    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="1-Scanner类"><a href="#1-Scanner类" class="headerlink" title="1.Scanner类"></a>1.Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" alt=""></p>
-<h1 id="2-Random类"><a href="#2-Random类" class="headerlink" title="2.Random类"></a>2.Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" alt=""></p>
-<h1 id="3-ArrayList类"><a href="#3-ArrayList类" class="headerlink" title="3.ArrayList类"></a>3.ArrayList类</h1><ul>
-<li>3.1 ArrayList使用步骤</li>
+    <title>Mybatis</title>
+    <url>/2021/03/23/Mybatis/</url>
+    <content><![CDATA[<h1 id="0-环境说明"><a href="#0-环境说明" class="headerlink" title="0. 环境说明"></a>0. 环境说明</h1><ul>
+<li>jdk 8+</li>
+<li>MySQL 8.0.18</li>
+<li>maven 3.5.0</li>
+<li>idea 2018<h1 id="1-Mybatis简介"><a href="#1-Mybatis简介" class="headerlink" title="1.Mybatis简介"></a>1.Mybatis简介</h1></li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" alt=""></p>
-<ul>
-<li>3.2 常用方法和遍历 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" alt=""></p>
-<ul>
-<li>3.3 基本数据类型包装类</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" alt=""></p>
-<h1 id="4-ArrayList练习"><a href="#4-ArrayList练习" class="headerlink" title="4.ArrayList练习"></a>4.ArrayList练习</h1><ul>
-<li>4.1 生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" alt=""></li>
-<li>4.2 自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" alt=""></li>
-<li>4.3 定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" alt=""></li>
-<li>4.4 定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" alt=""></li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Servlet和HTTP</title>
-    <url>/2021/03/23/Servlet%E5%92%8CHTTP/</url>
-    <content><![CDATA[<h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. Servlet
-2. HTTP协议</code></pre><h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><h3 id="概念-运行在服务器端的小程序"><a href="#概念-运行在服务器端的小程序" class="headerlink" title="概念:运行在服务器端的小程序"></a>概念:运行在服务器端的小程序</h3><ul>
-<li>Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。</li>
-<li>将来我们自定义一个类，实现Servlet接口，复写方法。</li>
-</ul>
-<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ol>
-<li>创建JavaEE项目</li>
-<li>定义一个类，实现Servlet接口<br><code>public class ServletDemo1 implements Servlet</code></li>
-<li>实现接口中的抽象方法</li>
-<li>配置Servlet:在<code>web.xml</code>中配置<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"> <span class="comment">&lt;!--配置Servlet --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>cn.itcast.web.servlet.ServletDemo1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/demo1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<ol>
+<li><p>MyBatis 是一款优秀的<strong>持久层框架</strong>，它支持自定义 SQL、存储过程以及高级映射。</p>
+</li>
+<li><p>MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。</p>
+</li>
+<li><p>MyBatis 可以通过简单的 <strong>XML</strong> 或 <strong>注解</strong> 来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。</p>
 </li>
 </ol>
-<h3 id="执行原理："><a href="#执行原理：" class="headerlink" title="执行原理："></a>执行原理：</h3><ol>
-<li><p>当服务器接受到客户端浏览器的请求后，会<code>解析请求URL路径，</code>获取访问的Servlet的资源路径</p>
+<h1 id="2-第一个程序"><a href="#2-第一个程序" class="headerlink" title="2.第一个程序"></a>2.第一个程序</h1><ol>
+<li><p>Mysql建库,建表(<code>Blog</code>)</p>
 </li>
-<li><p>查找web.xml文件，是否有对应的<code>&lt;url-pattern&gt;</code>标签体内容。</p>
+<li><p>Maven构建项目，将下面的依赖代码置于 <code>pom.xml</code> 文件中：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>x.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connecter-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>x.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>编写MyBatis核心配置文件: <code>mybatis-config.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 数据库配置文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"db.properties"</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--默认使用环境1--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--环境1--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development1"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--事务管理器--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>/&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--数据源--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--driver,url,username,password--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--mapper扫描路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/example/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>MyBatis工具类: <code>MybatisUtils.java</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> utils;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.io.Resources;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="comment">// SqlSessionFactory 工厂模式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MybatisUtils</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    从 XML 中构建 SqlSessionFactory</span></span><br><span class="line"><span class="comment">    每个基于 MyBatis 的应用都是以一个 SqlSessionFactory 的实例为核心的。SqlSessionFactory 的实例可以通过 SqlSessionFactoryBuilder 获得。</span></span><br><span class="line"><span class="comment">    而 SqlSessionFactoryBuilder 则可以从 XML 配置文件或一个预先配置的 Configuration 实例来构建出 SqlSessionFactory 实例。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    建议使用类路径下的资源文件进行配置。 但也可以使用任意的输入流（InputStream）实例，比如用文件路径字符串或 file:// URL 构造的输入流。</span></span><br><span class="line"><span class="comment">    MyBatis 包含一个名叫 Resources 的工具类，它包含一些实用方法，使得从类路径或其它位置加载资源文件更加容易。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SqlSessionFactory sqlSessionFactory;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//读取配置文件 获取SqlSessionFactory对象</span></span><br><span class="line">        String resource = <span class="string">"mybatis-config.xml"</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">            sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    既然有了 SqlSessionFactory，顾名思义，我们可以从中获得 SqlSession 的实例。</span></span><br><span class="line"><span class="comment">    SqlSession 提供了在数据库执行 SQL 命令所需的所有方法。你可以通过 SqlSession 实例来直接执行已映射的 SQL 语句</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sqlSessionFactory.openSession();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>创建pojo(实体类): <code>Blog.java</code></p>
 </li>
-<li><p>如果有，则在找到对应的<code>&lt;servlet-class&gt;全类名</code></p>
+<li><p>编写Mapper(接口类)：<code>BlogMapper.java</code></p>
 </li>
-<li><p>tomcat会将字节码文件加载进内存，并且创建其对象</p>
+<li><p>编写<code>BlogMapper.xml</code>配置文件(定义sql等等)</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- namespace: BlogMapper.java 的全类名 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"org.mybatis.example.BlogMapper"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- id：尽量和BlogMapper.java 的方法名一样。parameterType：参数类型。resultType：返回值类型 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">parameterType</span>=<span class="string">"int"</span> <span class="attr">resultType</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">    select * from Blog where id = #&#123;id&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在MyBatis核心配置文件<code>mybatis-config.xml</code>中<code>配置BlogMapper.xml路径</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--mapper扫描路径--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/example/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>编译测试运行</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectBlog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       SqlSession session = MybatisUtils.getSqlSession();</span><br><span class="line">       BlogMapper mapper = session.getMapper(BlogMapper.class);</span><br><span class="line">       Blog blog = mapper.selectBlog(<span class="number">101</span>);</span><br><span class="line">       System.out.println(blog);</span><br><span class="line">       session.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Maven静态资源过滤问题</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-CRUD操作-XXXMapper-xml"><a href="#3-CRUD操作-XXXMapper-xml" class="headerlink" title="3.CRUD操作: XXXMapper.xml"></a>3.CRUD操作: <code>XXXMapper.xml</code></h1></li>
+<li><p>SQL 映射文件只有很少的几个顶级元素</p>
 </li>
-<li><p>调用其方法</p>
-</li>
-</ol>
-<h3 id="Servlet中的生命周期方法："><a href="#Servlet中的生命周期方法：" class="headerlink" title="Servlet中的生命周期方法："></a>Servlet中的<code>生命周期</code>方法：</h3><ol>
-<li>被创建：执行<code>init方法，只执行一次</code></li>
 </ol>
 <ul>
-<li>Servlet什么时候被创建？<ul>
-<li>默认情况下，第一次被访问时，Servlet被创建</li>
-<li>可以配置执行Servlet的创建时机。在<code>&lt;servlet&gt;标签</code>下配置<ol>
-<li>第一次被访问时，创建</li>
-</ol>
-<ul>
-<li><code>&lt;load-on-startup&gt;</code>的值为负数</li>
+<li>insert – 映射插入语句</li>
+<li>delete – 映射删除语句</li>
+<li>update – 映射更新语句</li>
+<li>select – 映射查询语句</li>
+<li>等等</li>
+<li>详情点击：<a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#" target="_blank" rel="noopener">官方文档</a></li>
 </ul>
 <ol start="2">
-<li>在服务器启动时，创建</li>
+<li>总结</li>
 </ol>
 <ul>
-<li><code>&lt;load-on-startup&gt;</code>的值为0或正整数</li>
+<li><code>增删改</code>需要提交事务：<code>session.commit();</code></li>
+<li>接口(Mapper)所有的普通参数，尽量都写上<code>@Param参数</code>，尤其是多个参数时，必须写上</li>
+<li>为了规范操作，在SQL的配置文件中，我们尽量将<code>Parameter参数</code>和<code>resultType</code>都写上</li>
+<li>有时候根据业务的需求，可以考虑使用<code>map传递参数</code>,调用方法时给map赋值</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+<h1 id="4-核心配置文件解析：mybatis-config-xml"><a href="#4-核心配置文件解析：mybatis-config-xml" class="headerlink" title="4.核心配置文件解析：mybatis-config.xml"></a>4.核心配置文件解析：<code>mybatis-config.xml</code></h1><ol>
+<li>配置文档的顶层结构如下：</li>
+</ol>
 <ul>
-<li>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，<code>Servlet是单例的</code><ul>
-<li>多个用户同时访问时，可能存在线程安全问题。</li>
-<li>解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对其修改值</li>
+<li><p>configuration（配置）</p>
+<ul>
+<li><p>properties（属性）</p>
+</li>
+<li><p>settings（设置）</p>
+</li>
+<li><p>typeAliases（类型别名）</p>
+</li>
+<li><p>typeHandlers（类型处理器）</p>
+</li>
+<li><p>objectFactory（对象工厂）</p>
+</li>
+<li><p>plugins（插件）</p>
+</li>
+<li><p>environments（环境配置）</p>
+<ul>
+<li>environment（环境变量）<ul>
+<li>transactionManager（事务管理器）</li>
+<li>dataSource（数据源）</li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>databaseIdProvider（数据库厂商标识）</p>
+</li>
+<li><p>mappers（映射器）     </p>
+<p>注意：注意<code>元素节点</code>的<code>顺序</code>！顺序不对会报错！</p>
 </li>
 </ul>
 <ol start="2">
-<li>提供服务：执行<code>service方法，执行多次</code></li>
+<li>常用配置</li>
 </ol>
 <ul>
-<li>每次访问Servlet时，Service方法都会被调用一次。</li>
+<li><p>properties（属性）</p>
+</li>
+<li><p>typeAliases（类型别名）</p>
+</li>
+<li><p>environments（环境配置）</p>
+</li>
+<li><p>mappers（映射器）</p>
+</li>
+<li><p>详情点击：<a href="https://mybatis.org/mybatis-3/zh/configuration.html#" target="_blank" rel="noopener">官方文档</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-作用域（Scope）和生命周期"><a href="#5-作用域（Scope）和生命周期" class="headerlink" title="5.作用域（Scope）和生命周期"></a>5.作用域（Scope）和生命周期</h1><ul>
+<li>理解不同作用域和生命周期类别是至关重要的，因为<code>错误的使用会导致非常严重的并发问题</code><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/20201108013733328.png" alt=""></li>
+</ul>
+<ol>
+<li>SqlSessionFactoryBuilder </li>
+</ol>
+<ul>
+<li>一旦创建了 SqlSessionFactory，就不再需要它了</li>
+<li>最佳作用域是方法作用域（也就是局部方法变量）</li>
+</ul>
+<ol start="2">
+<li>SqlSessionFactory   </li>
+</ol>
+<ul>
+<li>等同于数据库连接池</li>
+<li>SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例 </li>
+<li>最简单的就是使用单例模式或者静态单例模式</li>
+<li>SqlSessionFactory 的最佳作用域是应用作用域</li>
 </ul>
 <ol start="3">
-<li>被销毁：执行<code>destroy方法，只执行一次</code></li>
+<li>SqlSession  </li>
 </ol>
 <ul>
-<li><p>Servlet被销毁时执行。服务器关闭时，Servlet被销毁</p>
-</li>
-<li><p>只有服务器正常关闭时，才会执行destroy方法。</p>
-</li>
-<li><p>destroy方法在Servlet被销毁之前执行，一般用于释放资源</p>
-</li>
+<li>相当于连接数据库的一次请求</li>
+<li>每个线程都应该有它自己的 SqlSession 实例。SqlSession 的实例不是线程安全的，因此是不能被共享的</li>
+<li>最佳的作用域是请求或方法作用域</li>
+<li>用完之后赶紧关闭，不要浪费资源占用，关闭操作放到 finally 块中<br>下面的示例就是一个确保 SqlSession 关闭的标准模式：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> (SqlSession session = sqlSessionFactory.openSession()) &#123;</span><br><span class="line"><span class="comment">// 你的应用逻辑代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  在所有代码中都遵循这种使用模式，可以保证所有数据库资源都能被正确地关闭。            </li>
 </ul>
-<h3 id="Servlet3-0"><a href="#Servlet3-0" class="headerlink" title="Servlet3.0"></a><code>Servlet3.0</code></h3><ul>
-<li><p><code>支持注解配置。</code>可以不需要web.xml</p>
-</li>
-<li><p>步骤：</p>
-<ol>
-<li><p>创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml</p>
-</li>
-<li><p>定义一个类，实现Servlet接口</p>
-</li>
-<li><p>复写方法</p>
-</li>
-<li><p>在类上使用@WebServlet注解，<code>@WebServlet(&quot;资源路径&quot;)</code></p>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h3><ol>
-<li><p>IDEA会为每一个tomcat部署的项目单独建立一份配置文件</p>
-<ul>
-<li>查看控制台的log：<code>Using CATALINA_BASE:</code>  </li>
-</ul>
-</li>
-<li><p>工作空间项目 和 tomcat部署的web项目<br> *<code>tomcat真正访问的是“tomcat部署的web项目”，</code>“tomcat部署的web项目”对应着”工作空间项目” 的web目录下的所有资源</p>
-<p> *<code>WEB-INF目录下的资源不能被浏览器直接访问。</code></p>
-</li>
-<li><p>断点调试：使用”小虫子”启动 dubug 启动</p>
-</li>
-</ol>
-<h3 id="Servlet的体系结构"><a href="#Servlet的体系结构" class="headerlink" title="Servlet的体系结构"></a>Servlet的体系结构</h3><pre><code>Servlet -- 接口
-    |
-GenericServlet -- 抽象类
-    |
-HttpServlet  -- 抽象类</code></pre><ul>
-<li><code>GenericServlet：</code>将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象</li>
-</ul>
-<ol>
-<li>将来定义Servlet类时，可以继承GenericServlet</li>
-<li>实现service()方法即可</li>
-</ol>
-<p>*<code>HttpServlet：</code>对http协议的一种封装，简化操作</p>
-<ol>
-<li>定义类继承HttpServlet</li>
-<li>复写doGet/doPost方法</li>
-</ol>
-<h2 id="HTTP："><a href="#HTTP：" class="headerlink" title="HTTP："></a>HTTP：</h2><h3 id="概念：Hyper-Text-Transfer-Protocol-超文本传输协议"><a href="#概念：Hyper-Text-Transfer-Protocol-超文本传输协议" class="headerlink" title="概念：Hyper Text Transfer Protocol 超文本传输协议"></a>概念：Hyper Text Transfer Protocol 超文本传输协议</h3><ul>
-<li>传输协议：定义了客户端和服务器端通信时，发送数据的格式<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3></li>
-</ul>
-<ol>
-<li><code>基于TCP/IP</code>的高级协议</li>
-<li><code>默认端口号:80</code></li>
-<li>基于请求/响应模型的:<code>一次请求对应一次响应</code></li>
-<li><code>无状态的</code>：每次请求之间相互独立，不能交互数据</li>
+<ol start="4">
+<li>映射器(Mapper)实例<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/20201108015113276.png" alt=""></li>
 </ol>
 <ul>
-<li>历史版本：<ul>
-<li>1.0：每一次请求响应都会建立新的连接</li>
-<li>1.1：复用连接</li>
+<li>映射器接口的实例是从 SqlSession 中获得的。从技术层面上来讲，任何映射器实例的最大作用域与请求它们的 SqlSession 相同。</li>
+<li>但<code>方法作用域才是映射器实例的最合适的作用域</code>。 也就是说，<code>映射器实例应该在调用它们的方法中被获取，使用完毕之后即可丢弃</code>。 </li>
+<li>映射器实例并不需要被显式地关闭。<br>最好将映射器放在方法作用域内。就像下面的例子一样：  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> (SqlSession session = sqlSessionFactory.openSession()) &#123;</span><br><span class="line"> BlogMapper mapper = session.getMapper(BlogMapper.class);</span><br><span class="line"> <span class="comment">// 你的应用逻辑代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6-ResultMap"><a href="#6-ResultMap" class="headerlink" title="6.ResultMap"></a>6.ResultMap</h1></li>
 </ul>
-</li>
-</ul>
-<h3 id="请求消息数据格式"><a href="#请求消息数据格式" class="headerlink" title="请求消息数据格式"></a><strong>请求消息数据格式</strong></h3><ol>
-<li><strong>请求行</strong><br>格式：请求方式 请求url 请求协议/版本<br><code>GET    /login.html     HTTP/1.1</code></li>
+<ol>
+<li>ResultMap 的设计思想</li>
 </ol>
 <ul>
-<li>请求方式：</li>
-<li>HTTP协议有7中请求方式，常用的有2种</li>
-<li><code>GET：</code><ol>
-<li><code>请求参数在请求行中，在url后</code></li>
-<li>请求的url长度有限制的</li>
-<li>不太安全</li>
-</ol>
-</li>
-<li><code>POST：</code><ol>
-<li><code>请求参数在请求体中</code></li>
-<li>请求的url长度没有限制的</li>
-<li>相对安全</li>
-</ol>
-</li>
+<li>对简单的语句做到零配置</li>
+<li>对于复杂一点的语句，只需要描述语句之间的关系就行了</li>
 </ul>
 <ol start="2">
-<li><strong>请求头</strong>：客户端浏览器告诉服务器一些信息<br>格式：请求头名称: 请求头值</li>
+<li>解决数据库表的字段与实体类不一致问题<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"userResultMap"</span> <span class="attr">type</span>=<span class="string">"User"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- column:表的字段。property:实体类字段 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>  <span class="attr">column</span>=<span class="string">"user_id"</span> <span class="attr">property</span>=<span class="string">"id"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"user_name"</span> <span class="attr">property</span>=<span class="string">"username"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hashed_password"</span> <span class="attr">property</span>=<span class="string">"password"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- resultMap:值为resultMap的id属性值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultMap</span>=<span class="string">"userResultMap"</span>&gt;</span></span><br><span class="line">  select user_id, user_name, hashed_password</span><br><span class="line">  from some_table</span><br><span class="line">  where id = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="7-分页"><a href="#7-分页" class="headerlink" title="7.分页"></a>7.分页</h1></li>
+<li><code>XXXMapper.java</code>定义方法<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选择全部用户实现分页，map传参</span></span><br><span class="line"><span class="function">List&lt;User&gt; <span class="title">selectUser</span><span class="params">(Map&lt;String,Integer&gt; map)</span></span>;</span><br></pre></td></tr></table></figure></li>
+<li>编写<code>XXXMapper.xml</code><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- map传参 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUser"</span> <span class="attr">parameterType</span>=<span class="string">"map"</span> <span class="attr">resultType</span>=<span class="string">"user"</span>&gt;</span></span><br><span class="line">  select * from user limit #&#123;startIndex&#125;,#&#123;pageSize&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>分页查询<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//分页查询 , 两个参数startIndex , pageSize</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSelectUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   SqlSession session = MybatisUtils.getSession();</span><br><span class="line">   UserMapper mapper = session.getMapper(UserMapper.class);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> currentPage = <span class="number">1</span>;  <span class="comment">//第几页</span></span><br><span class="line">   <span class="keyword">int</span> pageSize = <span class="number">10</span>;  <span class="comment">//每页显示几个</span></span><br><span class="line">   Map&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">   <span class="comment">//给map赋值</span></span><br><span class="line">   map.put(<span class="string">"startIndex"</span>,(currentPage-<span class="number">1</span>)*pageSize);</span><br><span class="line">   map.put(<span class="string">"pageSize"</span>,pageSize);</span><br><span class="line"></span><br><span class="line">   List&lt;User&gt; users = mapper.selectUser(map);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> (User user: users)&#123;</span><br><span class="line">       System.out.println(user);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">   session.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="8-日志"><a href="#8-日志" class="headerlink" title="8. 日志"></a>8. 日志</h1></li>
 </ol>
 <ul>
-<li><p>常见的请求头：</p>
-<ol>
-<li><p><code>User-Agent：</code>浏览器告诉服务器，我访问你使用的浏览器版本信息</p>
-<ul>
-<li>可以在服务器端获取该头的信息，解决浏览器的兼容性问题</li>
-</ul>
-</li>
-<li><p><code>Referer：</code>告诉服务器，我(当前请求)从哪里来</p>
-<ul>
-<li>作用：</li>
+<li>只演示使用LOG4J</li>
 </ul>
 <ol>
-<li>防盗链：</li>
-<li>统计工作：</li>
+<li>配置<code>mybatis-config.xml</code><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"LOG4J"</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>maven导入依赖jar包<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>编写 <code>log4j.properties</code>文件</li>
 </ol>
+<ul>
+<li><p>完整配置信息请百度/官网查询</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局日志配置</span></span><br><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">ERROR, stdout</span></span><br><span class="line"><span class="comment"># MyBatis 日志配置</span></span><br><span class="line"><span class="meta">log4j.logger.org.mybatis.example.BlogMapper</span>=<span class="string">TRACE</span></span><br><span class="line"><span class="comment"># 控制台输出</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%5p [%t] - %m%n</span></span><br><span class="line"><span class="meta">```</span>     <span class="string"></span></span><br><span class="line"><span class="meta">上述配置将使</span> <span class="string">Log4J 详细打印 org.mybatis.example.BlogMapper 的日志，对于应用的其它部分，只打印错误信息。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 9. Java注解</span></span><br><span class="line"><span class="meta">1.</span> <span class="string">mybatis最初配置信息是基于 XML ,映射语句(SQL)也是定义在 XML 中的。而到MyBatis 3提供了新的基于注解的配置。不幸的是，Java 注解的的表达力和灵活性十分有限。`最强大的 MyBatis 映射并不能用注解来构建`</span></span><br><span class="line"></span><br><span class="line"><span class="meta">2.</span> <span class="string">sql 类型主要分成 :</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@Insert ()</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@delete ()</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@update ()</span></span><br><span class="line"><span class="meta">*</span> <span class="string">@select ()</span></span><br><span class="line"></span><br><span class="line"><span class="meta">*</span> <span class="string">举例: `UserMapper.java ` </span></span><br><span class="line">    <span class="meta">```java</span>    <span class="string"></span></span><br><span class="line">    <span class="attr">//查询全部用户</span></span><br><span class="line">    <span class="meta">@Select("select</span> <span class="string">id,name,pwd password from user")</span></span><br><span class="line">    <span class="attr">public</span> <span class="string">List&lt;User&gt; getAllUser();</span></span><br></pre></td></tr></table></figure>
 </li>
-</ol>
+<li><p>详情点击：<a href="https://mybatis.org/mybatis-3/zh/java-api.html#sqlSessions" target="_blank" rel="noopener">官方文档</a></p>
 </li>
 </ul>
 <ol start="3">
-<li><p><strong>请求空行</strong></p>
+<li><p>利用<code>注解开发</code>就<code>不需要mapper.xml</code>映射文件了</p>
 </li>
-<li><p><strong>请求体(正文)</strong>：</p>
+<li><p>使用<code>注解和配置文件协同开发</code>，才是MyBatis的最佳实践！</p>
+</li>
+<li><p><code>@param</code> 注解用于给方法参数起一个名字。以下是总结的使用原则</p>
 </li>
 </ol>
 <ul>
-<li><code>封装POST请求消息的请求参数的</code></li>
-<li>字符串格式：</li>
+<li>在方法接受多个参数的情况下，建议一定要使用@Param注解给参数命名。</li>
+<li>在方法只接受一个参数的情况下，可以不使用@Param。</li>
+<li>如果参数是 JavaBean ， 则不能使用@Param。</li>
+<li>不使用@Param注解时，参数只能有一个，并且是Javabean。</li>
 </ul>
-<p><code>POST</code>    <code>/login.html</code>    <code>HTTP/1.1</code><br><code>Host:</code> localhost<br><code>User-Agent:</code> Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0<br><code>Accept:</code> text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8<br><code>Accept-Language:</code> zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br><code>Accept-Encoding:</code> gzip, deflate<br><code>Referer:</code> <a href="http://localhost/login.html" target="_blank" rel="noopener">http://localhost/login.html</a><br><code>Connection:</code> keep-alive<br><code>Upgrade-Insecure-Requests:</code> 1<br><code>username</code>=zhangsan    </p>
-<h3 id="响应消息数据格式"><a href="#响应消息数据格式" class="headerlink" title="响应消息数据格式"></a><strong>响应消息数据格式</strong></h3><ol>
-<li><strong>响应行</strong><br>格式：协议/版本 响应状态码 状态码描述</li>
+<h1 id="10-一对多和多对一处理"><a href="#10-一对多和多对一处理" class="headerlink" title="10.一对多和多对一处理"></a>10.一对多和多对一处理</h1><ul>
+<li>关联(<code>association</code>):一对一和多对一</li>
+<li>集合(<code>collection</code>)：一对多</li>
+</ul>
+<ol>
+<li>数据库表<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/640yyjdtye4653tegf.webp" alt=""></li>
 </ol>
-<p>响应状态码：3位数字,服务器告诉客户端浏览器本次请求和响应的</p>
 <ul>
-<li><code>分类(5种)</code>：<ol>
-<li><code>1xx：</code>服务器就收客户端消息，但没有接受完成，等待一段时间后，发送1xx多状态码</li>
-<li><code>2xx：</code>成功。<ul>
-<li>200</li>
+<li>需求一：获取所有学生及对应老师的信息</li>
 </ul>
+<ol>
+<li><p>XXXMapper<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afvdfvgbfadvavdfe.PNG" alt=""></p>
 </li>
-<li><code>3xx：</code>重定向。<ul>
-<li>302 (重定向)</li>
-<li>304 (访问缓存)</li>
-</ul>
-</li>
-<li><code>4xx：</code>客户端错误。<ul>
-<li>404（请求路径没有对应的资源） </li>
-<li>405 (请求方式没有对应的doXxx方法）</li>
-</ul>
-</li>
-<li><code>5xx：</code>服务器端错误。<ul>
-<li>500 (服务器内部出现异常)</li>
-</ul>
+<li><p>StudentMapper.xml</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xxx.mapper.StudentMapper"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getStudents"</span> <span class="attr">resultMap</span>=<span class="string">"StudentTeacher"</span> &gt;</span></span><br><span class="line">  select s.id sid, s.name sname , t.name tname</span><br><span class="line">  from student s,teacher t</span><br><span class="line">  where s.tid = t.id</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"StudentTeacher"</span> <span class="attr">type</span>=<span class="string">"Student"</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- column为结果集的列名，可以随便取名 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"sid"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"sname"</span>/&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- JavaType为Student中关联对象的实体类的类型 --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"teacher"</span> <span class="attr">javaType</span>=<span class="string">"Teacher"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"tname"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<ul>
+<li>需求二：获取老师及其所有学生的信息</li>
+</ul>
+<ol>
+<li>XXXMapper<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ddgehadvvstgwt3t4f3.PNG" alt=""></li>
+<li>TeacherMapper.xml<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.xxx.mapper.TeacherMapper"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getTeacher"</span> <span class="attr">resultMap</span>=<span class="string">"TeacherStudent"</span>&gt;</span></span><br><span class="line">      select s.id sid, s.name sname , t.name tname, t.id tid</span><br><span class="line">      from student s,teacher t</span><br><span class="line">      where s.tid = t.id and t.id=#&#123;id&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"TeacherStudent"</span> <span class="attr">type</span>=<span class="string">"Teacher"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span>  <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"tname"</span>/&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- ofType为Teacher中List集合中的实体类的类型 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"students"</span> <span class="attr">ofType</span>=<span class="string">"Student"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"sid"</span> /&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"sname"</span> /&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"tid"</span> <span class="attr">column</span>=<span class="string">"tid"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="11-动态SQL"><a href="#11-动态SQL" class="headerlink" title="11.动态SQL"></a>11.动态SQL</h1></li>
+<li>什么是动态SQL：动态SQL指的是根据不同的查询条件 , 生成不同的Sql语句.</li>
+<li>借助功能强大的基于 OGNL 的表达式，MyBatis 3 替换了之前的大部分元素，大大精简了元素种类，现在要学习的元素种类比原来的一半还要少。     </li>
+</ol>
+<ul>
+<li>if</li>
+<li>choose (when, otherwise)</li>
+<li>trim (where, set)</li>
+<li>foreach</li>
+</ul>
+<ol start="3">
+<li>详情点击：<a href="https://mybatis.org/mybatis-3/zh/dynamic-sql.html" target="_blank" rel="noopener">官方文档</a></li>
+</ol>
+<h1 id="12-缓存"><a href="#12-缓存" class="headerlink" title="12.缓存"></a>12.缓存</h1><ol>
+<li>什么是缓存 [ <code>Cache</code> ]?</li>
+</ol>
+<ul>
+<li><p>存在内存中的临时数据。</p>
+</li>
+<li><p>将用户经常查询的数据放在缓存（内存）中，用户去查询数据就不用从磁盘上(关系型数据库数据文件)查询，从缓存中查询，从而提高查询效率，解决了高并发系统的性能问题。</p>
 </li>
 </ul>
 <ol start="2">
-<li><p><strong>响应头</strong>：</p>
+<li>为什么使用缓存？</li>
+</ol>
+<ul>
+<li>减少和数据库的交互次数，减少系统开销，提高系统效率。</li>
+</ul>
+<ol start="3">
+<li>什么样的数据能使用缓存？</li>
+</ol>
+<ul>
+<li>经常查询并且不经常改变的数据。</li>
+</ul>
+<ol start="4">
+<li><code>MyBatis系统</code>中默认定义了两级缓存：<code>一级缓存</code>和<code>二级缓存</code></li>
+</ol>
+<ul>
+<li><p><code>默认</code>情况下，只有<code>一级缓存开启</code>。（<code>SqlSession级别的缓存，也称为本地缓存</code>）</p>
+</li>
+<li><p><code>二级缓存</code>需要手动开启和配置，他是<code>基于namespace级别的缓存</code>。</p>
+</li>
+<li><p>为了提高扩展性，MyBatis定义了缓存接口Cache。我们可以<code>通过实现Cache接口来自定义二级缓存</code></p>
+</li>
+</ul>
+<ol start="5">
+<li>一级缓存也叫本地缓存</li>
+</ol>
+<ul>
+<li><p>与数据库同一次会话期间查询到的数据会放在本地缓存中。</p>
+</li>
+<li><p>以后如果需要获取相同的数据，直接从缓存中拿，没必须再去查询数据库；</p>
+</li>
+<li><p>一级缓存是SqlSession级别的缓存，是一直开启的，我们关闭不了它；</p>
+</li>
+<li><p>一级缓存失效情况：没有使用到当前的一级缓存，效果就是，还需要再向数据库中发起一次查询请求！</p>
+</li>
+</ul>
+<ol start="6">
+<li>一级缓存失效的四种情况</li>
+</ol>
+<ul>
+<li><p><strong>sqlSession不同:</strong> 每个sqlSession中的缓存相互独立</p>
+</li>
+<li><p><strong>sqlSession相同，查询条件不同:</strong> 当前缓存中，不存在这个数据</p>
+</li>
+<li><p><strong>sqlSession相同，两次查询之间执行了增删改操作:</strong> 因为增删改操作可能会对当前数据产生影响</p>
+</li>
+<li><p><strong>sqlSession相同，手动清除一级缓存:</strong><code>session.clearCache();</code></p>
+</li>
+</ul>
+<h1 id="13-二级缓存"><a href="#13-二级缓存" class="headerlink" title="13. 二级缓存"></a>13. 二级缓存</h1><ol>
+<li><p>开启全局缓存 <code>mybatis-config.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>去每个mapper.xml中配置使用二级缓存 <code>xxxMapper.xml</code></p>
+<pre><code class="xml"><span class="tag">&lt;<span class="name">cache</span></span>
+<span class="tag"><span class="attr">eviction</span>=<span class="string">"FIFO"</span></span>
+<span class="tag"><span class="attr">flushInterval</span>=<span class="string">"60000"</span></span>
+<span class="tag"><span class="attr">size</span>=<span class="string">"512"</span></span>
+<span class="tag"><span class="attr">readOnly</span>=<span class="string">"true"</span>/&gt;</span>
+<span class="comment">&lt;!-- 这个更高级的配置创建了一个 FIFO(先进先出) 缓存，每隔 60 秒刷新，最多可以存储结果对象或列表的 512 个引用，而且返回的对象被认为是只读的，因此对它们进行修改可能会在不同线程中的调用者产生冲突。 --&gt;</span></code></pre>
+<p>详情点击：<a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#cache" target="_blank" rel="noopener">官方文档</a></p>
+<ol start="3">
+<li>结论</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><p>只要开启了二级缓存，我们在同一个Mapper中的查询，可以在二级缓存中拿到数据</p>
+</li>
+<li><p>查出的数据都会被默认先放在一级缓存中</p>
+</li>
+<li><p>只有会话提交或者关闭以后，一级缓存中的数据才会转到二级缓存中</p>
+</li>
+</ul>
+<p>参考链接：          </p>
 <ol>
-<li>格式：头名称：值</li>
-<li>常见的响应头：<ol>
-<li><code>Content-Type：</code>服务器告诉客户端本次响应体数据格式以及编码格式</li>
-<li><code>Content-disposition：</code>服务器告诉客户端以什么格式打开响应体数据</li>
+<li><a href="https://mybatis.org/mybatis-3/zh/index.html#" target="_blank" rel="noopener">https://mybatis.org/mybatis-3/zh/index.html#</a></li>
+<li><a href="https://www.kuangstudy.com/course" target="_blank" rel="noopener">https://www.kuangstudy.com/course</a></li>
 </ol>
-<ul>
-<li><code>值：</code></li>
-<li><code>in-line:</code>默认值,在当前页面内打开</li>
-<li><code>attachment;filename=xxx：</code>以附件形式打开响应体。文件下载</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p><strong>响应空行</strong></p>
-</li>
-<li><p><strong>响应体</strong>：传输的数据</p>
-</li>
-</ol>
-<ul>
-<li>字符串格式</li>
-</ul>
-<p><code>HTTP/1.1 200 OK</code><br><code>Content-Type:</code> text/html;charset=UTF-8<br><code>Content-Length:</code> 101<br><code>Date:</code> Wed, 06 Jun 2018 07:08:42 GMT<br><code>&lt;html&gt;</code><br>    <code>&lt;head&gt;</code><br>    <code>&lt;title&gt;$Title$&lt;/title&gt;</code><br>    <code>&lt;/head&gt;</code><br>    <code>&lt;body&gt;</code><br>    <code>hello , response</code><br>    <code>&lt;/body&gt;</code></p>
-</html>
 ]]></content>
       <categories>
-        <category>JavaWeb</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
-        <tag>JavaWeb</tag>
+        <tag>Mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -4947,6 +4667,286 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </tags>
   </entry>
   <entry>
+    <title>Scanner类,Random类,ArrayList类</title>
+    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="1-Scanner类"><a href="#1-Scanner类" class="headerlink" title="1.Scanner类"></a>1.Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" alt=""></p>
+<h1 id="2-Random类"><a href="#2-Random类" class="headerlink" title="2.Random类"></a>2.Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" alt=""></p>
+<h1 id="3-ArrayList类"><a href="#3-ArrayList类" class="headerlink" title="3.ArrayList类"></a>3.ArrayList类</h1><ul>
+<li>3.1 ArrayList使用步骤</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" alt=""></p>
+<ul>
+<li>3.2 常用方法和遍历 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" alt=""></p>
+<ul>
+<li>3.3 基本数据类型包装类</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" alt=""></p>
+<h1 id="4-ArrayList练习"><a href="#4-ArrayList练习" class="headerlink" title="4.ArrayList练习"></a>4.ArrayList练习</h1><ul>
+<li>4.1 生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" alt=""></li>
+<li>4.2 自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" alt=""></li>
+<li>4.3 定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" alt=""></li>
+<li>4.4 定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Servlet和HTTP</title>
+    <url>/2021/03/23/Servlet%E5%92%8CHTTP/</url>
+    <content><![CDATA[<h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. Servlet
+2. HTTP协议</code></pre><h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><h3 id="概念-运行在服务器端的小程序"><a href="#概念-运行在服务器端的小程序" class="headerlink" title="概念:运行在服务器端的小程序"></a>概念:运行在服务器端的小程序</h3><ul>
+<li>Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。</li>
+<li>将来我们自定义一个类，实现Servlet接口，复写方法。</li>
+</ul>
+<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ol>
+<li>创建JavaEE项目</li>
+<li>定义一个类，实现Servlet接口<br><code>public class ServletDemo1 implements Servlet</code></li>
+<li>实现接口中的抽象方法</li>
+<li>配置Servlet:在<code>web.xml</code>中配置<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"> <span class="comment">&lt;!--配置Servlet --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>cn.itcast.web.servlet.ServletDemo1<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/demo1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="执行原理："><a href="#执行原理：" class="headerlink" title="执行原理："></a>执行原理：</h3><ol>
+<li><p>当服务器接受到客户端浏览器的请求后，会<code>解析请求URL路径，</code>获取访问的Servlet的资源路径</p>
+</li>
+<li><p>查找web.xml文件，是否有对应的<code>&lt;url-pattern&gt;</code>标签体内容。</p>
+</li>
+<li><p>如果有，则在找到对应的<code>&lt;servlet-class&gt;全类名</code></p>
+</li>
+<li><p>tomcat会将字节码文件加载进内存，并且创建其对象</p>
+</li>
+<li><p>调用其方法</p>
+</li>
+</ol>
+<h3 id="Servlet中的生命周期方法："><a href="#Servlet中的生命周期方法：" class="headerlink" title="Servlet中的生命周期方法："></a>Servlet中的<code>生命周期</code>方法：</h3><ol>
+<li>被创建：执行<code>init方法，只执行一次</code></li>
+</ol>
+<ul>
+<li>Servlet什么时候被创建？<ul>
+<li>默认情况下，第一次被访问时，Servlet被创建</li>
+<li>可以配置执行Servlet的创建时机。在<code>&lt;servlet&gt;标签</code>下配置<ol>
+<li>第一次被访问时，创建</li>
+</ol>
+<ul>
+<li><code>&lt;load-on-startup&gt;</code>的值为负数</li>
+</ul>
+<ol start="2">
+<li>在服务器启动时，创建</li>
+</ol>
+<ul>
+<li><code>&lt;load-on-startup&gt;</code>的值为0或正整数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，<code>Servlet是单例的</code><ul>
+<li>多个用户同时访问时，可能存在线程安全问题。</li>
+<li>解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对其修改值</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>提供服务：执行<code>service方法，执行多次</code></li>
+</ol>
+<ul>
+<li>每次访问Servlet时，Service方法都会被调用一次。</li>
+</ul>
+<ol start="3">
+<li>被销毁：执行<code>destroy方法，只执行一次</code></li>
+</ol>
+<ul>
+<li><p>Servlet被销毁时执行。服务器关闭时，Servlet被销毁</p>
+</li>
+<li><p>只有服务器正常关闭时，才会执行destroy方法。</p>
+</li>
+<li><p>destroy方法在Servlet被销毁之前执行，一般用于释放资源</p>
+</li>
+</ul>
+<h3 id="Servlet3-0"><a href="#Servlet3-0" class="headerlink" title="Servlet3.0"></a><code>Servlet3.0</code></h3><ul>
+<li><p><code>支持注解配置。</code>可以不需要web.xml</p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li><p>创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml</p>
+</li>
+<li><p>定义一个类，实现Servlet接口</p>
+</li>
+<li><p>复写方法</p>
+</li>
+<li><p>在类上使用@WebServlet注解，<code>@WebServlet(&quot;资源路径&quot;)</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h3><ol>
+<li><p>IDEA会为每一个tomcat部署的项目单独建立一份配置文件</p>
+<ul>
+<li>查看控制台的log：<code>Using CATALINA_BASE:</code>  </li>
+</ul>
+</li>
+<li><p>工作空间项目 和 tomcat部署的web项目<br> *<code>tomcat真正访问的是“tomcat部署的web项目”，</code>“tomcat部署的web项目”对应着”工作空间项目” 的web目录下的所有资源</p>
+<p> *<code>WEB-INF目录下的资源不能被浏览器直接访问。</code></p>
+</li>
+<li><p>断点调试：使用”小虫子”启动 dubug 启动</p>
+</li>
+</ol>
+<h3 id="Servlet的体系结构"><a href="#Servlet的体系结构" class="headerlink" title="Servlet的体系结构"></a>Servlet的体系结构</h3><pre><code>Servlet -- 接口
+    |
+GenericServlet -- 抽象类
+    |
+HttpServlet  -- 抽象类</code></pre><ul>
+<li><code>GenericServlet：</code>将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象</li>
+</ul>
+<ol>
+<li>将来定义Servlet类时，可以继承GenericServlet</li>
+<li>实现service()方法即可</li>
+</ol>
+<p>*<code>HttpServlet：</code>对http协议的一种封装，简化操作</p>
+<ol>
+<li>定义类继承HttpServlet</li>
+<li>复写doGet/doPost方法</li>
+</ol>
+<h2 id="HTTP："><a href="#HTTP：" class="headerlink" title="HTTP："></a>HTTP：</h2><h3 id="概念：Hyper-Text-Transfer-Protocol-超文本传输协议"><a href="#概念：Hyper-Text-Transfer-Protocol-超文本传输协议" class="headerlink" title="概念：Hyper Text Transfer Protocol 超文本传输协议"></a>概念：Hyper Text Transfer Protocol 超文本传输协议</h3><ul>
+<li>传输协议：定义了客户端和服务器端通信时，发送数据的格式<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3></li>
+</ul>
+<ol>
+<li><code>基于TCP/IP</code>的高级协议</li>
+<li><code>默认端口号:80</code></li>
+<li>基于请求/响应模型的:<code>一次请求对应一次响应</code></li>
+<li><code>无状态的</code>：每次请求之间相互独立，不能交互数据</li>
+</ol>
+<ul>
+<li>历史版本：<ul>
+<li>1.0：每一次请求响应都会建立新的连接</li>
+<li>1.1：复用连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="请求消息数据格式"><a href="#请求消息数据格式" class="headerlink" title="请求消息数据格式"></a><strong>请求消息数据格式</strong></h3><ol>
+<li><strong>请求行</strong><br>格式：请求方式 请求url 请求协议/版本<br><code>GET    /login.html     HTTP/1.1</code></li>
+</ol>
+<ul>
+<li>请求方式：</li>
+<li>HTTP协议有7中请求方式，常用的有2种</li>
+<li><code>GET：</code><ol>
+<li><code>请求参数在请求行中，在url后</code></li>
+<li>请求的url长度有限制的</li>
+<li>不太安全</li>
+</ol>
+</li>
+<li><code>POST：</code><ol>
+<li><code>请求参数在请求体中</code></li>
+<li>请求的url长度没有限制的</li>
+<li>相对安全</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><strong>请求头</strong>：客户端浏览器告诉服务器一些信息<br>格式：请求头名称: 请求头值</li>
+</ol>
+<ul>
+<li><p>常见的请求头：</p>
+<ol>
+<li><p><code>User-Agent：</code>浏览器告诉服务器，我访问你使用的浏览器版本信息</p>
+<ul>
+<li>可以在服务器端获取该头的信息，解决浏览器的兼容性问题</li>
+</ul>
+</li>
+<li><p><code>Referer：</code>告诉服务器，我(当前请求)从哪里来</p>
+<ul>
+<li>作用：</li>
+</ul>
+<ol>
+<li>防盗链：</li>
+<li>统计工作：</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li><p><strong>请求空行</strong></p>
+</li>
+<li><p><strong>请求体(正文)</strong>：</p>
+</li>
+</ol>
+<ul>
+<li><code>封装POST请求消息的请求参数的</code></li>
+<li>字符串格式：</li>
+</ul>
+<p><code>POST</code>    <code>/login.html</code>    <code>HTTP/1.1</code><br><code>Host:</code> localhost<br><code>User-Agent:</code> Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0<br><code>Accept:</code> text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8<br><code>Accept-Language:</code> zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br><code>Accept-Encoding:</code> gzip, deflate<br><code>Referer:</code> <a href="http://localhost/login.html" target="_blank" rel="noopener">http://localhost/login.html</a><br><code>Connection:</code> keep-alive<br><code>Upgrade-Insecure-Requests:</code> 1<br><code>username</code>=zhangsan    </p>
+<h3 id="响应消息数据格式"><a href="#响应消息数据格式" class="headerlink" title="响应消息数据格式"></a><strong>响应消息数据格式</strong></h3><ol>
+<li><strong>响应行</strong><br>格式：协议/版本 响应状态码 状态码描述</li>
+</ol>
+<p>响应状态码：3位数字,服务器告诉客户端浏览器本次请求和响应的</p>
+<ul>
+<li><code>分类(5种)</code>：<ol>
+<li><code>1xx：</code>服务器就收客户端消息，但没有接受完成，等待一段时间后，发送1xx多状态码</li>
+<li><code>2xx：</code>成功。<ul>
+<li>200</li>
+</ul>
+</li>
+<li><code>3xx：</code>重定向。<ul>
+<li>302 (重定向)</li>
+<li>304 (访问缓存)</li>
+</ul>
+</li>
+<li><code>4xx：</code>客户端错误。<ul>
+<li>404（请求路径没有对应的资源） </li>
+<li>405 (请求方式没有对应的doXxx方法）</li>
+</ul>
+</li>
+<li><code>5xx：</code>服务器端错误。<ul>
+<li>500 (服务器内部出现异常)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p><strong>响应头</strong>：</p>
+<ol>
+<li>格式：头名称：值</li>
+<li>常见的响应头：<ol>
+<li><code>Content-Type：</code>服务器告诉客户端本次响应体数据格式以及编码格式</li>
+<li><code>Content-disposition：</code>服务器告诉客户端以什么格式打开响应体数据</li>
+</ol>
+<ul>
+<li><code>值：</code></li>
+<li><code>in-line:</code>默认值,在当前页面内打开</li>
+<li><code>attachment;filename=xxx：</code>以附件形式打开响应体。文件下载</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>响应空行</strong></p>
+</li>
+<li><p><strong>响应体</strong>：传输的数据</p>
+</li>
+</ol>
+<ul>
+<li>字符串格式</li>
+</ul>
+<p><code>HTTP/1.1 200 OK</code><br><code>Content-Type:</code> text/html;charset=UTF-8<br><code>Content-Length:</code> 101<br><code>Date:</code> Wed, 06 Jun 2018 07:08:42 GMT<br><code>&lt;html&gt;</code><br>    <code>&lt;head&gt;</code><br>    <code>&lt;title&gt;$Title$&lt;/title&gt;</code><br>    <code>&lt;/head&gt;</code><br>    <code>&lt;body&gt;</code><br>    <code>hello , response</code><br>    <code>&lt;/body&gt;</code></p>
+</html>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring</title>
     <url>/2021/03/23/Spring/</url>
     <content><![CDATA[]]></content>
@@ -5005,174 +5005,6 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 <h2 id="2-3-静态代码块"><a href="#2-3-静态代码块" class="headerlink" title="2.3 静态代码块"></a>2.3 静态代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtdmk.PNG" alt=""></p>
 <h1 id="3-Arrays类"><a href="#3-Arrays类" class="headerlink" title="3.Arrays类"></a>3.Arrays类</h1><h2 id="3-1常用方法"><a href="#3-1常用方法" class="headerlink" title="3.1常用方法"></a>3.1常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sort.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tostring.PNG" alt=""></p>
 <h1 id="4-Math类"><a href="#4-Math类" class="headerlink" title="4.Math类"></a>4.Math类</h1><h2 id="4-1-常用方法"><a href="#4-1-常用方法" class="headerlink" title="4.1 常用方法"></a>4.1 常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/math1111111.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/4.2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Web概述</title>
-    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. web相关概念
-2. web服务器软件：Tomcat</code></pre><h2 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h2><h3 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h3><ol>
-<li><code>C/S：</code>客户端/服务器端</li>
-<li><code>B/S：</code>浏览器/服务器端</li>
-</ol>
-<h3 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h3><ol>
-<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
-<li>如： <code>html,css,JavaScript</code></li>
-</ul>
-</li>
-<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
-<li>如：<code>servlet/jsp,php,asp....</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h3><ol>
-<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
-<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
-<li>传输协议：规定了数据传输的规则</li>
-</ol>
-<ul>
-<li>基础协议：<ol>
-<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
-<li><code>UDP</code>: 不安全协议。 速度快</li>
-</ol>
-</li>
-</ul>
-<h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><ul>
-<li>服务器：安装了服务器软件的计算机</li>
-<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
-<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
-<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
-<li>web容器</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>常见的java相关的web服务器软件：<ul>
-<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
-</ul>
-<h3 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h3><ol>
-<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
-</li>
-<li><p>安装：解压压缩包即可</p>
-<ul>
-<li>注意：安装目录建议不要有中文和空格</li>
-</ul>
-</li>
-<li><p>卸载：删除目录即可</p>
-</li>
-<li><p>启动：</p>
-</li>
-</ol>
-<ul>
-<li><p>bin/startup.bat ,双击运行该文件即可</p>
-</li>
-<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
-</li>
-<li><p>可能遇到的问题：</p>
-<ol>
-<li><p>黑窗口一闪而过：</p>
-<ul>
-<li>原因： 没有正确配置JAVA_HOME环境变量</li>
-<li>解决方案：正确配置JAVA_HOME环境变量</li>
-</ul>
-</li>
-<li><p>启动报错：</p>
-<ol>
-<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
-<li><code>netstat -ano</code></li>
-</ul>
-</li>
-<li>温柔：修改自身的端口号<ul>
-<li><code>conf/server.xml</code></li>
-<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="5">
-<li>关闭：<ol>
-<li>正常关闭：<ul>
-<li><code>bin/shutdown.bat</code></li>
-<li><code>ctrl+c</code></li>
-</ul>
-</li>
-<li>强制关闭：<ul>
-<li>点击启动窗口的×</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>配置:</li>
-</ol>
-<ul>
-<li><p>部署项目的方式：</p>
-<ol>
-<li>直接将项目放到<code>webapps目录</code>下即可。</li>
-</ol>
-<ul>
-<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
-<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
-</ul>
-<ol start="2">
-<li>配置<code>conf/server.xml</code>文件<br><code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></li>
-</ol>
-<ul>
-<li><code>docBase</code>:项目存放的路径</li>
-<li><code>path</code>：虚拟目录</li>
-</ul>
-<ol start="3">
-<li>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br><code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></li>
-</ol>
-<ul>
-<li>虚拟目录：xml文件的名称</li>
-</ul>
-</li>
-<li><p><strong>目录结构</strong></p>
-<ul>
-<li>java动态项目的目录结构：  </li>
-</ul>
-<p>  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>final，权限，内部类</title>
-    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="1-final"><a href="#1-final" class="headerlink" title="1.final"></a>1.final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" alt=""></p>
-<h1 id="2-权限"><a href="#2-权限" class="headerlink" title="2.权限"></a>2.权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" alt=""></p>
-<h1 id="3-内部类"><a href="#3-内部类" class="headerlink" title="3.内部类"></a>3.内部类</h1><h2 id="3-1-成员内部类"><a href="#3-1-成员内部类" class="headerlink" title="3.1 成员内部类"></a>3.1 成员内部类</h2><ul>
-<li>3.1.1 定义</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" alt=""></p>
-<ul>
-<li>3.1.2 访问特点</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" alt=""></p>
-<h2 id="3-2-匿名内部类【重点】"><a href="#3-2-匿名内部类【重点】" class="headerlink" title="3.2 匿名内部类【重点】"></a>3.2 匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -5365,6 +5197,174 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </tags>
   </entry>
   <entry>
+    <title>final，权限，内部类</title>
+    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="1-final"><a href="#1-final" class="headerlink" title="1.final"></a>1.final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" alt=""></p>
+<h1 id="2-权限"><a href="#2-权限" class="headerlink" title="2.权限"></a>2.权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" alt=""></p>
+<h1 id="3-内部类"><a href="#3-内部类" class="headerlink" title="3.内部类"></a>3.内部类</h1><h2 id="3-1-成员内部类"><a href="#3-1-成员内部类" class="headerlink" title="3.1 成员内部类"></a>3.1 成员内部类</h2><ul>
+<li>3.1.1 定义</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" alt=""></p>
+<ul>
+<li>3.1.2 访问特点</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" alt=""></p>
+<h2 id="3-2-匿名内部类【重点】"><a href="#3-2-匿名内部类【重点】" class="headerlink" title="3.2 匿名内部类【重点】"></a>3.2 匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web概述</title>
+    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. web相关概念
+2. web服务器软件：Tomcat</code></pre><h2 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h2><h3 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h3><ol>
+<li><code>C/S：</code>客户端/服务器端</li>
+<li><code>B/S：</code>浏览器/服务器端</li>
+</ol>
+<h3 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h3><ol>
+<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
+<li>如： <code>html,css,JavaScript</code></li>
+</ul>
+</li>
+<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
+<li>如：<code>servlet/jsp,php,asp....</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h3><ol>
+<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
+<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
+<li>传输协议：规定了数据传输的规则</li>
+</ol>
+<ul>
+<li>基础协议：<ol>
+<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
+<li><code>UDP</code>: 不安全协议。 速度快</li>
+</ol>
+</li>
+</ul>
+<h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
+<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
+<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
+<li>web容器</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>常见的java相关的web服务器软件：<ul>
+<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
+</ul>
+<h3 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h3><ol>
+<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
+</li>
+<li><p>安装：解压压缩包即可</p>
+<ul>
+<li>注意：安装目录建议不要有中文和空格</li>
+</ul>
+</li>
+<li><p>卸载：删除目录即可</p>
+</li>
+<li><p>启动：</p>
+</li>
+</ol>
+<ul>
+<li><p>bin/startup.bat ,双击运行该文件即可</p>
+</li>
+<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
+</li>
+<li><p>可能遇到的问题：</p>
+<ol>
+<li><p>黑窗口一闪而过：</p>
+<ul>
+<li>原因： 没有正确配置JAVA_HOME环境变量</li>
+<li>解决方案：正确配置JAVA_HOME环境变量</li>
+</ul>
+</li>
+<li><p>启动报错：</p>
+<ol>
+<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
+<li><code>netstat -ano</code></li>
+</ul>
+</li>
+<li>温柔：修改自身的端口号<ul>
+<li><code>conf/server.xml</code></li>
+<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>关闭：<ol>
+<li>正常关闭：<ul>
+<li><code>bin/shutdown.bat</code></li>
+<li><code>ctrl+c</code></li>
+</ul>
+</li>
+<li>强制关闭：<ul>
+<li>点击启动窗口的×</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>配置:</li>
+</ol>
+<ul>
+<li><p>部署项目的方式：</p>
+<ol>
+<li>直接将项目放到<code>webapps目录</code>下即可。</li>
+</ol>
+<ul>
+<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
+<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
+</ul>
+<ol start="2">
+<li>配置<code>conf/server.xml</code>文件<br><code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></li>
+</ol>
+<ul>
+<li><code>docBase</code>:项目存放的路径</li>
+<li><code>path</code>：虚拟目录</li>
+</ul>
+<ol start="3">
+<li>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br><code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></li>
+</ol>
+<ul>
+<li>虚拟目录：xml文件的名称</li>
+</ul>
+</li>
+<li><p><strong>目录结构</strong></p>
+<ul>
+<li>java动态项目的目录结构：  </li>
+</ul>
+<p>  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2019/10/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -5482,92 +5482,6 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>接口，多态</title>
-    <url>/2019/11/04/%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h1 id="1-接口"><a href="#1-接口" class="headerlink" title="1.接口"></a>1.接口</h1><ul>
-<li>1.1 接口的定义</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
-<ul>
-<li>1.2 接口的小结</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiaojie.PNG" alt=""></p>
-<h1 id="2-多态"><a href="#2-多态" class="headerlink" title="2.多态"></a>2.多态</h1><ul>
-<li>2.1 多态的前提</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qianti.PNG" alt=""></p>
-<ul>
-<li><p>2.2 向上转型和向下转型</p>
-<ul>
-<li><p>2.2.1 向上转型</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangs.PNG" alt=""></p>
-</li>
-<li><p>成员变量：编译看左，运行看左</p>
-</li>
-<li><p>成员方法：编译看左，运行看右</p>
-</li>
-<li><p>2.2.2 向下转型</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>2.3 转型的异常</p>
-</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" alt=""></p>
-<ul>
-<li>2.4 instanceof 关键字</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据库系统原理一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rrgewrtvwerter52532rdg222.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ffvfvscfrfeggrhrgaeg333.PNG" alt=""></p>
-<h1 id="2-并发一致性问题"><a href="#2-并发一致性问题" class="headerlink" title="2. 并发一致性问题"></a>2. 并发一致性问题</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fsfsfbsbfhnahgbs444.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/szdfaadvagafagaf555.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgdfddgyhzcvbsfadsdf666.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sfvgaafajhjuebcvbjstrdgg777.PNG" alt=""></p>
-<h1 id="3-封锁"><a href="#3-封锁" class="headerlink" title="3. 封锁"></a>3. 封锁</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfawrgaergeraadg888.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dtbsgvvgscgvwctg999.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/srgrcrcvccsrcfcws101010.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vtvwywvyyveyvww111111.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rthtrsgsfgstysrtg121212.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vfvdfvfvdzfvgsdfsdf131313.PNG" alt=""></p>
-<h1 id="4-隔离级别"><a href="#4-隔离级别" class="headerlink" title="4. 隔离级别"></a>4. 隔离级别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fxghsrgsvshrygeatgsfmh141414.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaervdharfbdhgt151515.PNG" alt=""></p>
-<h1 id="5-多版本并发控制"><a href="#5-多版本并发控制" class="headerlink" title="5. 多版本并发控制"></a>5. 多版本并发控制</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/tdjydryjwgjxcfjge161616.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/segdbxgjsgbghsbjxh171717.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfarfaegaerwerewrnhn181818.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vdfgafvadnhaefvservdv191919.PNG" alt=""></p>
-<h1 id="6-Next-Key-Locks"><a href="#6-Next-Key-Locks" class="headerlink" title="6. Next-Key Locks"></a>6. Next-Key Locks</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zfbahbdgbzdjhafvbdxdsb202020.PNG" alt=""></p>
-<h1 id="7-关系数据库设计理论"><a href="#7-关系数据库设计理论" class="headerlink" title="7. 关系数据库设计理论"></a>7. 关系数据库设计理论</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaergtegadvxhrg212121.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dvawrgVADBAFGAFADHGVABAETE222222.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/CAWEFRWAGETVAF232323.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/BFHSDFBSGSBDGSBSGxdv242424.PNG" alt=""></p>
-<h1 id="8-ER-图"><a href="#8-ER-图" class="headerlink" title="8. ER 图"></a>8. ER 图</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/xfgxbxgxffghdfgnshdt252525.PNG" alt=""></p>
-<p>参考链接：</p>
-<ol>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据库系统原理</category>
-      </categories>
-      <tags>
-        <tag>数据库系统原理</tag>
       </tags>
   </entry>
   <entry>
@@ -5699,6 +5613,111 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </tags>
   </entry>
   <entry>
+    <title>接口，多态</title>
+    <url>/2019/11/04/%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h1 id="1-接口"><a href="#1-接口" class="headerlink" title="1.接口"></a>1.接口</h1><ul>
+<li>1.1 接口的定义</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
+<ul>
+<li>1.2 接口的小结</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiaojie.PNG" alt=""></p>
+<h1 id="2-多态"><a href="#2-多态" class="headerlink" title="2.多态"></a>2.多态</h1><ul>
+<li>2.1 多态的前提</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qianti.PNG" alt=""></p>
+<ul>
+<li><p>2.2 向上转型和向下转型</p>
+<ul>
+<li><p>2.2.1 向上转型</p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangs.PNG" alt=""></p>
+</li>
+<li><p>成员变量：编译看左，运行看左</p>
+</li>
+<li><p>成员方法：编译看左，运行看右</p>
+</li>
+<li><p>2.2.2 向下转型</p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>2.3 转型的异常</p>
+</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" alt=""></p>
+<ul>
+<li>2.4 instanceof 关键字</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库系统原理一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rrgewrtvwerter52532rdg222.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ffvfvscfrfeggrhrgaeg333.PNG" alt=""></p>
+<h1 id="2-并发一致性问题"><a href="#2-并发一致性问题" class="headerlink" title="2. 并发一致性问题"></a>2. 并发一致性问题</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fsfsfbsbfhnahgbs444.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/szdfaadvagafagaf555.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgdfddgyhzcvbsfadsdf666.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sfvgaafajhjuebcvbjstrdgg777.PNG" alt=""></p>
+<h1 id="3-封锁"><a href="#3-封锁" class="headerlink" title="3. 封锁"></a>3. 封锁</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfawrgaergeraadg888.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dtbsgvvgscgvwctg999.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/srgrcrcvccsrcfcws101010.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vtvwywvyyveyvww111111.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rthtrsgsfgstysrtg121212.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vfvdfvfvdzfvgsdfsdf131313.PNG" alt=""></p>
+<h1 id="4-隔离级别"><a href="#4-隔离级别" class="headerlink" title="4. 隔离级别"></a>4. 隔离级别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fxghsrgsvshrygeatgsfmh141414.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaervdharfbdhgt151515.PNG" alt=""></p>
+<h1 id="5-多版本并发控制"><a href="#5-多版本并发控制" class="headerlink" title="5. 多版本并发控制"></a>5. 多版本并发控制</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/tdjydryjwgjxcfjge161616.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/segdbxgjsgbghsbjxh171717.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfarfaegaerwerewrnhn181818.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vdfgafvadnhaefvservdv191919.PNG" alt=""></p>
+<h1 id="6-Next-Key-Locks"><a href="#6-Next-Key-Locks" class="headerlink" title="6. Next-Key Locks"></a>6. Next-Key Locks</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zfbahbdgbzdjhafvbdxdsb202020.PNG" alt=""></p>
+<h1 id="7-关系数据库设计理论"><a href="#7-关系数据库设计理论" class="headerlink" title="7. 关系数据库设计理论"></a>7. 关系数据库设计理论</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaergtegadvxhrg212121.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dvawrgVADBAFGAFADHGVABAETE222222.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/CAWEFRWAGETVAF232323.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/BFHSDFBSGSBDGSBSGxdv242424.PNG" alt=""></p>
+<h1 id="8-ER-图"><a href="#8-ER-图" class="headerlink" title="8. ER 图"></a>8. ER 图</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/xfgxbxgxffghdfgnshdt252525.PNG" alt=""></p>
+<p>参考链接：</p>
+<ol>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据库系统原理</category>
+      </categories>
+      <tags>
+        <tag>数据库系统原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="1-线性数据结构"><a href="#1-线性数据结构" class="headerlink" title="1.线性数据结构"></a>1.线性数据结构</h1><h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
+<h2 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
+<h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3. 栈"></a>3. 栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
+<h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4. 队列"></a>4. 队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构，List，Set，Collections</title>
     <url>/2019/11/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8CList%EF%BC%8CSet%EF%BC%8CCollections/</url>
     <content><![CDATA[<h1 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h1><p>数据存储的常用结构有：栈、队列、数组、链表和红黑树。</p>
@@ -5739,25 +5758,6 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </tags>
   </entry>
   <entry>
-    <title>数据结构一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="1-线性数据结构"><a href="#1-线性数据结构" class="headerlink" title="1.线性数据结构"></a>1.线性数据结构</h1><h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
-<h2 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
-<h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3. 栈"></a>3. 栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
-<h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4. 队列"></a>4. 队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法一</title>
     <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
     <content><![CDATA[<h1 id="1-排序"><a href="#1-排序" class="headerlink" title="1.排序"></a>1.排序</h1><h2 id="1-1选择排序"><a href="#1-1选择排序" class="headerlink" title="1.1选择排序"></a>1.1选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span><span class="comment">//选择排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)<span class="comment">//循环次数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> min = arr[i];</span><br><span class="line">        <span class="keyword">int</span> index = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++) <span class="comment">//找最小值</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&lt;min)</span><br><span class="line">            &#123;</span><br><span class="line">                min=arr[j];</span><br><span class="line">                index=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[index]=arr[i];<span class="comment">//内循环后交换</span></span><br><span class="line">        arr[i]=min;<span class="comment">//当前位置放最小值!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -5774,6 +5774,49 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>继承，super，this，抽象类</title>
+    <url>/2019/11/04/%E7%BB%A7%E6%89%BF%EF%BC%8Csuper%EF%BC%8Cthis%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="1-继承"><a href="#1-继承" class="headerlink" title="1.继承"></a>1.继承</h1><ul>
+<li>1.1 继承的定义</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
+<ul>
+<li>1.2 重写</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chongxie.PNG" alt=""></p>
+<h1 id="2-super和this"><a href="#2-super和this" class="headerlink" title="2.super和this"></a>2.super和this</h1><ul>
+<li>2.1 super和this的含义</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hanyi.PNG" alt=""></p>
+<ul>
+<li><p>2.2 super和this的用法</p>
+<ul>
+<li><p>2.2.1 访问成员</p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/221.PNG" alt=""></p>
+</li>
+<li><p>2.2.2 访问构造方法</p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/222.PNG" alt=""></p>
+<h1 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h1></li>
+</ul>
+</li>
+<li><p>3.1 抽象类的定义</p>
+</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx1.PNG" alt=""></p>
+<ul>
+<li>3.2 注意事项</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx2.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx3.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -5834,49 +5877,6 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 </li>
 <li>代码演示：<br>Runnable实现类代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sxl.PNG" alt=""><br>线程池测试类：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/csl.PNG" alt=""></li>
 </ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>继承，super，this，抽象类</title>
-    <url>/2019/11/04/%E7%BB%A7%E6%89%BF%EF%BC%8Csuper%EF%BC%8Cthis%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="1-继承"><a href="#1-继承" class="headerlink" title="1.继承"></a>1.继承</h1><ul>
-<li>1.1 继承的定义</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
-<ul>
-<li>1.2 重写</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chongxie.PNG" alt=""></p>
-<h1 id="2-super和this"><a href="#2-super和this" class="headerlink" title="2.super和this"></a>2.super和this</h1><ul>
-<li>2.1 super和this的含义</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hanyi.PNG" alt=""></p>
-<ul>
-<li><p>2.2 super和this的用法</p>
-<ul>
-<li><p>2.2.1 访问成员</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/221.PNG" alt=""></p>
-</li>
-<li><p>2.2.2 访问构造方法</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/222.PNG" alt=""></p>
-<h1 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h1></li>
-</ul>
-</li>
-<li><p>3.1 抽象类的定义</p>
-</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx1.PNG" alt=""></p>
-<ul>
-<li>3.2 注意事项</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx2.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx3.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -5970,6 +5970,110 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机组成原理一</title>
+    <url>/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="1-计算机系统"><a href="#1-计算机系统" class="headerlink" title="1.计算机系统"></a>1.计算机系统</h1><ol>
+<li><p>计算机系统由“<code>硬件</code>”和“<code>软件</code>”两大部分组成。</p>
+<h2 id="1-1-计算机的硬件"><a href="#1-1-计算机的硬件" class="headerlink" title="1.1 计算机的硬件"></a>1.1 计算机的硬件</h2></li>
+<li><p>所谓“<code>硬件</code>”，是指组成计算机的各种物理装置。最主要的硬件有：<code>主板、CPU、内存、硬盘等</code>。</p>
+</li>
+</ol>
+<ul>
+<li><p><code>主板</code>是整个计算机的“<code>交通枢纽</code>”，各种器件都要连接到主板上，才能正常工作。</p>
+</li>
+<li><p><code>CPU</code>是计算机的“大脑”，它是计算机的<code>运算核心</code>和<code>控制核心</code>。</p>
+</li>
+<li><p><code>内存</code>是计算机的“稿纸”，一般来说，同一个处理器能利用的内存越大，运算速度也就越快。</p>
+</li>
+<li><p><code>硬盘</code>是计算机的“笔记本”，上面记录了各种数据，需要的时候，就会从这里<code>读取</code>或往这里<code>写入</code>。</p>
+<h2 id="1-2-计算机的软件"><a href="#1-2-计算机的软件" class="headerlink" title="1.2 计算机的软件"></a>1.2 计算机的软件</h2></li>
+</ul>
+<ol>
+<li>计算机的<code>软件</code>通常分为两大类：<code>系统软件</code>和<code>应用软件</code>。</li>
+</ol>
+<ul>
+<li><p><strong>系统软件</strong>: <code>操作系统、数据库管理系统、编译软件</code>等。</p>
+</li>
+<li><p><strong>应用软件</strong>: <code>Word、Excel、QQ、微信</code>等。</p>
+</li>
+</ul>
+<h1 id="2-计算机的体系和结构"><a href="#2-计算机的体系和结构" class="headerlink" title="2.计算机的体系和结构"></a>2.计算机的体系和结构</h1><p>根据<code>冯诺依曼理论</code>构成的计算机：具有<code>五大基本组件</code></p>
+<ul>
+<li><code>输入设备</code> (比如键盘)</li>
+<li><code>存储器</code> (比如内存)</li>
+<li><code>运算器</code> (cpu)</li>
+<li><code>控制器</code> (cpu)</li>
+<li><code>输出设备</code>(显示器)</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-75b68d01c1a18ffb.webp" alt=""></p>
+<h1 id="3-计算机的工作原理"><a href="#3-计算机的工作原理" class="headerlink" title="3.计算机的工作原理"></a>3.计算机的工作原理</h1><h2 id="3-1-控制器-—-gt-控制输入设备-—-gt-指令流向内存"><a href="#3-1-控制器-—-gt-控制输入设备-—-gt-指令流向内存" class="headerlink" title="3.1 控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存"></a>3.1 控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存</h2><p>当我们输入数据的时候，cpu里的<code>控制器</code>会让<code>输入设备</code>把这些指令存储到<code>存储器</code>(内存)上<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b6d32a002249.jpg" alt=""></p>
+<h2 id="3-2-控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器"><a href="#3-2-控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器" class="headerlink" title="3.2 控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器"></a>3.2 控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器</h2><p><code>控制器</code>分析指令之后， 此时让<code>存储器</code>把数据发送到<code>运算器</code>里(控制器和运算器都在cpu里面)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b702defc6fe1.jpg" alt=""></p>
+<p>这里需要注意，<code>存储器既能存储数据，还能存储指令</code></p>
+<h2 id="3-3-控制器控制运算器做数据的运算-并且将运算结果返回存储器"><a href="#3-3-控制器控制运算器做数据的运算-并且将运算结果返回存储器" class="headerlink" title="3.3 控制器控制运算器做数据的运算 并且将运算结果返回存储器"></a>3.3 控制器控制运算器做数据的运算 并且将运算结果返回存储器</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706bff6d4271172.jpg" alt=""></p>
+<h2 id="3-4-控制器控制存储器将结果返回给输出设备"><a href="#3-4-控制器控制存储器将结果返回给输出设备" class="headerlink" title="3.4 控制器控制存储器将结果返回给输出设备"></a>3.4 控制器控制存储器将结果返回给输出设备</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c01bf8cca0fb.jpg" alt=""></p>
+<h1 id="4-CPU及其工作过程"><a href="#4-CPU及其工作过程" class="headerlink" title="4.CPU及其工作过程"></a>4.CPU及其工作过程</h1><p><code>CPU</code>中比较重要的两个部件是<code>运算器</code>和<code>控制器</code>，我们先来看看运算器的主要作用</p>
+<h2 id="4-1-运算器主要部件"><a href="#4-1-运算器主要部件" class="headerlink" title="4.1 运算器主要部件"></a>4.1 运算器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c09a00c1bf76.jpg" alt=""><br>如上图，运算器里最重要的部件是<code>ALU</code>，中文叫<code>算术逻辑单元</code>，用来进行<code>算术</code>和<code>逻辑运算</code>的。其它的<code>MQ,ACC</code>这些我们不用管了，是一些<code>寄存器</code>。</p>
+<h2 id="4-2-控制器主要部件"><a href="#4-2-控制器主要部件" class="headerlink" title="4.2 控制器主要部件"></a>4.2 控制器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c0c704b4d5e4.jpg" alt="">    </p>
+<ul>
+<li>控制器中最重要的部件是<code>CU（控制单元）</code>，只要是<code>分析指令</code>，<code>给出控制信号。</code></li>
+<li><code>IR（指令寄存器</code>），存放<code>当前需要执行的指令</code></li>
+<li><code>PC</code>存放的<code>指令的地址。</code><h2 id="4-3-举个栗子"><a href="#4-3-举个栗子" class="headerlink" title="4.3 举个栗子"></a>4.3 举个栗子</h2></li>
+<li><em>注意：*</em></li>
+<li><code>指令和数据以同等的地位放于存储器内，并可按地址寻访</code></li>
+<li><code>指令 = 操作码 + 地址码</code>  </li>
+</ul>
+<p>首先，是<code>取指令的过程</code>如下<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c1c88439428c.jpg" alt="">        </p>
+<ul>
+<li><p>第一步，<code>PC</code>，也就是存放指令地址的地方，我们要知道下一条指令是什么，就必须去存储器拿，<code>CPU</code>才知道接下来做什么。<code>PC</code>去了存储器的<code>MAR</code>拿要执行的指令地址，<code>MAR</code>（存储器里专门存指令地址的地方）</p>
+</li>
+<li><p>第二步和第三步，<code>MAR</code>去存储体内拿到指令之后，将指令放入<code>MDR</code>(存储器里专门存数据的地方)</p>
+</li>
+<li><p>第四步<code>MDR</code>里的数据返回到<code>IR</code>里面，<code>IR</code>是存放指令的地方，我们把刚才从存储体里拿的指令放在这里  </p>
+</li>
+</ul>
+<p>然后，<code>分析指令，执行指令的过程</code>如下</p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c2497c78ea7f.jpg" alt="">    </p>
+<ul>
+<li>第五步， <code>IR</code>将指令放入<code>CU</code>中，来分析指令，比如说分析出是一个取数指令，接着就要执行指令了（这里取数指令，其实就是一个地址码，按着这个地址去存储体取数据）</li>
+<li>第六步，第七步 <code>IR</code>就会接着去找存储体里的<code>MAR</code>（存储地址的地方），<code>MAR</code>就根据取数指令里的地址码去存储体里取数据</li>
+<li>第八步，取出的数据返回给<code>MDR</code>（存放数据的地方）</li>
+<li>第九步，<code>MDR</code>里的数据放到运算器的寄存器里，这里的取指令的过程结束了。 </li>
+</ul>
+<h1 id="5-编程语言的前世今生"><a href="#5-编程语言的前世今生" class="headerlink" title="5.编程语言的前世今生"></a>5.编程语言的前世今生</h1><h2 id="5-1-机器语言"><a href="#5-1-机器语言" class="headerlink" title="5.1 机器语言"></a>5.1 机器语言</h2><ol>
+<li>概念<br>“<code>编程语言</code>”是<code>人与计算机进行交流的语言</code>。<code>计算机本质</code>上就是<code>电流</code>加一堆<code>硬件</code>，有了电流，它才能“活”起来。电流其实可以表示两种状态，高电压和低电压两种状态，把这个高电压低电压的这种实际的物理现象用人类所能理解的数字关联起来，叫<code>数字关联</code>，<code>高电压是1</code>，<code>低电压是0</code>。<br>这样有个强制规定的话，就可以跟我们人类的语言有了一定的关联关系，而这两种1，0的状态也能被计算机所识别，计算机本质上其实就是像1010这样的一堆组合干各种事情,那现在我们把<code>0101组合成</code>不同的序列定义相应的规则，这样有了这些规则后我告诉你，最古老的计算机语言就出现了，有了规则它就能称之为语言了，<code>这个最古老的语言就叫机器语言。</code></li>
+<li>举个栗子<br>我们看看机器语言，怎么表示存放一个数的指令<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c9d470edc315.jpg" alt=""><br>我们来看二进制代码 <code>0000，0000，000000010000</code></li>
+</ol>
+<ul>
+<li>其中第一个<code>0000</code>，表示的是汇编语言里的<code>LOAD</code>，也就是<code>加载</code>，加载什么呢</li>
+<li><code>加载地址000000010000</code>上的<code>数据</code>到<code>第二个0000</code>（<code>寄存器的位置</code>）<h2 id="5-2-汇编语言"><a href="#5-2-汇编语言" class="headerlink" title="5.2 汇编语言"></a>5.2 汇编语言</h2></li>
+</ul>
+<ol>
+<li><p>概念<br><code>机器语言作用是直接跟硬件打交道</code>，所以计算机能够很好的理解，因为这就是它的天生语言。但是计算机能很好的理解，但人却不能很好的理解，像0101这样的组合有很多，人理解起来很费劲。<code>为了让人与计算机之间的沟通效率更高，</code>把那难记的一堆0101组合变成一个对应的人能理解的<code>英文</code>，比如说英文单词ADD，你只要在键盘上敲出了相对应的英文，它就自动给你翻译成0101这样的机器语言，然后让计算机去执行，这个东西就叫做<code>汇编语言。</code></p>
+</li>
+<li><p>举个栗子<br>接下来，我们看看如果是汇编语言怎么表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cbcf713a5daa.jpg" alt=""><br><code>LOAD A, 16</code>意思是将存储体内的<code>16号单元数据</code>，放到<code>寄存器地址A</code>中 <code>ADD C, A, B</code>意思是将寄存器里的<code>A,B数据相加</code>，得到<code>C STORE C, 17</code>意思是将寄存器里的数据存到存储体<code>17号单元内</code></p>
+<h2 id="5-3-高级语言"><a href="#5-3-高级语言" class="headerlink" title="5.3 高级语言"></a>5.3 高级语言</h2></li>
+<li><p>概念<br>用字母表示或者用数字、符号表示这样的一些符号语言简单直接、便于记忆，<code>但其实开发效率还是很低</code>，有了汇编语言后只需要记住ADD就可以，但现在有了高级语言后，加号就直接用数学中我们常用的“+”去表示就可以了，这个大家肯定都能明白。<br><code>汇编语言的一个问题在于需要你自己去调用硬件的各种指令</code>，比如你想播放声音，播放声音也是由芯片来控制的，<code>芯片里面已经烧制了各种指令</code>，你要想播放声音，就要调各种相应的指令。<br>汇编语言的问题在于它要亲自去调，自己去写代码去调这种指令，这其实非常复杂，你要想调音卡，就是播放声音，你还要学习音箱的这个硬件的各种操作指令，你要想显示屏幕，你还要看显卡上也就是显示屏幕上的操作芯片的各种指令，还是蛮复杂的。<code>高级语言的好处就是让程序员对底层硬件的各种指令做了封装</code>，我们现在听到的<code>C、C++、JAVA、Python等主流的这些语言都是高级语言</code></p>
+</li>
+<li><p>举个栗子<br>最后，我们看看怎么用高级语言表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cc3a1c2ac0b4.jpg" alt=""><br>高级语言是不是很简单，就一个<code>a+b</code>，你都<code>不用去考虑寄存器，存储体这些事</code>。</p>
+<h1 id="6-高级语言编译过程"><a href="#6-高级语言编译过程" class="headerlink" title="6.高级语言编译过程"></a>6.高级语言编译过程</h1><p>高级语言我们以Java程序为例，从程序员编写的<code>Java代码到CPU可以执行的指令</code>需要经历如下步骤：   </p>
+</li>
+</ol>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-730c9309df6f4048.webp" alt=""></p>
+<p>参考链接：</p>
+<ol>
+<li><a href="https://www.jianshu.com/p/36aedaa554c7" target="_blank" rel="noopener">https://www.jianshu.com/p/36aedaa554c7</a></li>
+<li><a href="https://juejin.cn/post/6844904070751191047" target="_blank" rel="noopener">https://juejin.cn/post/6844904070751191047</a></li>
+<li><a href="https://juejin.cn/post/6844904058055032840" target="_blank" rel="noopener">https://juejin.cn/post/6844904058055032840</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6254,110 +6358,6 @@ IMAP 协议中客户端和服务器上的邮件保持同步，如果不手动删
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理一</title>
-    <url>/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="1-计算机系统"><a href="#1-计算机系统" class="headerlink" title="1.计算机系统"></a>1.计算机系统</h1><ol>
-<li><p>计算机系统由“<code>硬件</code>”和“<code>软件</code>”两大部分组成。</p>
-<h2 id="1-1-计算机的硬件"><a href="#1-1-计算机的硬件" class="headerlink" title="1.1 计算机的硬件"></a>1.1 计算机的硬件</h2></li>
-<li><p>所谓“<code>硬件</code>”，是指组成计算机的各种物理装置。最主要的硬件有：<code>主板、CPU、内存、硬盘等</code>。</p>
-</li>
-</ol>
-<ul>
-<li><p><code>主板</code>是整个计算机的“<code>交通枢纽</code>”，各种器件都要连接到主板上，才能正常工作。</p>
-</li>
-<li><p><code>CPU</code>是计算机的“大脑”，它是计算机的<code>运算核心</code>和<code>控制核心</code>。</p>
-</li>
-<li><p><code>内存</code>是计算机的“稿纸”，一般来说，同一个处理器能利用的内存越大，运算速度也就越快。</p>
-</li>
-<li><p><code>硬盘</code>是计算机的“笔记本”，上面记录了各种数据，需要的时候，就会从这里<code>读取</code>或往这里<code>写入</code>。</p>
-<h2 id="1-2-计算机的软件"><a href="#1-2-计算机的软件" class="headerlink" title="1.2 计算机的软件"></a>1.2 计算机的软件</h2></li>
-</ul>
-<ol>
-<li>计算机的<code>软件</code>通常分为两大类：<code>系统软件</code>和<code>应用软件</code>。</li>
-</ol>
-<ul>
-<li><p><strong>系统软件</strong>: <code>操作系统、数据库管理系统、编译软件</code>等。</p>
-</li>
-<li><p><strong>应用软件</strong>: <code>Word、Excel、QQ、微信</code>等。</p>
-</li>
-</ul>
-<h1 id="2-计算机的体系和结构"><a href="#2-计算机的体系和结构" class="headerlink" title="2.计算机的体系和结构"></a>2.计算机的体系和结构</h1><p>根据<code>冯诺依曼理论</code>构成的计算机：具有<code>五大基本组件</code></p>
-<ul>
-<li><code>输入设备</code> (比如键盘)</li>
-<li><code>存储器</code> (比如内存)</li>
-<li><code>运算器</code> (cpu)</li>
-<li><code>控制器</code> (cpu)</li>
-<li><code>输出设备</code>(显示器)</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-75b68d01c1a18ffb.webp" alt=""></p>
-<h1 id="3-计算机的工作原理"><a href="#3-计算机的工作原理" class="headerlink" title="3.计算机的工作原理"></a>3.计算机的工作原理</h1><h2 id="3-1-控制器-—-gt-控制输入设备-—-gt-指令流向内存"><a href="#3-1-控制器-—-gt-控制输入设备-—-gt-指令流向内存" class="headerlink" title="3.1 控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存"></a>3.1 控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存</h2><p>当我们输入数据的时候，cpu里的<code>控制器</code>会让<code>输入设备</code>把这些指令存储到<code>存储器</code>(内存)上<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b6d32a002249.jpg" alt=""></p>
-<h2 id="3-2-控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器"><a href="#3-2-控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器" class="headerlink" title="3.2 控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器"></a>3.2 控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器</h2><p><code>控制器</code>分析指令之后， 此时让<code>存储器</code>把数据发送到<code>运算器</code>里(控制器和运算器都在cpu里面)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b702defc6fe1.jpg" alt=""></p>
-<p>这里需要注意，<code>存储器既能存储数据，还能存储指令</code></p>
-<h2 id="3-3-控制器控制运算器做数据的运算-并且将运算结果返回存储器"><a href="#3-3-控制器控制运算器做数据的运算-并且将运算结果返回存储器" class="headerlink" title="3.3 控制器控制运算器做数据的运算 并且将运算结果返回存储器"></a>3.3 控制器控制运算器做数据的运算 并且将运算结果返回存储器</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706bff6d4271172.jpg" alt=""></p>
-<h2 id="3-4-控制器控制存储器将结果返回给输出设备"><a href="#3-4-控制器控制存储器将结果返回给输出设备" class="headerlink" title="3.4 控制器控制存储器将结果返回给输出设备"></a>3.4 控制器控制存储器将结果返回给输出设备</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c01bf8cca0fb.jpg" alt=""></p>
-<h1 id="4-CPU及其工作过程"><a href="#4-CPU及其工作过程" class="headerlink" title="4.CPU及其工作过程"></a>4.CPU及其工作过程</h1><p><code>CPU</code>中比较重要的两个部件是<code>运算器</code>和<code>控制器</code>，我们先来看看运算器的主要作用</p>
-<h2 id="4-1-运算器主要部件"><a href="#4-1-运算器主要部件" class="headerlink" title="4.1 运算器主要部件"></a>4.1 运算器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c09a00c1bf76.jpg" alt=""><br>如上图，运算器里最重要的部件是<code>ALU</code>，中文叫<code>算术逻辑单元</code>，用来进行<code>算术</code>和<code>逻辑运算</code>的。其它的<code>MQ,ACC</code>这些我们不用管了，是一些<code>寄存器</code>。</p>
-<h2 id="4-2-控制器主要部件"><a href="#4-2-控制器主要部件" class="headerlink" title="4.2 控制器主要部件"></a>4.2 控制器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c0c704b4d5e4.jpg" alt="">    </p>
-<ul>
-<li>控制器中最重要的部件是<code>CU（控制单元）</code>，只要是<code>分析指令</code>，<code>给出控制信号。</code></li>
-<li><code>IR（指令寄存器</code>），存放<code>当前需要执行的指令</code></li>
-<li><code>PC</code>存放的<code>指令的地址。</code><h2 id="4-3-举个栗子"><a href="#4-3-举个栗子" class="headerlink" title="4.3 举个栗子"></a>4.3 举个栗子</h2></li>
-<li><em>注意：*</em></li>
-<li><code>指令和数据以同等的地位放于存储器内，并可按地址寻访</code></li>
-<li><code>指令 = 操作码 + 地址码</code>  </li>
-</ul>
-<p>首先，是<code>取指令的过程</code>如下<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c1c88439428c.jpg" alt="">        </p>
-<ul>
-<li><p>第一步，<code>PC</code>，也就是存放指令地址的地方，我们要知道下一条指令是什么，就必须去存储器拿，<code>CPU</code>才知道接下来做什么。<code>PC</code>去了存储器的<code>MAR</code>拿要执行的指令地址，<code>MAR</code>（存储器里专门存指令地址的地方）</p>
-</li>
-<li><p>第二步和第三步，<code>MAR</code>去存储体内拿到指令之后，将指令放入<code>MDR</code>(存储器里专门存数据的地方)</p>
-</li>
-<li><p>第四步<code>MDR</code>里的数据返回到<code>IR</code>里面，<code>IR</code>是存放指令的地方，我们把刚才从存储体里拿的指令放在这里  </p>
-</li>
-</ul>
-<p>然后，<code>分析指令，执行指令的过程</code>如下</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c2497c78ea7f.jpg" alt="">    </p>
-<ul>
-<li>第五步， <code>IR</code>将指令放入<code>CU</code>中，来分析指令，比如说分析出是一个取数指令，接着就要执行指令了（这里取数指令，其实就是一个地址码，按着这个地址去存储体取数据）</li>
-<li>第六步，第七步 <code>IR</code>就会接着去找存储体里的<code>MAR</code>（存储地址的地方），<code>MAR</code>就根据取数指令里的地址码去存储体里取数据</li>
-<li>第八步，取出的数据返回给<code>MDR</code>（存放数据的地方）</li>
-<li>第九步，<code>MDR</code>里的数据放到运算器的寄存器里，这里的取指令的过程结束了。 </li>
-</ul>
-<h1 id="5-编程语言的前世今生"><a href="#5-编程语言的前世今生" class="headerlink" title="5.编程语言的前世今生"></a>5.编程语言的前世今生</h1><h2 id="5-1-机器语言"><a href="#5-1-机器语言" class="headerlink" title="5.1 机器语言"></a>5.1 机器语言</h2><ol>
-<li>概念<br>“<code>编程语言</code>”是<code>人与计算机进行交流的语言</code>。<code>计算机本质</code>上就是<code>电流</code>加一堆<code>硬件</code>，有了电流，它才能“活”起来。电流其实可以表示两种状态，高电压和低电压两种状态，把这个高电压低电压的这种实际的物理现象用人类所能理解的数字关联起来，叫<code>数字关联</code>，<code>高电压是1</code>，<code>低电压是0</code>。<br>这样有个强制规定的话，就可以跟我们人类的语言有了一定的关联关系，而这两种1，0的状态也能被计算机所识别，计算机本质上其实就是像1010这样的一堆组合干各种事情,那现在我们把<code>0101组合成</code>不同的序列定义相应的规则，这样有了这些规则后我告诉你，最古老的计算机语言就出现了，有了规则它就能称之为语言了，<code>这个最古老的语言就叫机器语言。</code></li>
-<li>举个栗子<br>我们看看机器语言，怎么表示存放一个数的指令<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c9d470edc315.jpg" alt=""><br>我们来看二进制代码 <code>0000，0000，000000010000</code></li>
-</ol>
-<ul>
-<li>其中第一个<code>0000</code>，表示的是汇编语言里的<code>LOAD</code>，也就是<code>加载</code>，加载什么呢</li>
-<li><code>加载地址000000010000</code>上的<code>数据</code>到<code>第二个0000</code>（<code>寄存器的位置</code>）<h2 id="5-2-汇编语言"><a href="#5-2-汇编语言" class="headerlink" title="5.2 汇编语言"></a>5.2 汇编语言</h2></li>
-</ul>
-<ol>
-<li><p>概念<br><code>机器语言作用是直接跟硬件打交道</code>，所以计算机能够很好的理解，因为这就是它的天生语言。但是计算机能很好的理解，但人却不能很好的理解，像0101这样的组合有很多，人理解起来很费劲。<code>为了让人与计算机之间的沟通效率更高，</code>把那难记的一堆0101组合变成一个对应的人能理解的<code>英文</code>，比如说英文单词ADD，你只要在键盘上敲出了相对应的英文，它就自动给你翻译成0101这样的机器语言，然后让计算机去执行，这个东西就叫做<code>汇编语言。</code></p>
-</li>
-<li><p>举个栗子<br>接下来，我们看看如果是汇编语言怎么表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cbcf713a5daa.jpg" alt=""><br><code>LOAD A, 16</code>意思是将存储体内的<code>16号单元数据</code>，放到<code>寄存器地址A</code>中 <code>ADD C, A, B</code>意思是将寄存器里的<code>A,B数据相加</code>，得到<code>C STORE C, 17</code>意思是将寄存器里的数据存到存储体<code>17号单元内</code></p>
-<h2 id="5-3-高级语言"><a href="#5-3-高级语言" class="headerlink" title="5.3 高级语言"></a>5.3 高级语言</h2></li>
-<li><p>概念<br>用字母表示或者用数字、符号表示这样的一些符号语言简单直接、便于记忆，<code>但其实开发效率还是很低</code>，有了汇编语言后只需要记住ADD就可以，但现在有了高级语言后，加号就直接用数学中我们常用的“+”去表示就可以了，这个大家肯定都能明白。<br><code>汇编语言的一个问题在于需要你自己去调用硬件的各种指令</code>，比如你想播放声音，播放声音也是由芯片来控制的，<code>芯片里面已经烧制了各种指令</code>，你要想播放声音，就要调各种相应的指令。<br>汇编语言的问题在于它要亲自去调，自己去写代码去调这种指令，这其实非常复杂，你要想调音卡，就是播放声音，你还要学习音箱的这个硬件的各种操作指令，你要想显示屏幕，你还要看显卡上也就是显示屏幕上的操作芯片的各种指令，还是蛮复杂的。<code>高级语言的好处就是让程序员对底层硬件的各种指令做了封装</code>，我们现在听到的<code>C、C++、JAVA、Python等主流的这些语言都是高级语言</code></p>
-</li>
-<li><p>举个栗子<br>最后，我们看看怎么用高级语言表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cc3a1c2ac0b4.jpg" alt=""><br>高级语言是不是很简单，就一个<code>a+b</code>，你都<code>不用去考虑寄存器，存储体这些事</code>。</p>
-<h1 id="6-高级语言编译过程"><a href="#6-高级语言编译过程" class="headerlink" title="6.高级语言编译过程"></a>6.高级语言编译过程</h1><p>高级语言我们以Java程序为例，从程序员编写的<code>Java代码到CPU可以执行的指令</code>需要经历如下步骤：   </p>
-</li>
-</ol>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-730c9309df6f4048.webp" alt=""></p>
-<p>参考链接：</p>
-<ol>
-<li><a href="https://www.jianshu.com/p/36aedaa554c7" target="_blank" rel="noopener">https://www.jianshu.com/p/36aedaa554c7</a></li>
-<li><a href="https://juejin.cn/post/6844904070751191047" target="_blank" rel="noopener">https://juejin.cn/post/6844904070751191047</a></li>
-<li><a href="https://juejin.cn/post/6844904058055032840" target="_blank" rel="noopener">https://juejin.cn/post/6844904058055032840</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机组成原理</category>
-      </categories>
-      <tags>
-        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
