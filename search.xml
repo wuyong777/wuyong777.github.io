@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bootstrap入门</title>
+    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
+<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+</li>
+<li><p>优点：</p>
+</li>
+</ol>
+<ul>
+<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
+<li>响应式布局</li>
+</ul>
+<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
+<li><p>下载Bootstrap</p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
+</li>
+<li><p>安装jquery插件，因为js插件依赖于jquery</p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap HelloWorld<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，世界！!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AJAX和JSON</title>
     <url>/2021/03/23/AJAX%E5%92%8CJSON/</url>
     <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. AJAX
@@ -150,165 +185,6 @@
       </categories>
       <tags>
         <tag>AJAX</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bootstrap入门</title>
-    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
-<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
-</li>
-<li><p>优点：</p>
-</li>
-</ol>
-<ul>
-<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
-<li>响应式布局</li>
-</ul>
-<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
-<li><p>下载Bootstrap</p>
-</li>
-<li><p>解压</p>
-</li>
-<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
-</li>
-<li><p>安装jquery插件，因为js插件依赖于jquery</p>
-</li>
-<li><p>代码实现</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap HelloWorld<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，世界！!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Bootstrap</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS基础</title>
-    <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
-<li><p>CSS：CSS 指的是层叠样式表 (Cascading Style Sheets)</p>
-</li>
-<li><p>实例</p>
- <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"> <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line"> <span class="attribute">color</span>: white;</span><br><span class="line"> <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"> <span class="attribute">font-family</span>: verdana;</span><br><span class="line"> <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1></li>
-<li><p>简单选择器（根据名称、id、类来选取元素）</p>
-<blockquote>
-<p>元素<br>id(#para1)<br>class(.center)<br>分组(h1, h2, p )<br>通用(*)</p>
-</blockquote>
-</li>
-<li><p>组合器选择器（根据它们之间的特定关系来选取元素）</p>
-<blockquote>
-<p>后代选择器 (空格)<br>子选择器 (&gt;)<br>相邻兄弟选择器 (+)<br>通用兄弟选择器 (~)</p>
-</blockquote>
-</li>
-<li><p>伪类选择器（根据特定状态选取元素）</p>
-<blockquote>
-<p>a:link<br>a:visited<br>a:hover<br>a:active<br>:first-child<br>:last-child</p>
-</blockquote>
-</li>
-<li><p>伪元素选择器（选取元素的一部分并设置其样式）  </p>
-<blockquote>
-<p>::first-line<br>::first-letter</p>
-</blockquote>
-</li>
-<li><p>属性选择器（根据属性或属性值来选取元素）</p>
-<blockquote>
-<p>[attribute=value]</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="CSS常用样式"><a href="#CSS常用样式" class="headerlink" title="CSS常用样式"></a>CSS常用样式</h1><ol>
-<li><p>CSS 注释：</p>
-<blockquote>
-<p>以 /* 开始，以 */ 结束</p>
-</blockquote>
-</li>
-<li><p>CSS 颜色</p>
-<blockquote>
-<p>CSS 颜色名<br>RGB 颜色<br>HEX 颜色</p>
-</blockquote>
-</li>
-<li><p>CSS 背景</p>
-<blockquote>
-<p>background-</p>
-</blockquote>
-</li>
-<li><p>CSS 文本</p>
-<blockquote>
-<p>text-</p>
-</blockquote>
-</li>
-<li><p>CSS 字体</p>
-<blockquote>
-<p>font-</p>
-</blockquote>
-</li>
-<li><p>CSS 链接</p>
-<blockquote>
-<p>a:link - 正常的，未访问的链接<br>a:visited - 用户访问过的链接<br>a:hover - 用户将鼠标悬停在链接上时<br>a:active - 链接被点击时</p>
-</blockquote>
-</li>
-<li><p>CSS 列表   </p>
-<blockquote>
-<p>list-style-</p>
-</blockquote>
-</li>
-<li><p>CSS 表格</p>
-</li>
-<li><p>盒子模型</p>
-<blockquote>
-<p>border<br>padding<br>margin</p>
-</blockquote>
-</li>
-<li><p>CSS 高度和宽度</p>
-<blockquote>
-<p>height<br>width</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><ol>
-<li><p>display 属性  </p>
-<blockquote>
-<p>none    此元素不会被显示<br>inline    默认。此元素会被显示为内联元素，元素前后没有换行符<br>block    此元素将显示为块级元素，此元素前后会带有换行符<br>inline-block    行内块元素</p>
-</blockquote>
-</li>
-<li><p>float 属性</p>
-<blockquote>
-<p>left  元素浮动到其容器的左侧<br>right  元素浮动在其容器的右侧</p>
-</blockquote>
-</li>
-<li><p>clear 属性</p>
-<blockquote>
-<p>left  左侧不允许浮动元素<br>right 右侧不允许浮动元素<br>both  左侧或右侧均不允许浮动元素</p>
-</blockquote>
-</li>
-<li><p>position 属性</p>
-<blockquote>
-<p>position: relative; 的元素相对于其正常位置进行定位<br>position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置<br>position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）<br>常用:’子绝父相’</p>
-</blockquote>
-</li>
-<li><p>水平对齐 </p>
-<blockquote>
-<p>使用 margin: auto<br>使用 text-align: center</p>
-</blockquote>
-</li>
-<li><p>垂直对齐</p>
-<blockquote>
-<p>使用 padding<br>使用 line-height: 技巧是使用其值等于 height 属性值的 line-height 属性</p>
-</blockquote>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -535,6 +411,338 @@
       </tags>
   </entry>
   <entry>
+    <title>File类，递归</title>
+    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h1><h2 id="1-1-路径"><a href="#1-1-路径" class="headerlink" title="1.1 路径"></a>1.1 路径</h2><ul>
+<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
+<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="1-2-构造方法"><a href="#1-2-构造方法" class="headerlink" title="1.2 构造方法"></a>1.2 构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
+<p>小贴士：   </p>
+<ol>
+<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
+<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
+</ol>
+</blockquote>
+<h2 id="1-3-常用方法"><a href="#1-3-常用方法" class="headerlink" title="1.3 常用方法"></a>1.3 常用方法</h2></li>
+</ul>
+<ol>
+<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
+<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
+<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
+<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="2-递归"><a href="#2-递归" class="headerlink" title="2.递归"></a>2.递归</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="3-综合案例"><a href="#3-综合案例" class="headerlink" title="3.综合案例"></a>3.综合案例</h1><h2 id="3-1-文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#3-1-文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="3.1 文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>3.1 文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="3-2-文件过滤器优化"><a href="#3-2-文件过滤器优化" class="headerlink" title="3.2 文件过滤器优化"></a>3.2 文件过滤器优化</h2></li>
+</ol>
+<ul>
+<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
+<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
+</ul>
+<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML基础</title>
+    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
+<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
+</li>
+<li><p>实例 </p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
+<li><p>HTML标题</p>
+<blockquote>
+<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
+</blockquote>
+</li>
+<li><p>HTML水平线</p>
+<blockquote>
+<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
+</blockquote>
+</li>
+<li><p>HTML注释  </p>
+<blockquote>
+<p><code>&lt;!-- This is a comment --&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML段落</p>
+<blockquote>
+<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
+</blockquote>
+</li>
+<li><p>HTML折行</p>
+<blockquote>
+<p>使用 <code>&lt;br/&gt;</code>标签</p>
+</blockquote>
+</li>
+<li><p>HTML链接</p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML图像</p>
+<blockquote>
+<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML表格</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Another Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>HTML无序列表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>HTML有序列表</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
+<li><p>HTML 头部</p>
+<blockquote>
+<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML 块</p>
+<blockquote>
+<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
+</blockquote>
+</li>
+<li><p>HTML 路径 </p>
+<blockquote>
+<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
+</blockquote>
+</li>
+<li><p>HTML URL </p>
+<blockquote>
+<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
+</blockquote>
+</li>
+<li><p>HTML CSS</p>
+<blockquote>
+<p>常用：外部样式表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"mystyle.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>HTML 脚本</p>
+<blockquote>
+<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
+</blockquote>
+</li>
+</ol>
+<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
+<li><p>实例</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">form elements</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Action 属性 &amp; Method 属性</p>
+<blockquote>
+<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p><code>&lt;input&gt;</code> 元素</p>
+</li>
+</ol>
+<ul>
+<li>type 属性<blockquote>
+<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
+</blockquote>
+</li>
+<li>H5 type 属性<blockquote>
+<p>date<br>email</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDBC总结</title>
+    <url>/2021/03/13/JDBC%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JDBC基本概念
+2. 快速入门
+3. 对JDBC中各个接口和类详解</code></pre><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><ol>
+<li>JDBC概念</li>
+</ol>
+<ul>
+<li>概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库</li>
+<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
+</ul>
+<ol start="2">
+<li>快速入门：<ul>
+<li>步骤：<blockquote>
+<ol>
+<li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</li>
+</ol>
+<ul>
+<li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li>
+<li>右键–&gt;Add As Library</li>
+</ul>
+<ol start="2">
+<li>注册驱动</li>
+<li>获取数据库连接对象 Connection</li>
+<li>定义sql</li>
+<li>获取执行sql语句的对象 Statement</li>
+<li>执行sql，接受返回结果</li>
+<li>处理结果</li>
+<li>释放资源</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>代码实现：<blockquote>
+<ol>
+<li>导入驱动jar包</li>
+<li>注册驱动<br>Class.forName(“com.mysql.jdbc.Driver”);</li>
+<li>获取数据库连接对象<br>Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/db3”, “root”, “root”);</li>
+<li>定义sql语句<br>String sql = “update account set balance = 500 where id = 1”;</li>
+<li>获取执行sql的对象 Statement<br>Statement stmt = conn.createStatement();</li>
+<li>执行sql<br>int count = stmt.executeUpdate(sql);</li>
+<li>处理结果<br>System.out.println(count);</li>
+<li>释放资源<br>stmt.close();<br>conn.close();</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<ol start="3">
+<li><p>详解各个对象：</p>
+<ol>
+<li><p>DriverManager：驱动管理对象   </p>
+<blockquote>
+<p>功能：</p>
+<ol>
+<li>注册驱动：告诉程序该使用哪一个数据库驱动jar</li>
+<li>获取数据库连接：</li>
+</ol>
+</blockquote>
+</li>
+<li><p>Connection：数据库连接对象</p>
+<blockquote>
+<p>功能：</p>
+<ol>
+<li>获取执行sql 的对象</li>
+</ol>
+<ul>
+<li>Statement createStatement()</li>
+<li>PreparedStatement prepareStatement(String sql)  </li>
+</ul>
+<ol start="2">
+<li>管理事务：</li>
+</ol>
+<ul>
+<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</li>
+<li>提交事务：commit() </li>
+<li>回滚事务：rollback()</li>
+</ul>
+</blockquote>
+</li>
+<li><p>Statement：执行sql的对象</p>
+<blockquote>
+<p>功能：</p>
+<ol>
+<li>执行sql</li>
+</ol>
+<ul>
+<li>boolean execute(String sql) ：可以执行任意的sql </li>
+<li>int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</li>
+<li>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</li>
+</ul>
+</blockquote>
+</li>
+<li><p>ResultSet：结果集对象,封装查询结果</p>
+<blockquote>
+<ul>
+<li>boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</li>
+<li>getXxx(参数):获取数据<ul>
+<li>Xxx：代表数据类型   如： int getInt() ,    String getString()</li>
+<li>参数：<ol>
+<li>int：代表列的编号,从1开始   如： getString(1)</li>
+<li>String：代表列名称。 如： getDouble(“balance”)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>PreparedStatement：执行sql的对象</p>
+<blockquote>
+<ol>
+<li>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接,会造成安全性问题.<br>如:输入密码：a’ or ‘a’ = ‘a</li>
+<li>解决sql注入问题：使用PreparedStatement对象来解决</li>
+<li>预编译的SQL：参数使用?作为占位符</li>
+<li>获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </li>
+<li>给？赋值：<ul>
+<li>方法： setXxx(参数1,参数2)<ul>
+<li>参数1：？的位置编号 从1 开始</li>
+<li>参数2：？的值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行sql，接受返回结果，不需要传递sql语句</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><ul>
+<li><p>目的：简化书写</p>
+</li>
+<li><p>解决：配置文件-&gt;jdbc.properties</p>
+<blockquote>
+<p>url=<br>user=<br>password=</p>
+</blockquote>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCUtils</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">//读取资源文件，获取值。</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//1. 创建Properties集合类。   </span></span><br><span class="line">    Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//获取src路径下的文件的方式---&gt;ClassLoader 类加载器</span></span><br><span class="line">	ClassLoader classLoader = JDBCUtils.class.getClassLoader();</span><br><span class="line">	URL res  = classLoader.getResource(<span class="string">"jdbc.properties"</span>);</span><br><span class="line">	String path = res.getPath();</span><br><span class="line">	System.out.println(path);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2. 加载文件</span></span><br><span class="line">	pro.load(<span class="keyword">new</span> FileReader(path));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//3. 获取数据，赋值</span></span><br><span class="line">	url = pro.getProperty(<span class="string">"url"</span>);</span><br><span class="line">	user = pro.getProperty(<span class="string">"user"</span>);</span><br><span class="line">	password = pro.getProperty(<span class="string">"password"</span>);</span><br><span class="line">	driver = pro.getProperty(<span class="string">"driver"</span>);</span><br><span class="line">	<span class="comment">//4. 注册驱动</span></span><br><span class="line">	Class.forName(driver);</span><br><span class="line">        &#125;  </span><br><span class="line">    <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">	    e.printStackTrace();</span><br><span class="line">	        &#125;  </span><br><span class="line">    <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	            e.printStackTrace();</span><br><span class="line">	        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取连接</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> 连接对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> DriverManager.getConnection(url, user, password);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 释放资源</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> stmt</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> conn</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Statement stmt,Connection conn)</span></span>&#123;</span><br><span class="line">	    <span class="keyword">if</span>( stmt != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            stmt.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="keyword">if</span>( conn != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            conn.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 释放资源</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> stmt</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> conn</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(ResultSet rs,Statement stmt, Connection conn)</span></span>&#123;</span><br><span class="line">	    <span class="keyword">if</span>( rs != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            rs.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="keyword">if</span>( stmt != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            stmt.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="keyword">if</span>( conn != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            conn.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><ol>
+<li>事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</li>
+<li>操作：<ol>
+<li>开启事务</li>
+<li>提交事务</li>
+<li>回滚事务</li>
+</ol>
+</li>
+<li>使用Connection对象来管理事务<ul>
+<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务<ul>
+<li>在执行sql之前开启事务</li>
+</ul>
+</li>
+<li>提交事务：commit() <ul>
+<li>当所有sql都执行完提交事务</li>
+</ul>
+</li>
+<li>回滚事务：rollback() <ul>
+<li>在catch中回滚事务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Filter和Listener</title>
     <url>/2021/03/23/Filter%E5%92%8CListener/</url>
     <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. Filter：过滤器
@@ -750,852 +958,6 @@
       </categories>
       <tags>
         <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>File类，递归</title>
-    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h1><h2 id="1-1-路径"><a href="#1-1-路径" class="headerlink" title="1.1 路径"></a>1.1 路径</h2><ul>
-<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
-<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="1-2-构造方法"><a href="#1-2-构造方法" class="headerlink" title="1.2 构造方法"></a>1.2 构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
-<p>小贴士：   </p>
-<ol>
-<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
-<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
-</ol>
-</blockquote>
-<h2 id="1-3-常用方法"><a href="#1-3-常用方法" class="headerlink" title="1.3 常用方法"></a>1.3 常用方法</h2></li>
-</ul>
-<ol>
-<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
-<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
-<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
-<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="2-递归"><a href="#2-递归" class="headerlink" title="2.递归"></a>2.递归</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="3-综合案例"><a href="#3-综合案例" class="headerlink" title="3.综合案例"></a>3.综合案例</h1><h2 id="3-1-文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#3-1-文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="3.1 文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>3.1 文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="3-2-文件过滤器优化"><a href="#3-2-文件过滤器优化" class="headerlink" title="3.2 文件过滤器优化"></a>3.2 文件过滤器优化</h2></li>
-</ol>
-<ul>
-<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
-<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
-</ul>
-<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML基础</title>
-    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
-<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
-</li>
-<li><p>实例 </p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
-<li><p>HTML标题</p>
-<blockquote>
-<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
-</blockquote>
-</li>
-<li><p>HTML水平线</p>
-<blockquote>
-<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
-</blockquote>
-</li>
-<li><p>HTML注释  </p>
-<blockquote>
-<p><code>&lt;!-- This is a comment --&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML段落</p>
-<blockquote>
-<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
-</blockquote>
-</li>
-<li><p>HTML折行</p>
-<blockquote>
-<p>使用 <code>&lt;br/&gt;</code>标签</p>
-</blockquote>
-</li>
-<li><p>HTML链接</p>
-<blockquote>
-<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML图像</p>
-<blockquote>
-<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML表格</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Another Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>HTML无序列表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>HTML有序列表</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
-<li><p>HTML 头部</p>
-<blockquote>
-<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML 块</p>
-<blockquote>
-<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
-</blockquote>
-</li>
-<li><p>HTML 路径 </p>
-<blockquote>
-<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
-</blockquote>
-</li>
-<li><p>HTML URL </p>
-<blockquote>
-<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
-</blockquote>
-</li>
-<li><p>HTML CSS</p>
-<blockquote>
-<p>常用：外部样式表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"mystyle.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>HTML 脚本</p>
-<blockquote>
-<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
-<li><p>实例</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">form elements</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Action 属性 &amp; Method 属性</p>
-<blockquote>
-<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p><code>&lt;input&gt;</code> 元素</p>
-</li>
-</ol>
-<ul>
-<li>type 属性<blockquote>
-<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
-</blockquote>
-</li>
-<li>H5 type 属性<blockquote>
-<p>date<br>email</p>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JDBC连接池</title>
-    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 数据库连接池
-
-2. Spring JDBC : JDBC Template</code></pre><h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ol>
-<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
-<li>实现：<ul>
-<li>标准接口：DataSource   javax.sql包下的<ul>
-<li>获取连接：getConnection()</li>
-<li>归还连接：Connection.close()</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h3><ul>
-<li><p>步骤：</p>
-<blockquote>
-<ol>
-<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
-<li>定义配置文件：</li>
-</ol>
-<ul>
-<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
-<li>路径：直接将文件放在src目录下即可。</li>
-</ul>
-<ol start="3">
-<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
-<li>获取连接： getConnection</li>
-</ol>
-</blockquote>
-</li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.创建数据库连接池对象</span></span><br><span class="line"> DataSource ds  = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line"><span class="comment">//2. 获取连接对象</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
-<h3 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h3></li>
-<li><p>步骤：</p>
-<blockquote>
-<ol>
-<li>导入jar包 druid-1.0.9.jar</li>
-<li>定义配置文件：<ul>
-<li>是properties形式的</li>
-<li>可以叫任意名称，可以放在任意目录下</li>
-</ul>
-</li>
-<li>加载配置文件。Properties</li>
-<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
-<li>获取连接：getConnection</li>
-</ol>
-</blockquote>
-</li>
-<li><p>代码：</p>
-<pre><code class="java"><span class="comment">//加载配置文件</span>
-Properties pro = <span class="keyword">new</span> Properties();
-InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);
-pro.load(is);
-<span class="comment">//获取连接池对象</span>
-DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-<span class="comment">//获取连接</span>
-Connection conn = ds.getConnection();</code></pre>
-</li>
-</ul>
-<h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><ul>
-<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
-<li>步骤：<blockquote>
-<ol>
-<li>导入jar包</li>
-<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
-</ol>
-<ul>
-<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
-</ul>
-<ol start="3">
-<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
-</ol>
-<ul>
-<li><p>update():执行DML语句。增、删、改语句</p>
-</li>
-<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
-<ul>
-<li>注意：这个方法查询的结果集长度只能是1</li>
-</ul>
-</li>
-<li><p>queryForList():查询结果将结果集封装为list集合</p>
-<ul>
-<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
-</ul>
-</li>
-<li><p>query():查询结果，将结果封装为JavaBean对象</p>
-<ul>
-<li><p>query的参数：RowMapper</p>
-<ul>
-<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
-<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>queryForObject()：查询结果，将结果封装为对象</p>
-<ul>
-<li>一般用于聚合函数的查询</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JDBC总结</title>
-    <url>/2021/03/13/JDBC%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解</code></pre><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><ol>
-<li>JDBC概念</li>
-</ol>
-<ul>
-<li>概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库</li>
-<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
-</ul>
-<ol start="2">
-<li>快速入门：<ul>
-<li>步骤：<blockquote>
-<ol>
-<li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</li>
-</ol>
-<ul>
-<li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li>
-<li>右键–&gt;Add As Library</li>
-</ul>
-<ol start="2">
-<li>注册驱动</li>
-<li>获取数据库连接对象 Connection</li>
-<li>定义sql</li>
-<li>获取执行sql语句的对象 Statement</li>
-<li>执行sql，接受返回结果</li>
-<li>处理结果</li>
-<li>释放资源</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>代码实现：<blockquote>
-<ol>
-<li>导入驱动jar包</li>
-<li>注册驱动<br>Class.forName(“com.mysql.jdbc.Driver”);</li>
-<li>获取数据库连接对象<br>Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/db3”, “root”, “root”);</li>
-<li>定义sql语句<br>String sql = “update account set balance = 500 where id = 1”;</li>
-<li>获取执行sql的对象 Statement<br>Statement stmt = conn.createStatement();</li>
-<li>执行sql<br>int count = stmt.executeUpdate(sql);</li>
-<li>处理结果<br>System.out.println(count);</li>
-<li>释放资源<br>stmt.close();<br>conn.close();</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-<ol start="3">
-<li><p>详解各个对象：</p>
-<ol>
-<li><p>DriverManager：驱动管理对象   </p>
-<blockquote>
-<p>功能：</p>
-<ol>
-<li>注册驱动：告诉程序该使用哪一个数据库驱动jar</li>
-<li>获取数据库连接：</li>
-</ol>
-</blockquote>
-</li>
-<li><p>Connection：数据库连接对象</p>
-<blockquote>
-<p>功能：</p>
-<ol>
-<li>获取执行sql 的对象</li>
-</ol>
-<ul>
-<li>Statement createStatement()</li>
-<li>PreparedStatement prepareStatement(String sql)  </li>
-</ul>
-<ol start="2">
-<li>管理事务：</li>
-</ol>
-<ul>
-<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</li>
-<li>提交事务：commit() </li>
-<li>回滚事务：rollback()</li>
-</ul>
-</blockquote>
-</li>
-<li><p>Statement：执行sql的对象</p>
-<blockquote>
-<p>功能：</p>
-<ol>
-<li>执行sql</li>
-</ol>
-<ul>
-<li>boolean execute(String sql) ：可以执行任意的sql </li>
-<li>int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</li>
-<li>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</li>
-</ul>
-</blockquote>
-</li>
-<li><p>ResultSet：结果集对象,封装查询结果</p>
-<blockquote>
-<ul>
-<li>boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</li>
-<li>getXxx(参数):获取数据<ul>
-<li>Xxx：代表数据类型   如： int getInt() ,    String getString()</li>
-<li>参数：<ol>
-<li>int：代表列的编号,从1开始   如： getString(1)</li>
-<li>String：代表列名称。 如： getDouble(“balance”)</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-<li><p>PreparedStatement：执行sql的对象</p>
-<blockquote>
-<ol>
-<li>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接,会造成安全性问题.<br>如:输入密码：a’ or ‘a’ = ‘a</li>
-<li>解决sql注入问题：使用PreparedStatement对象来解决</li>
-<li>预编译的SQL：参数使用?作为占位符</li>
-<li>获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </li>
-<li>给？赋值：<ul>
-<li>方法： setXxx(参数1,参数2)<ul>
-<li>参数1：？的位置编号 从1 开始</li>
-<li>参数2：？的值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>执行sql，接受返回结果，不需要传递sql语句</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><ul>
-<li><p>目的：简化书写</p>
-</li>
-<li><p>解决：配置文件-&gt;jdbc.properties</p>
-<blockquote>
-<p>url=<br>user=<br>password=</p>
-</blockquote>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCUtils</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">//读取资源文件，获取值。</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//1. 创建Properties集合类。   </span></span><br><span class="line">    Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//获取src路径下的文件的方式---&gt;ClassLoader 类加载器</span></span><br><span class="line">	ClassLoader classLoader = JDBCUtils.class.getClassLoader();</span><br><span class="line">	URL res  = classLoader.getResource(<span class="string">"jdbc.properties"</span>);</span><br><span class="line">	String path = res.getPath();</span><br><span class="line">	System.out.println(path);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2. 加载文件</span></span><br><span class="line">	pro.load(<span class="keyword">new</span> FileReader(path));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//3. 获取数据，赋值</span></span><br><span class="line">	url = pro.getProperty(<span class="string">"url"</span>);</span><br><span class="line">	user = pro.getProperty(<span class="string">"user"</span>);</span><br><span class="line">	password = pro.getProperty(<span class="string">"password"</span>);</span><br><span class="line">	driver = pro.getProperty(<span class="string">"driver"</span>);</span><br><span class="line">	<span class="comment">//4. 注册驱动</span></span><br><span class="line">	Class.forName(driver);</span><br><span class="line">        &#125;  </span><br><span class="line">    <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">	    e.printStackTrace();</span><br><span class="line">	        &#125;  </span><br><span class="line">    <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	            e.printStackTrace();</span><br><span class="line">	        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取连接</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> 连接对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> DriverManager.getConnection(url, user, password);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 释放资源</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> stmt</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> conn</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Statement stmt,Connection conn)</span></span>&#123;</span><br><span class="line">	    <span class="keyword">if</span>( stmt != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            stmt.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="keyword">if</span>( conn != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            conn.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 释放资源</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> stmt</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> conn</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(ResultSet rs,Statement stmt, Connection conn)</span></span>&#123;</span><br><span class="line">	    <span class="keyword">if</span>( rs != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            rs.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="keyword">if</span>( stmt != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            stmt.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	</span><br><span class="line">	    <span class="keyword">if</span>( conn != <span class="keyword">null</span>)&#123;</span><br><span class="line">	        <span class="keyword">try</span> &#123;</span><br><span class="line">	            conn.close();</span><br><span class="line">	            &#125; </span><br><span class="line">            <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	                e.printStackTrace();</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><ol>
-<li>事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</li>
-<li>操作：<ol>
-<li>开启事务</li>
-<li>提交事务</li>
-<li>回滚事务</li>
-</ol>
-</li>
-<li>使用Connection对象来管理事务<ul>
-<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务<ul>
-<li>在执行sql之前开启事务</li>
-</ul>
-</li>
-<li>提交事务：commit() <ul>
-<li>当所有sql都执行完提交事务</li>
-</ul>
-</li>
-<li>回滚事务：rollback() <ul>
-<li>在catch中回滚事务</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JQuery</title>
-    <url>/2021/03/23/JQuery/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JQuery 基础
-    1. 概念
-    2. 快速入门
-    3. JQuery对象和JS对象区别与转换
-    4. 选择器
-    5. DOM操作
-
-2. JQuery 高级
-    1. 动画
-    2. 遍历
-    3. 事件绑定
-    4. 插件</code></pre><h1 id="JQuery-基础："><a href="#JQuery-基础：" class="headerlink" title="JQuery 基础："></a>JQuery 基础：</h1><h2 id="概念：-一个JavaScript框架。简化JS开发"><a href="#概念：-一个JavaScript框架。简化JS开发" class="headerlink" title="概念： 一个JavaScript框架。简化JS开发"></a>概念： 一个JavaScript框架。简化JS开发</h2><ul>
-<li>JavaScript框架：本质上就是一些js文件，封装了js的原生代码<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2></li>
-</ul>
-<ol>
-<li>步骤：</li>
-<li>下载JQuery</li>
-</ol>
-<ul>
-<li><p>目前jQuery有三个大版本：</p>
-<ul>
-<li><p>1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，<br>  功能不再新增。因此一般项目来说，使用1.x版本就可以了，<br>  最终版本：1.12.4 (2016年5月20日)      </p>
-</li>
-<li><p>2.x：不兼容ie678，很少有人使用，官方只做BUG维护，<br>  功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，<br>  最终版本：2.2.4 (2016年5月20日)         </p>
-</li>
-<li><p>3.x：不兼容ie678，只支持最新的浏览器。除非特殊要求，<br>  一般不会使用3.x版本的，很多老的jQuery插件不支持这个版本。<br>  目前该版本是官方主要更新维护的版本。最新版本：3.2.1（2017年3月20日）</p>
-</li>
-</ul>
-</li>
-<li><p>jquery-xxx.js 与 jquery-xxx.min.js区别：</p>
-<ol>
-<li>jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些</li>
-<li><code>jquery-xxx.min.js</code>：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快</li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li><p>导入JQuery的js文件：导入min.js文件</p>
-</li>
-<li><p>使用</p>
-</li>
-</ol>
-<h2 id="JQuery对象和JS对象区别与转换"><a href="#JQuery对象和JS对象区别与转换" class="headerlink" title="JQuery对象和JS对象区别与转换"></a>JQuery对象和JS对象区别与转换</h2><ol>
-<li><p>JQuery对象在操作时，更加方便。</p>
-</li>
-<li><p><code>JQuery对象和js对象方法不通用</code>的.</p>
-</li>
-<li><p>两者相互转换</p>
-</li>
-</ol>
-<ul>
-<li><code>jq -- &gt; js : jq对象[索引]</code> 或者 jq对象.get(索引)</li>
-<li><code>js -- &gt; jq : $(js对象)</code></li>
-</ul>
-<h2 id="选择器：筛选具有相似特征的元素-标签"><a href="#选择器：筛选具有相似特征的元素-标签" class="headerlink" title="选择器：筛选具有相似特征的元素(标签)"></a>选择器：筛选具有相似特征的元素(标签)</h2><ol>
-<li><p>基本操作学习：</p>
-<ol>
-<li>事件绑定<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//1.获取b1按钮</span><br><span class="line"> $(&quot;#b1&quot;).click(function()&#123;</span><br><span class="line">    alert(&quot;abc&quot;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></li>
-<li>入口函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">	           </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>window.onload  和 $(function) 区别<ul>
-<li><code>window.onload</code> 只能定义一次,如果定义多次，后边的会将前边的覆盖掉</li>
-<li><code>$(function)</code>可以定义多次的。</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>样式控制：css方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;#div1&quot;).css(&quot;background-color&quot;,&quot;red&quot;);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>分类</p>
-<ol>
-<li>基本选择器<ol>
-<li>标签选择器（元素选择器）</li>
-</ol>
-<ul>
-<li>语法：<code>$(&quot;html标签名&quot;)</code>获得所有匹配标签名称的元素</li>
-</ul>
-<ol start="2">
-<li>id选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>$(&quot;#id的属性值&quot;)</code> 获得与指定id属性值匹配的元素</li>
-</ul>
-<ol start="3">
-<li>类选择器</li>
-</ol>
-<ul>
-<li>语法：<code>$(&quot;.class的属性值&quot;)</code> 获得与指定的class属性值匹配的元素</li>
-</ul>
-<ol start="4">
-<li>并集选择器：</li>
-</ol>
-<ul>
-<li>语法：<code>$(&quot;选择器1,选择器2....&quot;)</code> 获取多个选择器选中的所有元素</li>
-</ul>
-</li>
-<li>层级选择器<ol>
-<li>后代选择器<ul>
-<li>语法：<code>$(&quot;A B &quot;)</code> 选择A元素内部的所有B元素        </li>
-</ul>
-</li>
-<li>子选择器<ul>
-<li>语法：<code>$(&quot;A &gt; B&quot;)</code> 选择A元素内部的所有B子元素</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>属性选择器<ol>
-<li>属性名称选择器 </li>
-</ol>
-<ul>
-<li>语法： <code>$(&quot;A[属性名]&quot;)</code> 包含指定属性的选择器</li>
-</ul>
-<ol start="2">
-<li>属性选择器</li>
-</ol>
-<ul>
-<li>语法：<code>$(&quot;A[属性名=&#39;值&#39;]&quot;)</code>包含指定属性等于指定值的选择器</li>
-</ul>
-<ol start="3">
-<li>复合属性选择器</li>
-</ol>
-<ul>
-<li>语法： <code>$(&quot;A[属性名=&#39;值&#39;][]...&quot;)</code> 包含多个属性条件的选择器</li>
-</ul>
-</li>
-<li>过滤选择器<ol>
-<li>首元素选择器 </li>
-</ol>
-<ul>
-<li>语法： <code>:first</code>获得选择的元素中的第一个元素</li>
-</ul>
-<ol start="2">
-<li>尾元素选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>:last</code> 获得选择的元素中的最后一个元素</li>
-</ul>
-<ol start="3">
-<li>非元素选择器</li>
-</ol>
-<ul>
-<li>语法： <code>:not(selector)</code>不包括指定内容的元素</li>
-</ul>
-<ol start="4">
-<li>偶数选择器</li>
-</ol>
-<ul>
-<li>语法： <code>:even</code> 偶数，从 0 开始计数</li>
-</ul>
-<ol start="5">
-<li>奇数选择器</li>
-</ol>
-<ul>
-<li>语法：<code>:odd</code> 奇数，从 0 开始计数</li>
-</ul>
-<ol start="6">
-<li>等于索引选择器</li>
-</ol>
-<ul>
-<li>语法： <code>:eq(index)</code> 指定索引元素</li>
-</ul>
-<ol start="7">
-<li>大于索引选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>:gt(index)</code>大于指定索引元素</li>
-</ul>
-<ol start="8">
-<li>小于索引选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>:lt(index)</code> 小于指定索引元素</li>
-</ul>
-<ol start="9">
-<li>标题选择器</li>
-</ol>
-<ul>
-<li>语法： <code>:header</code> 获得标题（h1~h6）元素，固定写法</li>
-</ul>
-</li>
-<li>表单过滤选择器<ol>
-<li>可用元素选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>:enabled</code> 获得可用元素</li>
-</ul>
-<ol start="2">
-<li>不可用元素选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>:disabled</code> 获得不可用元素</li>
-</ul>
-<ol start="3">
-<li>选中选择器 </li>
-</ol>
-<ul>
-<li>语法：<code>:checked</code> 获得单选/复选框选中的元素</li>
-</ul>
-<ol start="4">
-<li>选中选择器 </li>
-</ol>
-<ul>
-<li>语法： <code>:selected</code>获得下拉框选中的元素</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
-<li><p>内容操作</p>
-<ol>
-<li><code>html()</code>: 获取/设置元素的标签体内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code>  –&gt; <code>&lt;font&gt;内容&lt;/font&gt;</code></li>
-<li><code>text()</code>: 获取/设置元素的标签体纯文本内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code> –&gt; <code>内容</code></li>
-<li><code>val()</code>： 获取/设置元素的value属性值</li>
-</ol>
-</li>
-<li><p>属性操作</p>
-<ol>
-<li><p>通用属性操作</p>
-<ol>
-<li><code>attr()</code>: 获取/设置元素的属性</li>
-<li><code>removeAttr()</code>:删除属性</li>
-<li><code>prop()</code>:获取/设置元素的属性</li>
-<li><code>removeProp()</code>:删除属性</li>
-</ol>
-<ul>
-<li>attr和prop区别？</li>
-</ul>
-<ol>
-<li><p>如果操作的是元素的<code>固有属性，则建议使用prop</code></p>
-</li>
-<li><p>如果操作的是元素<code>自定义的属性，则建议使用attr</code></p>
-</li>
-</ol>
-</li>
-<li><p>对class属性操作</p>
-<ol>
-<li><code>addClass()</code>:添加class属性值</li>
-<li><code>removeClass()</code>:删除class属性值</li>
-<li><code>toggleClass()</code>:切换class属性</li>
-<li><code>css()</code>:</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>CRUD操作:</p>
-<ol>
-<li><code>append()</code>:父元素将子元素追加到末尾</li>
-</ol>
-<ul>
-<li>对象1.append(对象2): 将对象2添加到对象1元素内部，并且在末尾</li>
-</ul>
-<ol start="2">
-<li><code>prepend()</code>:父元素将子元素追加到开头</li>
-</ol>
-<ul>
-<li>对象1.prepend(对象2):将对象2添加到对象1元素内部，并且在开头</li>
-</ul>
-<ol start="3">
-<li><code>appendTo()</code>:</li>
-</ol>
-<ul>
-<li>对象1.appendTo(对象2):将对象1添加到对象2内部，并且在末尾</li>
-</ul>
-<ol start="4">
-<li><code>prependTo()</code>：</li>
-</ol>
-<ul>
-<li>对象1.prependTo(对象2):将对象1添加到对象2内部，并且在开头</li>
-</ul>
-</li>
-</ol>
-<pre><code>5. `after()`:添加元素到元素后边
-* 对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系
-6. `before()`:添加元素到元素前边
-* 对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
-7. `insertAfter()`
-* 对象1.insertAfter(对象2)：将对象2添加到对象1后边。对象1和对象2是兄弟关系
-8. `insertBefore()`
-* 对象1.insertBefore(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
-
-9. `remove()`:移除元素
-* 对象.remove():将对象删除掉
-10. ` empty()`:清空元素的所有后代元素。
-* 对象.empty():将对象的后代元素全部清空，但是保留当前对象以及其属性节点</code></pre><h1 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h1><h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>三种方式显示和隐藏元素</p>
-<ol>
-<li>默认显示和隐藏方式<ol>
-<li><code>show([speed,[easing],[fn]])</code></li>
-</ol>
-</li>
-</ol>
-<ul>
-<li><p>参数：    </p>
-<ul>
-<li><code>speed</code>：动画的速度。三个预定义的值(“slow”,”normal”, “fast”)或表示动画时长的毫秒数值(如：1000)  </li>
-<li><code>easing</code>：用来指定切换效果，默认是”swing”，可用参数”linear”      </li>
-<li><code>fn</code>：在动画完成时执行的函数，每个元素执行一次。</li>
-</ul>
-<ol start="2">
-<li><code>hide([speed,[easing],[fn]])</code></li>
-<li><code>toggle([speed],[easing],[fn])</code></li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li><p>滑动显示和隐藏方式</p>
-<ol>
-<li><code>slideDown([speed],[easing],[fn])</code></li>
-<li><code>slideUp([speed,[easing],[fn]])</code></li>
-<li><code>slideToggle([speed],[easing],[fn])</code></li>
-</ol>
-</li>
-<li><p>淡入淡出显示和隐藏方式</p>
-<ol>
-<li><code>fadeIn([speed],[easing],[fn])</code></li>
-<li><code>fadeOut([speed],[easing],[fn])</code></li>
-<li><code>fadeToggle([speed,[easing],[fn]])</code></li>
-</ol>
-</li>
-</ol>
-<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ol>
-<li><code>js的遍历方式</code><ul>
-<li>for(初始化值;循环结束条件;步长)</li>
-</ul>
-</li>
-<li><code>jq的遍历方式</code><ol>
-<li><code>jq对象.each(callback)</code><ol>
-<li>语法：<code>jquery对象.each(function(index,element){});</code><ul>
-<li>index:就是元素在集合中的索引</li>
-<li>element：就是集合中的每一个元素对象</li>
-<li>this：集合中的每一个元素对象</li>
-</ul>
-</li>
-<li>回调函数返回值：<ul>
-<li>true:如果当前function返回为false，则结束循环(break)。</li>
-<li>false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><code>$.each(object, [callback])</code></li>
-<li><code>for..of</code>: jquery 3.0 版本之后提供的方式<pre><code>for(元素对象 of 容器对象)</code></pre></li>
-</ol>
-</li>
-</ol>
-<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><ol>
-<li><p>jquery标准的绑定方式</p>
-<ul>
-<li><code>jq对象.事件方法(回调函数)</code>；</li>
-<li>注：如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。</li>
-<li>表单对象.submit();//让表单提交</li>
-</ul>
-</li>
-<li><p>on绑定事件/off解除绑定</p>
-<ul>
-<li><code>jq对象.on(&quot;事件名称&quot;,回调函数)</code></li>
-<li><code>jq对象.off(&quot;事件名称&quot;)</code></li>
-<li>如果off方法不传递任何参数，则将组件上的所有事件全部解绑</li>
-</ul>
-</li>
-<li><p>事件切换：toggle</p>
-<ul>
-<li><p><code>jq对象.toggle(fn1,fn2...)</code></p>
-</li>
-<li><p>当单击jq对象对应的组件后，会执行fn1.第二次点击会执行fn2…..</p>
-</li>
-<li><p>注意：1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;../js/jquery-migrate-1.0.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="插件：增强JQuery的功能"><a href="#插件：增强JQuery的功能" class="headerlink" title="插件：增强JQuery的功能"></a>插件：增强JQuery的功能</h2><p>实现方式：</p>
-<ol>
-<li><code>$.fn.extend(object)</code><ul>
-<li>增强通过Jquery获取的对象的功能  $(“#id”)</li>
-</ul>
-</li>
-<li><code>$.extend(object)</code><ul>
-<li>增强JQeury对象自身的功能  $/jQuery</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -2001,6 +1363,515 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>JQuery</title>
+    <url>/2021/03/23/JQuery/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JQuery 基础
+    1. 概念
+    2. 快速入门
+    3. JQuery对象和JS对象区别与转换
+    4. 选择器
+    5. DOM操作
+
+2. JQuery 高级
+    1. 动画
+    2. 遍历
+    3. 事件绑定
+    4. 插件</code></pre><h1 id="JQuery-基础："><a href="#JQuery-基础：" class="headerlink" title="JQuery 基础："></a>JQuery 基础：</h1><h2 id="概念：-一个JavaScript框架。简化JS开发"><a href="#概念：-一个JavaScript框架。简化JS开发" class="headerlink" title="概念： 一个JavaScript框架。简化JS开发"></a>概念： 一个JavaScript框架。简化JS开发</h2><ul>
+<li>JavaScript框架：本质上就是一些js文件，封装了js的原生代码<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2></li>
+</ul>
+<ol>
+<li>步骤：</li>
+<li>下载JQuery</li>
+</ol>
+<ul>
+<li><p>目前jQuery有三个大版本：</p>
+<ul>
+<li><p>1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，<br>  功能不再新增。因此一般项目来说，使用1.x版本就可以了，<br>  最终版本：1.12.4 (2016年5月20日)      </p>
+</li>
+<li><p>2.x：不兼容ie678，很少有人使用，官方只做BUG维护，<br>  功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，<br>  最终版本：2.2.4 (2016年5月20日)         </p>
+</li>
+<li><p>3.x：不兼容ie678，只支持最新的浏览器。除非特殊要求，<br>  一般不会使用3.x版本的，很多老的jQuery插件不支持这个版本。<br>  目前该版本是官方主要更新维护的版本。最新版本：3.2.1（2017年3月20日）</p>
+</li>
+</ul>
+</li>
+<li><p>jquery-xxx.js 与 jquery-xxx.min.js区别：</p>
+<ol>
+<li>jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些</li>
+<li><code>jquery-xxx.min.js</code>：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>导入JQuery的js文件：导入min.js文件</p>
+</li>
+<li><p>使用</p>
+</li>
+</ol>
+<h2 id="JQuery对象和JS对象区别与转换"><a href="#JQuery对象和JS对象区别与转换" class="headerlink" title="JQuery对象和JS对象区别与转换"></a>JQuery对象和JS对象区别与转换</h2><ol>
+<li><p>JQuery对象在操作时，更加方便。</p>
+</li>
+<li><p><code>JQuery对象和js对象方法不通用</code>的.</p>
+</li>
+<li><p>两者相互转换</p>
+</li>
+</ol>
+<ul>
+<li><code>jq -- &gt; js : jq对象[索引]</code> 或者 jq对象.get(索引)</li>
+<li><code>js -- &gt; jq : $(js对象)</code></li>
+</ul>
+<h2 id="选择器：筛选具有相似特征的元素-标签"><a href="#选择器：筛选具有相似特征的元素-标签" class="headerlink" title="选择器：筛选具有相似特征的元素(标签)"></a>选择器：筛选具有相似特征的元素(标签)</h2><ol>
+<li><p>基本操作学习：</p>
+<ol>
+<li>事件绑定<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//1.获取b1按钮</span><br><span class="line"> $(&quot;#b1&quot;).click(function()&#123;</span><br><span class="line">    alert(&quot;abc&quot;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></li>
+<li>入口函数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">	           </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>window.onload  和 $(function) 区别<ul>
+<li><code>window.onload</code> 只能定义一次,如果定义多次，后边的会将前边的覆盖掉</li>
+<li><code>$(function)</code>可以定义多次的。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>样式控制：css方法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;#div1&quot;).css(&quot;background-color&quot;,&quot;red&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>分类</p>
+<ol>
+<li>基本选择器<ol>
+<li>标签选择器（元素选择器）</li>
+</ol>
+<ul>
+<li>语法：<code>$(&quot;html标签名&quot;)</code>获得所有匹配标签名称的元素</li>
+</ul>
+<ol start="2">
+<li>id选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>$(&quot;#id的属性值&quot;)</code> 获得与指定id属性值匹配的元素</li>
+</ul>
+<ol start="3">
+<li>类选择器</li>
+</ol>
+<ul>
+<li>语法：<code>$(&quot;.class的属性值&quot;)</code> 获得与指定的class属性值匹配的元素</li>
+</ul>
+<ol start="4">
+<li>并集选择器：</li>
+</ol>
+<ul>
+<li>语法：<code>$(&quot;选择器1,选择器2....&quot;)</code> 获取多个选择器选中的所有元素</li>
+</ul>
+</li>
+<li>层级选择器<ol>
+<li>后代选择器<ul>
+<li>语法：<code>$(&quot;A B &quot;)</code> 选择A元素内部的所有B元素        </li>
+</ul>
+</li>
+<li>子选择器<ul>
+<li>语法：<code>$(&quot;A &gt; B&quot;)</code> 选择A元素内部的所有B子元素</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>属性选择器<ol>
+<li>属性名称选择器 </li>
+</ol>
+<ul>
+<li>语法： <code>$(&quot;A[属性名]&quot;)</code> 包含指定属性的选择器</li>
+</ul>
+<ol start="2">
+<li>属性选择器</li>
+</ol>
+<ul>
+<li>语法：<code>$(&quot;A[属性名=&#39;值&#39;]&quot;)</code>包含指定属性等于指定值的选择器</li>
+</ul>
+<ol start="3">
+<li>复合属性选择器</li>
+</ol>
+<ul>
+<li>语法： <code>$(&quot;A[属性名=&#39;值&#39;][]...&quot;)</code> 包含多个属性条件的选择器</li>
+</ul>
+</li>
+<li>过滤选择器<ol>
+<li>首元素选择器 </li>
+</ol>
+<ul>
+<li>语法： <code>:first</code>获得选择的元素中的第一个元素</li>
+</ul>
+<ol start="2">
+<li>尾元素选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>:last</code> 获得选择的元素中的最后一个元素</li>
+</ul>
+<ol start="3">
+<li>非元素选择器</li>
+</ol>
+<ul>
+<li>语法： <code>:not(selector)</code>不包括指定内容的元素</li>
+</ul>
+<ol start="4">
+<li>偶数选择器</li>
+</ol>
+<ul>
+<li>语法： <code>:even</code> 偶数，从 0 开始计数</li>
+</ul>
+<ol start="5">
+<li>奇数选择器</li>
+</ol>
+<ul>
+<li>语法：<code>:odd</code> 奇数，从 0 开始计数</li>
+</ul>
+<ol start="6">
+<li>等于索引选择器</li>
+</ol>
+<ul>
+<li>语法： <code>:eq(index)</code> 指定索引元素</li>
+</ul>
+<ol start="7">
+<li>大于索引选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>:gt(index)</code>大于指定索引元素</li>
+</ul>
+<ol start="8">
+<li>小于索引选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>:lt(index)</code> 小于指定索引元素</li>
+</ul>
+<ol start="9">
+<li>标题选择器</li>
+</ol>
+<ul>
+<li>语法： <code>:header</code> 获得标题（h1~h6）元素，固定写法</li>
+</ul>
+</li>
+<li>表单过滤选择器<ol>
+<li>可用元素选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>:enabled</code> 获得可用元素</li>
+</ul>
+<ol start="2">
+<li>不可用元素选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>:disabled</code> 获得不可用元素</li>
+</ul>
+<ol start="3">
+<li>选中选择器 </li>
+</ol>
+<ul>
+<li>语法：<code>:checked</code> 获得单选/复选框选中的元素</li>
+</ul>
+<ol start="4">
+<li>选中选择器 </li>
+</ol>
+<ul>
+<li>语法： <code>:selected</code>获得下拉框选中的元素</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
+<li><p>内容操作</p>
+<ol>
+<li><code>html()</code>: 获取/设置元素的标签体内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code>  –&gt; <code>&lt;font&gt;内容&lt;/font&gt;</code></li>
+<li><code>text()</code>: 获取/设置元素的标签体纯文本内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code> –&gt; <code>内容</code></li>
+<li><code>val()</code>： 获取/设置元素的value属性值</li>
+</ol>
+</li>
+<li><p>属性操作</p>
+<ol>
+<li><p>通用属性操作</p>
+<ol>
+<li><code>attr()</code>: 获取/设置元素的属性</li>
+<li><code>removeAttr()</code>:删除属性</li>
+<li><code>prop()</code>:获取/设置元素的属性</li>
+<li><code>removeProp()</code>:删除属性</li>
+</ol>
+<ul>
+<li>attr和prop区别？</li>
+</ul>
+<ol>
+<li><p>如果操作的是元素的<code>固有属性，则建议使用prop</code></p>
+</li>
+<li><p>如果操作的是元素<code>自定义的属性，则建议使用attr</code></p>
+</li>
+</ol>
+</li>
+<li><p>对class属性操作</p>
+<ol>
+<li><code>addClass()</code>:添加class属性值</li>
+<li><code>removeClass()</code>:删除class属性值</li>
+<li><code>toggleClass()</code>:切换class属性</li>
+<li><code>css()</code>:</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>CRUD操作:</p>
+<ol>
+<li><code>append()</code>:父元素将子元素追加到末尾</li>
+</ol>
+<ul>
+<li>对象1.append(对象2): 将对象2添加到对象1元素内部，并且在末尾</li>
+</ul>
+<ol start="2">
+<li><code>prepend()</code>:父元素将子元素追加到开头</li>
+</ol>
+<ul>
+<li>对象1.prepend(对象2):将对象2添加到对象1元素内部，并且在开头</li>
+</ul>
+<ol start="3">
+<li><code>appendTo()</code>:</li>
+</ol>
+<ul>
+<li>对象1.appendTo(对象2):将对象1添加到对象2内部，并且在末尾</li>
+</ul>
+<ol start="4">
+<li><code>prependTo()</code>：</li>
+</ol>
+<ul>
+<li>对象1.prependTo(对象2):将对象1添加到对象2内部，并且在开头</li>
+</ul>
+</li>
+</ol>
+<pre><code>5. `after()`:添加元素到元素后边
+* 对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系
+6. `before()`:添加元素到元素前边
+* 对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
+7. `insertAfter()`
+* 对象1.insertAfter(对象2)：将对象2添加到对象1后边。对象1和对象2是兄弟关系
+8. `insertBefore()`
+* 对象1.insertBefore(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
+
+9. `remove()`:移除元素
+* 对象.remove():将对象删除掉
+10. ` empty()`:清空元素的所有后代元素。
+* 对象.empty():将对象的后代元素全部清空，但是保留当前对象以及其属性节点</code></pre><h1 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h1><h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>三种方式显示和隐藏元素</p>
+<ol>
+<li>默认显示和隐藏方式<ol>
+<li><code>show([speed,[easing],[fn]])</code></li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><p>参数：    </p>
+<ul>
+<li><code>speed</code>：动画的速度。三个预定义的值(“slow”,”normal”, “fast”)或表示动画时长的毫秒数值(如：1000)  </li>
+<li><code>easing</code>：用来指定切换效果，默认是”swing”，可用参数”linear”      </li>
+<li><code>fn</code>：在动画完成时执行的函数，每个元素执行一次。</li>
+</ul>
+<ol start="2">
+<li><code>hide([speed,[easing],[fn]])</code></li>
+<li><code>toggle([speed],[easing],[fn])</code></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>滑动显示和隐藏方式</p>
+<ol>
+<li><code>slideDown([speed],[easing],[fn])</code></li>
+<li><code>slideUp([speed,[easing],[fn]])</code></li>
+<li><code>slideToggle([speed],[easing],[fn])</code></li>
+</ol>
+</li>
+<li><p>淡入淡出显示和隐藏方式</p>
+<ol>
+<li><code>fadeIn([speed],[easing],[fn])</code></li>
+<li><code>fadeOut([speed],[easing],[fn])</code></li>
+<li><code>fadeToggle([speed,[easing],[fn]])</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ol>
+<li><code>js的遍历方式</code><ul>
+<li>for(初始化值;循环结束条件;步长)</li>
+</ul>
+</li>
+<li><code>jq的遍历方式</code><ol>
+<li><code>jq对象.each(callback)</code><ol>
+<li>语法：<code>jquery对象.each(function(index,element){});</code><ul>
+<li>index:就是元素在集合中的索引</li>
+<li>element：就是集合中的每一个元素对象</li>
+<li>this：集合中的每一个元素对象</li>
+</ul>
+</li>
+<li>回调函数返回值：<ul>
+<li>true:如果当前function返回为false，则结束循环(break)。</li>
+<li>false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><code>$.each(object, [callback])</code></li>
+<li><code>for..of</code>: jquery 3.0 版本之后提供的方式<pre><code>for(元素对象 of 容器对象)</code></pre></li>
+</ol>
+</li>
+</ol>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><ol>
+<li><p>jquery标准的绑定方式</p>
+<ul>
+<li><code>jq对象.事件方法(回调函数)</code>；</li>
+<li>注：如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。</li>
+<li>表单对象.submit();//让表单提交</li>
+</ul>
+</li>
+<li><p>on绑定事件/off解除绑定</p>
+<ul>
+<li><code>jq对象.on(&quot;事件名称&quot;,回调函数)</code></li>
+<li><code>jq对象.off(&quot;事件名称&quot;)</code></li>
+<li>如果off方法不传递任何参数，则将组件上的所有事件全部解绑</li>
+</ul>
+</li>
+<li><p>事件切换：toggle</p>
+<ul>
+<li><p><code>jq对象.toggle(fn1,fn2...)</code></p>
+</li>
+<li><p>当单击jq对象对应的组件后，会执行fn1.第二次点击会执行fn2…..</p>
+</li>
+<li><p>注意：1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;../js/jquery-migrate-1.0.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="插件：增强JQuery的功能"><a href="#插件：增强JQuery的功能" class="headerlink" title="插件：增强JQuery的功能"></a>插件：增强JQuery的功能</h2><p>实现方式：</p>
+<ol>
+<li><code>$.fn.extend(object)</code><ul>
+<li>增强通过Jquery获取的对象的功能  $(“#id”)</li>
+</ul>
+</li>
+<li><code>$.extend(object)</code><ul>
+<li>增强JQeury对象自身的功能  $/jQuery</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java基础语法</title>
+    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
+<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
+<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
+<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
+<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
+<li>5.1 算术运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
+<ul>
+<li>5.2 赋值运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
+<ul>
+<li>5.3 比较运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
+<ul>
+<li>5.4 逻辑运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
+<ul>
+<li>5.5 三元运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
+<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
+<li>6.1 if语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
+<ul>
+<li>6.2 if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
+<ul>
+<li>6.3 if-else if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
+<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
+<li>7.1 switch语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
+<ul>
+<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
+</li>
+<li><p>7.3 break和continue的区别：</p>
+<ul>
+<li>break: 终止switch或者循环</li>
+<li>continue: 结束本次循环，继续下一次的循环 </li>
+</ul>
+</li>
+</ul>
+<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
+<li>8.1 for语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
+<ul>
+<li>8.2 while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
+<ul>
+<li>8.3 do-while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Map</title>
+    <url>/2019/11/07/Map/</url>
+    <content><![CDATA[<h1 id="1-Map"><a href="#1-Map" class="headerlink" title="1.Map"></a>1.Map</h1><h2 id="1-1-Map常用子类"><a href="#1-1-Map常用子类" class="headerlink" title="1.1 Map常用子类"></a>1.1 Map常用子类</h2><ul>
+<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+</li>
+<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+</li>
+</ul>
+<h2 id="1-2-Map接口的常用方法"><a href="#1-2-Map接口的常用方法" class="headerlink" title="1.2 Map接口的常用方法"></a>1.2 Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
+<h2 id="1-3-Map集合遍历键找值方式"><a href="#1-3-Map集合遍历键找值方式" class="headerlink" title="1.3 Map集合遍历键找值方式"></a>1.3 Map集合遍历键找值方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。方法提示: keyset()   </p>
+</li>
+<li><p>遍历键的Set集合，得到每一个键。  </p>
+</li>
+<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
+</li>
+</ol>
+<h2 id="1-4-Entry键值对对象"><a href="#1-4-Entry键值对对象" class="headerlink" title="1.4 Entry键值对对象"></a>1.4 Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
+<h2 id="1-5-Map集合遍历键值对方式"><a href="#1-5-Map集合遍历键值对方式" class="headerlink" title="1.5 Map集合遍历键值对方式"></a>1.5 Map集合遍历键值对方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。方法提示: entrySet() 。   </p>
+</li>
+<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+</li>
+<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Junit，反射，注解</title>
     <url>/2019/11/12/Junit%EF%BC%8C%E5%8F%8D%E5%B0%84%EF%BC%8C%E6%B3%A8%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. Junit单元测试
@@ -2208,70 +2079,112 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Java基础语法</title>
-    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
-<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
-<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
-<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
-<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
-<li>5.1 算术运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
-<ul>
-<li>5.2 赋值运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
-<ul>
-<li>5.3 比较运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
-<ul>
-<li>5.4 逻辑运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
-<ul>
-<li>5.5 三元运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
-<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
-<li>6.1 if语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
-<ul>
-<li>6.2 if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
-<ul>
-<li>6.3 if-else if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
-<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
-<li>7.1 switch语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
-<ul>
-<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
-</li>
-<li><p>7.3 break和continue的区别：</p>
-<ul>
-<li>break: 终止switch或者循环</li>
-<li>continue: 结束本次循环，继续下一次的循环 </li>
+    <title>JDBC连接池</title>
+    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 数据库连接池
+
+2. Spring JDBC : JDBC Template</code></pre><h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ol>
+<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
+<li>实现：<ul>
+<li>标准接口：DataSource   javax.sql包下的<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()</li>
 </ul>
 </li>
 </ul>
-<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
-<li>8.1 for语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
+</li>
+</ol>
+<h3 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h3><ul>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
+<li>定义配置文件：</li>
+</ol>
 <ul>
-<li>8.2 while语句</li>
+<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
+<li>路径：直接将文件放在src目录下即可。</li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
+<ol start="3">
+<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
+<li>获取连接： getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.创建数据库连接池对象</span></span><br><span class="line"> DataSource ds  = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line"><span class="comment">//2. 获取连接对象</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+<h3 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h3></li>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 druid-1.0.9.jar</li>
+<li>定义配置文件：<ul>
+<li>是properties形式的</li>
+<li>可以叫任意名称，可以放在任意目录下</li>
+</ul>
+</li>
+<li>加载配置文件。Properties</li>
+<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
+<li>获取连接：getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<pre><code class="java"><span class="comment">//加载配置文件</span>
+Properties pro = <span class="keyword">new</span> Properties();
+InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);
+pro.load(is);
+<span class="comment">//获取连接池对象</span>
+DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+<span class="comment">//获取连接</span>
+Connection conn = ds.getConnection();</code></pre>
+</li>
+</ul>
+<h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><ul>
+<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
+<li>步骤：<blockquote>
+<ol>
+<li>导入jar包</li>
+<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+</ol>
 <ul>
-<li>8.3 do-while语句</li>
+<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
+<ol start="3">
+<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</ol>
+<ul>
+<li><p>update():执行DML语句。增、删、改语句</p>
+</li>
+<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
+<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
+</ul>
+</li>
+<li><p>queryForList():查询结果将结果集封装为list集合</p>
+<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
+</ul>
+</li>
+<li><p>query():查询结果，将结果封装为JavaBean对象</p>
+<ul>
+<li><p>query的参数：RowMapper</p>
+<ul>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>queryForObject()：查询结果，将结果封装为对象</p>
+<ul>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -2281,40 +2194,293 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Map</title>
-    <url>/2019/11/07/Map/</url>
-    <content><![CDATA[<h1 id="1-Map"><a href="#1-Map" class="headerlink" title="1.Map"></a>1.Map</h1><h2 id="1-1-Map常用子类"><a href="#1-1-Map常用子类" class="headerlink" title="1.1 Map常用子类"></a>1.1 Map常用子类</h2><ul>
-<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+    <title>MySQL基础</title>
+    <url>/2019/11/13/MySQL%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><ol>
+<li>数据库的基本概念</li>
+</ol>
+<ol start="2">
+<li><p>MySQL数据库软件</p>
+<ol>
+<li>安装</li>
+<li>卸载</li>
+<li>配置</li>
+</ol>
 </li>
-<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+<li><p>SQL</p>
 </li>
+</ol>
+<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
+2. 什么数据库？
+    * 用于存储和管理数据的仓库。
+
+3. 数据库的特点：
+    1. 持久化存储数据的。其实数据库就是一个文件系统
+    2. 方便存储和管理数据
+    3. 使用了统一的方式操作数据库 -- SQL
+
+
+4. 常见的数据库软件
+    * 参见《MySQL基础.pdf》</code></pre><h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><pre><code>1. 安装
+    * 参见《MySQL基础.pdf》
+2. 卸载
+    1. 去mysql的安装目录找到my.ini文件
+        * 复制 datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
+    2. 卸载MySQL
+    3. 删除C:/ProgramData目录下的MySQL文件夹。
+
+3. 配置
+    * MySQL服务启动
+        1. 手动。
+        2. cmd--&gt; services.msc 打开服务的窗口
+        3. 使用管理员打开cmd
+            * net start mysql : 启动mysql的服务
+            * net stop mysql:关闭mysql服务
+    * MySQL登录
+        1. mysql -uroot -p密码
+        2. mysql -hip -uroot -p连接目标的密码
+        3. mysql --host=ip --user=root --password=连接目标的密码
+    * MySQL退出
+        1. exit
+        2. quit
+
+    * MySQL目录结构
+        1. MySQL安装目录：basedir=&quot;D:/develop/MySQL/&quot;
+            * 配置文件 my.ini
+        2. MySQL数据目录：datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
+            * 几个概念
+                * 数据库：文件夹
+                * 表：文件
+                * 数据：数据</code></pre><h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><pre><code>1.什么是SQL？
+    Structured Query Language：结构化查询语言
+    其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。
+
+2.SQL通用语法
+    1. SQL 语句可以单行或多行书写，以分号结尾。
+    2. 可使用空格和缩进来增强语句的可读性。
+    3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
+    4. 3 种注释
+        * 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) 
+        * 多行注释: /* 注释 */
+
+3. SQL分类
+    1) DDL(Data Definition Language)数据定义语言
+        用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等
+    2) DML(Data Manipulation Language)数据操作语言
+        用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等
+    3) DQL(Data Query Language)数据查询语言
+        用来查询数据库中表的记录(数据)。关键字：select, where 等
+    4) DCL(Data Control Language)数据控制语言(了解)
+        用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
+    1. C(Create):创建
+        * 创建数据库：
+            * create database 数据库名称;
+        * 创建数据库，判断不存在，再创建：
+            * create database if not exists 数据库名称;
+        * 创建数据库，并指定字符集
+            * create database 数据库名称 character set 字符集名;
+
+        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
+            * create database if not exists db4 character set gbk;
+    2. R(Retrieve)：查询
+        * 查询所有数据库的名称:
+            * show databases;
+        * 查询某个数据库的字符集:查询某个数据库的创建语句
+            * show create database 数据库名称;
+    3. U(Update):修改
+        * 修改数据库的字符集
+            * alter database 数据库名称 character set 字符集名称;
+    4. D(Delete):删除
+        * 删除数据库
+            * drop database 数据库名称;
+        * 判断数据库存在，存在再删除
+            * drop database if exists 数据库名称;
+    5. 使用数据库
+        * 查询当前正在使用的数据库名称
+            * select database();
+        * 使用数据库
+            * use 数据库名称;
+
+
+2. 操作表
+    1. C(Create):创建
+        1. 语法：
+            create table 表名(
+                列名1 数据类型1,
+                列名2 数据类型2,
+                ....
+                列名n 数据类型n
+            );
+            * 注意：最后一列，不需要加逗号（,）
+            * 数据库类型：
+                1. int：整数类型
+                    * age int,
+                2. double:小数类型
+                    * score double(5,2)
+                3. date:日期，只包含年月日，yyyy-MM-dd
+                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
+                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
+                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
+
+                6. varchar：字符串
+                    * name varchar(20):姓名最大20个字符
+                    * zhangsan 8个字符  张三 2个字符
+
+
+        * 创建表
+            create table student(
+                id int,
+                name varchar(32),
+                age int ,
+                score double(4,1),
+                birthday date,
+                insert_time timestamp
+            );
+        * 复制表：
+            * create table 表名 like 被复制的表名;          
+    2. R(Retrieve)：查询
+        * 查询某个数据库中所有的表名称
+            * show tables;
+        * 查询表结构
+            * desc 表名;
+    3. U(Update):修改
+        1. 修改表名
+            alter table 表名 rename to 新的表名;
+        2. 修改表的字符集
+            alter table 表名 character set 字符集名称;
+        3. 添加一列
+            alter table 表名 add 列名 数据类型;
+        4. 修改列名称 类型
+            alter table 表名 change 列名 新列名 新数据类型;
+            alter table 表名 modify 列名 新数据类型;
+        5. 删除列
+            alter table 表名 drop 列名;
+    4. D(Delete):删除
+        * drop table 表名;
+        * drop table  if exists 表名 ;</code></pre><ul>
+<li>客户端图形化工具：SQLYog</li>
 </ul>
-<h2 id="1-2-Map接口的常用方法"><a href="#1-2-Map接口的常用方法" class="headerlink" title="1.2 Map接口的常用方法"></a>1.2 Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
-<h2 id="1-3-Map集合遍历键找值方式"><a href="#1-3-Map集合遍历键找值方式" class="headerlink" title="1.3 Map集合遍历键找值方式"></a>1.3 Map集合遍历键找值方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。方法提示: keyset()   </p>
-</li>
-<li><p>遍历键的Set集合，得到每一个键。  </p>
-</li>
-<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
-</li>
-</ol>
-<h2 id="1-4-Entry键值对对象"><a href="#1-4-Entry键值对对象" class="headerlink" title="1.4 Entry键值对对象"></a>1.4 Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
-<h2 id="1-5-Map集合遍历键值对方式"><a href="#1-5-Map集合遍历键值对方式" class="headerlink" title="1.5 Map集合遍历键值对方式"></a>1.5 Map集合遍历键值对方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。方法提示: entrySet() 。   </p>
-</li>
-<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
-</li>
-<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
-</li>
-</ol>
-]]></content>
+<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
+    * 语法：
+        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
+    * 注意：
+        1. 列名和值要一一对应。
+        2. 如果表名后，不定义列名，则默认给所有列添加值
+            insert into 表名 values(值1,值2,...值n);
+        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
+2. 删除数据：
+    * 语法：
+        * delete from 表名 [where 条件]
+    * 注意：
+        1. 如果不加条件，则删除表中所有记录。
+        2. 如果要删除所有记录
+            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
+            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
+3. 修改数据：
+    * 语法：
+        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
+
+    * 注意：
+        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;
+
+1. 语法：
+    select
+        字段列表
+    from
+        表名列表
+    where
+        条件列表
+    group by
+        分组字段
+    having
+        分组之后的条件
+    order by
+        排序
+    limit
+        分页限定
+
+
+2. 基础查询
+    1. 多个字段的查询
+        select 字段名1，字段名2... from 表名；
+        * 注意：
+            * 如果查询所有字段，则可以使用*来替代字段列表。
+    2. 去除重复：
+        * distinct
+    3. 计算列
+        * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）
+        * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null
+            * 表达式1：哪个字段需要判断是否为null
+            * 如果该字段为null后的替换值。
+    4. 起别名：
+        * as：as也可以省略
+
+
+3. 条件查询
+    1. where子句后跟条件
+    2. 运算符
+        * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
+        * BETWEEN...AND  
+        * IN( 集合) 
+        * LIKE：模糊查询
+            * 占位符：
+                * _:单个任意字符
+                * %：多个任意字符
+        * IS NULL  
+        * and  或 &amp;&amp;
+        * or  或 || 
+        * not  或 !
+
+            -- 查询年龄大于20岁
+
+            SELECT * FROM student WHERE age &gt; 20;
+
+            SELECT * FROM student WHERE age &gt;= 20;
+
+            -- 查询年龄等于20岁
+            SELECT * FROM student WHERE age = 20;
+
+            -- 查询年龄不等于20岁
+            SELECT * FROM student WHERE age != 20;
+            SELECT * FROM student WHERE age &lt;&gt; 20;
+
+            -- 查询年龄大于等于20 小于等于30
+
+            SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
+            SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
+            SELECT * FROM student WHERE age BETWEEN 20 AND 30;
+
+            -- 查询年龄22岁，18岁，25岁的信息
+            SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
+            SELECT * FROM student WHERE age IN (22,18,25);
+
+            -- 查询英语成绩为null
+            SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
+
+            SELECT * FROM student WHERE english IS NULL;
+
+            -- 查询英语成绩不为null
+            SELECT * FROM student WHERE english  IS NOT NULL;
+
+
+
+            -- 查询姓马的有哪些？ like
+            SELECT * FROM student WHERE NAME LIKE &apos;马%&apos;;
+            -- 查询姓名第二个字是化的人
+
+            SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;
+
+            -- 查询姓名是3个字的人
+            SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;
+
+
+            -- 查询姓名中包含德的人
+            SELECT * FROM student WHERE NAME LIKE &apos;%德%&apos;;</code></pre>]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>MySQL</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -2789,296 +2955,6 @@ Connection conn = ds.getConnection();</code></pre>
             -- 撤销权限：
             revoke 权限列表 on 数据库名.表名 from &apos;用户名&apos;@&apos;主机名&apos;;
             REVOKE UPDATE ON db3.`account` FROM &apos;lisi&apos;@&apos;%&apos;;</code></pre>]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL基础</title>
-    <url>/2019/11/13/MySQL%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><ol>
-<li>数据库的基本概念</li>
-</ol>
-<ol start="2">
-<li><p>MySQL数据库软件</p>
-<ol>
-<li>安装</li>
-<li>卸载</li>
-<li>配置</li>
-</ol>
-</li>
-<li><p>SQL</p>
-</li>
-</ol>
-<h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
-2. 什么数据库？
-    * 用于存储和管理数据的仓库。
-
-3. 数据库的特点：
-    1. 持久化存储数据的。其实数据库就是一个文件系统
-    2. 方便存储和管理数据
-    3. 使用了统一的方式操作数据库 -- SQL
-
-
-4. 常见的数据库软件
-    * 参见《MySQL基础.pdf》</code></pre><h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><pre><code>1. 安装
-    * 参见《MySQL基础.pdf》
-2. 卸载
-    1. 去mysql的安装目录找到my.ini文件
-        * 复制 datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
-    2. 卸载MySQL
-    3. 删除C:/ProgramData目录下的MySQL文件夹。
-
-3. 配置
-    * MySQL服务启动
-        1. 手动。
-        2. cmd--&gt; services.msc 打开服务的窗口
-        3. 使用管理员打开cmd
-            * net start mysql : 启动mysql的服务
-            * net stop mysql:关闭mysql服务
-    * MySQL登录
-        1. mysql -uroot -p密码
-        2. mysql -hip -uroot -p连接目标的密码
-        3. mysql --host=ip --user=root --password=连接目标的密码
-    * MySQL退出
-        1. exit
-        2. quit
-
-    * MySQL目录结构
-        1. MySQL安装目录：basedir=&quot;D:/develop/MySQL/&quot;
-            * 配置文件 my.ini
-        2. MySQL数据目录：datadir=&quot;C:/ProgramData/MySQL/MySQL Server 5.5/Data/&quot;
-            * 几个概念
-                * 数据库：文件夹
-                * 表：文件
-                * 数据：数据</code></pre><h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><pre><code>1.什么是SQL？
-    Structured Query Language：结构化查询语言
-    其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。
-
-2.SQL通用语法
-    1. SQL 语句可以单行或多行书写，以分号结尾。
-    2. 可使用空格和缩进来增强语句的可读性。
-    3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
-    4. 3 种注释
-        * 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) 
-        * 多行注释: /* 注释 */
-
-3. SQL分类
-    1) DDL(Data Definition Language)数据定义语言
-        用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等
-    2) DML(Data Manipulation Language)数据操作语言
-        用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等
-    3) DQL(Data Query Language)数据查询语言
-        用来查询数据库中表的记录(数据)。关键字：select, where 等
-    4) DCL(Data Control Language)数据控制语言(了解)
-        用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre><h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
-    1. C(Create):创建
-        * 创建数据库：
-            * create database 数据库名称;
-        * 创建数据库，判断不存在，再创建：
-            * create database if not exists 数据库名称;
-        * 创建数据库，并指定字符集
-            * create database 数据库名称 character set 字符集名;
-
-        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
-            * create database if not exists db4 character set gbk;
-    2. R(Retrieve)：查询
-        * 查询所有数据库的名称:
-            * show databases;
-        * 查询某个数据库的字符集:查询某个数据库的创建语句
-            * show create database 数据库名称;
-    3. U(Update):修改
-        * 修改数据库的字符集
-            * alter database 数据库名称 character set 字符集名称;
-    4. D(Delete):删除
-        * 删除数据库
-            * drop database 数据库名称;
-        * 判断数据库存在，存在再删除
-            * drop database if exists 数据库名称;
-    5. 使用数据库
-        * 查询当前正在使用的数据库名称
-            * select database();
-        * 使用数据库
-            * use 数据库名称;
-
-
-2. 操作表
-    1. C(Create):创建
-        1. 语法：
-            create table 表名(
-                列名1 数据类型1,
-                列名2 数据类型2,
-                ....
-                列名n 数据类型n
-            );
-            * 注意：最后一列，不需要加逗号（,）
-            * 数据库类型：
-                1. int：整数类型
-                    * age int,
-                2. double:小数类型
-                    * score double(5,2)
-                3. date:日期，只包含年月日，yyyy-MM-dd
-                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
-                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
-                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
-
-                6. varchar：字符串
-                    * name varchar(20):姓名最大20个字符
-                    * zhangsan 8个字符  张三 2个字符
-
-
-        * 创建表
-            create table student(
-                id int,
-                name varchar(32),
-                age int ,
-                score double(4,1),
-                birthday date,
-                insert_time timestamp
-            );
-        * 复制表：
-            * create table 表名 like 被复制的表名;          
-    2. R(Retrieve)：查询
-        * 查询某个数据库中所有的表名称
-            * show tables;
-        * 查询表结构
-            * desc 表名;
-    3. U(Update):修改
-        1. 修改表名
-            alter table 表名 rename to 新的表名;
-        2. 修改表的字符集
-            alter table 表名 character set 字符集名称;
-        3. 添加一列
-            alter table 表名 add 列名 数据类型;
-        4. 修改列名称 类型
-            alter table 表名 change 列名 新列名 新数据类型;
-            alter table 表名 modify 列名 新数据类型;
-        5. 删除列
-            alter table 表名 drop 列名;
-    4. D(Delete):删除
-        * drop table 表名;
-        * drop table  if exists 表名 ;</code></pre><ul>
-<li>客户端图形化工具：SQLYog</li>
-</ul>
-<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
-    * 语法：
-        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
-    * 注意：
-        1. 列名和值要一一对应。
-        2. 如果表名后，不定义列名，则默认给所有列添加值
-            insert into 表名 values(值1,值2,...值n);
-        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
-2. 删除数据：
-    * 语法：
-        * delete from 表名 [where 条件]
-    * 注意：
-        1. 如果不加条件，则删除表中所有记录。
-        2. 如果要删除所有记录
-            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
-            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
-3. 修改数据：
-    * 语法：
-        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
-
-    * 注意：
-        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;
-
-1. 语法：
-    select
-        字段列表
-    from
-        表名列表
-    where
-        条件列表
-    group by
-        分组字段
-    having
-        分组之后的条件
-    order by
-        排序
-    limit
-        分页限定
-
-
-2. 基础查询
-    1. 多个字段的查询
-        select 字段名1，字段名2... from 表名；
-        * 注意：
-            * 如果查询所有字段，则可以使用*来替代字段列表。
-    2. 去除重复：
-        * distinct
-    3. 计算列
-        * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）
-        * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null
-            * 表达式1：哪个字段需要判断是否为null
-            * 如果该字段为null后的替换值。
-    4. 起别名：
-        * as：as也可以省略
-
-
-3. 条件查询
-    1. where子句后跟条件
-    2. 运算符
-        * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
-        * BETWEEN...AND  
-        * IN( 集合) 
-        * LIKE：模糊查询
-            * 占位符：
-                * _:单个任意字符
-                * %：多个任意字符
-        * IS NULL  
-        * and  或 &amp;&amp;
-        * or  或 || 
-        * not  或 !
-
-            -- 查询年龄大于20岁
-
-            SELECT * FROM student WHERE age &gt; 20;
-
-            SELECT * FROM student WHERE age &gt;= 20;
-
-            -- 查询年龄等于20岁
-            SELECT * FROM student WHERE age = 20;
-
-            -- 查询年龄不等于20岁
-            SELECT * FROM student WHERE age != 20;
-            SELECT * FROM student WHERE age &lt;&gt; 20;
-
-            -- 查询年龄大于等于20 小于等于30
-
-            SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
-            SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
-            SELECT * FROM student WHERE age BETWEEN 20 AND 30;
-
-            -- 查询年龄22岁，18岁，25岁的信息
-            SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
-            SELECT * FROM student WHERE age IN (22,18,25);
-
-            -- 查询英语成绩为null
-            SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
-
-            SELECT * FROM student WHERE english IS NULL;
-
-            -- 查询英语成绩不为null
-            SELECT * FROM student WHERE english  IS NOT NULL;
-
-
-
-            -- 查询姓马的有哪些？ like
-            SELECT * FROM student WHERE NAME LIKE &apos;马%&apos;;
-            -- 查询姓名第二个字是化的人
-
-            SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;
-
-            -- 查询姓名是3个字的人
-            SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;
-
-
-            -- 查询姓名中包含德的人
-            SELECT * FROM student WHERE NAME LIKE &apos;%德%&apos;;</code></pre>]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
@@ -3860,6 +3736,130 @@ Connection conn = ds.getConnection();</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>CSS基础</title>
+    <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
+<li><p>CSS：CSS 指的是层叠样式表 (Cascading Style Sheets)</p>
+</li>
+<li><p>实例</p>
+ <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"> <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line"> <span class="attribute">color</span>: white;</span><br><span class="line"> <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"> <span class="attribute">font-family</span>: verdana;</span><br><span class="line"> <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1></li>
+<li><p>简单选择器（根据名称、id、类来选取元素）</p>
+<blockquote>
+<p>元素<br>id(#para1)<br>class(.center)<br>分组(h1, h2, p )<br>通用(*)</p>
+</blockquote>
+</li>
+<li><p>组合器选择器（根据它们之间的特定关系来选取元素）</p>
+<blockquote>
+<p>后代选择器 (空格)<br>子选择器 (&gt;)<br>相邻兄弟选择器 (+)<br>通用兄弟选择器 (~)</p>
+</blockquote>
+</li>
+<li><p>伪类选择器（根据特定状态选取元素）</p>
+<blockquote>
+<p>a:link<br>a:visited<br>a:hover<br>a:active<br>:first-child<br>:last-child</p>
+</blockquote>
+</li>
+<li><p>伪元素选择器（选取元素的一部分并设置其样式）  </p>
+<blockquote>
+<p>::first-line<br>::first-letter</p>
+</blockquote>
+</li>
+<li><p>属性选择器（根据属性或属性值来选取元素）</p>
+<blockquote>
+<p>[attribute=value]</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="CSS常用样式"><a href="#CSS常用样式" class="headerlink" title="CSS常用样式"></a>CSS常用样式</h1><ol>
+<li><p>CSS 注释：</p>
+<blockquote>
+<p>以 /* 开始，以 */ 结束</p>
+</blockquote>
+</li>
+<li><p>CSS 颜色</p>
+<blockquote>
+<p>CSS 颜色名<br>RGB 颜色<br>HEX 颜色</p>
+</blockquote>
+</li>
+<li><p>CSS 背景</p>
+<blockquote>
+<p>background-</p>
+</blockquote>
+</li>
+<li><p>CSS 文本</p>
+<blockquote>
+<p>text-</p>
+</blockquote>
+</li>
+<li><p>CSS 字体</p>
+<blockquote>
+<p>font-</p>
+</blockquote>
+</li>
+<li><p>CSS 链接</p>
+<blockquote>
+<p>a:link - 正常的，未访问的链接<br>a:visited - 用户访问过的链接<br>a:hover - 用户将鼠标悬停在链接上时<br>a:active - 链接被点击时</p>
+</blockquote>
+</li>
+<li><p>CSS 列表   </p>
+<blockquote>
+<p>list-style-</p>
+</blockquote>
+</li>
+<li><p>CSS 表格</p>
+</li>
+<li><p>盒子模型</p>
+<blockquote>
+<p>border<br>padding<br>margin</p>
+</blockquote>
+</li>
+<li><p>CSS 高度和宽度</p>
+<blockquote>
+<p>height<br>width</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><ol>
+<li><p>display 属性  </p>
+<blockquote>
+<p>none    此元素不会被显示<br>inline    默认。此元素会被显示为内联元素，元素前后没有换行符<br>block    此元素将显示为块级元素，此元素前后会带有换行符<br>inline-block    行内块元素</p>
+</blockquote>
+</li>
+<li><p>float 属性</p>
+<blockquote>
+<p>left  元素浮动到其容器的左侧<br>right  元素浮动在其容器的右侧</p>
+</blockquote>
+</li>
+<li><p>clear 属性</p>
+<blockquote>
+<p>left  左侧不允许浮动元素<br>right 右侧不允许浮动元素<br>both  左侧或右侧均不允许浮动元素</p>
+</blockquote>
+</li>
+<li><p>position 属性</p>
+<blockquote>
+<p>position: relative; 的元素相对于其正常位置进行定位<br>position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置<br>position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）<br>常用:’子绝父相’</p>
+</blockquote>
+</li>
+<li><p>水平对齐 </p>
+<blockquote>
+<p>使用 margin: auto<br>使用 text-align: center</p>
+</blockquote>
+</li>
+<li><p>垂直对齐</p>
+<blockquote>
+<p>使用 padding<br>使用 line-height: 技巧是使用其值等于 height 属性值的 line-height 属性</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Object类，常用API</title>
     <url>/2019/11/06/Object%E7%B1%BB%EF%BC%8C%E5%B8%B8%E7%94%A8API/</url>
     <content><![CDATA[<h1 id="1-Object类"><a href="#1-Object类" class="headerlink" title="1.Object类"></a>1.Object类</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p><code>java.lang.Object</code>类是Java语言中所有类的父类。</p>
@@ -4368,6 +4368,48 @@ zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><
       </tags>
   </entry>
   <entry>
+    <title>Scanner类,Random类,ArrayList类</title>
+    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="1-Scanner类"><a href="#1-Scanner类" class="headerlink" title="1.Scanner类"></a>1.Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" alt=""></p>
+<h1 id="2-Random类"><a href="#2-Random类" class="headerlink" title="2.Random类"></a>2.Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" alt=""></p>
+<h1 id="3-ArrayList类"><a href="#3-ArrayList类" class="headerlink" title="3.ArrayList类"></a>3.ArrayList类</h1><ul>
+<li>3.1 ArrayList使用步骤</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" alt=""></p>
+<ul>
+<li>3.2 常用方法和遍历 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" alt=""></p>
+<ul>
+<li>3.3 基本数据类型包装类</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" alt=""></p>
+<h1 id="4-ArrayList练习"><a href="#4-ArrayList练习" class="headerlink" title="4.ArrayList练习"></a>4.ArrayList练习</h1><ul>
+<li>4.1 生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" alt=""></li>
+<li>4.2 自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" alt=""></li>
+<li>4.3 定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" alt=""></li>
+<li>4.4 定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/2021/03/23/Spring/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Request和Responce</title>
     <url>/2021/03/23/Request%E5%92%8CResponce/</url>
     <content><![CDATA[<h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. Request对象
@@ -4667,34 +4709,14 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
       </tags>
   </entry>
   <entry>
-    <title>Scanner类,Random类,ArrayList类</title>
-    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="1-Scanner类"><a href="#1-Scanner类" class="headerlink" title="1.Scanner类"></a>1.Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" alt=""></p>
-<h1 id="2-Random类"><a href="#2-Random类" class="headerlink" title="2.Random类"></a>2.Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" alt=""></p>
-<h1 id="3-ArrayList类"><a href="#3-ArrayList类" class="headerlink" title="3.ArrayList类"></a>3.ArrayList类</h1><ul>
-<li>3.1 ArrayList使用步骤</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" alt=""></p>
-<ul>
-<li>3.2 常用方法和遍历 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" alt=""></p>
-<ul>
-<li>3.3 基本数据类型包装类</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" alt=""></p>
-<h1 id="4-ArrayList练习"><a href="#4-ArrayList练习" class="headerlink" title="4.ArrayList练习"></a>4.ArrayList练习</h1><ul>
-<li>4.1 生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" alt=""></li>
-<li>4.2 自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" alt=""></li>
-<li>4.3 定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" alt=""></li>
-<li>4.4 定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" alt=""></li>
-</ul>
-]]></content>
+    <title>SpringMVC</title>
+    <url>/2021/03/23/SpringMVC/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>SpringMVC</tag>
       </tags>
   </entry>
   <entry>
@@ -4947,28 +4969,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>Spring</title>
-    <url>/2021/03/23/Spring/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringMVC</title>
-    <url>/2021/03/23/SpringMVC/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>SpringMVC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>String类,static关键字,Arrays类,Math类</title>
     <url>/2019/11/04/String%E7%B1%BB-static%E5%85%B3%E9%94%AE%E5%AD%97-Arrays%E7%B1%BB-Math%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="1-String类"><a href="#1-String类" class="headerlink" title="1.String类"></a>1.String类</h1><h2 id="1-1-特点"><a href="#1-1-特点" class="headerlink" title="1.1 特点"></a>1.1 特点</h2><ul>
@@ -5011,6 +5011,152 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web概述</title>
+    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. web相关概念
+2. web服务器软件：Tomcat</code></pre><h2 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h2><h3 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h3><ol>
+<li><code>C/S：</code>客户端/服务器端</li>
+<li><code>B/S：</code>浏览器/服务器端</li>
+</ol>
+<h3 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h3><ol>
+<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
+<li>如： <code>html,css,JavaScript</code></li>
+</ul>
+</li>
+<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
+<li>如：<code>servlet/jsp,php,asp....</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h3><ol>
+<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
+<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
+<li>传输协议：规定了数据传输的规则</li>
+</ol>
+<ul>
+<li>基础协议：<ol>
+<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
+<li><code>UDP</code>: 不安全协议。 速度快</li>
+</ol>
+</li>
+</ul>
+<h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
+<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
+<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
+<li>web容器</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>常见的java相关的web服务器软件：<ul>
+<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
+</ul>
+<h3 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h3><ol>
+<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
+</li>
+<li><p>安装：解压压缩包即可</p>
+<ul>
+<li>注意：安装目录建议不要有中文和空格</li>
+</ul>
+</li>
+<li><p>卸载：删除目录即可</p>
+</li>
+<li><p>启动：</p>
+</li>
+</ol>
+<ul>
+<li><p>bin/startup.bat ,双击运行该文件即可</p>
+</li>
+<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
+</li>
+<li><p>可能遇到的问题：</p>
+<ol>
+<li><p>黑窗口一闪而过：</p>
+<ul>
+<li>原因： 没有正确配置JAVA_HOME环境变量</li>
+<li>解决方案：正确配置JAVA_HOME环境变量</li>
+</ul>
+</li>
+<li><p>启动报错：</p>
+<ol>
+<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
+<li><code>netstat -ano</code></li>
+</ul>
+</li>
+<li>温柔：修改自身的端口号<ul>
+<li><code>conf/server.xml</code></li>
+<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>关闭：<ol>
+<li>正常关闭：<ul>
+<li><code>bin/shutdown.bat</code></li>
+<li><code>ctrl+c</code></li>
+</ul>
+</li>
+<li>强制关闭：<ul>
+<li>点击启动窗口的×</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>配置:</li>
+</ol>
+<ul>
+<li><p>部署项目的方式：</p>
+<ol>
+<li>直接将项目放到<code>webapps目录</code>下即可。</li>
+</ol>
+<ul>
+<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
+<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
+</ul>
+<ol start="2">
+<li>配置<code>conf/server.xml</code>文件<br><code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></li>
+</ol>
+<ul>
+<li><code>docBase</code>:项目存放的路径</li>
+<li><code>path</code>：虚拟目录</li>
+</ul>
+<ol start="3">
+<li>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br><code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></li>
+</ol>
+<ul>
+<li>虚拟目录：xml文件的名称</li>
+</ul>
+</li>
+<li><p><strong>目录结构</strong></p>
+<ul>
+<li>java动态项目的目录结构：  </li>
+</ul>
+<p>  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -5197,152 +5343,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>Web概述</title>
-    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. web相关概念
-2. web服务器软件：Tomcat</code></pre><h2 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h2><h3 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h3><ol>
-<li><code>C/S：</code>客户端/服务器端</li>
-<li><code>B/S：</code>浏览器/服务器端</li>
-</ol>
-<h3 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h3><ol>
-<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
-<li>如： <code>html,css,JavaScript</code></li>
-</ul>
-</li>
-<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
-<li>如：<code>servlet/jsp,php,asp....</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h3><ol>
-<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
-<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
-<li>传输协议：规定了数据传输的规则</li>
-</ol>
-<ul>
-<li>基础协议：<ol>
-<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
-<li><code>UDP</code>: 不安全协议。 速度快</li>
-</ol>
-</li>
-</ul>
-<h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><ul>
-<li>服务器：安装了服务器软件的计算机</li>
-<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
-<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
-<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
-<li>web容器</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>常见的java相关的web服务器软件：<ul>
-<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
-</ul>
-<h3 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h3><ol>
-<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
-</li>
-<li><p>安装：解压压缩包即可</p>
-<ul>
-<li>注意：安装目录建议不要有中文和空格</li>
-</ul>
-</li>
-<li><p>卸载：删除目录即可</p>
-</li>
-<li><p>启动：</p>
-</li>
-</ol>
-<ul>
-<li><p>bin/startup.bat ,双击运行该文件即可</p>
-</li>
-<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
-</li>
-<li><p>可能遇到的问题：</p>
-<ol>
-<li><p>黑窗口一闪而过：</p>
-<ul>
-<li>原因： 没有正确配置JAVA_HOME环境变量</li>
-<li>解决方案：正确配置JAVA_HOME环境变量</li>
-</ul>
-</li>
-<li><p>启动报错：</p>
-<ol>
-<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
-<li><code>netstat -ano</code></li>
-</ul>
-</li>
-<li>温柔：修改自身的端口号<ul>
-<li><code>conf/server.xml</code></li>
-<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="5">
-<li>关闭：<ol>
-<li>正常关闭：<ul>
-<li><code>bin/shutdown.bat</code></li>
-<li><code>ctrl+c</code></li>
-</ul>
-</li>
-<li>强制关闭：<ul>
-<li>点击启动窗口的×</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>配置:</li>
-</ol>
-<ul>
-<li><p>部署项目的方式：</p>
-<ol>
-<li>直接将项目放到<code>webapps目录</code>下即可。</li>
-</ol>
-<ul>
-<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
-<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
-</ul>
-<ol start="2">
-<li>配置<code>conf/server.xml</code>文件<br><code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></li>
-</ol>
-<ul>
-<li><code>docBase</code>:项目存放的路径</li>
-<li><code>path</code>：虚拟目录</li>
-</ul>
-<ol start="3">
-<li>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br><code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></li>
-</ol>
-<ul>
-<li>虚拟目录：xml文件的名称</li>
-</ul>
-</li>
-<li><p><strong>目录结构</strong></p>
-<ul>
-<li>java动态项目的目录结构：  </li>
-</ul>
-<p>  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>final，权限，内部类</title>
     <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="1-final"><a href="#1-final" class="headerlink" title="1.final"></a>1.final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" alt=""></p>
@@ -5365,6 +5365,17 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>springboot</title>
+    <url>/2021/04/06/springboot/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2019/10/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -5381,17 +5392,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
 
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>springboot</title>
-    <url>/2021/04/06/springboot/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>springboot</tag>
-      </tags>
   </entry>
   <entry>
     <title>异常</title>
@@ -5412,6 +5412,70 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <li>自定义一个编译期异常: 自定义类 并继承于 java.lang.Exception </li>
 <li>自定义一个运行时期的异常类: 自定义类 并继承于 java.lang.RuntimeException</li>
 </ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字节流，字符流</title>
+    <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="1-IO流"><a href="#1-IO流" class="headerlink" title="1.IO流"></a>1.IO流</h1><h2 id="1-1-IO的分类"><a href="#1-1-IO的分类" class="headerlink" title="1.1 IO的分类"></a>1.1 IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
+<ul>
+<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
+<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
+</ul>
+<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
+<ul>
+<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
+<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="1-2-IO的体系"><a href="#1-2-IO的体系" class="headerlink" title="1.2 IO的体系"></a>1.2 IO的体系</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png" alt=""><h1 id="2-字节流"><a href="#2-字节流" class="headerlink" title="2. 字节流"></a>2. 字节流</h1><h2 id="2-1-字节输出流【OutputStream】"><a href="#2-1-字节输出流【OutputStream】" class="headerlink" title="2.1 字节输出流【OutputStream】"></a>2.1 字节输出流【OutputStream】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG" alt=""><h2 id="2-2-FileOutputStream类"><a href="#2-2-FileOutputStream类" class="headerlink" title="2.2 FileOutputStream类"></a>2.2 FileOutputStream类</h2><h3 id="2-2-1-构造方法"><a href="#2-2-1-构造方法" class="headerlink" title="2.2.1 构造方法"></a>2.2.1 构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG" alt=""><h3 id="2-2-2-写出字节数据"><a href="#2-2-2-写出字节数据" class="headerlink" title="2.2.2 写出字节数据"></a>2.2.2 写出字节数据</h3></li>
+</ul>
+<ol>
+<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
+<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
+<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="2-2-3-数据追加续写"><a href="#2-2-3-数据追加续写" class="headerlink" title="2.2.3 数据追加续写"></a>2.2.3 数据追加续写</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG" alt=""><h3 id="2-2-4-写出换行"><a href="#2-2-4-写出换行" class="headerlink" title="2.2.4 写出换行"></a>2.2.4 写出换行</h3></li>
+</ol>
+<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
+<h2 id="2-3-字节输入流【InputStream】"><a href="#2-3-字节输入流【InputStream】" class="headerlink" title="2.3 字节输入流【InputStream】"></a>2.3 字节输入流【InputStream】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG" alt=""></p>
+<h2 id="2-4-FileIntputStream类"><a href="#2-4-FileIntputStream类" class="headerlink" title="2.4 FileIntputStream类"></a>2.4 FileIntputStream类</h2><h3 id="2-4-1-构造方法"><a href="#2-4-1-构造方法" class="headerlink" title="2.4.1 构造方法"></a>2.4.1 构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG" alt=""></p>
+<h3 id="2-4-2-读取字节数据"><a href="#2-4-2-读取字节数据" class="headerlink" title="2.4.2 读取字节数据"></a>2.4.2 读取字节数据</h3><ol>
+<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="3-字符流"><a href="#3-字符流" class="headerlink" title="3. 字符流"></a>3. 字符流</h1><h2 id="3-1-字符输出流【Writer】"><a href="#3-1-字符输出流【Writer】" class="headerlink" title="3.1 字符输出流【Writer】"></a>3.1 字符输出流【Writer】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG" alt=""><h2 id="3-2-FileWriter类"><a href="#3-2-FileWriter类" class="headerlink" title="3.2 FileWriter类"></a>3.2 FileWriter类</h2><h3 id="3-2-1-构造方法"><a href="#3-2-1-构造方法" class="headerlink" title="3.2.1 构造方法"></a>3.2.1 构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG" alt=""><h3 id="3-2-2-写出字符数据"><a href="#3-2-2-写出字符数据" class="headerlink" title="3.2.2 写出字符数据"></a>3.2.2 写出字符数据</h3></li>
+<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
+<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
+<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
+<li>续写和换行：操作类似于FileOutputStream<h3 id="3-2-3-关闭和刷新"><a href="#3-2-3-关闭和刷新" class="headerlink" title="3.2.3 关闭和刷新"></a>3.2.3 关闭和刷新</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG" alt=""></li>
+</ol>
+<h2 id="3-3-字符输入流【Reader】"><a href="#3-3-字符输入流【Reader】" class="headerlink" title="3.3 字符输入流【Reader】"></a>3.3 字符输入流【Reader】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG" alt=""></p>
+<h2 id="3-4-FileReader类"><a href="#3-4-FileReader类" class="headerlink" title="3.4  FileReader类"></a>3.4  FileReader类</h2><h3 id="3-4-1-构造方法"><a href="#3-4-1-构造方法" class="headerlink" title="3.4.1 构造方法"></a>3.4.1 构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG" alt=""></p>
+<h3 id="3-4-2-读取字节数据"><a href="#3-4-2-读取字节数据" class="headerlink" title="3.4.2 读取字节数据"></a>3.4.2 读取字节数据</h3><ol>
+<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
+</ol>
+<h1 id="4-Properties类"><a href="#4-Properties类" class="headerlink" title="4.Properties类"></a>4.Properties类</h1><ol>
+<li>构造方法</li>
+</ol>
+<ul>
+<li><code>public Properties()</code> :创建一个空的属性列表</li>
+</ul>
+<ol start="2">
+<li>基本的存储方法</li>
+</ol>
+<ul>
+<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
+<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
+<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
+</ul>
+<ol start="3">
+<li>与流相关的方法 </li>
+</ol>
+<ul>
+<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
+<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
+</ul>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -5595,67 +5659,22 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>字节流，字符流</title>
-    <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="1-IO流"><a href="#1-IO流" class="headerlink" title="1.IO流"></a>1.IO流</h1><h2 id="1-1-IO的分类"><a href="#1-1-IO的分类" class="headerlink" title="1.1 IO的分类"></a>1.1 IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
-<ul>
-<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
-<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
-</ul>
-<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
-<ul>
-<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
-<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="1-2-IO的体系"><a href="#1-2-IO的体系" class="headerlink" title="1.2 IO的体系"></a>1.2 IO的体系</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png" alt=""><h1 id="2-字节流"><a href="#2-字节流" class="headerlink" title="2. 字节流"></a>2. 字节流</h1><h2 id="2-1-字节输出流【OutputStream】"><a href="#2-1-字节输出流【OutputStream】" class="headerlink" title="2.1 字节输出流【OutputStream】"></a>2.1 字节输出流【OutputStream】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG" alt=""><h2 id="2-2-FileOutputStream类"><a href="#2-2-FileOutputStream类" class="headerlink" title="2.2 FileOutputStream类"></a>2.2 FileOutputStream类</h2><h3 id="2-2-1-构造方法"><a href="#2-2-1-构造方法" class="headerlink" title="2.2.1 构造方法"></a>2.2.1 构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG" alt=""><h3 id="2-2-2-写出字节数据"><a href="#2-2-2-写出字节数据" class="headerlink" title="2.2.2 写出字节数据"></a>2.2.2 写出字节数据</h3></li>
-</ul>
+    <title>数据结构一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="1-线性数据结构"><a href="#1-线性数据结构" class="headerlink" title="1.线性数据结构"></a>1.线性数据结构</h1><h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
+<h2 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
+<h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3. 栈"></a>3. 栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
+<h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4. 队列"></a>4. 队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
+<p>参考链接：      </p>
 <ol>
-<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
-<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
-<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="2-2-3-数据追加续写"><a href="#2-2-3-数据追加续写" class="headerlink" title="2.2.3 数据追加续写"></a>2.2.3 数据追加续写</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG" alt=""><h3 id="2-2-4-写出换行"><a href="#2-2-4-写出换行" class="headerlink" title="2.2.4 写出换行"></a>2.2.4 写出换行</h3></li>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
 </ol>
-<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
-<h2 id="2-3-字节输入流【InputStream】"><a href="#2-3-字节输入流【InputStream】" class="headerlink" title="2.3 字节输入流【InputStream】"></a>2.3 字节输入流【InputStream】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG" alt=""></p>
-<h2 id="2-4-FileIntputStream类"><a href="#2-4-FileIntputStream类" class="headerlink" title="2.4 FileIntputStream类"></a>2.4 FileIntputStream类</h2><h3 id="2-4-1-构造方法"><a href="#2-4-1-构造方法" class="headerlink" title="2.4.1 构造方法"></a>2.4.1 构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG" alt=""></p>
-<h3 id="2-4-2-读取字节数据"><a href="#2-4-2-读取字节数据" class="headerlink" title="2.4.2 读取字节数据"></a>2.4.2 读取字节数据</h3><ol>
-<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
-<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="3-字符流"><a href="#3-字符流" class="headerlink" title="3. 字符流"></a>3. 字符流</h1><h2 id="3-1-字符输出流【Writer】"><a href="#3-1-字符输出流【Writer】" class="headerlink" title="3.1 字符输出流【Writer】"></a>3.1 字符输出流【Writer】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG" alt=""><h2 id="3-2-FileWriter类"><a href="#3-2-FileWriter类" class="headerlink" title="3.2 FileWriter类"></a>3.2 FileWriter类</h2><h3 id="3-2-1-构造方法"><a href="#3-2-1-构造方法" class="headerlink" title="3.2.1 构造方法"></a>3.2.1 构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG" alt=""><h3 id="3-2-2-写出字符数据"><a href="#3-2-2-写出字符数据" class="headerlink" title="3.2.2 写出字符数据"></a>3.2.2 写出字符数据</h3></li>
-<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
-<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
-<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
-<li>续写和换行：操作类似于FileOutputStream<h3 id="3-2-3-关闭和刷新"><a href="#3-2-3-关闭和刷新" class="headerlink" title="3.2.3 关闭和刷新"></a>3.2.3 关闭和刷新</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG" alt=""></li>
-</ol>
-<h2 id="3-3-字符输入流【Reader】"><a href="#3-3-字符输入流【Reader】" class="headerlink" title="3.3 字符输入流【Reader】"></a>3.3 字符输入流【Reader】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG" alt=""></p>
-<h2 id="3-4-FileReader类"><a href="#3-4-FileReader类" class="headerlink" title="3.4  FileReader类"></a>3.4  FileReader类</h2><h3 id="3-4-1-构造方法"><a href="#3-4-1-构造方法" class="headerlink" title="3.4.1 构造方法"></a>3.4.1 构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG" alt=""></p>
-<h3 id="3-4-2-读取字节数据"><a href="#3-4-2-读取字节数据" class="headerlink" title="3.4.2 读取字节数据"></a>3.4.2 读取字节数据</h3><ol>
-<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
-<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
-</ol>
-<h1 id="4-Properties类"><a href="#4-Properties类" class="headerlink" title="4.Properties类"></a>4.Properties类</h1><ol>
-<li>构造方法</li>
-</ol>
-<ul>
-<li><code>public Properties()</code> :创建一个空的属性列表</li>
-</ul>
-<ol start="2">
-<li>基本的存储方法</li>
-</ol>
-<ul>
-<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
-<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
-<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
-</ul>
-<ol start="3">
-<li>与流相关的方法 </li>
-</ol>
-<ul>
-<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
-<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
-</ul>
 ]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>数据结构</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -5699,22 +5718,22 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>数据结构一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="1-线性数据结构"><a href="#1-线性数据结构" class="headerlink" title="1.线性数据结构"></a>1.线性数据结构</h1><h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
-<h2 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
-<h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3. 栈"></a>3. 栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
-<h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4. 队列"></a>4. 队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
+    <title>算法一</title>
+    <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="1-排序"><a href="#1-排序" class="headerlink" title="1.排序"></a>1.排序</h1><h2 id="1-1选择排序"><a href="#1-1选择排序" class="headerlink" title="1.1选择排序"></a>1.1选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span><span class="comment">//选择排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)<span class="comment">//循环次数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> min = arr[i];</span><br><span class="line">        <span class="keyword">int</span> index = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++) <span class="comment">//找最小值</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&lt;min)</span><br><span class="line">            &#123;</span><br><span class="line">                min=arr[j];</span><br><span class="line">                index=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[index]=arr[i];<span class="comment">//内循环后交换</span></span><br><span class="line">        arr[i]=min;<span class="comment">//当前位置放最小值!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-2冒泡排序"><a href="#1-2冒泡排序" class="headerlink" title="1.2冒泡排序"></a>1.2冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span>    <span class="comment">//冒泡排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ;i&lt;arr.length-<span class="number">1</span>;i++)<span class="comment">//外循环控制趟数n-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++) <span class="comment">//内循环控制每趟次数n-1-i</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>])<span class="comment">//交换</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-查找"><a href="#2-查找" class="headerlink" title="2.查找"></a>2.查找</h1><h2 id="2-1顺序查找"><a href="#2-1顺序查找" class="headerlink" title="2.1顺序查找"></a>2.1顺序查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sequenceSearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span> <span class="comment">//顺序查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] == key)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-2二分查找"><a href="#2-2二分查找" class="headerlink" title="2.2二分查找"></a>2.2二分查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span>  <span class="comment">//二分查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = arr.length-<span class="number">1</span>;<span class="comment">//注意为什么-1</span></span><br><span class="line">    <span class="keyword">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid]==key)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid]&gt;key)</span><br><span class="line">            right = mid-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>参考链接：      </p>
-<ol>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
-</ol>
+<p>1. </p>
 ]]></content>
       <categories>
-        <category>数据结构</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -5755,25 +5774,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法一</title>
-    <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="1-排序"><a href="#1-排序" class="headerlink" title="1.排序"></a>1.排序</h1><h2 id="1-1选择排序"><a href="#1-1选择排序" class="headerlink" title="1.1选择排序"></a>1.1选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span><span class="comment">//选择排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)<span class="comment">//循环次数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> min = arr[i];</span><br><span class="line">        <span class="keyword">int</span> index = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++) <span class="comment">//找最小值</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&lt;min)</span><br><span class="line">            &#123;</span><br><span class="line">                min=arr[j];</span><br><span class="line">                index=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[index]=arr[i];<span class="comment">//内循环后交换</span></span><br><span class="line">        arr[i]=min;<span class="comment">//当前位置放最小值!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1-2冒泡排序"><a href="#1-2冒泡排序" class="headerlink" title="1.2冒泡排序"></a>1.2冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span>    <span class="comment">//冒泡排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ;i&lt;arr.length-<span class="number">1</span>;i++)<span class="comment">//外循环控制趟数n-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++) <span class="comment">//内循环控制每趟次数n-1-i</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>])<span class="comment">//交换</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-查找"><a href="#2-查找" class="headerlink" title="2.查找"></a>2.查找</h1><h2 id="2-1顺序查找"><a href="#2-1顺序查找" class="headerlink" title="2.1顺序查找"></a>2.1顺序查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sequenceSearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span> <span class="comment">//顺序查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] == key)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-2二分查找"><a href="#2-2二分查找" class="headerlink" title="2.2二分查找"></a>2.2二分查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span>  <span class="comment">//二分查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = arr.length-<span class="number">1</span>;<span class="comment">//注意为什么-1</span></span><br><span class="line">    <span class="keyword">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid]==key)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid]&gt;key)</span><br><span class="line">            right = mid-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>参考链接：      </p>
-<p>1. </p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
