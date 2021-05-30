@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="秋枫の博客">
 <meta property="og:description" content="XML简介 XML 指可扩展标记语言（EXtensible Markup Language）  XML 被设计用来传输和存储数据。HTML 被设计用来显示数据。  XML 标签都是自定义的   XML基本语法 基本语法：  xml文档的后缀名 .xml xml第一行必须定义为文档声明：&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;ISO-8859-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-15T17:06:09.935Z">
+<meta property="og:updated_time" content="2021-05-30T07:34:36.132Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -428,14 +428,14 @@
 </ol>
 <h1 id="XML基本语法"><a href="#XML基本语法" class="headerlink" title="XML基本语法"></a>XML基本语法</h1><ol>
 <li><p>基本语法：</p>
-<ol>
+<ul>
 <li>xml文档的后缀名 .xml</li>
 <li>xml第一行必须定义为文档声明：<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</code></li>
 <li>xml文档中有且仅有一个根标签</li>
 <li>属性值必须使用引号(单双都可)引起来</li>
 <li>标签必须正确关闭</li>
 <li>xml标签名称区分大小写</li>
-</ol>
+</ul>
 </li>
 <li><p>XML注释<br><code>&lt;!-- This is a comment --&gt;</code></p>
 </li>
@@ -521,7 +521,7 @@
 </blockquote>
 </li>
 <li><p>代码：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.1获取student.xml的path</span></span><br><span class="line">String path = JsoupDemo1.class.getClassLoader().getResource(<span class="string">"student.xml"</span>).getPath();</span><br><span class="line"><span class="comment">//2.2解析xml文档，加载文档进内存，获取dom树---&gt;Document</span></span><br><span class="line">Document document = Jsoup.parse(<span class="keyword">new</span> File(path), <span class="string">"utf-8"</span>);</span><br><span class="line"><span class="comment">//3.获取元素对象 Element</span></span><br><span class="line">Elements elements = document.getElementsByTag(<span class="string">"name"</span>);</span><br><span class="line">System.out.println(elements.size());</span><br><span class="line"><span class="comment">//3.1获取第一个name的Element对象</span></span><br><span class="line">Element element = elements.get(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//3.2获取数据</span></span><br><span class="line">String name = element.text();</span><br><span class="line">System.out.println(name);</span><br></pre></td></tr></table></figure></li>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.1获取student.xml的path</span></span><br><span class="line">String path = JsoupDemo1.class.getClassLoader().getResource(<span class="string">"student.xml"</span>).getPath();</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.2解析xml文档，加载文档进内存，获取dom树---&gt;Document</span></span><br><span class="line">Document document = Jsoup.parse(<span class="keyword">new</span> File(path), <span class="string">"utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.获取元素对象 Element</span></span><br><span class="line">Elements elements = document.getElementsByTag(<span class="string">"name"</span>);</span><br><span class="line">System.out.println(elements.size());</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.1获取第一个name的Element对象</span></span><br><span class="line">Element element = elements.get(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.2获取数据</span></span><br><span class="line">String name = element.text();</span><br><span class="line">System.out.println(name);</span><br></pre></td></tr></table></figure></li>
 </ul>
 <ol start="5">
 <li><p>对象的使用：</p>
@@ -574,9 +574,8 @@
 </li>
 </ol>
 </li>
-</ol>
-<ol start="6">
-<li>快捷查询方式：<ol>
+<li><p>快捷查询方式：</p>
+<ol>
 <li>selector:选择器<ul>
 <li>使用的方法：Elements    select​(String cssQuery)</li>
 <li>语法：参考Selector类中定义的语法</li>
@@ -821,7 +820,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

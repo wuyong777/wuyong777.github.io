@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="今日内容1. JQuery 基础     1. 概念     2. 快速入门     3. JQuery对象和JS对象区别与转换     4. 选择器     5. DOM操作  2. JQuery 高级     1. 动画     2. 遍历     3. 事件绑定     4. 插件JQuery 基础：概念： 一个JavaScript框架。简化JS开发 JavaScript框架：本质上就是一些">
+<meta name="description" content="JQuery 基础概念： 一个JavaScript框架。简化JS开发 JavaScript框架：本质上就是一些js文件，封装了js的原生代码快速入门   步骤： 下载JQuery   目前jQuery有三个大版本：  1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，  功能不再新增。因此一般项目来说，使用1.x版本就可以了，  最终版本：1.12.4 (2016年5月20日)">
 <meta name="keywords" content="JQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JQuery">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;JQuery&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="今日内容1. JQuery 基础     1. 概念     2. 快速入门     3. JQuery对象和JS对象区别与转换     4. 选择器     5. DOM操作  2. JQuery 高级     1. 动画     2. 遍历     3. 事件绑定     4. 插件JQuery 基础：概念： 一个JavaScript框架。简化JS开发 JavaScript框架：本质上就是一些">
+<meta property="og:description" content="JQuery 基础概念： 一个JavaScript框架。简化JS开发 JavaScript框架：本质上就是一些js文件，封装了js的原生代码快速入门   步骤： 下载JQuery   目前jQuery有三个大版本：  1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，  功能不再新增。因此一般项目来说，使用1.x版本就可以了，  最终版本：1.12.4 (2016年5月20日)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-23T12:10:25.640Z">
+<meta property="og:updated_time" content="2021-05-30T07:53:07.767Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  2k
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  7
                 </span>
               
             </div>
@@ -418,18 +418,7 @@
       
 
       
-        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JQuery 基础
-    1. 概念
-    2. 快速入门
-    3. JQuery对象和JS对象区别与转换
-    4. 选择器
-    5. DOM操作
-
-2. JQuery 高级
-    1. 动画
-    2. 遍历
-    3. 事件绑定
-    4. 插件</code></pre><h1 id="JQuery-基础："><a href="#JQuery-基础：" class="headerlink" title="JQuery 基础："></a>JQuery 基础：</h1><h2 id="概念：-一个JavaScript框架。简化JS开发"><a href="#概念：-一个JavaScript框架。简化JS开发" class="headerlink" title="概念： 一个JavaScript框架。简化JS开发"></a>概念： 一个JavaScript框架。简化JS开发</h2><ul>
+        <h1 id="JQuery-基础"><a href="#JQuery-基础" class="headerlink" title="JQuery 基础"></a>JQuery 基础</h1><h2 id="概念：-一个JavaScript框架。简化JS开发"><a href="#概念：-一个JavaScript框架。简化JS开发" class="headerlink" title="概念： 一个JavaScript框架。简化JS开发"></a>概念： 一个JavaScript框架。简化JS开发</h2><ul>
 <li>JavaScript框架：本质上就是一些js文件，封装了js的原生代码<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2></li>
 </ul>
 <ol>
@@ -448,13 +437,13 @@
 </ul>
 </li>
 <li><p>jquery-xxx.js 与 jquery-xxx.min.js区别：</p>
-<ol>
+<ul>
 <li>jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些</li>
 <li><code>jquery-xxx.min.js</code>：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快</li>
-</ol>
+</ul>
 </li>
 </ul>
-<ol start="2">
+<ol start="3">
 <li><p>导入JQuery的js文件：导入min.js文件</p>
 </li>
 <li><p>使用</p>
@@ -469,24 +458,24 @@
 </li>
 </ol>
 <ul>
-<li><code>jq -- &gt; js : jq对象[索引]</code> 或者 jq对象.get(索引)</li>
+<li><code>jq -- &gt; js : jq对象[索引]</code> 或者 <code>jq对象.get(索引)</code></li>
 <li><code>js -- &gt; jq : $(js对象)</code></li>
 </ul>
 <h2 id="选择器：筛选具有相似特征的元素-标签"><a href="#选择器：筛选具有相似特征的元素-标签" class="headerlink" title="选择器：筛选具有相似特征的元素(标签)"></a>选择器：筛选具有相似特征的元素(标签)</h2><ol>
 <li><p>基本操作学习：</p>
 <ol>
-<li>事件绑定<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//1.获取b1按钮</span><br><span class="line"> $(&quot;#b1&quot;).click(function()&#123;</span><br><span class="line">    alert(&quot;abc&quot;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></li>
-<li>入口函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">	           </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
+<li><strong>事件绑定</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//1.获取b1按钮</span><br><span class="line"> $(&quot;#b1&quot;).click(function()&#123;</span><br><span class="line">    alert(&quot;abc&quot;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></li>
+<li><strong>入口函数</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">	           </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
-<li>window.onload  和 $(function) 区别<ul>
+<li>ndow.onload  和 $(function) 区别<ul>
 <li><code>window.onload</code> 只能定义一次,如果定义多次，后边的会将前边的覆盖掉</li>
 <li><code>$(function)</code>可以定义多次的。</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li>样式控制：css方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#div1&quot;).css(&quot;background-color&quot;,&quot;red&quot;);</span><br></pre></td></tr></table></figure>
+<li><strong>样式控制</strong>：css方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#div1&quot;).css(&quot;background-color&quot;,&quot;red&quot;);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -624,21 +613,19 @@
 <li>选中选择器 </li>
 </ol>
 <ul>
-<li>语法： <code>:selected</code>获得下拉框选中的元素</li>
+<li>语法： <code>:selected</code>获得下拉框选中的元素<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2>内容操作</li>
 </ul>
 </li>
 </ol>
 </li>
-</ol>
-<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
-<li><p>内容操作</p>
-<ol>
-<li><code>html()</code>: 获取/设置元素的标签体内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code>  –&gt; <code>&lt;font&gt;内容&lt;/font&gt;</code></li>
-<li><code>text()</code>: 获取/设置元素的标签体纯文本内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code> –&gt; <code>内容</code></li>
-<li><code>val()</code>： 获取/设置元素的value属性值</li>
-</ol>
+<li><p><code>html()</code>: 获取/设置元素的标签体内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code>  –&gt; <code>&lt;font&gt;内容&lt;/font&gt;</code></p>
 </li>
-<li><p>属性操作</p>
+<li><p><code>text()</code>: 获取/设置元素的标签体纯文本内容   <code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;</code> –&gt; <code>内容</code></p>
+</li>
+<li><p><code>val()</code>： 获取/设置元素的value属性值</p>
+</li>
+</ol>
+<p>属性操作</p>
 <ol>
 <li><p>通用属性操作</p>
 <ol>
@@ -666,8 +653,7 @@
 </ol>
 </li>
 </ol>
-</li>
-<li><p>CRUD操作:</p>
+<p>CRUD操作:</p>
 <ol>
 <li><code>append()</code>:父元素将子元素追加到末尾</li>
 </ol>
@@ -681,34 +667,32 @@
 <li>对象1.prepend(对象2):将对象2添加到对象1元素内部，并且在开头</li>
 </ul>
 <ol start="3">
-<li><code>appendTo()</code>:</li>
+<li><code>after()</code>:添加元素到元素后边</li>
 </ol>
 <ul>
-<li>对象1.appendTo(对象2):将对象1添加到对象2内部，并且在末尾</li>
+<li>对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系</li>
 </ul>
 <ol start="4">
-<li><code>prependTo()</code>：</li>
+<li><code>before()</code>:添加元素到元素前边</li>
 </ol>
 <ul>
-<li>对象1.prependTo(对象2):将对象1添加到对象2内部，并且在开头</li>
+<li>对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系</li>
 </ul>
-</li>
+<ol start="5">
+<li><code>remove()</code>:移除元素</li>
 </ol>
-<pre><code>5. `after()`:添加元素到元素后边
-* 对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系
-6. `before()`:添加元素到元素前边
-* 对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
-7. `insertAfter()`
-* 对象1.insertAfter(对象2)：将对象2添加到对象1后边。对象1和对象2是兄弟关系
-8. `insertBefore()`
-* 对象1.insertBefore(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
-
-9. `remove()`:移除元素
-* 对象.remove():将对象删除掉
-10. ` empty()`:清空元素的所有后代元素。
-* 对象.empty():将对象的后代元素全部清空，但是保留当前对象以及其属性节点</code></pre><h1 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h1><h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>三种方式显示和隐藏元素</p>
+<ul>
+<li>对象.remove():将对象删除掉</li>
+</ul>
+<ol start="6">
+<li><code>empty()</code>:清空元素的所有后代元素。</li>
+</ol>
+<ul>
+<li>对象.empty():将对象的后代元素全部清空，但是保留当前对象以及其属性节点</li>
+</ul>
+<h1 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h1><h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>三种方式显示和隐藏元素</p>
 <ol>
-<li>默认显示和隐藏方式<ol>
+<li><strong>默认显示和隐藏方式</strong><ol>
 <li><code>show([speed,[easing],[fn]])</code></li>
 </ol>
 </li>
@@ -727,14 +711,19 @@
 </li>
 </ul>
 <ol start="2">
-<li><p>滑动显示和隐藏方式</p>
+<li><p><strong>滑动显示和隐藏方式</strong></p>
 <ol>
-<li><code>slideDown([speed],[easing],[fn])</code></li>
-<li><code>slideUp([speed,[easing],[fn]])</code></li>
-<li><code>slideToggle([speed],[easing],[fn])</code></li>
+<li><p><code>slideDown([speed],[easing],[fn])</code></p>
+</li>
+<li><p><code>slideUp([speed,[easing],[fn]])</code></p>
+</li>
+<li><p><code>slideToggle([speed],[easing],[fn])</code></p>
+</li>
 </ol>
 </li>
-<li><p>淡入淡出显示和隐藏方式</p>
+</ol>
+<ol start="3">
+<li><p><strong>淡入淡出显示和隐藏方式</strong></p>
 <ol>
 <li><code>fadeIn([speed],[easing],[fn])</code></li>
 <li><code>fadeOut([speed],[easing],[fn])</code></li>
@@ -743,11 +732,13 @@
 </li>
 </ol>
 <h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ol>
-<li><code>js的遍历方式</code><ul>
+<li><p><code>js的遍历方式</code></p>
+<ul>
 <li>for(初始化值;循环结束条件;步长)</li>
 </ul>
 </li>
-<li><code>jq的遍历方式</code><ol>
+<li><p><code>jq的遍历方式</code></p>
+<ol>
 <li><code>jq对象.each(callback)</code><ol>
 <li>语法：<code>jquery对象.each(function(index,element){});</code><ul>
 <li>index:就是元素在集合中的索引</li>
@@ -763,11 +754,9 @@
 </ol>
 </li>
 <li><code>$.each(object, [callback])</code></li>
-<li><code>for..of</code>: jquery 3.0 版本之后提供的方式<pre><code>for(元素对象 of 容器对象)</code></pre></li>
+<li><code>for..of</code>: jquery 3.0 版本之后提供的方式<pre><code>for(元素对象 of 容器对象)</code></pre><h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2></li>
 </ol>
 </li>
-</ol>
-<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><ol>
 <li><p>jquery标准的绑定方式</p>
 <ul>
 <li><code>jq对象.事件方法(回调函数)</code>；</li>
@@ -806,6 +795,7 @@
 </ul>
 </li>
 </ol>
+<p>​            </p>
 
       
     </div>
@@ -999,7 +989,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery-基础："><span class="nav-number">2.</span> <span class="nav-text">JQuery 基础：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念：-一个JavaScript框架。简化JS开发"><span class="nav-number">2.1.</span> <span class="nav-text">概念： 一个JavaScript框架。简化JS开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">2.2.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery对象和JS对象区别与转换"><span class="nav-number">2.3.</span> <span class="nav-text">JQuery对象和JS对象区别与转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器：筛选具有相似特征的元素-标签"><span class="nav-number">2.4.</span> <span class="nav-text">选择器：筛选具有相似特征的元素(标签)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM操作"><span class="nav-number">2.5.</span> <span class="nav-text">DOM操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery-高级"><span class="nav-number">3.</span> <span class="nav-text">JQuery 高级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">3.1.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">3.2.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定"><span class="nav-number">3.3.</span> <span class="nav-text">事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件：增强JQuery的功能"><span class="nav-number">3.4.</span> <span class="nav-text">插件：增强JQuery的功能</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery-基础"><span class="nav-number">1.</span> <span class="nav-text">JQuery 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念：-一个JavaScript框架。简化JS开发"><span class="nav-number">1.1.</span> <span class="nav-text">概念： 一个JavaScript框架。简化JS开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">1.2.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery对象和JS对象区别与转换"><span class="nav-number">1.3.</span> <span class="nav-text">JQuery对象和JS对象区别与转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器：筛选具有相似特征的元素-标签"><span class="nav-number">1.4.</span> <span class="nav-text">选择器：筛选具有相似特征的元素(标签)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM操作"><span class="nav-number">1.5.</span> <span class="nav-text">DOM操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery-高级"><span class="nav-number">2.</span> <span class="nav-text">JQuery 高级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">2.1.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">2.2.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定"><span class="nav-number">2.3.</span> <span class="nav-text">事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件：增强JQuery的功能"><span class="nav-number">2.4.</span> <span class="nav-text">插件：增强JQuery的功能</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1037,7 +1027,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

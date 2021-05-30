@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1.继承 1.1 继承的定义    1.2 重写   2.super和this 2.1 super和this的含义    2.2 super和this的用法  2.2.1 访问成员   2.2.2 访问构造方法  3.抽象类   3.1 抽象类的定义     3.2 注意事项">
+<meta name="description" content="继承定义 重写 super和thissuper和this的含义 super和this的用法 访问成员    访问构造方法   抽象类定义 注意事项">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="继承，super，this，抽象类">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;04&#x2F;%E7%BB%A7%E6%89%BF%EF%BC%8Csuper%EF%BC%8Cthis%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.继承 1.1 继承的定义    1.2 重写   2.super和this 2.1 super和this的含义    2.2 super和this的用法  2.2.1 访问成员   2.2.2 访问构造方法  3.抽象类   3.1 抽象类的定义     3.2 注意事项">
+<meta property="og:description" content="继承定义 重写 super和thissuper和this的含义 super和this的用法 访问成员    访问构造方法   抽象类定义 注意事项">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;jcdywewewe.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;chongxie.PNG">
@@ -102,7 +102,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cx1.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cx2.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cx3.PNG">
-<meta property="og:updated_time" content="2021-03-17T18:32:33.901Z">
+<meta property="og:updated_time" content="2021-05-30T08:04:02.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;jcdywewewe.PNG">
 
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  65
+                  36
                 </span>
               
 
@@ -427,37 +427,19 @@
       
 
       
-        <h1 id="1-继承"><a href="#1-继承" class="headerlink" title="1.继承"></a>1.继承</h1><ul>
-<li>1.1 继承的定义</li>
+        <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
+<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chongxie.PNG" alt=""></p>
+<h1 id="super和this"><a href="#super和this" class="headerlink" title="super和this"></a>super和this</h1><h2 id="super和this的含义"><a href="#super和this的含义" class="headerlink" title="super和this的含义"></a>super和this的含义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hanyi.PNG" alt=""></p>
+<h2 id="super和this的用法"><a href="#super和this的用法" class="headerlink" title="super和this的用法"></a>super和this的用法</h2><ul>
+<li>访问成员</li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
-<ul>
-<li>1.2 重写</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chongxie.PNG" alt=""></p>
-<h1 id="2-super和this"><a href="#2-super和this" class="headerlink" title="2.super和this"></a>2.super和this</h1><ul>
-<li>2.1 super和this的含义</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hanyi.PNG" alt=""></p>
-<ul>
-<li><p>2.2 super和this的用法</p>
-<ul>
-<li><p>2.2.1 访问成员</p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/221.PNG" alt=""></p>
-</li>
-<li><p>2.2.2 访问构造方法</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/222.PNG" alt=""></p>
-<h1 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h1></li>
-</ul>
-</li>
-<li><p>3.1 抽象类的定义</p>
-</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx1.PNG" alt=""></p>
 <ul>
-<li>3.2 注意事项</li>
+<li>访问构造方法</li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx2.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/222.PNG" alt=""></p>
+<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx1.PNG" alt=""></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx2.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx3.PNG" alt=""></p>
 
       
@@ -652,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-继承"><span class="nav-number">1.</span> <span class="nav-text">1.继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-super和this"><span class="nav-number">2.</span> <span class="nav-text">2.super和this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-抽象类"><span class="nav-number">3.</span> <span class="nav-text">3.抽象类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重写"><span class="nav-number">1.2.</span> <span class="nav-text">重写</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#super和this"><span class="nav-number">2.</span> <span class="nav-text">super和this</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#super和this的含义"><span class="nav-number">2.1.</span> <span class="nav-text">super和this的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#super和this的用法"><span class="nav-number">2.2.</span> <span class="nav-text">super和this的用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象类"><span class="nav-number">3.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">3.2.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -690,7 +672,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

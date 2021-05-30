@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1.TCP通信程序1.1 概述TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。两端通信时步骤：  服务端程序，需要事先启动，等待客户端的连接。  客户端主动连接服务器端，连接成功才能通信。服务端不可以主动连接客户端。  在Java中，提供了两个类用于实现TCP通信程序：   客户端： java.net.Socket 类表示。创建 S">
+<meta name="description" content="TCP通信程序概述TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。两端通信时步骤：  服务端程序，需要事先启动，等待客户端的连接。  客户端主动连接服务器端，连接成功才能通信。服务端不可以主动连接客户端。  在Java中，提供了两个类用于实现TCP通信程序：   客户端： java.net.Socket 类表示。创建 Socket">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络编程">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.TCP通信程序1.1 概述TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。两端通信时步骤：  服务端程序，需要事先启动，等待客户端的连接。  客户端主动连接服务器端，连接成功才能通信。服务端不可以主动连接客户端。  在Java中，提供了两个类用于实现TCP通信程序：   客户端： java.net.Socket 类表示。创建 S">
+<meta property="og:description" content="TCP通信程序概述TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。两端通信时步骤：  服务端程序，需要事先启动，等待客户端的连接。  客户端主动连接服务器端，连接成功才能通信。服务端不可以主动连接客户端。  在Java中，提供了两个类用于实现TCP通信程序：   客户端： java.net.Socket 类表示。创建 Socket">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;s1.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;s2.PNG">
@@ -101,7 +101,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;tj.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;fwd.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;khd.PNG">
-<meta property="og:updated_time" content="2021-03-17T18:07:29.389Z">
+<meta property="og:updated_time" content="2021-05-30T08:25:15.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;s1.PNG">
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  408
+                  396
                 </span>
               
 
@@ -426,7 +426,7 @@
       
 
       
-        <h1 id="1-TCP通信程序"><a href="#1-TCP通信程序" class="headerlink" title="1.TCP通信程序"></a>1.TCP通信程序</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p>TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。<br>两端通信时步骤：</p>
+        <h1 id="TCP通信程序"><a href="#TCP通信程序" class="headerlink" title="TCP通信程序"></a>TCP通信程序</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>TCP通信能实现两台计算机之间的数据交互，通信的两端，要严格区分为客户端（Client）与服务端（Server）。<br>两端通信时步骤：</p>
 <ol>
 <li>服务端程序，需要事先启动，等待客户端的连接。 </li>
 <li>客户端主动连接服务器端，连接成功才能通信。服务端不可以主动连接客户端。</li>
@@ -434,17 +434,17 @@
 <p>在Java中，提供了两个类用于实现TCP通信程序<br>： </p>
 <ol>
 <li><strong>客户端</strong>： <code>java.net.Socket</code> 类表示。创建 <code>Socket</code> 对象，向服务端发出连接请求，服务端响应请求，两者建立连接开始通信。 </li>
-<li><strong>服务端</strong>： <code>java.net.ServerSocket</code> 类表示。创建 <code>ServerSocket</code> 对象，相当于开启一个服务，并等待客户端 的连接。 <h2 id="1-2-Socket类"><a href="#1-2-Socket类" class="headerlink" title="1.2 Socket类"></a>1.2 Socket类</h2></li>
+<li><strong>服务端</strong>： <code>java.net.ServerSocket</code> 类表示。创建 <code>ServerSocket</code> 对象，相当于开启一个服务，并等待客户端 的连接。 <h2 id="Socket类"><a href="#Socket类" class="headerlink" title="Socket类"></a>Socket类</h2></li>
 </ol>
 <ul>
 <li><p>构造方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/s1.PNG" alt=""></p>
 </li>
 <li><p>成员方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/s2.PNG" alt=""></p>
-<h2 id="1-3-ServerSocket类"><a href="#1-3-ServerSocket类" class="headerlink" title="1.3 ServerSocket类"></a>1.3 ServerSocket类</h2></li>
+<h2 id="ServerSocket类"><a href="#ServerSocket类" class="headerlink" title="ServerSocket类"></a>ServerSocket类</h2></li>
 <li><p>构造方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ss1.PNG" alt=""></p>
 </li>
 <li><p>成员方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ss2.PNG" alt=""></p>
-<h1 id="2-简单的TCP网络程序"><a href="#2-简单的TCP网络程序" class="headerlink" title="2.简单的TCP网络程序"></a>2.简单的TCP网络程序</h1><h2 id="2-1-TCP通信分析图解"><a href="#2-1-TCP通信分析图解" class="headerlink" title="2.1 TCP通信分析图解"></a>2.1 TCP通信分析图解</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tj.PNG" alt=""></p>
+<h1 id="简单的TCP网络程序"><a href="#简单的TCP网络程序" class="headerlink" title="简单的TCP网络程序"></a>简单的TCP网络程序</h1><h2 id="TCP通信分析图解"><a href="#TCP通信分析图解" class="headerlink" title="TCP通信分析图解"></a>TCP通信分析图解</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tj.PNG" alt=""></p>
 <blockquote>
 <ol>
 <li>【服务端】启动,创建ServerSocket对象，等待连接。</li>
@@ -457,7 +457,7 @@
 <li>【客户端】释放资源，断开连接。</li>
 </ol>
 </blockquote>
-<h2 id="2-2-代码实现"><a href="#2-2-代码实现" class="headerlink" title="2.2 代码实现"></a>2.2 代码实现</h2><p>服务端实现：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwd.PNG" alt=""><br>客户端实现：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/khd.PNG" alt=""></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>服务端实现：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwd.PNG" alt=""><br>客户端实现：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/khd.PNG" alt=""></p>
 </li>
 </ul>
 
@@ -653,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-TCP通信程序"><span class="nav-number">1.</span> <span class="nav-text">1.TCP通信程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-概述"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Socket类"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Socket类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-ServerSocket类"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 ServerSocket类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-简单的TCP网络程序"><span class="nav-number">2.</span> <span class="nav-text">2.简单的TCP网络程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-TCP通信分析图解"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 TCP通信分析图解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-代码实现"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 代码实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP通信程序"><span class="nav-number">1.</span> <span class="nav-text">TCP通信程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket类"><span class="nav-number">1.2.</span> <span class="nav-text">Socket类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServerSocket类"><span class="nav-number">1.3.</span> <span class="nav-text">ServerSocket类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单的TCP网络程序"><span class="nav-number">2.</span> <span class="nav-text">简单的TCP网络程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP通信分析图解"><span class="nav-number">2.1.</span> <span class="nav-text">TCP通信分析图解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -691,7 +691,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

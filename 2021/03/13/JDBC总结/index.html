@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="今日内容1. JDBC基本概念 2. 快速入门 3. 对JDBC中各个接口和类详解JDBC： JDBC概念   概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库 JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码">
+<meta name="description" content="JDBC JDBC概念   概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库 JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。   快速入门：  步骤：  导入驱动jar包 mysql">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;13&#x2F;JDBC%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="今日内容1. JDBC基本概念 2. 快速入门 3. 对JDBC中各个接口和类详解JDBC： JDBC概念   概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库 JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码">
+<meta property="og:description" content="JDBC JDBC概念   概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库 JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。   快速入门：  步骤：  导入驱动jar包 mysql">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-15T12:45:09.339Z">
+<meta property="og:updated_time" content="2021-05-30T08:50:55.324Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -418,17 +418,16 @@
       
 
       
-        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解</code></pre><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><ol>
-<li>JDBC概念</li>
+        <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><ol>
+<li><strong>JDBC概念</strong></li>
 </ol>
 <ul>
 <li>概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库</li>
 <li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
 </ul>
 <ol start="2">
-<li>快速入门：<ul>
+<li><p><strong>快速入门：</strong></p>
+<ul>
 <li>步骤：<blockquote>
 <ol>
 <li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</li>
@@ -452,7 +451,8 @@
 </li>
 </ol>
 <ul>
-<li>代码实现：<blockquote>
+<li><p><strong>代码实现：</strong></p>
+<blockquote>
 <ol>
 <li>导入驱动jar包</li>
 <li>注册驱动<br>Class.forName(“com.mysql.jdbc.Driver”);</li>
@@ -464,22 +464,16 @@
 <li>释放资源<br>stmt.close();<br>conn.close();</li>
 </ol>
 </blockquote>
-</li>
+<h2 id="详解各个对象"><a href="#详解各个对象" class="headerlink" title="详解各个对象"></a><strong>详解各个对象</strong></h2></li>
 </ul>
-<ol start="3">
-<li><p>详解各个对象：</p>
-<ol>
-<li><p>DriverManager：驱动管理对象   </p>
-<blockquote>
+<h3 id="DriverManager：驱动管理对象"><a href="#DriverManager：驱动管理对象" class="headerlink" title="DriverManager：驱动管理对象"></a>DriverManager：驱动管理对象</h3><blockquote>
 <p>功能：</p>
 <ol>
 <li>注册驱动：告诉程序该使用哪一个数据库驱动jar</li>
 <li>获取数据库连接：</li>
 </ol>
 </blockquote>
-</li>
-<li><p>Connection：数据库连接对象</p>
-<blockquote>
+<h3 id="Connection：数据库连接对象"><a href="#Connection：数据库连接对象" class="headerlink" title="Connection：数据库连接对象"></a>Connection：数据库连接对象</h3><blockquote>
 <p>功能：</p>
 <ol>
 <li>获取执行sql 的对象</li>
@@ -497,9 +491,7 @@
 <li>回滚事务：rollback()</li>
 </ul>
 </blockquote>
-</li>
-<li><p>Statement：执行sql的对象</p>
-<blockquote>
+<h3 id="Statement：执行sql的对象"><a href="#Statement：执行sql的对象" class="headerlink" title="Statement：执行sql的对象"></a>Statement：执行sql的对象</h3><blockquote>
 <p>功能：</p>
 <ol>
 <li>执行sql</li>
@@ -510,9 +502,7 @@
 <li>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</li>
 </ul>
 </blockquote>
-</li>
-<li><p>ResultSet：结果集对象,封装查询结果</p>
-<blockquote>
+<h3 id="ResultSet：结果集对象-封装查询结果"><a href="#ResultSet：结果集对象-封装查询结果" class="headerlink" title="ResultSet：结果集对象,封装查询结果"></a>ResultSet：结果集对象,封装查询结果</h3><blockquote>
 <ul>
 <li>boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</li>
 <li>getXxx(参数):获取数据<ul>
@@ -526,9 +516,7 @@
 </li>
 </ul>
 </blockquote>
-</li>
-<li><p>PreparedStatement：执行sql的对象</p>
-<blockquote>
+<h3 id="PreparedStatement：执行sql的对象"><a href="#PreparedStatement：执行sql的对象" class="headerlink" title="PreparedStatement：执行sql的对象"></a>PreparedStatement：执行sql的对象</h3><blockquote>
 <ol>
 <li>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接,会造成安全性问题.<br>如:输入密码：a’ or ‘a’ = ‘a</li>
 <li>解决sql注入问题：使用PreparedStatement对象来解决</li>
@@ -545,14 +533,10 @@
 <li>执行sql，接受返回结果，不需要传递sql语句</li>
 </ol>
 </blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><ul>
+<h1 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h1><ul>
 <li><p>目的：简化书写</p>
 </li>
-<li><p>解决：配置文件-&gt;jdbc.properties</p>
+<li><p>解决：配置文件-&gt;<strong>jdbc.properties</strong></p>
 <blockquote>
 <p>url=<br>user=<br>password=</p>
 </blockquote>
@@ -562,7 +546,7 @@
 
 </li>
 </ul>
-<h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><ol>
+<h1 id="JDBC控制事务"><a href="#JDBC控制事务" class="headerlink" title="JDBC控制事务"></a>JDBC控制事务</h1><ol>
 <li>事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</li>
 <li>操作：<ol>
 <li>开启事务</li>
@@ -570,7 +554,7 @@
 <li>回滚事务</li>
 </ol>
 </li>
-<li>使用Connection对象来管理事务<ul>
+<li><strong>使用Connection对象来管理事务</strong><ul>
 <li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务<ul>
 <li>在执行sql之前开启事务</li>
 </ul>
@@ -779,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC："><span class="nav-number">1.1.</span> <span class="nav-text">JDBC：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="nav-number">1.2.</span> <span class="nav-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC控制事务："><span class="nav-number">1.3.</span> <span class="nav-text">JDBC控制事务：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC"><span class="nav-number">1.</span> <span class="nav-text">JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#详解各个对象"><span class="nav-number">1.1.</span> <span class="nav-text">详解各个对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DriverManager：驱动管理对象"><span class="nav-number">1.1.1.</span> <span class="nav-text">DriverManager：驱动管理对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connection：数据库连接对象"><span class="nav-number">1.1.2.</span> <span class="nav-text">Connection：数据库连接对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statement：执行sql的对象"><span class="nav-number">1.1.3.</span> <span class="nav-text">Statement：执行sql的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResultSet：结果集对象-封装查询结果"><span class="nav-number">1.1.4.</span> <span class="nav-text">ResultSet：结果集对象,封装查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PreparedStatement：执行sql的对象"><span class="nav-number">1.1.5.</span> <span class="nav-text">PreparedStatement：执行sql的对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="nav-number">2.</span> <span class="nav-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></div>
             
 
           </div>
@@ -817,7 +801,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="1.Collection集合1.1 集合概述 集合：集合是java中提供的一种容器，可以用来存储多个数据。1.2 集合框架  集合按照存储结构可以分为两大类，分别是：      单列集合java.util.Collection 双列集合java.util.Map。  1.3 Collection 常用功能Collection是所有单列集合的父接口，因此在Collection中定义了单列集合通用的一">
+<meta name="description" content="Collection集合集合概述 集合：集合是java中提供的一种容器，可以用来存储多个数据。集合框架  集合按照存储结构可以分为两大类，分别是：      单列集合java.util.Collection 双列集合java.util.Map。  Collection 常用功能Collection是所有单列集合的父接口，因此在Collection中定义了单列集合通用的一些方法，这些方法可用于操作所">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Collection，泛型">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;Collection%EF%BC%8C%E6%B3%9B%E5%9E%8B&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.Collection集合1.1 集合概述 集合：集合是java中提供的一种容器，可以用来存储多个数据。1.2 集合框架  集合按照存储结构可以分为两大类，分别是：      单列集合java.util.Collection 双列集合java.util.Map。  1.3 Collection 常用功能Collection是所有单列集合的父接口，因此在Collection中定义了单列集合通用的一">
+<meta property="og:description" content="Collection集合集合概述 集合：集合是java中提供的一种容器，可以用来存储多个数据。集合框架  集合按照存储结构可以分为两大类，分别是：      单列集合java.util.Collection 双列集合java.util.Map。  Collection 常用功能Collection是所有单列集合的父接口，因此在Collection中定义了单列集合通用的一些方法，这些方法可用于操作所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-07T03:41:36.301Z">
+<meta property="og:updated_time" content="2021-05-30T08:14:09.932Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -418,15 +418,15 @@
       
 
       
-        <h1 id="1-Collection集合"><a href="#1-Collection集合" class="headerlink" title="1.Collection集合"></a>1.Collection集合</h1><h2 id="1-1-集合概述"><a href="#1-1-集合概述" class="headerlink" title="1.1 集合概述"></a>1.1 集合概述</h2><ul>
-<li><strong>集合</strong>：集合是java中提供的一种容器，可以用来存储多个数据。<h2 id="1-2-集合框架"><a href="#1-2-集合框架" class="headerlink" title="1.2 集合框架"></a>1.2 集合框架</h2></li>
+        <h1 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h1><h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><ul>
+<li><strong>集合</strong>：集合是java中提供的一种容器，可以用来存储多个数据。<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2></li>
 </ul>
 <p>集合按照存储结构可以分为两大类，分别是：    </p>
 <ul>
 <li>单列集合<code>java.util.Collection</code></li>
 <li>双列集合<code>java.util.Map</code>。</li>
 </ul>
-<h2 id="1-3-Collection-常用功能"><a href="#1-3-Collection-常用功能" class="headerlink" title="1.3 Collection 常用功能"></a>1.3 Collection 常用功能</h2><p>Collection是所有单列集合的父接口，因此在Collection中定义了单列集合通用的一些方法，这些方法可用于操作所有的单列集合。方法如下：</p>
+<h2 id="Collection-常用功能"><a href="#Collection-常用功能" class="headerlink" title="Collection 常用功能"></a>Collection 常用功能</h2><p>Collection是所有单列集合的父接口，因此在Collection中定义了单列集合通用的一些方法，这些方法可用于操作所有的单列集合。方法如下：</p>
 <ul>
 <li><code>public boolean add(E e)</code>：  把给定的对象添加到当前集合中 。</li>
 <li><code>public void clear()</code> :清空集合中所有的元素。</li>
@@ -436,17 +436,17 @@
 <li><code>public int size()</code>: 返回集合中元素的个数。</li>
 <li><code>public Object[] toArray()</code>: 把集合中的元素，存储到数组中。</li>
 </ul>
-<h1 id="2-Iterator迭代器"><a href="#2-Iterator迭代器" class="headerlink" title="2.Iterator迭代器"></a>2.Iterator迭代器</h1><h2 id="2-1-Iterator接口"><a href="#2-1-Iterator接口" class="headerlink" title="2.1 Iterator接口"></a>2.1 Iterator接口</h2><p>Iterator接口的常用方法：</p>
+<h1 id="Iterator迭代器"><a href="#Iterator迭代器" class="headerlink" title="Iterator迭代器"></a>Iterator迭代器</h1><h2 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h2><p>Iterator接口的常用方法：</p>
 <ul>
 <li><code>public E next()</code>:返回迭代的下一个元素。</li>
 <li><code>public boolean hasNext()</code>:如果仍有元素可以迭代，则返回 true。</li>
 </ul>
 <p>接下来我们通过案例学习如何使用Iterator迭代集合中元素：</p>
-<h2 id="2-2-for-each循环"><a href="#2-2-for-each循环" class="headerlink" title="2.2 for-each循环"></a>2.2 for-each循环</h2><p>格式：</p>
+<h2 id="for-each循环"><a href="#for-each循环" class="headerlink" title="for-each循环"></a>for-each循环</h2><p>格式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型  变量 : Collection集合or数组)&#123; </span><br><span class="line">  	<span class="comment">//写操作代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="3-泛型"><a href="#3-泛型" class="headerlink" title="3.泛型"></a>3.泛型</h1><h2 id="3-1-泛型的定义与使用"><a href="#3-1-泛型的定义与使用" class="headerlink" title="3.1 泛型的定义与使用"></a>3.1 泛型的定义与使用</h2><p>泛型，用来灵活地将数据类型应用到不同的类、方法、接口当中。将数据类型作为参数进行传递。</p>
-<h2 id="3-2-定义和使用含有泛型的类"><a href="#3-2-定义和使用含有泛型的类" class="headerlink" title="3.2 定义和使用含有泛型的类"></a>3.2 定义和使用含有泛型的类</h2><p>定义格式：</p>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="泛型的定义与使用"><a href="#泛型的定义与使用" class="headerlink" title="泛型的定义与使用"></a>泛型的定义与使用</h2><p>泛型，用来灵活地将数据类型应用到不同的类、方法、接口当中。将数据类型作为参数进行传递。</p>
+<h2 id="定义和使用含有泛型的类"><a href="#定义和使用含有泛型的类" class="headerlink" title="定义和使用含有泛型的类"></a>定义和使用含有泛型的类</h2><p>定义格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修饰符 class 类名&lt;代表泛型的变量&gt; &#123;  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>例如，API中的ArrayList集合：</p>
@@ -457,7 +457,7 @@
 <p>此时，变量E的值就是String类型,那么我们的类型就可以理解为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">String</span>&gt;</span>&#123; </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(String e)</span></span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;  &#125;</span><br><span class="line">     ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-3-含有泛型的方法"><a href="#3-3-含有泛型的方法" class="headerlink" title="3.3 含有泛型的方法"></a>3.3 含有泛型的方法</h2><p>定义格式：</p>
+<h2 id="含有泛型的方法"><a href="#含有泛型的方法" class="headerlink" title="含有泛型的方法"></a>含有泛型的方法</h2><p>定义格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修饰符 &lt;代表泛型的变量&gt; 返回值类型 方法名(参数)&#123;  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>例如，</p>
@@ -466,7 +466,7 @@
 <p><strong>调用方法时，确定泛型的类型</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericMethodDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        GenericMethod mm = <span class="keyword">new</span> GenericMethod();</span><br><span class="line">        <span class="comment">// 演示看方法提示</span></span><br><span class="line">        mm.show(<span class="string">"aaa"</span>);</span><br><span class="line">        mm.show(<span class="number">123</span>);</span><br><span class="line">        mm.show(<span class="number">12.45</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-4-含有泛型的接口"><a href="#3-4-含有泛型的接口" class="headerlink" title="3.4 含有泛型的接口"></a>3.4 含有泛型的接口</h2><p>定义格式：</p>
+<h2 id="含有泛型的接口"><a href="#含有泛型的接口" class="headerlink" title="含有泛型的接口"></a>含有泛型的接口</h2><p>定义格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修饰符 interface接口名&lt;代表泛型的变量&gt; &#123;  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>例如，</p>
@@ -485,7 +485,7 @@
 <p>确定泛型：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 使用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericInterface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyImp2&lt;String&gt;  my = <span class="keyword">new</span> MyImp2&lt;String&gt;();  </span><br><span class="line">        my.add(<span class="string">"aa"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-5-泛型通配符"><a href="#3-5-泛型通配符" class="headerlink" title="3.5  泛型通配符"></a>3.5  泛型通配符</h2><p>当使用泛型类或者接口时，传递的数据中，泛型类型不确定，可以通过通配符&lt;?&gt;表示。但是一旦使用泛型的通配符后，只能使用Object类中的共性方法，集合中元素自身方法无法使用。</p>
+<h2 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h2><p>当使用泛型类或者接口时，传递的数据中，泛型类型不确定，可以通过通配符&lt;?&gt;表示。但是一旦使用泛型的通配符后，只能使用Object类中的共性方法，集合中元素自身方法无法使用。</p>
 <h3 id="通配符基本使用"><a href="#通配符基本使用" class="headerlink" title="通配符基本使用"></a>通配符基本使用</h3><p>泛型的通配符:<strong>不知道使用什么类型来接收的时候,此时可以使用?,?表示未知通配符</strong></p>
 <p>此时只能接受数据,不能往该集合中存储数据。</p>
 <p>举个例子理解使用即可：</p>
@@ -494,19 +494,16 @@
 <blockquote>
 <p>tips:泛型不存在继承关系 </p>
 </blockquote>
-<h2 id="3-6-通配符高级使用—受限泛型"><a href="#3-6-通配符高级使用—受限泛型" class="headerlink" title="3.6 通配符高级使用—受限泛型"></a>3.6 通配符高级使用—受限泛型</h2><p><strong>泛型的上限</strong>：</p>
-<ul>
+<h2 id="通配符高级使用—受限泛型"><a href="#通配符高级使用—受限泛型" class="headerlink" title="通配符高级使用—受限泛型"></a>通配符高级使用—受限泛型</h2><h3 id="泛型的上限："><a href="#泛型的上限：" class="headerlink" title="泛型的上限："></a><strong>泛型的上限</strong>：</h3><ul>
 <li><strong>格式</strong>： <code>类型名称 &lt;? extends 类 &gt; 对象名称</code></li>
 <li><strong>意义</strong>： <code>只能接收该类型及其子类</code></li>
 </ul>
-<p><strong>泛型的下限</strong>：</p>
-<ul>
+<h3 id="泛型的下限："><a href="#泛型的下限：" class="headerlink" title="泛型的下限："></a><strong>泛型的下限</strong>：</h3><ul>
 <li><strong>格式</strong>： <code>类型名称 &lt;? super 类 &gt; 对象名称</code></li>
 <li><strong>意义</strong>： <code>只能接收该类型及其父类型</code></li>
 </ul>
 <p>比如：现已知Object类，String 类，Number类，Integer类，其中Number是Integer的父类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Collection&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    Collection&lt;String&gt; list2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Collection&lt;Number&gt; list3 = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br><span class="line">    Collection&lt;Object&gt; list4 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">    </span><br><span class="line">    getElement(list1);</span><br><span class="line">    getElement(list2);<span class="comment">//报错</span></span><br><span class="line">    getElement(list3);</span><br><span class="line">    getElement(list4);<span class="comment">//报错</span></span><br><span class="line">  </span><br><span class="line">    getElement2(list1);<span class="comment">//报错</span></span><br><span class="line">    getElement2(list2);<span class="comment">//报错</span></span><br><span class="line">    getElement2(list3);</span><br><span class="line">    getElement2(list4);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 泛型的上限：此时的泛型?，必须是Number类型或者Number类型的子类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getElement1</span><span class="params">(Collection&lt;? extends Number&gt; coll)</span></span>&#123;&#125;</span><br><span class="line"><span class="comment">// 泛型的下限：此时的泛型?，必须是Number类型或者Number类型的父类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getElement2</span><span class="params">(Collection&lt;? <span class="keyword">super</span> Number&gt; coll)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -699,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Collection集合"><span class="nav-number">1.</span> <span class="nav-text">1.Collection集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-集合概述"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 集合概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-集合框架"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 集合框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Collection-常用功能"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Collection 常用功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Iterator迭代器"><span class="nav-number">2.</span> <span class="nav-text">2.Iterator迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Iterator接口"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Iterator接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-for-each循环"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 for-each循环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-泛型"><span class="nav-number">3.</span> <span class="nav-text">3.泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-泛型的定义与使用"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 泛型的定义与使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-定义和使用含有泛型的类"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 定义和使用含有泛型的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-含有泛型的方法"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 含有泛型的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-含有泛型的接口"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 含有泛型的接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-泛型通配符"><span class="nav-number">3.5.</span> <span class="nav-text">3.5  泛型通配符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符基本使用"><span class="nav-number">3.5.1.</span> <span class="nav-text">通配符基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-通配符高级使用—受限泛型"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 通配符高级使用—受限泛型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection集合"><span class="nav-number">1.</span> <span class="nav-text">Collection集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合概述"><span class="nav-number">1.1.</span> <span class="nav-text">集合概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合框架"><span class="nav-number">1.2.</span> <span class="nav-text">集合框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection-常用功能"><span class="nav-number">1.3.</span> <span class="nav-text">Collection 常用功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Iterator迭代器"><span class="nav-number">2.</span> <span class="nav-text">Iterator迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator接口"><span class="nav-number">2.1.</span> <span class="nav-text">Iterator接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-each循环"><span class="nav-number">2.2.</span> <span class="nav-text">for-each循环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泛型"><span class="nav-number">3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型的定义与使用"><span class="nav-number">3.1.</span> <span class="nav-text">泛型的定义与使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义和使用含有泛型的类"><span class="nav-number">3.2.</span> <span class="nav-text">定义和使用含有泛型的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#含有泛型的方法"><span class="nav-number">3.3.</span> <span class="nav-text">含有泛型的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#含有泛型的接口"><span class="nav-number">3.4.</span> <span class="nav-text">含有泛型的接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型通配符"><span class="nav-number">3.5.</span> <span class="nav-text">泛型通配符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符基本使用"><span class="nav-number">3.5.1.</span> <span class="nav-text">通配符基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通配符高级使用—受限泛型"><span class="nav-number">3.6.</span> <span class="nav-text">通配符高级使用—受限泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型的上限："><span class="nav-number">3.6.1.</span> <span class="nav-text">泛型的上限：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型的下限："><span class="nav-number">3.6.2.</span> <span class="nav-text">泛型的下限：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -737,7 +734,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

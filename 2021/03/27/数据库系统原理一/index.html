@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1. 事务   2. 并发一致性问题    3. 封锁      4. 隔离级别  5. 多版本并发控制    6. Next-Key Locks 7. 关系数据库设计理论    8. ER 图 参考链接：  https:&#x2F;&#x2F;github.com&#x2F;CyC2018&#x2F;CS-Notes&#x2F;blob&#x2F;master&#x2F;notes&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%B">
+<meta name="description" content="事务   并发一致性问题    封锁      隔离级别  多版本并发控制    Next-Key Locks 关系数据库设计理论    ER 图 参考链接：  https:&#x2F;&#x2F;github.com&#x2F;CyC2018&#x2F;CS-Notes&#x2F;blob&#x2F;master&#x2F;notes&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.m">
 <meta name="keywords" content="数据库系统原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库系统原理一">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;27&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1. 事务   2. 并发一致性问题    3. 封锁      4. 隔离级别  5. 多版本并发控制    6. Next-Key Locks 7. 关系数据库设计理论    8. ER 图 参考链接：  https:&#x2F;&#x2F;github.com&#x2F;CyC2018&#x2F;CS-Notes&#x2F;blob&#x2F;master&#x2F;notes&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%B">
+<meta property="og:description" content="事务   并发一致性问题    封锁      隔离级别  多版本并发控制    Next-Key Locks 关系数据库设计理论    ER 图 参考链接：  https:&#x2F;&#x2F;github.com&#x2F;CyC2018&#x2F;CS-Notes&#x2F;blob&#x2F;master&#x2F;notes&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.m">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;rsffvdherthty456256252v111.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;rrgewrtvwerter52532rdg222.PNG">
@@ -119,7 +119,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;CAWEFRWAGETVAF232323.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;BFHSDFBSGSBDGSBSGxdv242424.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;xfgxbxgxffghdfgnshdt252525.PNG">
-<meta property="og:updated_time" content="2021-03-29T05:25:43.844Z">
+<meta property="og:updated_time" content="2021-05-30T07:17:12.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;rsffvdherthty456256252v111.PNG">
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  79
+                  71
                 </span>
               
 
@@ -444,31 +444,31 @@
       
 
       
-        <h1 id="1-事务"><a href="#1-事务" class="headerlink" title="1. 事务"></a>1. 事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
+        <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rrgewrtvwerter52532rdg222.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ffvfvscfrfeggrhrgaeg333.PNG" alt=""></p>
-<h1 id="2-并发一致性问题"><a href="#2-并发一致性问题" class="headerlink" title="2. 并发一致性问题"></a>2. 并发一致性问题</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fsfsfbsbfhnahgbs444.PNG" alt=""></p>
+<h1 id="并发一致性问题"><a href="#并发一致性问题" class="headerlink" title="并发一致性问题"></a>并发一致性问题</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fsfsfbsbfhnahgbs444.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/szdfaadvagafagaf555.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgdfddgyhzcvbsfadsdf666.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sfvgaafajhjuebcvbjstrdgg777.PNG" alt=""></p>
-<h1 id="3-封锁"><a href="#3-封锁" class="headerlink" title="3. 封锁"></a>3. 封锁</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfawrgaergeraadg888.PNG" alt=""></p>
+<h1 id="封锁"><a href="#封锁" class="headerlink" title="封锁"></a>封锁</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfawrgaergeraadg888.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dtbsgvvgscgvwctg999.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/srgrcrcvccsrcfcws101010.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vtvwywvyyveyvww111111.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rthtrsgsfgstysrtg121212.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vfvdfvfvdzfvgsdfsdf131313.PNG" alt=""></p>
-<h1 id="4-隔离级别"><a href="#4-隔离级别" class="headerlink" title="4. 隔离级别"></a>4. 隔离级别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fxghsrgsvshrygeatgsfmh141414.PNG" alt=""></p>
+<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fxghsrgsvshrygeatgsfmh141414.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaervdharfbdhgt151515.PNG" alt=""></p>
-<h1 id="5-多版本并发控制"><a href="#5-多版本并发控制" class="headerlink" title="5. 多版本并发控制"></a>5. 多版本并发控制</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/tdjydryjwgjxcfjge161616.PNG" alt=""></p>
+<h1 id="多版本并发控制"><a href="#多版本并发控制" class="headerlink" title="多版本并发控制"></a>多版本并发控制</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/tdjydryjwgjxcfjge161616.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/segdbxgjsgbghsbjxh171717.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfarfaegaerwerewrnhn181818.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vdfgafvadnhaefvservdv191919.PNG" alt=""></p>
-<h1 id="6-Next-Key-Locks"><a href="#6-Next-Key-Locks" class="headerlink" title="6. Next-Key Locks"></a>6. Next-Key Locks</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zfbahbdgbzdjhafvbdxdsb202020.PNG" alt=""></p>
-<h1 id="7-关系数据库设计理论"><a href="#7-关系数据库设计理论" class="headerlink" title="7. 关系数据库设计理论"></a>7. 关系数据库设计理论</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaergtegadvxhrg212121.PNG" alt=""></p>
+<h1 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zfbahbdgbzdjhafvbdxdsb202020.PNG" alt=""></p>
+<h1 id="关系数据库设计理论"><a href="#关系数据库设计理论" class="headerlink" title="关系数据库设计理论"></a>关系数据库设计理论</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaergtegadvxhrg212121.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dvawrgVADBAFGAFADHGVABAETE222222.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/CAWEFRWAGETVAF232323.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/BFHSDFBSGSBDGSBSGxdv242424.PNG" alt=""></p>
-<h1 id="8-ER-图"><a href="#8-ER-图" class="headerlink" title="8. ER 图"></a>8. ER 图</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/xfgxbxgxffghdfgnshdt252525.PNG" alt=""></p>
+<h1 id="ER-图"><a href="#ER-图" class="headerlink" title="ER 图"></a>ER 图</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/xfgxbxgxffghdfgnshdt252525.PNG" alt=""></p>
 <p>参考链接：</p>
 <ol>
 <li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md</a></li>
@@ -666,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-事务"><span class="nav-number">1.</span> <span class="nav-text">1. 事务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-并发一致性问题"><span class="nav-number">2.</span> <span class="nav-text">2. 并发一致性问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-封锁"><span class="nav-number">3.</span> <span class="nav-text">3. 封锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-隔离级别"><span class="nav-number">4.</span> <span class="nav-text">4. 隔离级别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-多版本并发控制"><span class="nav-number">5.</span> <span class="nav-text">5. 多版本并发控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Next-Key-Locks"><span class="nav-number">6.</span> <span class="nav-text">6. Next-Key Locks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-关系数据库设计理论"><span class="nav-number">7.</span> <span class="nav-text">7. 关系数据库设计理论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-ER-图"><span class="nav-number">8.</span> <span class="nav-text">8. ER 图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事务"><span class="nav-number">1.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并发一致性问题"><span class="nav-number">2.</span> <span class="nav-text">并发一致性问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#封锁"><span class="nav-number">3.</span> <span class="nav-text">封锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隔离级别"><span class="nav-number">4.</span> <span class="nav-text">隔离级别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多版本并发控制"><span class="nav-number">5.</span> <span class="nav-text">多版本并发控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next-Key-Locks"><span class="nav-number">6.</span> <span class="nav-text">Next-Key Locks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系数据库设计理论"><span class="nav-number">7.</span> <span class="nav-text">关系数据库设计理论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ER-图"><span class="nav-number">8.</span> <span class="nav-text">ER 图</span></a></li></ol></div>
             
 
           </div>
@@ -704,7 +704,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

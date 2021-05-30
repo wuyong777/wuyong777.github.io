@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1.线程1.1 并发与并行 并发：指两个或多个事件在同一个时间段内发生。 并行：指两个或多个事件在同一时刻发生（同时发生）。1.2 进程与线程 进程：是指一个内存中运行的应用程序，每个进程都有一个独立的内存空间，一个应用程序可以同时运行多个进程；进程也是程序的一次执行过程，是系统运行程序的基本单位；系统运行一个程序即是一个进程从创建、运行到消亡的过程。  线程：线程是进程中的一个执行单元，负责当前">
+<meta name="description" content="线程并发与并行 并发：指两个或多个事件在同一个时间段内发生。 并行：指两个或多个事件在同一时刻发生（同时发生）。进程与线程 进程：是指一个内存中运行的应用程序，每个进程都有一个独立的内存空间，一个应用程序可以同时运行多个进程；进程也是程序的一次执行过程，是系统运行程序的基本单位；系统运行一个程序即是一个进程从创建、运行到消亡的过程。  线程：线程是进程中的一个执行单元，负责当前进程中程序的执行，一">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;%E7%BA%BF%E7%A8%8B&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.线程1.1 并发与并行 并发：指两个或多个事件在同一个时间段内发生。 并行：指两个或多个事件在同一时刻发生（同时发生）。1.2 进程与线程 进程：是指一个内存中运行的应用程序，每个进程都有一个独立的内存空间，一个应用程序可以同时运行多个进程；进程也是程序的一次执行过程，是系统运行程序的基本单位；系统运行一个程序即是一个进程从创建、运行到消亡的过程。  线程：线程是进程中的一个执行单元，负责当前">
+<meta property="og:description" content="线程并发与并行 并发：指两个或多个事件在同一个时间段内发生。 并行：指两个或多个事件在同一时刻发生（同时发生）。进程与线程 进程：是指一个内存中运行的应用程序，每个进程都有一个独立的内存空间，一个应用程序可以同时运行多个进程；进程也是程序的一次执行过程，是系统运行程序的基本单位；系统运行一个程序即是一个进程从创建、运行到消亡的过程。  线程：线程是进程中的一个执行单元，负责当前进程中程序的执行，一">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;ddfdff525.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;gzff.PNG">
@@ -107,7 +107,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;ztzh.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;sxl.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;csl.PNG">
-<meta property="og:updated_time" content="2021-03-17T19:13:41.990Z">
+<meta property="og:updated_time" content="2021-05-30T08:21:19.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;ddfdff525.PNG">
 
@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  775
+                  746
                 </span>
               
 
@@ -432,34 +432,34 @@
       
 
       
-        <h1 id="1-线程"><a href="#1-线程" class="headerlink" title="1.线程"></a>1.线程</h1><h2 id="1-1-并发与并行"><a href="#1-1-并发与并行" class="headerlink" title="1.1 并发与并行"></a>1.1 并发与并行</h2><ul>
+        <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="并发与并行"><a href="#并发与并行" class="headerlink" title="并发与并行"></a>并发与并行</h2><ul>
 <li><strong>并发</strong>：指两个或多个事件在同一个时间段内发生。</li>
-<li><strong>并行</strong>：指两个或多个事件在同一时刻发生（同时发生）。<h2 id="1-2-进程与线程"><a href="#1-2-进程与线程" class="headerlink" title="1.2 进程与线程"></a>1.2 进程与线程</h2></li>
+<li><strong>并行</strong>：指两个或多个事件在同一时刻发生（同时发生）。<h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2></li>
 <li><strong>进程</strong>：是指一个内存中运行的应用程序，每个进程都有一个独立的内存空间，一个应用程序可以同时运行多个进程；进程也是程序的一次执行过程，是系统运行程序的基本单位；系统运行一个程序即是一个进程从创建、运行到消亡的过程。 </li>
 <li><strong>线程</strong>：线程是进程中的一个执行单元，负责当前进程中程序的执行，一个进程中至少有一个线程。一个进程中是可以有多个线程的，这个应用程序也可以称之为多线程程序。</li>
 <li>每一个执行线程都有一片自己所属的栈内存空间【重要】 </li>
-<li>简而言之：一个程序运行后至少有一个进程，一个进程中可以包含多个线程<h1 id="2-创建线程方式一"><a href="#2-创建线程方式一" class="headerlink" title="2.创建线程方式一"></a>2.创建线程方式一</h1><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ddfdff525.PNG" alt=""><h1 id="3-Thread类"><a href="#3-Thread类" class="headerlink" title="3.Thread类"></a>3.Thread类</h1></li>
+<li>简而言之：一个程序运行后至少有一个进程，一个进程中可以包含多个线程<h1 id="创建线程方式一"><a href="#创建线程方式一" class="headerlink" title="创建线程方式一"></a>创建线程方式一</h1><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ddfdff525.PNG" alt=""><h1 id="Thread类"><a href="#Thread类" class="headerlink" title="Thread类"></a>Thread类</h1></li>
 <li>构造方法<br>  <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gzff.PNG" alt=""></li>
-<li>常用方法<br>  <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyff.PNG" alt=""><h1 id="4-创建线程方式二"><a href="#4-创建线程方式二" class="headerlink" title="4.创建线程方式二"></a>4.创建线程方式二</h1><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cj2.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cj2x.PNG" alt=""><h1 id="5-Thread和Runnable的区别"><a href="#5-Thread和Runnable的区别" class="headerlink" title="5.Thread和Runnable的区别"></a>5.Thread和Runnable的区别</h1><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qubie1125.PNG" alt=""><h1 id="6-线程同步-解决线程安全"><a href="#6-线程同步-解决线程安全" class="headerlink" title="6.线程同步(解决线程安全)"></a>6.线程同步(解决线程安全)</h1>有三种方式完成同步操作：    </li>
+<li>常用方法<br>  <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyff.PNG" alt=""><h1 id="创建线程方式二"><a href="#创建线程方式二" class="headerlink" title="创建线程方式二"></a>创建线程方式二</h1><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cj2.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cj2x.PNG" alt=""><h1 id="Thread和Runnable的区别"><a href="#Thread和Runnable的区别" class="headerlink" title="Thread和Runnable的区别"></a>Thread和Runnable的区别</h1><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qubie1125.PNG" alt=""><h1 id="线程同步-解决线程安全"><a href="#线程同步-解决线程安全" class="headerlink" title="线程同步(解决线程安全)"></a>线程同步(解决线程安全)</h1>有三种方式完成同步操作：    </li>
 </ul>
 <ol>
 <li>同步代码块  </li>
 <li>同步方法 </li>
-<li>锁机制<h2 id="6-1-同步代码块"><a href="#6-1-同步代码块" class="headerlink" title="6.1 同步代码块"></a>6.1 同步代码块</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/61.PNG" alt=""><h2 id="6-2-同步方法"><a href="#6-2-同步方法" class="headerlink" title="6.2 同步方法"></a>6.2 同步方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/62.PNG" alt=""><h2 id="6-3-Lock锁"><a href="#6-3-Lock锁" class="headerlink" title="6.3 Lock锁"></a>6.3 Lock锁</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/63.PNG" alt=""><h1 id="7-线程状态"><a href="#7-线程状态" class="headerlink" title="7.线程状态"></a>7.线程状态</h1><h2 id="7-1-线程状态概述"><a href="#7-1-线程状态概述" class="headerlink" title="7.1 线程状态概述"></a>7.1 线程状态概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ztgs.PNG" alt=""><h2 id="7-2-线程状态转换"><a href="#7-2-线程状态转换" class="headerlink" title="7.2 线程状态转换"></a>7.2 线程状态转换</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ztzh.PNG" alt=""><h1 id="8-等待唤醒机制"><a href="#8-等待唤醒机制" class="headerlink" title="8.等待唤醒机制"></a>8.等待唤醒机制</h1><h2 id="8-1-概述"><a href="#8-1-概述" class="headerlink" title="8.1 概述"></a>8.1 概述</h2></li>
+<li>锁机制<h2 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/61.PNG" alt=""><h2 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/62.PNG" alt=""><h2 id="Lock锁"><a href="#Lock锁" class="headerlink" title="Lock锁"></a>Lock锁</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/63.PNG" alt=""><h1 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h1><h2 id="线程状态概述"><a href="#线程状态概述" class="headerlink" title="线程状态概述"></a>线程状态概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ztgs.PNG" alt=""><h2 id="线程状态转换"><a href="#线程状态转换" class="headerlink" title="线程状态转换"></a>线程状态转换</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ztzh.PNG" alt=""><h1 id="等待唤醒机制"><a href="#等待唤醒机制" class="headerlink" title="等待唤醒机制"></a>等待唤醒机制</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2></li>
 </ol>
 <ul>
 <li>就是在一个线程进行了规定操作后，就进入等待状态<code>wait()</code>，等待其他线程执行完他们的指定代码过后再将其唤醒<code>notify()</code>;在有多个线程进行等待时，如果需要，可以使用<code>notifyAll()</code>来唤醒所有的等待线程。</li>
-<li>wait/notify 就是线程间的一种协作机制。<h2 id="8-2-调用wait和notify方法需要注意的细节"><a href="#8-2-调用wait和notify方法需要注意的细节" class="headerlink" title="8.2 调用wait和notify方法需要注意的细节"></a>8.2 调用wait和notify方法需要注意的细节</h2></li>
+<li>wait/notify 就是线程间的一种协作机制。<h2 id="调用wait和notify方法需要注意的细节"><a href="#调用wait和notify方法需要注意的细节" class="headerlink" title="调用wait和notify方法需要注意的细节"></a>调用wait和notify方法需要注意的细节</h2></li>
 </ul>
 <ol>
 <li>wait方法与notify方法必须要由同一个锁对象调用。因为：对应的锁对象可以通过notify唤醒使用同一个锁对象调用的wait方法后的线程。  </li>
 <li>wait方法与notify方法是属于Object类的方法的。因为：锁对象可以是任意对象，而任意对象的所属类都是继承了Object类的。  </li>
-<li>wait方法与notify方法必须要在同步代码块或者是同步函数中使用。因为：必须要通过锁对象调用这2个方 法。<h1 id="9-线程池"><a href="#9-线程池" class="headerlink" title="9.线程池"></a>9.线程池</h1><h2 id="9-1-线程池的概念"><a href="#9-1-线程池的概念" class="headerlink" title="9.1 线程池的概念"></a>9.1 线程池的概念</h2></li>
+<li>wait方法与notify方法必须要在同步代码块或者是同步函数中使用。因为：必须要通过锁对象调用这2个方 法。<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id="线程池的概念"><a href="#线程池的概念" class="headerlink" title="线程池的概念"></a>线程池的概念</h2></li>
 </ol>
 <ul>
 <li><strong>线程池</strong>：其实就是一个容纳多个线程的容器，其中的线程可以反复使用，省去了频繁创建线程对象的操作， 无需反复创建线程而消耗过多资源。</li>
 </ul>
-<h2 id="9-2-线程池的使用"><a href="#9-2-线程池的使用" class="headerlink" title="9.2 线程池的使用"></a>9.2 线程池的使用</h2><ul>
+<h2 id="线程池的使用"><a href="#线程池的使用" class="headerlink" title="线程池的使用"></a>线程池的使用</h2><ul>
 <li>使用线程池中线程对象的步骤：    <ol>
 <li>创建线程池对象</li>
 <li>创建Runnable接口子类对象 </li>
@@ -662,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-线程"><span class="nav-number">1.</span> <span class="nav-text">1.线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-并发与并行"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 并发与并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-进程与线程"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 进程与线程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-创建线程方式一"><span class="nav-number">2.</span> <span class="nav-text">2.创建线程方式一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Thread类"><span class="nav-number">3.</span> <span class="nav-text">3.Thread类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-创建线程方式二"><span class="nav-number">4.</span> <span class="nav-text">4.创建线程方式二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Thread和Runnable的区别"><span class="nav-number">5.</span> <span class="nav-text">5.Thread和Runnable的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-线程同步-解决线程安全"><span class="nav-number">6.</span> <span class="nav-text">6.线程同步(解决线程安全)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-同步代码块"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 同步代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-同步方法"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 同步方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-Lock锁"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 Lock锁</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-线程状态"><span class="nav-number">7.</span> <span class="nav-text">7.线程状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-线程状态概述"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 线程状态概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-线程状态转换"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 线程状态转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-等待唤醒机制"><span class="nav-number">8.</span> <span class="nav-text">8.等待唤醒机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-概述"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-调用wait和notify方法需要注意的细节"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 调用wait和notify方法需要注意的细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-线程池"><span class="nav-number">9.</span> <span class="nav-text">9.线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-线程池的概念"><span class="nav-number">9.1.</span> <span class="nav-text">9.1 线程池的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-线程池的使用"><span class="nav-number">9.2.</span> <span class="nav-text">9.2 线程池的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线程"><span class="nav-number">1.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#并发与并行"><span class="nav-number">1.1.</span> <span class="nav-text">并发与并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.2.</span> <span class="nav-text">进程与线程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建线程方式一"><span class="nav-number">2.</span> <span class="nav-text">创建线程方式一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread类"><span class="nav-number">3.</span> <span class="nav-text">Thread类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建线程方式二"><span class="nav-number">4.</span> <span class="nav-text">创建线程方式二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread和Runnable的区别"><span class="nav-number">5.</span> <span class="nav-text">Thread和Runnable的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程同步-解决线程安全"><span class="nav-number">6.</span> <span class="nav-text">线程同步(解决线程安全)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同步代码块"><span class="nav-number">6.1.</span> <span class="nav-text">同步代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步方法"><span class="nav-number">6.2.</span> <span class="nav-text">同步方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lock锁"><span class="nav-number">6.3.</span> <span class="nav-text">Lock锁</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程状态"><span class="nav-number">7.</span> <span class="nav-text">线程状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程状态概述"><span class="nav-number">7.1.</span> <span class="nav-text">线程状态概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程状态转换"><span class="nav-number">7.2.</span> <span class="nav-text">线程状态转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#等待唤醒机制"><span class="nav-number">8.</span> <span class="nav-text">等待唤醒机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">8.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用wait和notify方法需要注意的细节"><span class="nav-number">8.2.</span> <span class="nav-text">调用wait和notify方法需要注意的细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程池"><span class="nav-number">9.</span> <span class="nav-text">线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池的概念"><span class="nav-number">9.1.</span> <span class="nav-text">线程池的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池的使用"><span class="nav-number">9.2.</span> <span class="nav-text">线程池的使用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -700,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

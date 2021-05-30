@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="1.数据库命令规范 所有数据库对象名称必须使用小写字母并用下划线分割  所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）  数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符 2.数据库基本设计规范 所有表必须使用 Innodb 存储引擎    没有特殊要求（即 Innodb 无法满足的功能如：列存储，存储空间数据等）的情况下，">
+<meta name="description" content="数据库命令规范 所有数据库对象名称必须使用小写字母并用下划线分割  所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）  数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符 数据库基本设计规范 所有表必须使用 Innodb 存储引擎    没有特殊要求（即 Innodb 无法满足的功能如：列存储，存储空间数据等）的情况下，所有表必">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL调优">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;29&#x2F;MySQL%E8%B0%83%E4%BC%98&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.数据库命令规范 所有数据库对象名称必须使用小写字母并用下划线分割  所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）  数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符 2.数据库基本设计规范 所有表必须使用 Innodb 存储引擎    没有特殊要求（即 Innodb 无法满足的功能如：列存储，存储空间数据等）的情况下，">
+<meta property="og:description" content="数据库命令规范 所有数据库对象名称必须使用小写字母并用下划线分割  所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）  数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符 数据库基本设计规范 所有表必须使用 Innodb 存储引擎    没有特殊要求（即 Innodb 无法满足的功能如：列存储，存储空间数据等）的情况下，所有表必">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-04-06T16:33:02.384Z">
+<meta property="og:updated_time" content="2021-05-30T06:46:51.674Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -418,14 +418,14 @@
       
 
       
-        <h1 id="1-数据库命令规范"><a href="#1-数据库命令规范" class="headerlink" title="1.数据库命令规范"></a>1.数据库命令规范</h1><ol>
-<li><p>所有数据库对象名称必须使用小写字母并用下划线分割</p>
+        <h1 id="数据库命令规范"><a href="#数据库命令规范" class="headerlink" title="数据库命令规范"></a>数据库命令规范</h1><ol>
+<li><p><strong>所有数据库对象名称必须使用小写字母并用下划线分割</strong></p>
 </li>
-<li><p>所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）</p>
+<li><p><strong>所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）</strong></p>
 </li>
-<li><p>数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符</p>
-<h1 id="2-数据库基本设计规范"><a href="#2-数据库基本设计规范" class="headerlink" title="2.数据库基本设计规范"></a>2.数据库基本设计规范</h1></li>
-<li><p>所有表必须使用 Innodb 存储引擎</p>
+<li><p><strong>数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符</strong></p>
+<h1 id="数据库基本设计规范"><a href="#数据库基本设计规范" class="headerlink" title="数据库基本设计规范"></a>数据库基本设计规范</h1></li>
+<li><p><strong>所有表必须使用 Innodb 存储引擎</strong></p>
 </li>
 </ol>
 <ul>
@@ -435,7 +435,7 @@
 </li>
 </ul>
 <ol start="2">
-<li>数据库和表的字符集统一使用 UTF8</li>
+<li><strong>数据库和表的字符集统一使用 UTF8</strong></li>
 </ol>
 <ul>
 <li><p>兼容性更好，统一字符集可以避免由于字符集转换产生的乱码，不同的字符集进行比较前需要进行转换会造成索引失效</p>
@@ -444,11 +444,13 @@
 </li>
 </ul>
 <ol start="3">
-<li>所有表和字段都需要添加注释</li>
+<li><strong>所有表和字段都需要添加注释</strong></li>
 </ol>
-<p>使用 comment 从句添加表和列的备注，从一开始就进行数据字典的维护</p>
-<h1 id="3-数据库字段设计规范"><a href="#3-数据库字段设计规范" class="headerlink" title="3.数据库字段设计规范"></a>3.数据库字段设计规范</h1><ol>
-<li>优先选择符合存储需要的最小的数据类型</li>
+<ul>
+<li>使用 comment 从句添加表和列的备注，从一开始就进行数据字典的维护</li>
+</ul>
+<h1 id="数据库字段设计规范"><a href="#数据库字段设计规范" class="headerlink" title="数据库字段设计规范"></a>数据库字段设计规范</h1><ol>
+<li><strong>优先选择符合存储需要的最小的数据类型</strong></li>
 </ol>
 <ul>
 <li><p>VARCHAR(N) 中的 N 代表的是字符数，而不是字节数，使用 UTF8 存储 255 个汉字 Varchar(255)=765 个字节。</p>
@@ -457,9 +459,9 @@
 </li>
 </ul>
 <ol start="2">
-<li><p>尽可能把所有列定义为 NOT NULL</p>
+<li><p><strong>尽可能把所有列定义为 NOT NULL</strong></p>
 </li>
-<li><p>使用 TIMESTAMP(4 个字节) 或 DATETIME 类型 (8 个字节) 存储时间</p>
+<li><p><strong>使用 TIMESTAMP(4 个字节) 或 DATETIME 类型 (8 个字节) 存储时间</strong></p>
 </li>
 </ol>
 <ul>
@@ -471,7 +473,7 @@
 </li>
 </ul>
 <ol start="4">
-<li>同财务相关的金额类数据必须使用 decimal 类型</li>
+<li><strong>同财务相关的金额类数据必须使用 decimal 类型</strong></li>
 </ol>
 <ul>
 <li><p>非精准浮点：float,double</p>
@@ -479,10 +481,10 @@
 <li><p>精准浮点：decimal</p>
 </li>
 <li><p>Decimal 类型为精准浮点数，在计算时不会丢失精度</p>
-<h1 id="4-索引设计规范"><a href="#4-索引设计规范" class="headerlink" title="4.索引设计规范"></a>4.索引设计规范</h1></li>
+<h1 id="索引设计规范"><a href="#索引设计规范" class="headerlink" title="索引设计规范"></a>索引设计规范</h1></li>
 </ul>
 <ol>
-<li>限制每张表上的索引数量,建议单张表索引不超过 5 个</li>
+<li><strong>限制每张表上的索引数量,建议单张表索引不超过 5 个</strong></li>
 </ol>
 <ul>
 <li><p>索引并不是越多越好！索引可以提高效率同样可以降低效率。</p>
@@ -493,13 +495,23 @@
 </li>
 </ul>
 <ol start="2">
-<li><p>禁止给表中的每一列都建立单独的索引       </p>
-</li>
-<li><p>6 版本之前，一个 sql 只能使用到一个表中的一个索引，5.6 以后，虽然有了合并索引的优化方式，但是还是远远没有使用一个联合索引的查询方式好。</p>
-</li>
-<li><p>每个 Innodb 表必须有个主键<br>Innodb 是一种索引组织表：数据的存储的逻辑顺序和索引的顺序是相同的。每个表都可以有多个索引，但是表的存储顺序只能有一种。<br>Innodb 是按照主键索引的顺序来组织表的</p>
-</li>
+<li><strong>禁止给表中的每一列都建立单独的索引</strong> </li>
 </ol>
+<ul>
+<li><p>5.6 版本之前，一个 sql 只能使用到一个表中的一个索引</p>
+</li>
+<li><p>5.6 以后，虽然有了合并索引的优化方式，但是还是远远没有使用一个联合索引的查询方式好。</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>每个 Innodb 表必须有个主键</strong>      </li>
+</ol>
+<ul>
+<li><p>Innodb 是一种索引组织表：数据的存储的逻辑顺序和索引的顺序是相同的。每个表都可以有多个索引，但是表的存储顺序只能有一种。</p>
+</li>
+<li><p>Innodb 是按照主键索引的顺序来组织表的</p>
+</li>
+</ul>
 <ul>
 <li><p>不要使用更新频繁的列作为主键，不适用多列主键（相当于联合索引）</p>
 </li>
@@ -509,7 +521,7 @@
 </li>
 </ul>
 <ol start="4">
-<li>常见索引列建议</li>
+<li><strong>常见索引列建议</strong></li>
 </ol>
 <ul>
 <li><p>出现在 SELECT、UPDATE、DELETE 语句的 WHERE 从句中的列</p>
@@ -519,10 +531,10 @@
 <li><p>并不要将符合 1 和 2 中的字段的列都建立一个索引， 通常将 1、2 中的字段建立联合索引效果更好</p>
 </li>
 <li><p>多表 join 的关联列</p>
-<h1 id="5-数据库-SQL-开发规范"><a href="#5-数据库-SQL-开发规范" class="headerlink" title="5.数据库 SQL 开发规范"></a>5.数据库 SQL 开发规范</h1></li>
+<h1 id="数据库-SQL-开发规范"><a href="#数据库-SQL-开发规范" class="headerlink" title="数据库 SQL 开发规范"></a>数据库 SQL 开发规范</h1></li>
 </ul>
 <ol>
-<li>建议使用预编译语句进行数据库操作</li>
+<li><strong>建议使用预编译语句进行数据库操作</strong></li>
 </ol>
 <ul>
 <li><p>预编译语句可以重复使用这些计划，减少 SQL 编译所需要的时间，还可以解决动态 SQL 所带来的 SQL 注入的问题。</p>
@@ -533,33 +545,44 @@
 </li>
 </ul>
 <ol start="2">
-<li>禁止使用 SELECT * 必须使用 SELECT &lt;字段列表&gt; 查询<br>原因：</li>
+<li><strong>禁止使用 SELECT * 必须使用 SELECT &lt;字段列表&gt; 查询</strong><br>原因：</li>
 </ol>
 <ul>
 <li><p>消耗更多的 CPU 和 IO 以网络带宽资源</p>
 </li>
-<li><p>无法使用覆盖索引</p>
+<li><p>法使用覆盖索引</p>
 </li>
-<li><p>可减少表结构变更带来的影响</p>
+<li><p>减少表结构变更带来的影响</p>
 </li>
 </ul>
 <ol start="3">
-<li><p>禁止使用不含字段列表的 INSERT 语句</p>
+<li><p><strong>禁止使用不含字段列表的 INSERT 语句</strong></p>
 </li>
-<li><p>避免使用子查询，可以把子查询优化为 join 操作</p>
-</li>
-<li><p>对应同一列进行 or 判断时，使用 in 代替 or<br>in 的值不要超过 500 个，in 操作可以更有效的利用索引，or 大多数情况下很少能利用到索引。</p>
-<h1 id="6-数据库操作行为规范"><a href="#6-数据库操作行为规范" class="headerlink" title="6.数据库操作行为规范"></a>6.数据库操作行为规范</h1></li>
-<li><p>超 100 万行的批量写 (UPDATE,DELETE,INSERT) 操作,要分批多次进行操作</p>
+<li><p><strong>避免使用子查询，可以把子查询优化为 join 操作</strong></p>
 </li>
 </ol>
-<p><strong>大批量操作可能会造成严重的主从延迟</strong></p>
-<p>主从环境中,大批量操作可能会造成严重的主从延迟，大批量的写操作一般都需要执行一定长的时间， 而只有当主库上执行完成后，才会在其他从库上执行，所以会造成主库与从库长时间的延迟情况</p>
-<p><strong>binlog 日志为 row 格式时会产生大量的日志</strong></p>
+<ol start="5">
+<li><strong>对应同一列进行 or 判断时，使用 in 代替 or</strong>  </li>
+</ol>
+<ul>
+<li>in 的值不要超过 500 个，in 操作可以更有效的利用索引，or 大多数情况下很少能利用到索引。</li>
+</ul>
+<h1 id="数据库操作行为规范"><a href="#数据库操作行为规范" class="headerlink" title="数据库操作行为规范"></a>数据库操作行为规范</h1><ol>
+<li><strong>超 100 万行的批量写 (UPDATE,DELETE,INSERT) 操作,要分批多次进行操作</strong></li>
+</ol>
+<ul>
+<li><p><strong>大批量操作可能会造成严重的主从延迟</strong></p>
+<p>主从环境中,大批量操作可能会造成严重的主从延迟，大批量的写操作一般都需要执行一定长的时间， 而只有当主库上执行完成后，            才会在其他从库上执行，所以会造成主库与从库长时间的延迟情况</p>
+</li>
+<li><p><strong>binlog 日志为 row 格式时会产生大量的日志</strong></p>
 <p>大批量写操作会产生大量日志，特别是对于 row 格式二进制数据而言，由于在 row 格式中会记录每一行数据的修改，我们一次修改的数据越多，产生的日志量也就会越多，日志的传输和恢复所需要的时间也就越长，这也是造成主从延迟的一个原因</p>
-<p><strong>避免产生大事务操作</strong></p>
+</li>
+<li><p><strong>避免产生大事务操作</strong></p>
 <p>大批量修改数据，一定是在一个事务中进行的，这就会造成表中大批量数据进行锁定，从而导致大量的阻塞，阻塞会对 MySQL 的性能产生非常大的影响。</p>
-<p>特别是长时间的阻塞会占满所有数据库的可用连接，这会使生产环境中的其他应用无法连接到数据库，因此一定要注意大批量写操作要进行分批<br>参考链接：</p>
+<p>特别是长时间的阻塞会占满所有数据库的可用连接，这会使生产环境中的其他应用无法连接到数据库，因此一定要注意大批量写操作要进行分批</p>
+<p>参考链接：</p>
+</li>
+</ul>
 <ol>
 <li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/database/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/database/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE.md</a></li>
 </ol>
@@ -603,7 +626,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/04/06/springboot/" rel="prev" title="springboot">
+              <a href="/2021/04/06/Springboot/" rel="prev" title="springboot">
                 springboot <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -756,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数据库命令规范"><span class="nav-number">1.</span> <span class="nav-text">1.数据库命令规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-数据库基本设计规范"><span class="nav-number">2.</span> <span class="nav-text">2.数据库基本设计规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-数据库字段设计规范"><span class="nav-number">3.</span> <span class="nav-text">3.数据库字段设计规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-索引设计规范"><span class="nav-number">4.</span> <span class="nav-text">4.索引设计规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-数据库-SQL-开发规范"><span class="nav-number">5.</span> <span class="nav-text">5.数据库 SQL 开发规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-数据库操作行为规范"><span class="nav-number">6.</span> <span class="nav-text">6.数据库操作行为规范</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库命令规范"><span class="nav-number">1.</span> <span class="nav-text">数据库命令规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库基本设计规范"><span class="nav-number">2.</span> <span class="nav-text">数据库基本设计规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库字段设计规范"><span class="nav-number">3.</span> <span class="nav-text">数据库字段设计规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引设计规范"><span class="nav-number">4.</span> <span class="nav-text">索引设计规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库-SQL-开发规范"><span class="nav-number">5.</span> <span class="nav-text">数据库 SQL 开发规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库操作行为规范"><span class="nav-number">6.</span> <span class="nav-text">数据库操作行为规范</span></a></li></ol></div>
             
 
           </div>
@@ -794,7 +817,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

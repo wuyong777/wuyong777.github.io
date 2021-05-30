@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1.常用DOC命令 2.命名规则 3.数据类型 4.ASCII编码表 5.运算符 5.1 算术运算符    5.2 赋值运算符    5.3 比较运算符    5.4 逻辑运算符    5.5 三元运算符   6.判断语句 6.1 if语句    6.2 if-else语句    6.3 if-else if-else语句   7.选择语句 7.1 switch语句    7.2 switch语句">
+<meta name="description" content="常用DOC命令 命名规则 数据类型 ASCII编码表 运算符 算术运算符    赋值运算符    比较运算符    逻辑运算符    三元运算符   判断语句 if语句    if-else语句    if-else if-else语句   选择语句 switch语句    switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础语法">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.常用DOC命令 2.命名规则 3.数据类型 4.ASCII编码表 5.运算符 5.1 算术运算符    5.2 赋值运算符    5.3 比较运算符    5.4 逻辑运算符    5.5 三元运算符   6.判断语句 6.1 if语句    6.2 if-else语句    6.3 if-else if-else语句   7.选择语句 7.1 switch语句    7.2 switch语句">
+<meta property="og:description" content="常用DOC命令 命名规则 数据类型 ASCII编码表 运算符 算术运算符    赋值运算符    比较运算符    逻辑运算符    三元运算符   判断语句 if语句    if-else语句    if-else if-else语句   选择语句 switch语句    switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;doc.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;name.PNG">
@@ -110,7 +110,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;for.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;while.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;dowhile.PNG">
-<meta property="og:updated_time" content="2021-03-17T16:48:09.979Z">
+<meta property="og:updated_time" content="2021-05-30T07:57:52.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;doc.PNG">
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  178
+                  142
                 </span>
               
 
@@ -435,66 +435,66 @@
       
 
       
-        <h1 id="1-常用DOC命令"><a href="#1-常用DOC命令" class="headerlink" title="1.常用DOC命令"></a>1.常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
-<h1 id="2-命名规则"><a href="#2-命名规则" class="headerlink" title="2.命名规则"></a>2.命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
-<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
-<h1 id="4-ASCII编码表"><a href="#4-ASCII编码表" class="headerlink" title="4.ASCII编码表"></a>4.ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
-<h1 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h1><ul>
-<li>5.1 算术运算符</li>
+        <h1 id="常用DOC命令"><a href="#常用DOC命令" class="headerlink" title="常用DOC命令"></a>常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
+<h1 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
+<h1 id="ASCII编码表"><a href="#ASCII编码表" class="headerlink" title="ASCII编码表"></a>ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><ul>
+<li>算术运算符</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
 <ul>
-<li>5.2 赋值运算符</li>
+<li>赋值运算符</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
 <ul>
-<li>5.3 比较运算符</li>
+<li>比较运算符</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
 <ul>
-<li>5.4 逻辑运算符</li>
+<li>逻辑运算符</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
 <ul>
-<li>5.5 三元运算符</li>
+<li>三元运算符</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
-<h1 id="6-判断语句"><a href="#6-判断语句" class="headerlink" title="6.判断语句"></a>6.判断语句</h1><ul>
-<li>6.1 if语句</li>
+<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><ul>
+<li>if语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
 <ul>
-<li>6.2 if-else语句</li>
+<li>if-else语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
 <ul>
-<li>6.3 if-else if-else语句</li>
+<li>if-else if-else语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
-<h1 id="7-选择语句"><a href="#7-选择语句" class="headerlink" title="7.选择语句"></a>7.选择语句</h1><ul>
-<li>7.1 switch语句</li>
+<h1 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h1><ul>
+<li>switch语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
 <ul>
-<li><p>7.2 switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
+<li><p>switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
 </li>
-<li><p>7.3 break和continue的区别：</p>
+<li><p>break和continue的区别：</p>
 <ul>
 <li>break: 终止switch或者循环</li>
 <li>continue: 结束本次循环，继续下一次的循环 </li>
 </ul>
 </li>
 </ul>
-<h1 id="8-循环语句"><a href="#8-循环语句" class="headerlink" title="8.循环语句"></a>8.循环语句</h1><ul>
-<li>8.1 for语句</li>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><ul>
+<li>for语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
 <ul>
-<li>8.2 while语句</li>
+<li>while语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
 <ul>
-<li>8.3 do-while语句</li>
+<li>do-while语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
 
@@ -690,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用DOC命令"><span class="nav-number">1.</span> <span class="nav-text">1.常用DOC命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-命名规则"><span class="nav-number">2.</span> <span class="nav-text">2.命名规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-数据类型"><span class="nav-number">3.</span> <span class="nav-text">3.数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-ASCII编码表"><span class="nav-number">4.</span> <span class="nav-text">4.ASCII编码表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-运算符"><span class="nav-number">5.</span> <span class="nav-text">5.运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-判断语句"><span class="nav-number">6.</span> <span class="nav-text">6.判断语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-选择语句"><span class="nav-number">7.</span> <span class="nav-text">7.选择语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-循环语句"><span class="nav-number">8.</span> <span class="nav-text">8.循环语句</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用DOC命令"><span class="nav-number">1.</span> <span class="nav-text">常用DOC命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名规则"><span class="nav-number">2.</span> <span class="nav-text">命名规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ASCII编码表"><span class="nav-number">4.</span> <span class="nav-text">ASCII编码表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符"><span class="nav-number">5.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断语句"><span class="nav-number">6.</span> <span class="nav-text">判断语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择语句"><span class="nav-number">7.</span> <span class="nav-text">选择语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环语句"><span class="nav-number">8.</span> <span class="nav-text">循环语句</span></a></li></ol></div>
             
 
           </div>
@@ -728,7 +728,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

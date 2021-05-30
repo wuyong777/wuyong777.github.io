@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1.数据结构数据存储的常用结构有：栈、队列、数组、链表和红黑树。 1.1 栈(stack) 先进后出1.2 队列(queue) 先进先出1.3 数组(Array) 查询快，增删慢1.4 链表(linked list) 查询慢，增删快1.5 红黑树 速度特别快,趋近平衡树,查找叶子元素少和多次数不多于二倍 2.List接口 有序 可重复 常用方法：2.1 ArrayList集合   2.2 Link">
+<meta name="description" content="数据结构数据存储的常用结构有：栈、队列、数组、链表和红黑树。 栈(stack) 先进后出队列(queue) 先进先出数组(Array) 查询快，增删慢链表(linked list) 查询慢，增删快红黑树 速度特别快,趋近平衡树,查找叶子元素少和多次数不多于二倍 List接口 有序 可重复 常用方法：ArrayList集合   LinkedList集合 Set接口 无序 不可重复HashSet集合">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构，List，Set，Collections">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;07&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8CList%EF%BC%8CSet%EF%BC%8CCollections&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.数据结构数据存储的常用结构有：栈、队列、数组、链表和红黑树。 1.1 栈(stack) 先进后出1.2 队列(queue) 先进先出1.3 数组(Array) 查询快，增删慢1.4 链表(linked list) 查询慢，增删快1.5 红黑树 速度特别快,趋近平衡树,查找叶子元素少和多次数不多于二倍 2.List接口 有序 可重复 常用方法：2.1 ArrayList集合   2.2 Link">
+<meta property="og:description" content="数据结构数据存储的常用结构有：栈、队列、数组、链表和红黑树。 栈(stack) 先进后出队列(queue) 先进先出数组(Array) 查询快，增删慢链表(linked list) 查询慢，增删快红黑树 速度特别快,趋近平衡树,查找叶子元素少和多次数不多于二倍 List接口 有序 可重复 常用方法：ArrayList集合   LinkedList集合 Set接口 无序 不可重复HashSet集合">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cfrrerehu.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;arraylist.PNG">
@@ -103,7 +103,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cator.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;kbcs.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;dmyserejywki.PNG">
-<meta property="og:updated_time" content="2021-03-17T18:41:32.078Z">
+<meta property="og:updated_time" content="2021-05-30T08:16:03.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;cfrrerehu.PNG">
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  427
+                  398
                 </span>
               
 
@@ -428,31 +428,33 @@
       
 
       
-        <h1 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h1><p>数据存储的常用结构有：栈、队列、数组、链表和红黑树。</p>
-<h2 id="1-1-栈-stack"><a href="#1-1-栈-stack" class="headerlink" title="1.1 栈(stack)"></a>1.1 栈(stack)</h2><ul>
-<li>先进后出<h2 id="1-2-队列-queue"><a href="#1-2-队列-queue" class="headerlink" title="1.2 队列(queue)"></a>1.2 队列(queue)</h2></li>
-<li>先进先出<h2 id="1-3-数组-Array"><a href="#1-3-数组-Array" class="headerlink" title="1.3 数组(Array)"></a>1.3 数组(Array)</h2></li>
-<li>查询快，增删慢<h2 id="1-4-链表-linked-list"><a href="#1-4-链表-linked-list" class="headerlink" title="1.4 链表(linked list)"></a>1.4 链表(linked list)</h2></li>
-<li>查询慢，增删快<h2 id="1-5-红黑树"><a href="#1-5-红黑树" class="headerlink" title="1.5 红黑树"></a>1.5 红黑树</h2></li>
-<li>速度特别快,趋近平衡树,查找叶子元素少和多次数不多于二倍 <h1 id="2-List接口"><a href="#2-List接口" class="headerlink" title="2.List接口"></a>2.List接口</h1></li>
+        <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据存储的常用结构有：栈、队列、数组、链表和红黑树。</p>
+<h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈(stack)"></a>栈(stack)</h2><ul>
+<li>先进后出<h2 id="队列-queue"><a href="#队列-queue" class="headerlink" title="队列(queue)"></a>队列(queue)</h2></li>
+<li>先进先出<h2 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h2></li>
+<li>查询快，增删慢<h2 id="链表-linked-list"><a href="#链表-linked-list" class="headerlink" title="链表(linked list)"></a>链表(linked list)</h2></li>
+<li>查询慢，增删快<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2></li>
+<li>速度特别快,趋近平衡树,查找叶子元素少和多次数不多于二倍 <h1 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h1></li>
 <li>有序</li>
 <li>可重复</li>
-<li>常用方法：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cfrrerehu.PNG" alt=""><h2 id="2-1-ArrayList集合"><a href="#2-1-ArrayList集合" class="headerlink" title="2.1 ArrayList集合"></a>2.1 ArrayList集合</h2></li>
+<li>常用方法：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cfrrerehu.PNG" alt=""><h2 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h2></li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/arraylist.PNG" alt=""></p>
-<h2 id="2-2-LinkedList集合"><a href="#2-2-LinkedList集合" class="headerlink" title="2.2 LinkedList集合"></a>2.2 LinkedList集合</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/linkedlist.PNG" alt=""></p>
-<h1 id="3-Set接口"><a href="#3-Set接口" class="headerlink" title="3.Set接口"></a>3.Set接口</h1><ul>
+<h2 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a>LinkedList集合</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/linkedlist.PNG" alt=""></p>
+<h1 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h1><ul>
 <li>无序</li>
-<li>不可重复<h2 id="3-1-HashSet集合"><a href="#3-1-HashSet集合" class="headerlink" title="3.1 HashSet集合"></a>3.1 HashSet集合</h2></li>
+<li>不可重复<h2 id="HashSet集合"><a href="#HashSet集合" class="headerlink" title="HashSet集合"></a>HashSet集合</h2></li>
 <li>哈希表：数组+链表+红黑树（JDK1.8增加了红黑树部分）<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hxbiao.PNG" alt=""></li>
-<li>重写hashCode和equals方法<h2 id="3-2-LinkedHashSet集合"><a href="#3-2-LinkedHashSet集合" class="headerlink" title="3.2 LinkedHashSet集合"></a>3.2 LinkedHashSet集合</h2></li>
+<li>重写hashCode和equals方法<h2 id="LinkedHashSet集合"><a href="#LinkedHashSet集合" class="headerlink" title="LinkedHashSet集合"></a>LinkedHashSet集合</h2></li>
 <li>有序</li>
-<li>链表+哈希表<h1 id="4-Collections"><a href="#4-Collections" class="headerlink" title="4.Collections"></a>4.Collections</h1><h2 id="4-1-常用功能"><a href="#4-1-常用功能" class="headerlink" title="4.1 常用功能"></a>4.1 常用功能</h2></li>
+<li>链表+哈希表<h1 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h1><h2 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h2></li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/4.1.PNG" alt=""></p>
-<h2 id="4-2-简述Comparable和Comparator两个接口的区别"><a href="#4-2-简述Comparable和Comparator两个接口的区别" class="headerlink" title="4.2 简述Comparable和Comparator两个接口的区别"></a>4.2 简述Comparable和Comparator两个接口的区别</h2><ul>
-<li><strong>Comparable</strong>：强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的compareTo方法被称为它的自然比较方法。只能在类中实现compareTo()一次，不能经常修改类的代码实现自己想要的排序。实现此接口的对象列表（和数组）可以通过Collections.sort（和Arrays.sort）进行自动排序，对象可以用作有序映射中 的键或有序集合中的元素，无需指定比较器。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cable.PNG" alt=""></li>
-<li><strong>Comparator</strong>：强行对某个对象进行整体排序。可以将Comparator传递给sort方法（如Collections.sort或 Arrays.sort），从而允许在排序顺序上实现精确控制。还可以使用Comparator来控制某些数据结构（如有序set或有序映射）的顺序，或者为那些没有自然顺序的对象collection提供排序。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cator.PNG" alt=""><h1 id="5-可变参数"><a href="#5-可变参数" class="headerlink" title="5.可变参数"></a>5.可变参数</h1></li>
+<h2 id="Comparable和Comparator两个接口的区别"><a href="#Comparable和Comparator两个接口的区别" class="headerlink" title="Comparable和Comparator两个接口的区别"></a>Comparable和Comparator两个接口的区别</h2><h3 id="Comparable："><a href="#Comparable：" class="headerlink" title="Comparable："></a><strong>Comparable</strong>：</h3><ul>
+<li>强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的compareTo方法被称为它的自然比较方法。只能在类中实现compareTo()一次，不能经常修改类的代码实现自己想要的排序。实现此接口的对象列表（和数组）可以通过Collections.sort（和Arrays.sort）进行自动排序，对象可以用作有序映射中 的键或有序集合中的元素，无需指定比较器。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cable.PNG" alt=""></li>
+</ul>
+<h3 id="Comparator："><a href="#Comparator：" class="headerlink" title="Comparator："></a><strong>Comparator</strong>：</h3><ul>
+<li>强行对某个对象进行整体排序。可以将Comparator传递给sort方法（如Collections.sort或 Arrays.sort），从而允许在排序顺序上实现精确控制。还可以使用Comparator来控制某些数据结构（如有序set或有序映射）的顺序，或者为那些没有自然顺序的对象collection提供排序。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cator.PNG" alt=""><h1 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h1></li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/kbcs.PNG" alt=""></p>
 <p>代码演示：</p>
@@ -650,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数据结构"><span class="nav-number">1.</span> <span class="nav-text">1.数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-栈-stack"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 栈(stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-队列-queue"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 队列(queue)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-数组-Array"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 数组(Array)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-链表-linked-list"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 链表(linked list)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-红黑树"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 红黑树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-List接口"><span class="nav-number">2.</span> <span class="nav-text">2.List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-ArrayList集合"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 ArrayList集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-LinkedList集合"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 LinkedList集合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Set接口"><span class="nav-number">3.</span> <span class="nav-text">3.Set接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-HashSet集合"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 HashSet集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-LinkedHashSet集合"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 LinkedHashSet集合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Collections"><span class="nav-number">4.</span> <span class="nav-text">4.Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-常用功能"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 常用功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-简述Comparable和Comparator两个接口的区别"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 简述Comparable和Comparator两个接口的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-可变参数"><span class="nav-number">5.</span> <span class="nav-text">5.可变参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#栈-stack"><span class="nav-number">1.1.</span> <span class="nav-text">栈(stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列-queue"><span class="nav-number">1.2.</span> <span class="nav-text">队列(queue)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组-Array"><span class="nav-number">1.3.</span> <span class="nav-text">数组(Array)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表-linked-list"><span class="nav-number">1.4.</span> <span class="nav-text">链表(linked list)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#红黑树"><span class="nav-number">1.5.</span> <span class="nav-text">红黑树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List接口"><span class="nav-number">2.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList集合"><span class="nav-number">2.1.</span> <span class="nav-text">ArrayList集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList集合"><span class="nav-number">2.2.</span> <span class="nav-text">LinkedList集合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Set接口"><span class="nav-number">3.</span> <span class="nav-text">Set接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet集合"><span class="nav-number">3.1.</span> <span class="nav-text">HashSet集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedHashSet集合"><span class="nav-number">3.2.</span> <span class="nav-text">LinkedHashSet集合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collections"><span class="nav-number">4.</span> <span class="nav-text">Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用功能"><span class="nav-number">4.1.</span> <span class="nav-text">常用功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparable和Comparator两个接口的区别"><span class="nav-number">4.2.</span> <span class="nav-text">Comparable和Comparator两个接口的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparable："><span class="nav-number">4.2.1.</span> <span class="nav-text">Comparable：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparator："><span class="nav-number">4.2.2.</span> <span class="nav-text">Comparator：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可变参数"><span class="nav-number">5.</span> <span class="nav-text">可变参数</span></a></li></ol></div>
             
 
           </div>
@@ -688,7 +690,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

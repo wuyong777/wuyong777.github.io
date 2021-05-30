@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="1.接口 1.1 接口的定义    1.2 接口的小结   2.多态 2.1 多态的前提    2.2 向上转型和向下转型  2.2.1 向上转型   成员变量：编译看左，运行看左  成员方法：编译看左，运行看右  2.2.2 向下转型     2.3 转型的异常     2.4 instanceof 关键字">
+<meta name="description" content="接口定义 接口的小结 多态多态的前提 向上转型和向下转型向上转型  成员变量：编译看左，运行看左 成员方法：编译看左，运行看右  向下转型 转型的异常 instanceof 关键字">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="接口，多态">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;04&#x2F;%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="1.接口 1.1 接口的定义    1.2 接口的小结   2.多态 2.1 多态的前提    2.2 向上转型和向下转型  2.2.1 向上转型   成员变量：编译看左，运行看左  成员方法：编译看左，运行看右  2.2.2 向下转型     2.3 转型的异常     2.4 instanceof 关键字">
+<meta property="og:description" content="接口定义 接口的小结 多态多态的前提 向上转型和向下转型向上转型  成员变量：编译看左，运行看左 成员方法：编译看左，运行看右  向下转型 转型的异常 instanceof 关键字">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;dingyi2.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;xiaojie.PNG">
@@ -101,7 +101,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;xiangxia.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;yc.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;bmyc.PNG">
-<meta property="og:updated_time" content="2021-03-17T17:25:19.787Z">
+<meta property="og:updated_time" content="2021-05-30T08:08:52.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;dingyi2.PNG">
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  89
+                  66
                 </span>
               
 
@@ -426,41 +426,17 @@
       
 
       
-        <h1 id="1-接口"><a href="#1-接口" class="headerlink" title="1.接口"></a>1.接口</h1><ul>
-<li>1.1 接口的定义</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
+        <h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
+<h2 id="接口的小结"><a href="#接口的小结" class="headerlink" title="接口的小结"></a>接口的小结</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiaojie.PNG" alt=""></p>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="多态的前提"><a href="#多态的前提" class="headerlink" title="多态的前提"></a>多态的前提</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qianti.PNG" alt=""></p>
+<h2 id="向上转型和向下转型"><a href="#向上转型和向下转型" class="headerlink" title="向上转型和向下转型"></a>向上转型和向下转型</h2><h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangs.PNG" alt=""></p>
 <ul>
-<li>1.2 接口的小结</li>
+<li>成员变量：编译看左，运行看左</li>
+<li>成员方法：编译看左，运行看右</li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiaojie.PNG" alt=""></p>
-<h1 id="2-多态"><a href="#2-多态" class="headerlink" title="2.多态"></a>2.多态</h1><ul>
-<li>2.1 多态的前提</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qianti.PNG" alt=""></p>
-<ul>
-<li><p>2.2 向上转型和向下转型</p>
-<ul>
-<li><p>2.2.1 向上转型</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangs.PNG" alt=""></p>
-</li>
-<li><p>成员变量：编译看左，运行看左</p>
-</li>
-<li><p>成员方法：编译看左，运行看右</p>
-</li>
-<li><p>2.2.2 向下转型</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>2.3 转型的异常</p>
-</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" alt=""></p>
-<ul>
-<li>2.4 instanceof 关键字</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" alt=""></p>
+<h3 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" alt=""></p>
+<h2 id="转型的异常"><a href="#转型的异常" class="headerlink" title="转型的异常"></a>转型的异常</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" alt=""></p>
+<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" alt=""></p>
 
       
     </div>
@@ -654,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-接口"><span class="nav-number">1.</span> <span class="nav-text">1.接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-多态"><span class="nav-number">2.</span> <span class="nav-text">2.多态</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">1.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口的小结"><span class="nav-number">1.2.</span> <span class="nav-text">接口的小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">2.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的前提"><span class="nav-number">2.1.</span> <span class="nav-text">多态的前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向上转型和向下转型"><span class="nav-number">2.2.</span> <span class="nav-text">向上转型和向下转型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#向上转型"><span class="nav-number">2.2.1.</span> <span class="nav-text">向上转型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向下转型"><span class="nav-number">2.2.2.</span> <span class="nav-text">向下转型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转型的异常"><span class="nav-number">2.3.</span> <span class="nav-text">转型的异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof-关键字"><span class="nav-number">2.4.</span> <span class="nav-text">instanceof 关键字</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -692,7 +668,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

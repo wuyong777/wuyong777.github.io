@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="今日内容：1. Request对象 2. Response对象 3. ServletContext对象Request：request对象和response对象的原理 request和response对象是由服务器创建的。我们来使用它们  request对象是来获取请求消息，response对象是来设置响应消息   request对象继承体系结构：ServletRequest        -- 接">
+<meta name="description" content="Request 对象request对象和response对象的原理 request和response对象是由服务器创建的。我们来使用它们  request对象是来获取请求消息，response对象是来设置响应消息 request对象继承体系结构： ServletRequest        – 接口 |    继承 HttpServletRequest    – 接口 |    实现 org.ap">
 <meta name="keywords" content="JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Request和Responce">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;Request%E5%92%8CResponce&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="今日内容：1. Request对象 2. Response对象 3. ServletContext对象Request：request对象和response对象的原理 request和response对象是由服务器创建的。我们来使用它们  request对象是来获取请求消息，response对象是来设置响应消息   request对象继承体系结构：ServletRequest        -- 接">
+<meta property="og:description" content="Request 对象request对象和response对象的原理 request和response对象是由服务器创建的。我们来使用它们  request对象是来获取请求消息，response对象是来设置响应消息 request对象继承体系结构： ServletRequest        – 接口 |    继承 HttpServletRequest    – 接口 |    实现 org.ap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-23T09:32:50.452Z">
+<meta property="og:updated_time" content="2021-05-30T09:04:42.875Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -418,20 +418,15 @@
       
 
       
-        <h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. Request对象
-2. Response对象
-3. ServletContext对象</code></pre><h2 id="Request："><a href="#Request：" class="headerlink" title="Request："></a>Request：</h2><h3 id="request对象和response对象的原理"><a href="#request对象和response对象的原理" class="headerlink" title="request对象和response对象的原理"></a>request对象和response对象的原理</h3><ol>
+        <h1 id="Request-对象"><a href="#Request-对象" class="headerlink" title="Request 对象"></a>Request 对象</h1><h3 id="request对象和response对象的原理"><a href="#request对象和response对象的原理" class="headerlink" title="request对象和response对象的原理"></a>request对象和response对象的原理</h3><ol>
 <li><p>request和response对象是由服务器创建的。我们来使用它们</p>
 </li>
 <li><p>request对象是来获取请求消息，response对象是来设置响应消息</p>
-</li>
-</ol>
-<h3 id="request对象继承体系结构："><a href="#request对象继承体系结构：" class="headerlink" title="request对象继承体系结构："></a>request对象继承体系结构：</h3><pre><code>ServletRequest        -- 接口
-    |    继承
-HttpServletRequest    -- 接口
-    |    实现
-org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="request功能："><a href="#request功能：" class="headerlink" title="request功能："></a>request功能：</h3><ol>
-<li><p>获取请求消息数据</p>
+<h3 id="request对象继承体系结构："><a href="#request对象继承体系结构：" class="headerlink" title="request对象继承体系结构："></a>request对象继承体系结构：</h3><p> ServletRequest        – 接口</p>
+<pre><code>|    继承</code></pre><p> HttpServletRequest    – 接口</p>
+<pre><code>|    实现</code></pre><p> org.apache.catalina.connector.RequestFacade 类(tomcat)</p>
+<h3 id="request功能："><a href="#request功能：" class="headerlink" title="request功能："></a>request功能：</h3></li>
+<li><p><strong>获取请求消息数据</strong></p>
 <ol>
 <li><p>获取请求行数据</p>
 <ul>
@@ -482,13 +477,13 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 </li>
 </ol>
 </li>
-<li><p>获取请求头数据</p>
+<li><p><strong>获取请求头数据</strong></p>
 <ul>
 <li><strong><code>String getHeader(String name)</code></strong>:通过请求头的名称获取请求头的值</li>
 <li><code>Enumeration&lt;String&gt; getHeaderNames()</code>:获取所有的请求头名称</li>
 </ul>
 </li>
-<li><p>获取请求体数据:</p>
+<li><p><strong>获取请求体数据:</strong></p>
 <ul>
 <li>请求体：<code>只有POST请求方式，才有请求体</code>，在请求体中封装了POST请求的请求参数</li>
 <li>步骤：</li>
@@ -504,7 +499,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 </li>
 </ol>
 <ol start="4">
-<li><p>其他功能：</p>
+<li><p><strong>其他功能：</strong></p>
 <ol>
 <li><p>获取请求参数通用方式：不论get还是post请求方式都可以使用下列方法来获取请求参数</p>
 <ol>
@@ -514,36 +509,57 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 <li><code>Map&lt;String,String[]&gt; getParameterMap()</code>:获取所有参数的map集合</li>
 </ol>
 <ul>
-<li><code>中文乱码问题：</code></li>
+<li><code>中文乱码问题：</code><ul>
 <li>get方式：tomcat 8 已经将get方式乱码问题解决了</li>
 <li>post方式：会乱码</li>
 <li>解决：在获取参数前，设置request的编码<code>request.setCharacterEncoding(&quot;utf-8&quot;);</code></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><p><strong>请求转发</strong>：一种在服务器内部的资源跳转方式</p>
+</li>
+</ol>
+<ul>
+<li><p>步骤：</p>
+<ol>
+<li>通过request对象获取请求转发器对象：<code>RequestDispatcher getRequestDispatcher(String path)</code></li>
+<li>使用RequestDispatcher对象来进行转发：<code>forward(ServletRequest request, ServletResponse response)</code> </li>
+</ol>
+</li>
+<li><p>特点：</p>
+<ol>
+<li><p>浏览器地址栏路径不发生变化</p>
+</li>
+<li><p>只能转发到当前服务器内部资源中。</p>
+</li>
+<li><p>转发是一次请求</p>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li><p>共享数据：</p>
+<ul>
+<li>域对象：一个有作用范围的对象，可以在范围内共享数据</li>
+<li>request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据</li>
+<li>方法：</li>
+</ul>
+<ol>
+<li><p><code>void setAttribute(String name,Object obj)</code>:存储数据</p>
+</li>
+<li><p><code>Object getAttitude(String name)</code>:通过键获取值</p>
+</li>
+<li><p><code>void removeAttribute(String name)</code>:通过键移除键值对</p>
+</li>
+<li><p>获取ServletContext：`ServletContext getServletContext()</p>
+</li>
 </ol>
 </li>
 </ol>
-<pre><code>2. **请求转发**：一种在服务器内部的资源跳转方式
-* 步骤：
-    1. 通过request对象获取请求转发器对象：`RequestDispatcher getRequestDispatcher(String path)`
-    2. 使用RequestDispatcher对象来进行转发：`forward(ServletRequest request, ServletResponse response)` 
-
-* 特点：
-    1. 浏览器地址栏路径不发生变化
-
-    2. 只能转发到当前服务器内部资源中。
-    3. 转发是一次请求
-
-
-3. 共享数据：
-    * 域对象：一个有作用范围的对象，可以在范围内共享数据
-    * request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据
-    * 方法：
-    1. `void setAttribute(String name,Object obj)`:存储数据
-    2. `Object getAttitude(String name)`:通过键获取值
-    3. `void removeAttribute(String name)`:通过键移除键值对
-
-    4. 获取ServletContext：`ServletContext getServletContext()`</code></pre><h2 id="BeanUtils工具类，简化数据封装"><a href="#BeanUtils工具类，简化数据封装" class="headerlink" title="BeanUtils工具类，简化数据封装"></a>BeanUtils工具类，简化数据封装</h2><ul>
+</li>
+</ol>
+<h1 id="BeanUtils工具类，简化数据封装"><a href="#BeanUtils工具类，简化数据封装" class="headerlink" title="BeanUtils工具类，简化数据封装"></a>BeanUtils工具类，简化数据封装</h1><ul>
 <li>用于封装JavaBean的</li>
 </ul>
 <ol>
@@ -573,7 +589,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 </ol>
 </li>
 </ol>
-<h2 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h2><h3 id="功能：设置响应消息"><a href="#功能：设置响应消息" class="headerlink" title="功能：设置响应消息"></a>功能：设置响应消息</h3><ol>
+<h1 id="Response-对象"><a href="#Response-对象" class="headerlink" title="Response 对象"></a>Response 对象</h1><h3 id="功能：设置响应消息"><a href="#功能：设置响应消息" class="headerlink" title="功能：设置响应消息"></a>功能：设置响应消息</h3><ol>
 <li><p>设置响应行</p>
 <ol>
 <li>格式：HTTP/1.1 200 ok</li>
@@ -675,7 +691,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 </ol>
 </li>
 </ol>
-<h2 id="ServletContext对象："><a href="#ServletContext对象：" class="headerlink" title="ServletContext对象："></a>ServletContext对象：</h2><ol>
+<h1 id="ServletContext-对象"><a href="#ServletContext-对象" class="headerlink" title="ServletContext 对象"></a>ServletContext 对象</h1><ol>
 <li>概念：代表整个web应用，可以和程序的容器(服务器)来通信</li>
 <li>获取：<ol>
 <li>通过request对象获取<code>request.getServletContext();</code></li>
@@ -702,7 +718,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
 <li>ServletContext对象范围：所有用户所有请求的数据</li>
 </ul>
 </li>
-<li>获取文件的真实(服务器)路径<br><code>String getRealPath(String path)</code> </li>
+<li>获取文件的真实(服务器)路径<br> <code>String getRealPath(String path)</code> </li>
 </ol>
 </li>
 </ol>
@@ -899,7 +915,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容："><span class="nav-number">1.</span> <span class="nav-text">今日内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Request："><span class="nav-number">1.1.</span> <span class="nav-text">Request：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#request对象和response对象的原理"><span class="nav-number">1.1.1.</span> <span class="nav-text">request对象和response对象的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request对象继承体系结构："><span class="nav-number">1.1.2.</span> <span class="nav-text">request对象继承体系结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request功能："><span class="nav-number">1.1.3.</span> <span class="nav-text">request功能：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanUtils工具类，简化数据封装"><span class="nav-number">1.2.</span> <span class="nav-text">BeanUtils工具类，简化数据封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Response对象"><span class="nav-number">1.3.</span> <span class="nav-text">Response对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能：设置响应消息"><span class="nav-number">1.3.1.</span> <span class="nav-text">功能：设置响应消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例："><span class="nav-number">1.3.2.</span> <span class="nav-text">案例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext对象："><span class="nav-number">1.4.</span> <span class="nav-text">ServletContext对象：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Request-对象"><span class="nav-number">1.</span> <span class="nav-text">Request 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#request对象和response对象的原理"><span class="nav-number">1.0.1.</span> <span class="nav-text">request对象和response对象的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request对象继承体系结构："><span class="nav-number">1.0.2.</span> <span class="nav-text">request对象继承体系结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request功能："><span class="nav-number">1.0.3.</span> <span class="nav-text">request功能：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BeanUtils工具类，简化数据封装"><span class="nav-number">2.</span> <span class="nav-text">BeanUtils工具类，简化数据封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Response-对象"><span class="nav-number">3.</span> <span class="nav-text">Response 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能：设置响应消息"><span class="nav-number">3.0.1.</span> <span class="nav-text">功能：设置响应消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例："><span class="nav-number">3.0.2.</span> <span class="nav-text">案例：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ServletContext-对象"><span class="nav-number">4.</span> <span class="nav-text">ServletContext 对象</span></a></li></ol></div>
             
 
           </div>
@@ -937,7 +953,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)</code></pre><h3 id="requ
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 

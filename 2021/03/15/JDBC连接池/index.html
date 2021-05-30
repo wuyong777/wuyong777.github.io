@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="今日内容1. 数据库连接池  2. Spring JDBC : JDBC Template数据库连接池 概念：其实就是一个容器(集合)，存放数据库连接的容器。 实现： 标准接口：DataSource   javax.sql包下的 获取连接：getConnection() 归还连接：Connection.close()      C3P0：数据库连接池技术 步骤：   导入jar包 (两个) c3p">
+<meta name="description" content="数据库连接池 概念：其实就是一个容器(集合)，存放数据库连接的容器。 实现： 标准接口：DataSource   javax.sql包下的 获取连接：getConnection() 归还连接：Connection.close()      C3P0：数据库连接池技术 步骤：   导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar">
 <meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC连接池">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;15&#x2F;JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0&#x2F;index.html">
 <meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="今日内容1. 数据库连接池  2. Spring JDBC : JDBC Template数据库连接池 概念：其实就是一个容器(集合)，存放数据库连接的容器。 实现： 标准接口：DataSource   javax.sql包下的 获取连接：getConnection() 归还连接：Connection.close()      C3P0：数据库连接池技术 步骤：   导入jar包 (两个) c3p">
+<meta property="og:description" content="数据库连接池 概念：其实就是一个容器(集合)，存放数据库连接的容器。 实现： 标准接口：DataSource   javax.sql包下的 获取连接：getConnection() 归还连接：Connection.close()      C3P0：数据库连接池技术 步骤：   导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-15T13:01:15.510Z">
+<meta property="og:updated_time" content="2021-05-30T08:51:53.185Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  562
+                  547
                 </span>
               
 
@@ -418,9 +418,7 @@
       
 
       
-        <h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 数据库连接池
-
-2. Spring JDBC : JDBC Template</code></pre><h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><ol>
+        <h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ol>
 <li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
 <li>实现：<ul>
 <li>标准接口：DataSource   javax.sql包下的<ul>
@@ -431,7 +429,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h3><ul>
+<h1 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h1><ul>
 <li><p>步骤：</p>
 <blockquote>
 <ol>
@@ -450,7 +448,7 @@
 </li>
 <li><p>代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建数据库连接池对象</span></span><br><span class="line"> DataSource ds  = <span class="keyword">new</span> ComboPooledDataSource();</span><br><span class="line"><span class="comment">//2. 获取连接对象</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
-<h3 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h3></li>
+<h1 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h1></li>
 <li><p>步骤：</p>
 <blockquote>
 <ol>
@@ -467,17 +465,11 @@
 </blockquote>
 </li>
 <li><p>代码：</p>
-<pre><code class="java"><span class="comment">//加载配置文件</span>
-Properties pro = <span class="keyword">new</span> Properties();
-InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);
-pro.load(is);
-<span class="comment">//获取连接池对象</span>
-DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-<span class="comment">//获取连接</span>
-Connection conn = ds.getConnection();</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加载配置文件</span></span><br><span class="line">Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);</span><br><span class="line">pro.load(is);</span><br><span class="line"><span class="comment">//获取连接池对象</span></span><br><span class="line">DataSource ds = DruidDataSourceFactory.createDataSource(pro);</span><br><span class="line"><span class="comment">//获取连接</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><ul>
+<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><ul>
 <li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
 <li>步骤：<blockquote>
 <ol>
@@ -715,7 +707,7 @@ Connection conn = ds.getConnection();</code></pre>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.1.</span> <span class="nav-text">数据库连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C3P0：数据库连接池技术"><span class="nav-number">1.1.1.</span> <span class="nav-text">C3P0：数据库连接池技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Druid：数据库连接池实现技术，由阿里巴巴提供"><span class="nav-number">1.1.2.</span> <span class="nav-text">Druid：数据库连接池实现技术，由阿里巴巴提供</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.1.3.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C3P0：数据库连接池技术"><span class="nav-number">2.</span> <span class="nav-text">C3P0：数据库连接池技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Druid：数据库连接池实现技术，由阿里巴巴提供"><span class="nav-number">3.</span> <span class="nav-text">Druid：数据库连接池实现技术，由阿里巴巴提供</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">4.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></div>
             
 
           </div>
@@ -753,7 +745,7 @@ Connection conn = ds.getConnection();</code></pre>
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.9k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 
