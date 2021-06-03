@@ -194,6 +194,125 @@
       </tags>
   </entry>
   <entry>
+    <title>Cookie和Session</title>
+    <url>/2021/03/23/Cookie%E5%92%8CSession/</url>
+    <content><![CDATA[<h1 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h1><ol>
+<li>会话：一次会话中包含多次请求和响应。</li>
+</ol>
+<ul>
+<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</li>
+</ul>
+<ol start="2">
+<li><p>功能：在一次会话的范围内的多次请求间，共享数据</p>
+</li>
+<li><p><code>客户端会话技术：Cookie</code></p>
+</li>
+<li><p><code>服务器端会话技术：Session</code></p>
+</li>
+</ol>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>客户端会话技术，将数据保存到客户端</p>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li><p>创建Cookie对象，绑定数据 <code>new Cookie(String name, String value)</code></p>
+</li>
+<li><p>发送Cookie对象 <code>response.addCookie(Cookie cookie)</code></p>
+</li>
+<li><p>获取Cookie，拿到数据 <code>Cookie[]  request.getCookies()</code> </p>
+</li>
+</ol>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>基于响应头set-cookie和请求头cookie实现</p>
+<h3 id="cookie的细节"><a href="#cookie的细节" class="headerlink" title="cookie的细节"></a>cookie的细节</h3><ol>
+<li><p>一次可不可以发送多个cookie?</p>
+<ul>
+<li>可以</li>
+<li>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</li>
+</ul>
+</li>
+<li><p>cookie在浏览器中保存多长时间？</p>
+<ol>
+<li><p>默认情况下，当浏览器关闭后，Cookie数据被销毁</p>
+</li>
+<li><p>持久化存储：<code>setMaxAge(int seconds)</code></p>
+<ol>
+<li><p>正数：将Cookie数据写到硬盘的文件中。持久化存储。并指定cookie存活时间，时间到后，cookie文件自动失效</p>
+</li>
+<li><p>负数：默认值</p>
+</li>
+<li><p>零：删除cookie信息</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="Cookie的特点和作用"><a href="#Cookie的特点和作用" class="headerlink" title="Cookie的特点和作用"></a>Cookie的特点和作用</h3><ol>
+<li><p>cookie存储数据在客户端浏览器</p>
+</li>
+<li><p>浏览器对于单个cookie 的大小有限制(4kb) 以及 对同一个域名下的总cookie数量也有限制(20个)</p>
+</li>
+</ol>
+<ul>
+<li>作用：<ol>
+<li>cookie一般用于存出少量的不太敏感的数据</li>
+<li>在不登录的情况下，完成服务器对客户端的身份识别</li>
+</ol>
+</li>
+</ul>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中</p>
+<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li>获取HttpSession对象：<br><code>HttpSession session = request.getSession();</code></li>
+<li>使用HttpSession对象：<br><code>Object getAttribute(String name)</code><br><code>void setAttribute(String name, Object value)</code><br><code>void removeAttribute(String name)</code></li>
+</ol>
+<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>Session的实现是依赖于Cookie的</p>
+<h3 id="Session的细节"><a href="#Session的细节" class="headerlink" title="Session的细节"></a>Session的细节</h3><ol>
+<li><p>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</p>
+<ul>
+<li>默认情况下。不是。</li>
+<li>如果需要相同，则可以创建Cookie,键为JSESSIONID，设置最大存活时间，让cookie持久化保存。<br><code>Cookie c = new Cookie(&quot;JSESSIONID&quot;,session.getId());</code><br><code>c.setMaxAge(60*60);</code><br><code>response.addCookie(c);</code></li>
+</ul>
+</li>
+<li><p>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</p>
+<ul>
+<li><p>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作</p>
+<ul>
+<li><code>session的钝化</code>：在服务器正常关闭之前，将session对象系列化到硬盘上</li>
+<li><code>session的活化</code>：在服务器启动后，将session文件转化为内存中的session对象即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>session什么时候被销毁？</p>
+<ol>
+<li><p>服务器关闭</p>
+</li>
+<li><p>session对象调用invalidate() 。</p>
+</li>
+<li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;session-config&gt;</span><br><span class="line">	&lt;session-timeout&gt;30&lt;/session-timeout&gt;</span><br><span class="line">&lt;/session-config&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
+</ol>
+</li>
+<li><p>session用于存储一次会话的多次请求的数据，存在服务器端</p>
+</li>
+<li><p>session可以存储任意类型，任意大小的数据</p>
+</li>
+</ol>
+<h1 id="session与Cookie的区别"><a href="#session与Cookie的区别" class="headerlink" title="session与Cookie的区别"></a>session与Cookie的区别</h1><ol>
+<li><p>session存储数据在服务器端，Cookie在客户端</p>
+</li>
+<li><p>session没有数据大小限制，Cookie有</p>
+</li>
+<li><p>session数据安全，Cookie相对于不安全</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS基础</title>
     <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
@@ -318,125 +437,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Cookie和Session</title>
-    <url>/2021/03/23/Cookie%E5%92%8CSession/</url>
-    <content><![CDATA[<h1 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h1><ol>
-<li>会话：一次会话中包含多次请求和响应。</li>
-</ol>
-<ul>
-<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</li>
-</ul>
-<ol start="2">
-<li><p>功能：在一次会话的范围内的多次请求间，共享数据</p>
-</li>
-<li><p><code>客户端会话技术：Cookie</code></p>
-</li>
-<li><p><code>服务器端会话技术：Session</code></p>
-</li>
-</ol>
-<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>客户端会话技术，将数据保存到客户端</p>
-<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li><p>创建Cookie对象，绑定数据 <code>new Cookie(String name, String value)</code></p>
-</li>
-<li><p>发送Cookie对象 <code>response.addCookie(Cookie cookie)</code></p>
-</li>
-<li><p>获取Cookie，拿到数据 <code>Cookie[]  request.getCookies()</code> </p>
-</li>
-</ol>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>基于响应头set-cookie和请求头cookie实现</p>
-<h3 id="cookie的细节"><a href="#cookie的细节" class="headerlink" title="cookie的细节"></a>cookie的细节</h3><ol>
-<li><p>一次可不可以发送多个cookie?</p>
-<ul>
-<li>可以</li>
-<li>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</li>
-</ul>
-</li>
-<li><p>cookie在浏览器中保存多长时间？</p>
-<ol>
-<li><p>默认情况下，当浏览器关闭后，Cookie数据被销毁</p>
-</li>
-<li><p>持久化存储：<code>setMaxAge(int seconds)</code></p>
-<ol>
-<li><p>正数：将Cookie数据写到硬盘的文件中。持久化存储。并指定cookie存活时间，时间到后，cookie文件自动失效</p>
-</li>
-<li><p>负数：默认值</p>
-</li>
-<li><p>零：删除cookie信息</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="Cookie的特点和作用"><a href="#Cookie的特点和作用" class="headerlink" title="Cookie的特点和作用"></a>Cookie的特点和作用</h3><ol>
-<li><p>cookie存储数据在客户端浏览器</p>
-</li>
-<li><p>浏览器对于单个cookie 的大小有限制(4kb) 以及 对同一个域名下的总cookie数量也有限制(20个)</p>
-</li>
-</ol>
-<ul>
-<li>作用：<ol>
-<li>cookie一般用于存出少量的不太敏感的数据</li>
-<li>在不登录的情况下，完成服务器对客户端的身份识别</li>
-</ol>
-</li>
-</ul>
-<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中</p>
-<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li>获取HttpSession对象：<br><code>HttpSession session = request.getSession();</code></li>
-<li>使用HttpSession对象：<br><code>Object getAttribute(String name)</code><br><code>void setAttribute(String name, Object value)</code><br><code>void removeAttribute(String name)</code></li>
-</ol>
-<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>Session的实现是依赖于Cookie的</p>
-<h3 id="Session的细节"><a href="#Session的细节" class="headerlink" title="Session的细节"></a>Session的细节</h3><ol>
-<li><p>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</p>
-<ul>
-<li>默认情况下。不是。</li>
-<li>如果需要相同，则可以创建Cookie,键为JSESSIONID，设置最大存活时间，让cookie持久化保存。<br><code>Cookie c = new Cookie(&quot;JSESSIONID&quot;,session.getId());</code><br><code>c.setMaxAge(60*60);</code><br><code>response.addCookie(c);</code></li>
-</ul>
-</li>
-<li><p>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</p>
-<ul>
-<li><p>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作</p>
-<ul>
-<li><code>session的钝化</code>：在服务器正常关闭之前，将session对象系列化到硬盘上</li>
-<li><code>session的活化</code>：在服务器启动后，将session文件转化为内存中的session对象即可。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>session什么时候被销毁？</p>
-<ol>
-<li><p>服务器关闭</p>
-</li>
-<li><p>session对象调用invalidate() 。</p>
-</li>
-<li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;session-config&gt;</span><br><span class="line">	&lt;session-timeout&gt;30&lt;/session-timeout&gt;</span><br><span class="line">&lt;/session-config&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
-</ol>
-</li>
-<li><p>session用于存储一次会话的多次请求的数据，存在服务器端</p>
-</li>
-<li><p>session可以存储任意类型，任意大小的数据</p>
-</li>
-</ol>
-<h1 id="session与Cookie的区别"><a href="#session与Cookie的区别" class="headerlink" title="session与Cookie的区别"></a>session与Cookie的区别</h1><ol>
-<li><p>session存储数据在服务器端，Cookie在客户端</p>
-</li>
-<li><p>session没有数据大小限制，Cookie有</p>
-</li>
-<li><p>session数据安全，Cookie相对于不安全</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Collection，泛型</title>
     <url>/2019/11/06/Collection%EF%BC%8C%E6%B3%9B%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h1><h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><ul>
@@ -525,39 +525,6 @@
 </ul>
 <p>比如：现已知Object类，String 类，Number类，Integer类，其中Number是Integer的父类</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Collection&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    Collection&lt;String&gt; list2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Collection&lt;Number&gt; list3 = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br><span class="line">    Collection&lt;Object&gt; list4 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">    </span><br><span class="line">    getElement(list1);</span><br><span class="line">    getElement(list2);<span class="comment">//报错</span></span><br><span class="line">    getElement(list3);</span><br><span class="line">    getElement(list4);<span class="comment">//报错</span></span><br><span class="line">  </span><br><span class="line">    getElement2(list1);<span class="comment">//报错</span></span><br><span class="line">    getElement2(list2);<span class="comment">//报错</span></span><br><span class="line">    getElement2(list3);</span><br><span class="line">    getElement2(list4);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 泛型的上限：此时的泛型?，必须是Number类型或者Number类型的子类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getElement1</span><span class="params">(Collection&lt;? extends Number&gt; coll)</span></span>&#123;&#125;</span><br><span class="line"><span class="comment">// 泛型的下限：此时的泛型?，必须是Number类型或者Number类型的父类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getElement2</span><span class="params">(Collection&lt;? <span class="keyword">super</span> Number&gt; coll)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>File类，递归</title>
-    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
-<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
-<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
-<p>小贴士：   </p>
-<ol>
-<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
-<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
-</ol>
-</blockquote>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
-</ul>
-<ol>
-<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
-<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
-<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
-<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
-</ol>
-<ul>
-<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
-<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
-</ul>
-<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
-]]></content>
       <categories>
         <category>JavaSE</category>
       </categories>
@@ -783,123 +750,66 @@
       </tags>
   </entry>
   <entry>
-    <title>HTML基础</title>
-    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
-<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
-</li>
-<li><p>实例 </p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
-<li><p>HTML标题</p>
-<blockquote>
-<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
-</blockquote>
-</li>
-<li><p>HTML水平线</p>
-<blockquote>
-<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
-</blockquote>
-</li>
-<li><p>HTML注释  </p>
-<blockquote>
-<p><code>&lt;!-- This is a comment --&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML段落</p>
-<blockquote>
-<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
-</blockquote>
-</li>
-<li><p>HTML折行</p>
-<blockquote>
-<p>使用 <code>&lt;br/&gt;</code>标签</p>
-</blockquote>
-</li>
-<li><p>HTML链接</p>
-<blockquote>
-<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML图像</p>
-<blockquote>
-<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML表格</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Another Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>HTML无序列表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>HTML有序列表</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
-<li><p>HTML 头部</p>
-<blockquote>
-<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML 块</p>
-<blockquote>
-<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
-</blockquote>
-</li>
-<li><p>HTML 路径 </p>
-<blockquote>
-<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
-</blockquote>
-</li>
-<li><p>HTML URL </p>
-<blockquote>
-<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
-</blockquote>
-</li>
-<li><p>HTML CSS</p>
-<blockquote>
-<p>常用：外部样式表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"mystyle.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>HTML 脚本</p>
-<blockquote>
-<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
-</blockquote>
-</li>
+    <title>File类，递归</title>
+    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
+<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
+<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
+<p>小贴士：   </p>
+<ol>
+<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
+<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
 </ol>
-<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
-<li><p>实例</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">form elements</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Action 属性 &amp; Method 属性</p>
-<blockquote>
-<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
 </blockquote>
-</li>
-<li><p><code>&lt;input&gt;</code> 元素</p>
-</li>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
+</ul>
+<ol>
+<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
+<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
+<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
+<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
 </ol>
 <ul>
-<li>type 属性<blockquote>
-<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
-</blockquote>
-</li>
-<li>H5 type 属性<blockquote>
-<p>date<br>email</p>
-</blockquote>
-</li>
+<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
+<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
 </ul>
+<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>JavaSE</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA</title>
+    <url>/2021/06/03/IDEA/</url>
+    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" alt=""></p>
+<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" alt=""></p>
+<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
+<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" alt=""></p>
+</li>
+<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
+<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" alt=""></p>
+</li>
+</ol>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" alt=""></p>
+<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" alt=""></p>
+<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" alt=""></p>
+<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
+<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
+</ol>
+<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
+<li><code>VCS--&gt;Enable version control integration</code>–&gt;git</li>
+</ol>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1>]]></content>
+      <categories>
+        <category>IDEA</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,6 +976,126 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML基础</title>
+    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
+<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
+</li>
+<li><p>实例 </p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
+<li><p>HTML标题</p>
+<blockquote>
+<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
+</blockquote>
+</li>
+<li><p>HTML水平线</p>
+<blockquote>
+<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
+</blockquote>
+</li>
+<li><p>HTML注释  </p>
+<blockquote>
+<p><code>&lt;!-- This is a comment --&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML段落</p>
+<blockquote>
+<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
+</blockquote>
+</li>
+<li><p>HTML折行</p>
+<blockquote>
+<p>使用 <code>&lt;br/&gt;</code>标签</p>
+</blockquote>
+</li>
+<li><p>HTML链接</p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML图像</p>
+<blockquote>
+<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML表格</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>Another Heading<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>HTML无序列表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>HTML有序列表</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
+<li><p>HTML 头部</p>
+<blockquote>
+<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML 块</p>
+<blockquote>
+<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
+</blockquote>
+</li>
+<li><p>HTML 路径 </p>
+<blockquote>
+<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
+</blockquote>
+</li>
+<li><p>HTML URL </p>
+<blockquote>
+<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
+</blockquote>
+</li>
+<li><p>HTML CSS</p>
+<blockquote>
+<p>常用：外部样式表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"mystyle.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>HTML 脚本</p>
+<blockquote>
+<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
+</blockquote>
+</li>
+</ol>
+<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
+<li><p>实例</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">form elements</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Action 属性 &amp; Method 属性</p>
+<blockquote>
+<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p><code>&lt;input&gt;</code> 元素</p>
+</li>
+</ol>
+<ul>
+<li>type 属性<blockquote>
+<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
+</blockquote>
+</li>
+<li>H5 type 属性<blockquote>
+<p>date<br>email</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JDBC连接池</title>
     <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
     <content><![CDATA[<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ol>
@@ -1170,6 +1200,245 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JSP和EL_JSTL</title>
+    <url>/2021/03/23/JSP%E5%92%8CEL-JSTL/</url>
+    <content><![CDATA[<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>Java Server Pages： java服务器端页面</li>
+<li>可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3>JSP本质上就是一个Servlet</li>
+</ul>
+<h3 id="JSP的脚本"><a href="#JSP的脚本" class="headerlink" title="JSP的脚本"></a>JSP的脚本</h3><p>JSP定义Java代码的方式</p>
+<ol>
+<li><p><code>&lt;%   %&gt;：</code><br>定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。</p>
+</li>
+<li><p><code>&lt;%!  %&gt;：</code><br>定义的java代码，在jsp转换后的java类的成员位置。</p>
+</li>
+<li><p><code>&lt;%=  %&gt;：</code><br>定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。</p>
+<h3 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h3></li>
+<li><p>html注释：<code>&lt;!-- --&gt;:</code><br>只能注释html代码片段</p>
+</li>
+<li><p>jsp注释：<code>&lt;%-- --%&gt;：</code> 推荐使用<br>可以注释所有</p>
+</li>
+</ol>
+<h3 id="JSP三大指令"><a href="#JSP三大指令" class="headerlink" title="JSP三大指令"></a>JSP三大指令</h3><ol>
+<li>指令</li>
+</ol>
+<ul>
+<li><p>作用：用于配置JSP页面，导入资源文件</p>
+</li>
+<li><p>格式：<code>&lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %&gt;</code></p>
+</li>
+<li><p>分类：    </p>
+</li>
+</ul>
+<ol>
+<li><strong><code>page</code>：配置JSP页面的</strong></li>
+</ol>
+<ul>
+<li>contentType：等同于response.setContentType()<ol>
+<li>设置响应体的mime类型以及字符集</li>
+<li>设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</li>
+</ol>
+</li>
+<li>import：导包</li>
+<li>errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</li>
+<li>isErrorPage：标识当前也是是否是错误页面。<ul>
+<li>true：是，可以使用内置对象exception</li>
+<li>false：否。默认值。不可以使用内置对象exception </li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong><code>include</code>：页面包含的。导入页面的资源文件</strong></li>
+</ol>
+<ul>
+<li>&lt;%@include file=”top.jsp”%&gt;</li>
+</ul>
+<ol start="3">
+<li><strong><code>taglib</code>：导入资源</strong></li>
+</ol>
+<ul>
+<li>&lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</li>
+<li>prefix：前缀，自定义的<h3 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h3></li>
+<li><strong>在jsp页面中不需要获取和创建，可以直接使用的对象</strong></li>
+<li><strong>前四个为域对象</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>变量名</strong></th>
+<th><strong>真实类型</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>pageContext</strong></td>
+<td><strong>PageContext</strong></td>
+<td><strong>当前页面共享数据，还可以获取其他八个内置对象</strong></td>
+</tr>
+<tr>
+<td><strong>request</strong></td>
+<td><strong>HttpServletRequest</strong></td>
+<td><strong>一次请求访问的多个资源(转发)</strong></td>
+</tr>
+<tr>
+<td><strong>session</strong></td>
+<td><strong>HttpSession</strong></td>
+<td><strong>一次会话的多个请求间</strong></td>
+</tr>
+<tr>
+<td><strong>application</strong></td>
+<td>ServletContext</td>
+<td>所有用户间共享数据</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Object</td>
+<td>当前页面(Servlet)的对象</td>
+</tr>
+<tr>
+<td>response</td>
+<td>HttpServletResponse</td>
+<td>响应对象 this</td>
+</tr>
+<tr>
+<td>out</td>
+<td>JspWriter</td>
+<td>输出对象，数据输出到页面上</td>
+</tr>
+<tr>
+<td>config</td>
+<td>ServletConfig</td>
+<td>Servlet的配置对象</td>
+</tr>
+<tr>
+<td>exception</td>
+<td>Throwable</td>
+<td>异常对象</td>
+</tr>
+</tbody></table>
+<p>​    </p>
+<h1 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>Expression Language 表达式语言</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>替换和简化jsp页面中java代码的编写</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>${表达式}</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>jsp默认支持el表达式的。如果要忽略el表达式        </p>
+<ol>
+<li>设置jsp中page指令中：isELIgnored=”true” 忽略当前jsp页面中所有的el表达式</li>
+<li>${表达式} ：忽略当前这个el表达式</li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li>运算：</li>
+</ol>
+<ul>
+<li>运算符：<ol>
+<li>算数运算符： + - * /(div) %(mod)</li>
+<li>比较运算符： &gt; &lt; &gt;= &lt;= == !=</li>
+<li>逻辑运算符： &amp;&amp;(and) ||(or) !(not)</li>
+<li>空运算符： empty<ul>
+<li>功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0</li>
+<li>${empty list}:判断字符串、集合、数组对象是否为null或者长度为0</li>
+<li>${not empty str}:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>获取值</p>
+<ol>
+<li><p><strong>EL表达式只能从域对象中获取值</strong></p>
+</li>
+<li><p>语法：<code>${域名称.键名}</code>：从指定域中获取指定键的值</p>
+<ul>
+<li>域名称：</li>
+</ul>
+<ol>
+<li>pageScope        –&gt; pageContext</li>
+<li>requestScope     –&gt; request</li>
+<li>sessionScope     –&gt; session</li>
+<li>applicationScope –&gt; application</li>
+</ol>
+<ul>
+<li>举例：在request域中存储了name=张三</li>
+<li>获取：<code>${requestScope.name}</code></li>
+</ul>
+</li>
+<li><p>获取对象、List集合、Map集合的值</p>
+<ol>
+<li>对象：<code>${域名称.键名.属性名}</code></li>
+</ol>
+<ul>
+<li>本质上会去调用对象的getter方法</li>
+</ul>
+<ol start="2">
+<li><p>List集合：<code>${域名称.键名[索引]}</code></p>
+</li>
+<li><p>Map集合：</p>
+</li>
+</ol>
+<ul>
+<li><code>${域名称.键名.key名称}</code></li>
+<li><code>${域名称.键名[&quot;key名称&quot;]}</code></li>
+</ul>
+</li>
+<li><p>隐式对象：</p>
+<ul>
+<li><p>EL表达式中有11个隐式对象</p>
+</li>
+<li><p>pageContext：可以获取jsp其他八个内置对象<br>如：<code>${pageContext.request.contextPath}</code>：动态获取虚拟目录</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>​    </p>
+<h1 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h1><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>JavaServer Pages Tag Library  JSP标准标签库</p>
+<p>是由Apache组织提供的开源的免费的jsp标签    </p>
+<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>用于简化和替换jsp页面上的java代码        </p>
+<h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li><p>导入jstl相关jar包</p>
+</li>
+<li><p><code>引入标签库：taglib指令：  &lt;%@ taglib %&gt;</code></p>
+</li>
+<li><p>使用标签</p>
+<h3 id="常用的JSTL标签"><a href="#常用的JSTL标签" class="headerlink" title="常用的JSTL标签"></a>常用的JSTL标签</h3></li>
+<li><p><strong>if:相当于java代码的if语句</strong></p>
+<ol>
+<li>属性：</li>
+</ol>
+<ul>
+<li>test 必须属性，接受boolean表达式</li>
+<li>如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容<ul>
+<li>一般情况下，test属性值会结合el表达式一起使用</li>
+</ul>
+<ol start="2">
+<li>注意：</li>
+</ol>
+</li>
+<li>c:if标签没有else情况，想要else情况，则可以再定义一个c:if标签</li>
+</ul>
+</li>
+<li><p><strong>choose:相当于java代码的switch语句</strong></p>
+<ol>
+<li>使用choose标签声明—&gt;相当于switch声明<ol start="2">
+<li>使用when标签做判断—&gt;相当于case</li>
+<li>使用otherwise标签做其他情况的声明—&gt;相当于default</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>foreach:相当于java代码的for语句</strong></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -1559,245 +1828,6 @@
       </categories>
       <tags>
         <tag>JQuery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JSP和EL_JSTL</title>
-    <url>/2021/03/23/JSP%E5%92%8CEL-JSTL/</url>
-    <content><![CDATA[<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>Java Server Pages： java服务器端页面</li>
-<li>可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3>JSP本质上就是一个Servlet</li>
-</ul>
-<h3 id="JSP的脚本"><a href="#JSP的脚本" class="headerlink" title="JSP的脚本"></a>JSP的脚本</h3><p>JSP定义Java代码的方式</p>
-<ol>
-<li><p><code>&lt;%   %&gt;：</code><br>定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。</p>
-</li>
-<li><p><code>&lt;%!  %&gt;：</code><br>定义的java代码，在jsp转换后的java类的成员位置。</p>
-</li>
-<li><p><code>&lt;%=  %&gt;：</code><br>定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。</p>
-<h3 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h3></li>
-<li><p>html注释：<code>&lt;!-- --&gt;:</code><br>只能注释html代码片段</p>
-</li>
-<li><p>jsp注释：<code>&lt;%-- --%&gt;：</code> 推荐使用<br>可以注释所有</p>
-</li>
-</ol>
-<h3 id="JSP三大指令"><a href="#JSP三大指令" class="headerlink" title="JSP三大指令"></a>JSP三大指令</h3><ol>
-<li>指令</li>
-</ol>
-<ul>
-<li><p>作用：用于配置JSP页面，导入资源文件</p>
-</li>
-<li><p>格式：<code>&lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %&gt;</code></p>
-</li>
-<li><p>分类：    </p>
-</li>
-</ul>
-<ol>
-<li><strong><code>page</code>：配置JSP页面的</strong></li>
-</ol>
-<ul>
-<li>contentType：等同于response.setContentType()<ol>
-<li>设置响应体的mime类型以及字符集</li>
-<li>设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）</li>
-</ol>
-</li>
-<li>import：导包</li>
-<li>errorPage：当前页面发生异常后，会自动跳转到指定的错误页面</li>
-<li>isErrorPage：标识当前也是是否是错误页面。<ul>
-<li>true：是，可以使用内置对象exception</li>
-<li>false：否。默认值。不可以使用内置对象exception </li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><strong><code>include</code>：页面包含的。导入页面的资源文件</strong></li>
-</ol>
-<ul>
-<li>&lt;%@include file=”top.jsp”%&gt;</li>
-</ul>
-<ol start="3">
-<li><strong><code>taglib</code>：导入资源</strong></li>
-</ol>
-<ul>
-<li>&lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</li>
-<li>prefix：前缀，自定义的<h3 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h3></li>
-<li><strong>在jsp页面中不需要获取和创建，可以直接使用的对象</strong></li>
-<li><strong>前四个为域对象</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><strong>变量名</strong></th>
-<th><strong>真实类型</strong></th>
-<th><strong>作用</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>pageContext</strong></td>
-<td><strong>PageContext</strong></td>
-<td><strong>当前页面共享数据，还可以获取其他八个内置对象</strong></td>
-</tr>
-<tr>
-<td><strong>request</strong></td>
-<td><strong>HttpServletRequest</strong></td>
-<td><strong>一次请求访问的多个资源(转发)</strong></td>
-</tr>
-<tr>
-<td><strong>session</strong></td>
-<td><strong>HttpSession</strong></td>
-<td><strong>一次会话的多个请求间</strong></td>
-</tr>
-<tr>
-<td><strong>application</strong></td>
-<td>ServletContext</td>
-<td>所有用户间共享数据</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Object</td>
-<td>当前页面(Servlet)的对象</td>
-</tr>
-<tr>
-<td>response</td>
-<td>HttpServletResponse</td>
-<td>响应对象 this</td>
-</tr>
-<tr>
-<td>out</td>
-<td>JspWriter</td>
-<td>输出对象，数据输出到页面上</td>
-</tr>
-<tr>
-<td>config</td>
-<td>ServletConfig</td>
-<td>Servlet的配置对象</td>
-</tr>
-<tr>
-<td>exception</td>
-<td>Throwable</td>
-<td>异常对象</td>
-</tr>
-</tbody></table>
-<p>​    </p>
-<h1 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>Expression Language 表达式语言</p>
-<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>替换和简化jsp页面中java代码的编写</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>${表达式}</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>jsp默认支持el表达式的。如果要忽略el表达式        </p>
-<ol>
-<li>设置jsp中page指令中：isELIgnored=”true” 忽略当前jsp页面中所有的el表达式</li>
-<li>${表达式} ：忽略当前这个el表达式</li>
-</ol>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
-<li>运算：</li>
-</ol>
-<ul>
-<li>运算符：<ol>
-<li>算数运算符： + - * /(div) %(mod)</li>
-<li>比较运算符： &gt; &lt; &gt;= &lt;= == !=</li>
-<li>逻辑运算符： &amp;&amp;(and) ||(or) !(not)</li>
-<li>空运算符： empty<ul>
-<li>功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0</li>
-<li>${empty list}:判断字符串、集合、数组对象是否为null或者长度为0</li>
-<li>${not empty str}:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li><p>获取值</p>
-<ol>
-<li><p><strong>EL表达式只能从域对象中获取值</strong></p>
-</li>
-<li><p>语法：<code>${域名称.键名}</code>：从指定域中获取指定键的值</p>
-<ul>
-<li>域名称：</li>
-</ul>
-<ol>
-<li>pageScope        –&gt; pageContext</li>
-<li>requestScope     –&gt; request</li>
-<li>sessionScope     –&gt; session</li>
-<li>applicationScope –&gt; application</li>
-</ol>
-<ul>
-<li>举例：在request域中存储了name=张三</li>
-<li>获取：<code>${requestScope.name}</code></li>
-</ul>
-</li>
-<li><p>获取对象、List集合、Map集合的值</p>
-<ol>
-<li>对象：<code>${域名称.键名.属性名}</code></li>
-</ol>
-<ul>
-<li>本质上会去调用对象的getter方法</li>
-</ul>
-<ol start="2">
-<li><p>List集合：<code>${域名称.键名[索引]}</code></p>
-</li>
-<li><p>Map集合：</p>
-</li>
-</ol>
-<ul>
-<li><code>${域名称.键名.key名称}</code></li>
-<li><code>${域名称.键名[&quot;key名称&quot;]}</code></li>
-</ul>
-</li>
-<li><p>隐式对象：</p>
-<ul>
-<li><p>EL表达式中有11个隐式对象</p>
-</li>
-<li><p>pageContext：可以获取jsp其他八个内置对象<br>如：<code>${pageContext.request.contextPath}</code>：动态获取虚拟目录</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<p>​    </p>
-<h1 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h1><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>JavaServer Pages Tag Library  JSP标准标签库</p>
-<p>是由Apache组织提供的开源的免费的jsp标签    </p>
-<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>用于简化和替换jsp页面上的java代码        </p>
-<h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
-<li><p>导入jstl相关jar包</p>
-</li>
-<li><p><code>引入标签库：taglib指令：  &lt;%@ taglib %&gt;</code></p>
-</li>
-<li><p>使用标签</p>
-<h3 id="常用的JSTL标签"><a href="#常用的JSTL标签" class="headerlink" title="常用的JSTL标签"></a>常用的JSTL标签</h3></li>
-<li><p><strong>if:相当于java代码的if语句</strong></p>
-<ol>
-<li>属性：</li>
-</ol>
-<ul>
-<li>test 必须属性，接受boolean表达式</li>
-<li>如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容<ul>
-<li>一般情况下，test属性值会结合el表达式一起使用</li>
-</ul>
-<ol start="2">
-<li>注意：</li>
-</ol>
-</li>
-<li>c:if标签没有else情况，想要else情况，则可以再定义一个c:if标签</li>
-</ul>
-</li>
-<li><p><strong>choose:相当于java代码的switch语句</strong></p>
-<ol>
-<li>使用choose标签声明—&gt;相当于switch声明<ol start="2">
-<li>使用when标签做判断—&gt;相当于case</li>
-<li>使用otherwise标签做其他情况的声明—&gt;相当于default</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p><strong>foreach:相当于java代码的for语句</strong></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -2365,6 +2395,317 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL基础</title>
+    <url>/2019/11/13/MySQL%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h1><ol>
+<li><p>数据库的英文单词： DataBase 简称 ： DB</p>
+</li>
+<li><p>什么数据库？</p>
+<ul>
+<li>用于存储和管理数据的仓库。</li>
+</ul>
+</li>
+<li><p>数据库的特点：</p>
+<ul>
+<li>持久化存储数据的。其实数据库就是一个文件系统</li>
+<li>方便存储和管理数据</li>
+<li>使用了统一的方式操作数据库 – SQL</li>
+</ul>
+</li>
+</ol>
+<h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><ol>
+<li><p>安装</p>
+</li>
+<li><p>卸载</p>
+<ol>
+<li>去mysql的安装目录找到my.ini文件<ul>
+<li>复制 datadir=”C:/ProgramData/MySQL/MySQL Server 5.5/Data/“</li>
+</ul>
+</li>
+<li>卸载MySQL</li>
+<li>删除C:/ProgramData/…目录下的MySQL文件夹。</li>
+</ol>
+</li>
+<li><p>配置</p>
+</li>
+<li><p><strong>MySQL服务启动</strong></p>
+<ol>
+<li>手动</li>
+<li>cmd–&gt; services.msc 打开服务的窗口</li>
+<li>使用管理员打开cmd<ul>
+<li>net start mysql : 启动mysql的服务</li>
+<li>net stop mysql:关闭mysql服务</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>MySQL登录</strong></p>
+<ol>
+<li>mysql -uroot -p密码</li>
+<li>mysql -hip -uroot -p连接目标的密码</li>
+<li>mysql –host=ip –user=root –password=连接目标的密码</li>
+</ol>
+</li>
+<li><p><strong>MySQL退出</strong></p>
+<ol>
+<li>exit</li>
+<li>quit</li>
+</ol>
+</li>
+<li><p><strong>MySQL目录结构</strong></p>
+<ol>
+<li>MySQL安装目录：basedir=”D:/develop/MySQL/“<ul>
+<li>配置文件 my.ini</li>
+</ul>
+</li>
+<li>MySQL数据目录：datadir=”C:/ProgramData/MySQL/MySQL Server 5.5/Data/“</li>
+</ol>
+</li>
+<li><p>几个概念</p>
+<ul>
+<li>数据库：文件夹</li>
+<li>表：文件</li>
+<li>数据：数据</li>
+</ul>
+</li>
+</ol>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><ol>
+<li><strong>什么是SQL？</strong><pre><code>Structured Query Language：结构化查询语言
+其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。</code></pre></li>
+<li><strong>SQL通用语法</strong></li>
+</ol>
+<ul>
+<li><p>SQL 语句可以单行或多行书写，以分号结尾。</p>
+</li>
+<li><p>可使用空格和缩进来增强语句的可读性。</p>
+</li>
+<li><p>MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。</p>
+</li>
+<li><p>注释</p>
+<ul>
+<li>单行注释: – 注释内容 或 # 注释内容(mysql 特有) </li>
+<li>多行注释: /* 注释 */</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><p><strong>SQL分类</strong><br>1) <strong>DDL(Data Definition Language)数据定义语言</strong></p>
+<pre><code>用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等</code></pre><p>2) <strong>DML(Data Manipulation Language)数据操作语言</strong></p>
+<pre><code>用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等</code></pre><p>3) <strong>DQL(Data Query Language)数据查询语言</strong></p>
+<pre><code>用来查询数据库中表的记录(数据)。关键字：select, where 等</code></pre><p>4) <strong>DCL(Data Control Language)数据控制语言(了解)</strong></p>
+<pre><code>用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre></li>
+</ol>
+<h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
+    1. C(Create):创建
+        * 创建数据库：
+            * create database 数据库名称;
+        * 创建数据库，判断不存在，再创建：
+            * create database if not exists 数据库名称;
+        * 创建数据库，并指定字符集
+            * create database 数据库名称 character set 字符集名;
+
+        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
+            * create database if not exists db4 character set gbk;
+    2. R(Retrieve)：查询
+        * 查询所有数据库的名称:
+            * show databases;
+        * 查询某个数据库的字符集:查询某个数据库的创建语句
+            * show create database 数据库名称;
+    3. U(Update):修改
+        * 修改数据库的字符集
+            * alter database 数据库名称 character set 字符集名称;
+    4. D(Delete):删除
+        * 删除数据库
+            * drop database 数据库名称;
+        * 判断数据库存在，存在再删除
+            * drop database if exists 数据库名称;
+    5. 使用数据库
+        * 查询当前正在使用的数据库名称
+            * select database();
+        * 使用数据库
+            * use 数据库名称;
+
+
+2. 操作表
+    1. C(Create):创建
+        1. 语法：
+            create table 表名(
+                列名1 数据类型1,
+                列名2 数据类型2,
+                ....
+                列名n 数据类型n
+            );
+            * 注意：最后一列，不需要加逗号（,）
+            * 数据库类型：
+                1. int：整数类型
+                    * age int,
+                2. double:小数类型
+                    * score double(5,2)
+                3. date:日期，只包含年月日，yyyy-MM-dd
+                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
+                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
+                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
+
+                6. varchar：字符串
+                    * name varchar(20):姓名最大20个字符
+                    * zhangsan 8个字符  张三 2个字符
+
+
+        * 创建表
+            create table student(
+                id int,
+                name varchar(32),
+                age int ,
+                score double(4,1),
+                birthday date,
+                insert_time timestamp
+            );
+        * 复制表：
+            * create table 表名 like 被复制的表名;          
+    2. R(Retrieve)：查询
+        * 查询某个数据库中所有的表名称
+            * show tables;
+        * 查询表结构
+            * desc 表名;
+    3. U(Update):修改
+        1. 修改表名
+            alter table 表名 rename to 新的表名;
+        2. 修改表的字符集
+            alter table 表名 character set 字符集名称;
+        3. 添加一列
+            alter table 表名 add 列名 数据类型;
+        4. 修改列名称 类型
+            alter table 表名 change 列名 新列名 新数据类型;
+            alter table 表名 modify 列名 新数据类型;
+        5. 删除列
+            alter table 表名 drop 列名;
+    4. D(Delete):删除
+        * drop table 表名;
+        * drop table  if exists 表名 ;</code></pre><ul>
+<li>客户端图形化工具</li>
+</ul>
+<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
+    * 语法：
+        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
+    * 注意：
+        1. 列名和值要一一对应。
+        2. 如果表名后，不定义列名，则默认给所有列添加值
+            insert into 表名 values(值1,值2,...值n);
+        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
+2. 删除数据：
+    * 语法：
+        * delete from 表名 [where 条件]
+    * 注意：
+        1. 如果不加条件，则删除表中所有记录。
+        2. 如果要删除所有记录
+            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
+            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
+3. 修改数据：
+    * 语法：
+        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
+
+    * 注意：
+        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;
+
+1. 语法：
+    select
+        字段列表
+    from
+        表名列表
+    where
+        条件列表
+    group by
+        分组字段
+    having
+        分组之后的条件
+    order by
+        排序
+    limit
+        分页限定
+
+
+2. 基础查询
+    1. 多个字段的查询
+        select 字段名1，字段名2... from 表名；
+        * 注意：
+            * 如果查询所有字段，则可以使用*来替代字段列表。
+    2. 去除重复：
+        * distinct
+    3. 计算列
+        * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）
+        * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null
+            * 表达式1：哪个字段需要判断是否为null
+            * 如果该字段为null后的替换值。
+    4. 起别名：
+        * as：as也可以省略
+
+
+3. 条件查询
+    1. where子句后跟条件
+    2. 运算符
+        * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
+        * BETWEEN...AND  
+        * IN( 集合) 
+        * LIKE：模糊查询
+            * 占位符：
+                * _:单个任意字符
+                * %：多个任意字符
+        * IS NULL  
+        * and  或 &amp;&amp;
+        * or  或 || 
+        * not  或 !
+
+            -- 查询年龄大于20岁
+
+            SELECT * FROM student WHERE age &gt; 20;
+
+            SELECT * FROM student WHERE age &gt;= 20;
+
+            -- 查询年龄等于20岁
+            SELECT * FROM student WHERE age = 20;
+
+            -- 查询年龄不等于20岁
+            SELECT * FROM student WHERE age != 20;
+            SELECT * FROM student WHERE age &lt;&gt; 20;
+
+            -- 查询年龄大于等于20 小于等于30
+
+            SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
+            SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
+            SELECT * FROM student WHERE age BETWEEN 20 AND 30;
+
+            -- 查询年龄22岁，18岁，25岁的信息
+            SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
+            SELECT * FROM student WHERE age IN (22,18,25);
+
+            -- 查询英语成绩为null
+            SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
+
+            SELECT * FROM student WHERE english IS NULL;
+
+            -- 查询英语成绩不为null
+            SELECT * FROM student WHERE english  IS NOT NULL;
+
+
+
+            -- 查询姓马的有哪些？ like
+            SELECT * FROM student WHERE NAME LIKE &apos;马%&apos;;
+            -- 查询姓名第二个字是化的人
+
+            SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;
+
+            -- 查询姓名是3个字的人
+            SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;</code></pre><p>​<br>                – 查询姓名中包含德的人<br>                SELECT * FROM student WHERE NAME LIKE ‘%德%’;</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL事务</title>
     <url>/2019/11/13/MySQL%E4%BA%8B%E5%8A%A1/</url>
     <content><![CDATA[<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><pre><code>* 查询语法：
@@ -2753,317 +3094,6 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
             -- 撤销权限：
             revoke 权限列表 on 数据库名.表名 from &apos;用户名&apos;@&apos;主机名&apos;;
             REVOKE UPDATE ON db3.`account` FROM &apos;lisi&apos;@&apos;%&apos;;</code></pre>]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL基础</title>
-    <url>/2019/11/13/MySQL%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h1><ol>
-<li><p>数据库的英文单词： DataBase 简称 ： DB</p>
-</li>
-<li><p>什么数据库？</p>
-<ul>
-<li>用于存储和管理数据的仓库。</li>
-</ul>
-</li>
-<li><p>数据库的特点：</p>
-<ul>
-<li>持久化存储数据的。其实数据库就是一个文件系统</li>
-<li>方便存储和管理数据</li>
-<li>使用了统一的方式操作数据库 – SQL</li>
-</ul>
-</li>
-</ol>
-<h1 id="MySQL数据库软件"><a href="#MySQL数据库软件" class="headerlink" title="MySQL数据库软件"></a>MySQL数据库软件</h1><ol>
-<li><p>安装</p>
-</li>
-<li><p>卸载</p>
-<ol>
-<li>去mysql的安装目录找到my.ini文件<ul>
-<li>复制 datadir=”C:/ProgramData/MySQL/MySQL Server 5.5/Data/“</li>
-</ul>
-</li>
-<li>卸载MySQL</li>
-<li>删除C:/ProgramData/…目录下的MySQL文件夹。</li>
-</ol>
-</li>
-<li><p>配置</p>
-</li>
-<li><p><strong>MySQL服务启动</strong></p>
-<ol>
-<li>手动</li>
-<li>cmd–&gt; services.msc 打开服务的窗口</li>
-<li>使用管理员打开cmd<ul>
-<li>net start mysql : 启动mysql的服务</li>
-<li>net stop mysql:关闭mysql服务</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p><strong>MySQL登录</strong></p>
-<ol>
-<li>mysql -uroot -p密码</li>
-<li>mysql -hip -uroot -p连接目标的密码</li>
-<li>mysql –host=ip –user=root –password=连接目标的密码</li>
-</ol>
-</li>
-<li><p><strong>MySQL退出</strong></p>
-<ol>
-<li>exit</li>
-<li>quit</li>
-</ol>
-</li>
-<li><p><strong>MySQL目录结构</strong></p>
-<ol>
-<li>MySQL安装目录：basedir=”D:/develop/MySQL/“<ul>
-<li>配置文件 my.ini</li>
-</ul>
-</li>
-<li>MySQL数据目录：datadir=”C:/ProgramData/MySQL/MySQL Server 5.5/Data/“</li>
-</ol>
-</li>
-<li><p>几个概念</p>
-<ul>
-<li>数据库：文件夹</li>
-<li>表：文件</li>
-<li>数据：数据</li>
-</ul>
-</li>
-</ol>
-<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><ol>
-<li><strong>什么是SQL？</strong><pre><code>Structured Query Language：结构化查询语言
-其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。</code></pre></li>
-<li><strong>SQL通用语法</strong></li>
-</ol>
-<ul>
-<li><p>SQL 语句可以单行或多行书写，以分号结尾。</p>
-</li>
-<li><p>可使用空格和缩进来增强语句的可读性。</p>
-</li>
-<li><p>MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。</p>
-</li>
-<li><p>注释</p>
-<ul>
-<li>单行注释: – 注释内容 或 # 注释内容(mysql 特有) </li>
-<li>多行注释: /* 注释 */</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li><p><strong>SQL分类</strong><br>1) <strong>DDL(Data Definition Language)数据定义语言</strong></p>
-<pre><code>用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等</code></pre><p>2) <strong>DML(Data Manipulation Language)数据操作语言</strong></p>
-<pre><code>用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等</code></pre><p>3) <strong>DQL(Data Query Language)数据查询语言</strong></p>
-<pre><code>用来查询数据库中表的记录(数据)。关键字：select, where 等</code></pre><p>4) <strong>DCL(Data Control Language)数据控制语言(了解)</strong></p>
-<pre><code>用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等</code></pre></li>
-</ol>
-<h2 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h2><pre><code>1. 操作数据库：CRUD
-    1. C(Create):创建
-        * 创建数据库：
-            * create database 数据库名称;
-        * 创建数据库，判断不存在，再创建：
-            * create database if not exists 数据库名称;
-        * 创建数据库，并指定字符集
-            * create database 数据库名称 character set 字符集名;
-
-        * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
-            * create database if not exists db4 character set gbk;
-    2. R(Retrieve)：查询
-        * 查询所有数据库的名称:
-            * show databases;
-        * 查询某个数据库的字符集:查询某个数据库的创建语句
-            * show create database 数据库名称;
-    3. U(Update):修改
-        * 修改数据库的字符集
-            * alter database 数据库名称 character set 字符集名称;
-    4. D(Delete):删除
-        * 删除数据库
-            * drop database 数据库名称;
-        * 判断数据库存在，存在再删除
-            * drop database if exists 数据库名称;
-    5. 使用数据库
-        * 查询当前正在使用的数据库名称
-            * select database();
-        * 使用数据库
-            * use 数据库名称;
-
-
-2. 操作表
-    1. C(Create):创建
-        1. 语法：
-            create table 表名(
-                列名1 数据类型1,
-                列名2 数据类型2,
-                ....
-                列名n 数据类型n
-            );
-            * 注意：最后一列，不需要加逗号（,）
-            * 数据库类型：
-                1. int：整数类型
-                    * age int,
-                2. double:小数类型
-                    * score double(5,2)
-                3. date:日期，只包含年月日，yyyy-MM-dd
-                4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss
-                5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    
-                    * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
-
-                6. varchar：字符串
-                    * name varchar(20):姓名最大20个字符
-                    * zhangsan 8个字符  张三 2个字符
-
-
-        * 创建表
-            create table student(
-                id int,
-                name varchar(32),
-                age int ,
-                score double(4,1),
-                birthday date,
-                insert_time timestamp
-            );
-        * 复制表：
-            * create table 表名 like 被复制的表名;          
-    2. R(Retrieve)：查询
-        * 查询某个数据库中所有的表名称
-            * show tables;
-        * 查询表结构
-            * desc 表名;
-    3. U(Update):修改
-        1. 修改表名
-            alter table 表名 rename to 新的表名;
-        2. 修改表的字符集
-            alter table 表名 character set 字符集名称;
-        3. 添加一列
-            alter table 表名 add 列名 数据类型;
-        4. 修改列名称 类型
-            alter table 表名 change 列名 新列名 新数据类型;
-            alter table 表名 modify 列名 新数据类型;
-        5. 删除列
-            alter table 表名 drop 列名;
-    4. D(Delete):删除
-        * drop table 表名;
-        * drop table  if exists 表名 ;</code></pre><ul>
-<li>客户端图形化工具</li>
-</ul>
-<h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><pre><code>1. 添加数据：
-    * 语法：
-        * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
-    * 注意：
-        1. 列名和值要一一对应。
-        2. 如果表名后，不定义列名，则默认给所有列添加值
-            insert into 表名 values(值1,值2,...值n);
-        3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
-2. 删除数据：
-    * 语法：
-        * delete from 表名 [where 条件]
-    * 注意：
-        1. 如果不加条件，则删除表中所有记录。
-        2. 如果要删除所有记录
-            1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
-            2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
-3. 修改数据：
-    * 语法：
-        * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
-
-    * 注意：
-        1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;
-
-1. 语法：
-    select
-        字段列表
-    from
-        表名列表
-    where
-        条件列表
-    group by
-        分组字段
-    having
-        分组之后的条件
-    order by
-        排序
-    limit
-        分页限定
-
-
-2. 基础查询
-    1. 多个字段的查询
-        select 字段名1，字段名2... from 表名；
-        * 注意：
-            * 如果查询所有字段，则可以使用*来替代字段列表。
-    2. 去除重复：
-        * distinct
-    3. 计算列
-        * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）
-        * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null
-            * 表达式1：哪个字段需要判断是否为null
-            * 如果该字段为null后的替换值。
-    4. 起别名：
-        * as：as也可以省略
-
-
-3. 条件查询
-    1. where子句后跟条件
-    2. 运算符
-        * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
-        * BETWEEN...AND  
-        * IN( 集合) 
-        * LIKE：模糊查询
-            * 占位符：
-                * _:单个任意字符
-                * %：多个任意字符
-        * IS NULL  
-        * and  或 &amp;&amp;
-        * or  或 || 
-        * not  或 !
-
-            -- 查询年龄大于20岁
-
-            SELECT * FROM student WHERE age &gt; 20;
-
-            SELECT * FROM student WHERE age &gt;= 20;
-
-            -- 查询年龄等于20岁
-            SELECT * FROM student WHERE age = 20;
-
-            -- 查询年龄不等于20岁
-            SELECT * FROM student WHERE age != 20;
-            SELECT * FROM student WHERE age &lt;&gt; 20;
-
-            -- 查询年龄大于等于20 小于等于30
-
-            SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
-            SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
-            SELECT * FROM student WHERE age BETWEEN 20 AND 30;
-
-            -- 查询年龄22岁，18岁，25岁的信息
-            SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
-            SELECT * FROM student WHERE age IN (22,18,25);
-
-            -- 查询英语成绩为null
-            SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
-
-            SELECT * FROM student WHERE english IS NULL;
-
-            -- 查询英语成绩不为null
-            SELECT * FROM student WHERE english  IS NOT NULL;
-
-
-
-            -- 查询姓马的有哪些？ like
-            SELECT * FROM student WHERE NAME LIKE &apos;马%&apos;;
-            -- 查询姓名第二个字是化的人
-
-            SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;
-
-            -- 查询姓名是3个字的人
-            SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;</code></pre><p>​<br>                – 查询姓名中包含德的人<br>                SELECT * FROM student WHERE NAME LIKE ‘%德%’;</p>
-<p>​    </p>
-]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
@@ -4451,6 +4481,37 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
       </tags>
   </entry>
   <entry>
+    <title>Scanner类,Random类,ArrayList类</title>
+    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" alt=""></p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" alt=""></p>
+<h1 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h1><ul>
+<li>ArrayList使用步骤</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" alt=""></p>
+<ul>
+<li>常用方法和遍历 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" alt=""></p>
+<ul>
+<li>基本数据类型包装类</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" alt=""></p>
+<h1 id="ArrayList练习"><a href="#ArrayList练习" class="headerlink" title="ArrayList练习"></a>ArrayList练习</h1><ul>
+<li>生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" alt=""></li>
+<li>自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" alt=""></li>
+<li>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" alt=""></li>
+<li>定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Redis和Jedis</title>
     <url>/2021/03/23/Redis%E5%92%8CJedis/</url>
     <content><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>redis是一款高性能的NOSQL系列的非关系型数据库</p>
@@ -4680,34 +4741,14 @@ zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><
       </tags>
   </entry>
   <entry>
-    <title>Scanner类,Random类,ArrayList类</title>
-    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" alt=""></p>
-<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" alt=""></p>
-<h1 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h1><ul>
-<li>ArrayList使用步骤</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" alt=""></p>
-<ul>
-<li>常用方法和遍历 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" alt=""></p>
-<ul>
-<li>基本数据类型包装类</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" alt=""></p>
-<h1 id="ArrayList练习"><a href="#ArrayList练习" class="headerlink" title="ArrayList练习"></a>ArrayList练习</h1><ul>
-<li>生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" alt=""></li>
-<li>自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" alt=""></li>
-<li>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" alt=""></li>
-<li>定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" alt=""></li>
-</ul>
-]]></content>
+    <title>SpringMVC</title>
+    <url>/2021/03/23/SpringMVC/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>SpringMVC</tag>
       </tags>
   </entry>
   <entry>
@@ -4976,89 +5017,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>SpringMVC</title>
-    <url>/2021/03/23/SpringMVC/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>SpringMVC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>String类,static关键字,Arrays类,Math类</title>
-    <url>/2019/11/04/String%E7%B1%BB-static%E5%85%B3%E9%94%AE%E5%AD%97-Arrays%E7%B1%BB-Math%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li>字符串不变：字符串的值在创建后不能被更改。</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.1.PNG" alt=""></p>
-<ul>
-<li>因为String对象是不可变的，所以它们可以被共享。</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.2.PNG" alt=""></p>
-<ul>
-<li>“abc” 等效于 char[] data={ ‘a’ , ‘b’ , ‘c’ } 。</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/td3.PNG" alt=""></p>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.2.PNG" alt=""></p>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
-<li>判断功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/pdwrer.PNG" alt=""></p>
-<ul>
-<li>获取功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hqryuzfbk.PNG" alt=""></p>
-<ul>
-<li>转换功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zhuanhuan.PNG" alt=""></p>
-<ul>
-<li>分割功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fenge.PNG" alt=""></p>
-<h1 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h1><h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/leibianl.PNG" alt=""></p>
-<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtff.PNG" alt=""></p>
-<h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtdmk.PNG" alt=""></p>
-<h1 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h1><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sort.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tostring.PNG" alt=""></p>
-<h1 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h1><h2 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/math1111111.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/4.2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Springboot+Vue</title>
-    <url>/2021/05/30/Springboot-Vue/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>全栈项目</category>
-      </categories>
-      <tags>
-        <tag>全栈项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>final，权限，内部类</title>
-    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" alt=""></p>
-<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" alt=""></p>
-<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" alt=""></p>
-<h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" alt=""></p>
-<h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Web概述</title>
     <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h1><h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><ol>
@@ -5200,6 +5158,62 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Springboot+Vue</title>
+    <url>/2021/05/30/Springboot-Vue/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>全栈项目</category>
+      </categories>
+      <tags>
+        <tag>全栈项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>String类,static关键字,Arrays类,Math类</title>
+    <url>/2019/11/04/String%E7%B1%BB-static%E5%85%B3%E9%94%AE%E5%AD%97-Arrays%E7%B1%BB-Math%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>字符串不变：字符串的值在创建后不能被更改。</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.1.PNG" alt=""></p>
+<ul>
+<li>因为String对象是不可变的，所以它们可以被共享。</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.2.PNG" alt=""></p>
+<ul>
+<li>“abc” 等效于 char[] data={ ‘a’ , ‘b’ , ‘c’ } 。</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/td3.PNG" alt=""></p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.2.PNG" alt=""></p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li>判断功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/pdwrer.PNG" alt=""></p>
+<ul>
+<li>获取功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hqryuzfbk.PNG" alt=""></p>
+<ul>
+<li>转换功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zhuanhuan.PNG" alt=""></p>
+<ul>
+<li>分割功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fenge.PNG" alt=""></p>
+<h1 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h1><h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/leibianl.PNG" alt=""></p>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtff.PNG" alt=""></p>
+<h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtdmk.PNG" alt=""></p>
+<h1 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h1><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sort.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tostring.PNG" alt=""></p>
+<h1 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h1><h2 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/math1111111.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/4.2.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -5385,61 +5399,13 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>字节流，字符流</title>
-    <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO的分类"><a href="#IO的分类" class="headerlink" title="IO的分类"></a>IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
-<ul>
-<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
-<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
-</ul>
-<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
-<ul>
-<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
-<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="IO的体系"><a href="#IO的体系" class="headerlink" title="IO的体系"></a>IO的体系</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png" alt=""><h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><h2 id="字节输出流【OutputStream】"><a href="#字节输出流【OutputStream】" class="headerlink" title="字节输出流【OutputStream】"></a>字节输出流【OutputStream】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG" alt=""><h2 id="FileOutputStream类"><a href="#FileOutputStream类" class="headerlink" title="FileOutputStream类"></a>FileOutputStream类</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG" alt=""><h3 id="写出字节数据"><a href="#写出字节数据" class="headerlink" title="写出字节数据"></a>写出字节数据</h3></li>
-</ul>
-<ol>
-<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
-<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
-<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="数据追加续写"><a href="#数据追加续写" class="headerlink" title="数据追加续写"></a>数据追加续写</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG" alt=""><h3 id="写出换行"><a href="#写出换行" class="headerlink" title="写出换行"></a>写出换行</h3></li>
-</ol>
-<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
-<h2 id="字节输入流【InputStream】"><a href="#字节输入流【InputStream】" class="headerlink" title="字节输入流【InputStream】"></a>字节输入流【InputStream】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG" alt=""></p>
-<h2 id="FileIntputStream类"><a href="#FileIntputStream类" class="headerlink" title="FileIntputStream类"></a>FileIntputStream类</h2><h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG" alt=""></p>
-<h3 id="读取字节数据"><a href="#读取字节数据" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
-<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
-<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h1><h2 id="字符输出流【Writer】"><a href="#字符输出流【Writer】" class="headerlink" title="字符输出流【Writer】"></a>字符输出流【Writer】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG" alt=""><h2 id="FileWriter类"><a href="#FileWriter类" class="headerlink" title="FileWriter类"></a>FileWriter类</h2><h3 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG" alt=""><h3 id="写出字符数据"><a href="#写出字符数据" class="headerlink" title="写出字符数据"></a>写出字符数据</h3></li>
-<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
-<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
-<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
-<li>续写和换行：操作类似于FileOutputStream<h3 id="关闭和刷新"><a href="#关闭和刷新" class="headerlink" title="关闭和刷新"></a>关闭和刷新</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG" alt=""></li>
-</ol>
-<h2 id="字符输入流【Reader】"><a href="#字符输入流【Reader】" class="headerlink" title="字符输入流【Reader】"></a>字符输入流【Reader】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG" alt=""></p>
-<h2 id="FileReader类"><a href="#FileReader类" class="headerlink" title="FileReader类"></a>FileReader类</h2><h3 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG" alt=""></p>
-<h3 id="读取字节数据-1"><a href="#读取字节数据-1" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
-<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
-<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
-</ol>
-<h1 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h1><ol>
-<li>构造方法</li>
-</ol>
-<ul>
-<li><code>public Properties()</code> :创建一个空的属性列表</li>
-</ul>
-<ol start="2">
-<li>基本的存储方法</li>
-</ol>
-<ul>
-<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
-<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
-<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
-</ul>
-<ol start="3">
-<li>与流相关的方法 </li>
-</ol>
-<ul>
-<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
-<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
-</ul>
+    <title>final，权限，内部类</title>
+    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" alt=""></p>
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" alt=""></p>
+<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" alt=""></p>
+<h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" alt=""></p>
+<h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6111,19 +6077,61 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <h1 id="JavaSE"><a href="#JavaSE" class="headerlink" title="JavaSE"></a>JavaSE</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h2 id="常用包，类"><a href="#常用包，类" class="headerlink" title="常用包，类"></a>常用包，类</h2><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h2 id="异常-1"><a href="#异常-1" class="headerlink" title="异常"></a>异常</h2><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><h2 id="JDK-8-新特性"><a href="#JDK-8-新特性" class="headerlink" title="JDK 8 新特性"></a>JDK 8 新特性</h2><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h2><h2 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h2><h2 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h2><h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h2 id="Cookie，Session"><a href="#Cookie，Session" class="headerlink" title="Cookie，Session"></a>Cookie，Session</h2><h2 id="Filter，Listener"><a href="#Filter，Listener" class="headerlink" title="Filter，Listener"></a>Filter，Listener</h2><h2 id="文件上传，下载"><a href="#文件上传，下载" class="headerlink" title="文件上传，下载"></a>文件上传，下载</h2><h1 id="JavaEE"><a href="#JavaEE" class="headerlink" title="JavaEE"></a>JavaEE</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><h2 id="Springboot"><a href="#Springboot" class="headerlink" title="Springboot"></a>Springboot</h2><h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h2 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h2><h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><h1 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h1><h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><h2 id="Layui"><a href="#Layui" class="headerlink" title="Layui"></a>Layui</h2><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2>]]></content>
   </entry>
   <entry>
-    <title>接口，多态</title>
-    <url>/2019/11/04/%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81/</url>
-    <content><![CDATA[<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
-<h2 id="接口的小结"><a href="#接口的小结" class="headerlink" title="接口的小结"></a>接口的小结</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiaojie.PNG" alt=""></p>
-<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="多态的前提"><a href="#多态的前提" class="headerlink" title="多态的前提"></a>多态的前提</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qianti.PNG" alt=""></p>
-<h2 id="向上转型和向下转型"><a href="#向上转型和向下转型" class="headerlink" title="向上转型和向下转型"></a>向上转型和向下转型</h2><h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangs.PNG" alt=""></p>
+    <title>字节流，字符流</title>
+    <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO的分类"><a href="#IO的分类" class="headerlink" title="IO的分类"></a>IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
 <ul>
-<li>成员变量：编译看左，运行看左</li>
-<li>成员方法：编译看左，运行看右</li>
+<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
+<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
 </ul>
-<h3 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" alt=""></p>
-<h2 id="转型的异常"><a href="#转型的异常" class="headerlink" title="转型的异常"></a>转型的异常</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" alt=""></p>
-<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" alt=""></p>
+<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
+<ul>
+<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
+<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="IO的体系"><a href="#IO的体系" class="headerlink" title="IO的体系"></a>IO的体系</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png" alt=""><h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><h2 id="字节输出流【OutputStream】"><a href="#字节输出流【OutputStream】" class="headerlink" title="字节输出流【OutputStream】"></a>字节输出流【OutputStream】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG" alt=""><h2 id="FileOutputStream类"><a href="#FileOutputStream类" class="headerlink" title="FileOutputStream类"></a>FileOutputStream类</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG" alt=""><h3 id="写出字节数据"><a href="#写出字节数据" class="headerlink" title="写出字节数据"></a>写出字节数据</h3></li>
+</ul>
+<ol>
+<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
+<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
+<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="数据追加续写"><a href="#数据追加续写" class="headerlink" title="数据追加续写"></a>数据追加续写</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG" alt=""><h3 id="写出换行"><a href="#写出换行" class="headerlink" title="写出换行"></a>写出换行</h3></li>
+</ol>
+<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
+<h2 id="字节输入流【InputStream】"><a href="#字节输入流【InputStream】" class="headerlink" title="字节输入流【InputStream】"></a>字节输入流【InputStream】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG" alt=""></p>
+<h2 id="FileIntputStream类"><a href="#FileIntputStream类" class="headerlink" title="FileIntputStream类"></a>FileIntputStream类</h2><h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG" alt=""></p>
+<h3 id="读取字节数据"><a href="#读取字节数据" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
+<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h1><h2 id="字符输出流【Writer】"><a href="#字符输出流【Writer】" class="headerlink" title="字符输出流【Writer】"></a>字符输出流【Writer】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG" alt=""><h2 id="FileWriter类"><a href="#FileWriter类" class="headerlink" title="FileWriter类"></a>FileWriter类</h2><h3 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG" alt=""><h3 id="写出字符数据"><a href="#写出字符数据" class="headerlink" title="写出字符数据"></a>写出字符数据</h3></li>
+<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
+<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
+<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
+<li>续写和换行：操作类似于FileOutputStream<h3 id="关闭和刷新"><a href="#关闭和刷新" class="headerlink" title="关闭和刷新"></a>关闭和刷新</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG" alt=""></li>
+</ol>
+<h2 id="字符输入流【Reader】"><a href="#字符输入流【Reader】" class="headerlink" title="字符输入流【Reader】"></a>字符输入流【Reader】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG" alt=""></p>
+<h2 id="FileReader类"><a href="#FileReader类" class="headerlink" title="FileReader类"></a>FileReader类</h2><h3 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG" alt=""></p>
+<h3 id="读取字节数据-1"><a href="#读取字节数据-1" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
+<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
+</ol>
+<h1 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h1><ol>
+<li>构造方法</li>
+</ol>
+<ul>
+<li><code>public Properties()</code> :创建一个空的属性列表</li>
+</ul>
+<ol start="2">
+<li>基本的存储方法</li>
+</ol>
+<ul>
+<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
+<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
+<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
+</ul>
+<ol start="3">
+<li>与流相关的方法 </li>
+</ol>
+<ul>
+<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
+<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
+</ul>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6151,6 +6159,28 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <li>自定义一个编译期异常: 自定义类 并继承于 java.lang.Exception </li>
 <li>自定义一个运行时期的异常类: 自定义类 并继承于 java.lang.RuntimeException</li>
 </ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>接口，多态</title>
+    <url>/2019/11/04/%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
+<h2 id="接口的小结"><a href="#接口的小结" class="headerlink" title="接口的小结"></a>接口的小结</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiaojie.PNG" alt=""></p>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h2 id="多态的前提"><a href="#多态的前提" class="headerlink" title="多态的前提"></a>多态的前提</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/qianti.PNG" alt=""></p>
+<h2 id="向上转型和向下转型"><a href="#向上转型和向下转型" class="headerlink" title="向上转型和向下转型"></a>向上转型和向下转型</h2><h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangs.PNG" alt=""></p>
+<ul>
+<li>成员变量：编译看左，运行看左</li>
+<li>成员方法：编译看左，运行看右</li>
+</ul>
+<h3 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" alt=""></p>
+<h2 id="转型的异常"><a href="#转型的异常" class="headerlink" title="转型的异常"></a>转型的异常</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" alt=""></p>
+<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6288,6 +6318,25 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>数据结构一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据库系统原理一</title>
     <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/</url>
     <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
@@ -6325,25 +6374,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>数据库系统原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -6405,6 +6435,24 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>类与对象，封装，构造方法</title>
+    <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" alt=""></p>
+<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/duixiang.PNG" alt=""></p>
+<h1 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/mol.PNG" alt=""></p>
+<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/blqu.PNG" alt=""></p>
+<h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" alt=""></p>
+<h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线程</title>
     <url>/2019/11/08/%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="并发与并行"><a href="#并发与并行" class="headerlink" title="并发与并行"></a>并发与并行</h2><ul>
@@ -6453,24 +6501,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>类与对象，封装，构造方法</title>
-    <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" alt=""></p>
-<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/duixiang.PNG" alt=""></p>
-<h1 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/mol.PNG" alt=""></p>
-<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/blqu.PNG" alt=""></p>
-<h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" alt=""></p>
-<h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>继承，super，this，抽象类</title>
     <url>/2019/11/04/%E7%BB%A7%E6%89%BF%EF%BC%8Csuper%EF%BC%8Cthis%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
@@ -6496,24 +6526,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>编译原理一</title>
-    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
-<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>编译原理</category>
-      </categories>
-      <tags>
-        <tag>编译原理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>缓冲流，转换流，序列化流，打印流</title>
     <url>/2019/11/10/%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81/</url>
     <content><![CDATA[<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>缓冲流,也叫高效流，是对<strong>4个基本的<code>FileXxx</code>流的增强</strong>，所以也是4个流，按照数据类型分类：</p>
@@ -6535,6 +6547,24 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编译原理一</title>
+    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
+<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>编译原理</category>
+      </categories>
+      <tags>
+        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6684,61 +6714,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>计算机组成原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面向对象思想</title>
-    <url>/2021/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h1><ol>
-<li><strong><code>封装</code></strong>       </li>
-</ol>
-<p>所谓封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。        </p>
-<p>简单的说，一个类就是一个封装了数据以及操作这些数据的代码的逻辑实体。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，对象对内部数据提供了不同级别的保护，以防止程序中无关的部分意外的改变或错误的使用了对象的私有部分。</p>
-<ol start="2">
-<li><strong><code>继承</code></strong></li>
-</ol>
-<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
-<p>通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。</p>
-<ol start="3">
-<li><strong><code>多态</code></strong></li>
-</ol>
-<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。</p>
-<p>这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
-<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
-<p><strong>多态的必要条件</strong></p>
-<p>为了实现运行期的多态，或者说是动态绑定，<strong><code>需要满足三个条件</code></strong>：</p>
-<ul>
-<li><p>有类继承或者接口实现</p>
-</li>
-<li><p>子类要重写父类的方法</p>
-</li>
-<li><p>父类的引用指向子类的对象</p>
-<h1 id="面向对象五大原则"><a href="#面向对象五大原则" class="headerlink" title="面向对象五大原则"></a>面向对象五大原则</h1></li>
-<li><p><em>S.O.L.I.D*</em></p>
-</li>
-</ul>
-<ol>
-<li><p><strong><code>单一职责原则</code>（Single-Responsibility Principle）</strong><br><code>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化。</code>单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。通常意义下的单一职责，就是指只有一种单一功能，不要为类实现过多的功能点，以保证实体只有一个引起它变化的原因。 专注，是一个人优良的品质；同样的，单一也是一个类的优良设计。交杂不清的职责将使得代码看起来特别别扭牵一发而动全身，有失美感和必然导致丑陋的系统错误风险。</p>
-</li>
-<li><p><strong><code>开放封闭原则</code>（Open-Closed principle）</strong><br><code>其核心思想是：软件实体应该是可扩展的，而不可修改的。</code>也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。让类依赖于固定的抽象，所以修改就是封闭的；而通过面向对象的继承和多态机制，又可以实现对抽象类的继承，通过覆写其方法来改变固有行为，实现新的拓展方法，所以就是开放的。 “需求总是变化”没有不变的软件，所以就需要用封闭开放原则来封闭变化满足需求，同时还能保持软件内部的封装体系稳定，不被需求的变化影响。</p>
-</li>
-<li><p><strong><code>Liskov替换原则</code>（Liskov-Substitution Principle）</strong><br><code>其核心思想是：子类必须能够替换其基类。</code>这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。 Liskov替换原则，主要着眼于对抽象和多态建立在继承的基础上，因此只有遵循了Liskov替换原则，才能保证继承复用是可靠地。实现的方法是面向接口编程：将公共部分抽象为基类接口或抽象类，通过Extract Abstract Class，在子类中通过覆写父类的方法实现新的方式支持同样的职责。 Liskov替换原则是关于继承机制的设计原则，违反了Liskov替换原则就必然导致违反开放封闭原则。 Liskov替换原则能够保证系统具有良好的拓展性，同时实现基于多态的抽象机制，能够减少代码冗余，避免运行期的类型判别。</p>
-</li>
-<li><p><strong><code>接口隔离原则</code>（Interface-Segregation Principle）</strong><br><code>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。</code> 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 接口有效地将细节和抽象隔离，体现了对抽象编程的一切好处，接口隔离强调接口的单一性。而胖接口存在明显的弊端，会导致实现的类型必须完全实现接口的所有方法、属性等；而某些时候，实现类型并非需要所有的接口定义，在设计上这是“浪费”，而且在实施上这会带来潜在的问题，对胖接口的修改将导致一连串的客户端程序需要修改，有时候这是一种灾难。在这种情况下，将胖接口分解为多个特点的定制化方法，使得客户端仅仅依赖于它们的实际调用的方法，从而解除了客户端不会依赖于它们不用的方法。 分离的手段主要有以下两种：1、委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2、多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
-</li>
-<li><p><strong><code>依赖倒置原则</code>（Dependecy-Inversion Principle）</strong><br><code>其核心思想是：依赖于抽象。</code>具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。 抽象的稳定性决定了系统的稳定性，因为抽象是不变的，依赖于抽象是面向对象设计的精髓，也是依赖倒置原则的核心。 依赖于抽象是一个通用的原则，而某些时候依赖于细节则是在所难免的，必须权衡在抽象和具体之间的取舍，方法不是一层不变的。依赖于抽象，就是对接口编程，不要对实现编程。<br>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的<code>金科玉律</code>，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。<code>不同的设计模式对应不同的需求，而设计原则则代表永恒的灵魂</code>，需要在实践中时时刻刻地遵守。     </p>
-</li>
-</ol>
-<p>参考链接：      </p>
-<ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>面向对象思想</category>
-      </categories>
-      <tags>
-        <tag>面向对象思想</tag>
       </tags>
   </entry>
   <entry>
@@ -7023,6 +6998,61 @@ IMAP 协议中客户端和服务器上的邮件保持同步，如果不手动删
       </categories>
       <tags>
         <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象思想</title>
+    <url>/2021/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h1><ol>
+<li><strong><code>封装</code></strong>       </li>
+</ol>
+<p>所谓封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。        </p>
+<p>简单的说，一个类就是一个封装了数据以及操作这些数据的代码的逻辑实体。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，对象对内部数据提供了不同级别的保护，以防止程序中无关的部分意外的改变或错误的使用了对象的私有部分。</p>
+<ol start="2">
+<li><strong><code>继承</code></strong></li>
+</ol>
+<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
+<p>通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。</p>
+<ol start="3">
+<li><strong><code>多态</code></strong></li>
+</ol>
+<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。</p>
+<p>这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
+<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
+<p><strong>多态的必要条件</strong></p>
+<p>为了实现运行期的多态，或者说是动态绑定，<strong><code>需要满足三个条件</code></strong>：</p>
+<ul>
+<li><p>有类继承或者接口实现</p>
+</li>
+<li><p>子类要重写父类的方法</p>
+</li>
+<li><p>父类的引用指向子类的对象</p>
+<h1 id="面向对象五大原则"><a href="#面向对象五大原则" class="headerlink" title="面向对象五大原则"></a>面向对象五大原则</h1></li>
+<li><p><em>S.O.L.I.D*</em></p>
+</li>
+</ul>
+<ol>
+<li><p><strong><code>单一职责原则</code>（Single-Responsibility Principle）</strong><br><code>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化。</code>单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。通常意义下的单一职责，就是指只有一种单一功能，不要为类实现过多的功能点，以保证实体只有一个引起它变化的原因。 专注，是一个人优良的品质；同样的，单一也是一个类的优良设计。交杂不清的职责将使得代码看起来特别别扭牵一发而动全身，有失美感和必然导致丑陋的系统错误风险。</p>
+</li>
+<li><p><strong><code>开放封闭原则</code>（Open-Closed principle）</strong><br><code>其核心思想是：软件实体应该是可扩展的，而不可修改的。</code>也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。让类依赖于固定的抽象，所以修改就是封闭的；而通过面向对象的继承和多态机制，又可以实现对抽象类的继承，通过覆写其方法来改变固有行为，实现新的拓展方法，所以就是开放的。 “需求总是变化”没有不变的软件，所以就需要用封闭开放原则来封闭变化满足需求，同时还能保持软件内部的封装体系稳定，不被需求的变化影响。</p>
+</li>
+<li><p><strong><code>Liskov替换原则</code>（Liskov-Substitution Principle）</strong><br><code>其核心思想是：子类必须能够替换其基类。</code>这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。 Liskov替换原则，主要着眼于对抽象和多态建立在继承的基础上，因此只有遵循了Liskov替换原则，才能保证继承复用是可靠地。实现的方法是面向接口编程：将公共部分抽象为基类接口或抽象类，通过Extract Abstract Class，在子类中通过覆写父类的方法实现新的方式支持同样的职责。 Liskov替换原则是关于继承机制的设计原则，违反了Liskov替换原则就必然导致违反开放封闭原则。 Liskov替换原则能够保证系统具有良好的拓展性，同时实现基于多态的抽象机制，能够减少代码冗余，避免运行期的类型判别。</p>
+</li>
+<li><p><strong><code>接口隔离原则</code>（Interface-Segregation Principle）</strong><br><code>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。</code> 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 接口有效地将细节和抽象隔离，体现了对抽象编程的一切好处，接口隔离强调接口的单一性。而胖接口存在明显的弊端，会导致实现的类型必须完全实现接口的所有方法、属性等；而某些时候，实现类型并非需要所有的接口定义，在设计上这是“浪费”，而且在实施上这会带来潜在的问题，对胖接口的修改将导致一连串的客户端程序需要修改，有时候这是一种灾难。在这种情况下，将胖接口分解为多个特点的定制化方法，使得客户端仅仅依赖于它们的实际调用的方法，从而解除了客户端不会依赖于它们不用的方法。 分离的手段主要有以下两种：1、委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2、多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
+</li>
+<li><p><strong><code>依赖倒置原则</code>（Dependecy-Inversion Principle）</strong><br><code>其核心思想是：依赖于抽象。</code>具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。 抽象的稳定性决定了系统的稳定性，因为抽象是不变的，依赖于抽象是面向对象设计的精髓，也是依赖倒置原则的核心。 依赖于抽象是一个通用的原则，而某些时候依赖于细节则是在所难免的，必须权衡在抽象和具体之间的取舍，方法不是一层不变的。依赖于抽象，就是对接口编程，不要对实现编程。<br>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的<code>金科玉律</code>，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。<code>不同的设计模式对应不同的需求，而设计原则则代表永恒的灵魂</code>，需要在实践中时时刻刻地遵守。     </p>
+</li>
+</ol>
+<p>参考链接：      </p>
+<ol>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>面向对象思想</category>
+      </categories>
+      <tags>
+        <tag>面向对象思想</tag>
       </tags>
   </entry>
 </search>
