@@ -101,7 +101,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;dasdfqerwtg2tgwetwrg.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;afqerfwerwerwegwegtq.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;sadagatatdthh.PNG">
-<meta property="og:updated_time" content="2021-06-03T16:09:16.972Z">
+<meta property="og:updated_time" content="2021-06-05T17:39:44.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;qewfsefwerfewr.PNG">
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  78
+                  487
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -445,7 +445,59 @@
 <h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
 <li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
 </ol>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h1 id="idea-导入-eclipse-项目-SSM"><a href="#idea-导入-eclipse-项目-SSM" class="headerlink" title="idea 导入 eclipse 项目-SSM"></a>idea 导入 eclipse 项目-SSM</h1><ol start="0">
+<li><p>参考：B站-杰凡it</p>
+</li>
+<li><p>直接 open 打开项目</p>
+</li>
+<li><p>发现报错(红线)</p>
+</li>
+<li><p><strong>设置 project structure</strong></p>
+<ol>
+<li>进入 project-project sdk 配置 jdk</li>
+<li>进入 modules-dependencies 删掉 eclipse 多余的配置</li>
+<li>在 modules-dependencies  添加 tomcat 依赖(右上角+号)</li>
+<li>在 libraries 添加 jar 包依赖</li>
+<li>在 modules 中添加 web 模块(1.左上角+号。2.注意修改路径：web 改为 WebContent)</li>
+<li>配置 artifacts(artifacts–&gt;web application exploded–&gt;from modules)</li>
+</ol>
+</li>
+<li><p><strong>将项目添加到 tomcat 中</strong></p>
+<ol>
+<li><strong>edit configurations</strong>–&gt;左上角+号–&gt;deployment–&gt;右上角+号–&gt;artifact</li>
+<li>如果项目中<strong>文件上传</strong>用的<strong>是绝对路径的话</strong>需要<strong>配置虚拟路径</strong>(例如存放图片的目录)</li>
+</ol>
+</li>
+<li><p><strong>修改数据库配置文件</strong></p>
+<ol>
+<li>数据库配置成自己本地的(driver,url,username,password等等)</li>
+<li>navcat 新建一个数据库(数据库和源代码一致)</li>
+<li>导入运行 .sql 文件(建表和插入数据)</li>
+</ol>
+</li>
+<li><p>启动 tomcat</p>
+</li>
+<li><p>浏览器访问项目</p>
+</li>
+</ol>
+<h1 id="idea-导入-eclipse-项目-Springboot"><a href="#idea-导入-eclipse-项目-Springboot" class="headerlink" title="idea 导入 eclipse 项目-Springboot"></a>idea 导入 eclipse 项目-Springboot</h1><ol start="0">
+<li>参考：B站-杰凡it</li>
+<li>直接 open 打开项目</li>
+<li>删除带有 eclipse 图标的 .classpath 和 .project l两个文件(不限碍眼的话可以不删)</li>
+<li><strong>设置 project structure</strong>(步骤跟上面导入SSM差不多，细节请参考B站-杰凡it)</li>
+<li>导入 maven 依赖(pom.xml 右键点击 add as maven project)</li>
+<li><strong>配置数据库</strong>(注意：pom.xml 的 mysql jar 包版本要兼容，不兼容要修改版本并刷新)</li>
+<li>测试运行</li>
+<li>浏览器访问</li>
+</ol>
+<h1 id="idea-导入-eclipse-项目总结-主要步骤"><a href="#idea-导入-eclipse-项目总结-主要步骤" class="headerlink" title="idea 导入 eclipse 项目总结(主要步骤)"></a>idea 导入 eclipse 项目总结(主要步骤)</h1><ol>
+<li>先全局配置好 idea 的 jdk , maven , git 或 svn , tomcat 等等，mysql , navcat 安装好</li>
+<li>open 打开项目</li>
+<li>配置 project structure</li>
+<li>配置 add/edit configurations</li>
+<li>配置数据库</li>
+</ol>
+
       
     </div>
     
@@ -634,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Win-10-环境配置"><span class="nav-number">1.</span> <span class="nav-text">Win 10 环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK-1-8-Maven-Tomcat"><span class="nav-number">1.1.</span> <span class="nav-text">JDK 1.8 + Maven + Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path配置"><span class="nav-number">1.2.</span> <span class="nav-text">Path配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDEA-2018-3-配置"><span class="nav-number">2.</span> <span class="nav-text">IDEA 2018.3 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局配置"><span class="nav-number">2.1.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">2.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK-配置"><span class="nav-number">2.3.</span> <span class="nav-text">JDK 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-配置"><span class="nav-number">2.4.</span> <span class="nav-text">Maven 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN-配置"><span class="nav-number">2.5.</span> <span class="nav-text">SVN 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-配置"><span class="nav-number">2.6.</span> <span class="nav-text">GIT 配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键"><span class="nav-number">3.</span> <span class="nav-text">快捷键</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Win-10-环境配置"><span class="nav-number">1.</span> <span class="nav-text">Win 10 环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK-1-8-Maven-Tomcat"><span class="nav-number">1.1.</span> <span class="nav-text">JDK 1.8 + Maven + Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path配置"><span class="nav-number">1.2.</span> <span class="nav-text">Path配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDEA-2018-3-配置"><span class="nav-number">2.</span> <span class="nav-text">IDEA 2018.3 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局配置"><span class="nav-number">2.1.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">2.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK-配置"><span class="nav-number">2.3.</span> <span class="nav-text">JDK 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-配置"><span class="nav-number">2.4.</span> <span class="nav-text">Maven 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN-配置"><span class="nav-number">2.5.</span> <span class="nav-text">SVN 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-配置"><span class="nav-number">2.6.</span> <span class="nav-text">GIT 配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键"><span class="nav-number">3.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea-导入-eclipse-项目-SSM"><span class="nav-number">4.</span> <span class="nav-text">idea 导入 eclipse 项目-SSM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea-导入-eclipse-项目-Springboot"><span class="nav-number">5.</span> <span class="nav-text">idea 导入 eclipse 项目-Springboot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#idea-导入-eclipse-项目总结-主要步骤"><span class="nav-number">6.</span> <span class="nav-text">idea 导入 eclipse 项目总结(主要步骤)</span></a></li></ol></div>
             
 
           </div>
@@ -672,7 +724,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.6k</span>
+    <span title="Site words total count">58k</span>
   
 </div>
 
