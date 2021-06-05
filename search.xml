@@ -533,6 +533,39 @@
       </tags>
   </entry>
   <entry>
+    <title>File类，递归</title>
+    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
+<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
+<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
+<p>小贴士：   </p>
+<ol>
+<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
+<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
+</ol>
+</blockquote>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
+</ul>
+<ol>
+<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
+<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
+<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
+<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
+</ol>
+<ul>
+<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
+<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
+</ul>
+<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Filter和Listener</title>
     <url>/2021/03/23/Filter%E5%92%8CListener/</url>
     <content><![CDATA[<h1 id="Filter：过滤器"><a href="#Filter：过滤器" class="headerlink" title="Filter：过滤器"></a>Filter：过滤器</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
@@ -750,39 +783,6 @@
       </tags>
   </entry>
   <entry>
-    <title>File类，递归</title>
-    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
-<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
-<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" alt=""><blockquote>
-<p>小贴士：   </p>
-<ol>
-<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
-<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
-</ol>
-</blockquote>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
-</ul>
-<ol>
-<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" alt=""></li>
-<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" alt=""></li>
-<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" alt=""></li>
-<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
-</ol>
-<ul>
-<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
-<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
-</ul>
-<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML基础</title>
     <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
@@ -900,6 +900,36 @@
       </categories>
       <tags>
         <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA</title>
+    <url>/2021/06/03/IDEA/</url>
+    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" alt=""></p>
+<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" alt=""></p>
+<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
+<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" alt=""></p>
+</li>
+<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
+<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" alt=""></p>
+</li>
+</ol>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" alt=""></p>
+<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" alt=""></p>
+<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" alt=""></p>
+<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
+<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
+</ol>
+<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
+<li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
+</ol>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1>]]></content>
+      <categories>
+        <category>IDEA</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1063,36 +1093,6 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDEA</title>
-    <url>/2021/06/03/IDEA/</url>
-    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" alt=""></p>
-<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" alt=""></p>
-<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
-<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" alt=""></p>
-</li>
-<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
-<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" alt=""></p>
-</li>
-</ol>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" alt=""></p>
-<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" alt=""></p>
-<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" alt=""></p>
-<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
-<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
-</ol>
-<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
-<li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
-</ol>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1>]]></content>
-      <categories>
-        <category>IDEA</category>
-      </categories>
-      <tags>
-        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -2002,6 +2002,79 @@
       </tags>
   </entry>
   <entry>
+    <title>Java基础语法</title>
+    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="常用DOC命令"><a href="#常用DOC命令" class="headerlink" title="常用DOC命令"></a>常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
+<h1 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
+<h1 id="ASCII编码表"><a href="#ASCII编码表" class="headerlink" title="ASCII编码表"></a>ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><ul>
+<li>算术运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
+<ul>
+<li>赋值运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
+<ul>
+<li>比较运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
+<ul>
+<li>逻辑运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
+<ul>
+<li>三元运算符</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
+<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><ul>
+<li>if语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
+<ul>
+<li>if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
+<ul>
+<li>if-else if-else语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
+<h1 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h1><ul>
+<li>switch语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
+<ul>
+<li><p>switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
+</li>
+<li><p>break和continue的区别：</p>
+<ul>
+<li>break: 终止switch或者循环</li>
+<li>continue: 结束本次循环，继续下一次的循环 </li>
+</ul>
+</li>
+</ul>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><ul>
+<li>for语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
+<ul>
+<li>while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
+<ul>
+<li>do-while语句</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Junit，反射，注解</title>
     <url>/2019/11/12/Junit%EF%BC%8C%E5%8F%8D%E5%B0%84%EF%BC%8C%E6%B3%A8%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h1><h2 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h2><ol>
@@ -2285,70 +2358,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Java基础语法</title>
-    <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="常用DOC命令"><a href="#常用DOC命令" class="headerlink" title="常用DOC命令"></a>常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" alt=""></p>
-<h1 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/name.PNG" alt=""></p>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/datatype.PNG" alt=""></p>
-<h1 id="ASCII编码表"><a href="#ASCII编码表" class="headerlink" title="ASCII编码表"></a>ASCII编码表</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ascii.PNG" alt=""></p>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><ul>
-<li>算术运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/suanshu.PNG" alt=""></p>
-<ul>
-<li>赋值运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fuzhi.PNG" alt=""></p>
-<ul>
-<li>比较运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bijiao.PNG" alt=""></p>
-<ul>
-<li>逻辑运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/luoji.PNG" alt=""></p>
-<ul>
-<li>三元运算符</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sanyuan.PNG" alt=""></p>
-<h1 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h1><ul>
-<li>if语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if1.PNG" alt=""></p>
-<ul>
-<li>if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if2.PNG" alt=""></p>
-<ul>
-<li>if-else if-else语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/if3.PNG" alt=""></p>
-<h1 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h1><ul>
-<li>switch语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/switch.PNG" alt=""></p>
-<ul>
-<li><p>switch语句中，表达式的数据类型，可以是byte，short，int，char，enum（枚举），JDK7后可以接收字符串。    </p>
+    <title>Map</title>
+    <url>/2019/11/07/Map/</url>
+    <content><![CDATA[<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="Map常用子类"><a href="#Map常用子类" class="headerlink" title="Map常用子类"></a>Map常用子类</h2><ul>
+<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
 </li>
-<li><p>break和continue的区别：</p>
-<ul>
-<li>break: 终止switch或者循环</li>
-<li>continue: 结束本次循环，继续下一次的循环 </li>
-</ul>
+<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
 </li>
 </ul>
-<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><ul>
-<li>for语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/for.PNG" alt=""></p>
-<ul>
-<li>while语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/while.PNG" alt=""></p>
-<ul>
-<li>do-while语句</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" alt=""></p>
+<h2 id="Map接口的常用方法"><a href="#Map接口的常用方法" class="headerlink" title="Map接口的常用方法"></a>Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
+<h2 id="Map集合遍历键找值方式"><a href="#Map集合遍历键找值方式" class="headerlink" title="Map集合遍历键找值方式"></a>Map集合遍历键找值方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。<strong>方法提示: keyset()</strong>   </p>
+</li>
+<li><p>遍历键的Set集合，得到每一个键。  </p>
+</li>
+<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
+</li>
+</ol>
+<h2 id="Entry键值对对象"><a href="#Entry键值对对象" class="headerlink" title="Entry键值对对象"></a>Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
+<h2 id="Map集合遍历键值对方式"><a href="#Map集合遍历键值对方式" class="headerlink" title="Map集合遍历键值对方式"></a>Map集合遍历键值对方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。*<em>方法提示: entrySet() *</em>   </p>
+</li>
+<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+</li>
+<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -2751,43 +2788,6 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Map</title>
-    <url>/2019/11/07/Map/</url>
-    <content><![CDATA[<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="Map常用子类"><a href="#Map常用子类" class="headerlink" title="Map常用子类"></a>Map常用子类</h2><ul>
-<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
-</li>
-<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
-</li>
-</ul>
-<h2 id="Map接口的常用方法"><a href="#Map接口的常用方法" class="headerlink" title="Map接口的常用方法"></a>Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" alt=""></p>
-<h2 id="Map集合遍历键找值方式"><a href="#Map集合遍历键找值方式" class="headerlink" title="Map集合遍历键找值方式"></a>Map集合遍历键找值方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。<strong>方法提示: keyset()</strong>   </p>
-</li>
-<li><p>遍历键的Set集合，得到每一个键。  </p>
-</li>
-<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
-</li>
-</ol>
-<h2 id="Entry键值对对象"><a href="#Entry键值对对象" class="headerlink" title="Entry键值对对象"></a>Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" alt=""></p>
-<h2 id="Map集合遍历键值对方式"><a href="#Map集合遍历键值对方式" class="headerlink" title="Map集合遍历键值对方式"></a>Map集合遍历键值对方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。*<em>方法提示: entrySet() *</em>   </p>
-</li>
-<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
-</li>
-<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -3366,292 +3366,6 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
       </tags>
   </entry>
   <entry>
-    <title>Object类，常用API</title>
-    <url>/2019/11/06/Object%E7%B1%BB%EF%BC%8C%E5%B8%B8%E7%94%A8API/</url>
-    <content><![CDATA[<h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>java.lang.Object</code>类是Java语言中所有类的父类。</p>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
-<li><code>public String toString()</code>：返回该对象的字符串表示。</li>
-<li><code>public boolean equals(Object obj)</code>：指示其他某个对象是否与此对象“相等”。</li>
-</ul>
-<h1 id="Objects类"><a href="#Objects类" class="headerlink" title="Objects类"></a>Objects类</h1><p>在<strong>JDK7</strong>添加了一个Objects工具类，Objects类中的equals方法就优化了空指针异常问题。方法如下：</p>
-<ul>
-<li><code>public static boolean equals(Object a, Object b)</code>:判断两个对象是否相等。</li>
-</ul>
-<h1 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><p><code>java.util.Date</code>类，表示特定的瞬间，精确到毫秒。<br>其中有未过时的构造函数可以把毫秒值转成日期对象：</p>
-<ul>
-<li><code>public Date()</code>：分配Date对象并初始化此对象，以表示它的时间（精确到毫秒）。</li>
-<li><code>public Date(long date)</code>：分配Date对象并初始化此对象，以表示从1970年1月1日00:00:00 GMT）以来的指定毫秒数。</li>
-</ul>
-<blockquote>
-<p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoDate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建日期对象，获取当前的时间</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date()); <span class="comment">// Tue Jan 16 14:37:35 CST 2018</span></span><br><span class="line">        <span class="comment">// 创建日期对象，把指定的毫秒值转成日期对象</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date(<span class="number">0L</span>)); <span class="comment">// Thu Jan 01 08:00:00 CST 1970</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
-<li><code>public long getTime()</code> 把日期对象转换成对应的时间毫秒值。</li>
-</ul>
-<h1 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><p><code>java.text.DateFormat</code> 是日期/时间格式化子类的抽象类，通过这个类可以在Date对象与String对象之间进行来回转换。</p>
-<ul>
-<li><strong>格式化</strong>：按照指定的格式，从Date对象转换为String对象。</li>
-<li><strong>解析</strong>：按照指定的格式，从String对象转换为Date对象。</li>
-</ul>
-<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>由于DateFormat为抽象类，不能直接使用，所以需要常用的子类<code>java.text.SimpleDateFormat</code>。这个类需要一个格式来指定格式化或解析的标准。构造方法为：</p>
-<ul>
-<li><code>public SimpleDateFormat(String pattern)</code>：用给定的模式和默认语言环境的日期格式符号构造SimpleDateFormat。</li>
-</ul>
-<p>参数pattern是一个字符串，代表日期时间的自定义格式。</p>
-<h2 id="常用的格式规则："><a href="#常用的格式规则：" class="headerlink" title="常用的格式规则："></a>常用的格式规则：</h2><table>
-<thead>
-<tr>
-<th>标识字母（区分大小写）</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>y</td>
-<td>年</td>
-</tr>
-<tr>
-<td>M</td>
-<td>月</td>
-</tr>
-<tr>
-<td>d</td>
-<td>日</td>
-</tr>
-<tr>
-<td>H</td>
-<td>时</td>
-</tr>
-<tr>
-<td>m</td>
-<td>分</td>
-</tr>
-<tr>
-<td>s</td>
-<td>秒</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>备注：更详细的格式规则，可以参考SimpleDateFormat类的API文档。</p>
-</blockquote>
-<p>创建SimpleDateFormat对象的代码如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoSimpleDateFormat</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 对应的日期格式如：2018-01-16 15:06:38</span></span><br><span class="line">        DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h2><p>DateFormat类的常用方法有：</p>
-<ul>
-<li><code>public String format(Date date)</code>：将Date对象格式化为字符串。</li>
-<li><code>public Date parse(String source)</code>：将字符串解析为Date对象。</li>
-</ul>
-<h1 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h1><h2 id="Calendar静态方法"><a href="#Calendar静态方法" class="headerlink" title="Calendar静态方法"></a>Calendar静态方法</h2><ul>
-<li><code>public static Calendar getInstance()</code>：使用默认时区和语言环境获得一个日历</li>
-</ul>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarInit</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h2><p>根据Calendar类的API文档，常用方法有：</p>
-<ul>
-<li><code>public int get(int field)</code>：返回给定日历字段的值。</li>
-<li><code>public void set(int field, int value)</code>：将给定的日历字段设置为给定值。</li>
-<li><code>public abstract void add(int field, int amount)</code>：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</li>
-<li><code>public Date getTime()</code>：返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date对象。</li>
-</ul>
-<p>Calendar类中提供很多成员常量，代表给定的日历字段：</p>
-<table>
-<thead>
-<tr>
-<th>字段值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>YEAR</td>
-<td>年</td>
-</tr>
-<tr>
-<td>MONTH</td>
-<td>月（从0开始，可以+1使用）</td>
-</tr>
-<tr>
-<td>DAY_OF_MONTH</td>
-<td>月中的天（几号）</td>
-</tr>
-<tr>
-<td>HOUR</td>
-<td>时（12小时制）</td>
-</tr>
-<tr>
-<td>HOUR_OF_DAY</td>
-<td>时（24小时制）</td>
-</tr>
-<tr>
-<td>MINUTE</td>
-<td>分</td>
-</tr>
-<tr>
-<td>SECOND</td>
-<td>秒</td>
-</tr>
-<tr>
-<td>DAY_OF_WEEK</td>
-<td>周中的天（周几，周日为1，可以-1使用）</td>
-</tr>
-</tbody></table>
-<h3 id="get-set方法"><a href="#get-set方法" class="headerlink" title="get/set方法"></a>get/set方法</h3><p>get方法用来获取指定字段的值，set方法用来设置指定字段的值，代码使用演示：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Calendar对象</span></span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        <span class="comment">// 设置年 </span></span><br><span class="line">        <span class="keyword">int</span> year = cal.get(Calendar.YEAR);</span><br><span class="line">        <span class="comment">// 设置月</span></span><br><span class="line">        <span class="keyword">int</span> month = cal.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 设置日</span></span><br><span class="line">        <span class="keyword">int</span> dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        cal.set(Calendar.YEAR, <span class="number">2020</span>);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2020年1月17日</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="add方法"><a href="#add方法" class="headerlink" title="add方法"></a>add方法</h3><p>add方法可以对指定日历字段的值进行加减操作，代码使用演示：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo08CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2018年1月17日</span></span><br><span class="line">        <span class="comment">// 使用add方法</span></span><br><span class="line">        cal.add(Calendar.DAY_OF_MONTH, <span class="number">2</span>); <span class="comment">// 加2天</span></span><br><span class="line">        cal.add(Calendar.YEAR, -<span class="number">3</span>); <span class="comment">// 减3年</span></span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2015年1月18日; </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getTime方法"><a href="#getTime方法" class="headerlink" title="getTime方法"></a>getTime方法</h3><p>Calendar中的getTime方法并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo09CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        Date date = cal.getTime();</span><br><span class="line">        System.out.println(date); <span class="comment">// Tue Jan 16 16:03:09 CST 2018</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>小贴士：</p>
-<p>​     西方星期的开始为周日，中国为周一。</p>
-<p>​     在Calendar类中，月份的表示是以0-11代表1-12月。</p>
-<p>​     日期是有大小关系的，时间靠后，时间越大。</p>
-</blockquote>
-<h1 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h1><p>常用方法：</p>
-<ul>
-<li><code>public static long currentTimeMillis()</code>：返回以毫秒为单位的当前时间。</li>
-<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
-</ul>
-<h2 id="currentTimeMillis方法"><a href="#currentTimeMillis方法" class="headerlink" title="currentTimeMillis方法"></a>currentTimeMillis方法</h2><p>获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       	<span class="comment">//获取当前时间毫秒值</span></span><br><span class="line">        System.out.println(System.currentTimeMillis()); <span class="comment">// 1516090531144</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="arraycopy方法"><a href="#arraycopy方法" class="headerlink" title="arraycopy方法"></a>arraycopy方法</h2><ul>
-<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数序号</th>
-<th>参数名称</th>
-<th>参数类型</th>
-<th>参数含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>src</td>
-<td>Object</td>
-<td>源数组</td>
-</tr>
-<tr>
-<td>2</td>
-<td>srcPos</td>
-<td>int</td>
-<td>源数组索引起始位置</td>
-</tr>
-<tr>
-<td>3</td>
-<td>dest</td>
-<td>Object</td>
-<td>目标数组</td>
-</tr>
-<tr>
-<td>4</td>
-<td>destPos</td>
-<td>int</td>
-<td>目标数组索引起始位置</td>
-</tr>
-<tr>
-<td>5</td>
-<td>length</td>
-<td>int</td>
-<td>复制元素个数</td>
-</tr>
-</tbody></table>
-<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><p>将src数组中前3个元素，复制到dest数组的前3个位置上<br>复制元素前：src数组元素[1,2,3,4,5]，dest数组元素[6,7,8,9,10]<br>复制元素后：src数组元素[1,2,3,4,5]，dest数组元素[1,2,3,9,10]</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemArrayCopy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">        System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">        <span class="comment">/*代码运行后：两个数组中的元素发生了变化</span></span><br><span class="line"><span class="comment">         src数组元素[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">         dest数组元素[1,2,3,9,10]</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h1><h2 id="字符串拼接问题"><a href="#字符串拼接问题" class="headerlink" title="字符串拼接问题"></a>字符串拼接问题</h2><p>由于String类的<strong>对象内容</strong>不可改变，所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Hello"</span>;</span><br><span class="line">        s += <span class="string">"World"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在API中对String类有这样的描述：字符串是常量，它们的值在创建后不能被更改。</p>
-<p>根据这句话分析我们的代码，其实总共产生了三个字符串，即<code>&quot;Hello&quot;</code>、<code>&quot;World&quot;</code>和<code>&quot;HelloWorld&quot;</code>。引用变量s首先指向<code>Hello</code>对象，最终指向拼接出来的新字符串对象，即<code>HelloWord</code> 。</p>
-<h2 id="常用方法-4"><a href="#常用方法-4" class="headerlink" title="常用方法"></a>常用方法</h2><p>StringBuilder常用的方法有2个：</p>
-<ul>
-<li><code>public StringBuilder append(...)</code>：添加任意类型数据的字符串形式，并返回当前对象自身。</li>
-<li><code>public String toString()</code>：将当前StringBuilder对象转换为String对象。</li>
-</ul>
-<h3 id="append方法"><a href="#append方法" class="headerlink" title="append方法"></a>append方法</h3><p>append方法具有多种重载形式，可以接收任意类型的参数。任何数据作为参数都会将对应的字符串内容添加到StringBuilder中。例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuilder</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		<span class="comment">//public StringBuilder append(任意类型)</span></span><br><span class="line">		StringBuilder builder2 = builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		<span class="comment">//对比一下</span></span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">		System.out.println(<span class="string">"builder2:"</span>+builder2);</span><br><span class="line">		System.out.println(builder == builder2); <span class="comment">//true</span></span><br><span class="line">	    <span class="comment">// 可以添加 任何类型</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		builder.append(<span class="string">"world"</span>);</span><br><span class="line">		builder.append(<span class="keyword">true</span>);</span><br><span class="line">		builder.append(<span class="number">100</span>);</span><br><span class="line">		<span class="comment">//链式编程</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>).append(<span class="string">"world"</span>).append(<span class="keyword">true</span>).append(<span class="number">100</span>);</span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="toString方法"><a href="#toString方法" class="headerlink" title="toString方法"></a>toString方法</h3><p>通过toString方法，StringBuilder对象将会转换为不可变的String对象。如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo16StringBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 链式创建</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>).append(<span class="string">"World"</span>).append(<span class="string">"Java"</span>);</span><br><span class="line">        <span class="comment">// 调用方法</span></span><br><span class="line">        String str = sb.toString();</span><br><span class="line">        System.out.println(str); <span class="comment">// HelloWorldJava</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><h2 id="基本类型与包装类"><a href="#基本类型与包装类" class="headerlink" title="基本类型与包装类"></a>基本类型与包装类</h2><table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th>对应的包装类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>byte</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>short</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>int</td>
-<td><strong>Integer</strong></td>
-</tr>
-<tr>
-<td>long</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>float</td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>Double</td>
-</tr>
-<tr>
-<td>char</td>
-<td><strong>Character</strong></td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>Boolean</td>
-</tr>
-</tbody></table>
-<h2 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h2><ul>
-<li><p><strong>装箱</strong>：从基本类型转换为对应的包装类对象。</p>
-</li>
-<li><p><strong>拆箱</strong>：从包装类对象转换为对应的基本类型。</p>
-<h2 id="自动装箱与自动拆箱"><a href="#自动装箱与自动拆箱" class="headerlink" title="自动装箱与自动拆箱"></a>自动装箱与自动拆箱</h2></li>
-</ul>
-<p>由于我们经常要做基本类型与包装类之间的转换，从Java 5（JDK 1.5）开始，基本类型与包装类的装箱、拆箱动作可以自动完成。</p>
-<h2 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h2><h3 id="基本类型转换为String"><a href="#基本类型转换为String" class="headerlink" title="基本类型转换为String"></a>基本类型转换为String</h3><p>   基本类型转换String总共有三种方式，其中最简单的一种方式为： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">基本类型直接与&quot;&quot;相连接即可；如：34+&quot;&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="String转换成对应的基本类型"><a href="#String转换成对应的基本类型" class="headerlink" title="String转换成对应的基本类型"></a>String转换成对应的基本类型</h3><p><strong>除Character类外</strong>，其他所有包装类都具有<strong>parseXxx静态方法</strong>可以将字符串参数转换为对应的基本类型，例如：</p>
-<ul>
-<li><p><code>public static int parseInt(String s)</code>：将字符串参数转换为对应的int基本类型。</p>
-</li>
-<li><p><code>public static double parseDouble(String s)</code>：将字符串参数转换为对应的double基本类型。</p>
-</li>
-<li><p>其他包装类省略</p>
-</li>
-</ul>
-<p>代码使用（仅以Integer类的静态方法parseXxx为例）如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo18WrapperParse</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = Integer.parseInt(<span class="string">"100"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL调优</title>
     <url>/2021/03/29/MySQL%E8%B0%83%E4%BC%98/</url>
     <content><![CDATA[<h1 id="数据库命令规范"><a href="#数据库命令规范" class="headerlink" title="数据库命令规范"></a>数据库命令规范</h1><ol>
@@ -4166,232 +3880,289 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
       </tags>
   </entry>
   <entry>
-    <title>Redis和Jedis</title>
-    <url>/2021/03/23/Redis%E5%92%8CJedis/</url>
-    <content><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>redis是一款高性能的NOSQL系列的非关系型数据库</p>
-<h2 id="什么是NOSQL"><a href="#什么是NOSQL" class="headerlink" title="什么是NOSQL"></a>什么是NOSQL</h2><p>NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。        </p>
-<h2 id="NOSQL和关系型数据库"><a href="#NOSQL和关系型数据库" class="headerlink" title="NOSQL和关系型数据库"></a>NOSQL和关系型数据库</h2><ul>
-<li>关系型数据库与NoSQL数据库<code>并非对立而是互补</code>的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。</li>
-<li>一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据</li>
+    <title>Object类，常用API</title>
+    <url>/2019/11/06/Object%E7%B1%BB%EF%BC%8C%E5%B8%B8%E7%94%A8API/</url>
+    <content><![CDATA[<h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>java.lang.Object</code>类是Java语言中所有类的父类。</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li><code>public String toString()</code>：返回该对象的字符串表示。</li>
+<li><code>public boolean equals(Object obj)</code>：指示其他某个对象是否与此对象“相等”。</li>
 </ul>
-<h2 id="主流的NOSQL产品"><a href="#主流的NOSQL产品" class="headerlink" title="主流的NOSQL产品"></a>主流的NOSQL产品</h2><ul>
-<li><code>键值(Key-Value)存储数据库</code><ul>
-<li>相关产品： Tokyo Cabinet/Tyrant、<code>Redis</code>、Voldemort、Berkeley DB</li>
-<li>典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 </li>
-<li>数据模型： 一系列键值对</li>
-<li>优势： 快速查询</li>
-<li>劣势： 存储的数据缺少结构化</li>
-</ul>
-</li>
-<li><code>列存储数据库</code><ul>
-<li>相关产品：Cassandra, <code>HBase</code>, Riak</li>
-<li>典型应用：分布式的文件系统</li>
-<li>数据模型：以列簇式存储，将同一列数据存在一起</li>
-<li>优势：查找速度快，可扩展性强，更容易进行分布式扩展</li>
-<li>劣势：功能相对局限</li>
-</ul>
-</li>
-<li><code>文档型数据库</code><ul>
-<li>相关产品：CouchDB、<code>MongoDB</code></li>
-<li>典型应用：Web应用（与Key-Value类似，Value是结构化的）</li>
-<li>数据模型： 一系列键值对</li>
-<li>优势：数据结构要求不严格</li>
-<li>劣势： 查询性能不高，而且缺乏统一的查询语法</li>
-</ul>
-</li>
-<li><code>图形(Graph)数据库</code><ul>
-<li>相关数据库：Neo4J、InfoGrid、Infinite Graph</li>
-<li>典型应用：社交网络</li>
-<li>数据模型：图结构</li>
-<li>优势：利用图结构相关算法。</li>
-<li>劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。<h2 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h2></li>
-</ul>
-</li>
-<li><code>Redis</code>是用<code>C语言开发</code>的一个开源的高性能<code>键值对（key-value）数据库</code></li>
-<li>官方提供目前为止Redis支持的键值数据类型如下：<ol>
-<li>字符串类型 <code>string</code></li>
-<li>哈希类型 <code>hash</code></li>
-<li>列表类型 <code>list</code></li>
-<li>集合类型 <code>set</code></li>
-<li>有序集合类型 <code>sortedset</code></li>
-</ol>
-</li>
-<li>redis的应用场景<ul>
-<li>聊天室的在线好友列表缓存（数据查询、短连接、新闻内容、商品内容等等）</li>
-<li>任务队列。（秒杀、抢购、12306等等）</li>
-<li>应用排行榜</li>
-<li>网站访问统计</li>
-<li>数据过期处理（可以精确到毫秒）</li>
-<li>分布式集群架构中的session分离</li>
-</ul>
-</li>
-</ul>
-<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><ol>
-<li>官网：<a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></li>
-<li>中文网：<a href="http://www.redis.net.cn/" target="_blank" rel="noopener">http://www.redis.net.cn/</a></li>
-<li>解压直接可以使用：</li>
-</ol>
+<h1 id="Objects类"><a href="#Objects类" class="headerlink" title="Objects类"></a>Objects类</h1><p>在<strong>JDK7</strong>添加了一个Objects工具类，Objects类中的equals方法就优化了空指针异常问题。方法如下：</p>
 <ul>
-<li><code>redis.windows.conf</code>：配置文件</li>
-<li><code>redis-cli.exe</code>：redis的客户端</li>
-<li><code>redis-server.exe</code>：redis服务器端</li>
+<li><code>public static boolean equals(Object a, Object b)</code>:判断两个对象是否相等。</li>
 </ul>
-<h3 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h3><ol>
-<li>redis的数据结构：</li>
-</ol>
+<h1 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><p><code>java.util.Date</code>类，表示特定的瞬间，精确到毫秒。<br>其中有未过时的构造函数可以把毫秒值转成日期对象：</p>
 <ul>
-<li>redis存储的是：key,value格式的数据，其中<code>key都是字符串，value有5种不同的数据结构</code></li>
-<li>value的数据结构：<ol>
-<li>字符串类型 <code>string</code></li>
-<li>哈希类型 <code>hash</code> ：<code>map格式</code> </li>
-<li>列表类型 <code>list</code> ： <code>linkedlist格式。支持重复元素</code></li>
-<li>集合类型 <code>set</code>  ： <code>不允许重复元素</code></li>
-<li>有序集合类型 <code>sortedse</code>t：<code>不允许重复元素，且元素有顺序</code></li>
-</ol>
-</li>
+<li><code>public Date()</code>：分配Date对象并初始化此对象，以表示它的时间（精确到毫秒）。</li>
+<li><code>public Date(long date)</code>：分配Date对象并初始化此对象，以表示从1970年1月1日00:00:00 GMT）以来的指定毫秒数。</li>
 </ul>
-<ol start="2">
-<li><p><code>字符串类型 string</code></p>
-<ol>
-<li>存储： <code>set key value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">      127.0.0.1:6379&gt; set username zhangsan</span><br><span class="line">OK</span><br></pre></td></tr></table></figure></li>
-<li>获取： <code>get key</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get username</span><br><span class="line">&quot;zhangsan&quot;</span><br></pre></td></tr></table></figure></li>
-<li>删除： <code>del key</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del age</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p><code>哈希类型 hash</code></p>
-<ol>
-<li><p>存储： <code>hset key field value</code></p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset myhash username lisi</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hset myhash password 123</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
-<li><p>获取： </p>
+<blockquote>
+<p>tips: 由于我们处于东八区，所以我们的基准时间为1970年1月1日8时0分0秒。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoDate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建日期对象，获取当前的时间</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date()); <span class="comment">// Tue Jan 16 14:37:35 CST 2018</span></span><br><span class="line">        <span class="comment">// 创建日期对象，把指定的毫秒值转成日期对象</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> Date(<span class="number">0L</span>)); <span class="comment">// Thu Jan 01 08:00:00 CST 1970</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li><code>public long getTime()</code> 把日期对象转换成对应的时间毫秒值。</li>
+</ul>
+<h1 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h1><h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><p><code>java.text.DateFormat</code> 是日期/时间格式化子类的抽象类，通过这个类可以在Date对象与String对象之间进行来回转换。</p>
 <ul>
-<li><p><code>hget key field</code>: 获取指定的field对应的值</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">      127.0.0.1:6379&gt; hget myhash username</span><br><span class="line">&quot;lisi&quot;</span><br></pre></td></tr></table></figure></li>
-<li><p><code>hgetall key</code>：获取所有的field和value</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  127.0.0.1:6379&gt; hgetall myhash</span><br><span class="line">  1) &quot;username&quot;</span><br><span class="line">  2) &quot;lisi&quot;</span><br><span class="line">  3) &quot;password&quot;</span><br><span class="line">  4) &quot;123&quot;</span><br><span class="line">```			</span><br><span class="line"> 3. 删除： `hdel key field`</span><br></pre></td></tr></table></figure></li>
+<li><strong>格式化</strong>：按照指定的格式，从Date对象转换为String对象。</li>
+<li><strong>解析</strong>：按照指定的格式，从String对象转换为Date对象。</li>
 </ul>
-<p> 127.0.0.1:6379&gt; hdel myhash username<br> (integer) 1</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4. `列表类型 list`:可以添加一个元素到列表的头部（左边）或者尾部（右边）</span><br><span class="line">	1. 添加：</span><br><span class="line">	* `lpush key value`: 将元素加入列表左表</span><br><span class="line">		</span><br><span class="line">	* `rpush key value`：将元素加入列表右边</span><br><span class="line">		```			</span><br><span class="line">		127.0.0.1:6379&gt; lpush myList a</span><br><span class="line">		(integer) 1</span><br><span class="line">		127.0.0.1:6379&gt; lpush myList b</span><br><span class="line">		(integer) 2</span><br><span class="line">		127.0.0.1:6379&gt; rpush myList c</span><br><span class="line">		(integer) 3</span><br></pre></td></tr></table></figure></li>
-<li><p>获取：</p>
-</li>
-</ol>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>由于DateFormat为抽象类，不能直接使用，所以需要常用的子类<code>java.text.SimpleDateFormat</code>。这个类需要一个格式来指定格式化或解析的标准。构造方法为：</p>
 <ul>
-<li><code>lrange key start end</code> ：范围获取  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; lrange myList 0 -1</span><br><span class="line">1) &quot;b&quot;</span><br><span class="line">2) &quot;a&quot;</span><br><span class="line">3) &quot;c&quot;</span><br></pre></td></tr></table></figure></li>
+<li><code>public SimpleDateFormat(String pattern)</code>：用给定的模式和默认语言环境的日期格式符号构造SimpleDateFormat。</li>
 </ul>
-<ol start="3">
-<li>删除：</li>
-</ol>
+<p>参数pattern是一个字符串，代表日期时间的自定义格式。</p>
+<h2 id="常用的格式规则："><a href="#常用的格式规则：" class="headerlink" title="常用的格式规则："></a>常用的格式规则：</h2><table>
+<thead>
+<tr>
+<th>标识字母（区分大小写）</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>y</td>
+<td>年</td>
+</tr>
+<tr>
+<td>M</td>
+<td>月</td>
+</tr>
+<tr>
+<td>d</td>
+<td>日</td>
+</tr>
+<tr>
+<td>H</td>
+<td>时</td>
+</tr>
+<tr>
+<td>m</td>
+<td>分</td>
+</tr>
+<tr>
+<td>s</td>
+<td>秒</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>备注：更详细的格式规则，可以参考SimpleDateFormat类的API文档。</p>
+</blockquote>
+<p>创建SimpleDateFormat对象的代码如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoSimpleDateFormat</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 对应的日期格式如：2018-01-16 15:06:38</span></span><br><span class="line">        DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h2><p>DateFormat类的常用方法有：</p>
 <ul>
-<li><code>lpop key</code>： 删除列表最左边的元素，并将元素返回</li>
-<li><code>rpop key</code>： 删除列表最右边的元素，并将元素返回</li>
+<li><code>public String format(Date date)</code>：将Date对象格式化为字符串。</li>
+<li><code>public Date parse(String source)</code>：将字符串解析为Date对象。</li>
 </ul>
-</li>
-</ol>
-<ol start="5">
-<li><p><code>集合类型 set</code> ： 不允许重复元素</p>
-<ol>
-<li>存储：<code>sadd key value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">(integer) 0</span><br></pre></td></tr></table></figure></li>
-<li>获取：<code>smembers key</code>:获取set集合中所有元素 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; smembers myset</span><br><span class="line">1) &quot;a&quot;</span><br></pre></td></tr></table></figure></li>
-<li>删除：<code>srem key value</code>:删除set集合中的某个元素     <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; srem myset a</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p><code>有序集合类型 sortedset</code>：不允许重复元素，且元素有顺序.每个元素都会<code>关联一个double类型的分数</code>。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
-<ol>
-<li>存储：<code>zadd key score value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zadd mysort 60 zhangsan</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd mysort 50 lisi</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd mysort 80 wangwu</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
-<li>获取：<code>zrange key start end [withscores]</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrange mysort 0 -1</span><br><span class="line">1) &quot;lisi&quot;</span><br><span class="line">2) &quot;zhangsan&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">   </span><br><span class="line">127.0.0.1:6379&gt; zrange mysort 0 -1 withscores</span><br><span class="line">1) &quot;zhangsan&quot;</span><br><span class="line">2) &quot;60&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">4) &quot;80&quot;</span><br><span class="line">5) &quot;lisi&quot;</span><br><span class="line">6) &quot;500&quot;</span><br></pre></td></tr></table></figure></li>
-<li>删除：<code>zrem key value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrem mysort lisi</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><code>通用命令</code></p>
-<ol>
-<li><code>keys *</code> : 查询所有的键</li>
-<li><code>type key</code> ： 获取键对应的value的类型</li>
-<li><code>del key</code>：删除指定的key value</li>
-</ol>
-</li>
-</ol>
-<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><ul>
-<li>redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</li>
-<li><code>redis持久化机制</code>：</li>
+<h1 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h1><h2 id="Calendar静态方法"><a href="#Calendar静态方法" class="headerlink" title="Calendar静态方法"></a>Calendar静态方法</h2><ul>
+<li><code>public static Calendar getInstance()</code>：使用默认时区和语言环境获得一个日历</li>
 </ul>
-<ol>
-<li><code>RDB：默认方式</code>，不需要进行配置，默认就使用这种机制<ul>
-<li>在一定的间隔时间中，检测key的变化情况，然后持久化数据</li>
-</ul>
-<ol>
-<li>编辑<code>redis.windwos.conf</code>文件<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#   after 900 sec (15 min) if at least 1 key changed</span><br><span class="line">    save 900 1</span><br><span class="line"></span><br><span class="line">#   after 300 sec (5 min) if at least 10 keys changed</span><br><span class="line">    save 300 10</span><br><span class="line"></span><br><span class="line">#   after 60 sec if at least 10000 keys changed</span><br><span class="line">	save 60 10000</span><br></pre></td></tr></table></figure></li>
-<li><code>重新启动redis服务器，并指定配置文件名称</code><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">D:\JavaWeb2018\day23_redis\资料\redis\windows-64\redis-2.8.9&gt;redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><code>AOF：日志记录的方式</code>，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据<ol>
-<li>编辑<code>redis.windwos.conf</code>文件<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">appendonly no（关闭aof） --&gt; appendonly yes （开启aof）</span><br><span class="line">				</span><br><span class="line"># appendfsync always ： 每一次操作都进行持久化</span><br><span class="line">appendfsync everysec ： 每隔一秒进行一次持久化</span><br><span class="line"># appendfsync no	 ： 不进行持久化</span><br></pre></td></tr></table></figure>
-<h3 id="Java客户端-Jedis"><a href="#Java客户端-Jedis" class="headerlink" title="Java客户端 Jedis"></a>Java客户端 Jedis</h3></li>
-</ol>
-</li>
-</ol>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarInit</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h2><p>根据Calendar类的API文档，常用方法有：</p>
 <ul>
-<li>Jedis: 一款java操作redis数据库的工具.</li>
-<li>使用步骤：</li>
+<li><code>public int get(int field)</code>：返回给定日历字段的值。</li>
+<li><code>public void set(int field, int value)</code>：将给定的日历字段设置为给定值。</li>
+<li><code>public abstract void add(int field, int amount)</code>：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</li>
+<li><code>public Date getTime()</code>：返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date对象。</li>
 </ul>
-<ol>
-<li>下载jedis的jar包</li>
-<li>使用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>,<span class="number">6379</span>);</span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"> jedis.set(<span class="string">"username"</span>,<span class="string">"zhangsan"</span>);</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
+<p>Calendar类中提供很多成员常量，代表给定的日历字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>YEAR</td>
+<td>年</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>月（从0开始，可以+1使用）</td>
+</tr>
+<tr>
+<td>DAY_OF_MONTH</td>
+<td>月中的天（几号）</td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>时（12小时制）</td>
+</tr>
+<tr>
+<td>HOUR_OF_DAY</td>
+<td>时（24小时制）</td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>分</td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>秒</td>
+</tr>
+<tr>
+<td>DAY_OF_WEEK</td>
+<td>周中的天（周几，周日为1，可以-1使用）</td>
+</tr>
+</tbody></table>
+<h3 id="get-set方法"><a href="#get-set方法" class="headerlink" title="get/set方法"></a>get/set方法</h3><p>get方法用来获取指定字段的值，set方法用来设置指定字段的值，代码使用演示：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Calendar对象</span></span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        <span class="comment">// 设置年 </span></span><br><span class="line">        <span class="keyword">int</span> year = cal.get(Calendar.YEAR);</span><br><span class="line">        <span class="comment">// 设置月</span></span><br><span class="line">        <span class="keyword">int</span> month = cal.get(Calendar.MONTH) + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 设置日</span></span><br><span class="line">        <span class="keyword">int</span> dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        cal.set(Calendar.YEAR, <span class="number">2020</span>);</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2020年1月17日</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="add方法"><a href="#add方法" class="headerlink" title="add方法"></a>add方法</h3><p>add方法可以对指定日历字段的值进行加减操作，代码使用演示：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo08CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2018年1月17日</span></span><br><span class="line">        <span class="comment">// 使用add方法</span></span><br><span class="line">        cal.add(Calendar.DAY_OF_MONTH, <span class="number">2</span>); <span class="comment">// 加2天</span></span><br><span class="line">        cal.add(Calendar.YEAR, -<span class="number">3</span>); <span class="comment">// 减3年</span></span><br><span class="line">        System.out.print(year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + dayOfMonth + <span class="string">"日"</span>); <span class="comment">// 2015年1月18日; </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="getTime方法"><a href="#getTime方法" class="headerlink" title="getTime方法"></a>getTime方法</h3><p>Calendar中的getTime方法并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo09CalendarMethod</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Calendar cal = Calendar.getInstance();</span><br><span class="line">        Date date = cal.getTime();</span><br><span class="line">        System.out.println(date); <span class="comment">// Tue Jan 16 16:03:09 CST 2018</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小贴士：</p>
+<p>​     西方星期的开始为周日，中国为周一。</p>
+<p>​     在Calendar类中，月份的表示是以0-11代表1-12月。</p>
+<p>​     日期是有大小关系的，时间靠后，时间越大。</p>
+</blockquote>
+<h1 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h1><p>常用方法：</p>
+<ul>
+<li><code>public static long currentTimeMillis()</code>：返回以毫秒为单位的当前时间。</li>
+<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
+</ul>
+<h2 id="currentTimeMillis方法"><a href="#currentTimeMillis方法" class="headerlink" title="currentTimeMillis方法"></a>currentTimeMillis方法</h2><p>获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       	<span class="comment">//获取当前时间毫秒值</span></span><br><span class="line">        System.out.println(System.currentTimeMillis()); <span class="comment">// 1516090531144</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="arraycopy方法"><a href="#arraycopy方法" class="headerlink" title="arraycopy方法"></a>arraycopy方法</h2><ul>
+<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code>：将数组中指定的数据拷贝到另一个数组中。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数序号</th>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>src</td>
+<td>Object</td>
+<td>源数组</td>
+</tr>
+<tr>
+<td>2</td>
+<td>srcPos</td>
+<td>int</td>
+<td>源数组索引起始位置</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dest</td>
+<td>Object</td>
+<td>目标数组</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destPos</td>
+<td>int</td>
+<td>目标数组索引起始位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>length</td>
+<td>int</td>
+<td>复制元素个数</td>
+</tr>
+</tbody></table>
+<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><p>将src数组中前3个元素，复制到dest数组的前3个位置上<br>复制元素前：src数组元素[1,2,3,4,5]，dest数组元素[6,7,8,9,10]<br>复制元素后：src数组元素[1,2,3,4,5]，dest数组元素[1,2,3,9,10]</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemArrayCopy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">        System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">        <span class="comment">/*代码运行后：两个数组中的元素发生了变化</span></span><br><span class="line"><span class="comment">         src数组元素[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">         dest数组元素[1,2,3,9,10]</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h1><h2 id="字符串拼接问题"><a href="#字符串拼接问题" class="headerlink" title="字符串拼接问题"></a>字符串拼接问题</h2><p>由于String类的<strong>对象内容</strong>不可改变，所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"Hello"</span>;</span><br><span class="line">        s += <span class="string">"World"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在API中对String类有这样的描述：字符串是常量，它们的值在创建后不能被更改。</p>
+<p>根据这句话分析我们的代码，其实总共产生了三个字符串，即<code>&quot;Hello&quot;</code>、<code>&quot;World&quot;</code>和<code>&quot;HelloWorld&quot;</code>。引用变量s首先指向<code>Hello</code>对象，最终指向拼接出来的新字符串对象，即<code>HelloWord</code> 。</p>
+<h2 id="常用方法-4"><a href="#常用方法-4" class="headerlink" title="常用方法"></a>常用方法</h2><p>StringBuilder常用的方法有2个：</p>
+<ul>
+<li><code>public StringBuilder append(...)</code>：添加任意类型数据的字符串形式，并返回当前对象自身。</li>
+<li><code>public String toString()</code>：将当前StringBuilder对象转换为String对象。</li>
+</ul>
+<h3 id="append方法"><a href="#append方法" class="headerlink" title="append方法"></a>append方法</h3><p>append方法具有多种重载形式，可以接收任意类型的参数。任何数据作为参数都会将对应的字符串内容添加到StringBuilder中。例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuilder</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象</span></span><br><span class="line">		StringBuilder builder = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		<span class="comment">//public StringBuilder append(任意类型)</span></span><br><span class="line">		StringBuilder builder2 = builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		<span class="comment">//对比一下</span></span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">		System.out.println(<span class="string">"builder2:"</span>+builder2);</span><br><span class="line">		System.out.println(builder == builder2); <span class="comment">//true</span></span><br><span class="line">	    <span class="comment">// 可以添加 任何类型</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>);</span><br><span class="line">		builder.append(<span class="string">"world"</span>);</span><br><span class="line">		builder.append(<span class="keyword">true</span>);</span><br><span class="line">		builder.append(<span class="number">100</span>);</span><br><span class="line">		<span class="comment">//链式编程</span></span><br><span class="line">		builder.append(<span class="string">"hello"</span>).append(<span class="string">"world"</span>).append(<span class="keyword">true</span>).append(<span class="number">100</span>);</span><br><span class="line">		System.out.println(<span class="string">"builder:"</span>+builder);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="toString方法"><a href="#toString方法" class="headerlink" title="toString方法"></a>toString方法</h3><p>通过toString方法，StringBuilder对象将会转换为不可变的String对象。如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo16StringBuilder</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 链式创建</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>).append(<span class="string">"World"</span>).append(<span class="string">"Java"</span>);</span><br><span class="line">        <span class="comment">// 调用方法</span></span><br><span class="line">        String str = sb.toString();</span><br><span class="line">        System.out.println(str); <span class="comment">// HelloWorldJava</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><h2 id="基本类型与包装类"><a href="#基本类型与包装类" class="headerlink" title="基本类型与包装类"></a>基本类型与包装类</h2><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>对应的包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<h2 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h2><ul>
+<li><p><strong>装箱</strong>：从基本类型转换为对应的包装类对象。</p>
 </li>
-</ol>
-<h3 id="Jedis操作各种redis中的数据结构"><a href="#Jedis操作各种redis中的数据结构" class="headerlink" title="Jedis操作各种redis中的数据结构"></a>Jedis操作各种redis中的数据结构</h3><ol>
-<li><p>`字符串类型 string</p>
-<pre><code>        set
-get`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">//存储</span></span><br><span class="line"> jedis.set(<span class="string">"username"</span>,<span class="string">"zhangsan"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取</span></span><br><span class="line">String username = jedis.get(<span class="string">"username"</span>);</span><br><span class="line">System.out.println(username);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//可以使用setex()方法存储可以指定过期时间的 key value</span></span><br><span class="line">jedis.setex(<span class="string">"activecode"</span>,<span class="number">20</span>,<span class="string">"hehe"</span>);<span class="comment">//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure></li>
-<li><p>`哈希类型 hash ： map格式  </p>
-<pre><code>        hset
-hget
-hgetAll`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// 存储hash</span></span><br><span class="line">jedis.hset(<span class="string">"user"</span>,<span class="string">"name"</span>,<span class="string">"lisi"</span>);</span><br><span class="line">jedis.hset(<span class="string">"user"</span>,<span class="string">"age"</span>,<span class="string">"23"</span>);</span><br><span class="line">jedis.hset(<span class="string">"user"</span>,<span class="string">"gender"</span>,<span class="string">"female"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 获取hash</span></span><br><span class="line">String name = jedis.hget(<span class="string">"user"</span>, <span class="string">"name"</span>);</span><br><span class="line">System.out.println(name);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 获取hash的所有map中的数据</span></span><br><span class="line"> Map&lt;String, String&gt; user = jedis.hgetAll(<span class="string">"user"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// keyset</span></span><br><span class="line">Set&lt;String&gt; keySet = user.keySet();</span><br><span class="line"><span class="keyword">for</span> (String key : keySet) &#123;</span><br><span class="line"><span class="comment">//获取value</span></span><br><span class="line">String value = user.get(key);</span><br><span class="line">System.out.println(key + <span class="string">":"</span> + value);</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line"> jedis.close();</span><br></pre></td></tr></table></figure>
+<li><p><strong>拆箱</strong>：从包装类对象转换为对应的基本类型。</p>
+<h2 id="自动装箱与自动拆箱"><a href="#自动装箱与自动拆箱" class="headerlink" title="自动装箱与自动拆箱"></a>自动装箱与自动拆箱</h2></li>
+</ul>
+<p>由于我们经常要做基本类型与包装类之间的转换，从Java 5（JDK 1.5）开始，基本类型与包装类的装箱、拆箱动作可以自动完成。</p>
+<h2 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h2><h3 id="基本类型转换为String"><a href="#基本类型转换为String" class="headerlink" title="基本类型转换为String"></a>基本类型转换为String</h3><p>   基本类型转换String总共有三种方式，其中最简单的一种方式为： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">基本类型直接与&quot;&quot;相连接即可；如：34+&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="String转换成对应的基本类型"><a href="#String转换成对应的基本类型" class="headerlink" title="String转换成对应的基本类型"></a>String转换成对应的基本类型</h3><p><strong>除Character类外</strong>，其他所有包装类都具有<strong>parseXxx静态方法</strong>可以将字符串参数转换为对应的基本类型，例如：</p>
+<ul>
+<li><p><code>public static int parseInt(String s)</code>：将字符串参数转换为对应的int基本类型。</p>
 </li>
-<li><p>`列表类型 list ： linkedlist格式。支持重复元素</p>
-<pre><code>        lpush / rpush
-lpop / rpop
-lrange start end : 范围获取`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// list 存储</span></span><br><span class="line">jedis.lpush(<span class="string">"mylist"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>);<span class="comment">//从左边存</span></span><br><span class="line">jedis.rpush(<span class="string">"mylist"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>);<span class="comment">//从右边存</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">// list 范围获取</span></span><br><span class="line">List&lt;String&gt; mylist = jedis.lrange(<span class="string">"mylist"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(mylist);</span><br><span class="line">	        </span><br><span class="line"><span class="comment">// list 弹出</span></span><br><span class="line">String element1 = jedis.lpop(<span class="string">"mylist"</span>);<span class="comment">//c</span></span><br><span class="line">System.out.println(element1);</span><br><span class="line">	</span><br><span class="line">String element2 = jedis.rpop(<span class="string">"mylist"</span>);<span class="comment">//c</span></span><br><span class="line">System.out.println(element2);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// list 范围获取</span></span><br><span class="line">List&lt;String&gt; mylist2 = jedis.lrange(<span class="string">"mylist"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(mylist2);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
+<li><p><code>public static double parseDouble(String s)</code>：将字符串参数转换为对应的double基本类型。</p>
 </li>
-<li><p>`集合类型 set  ： 不允许重复元素</p>
-<pre><code>        sadd
-smembers:获取所有元素`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// set 存储</span></span><br><span class="line">jedis.sadd(<span class="string">"myset"</span>,<span class="string">"java"</span>,<span class="string">"php"</span>,<span class="string">"c++"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// set 获取</span></span><br><span class="line">Set&lt;String&gt; myset = jedis.smembers(<span class="string">"myset"</span>);</span><br><span class="line">System.out.println(myset);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure></li>
-<li><p>`有序集合类型 sortedset：不允许重复元素，且元素有顺序</p>
-<pre><code>        zadd
-zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// sortedset 存储</span></span><br><span class="line">jedis.zadd(<span class="string">"mysortedset"</span>,<span class="number">3</span>,<span class="string">"亚瑟"</span>);</span><br><span class="line">jedis.zadd(<span class="string">"mysortedset"</span>,<span class="number">30</span>,<span class="string">"后裔"</span>);</span><br><span class="line">jedis.zadd(<span class="string">"mysortedset"</span>,<span class="number">55</span>,<span class="string">"孙悟空"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// sortedset 获取</span></span><br><span class="line">Set&lt;String&gt; mysortedset = jedis.zrange(<span class="string">"mysortedset"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(mysortedset);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
-
+<li><p>其他包装类省略</p>
 </li>
-</ol>
-<h3 id="jedis连接池：-JedisPool"><a href="#jedis连接池：-JedisPool" class="headerlink" title="jedis连接池： JedisPool"></a>jedis连接池： JedisPool</h3><ol>
-<li>使用：<ol>
-<li><code>创建JedisPool连接池对象</code></li>
-<li><code>调用方法 getResource()方法获取Jedis连接</code><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//0.创建一个配置对象</span></span><br><span class="line">JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">config.setMaxTotal(<span class="number">50</span>);</span><br><span class="line">config.setMaxIdle(<span class="number">10</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//1.创建Jedis连接池对象</span></span><br><span class="line">JedisPool jedisPool = <span class="keyword">new</span> JedisPool(config,<span class="string">"localhost"</span>,<span class="number">6379</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//2.获取连接</span></span><br><span class="line">Jedis jedis = jedisPool.getResource();</span><br><span class="line"><span class="comment">//3. 使用</span></span><br><span class="line">jedis.set(<span class="string">"hehe"</span>,<span class="string">"heihei"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//4. 关闭 归还到连接池中</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li>连接池工具类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisPoolUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JedisPool jedisPool;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		<span class="comment">//读取配置文件</span></span><br><span class="line">		 InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(<span class="string">"jedis.properties"</span>);</span><br><span class="line">		 <span class="comment">//创建Properties对象</span></span><br><span class="line">		Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">		<span class="comment">//关联文件</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			pro.load(is);</span><br><span class="line">		&#125; </span><br><span class="line">           <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//获取数据，设置到JedisPoolConfig中</span></span><br><span class="line">		JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">		config.setMaxTotal(Integer.parseInt(pro.getProperty(<span class="string">"maxTotal"</span>)));</span><br><span class="line">		config.setMaxIdle(Integer.parseInt(pro.getProperty(<span class="string">"maxIdle"</span>)));</span><br><span class="line">			</span><br><span class="line">		<span class="comment">//初始化JedisPool</span></span><br><span class="line">		jedisPool = <span class="keyword">new</span> JedisPool(config,pro.getProperty(<span class="string">"host"</span>),Integer.parseInt(pro.getProperty(<span class="string">"port"</span>)));		</span><br><span class="line">						</span><br><span class="line">    &#125;</span><br><span class="line">			</span><br><span class="line">			    <span class="comment">/**</span></span><br><span class="line"><span class="comment">			     * 获取连接方法</span></span><br><span class="line"><span class="comment">			     */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title">getJedis</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</li>
-</ol>
-<p>​    </p>
-]]></content>
+</ul>
+<p>代码使用（仅以Integer类的静态方法parseXxx为例）如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo18WrapperParse</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = Integer.parseInt(<span class="string">"100"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Redis</category>
+        <category>JavaSE</category>
       </categories>
       <tags>
-        <tag>Redis</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -4741,6 +4512,235 @@ zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><
       </tags>
   </entry>
   <entry>
+    <title>Redis和Jedis</title>
+    <url>/2021/03/23/Redis%E5%92%8CJedis/</url>
+    <content><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>redis是一款高性能的NOSQL系列的非关系型数据库</p>
+<h2 id="什么是NOSQL"><a href="#什么是NOSQL" class="headerlink" title="什么是NOSQL"></a>什么是NOSQL</h2><p>NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。        </p>
+<h2 id="NOSQL和关系型数据库"><a href="#NOSQL和关系型数据库" class="headerlink" title="NOSQL和关系型数据库"></a>NOSQL和关系型数据库</h2><ul>
+<li>关系型数据库与NoSQL数据库<code>并非对立而是互补</code>的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。</li>
+<li>一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据</li>
+</ul>
+<h2 id="主流的NOSQL产品"><a href="#主流的NOSQL产品" class="headerlink" title="主流的NOSQL产品"></a>主流的NOSQL产品</h2><ul>
+<li><code>键值(Key-Value)存储数据库</code><ul>
+<li>相关产品： Tokyo Cabinet/Tyrant、<code>Redis</code>、Voldemort、Berkeley DB</li>
+<li>典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 </li>
+<li>数据模型： 一系列键值对</li>
+<li>优势： 快速查询</li>
+<li>劣势： 存储的数据缺少结构化</li>
+</ul>
+</li>
+<li><code>列存储数据库</code><ul>
+<li>相关产品：Cassandra, <code>HBase</code>, Riak</li>
+<li>典型应用：分布式的文件系统</li>
+<li>数据模型：以列簇式存储，将同一列数据存在一起</li>
+<li>优势：查找速度快，可扩展性强，更容易进行分布式扩展</li>
+<li>劣势：功能相对局限</li>
+</ul>
+</li>
+<li><code>文档型数据库</code><ul>
+<li>相关产品：CouchDB、<code>MongoDB</code></li>
+<li>典型应用：Web应用（与Key-Value类似，Value是结构化的）</li>
+<li>数据模型： 一系列键值对</li>
+<li>优势：数据结构要求不严格</li>
+<li>劣势： 查询性能不高，而且缺乏统一的查询语法</li>
+</ul>
+</li>
+<li><code>图形(Graph)数据库</code><ul>
+<li>相关数据库：Neo4J、InfoGrid、Infinite Graph</li>
+<li>典型应用：社交网络</li>
+<li>数据模型：图结构</li>
+<li>优势：利用图结构相关算法。</li>
+<li>劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。<h2 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h2></li>
+</ul>
+</li>
+<li><code>Redis</code>是用<code>C语言开发</code>的一个开源的高性能<code>键值对（key-value）数据库</code></li>
+<li>官方提供目前为止Redis支持的键值数据类型如下：<ol>
+<li>字符串类型 <code>string</code></li>
+<li>哈希类型 <code>hash</code></li>
+<li>列表类型 <code>list</code></li>
+<li>集合类型 <code>set</code></li>
+<li>有序集合类型 <code>sortedset</code></li>
+</ol>
+</li>
+<li>redis的应用场景<ul>
+<li>聊天室的在线好友列表缓存（数据查询、短连接、新闻内容、商品内容等等）</li>
+<li>任务队列。（秒杀、抢购、12306等等）</li>
+<li>应用排行榜</li>
+<li>网站访问统计</li>
+<li>数据过期处理（可以精确到毫秒）</li>
+<li>分布式集群架构中的session分离</li>
+</ul>
+</li>
+</ul>
+<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><ol>
+<li>官网：<a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></li>
+<li>中文网：<a href="http://www.redis.net.cn/" target="_blank" rel="noopener">http://www.redis.net.cn/</a></li>
+<li>解压直接可以使用：</li>
+</ol>
+<ul>
+<li><code>redis.windows.conf</code>：配置文件</li>
+<li><code>redis-cli.exe</code>：redis的客户端</li>
+<li><code>redis-server.exe</code>：redis服务器端</li>
+</ul>
+<h3 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h3><ol>
+<li>redis的数据结构：</li>
+</ol>
+<ul>
+<li>redis存储的是：key,value格式的数据，其中<code>key都是字符串，value有5种不同的数据结构</code></li>
+<li>value的数据结构：<ol>
+<li>字符串类型 <code>string</code></li>
+<li>哈希类型 <code>hash</code> ：<code>map格式</code> </li>
+<li>列表类型 <code>list</code> ： <code>linkedlist格式。支持重复元素</code></li>
+<li>集合类型 <code>set</code>  ： <code>不允许重复元素</code></li>
+<li>有序集合类型 <code>sortedse</code>t：<code>不允许重复元素，且元素有顺序</code></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p><code>字符串类型 string</code></p>
+<ol>
+<li>存储： <code>set key value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">      127.0.0.1:6379&gt; set username zhangsan</span><br><span class="line">OK</span><br></pre></td></tr></table></figure></li>
+<li>获取： <code>get key</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get username</span><br><span class="line">&quot;zhangsan&quot;</span><br></pre></td></tr></table></figure></li>
+<li>删除： <code>del key</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del age</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p><code>哈希类型 hash</code></p>
+<ol>
+<li><p>存储： <code>hset key field value</code></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset myhash username lisi</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hset myhash password 123</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
+<li><p>获取： </p>
+<ul>
+<li><p><code>hget key field</code>: 获取指定的field对应的值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">      127.0.0.1:6379&gt; hget myhash username</span><br><span class="line">&quot;lisi&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>hgetall key</code>：获取所有的field和value</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  127.0.0.1:6379&gt; hgetall myhash</span><br><span class="line">  1) &quot;username&quot;</span><br><span class="line">  2) &quot;lisi&quot;</span><br><span class="line">  3) &quot;password&quot;</span><br><span class="line">  4) &quot;123&quot;</span><br><span class="line">```			</span><br><span class="line"> 3. 删除： `hdel key field`</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p> 127.0.0.1:6379&gt; hdel myhash username<br> (integer) 1</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4. `列表类型 list`:可以添加一个元素到列表的头部（左边）或者尾部（右边）</span><br><span class="line">	1. 添加：</span><br><span class="line">	* `lpush key value`: 将元素加入列表左表</span><br><span class="line">		</span><br><span class="line">	* `rpush key value`：将元素加入列表右边</span><br><span class="line">		```			</span><br><span class="line">		127.0.0.1:6379&gt; lpush myList a</span><br><span class="line">		(integer) 1</span><br><span class="line">		127.0.0.1:6379&gt; lpush myList b</span><br><span class="line">		(integer) 2</span><br><span class="line">		127.0.0.1:6379&gt; rpush myList c</span><br><span class="line">		(integer) 3</span><br></pre></td></tr></table></figure></li>
+<li><p>获取：</p>
+</li>
+</ol>
+<ul>
+<li><code>lrange key start end</code> ：范围获取  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; lrange myList 0 -1</span><br><span class="line">1) &quot;b&quot;</span><br><span class="line">2) &quot;a&quot;</span><br><span class="line">3) &quot;c&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>删除：</li>
+</ol>
+<ul>
+<li><code>lpop key</code>： 删除列表最左边的元素，并将元素返回</li>
+<li><code>rpop key</code>： 删除列表最右边的元素，并将元素返回</li>
+</ul>
+</li>
+</ol>
+<ol start="5">
+<li><p><code>集合类型 set</code> ： 不允许重复元素</p>
+<ol>
+<li>存储：<code>sadd key value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">(integer) 0</span><br></pre></td></tr></table></figure></li>
+<li>获取：<code>smembers key</code>:获取set集合中所有元素 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; smembers myset</span><br><span class="line">1) &quot;a&quot;</span><br></pre></td></tr></table></figure></li>
+<li>删除：<code>srem key value</code>:删除set集合中的某个元素     <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; srem myset a</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p><code>有序集合类型 sortedset</code>：不允许重复元素，且元素有顺序.每个元素都会<code>关联一个double类型的分数</code>。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
+<ol>
+<li>存储：<code>zadd key score value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zadd mysort 60 zhangsan</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd mysort 50 lisi</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd mysort 80 wangwu</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure></li>
+<li>获取：<code>zrange key start end [withscores]</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrange mysort 0 -1</span><br><span class="line">1) &quot;lisi&quot;</span><br><span class="line">2) &quot;zhangsan&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">   </span><br><span class="line">127.0.0.1:6379&gt; zrange mysort 0 -1 withscores</span><br><span class="line">1) &quot;zhangsan&quot;</span><br><span class="line">2) &quot;60&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">4) &quot;80&quot;</span><br><span class="line">5) &quot;lisi&quot;</span><br><span class="line">6) &quot;500&quot;</span><br></pre></td></tr></table></figure></li>
+<li>删除：<code>zrem key value</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrem mysort lisi</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><code>通用命令</code></p>
+<ol>
+<li><code>keys *</code> : 查询所有的键</li>
+<li><code>type key</code> ： 获取键对应的value的类型</li>
+<li><code>del key</code>：删除指定的key value</li>
+</ol>
+</li>
+</ol>
+<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><ul>
+<li>redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</li>
+<li><code>redis持久化机制</code>：</li>
+</ul>
+<ol>
+<li><code>RDB：默认方式</code>，不需要进行配置，默认就使用这种机制<ul>
+<li>在一定的间隔时间中，检测key的变化情况，然后持久化数据</li>
+</ul>
+<ol>
+<li>编辑<code>redis.windwos.conf</code>文件<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#   after 900 sec (15 min) if at least 1 key changed</span><br><span class="line">    save 900 1</span><br><span class="line"></span><br><span class="line">#   after 300 sec (5 min) if at least 10 keys changed</span><br><span class="line">    save 300 10</span><br><span class="line"></span><br><span class="line">#   after 60 sec if at least 10000 keys changed</span><br><span class="line">	save 60 10000</span><br></pre></td></tr></table></figure></li>
+<li><code>重新启动redis服务器，并指定配置文件名称</code><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">D:\JavaWeb2018\day23_redis\资料\redis\windows-64\redis-2.8.9&gt;redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><code>AOF：日志记录的方式</code>，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据<ol>
+<li>编辑<code>redis.windwos.conf</code>文件<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">appendonly no（关闭aof） --&gt; appendonly yes （开启aof）</span><br><span class="line">				</span><br><span class="line"># appendfsync always ： 每一次操作都进行持久化</span><br><span class="line">appendfsync everysec ： 每隔一秒进行一次持久化</span><br><span class="line"># appendfsync no	 ： 不进行持久化</span><br></pre></td></tr></table></figure>
+<h3 id="Java客户端-Jedis"><a href="#Java客户端-Jedis" class="headerlink" title="Java客户端 Jedis"></a>Java客户端 Jedis</h3></li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>Jedis: 一款java操作redis数据库的工具.</li>
+<li>使用步骤：</li>
+</ul>
+<ol>
+<li>下载jedis的jar包</li>
+<li>使用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>,<span class="number">6379</span>);</span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"> jedis.set(<span class="string">"username"</span>,<span class="string">"zhangsan"</span>);</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Jedis操作各种redis中的数据结构"><a href="#Jedis操作各种redis中的数据结构" class="headerlink" title="Jedis操作各种redis中的数据结构"></a>Jedis操作各种redis中的数据结构</h3><ol>
+<li><p>`字符串类型 string</p>
+<pre><code>        set
+get`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">//存储</span></span><br><span class="line"> jedis.set(<span class="string">"username"</span>,<span class="string">"zhangsan"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取</span></span><br><span class="line">String username = jedis.get(<span class="string">"username"</span>);</span><br><span class="line">System.out.println(username);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//可以使用setex()方法存储可以指定过期时间的 key value</span></span><br><span class="line">jedis.setex(<span class="string">"activecode"</span>,<span class="number">20</span>,<span class="string">"hehe"</span>);<span class="comment">//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure></li>
+<li><p>`哈希类型 hash ： map格式  </p>
+<pre><code>        hset
+hget
+hgetAll`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// 存储hash</span></span><br><span class="line">jedis.hset(<span class="string">"user"</span>,<span class="string">"name"</span>,<span class="string">"lisi"</span>);</span><br><span class="line">jedis.hset(<span class="string">"user"</span>,<span class="string">"age"</span>,<span class="string">"23"</span>);</span><br><span class="line">jedis.hset(<span class="string">"user"</span>,<span class="string">"gender"</span>,<span class="string">"female"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 获取hash</span></span><br><span class="line">String name = jedis.hget(<span class="string">"user"</span>, <span class="string">"name"</span>);</span><br><span class="line">System.out.println(name);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 获取hash的所有map中的数据</span></span><br><span class="line"> Map&lt;String, String&gt; user = jedis.hgetAll(<span class="string">"user"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// keyset</span></span><br><span class="line">Set&lt;String&gt; keySet = user.keySet();</span><br><span class="line"><span class="keyword">for</span> (String key : keySet) &#123;</span><br><span class="line"><span class="comment">//获取value</span></span><br><span class="line">String value = user.get(key);</span><br><span class="line">System.out.println(key + <span class="string">":"</span> + value);</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line"> jedis.close();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>`列表类型 list ： linkedlist格式。支持重复元素</p>
+<pre><code>        lpush / rpush
+lpop / rpop
+lrange start end : 范围获取`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// list 存储</span></span><br><span class="line">jedis.lpush(<span class="string">"mylist"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>);<span class="comment">//从左边存</span></span><br><span class="line">jedis.rpush(<span class="string">"mylist"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>);<span class="comment">//从右边存</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">// list 范围获取</span></span><br><span class="line">List&lt;String&gt; mylist = jedis.lrange(<span class="string">"mylist"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(mylist);</span><br><span class="line">	        </span><br><span class="line"><span class="comment">// list 弹出</span></span><br><span class="line">String element1 = jedis.lpop(<span class="string">"mylist"</span>);<span class="comment">//c</span></span><br><span class="line">System.out.println(element1);</span><br><span class="line">	</span><br><span class="line">String element2 = jedis.rpop(<span class="string">"mylist"</span>);<span class="comment">//c</span></span><br><span class="line">System.out.println(element2);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// list 范围获取</span></span><br><span class="line">List&lt;String&gt; mylist2 = jedis.lrange(<span class="string">"mylist"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(mylist2);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>`集合类型 set  ： 不允许重复元素</p>
+<pre><code>        sadd
+smembers:获取所有元素`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// set 存储</span></span><br><span class="line">jedis.sadd(<span class="string">"myset"</span>,<span class="string">"java"</span>,<span class="string">"php"</span>,<span class="string">"c++"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// set 获取</span></span><br><span class="line">Set&lt;String&gt; myset = jedis.smembers(<span class="string">"myset"</span>);</span><br><span class="line">System.out.println(myset);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure></li>
+<li><p>`有序集合类型 sortedset：不允许重复元素，且元素有顺序</p>
+<pre><code>        zadd
+zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis();<span class="comment">//如果使用空参构造，默认值 "localhost",6379端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line"><span class="comment">// sortedset 存储</span></span><br><span class="line">jedis.zadd(<span class="string">"mysortedset"</span>,<span class="number">3</span>,<span class="string">"亚瑟"</span>);</span><br><span class="line">jedis.zadd(<span class="string">"mysortedset"</span>,<span class="number">30</span>,<span class="string">"后裔"</span>);</span><br><span class="line">jedis.zadd(<span class="string">"mysortedset"</span>,<span class="number">55</span>,<span class="string">"孙悟空"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">// sortedset 获取</span></span><br><span class="line">Set&lt;String&gt; mysortedset = jedis.zrange(<span class="string">"mysortedset"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(mysortedset);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="jedis连接池：-JedisPool"><a href="#jedis连接池：-JedisPool" class="headerlink" title="jedis连接池： JedisPool"></a>jedis连接池： JedisPool</h3><ol>
+<li>使用：<ol>
+<li><code>创建JedisPool连接池对象</code></li>
+<li><code>调用方法 getResource()方法获取Jedis连接</code><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//0.创建一个配置对象</span></span><br><span class="line">JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">config.setMaxTotal(<span class="number">50</span>);</span><br><span class="line">config.setMaxIdle(<span class="number">10</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//1.创建Jedis连接池对象</span></span><br><span class="line">JedisPool jedisPool = <span class="keyword">new</span> JedisPool(config,<span class="string">"localhost"</span>,<span class="number">6379</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//2.获取连接</span></span><br><span class="line">Jedis jedis = jedisPool.getResource();</span><br><span class="line"><span class="comment">//3. 使用</span></span><br><span class="line">jedis.set(<span class="string">"hehe"</span>,<span class="string">"heihei"</span>);</span><br><span class="line">	</span><br><span class="line"><span class="comment">//4. 关闭 归还到连接池中</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>连接池工具类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisPoolUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JedisPool jedisPool;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		<span class="comment">//读取配置文件</span></span><br><span class="line">		 InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(<span class="string">"jedis.properties"</span>);</span><br><span class="line">		 <span class="comment">//创建Properties对象</span></span><br><span class="line">		Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">		<span class="comment">//关联文件</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			pro.load(is);</span><br><span class="line">		&#125; </span><br><span class="line">           <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//获取数据，设置到JedisPoolConfig中</span></span><br><span class="line">		JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">		config.setMaxTotal(Integer.parseInt(pro.getProperty(<span class="string">"maxTotal"</span>)));</span><br><span class="line">		config.setMaxIdle(Integer.parseInt(pro.getProperty(<span class="string">"maxIdle"</span>)));</span><br><span class="line">			</span><br><span class="line">		<span class="comment">//初始化JedisPool</span></span><br><span class="line">		jedisPool = <span class="keyword">new</span> JedisPool(config,pro.getProperty(<span class="string">"host"</span>),Integer.parseInt(pro.getProperty(<span class="string">"port"</span>)));		</span><br><span class="line">						</span><br><span class="line">    &#125;</span><br><span class="line">			</span><br><span class="line">			    <span class="comment">/**</span></span><br><span class="line"><span class="comment">			     * 获取连接方法</span></span><br><span class="line"><span class="comment">			     */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title">getJedis</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ol>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Servlet和HTTP</title>
     <url>/2021/03/23/Servlet%E5%92%8CHTTP/</url>
     <content><![CDATA[<h1 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h1><h3 id="概念-运行在服务器端的小程序"><a href="#概念-运行在服务器端的小程序" class="headerlink" title="概念:运行在服务器端的小程序"></a>概念:运行在服务器端的小程序</h3><ul>
@@ -5006,6 +5006,17 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>Springboot+Vue</title>
+    <url>/2021/05/30/Springboot-Vue/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>全栈项目</category>
+      </categories>
+      <tags>
+        <tag>全栈项目</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringMVC</title>
     <url>/2021/03/23/SpringMVC/</url>
     <content><![CDATA[]]></content>
@@ -5062,14 +5073,147 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>Springboot+Vue</title>
-    <url>/2021/05/30/Springboot-Vue/</url>
-    <content><![CDATA[]]></content>
+    <title>Web概述</title>
+    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h1><h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><ol>
+<li><code>C/S：</code>客户端/服务器端</li>
+<li><code>B/S：</code>浏览器/服务器端</li>
+</ol>
+<h2 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h2><ol>
+<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
+<li>如： <code>html,css,JavaScript</code></li>
+</ul>
+</li>
+<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
+<li>如：<code>servlet/jsp,php,asp....</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h2><ol>
+<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
+<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
+<li>传输协议：规定了数据传输的规则</li>
+</ol>
+<ul>
+<li>基础协议：<ol>
+<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
+<li><code>UDP</code>: 不安全协议。 速度快</li>
+</ol>
+</li>
+</ul>
+<h1 id="web服务器软件"><a href="#web服务器软件" class="headerlink" title="web服务器软件"></a>web服务器软件</h1><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
+<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
+<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
+<li>web容器</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>常见的java相关的web服务器软件：<ul>
+<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
+</ul>
+<h1 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h1><ol>
+<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
+</li>
+<li><p>安装：解压压缩包即可</p>
+<ul>
+<li>注意：安装目录建议不要有中文和空格</li>
+</ul>
+</li>
+<li><p>卸载：删除目录即可</p>
+</li>
+<li><p>启动：</p>
+</li>
+</ol>
+<ul>
+<li><p>bin/startup.bat ,双击运行该文件即可</p>
+</li>
+<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
+</li>
+<li><p>可能遇到的问题：</p>
+<ol>
+<li><p>黑窗口一闪而过：</p>
+<ul>
+<li>原因： 没有正确配置JAVA_HOME环境变量</li>
+<li>解决方案：正确配置JAVA_HOME环境变量</li>
+</ul>
+</li>
+<li><p>启动报错：</p>
+<ol>
+<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
+<li><code>netstat -ano</code></li>
+</ul>
+</li>
+<li>温柔：修改自身的端口号<ul>
+<li><code>conf/server.xml</code></li>
+<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>关闭：<ol>
+<li>正常关闭：<ul>
+<li><code>bin/shutdown.bat</code></li>
+<li><code>ctrl+c</code></li>
+</ul>
+</li>
+<li>强制关闭：<ul>
+<li>点击启动窗口的×<h1 id="Tomcat-配置"><a href="#Tomcat-配置" class="headerlink" title="Tomcat 配置"></a>Tomcat 配置</h1></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><p><strong>部署项目的方式：</strong> </p>
+<ol>
+<li>直接将项目放到<code>webapps目录</code>下即可。</li>
+</ol>
+<ul>
+<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
+<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
+</ul>
+<ol start="2">
+<li><p>配置<code>conf/server.xml</code>文件<br>   <code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></p>
+<ul>
+<li><code>docBase</code>:项目存放的路径</li>
+<li><code>path</code>：虚拟目录</li>
+</ul>
+</li>
+<li><p>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br> <code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></p>
+<ul>
+<li>虚拟目录：xml文件的名称</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>目录结构</strong><ul>
+<li>java动态项目的目录结构：  </li>
+</ul>
+  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</li>
+</ul>
+]]></content>
       <categories>
-        <category>全栈项目</category>
+        <category>JavaWeb</category>
       </categories>
       <tags>
-        <tag>全栈项目</tag>
+        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -5255,150 +5399,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>Web概述</title>
-    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h1><h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><ol>
-<li><code>C/S：</code>客户端/服务器端</li>
-<li><code>B/S：</code>浏览器/服务器端</li>
-</ol>
-<h2 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h2><ol>
-<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
-<li>如： <code>html,css,JavaScript</code></li>
-</ul>
-</li>
-<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
-<li>如：<code>servlet/jsp,php,asp....</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h2><ol>
-<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
-<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
-<li>传输协议：规定了数据传输的规则</li>
-</ol>
-<ul>
-<li>基础协议：<ol>
-<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
-<li><code>UDP</code>: 不安全协议。 速度快</li>
-</ol>
-</li>
-</ul>
-<h1 id="web服务器软件"><a href="#web服务器软件" class="headerlink" title="web服务器软件"></a>web服务器软件</h1><ul>
-<li>服务器：安装了服务器软件的计算机</li>
-<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
-<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
-<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
-<li>web容器</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>常见的java相关的web服务器软件：<ul>
-<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
-</ul>
-<h1 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h1><ol>
-<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
-</li>
-<li><p>安装：解压压缩包即可</p>
-<ul>
-<li>注意：安装目录建议不要有中文和空格</li>
-</ul>
-</li>
-<li><p>卸载：删除目录即可</p>
-</li>
-<li><p>启动：</p>
-</li>
-</ol>
-<ul>
-<li><p>bin/startup.bat ,双击运行该文件即可</p>
-</li>
-<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
-</li>
-<li><p>可能遇到的问题：</p>
-<ol>
-<li><p>黑窗口一闪而过：</p>
-<ul>
-<li>原因： 没有正确配置JAVA_HOME环境变量</li>
-<li>解决方案：正确配置JAVA_HOME环境变量</li>
-</ul>
-</li>
-<li><p>启动报错：</p>
-<ol>
-<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
-<li><code>netstat -ano</code></li>
-</ul>
-</li>
-<li>温柔：修改自身的端口号<ul>
-<li><code>conf/server.xml</code></li>
-<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="5">
-<li>关闭：<ol>
-<li>正常关闭：<ul>
-<li><code>bin/shutdown.bat</code></li>
-<li><code>ctrl+c</code></li>
-</ul>
-</li>
-<li>强制关闭：<ul>
-<li>点击启动窗口的×<h1 id="Tomcat-配置"><a href="#Tomcat-配置" class="headerlink" title="Tomcat 配置"></a>Tomcat 配置</h1></li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<ul>
-<li><p><strong>部署项目的方式：</strong> </p>
-<ol>
-<li>直接将项目放到<code>webapps目录</code>下即可。</li>
-</ol>
-<ul>
-<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
-<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
-</ul>
-<ol start="2">
-<li><p>配置<code>conf/server.xml</code>文件<br>   <code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></p>
-<ul>
-<li><code>docBase</code>:项目存放的路径</li>
-<li><code>path</code>：虚拟目录</li>
-</ul>
-</li>
-<li><p>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br> <code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></p>
-<ul>
-<li>虚拟目录：xml文件的名称</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><strong>目录结构</strong><ul>
-<li>java动态项目的目录结构：  </li>
-</ul>
-  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>final，权限，内部类</title>
     <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" alt=""></p>
@@ -5406,97 +5406,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" alt=""></p>
 <h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" alt=""></p>
 <h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>字节流，字符流</title>
-    <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO的分类"><a href="#IO的分类" class="headerlink" title="IO的分类"></a>IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
-<ul>
-<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
-<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
-</ul>
-<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
-<ul>
-<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
-<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="IO的体系"><a href="#IO的体系" class="headerlink" title="IO的体系"></a>IO的体系</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png" alt=""><h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><h2 id="字节输出流【OutputStream】"><a href="#字节输出流【OutputStream】" class="headerlink" title="字节输出流【OutputStream】"></a>字节输出流【OutputStream】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG" alt=""><h2 id="FileOutputStream类"><a href="#FileOutputStream类" class="headerlink" title="FileOutputStream类"></a>FileOutputStream类</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG" alt=""><h3 id="写出字节数据"><a href="#写出字节数据" class="headerlink" title="写出字节数据"></a>写出字节数据</h3></li>
-</ul>
-<ol>
-<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
-<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
-<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="数据追加续写"><a href="#数据追加续写" class="headerlink" title="数据追加续写"></a>数据追加续写</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG" alt=""><h3 id="写出换行"><a href="#写出换行" class="headerlink" title="写出换行"></a>写出换行</h3></li>
-</ol>
-<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
-<h2 id="字节输入流【InputStream】"><a href="#字节输入流【InputStream】" class="headerlink" title="字节输入流【InputStream】"></a>字节输入流【InputStream】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG" alt=""></p>
-<h2 id="FileIntputStream类"><a href="#FileIntputStream类" class="headerlink" title="FileIntputStream类"></a>FileIntputStream类</h2><h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG" alt=""></p>
-<h3 id="读取字节数据"><a href="#读取字节数据" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
-<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
-<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h1><h2 id="字符输出流【Writer】"><a href="#字符输出流【Writer】" class="headerlink" title="字符输出流【Writer】"></a>字符输出流【Writer】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG" alt=""><h2 id="FileWriter类"><a href="#FileWriter类" class="headerlink" title="FileWriter类"></a>FileWriter类</h2><h3 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG" alt=""><h3 id="写出字符数据"><a href="#写出字符数据" class="headerlink" title="写出字符数据"></a>写出字符数据</h3></li>
-<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
-<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
-<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
-<li>续写和换行：操作类似于FileOutputStream<h3 id="关闭和刷新"><a href="#关闭和刷新" class="headerlink" title="关闭和刷新"></a>关闭和刷新</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG" alt=""></li>
-</ol>
-<h2 id="字符输入流【Reader】"><a href="#字符输入流【Reader】" class="headerlink" title="字符输入流【Reader】"></a>字符输入流【Reader】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG" alt=""></p>
-<h2 id="FileReader类"><a href="#FileReader类" class="headerlink" title="FileReader类"></a>FileReader类</h2><h3 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG" alt=""></p>
-<h3 id="读取字节数据-1"><a href="#读取字节数据-1" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
-<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
-<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
-</ol>
-<h1 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h1><ol>
-<li>构造方法</li>
-</ol>
-<ul>
-<li><code>public Properties()</code> :创建一个空的属性列表</li>
-</ul>
-<ol start="2">
-<li>基本的存储方法</li>
-</ol>
-<ul>
-<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
-<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
-<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
-</ul>
-<ol start="3">
-<li>与流相关的方法 </li>
-</ol>
-<ul>
-<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
-<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>异常</title>
-    <url>/2019/11/08/%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="异常体系与分类"><a href="#异常体系与分类" class="headerlink" title="异常体系与分类"></a>异常体系与分类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yctx.PNG" alt=""></p>
-<h2 id="Throwable中的常用方法"><a href="#Throwable中的常用方法" class="headerlink" title="Throwable中的常用方法"></a>Throwable中的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/efgfggklop96.PNG" alt=""></p>
-<h1 id="异常的处理"><a href="#异常的处理" class="headerlink" title="异常的处理"></a>异常的处理</h1><h2 id="抛出异常throw"><a href="#抛出异常throw" class="headerlink" title="抛出异常throw"></a>抛出异常throw</h2><ul>
-<li>throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。</li>
-<li>使用格式： <code>throw new 异常类名(参数)</code><h2 id="声明异常throws"><a href="#声明异常throws" class="headerlink" title="声明异常throws"></a>声明异常throws</h2></li>
-<li>字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。</li>
-<li>使用格式：<code>修饰符 返回值类型 方法名(参数) throws 异常类名1,异常类名2…{ }</code></li>
-</ul>
-<h2 id="捕获异常try…catch"><a href="#捕获异常try…catch" class="headerlink" title="捕获异常try…catch"></a>捕获异常try…catch</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/trycatch.PNG" alt=""></p>
-<h2 id="ﬁnally代码块"><a href="#ﬁnally代码块" class="headerlink" title="ﬁnally代码块"></a>ﬁnally代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/finally.PNG" alt=""></p>
-<h1 id="异常的注意事项"><a href="#异常的注意事项" class="headerlink" title="异常的注意事项"></a>异常的注意事项</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zy1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zy2.PNG" alt=""></p>
-<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><p>异常类如何定义: </p>
-<ol>
-<li>自定义一个编译期异常: 自定义类 并继承于 java.lang.Exception </li>
-<li>自定义一个运行时期的异常类: 自定义类 并继承于 java.lang.RuntimeException</li>
-</ol>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6168,6 +6077,97 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <h1 id="JavaSE"><a href="#JavaSE" class="headerlink" title="JavaSE"></a>JavaSE</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h2 id="常用包，类"><a href="#常用包，类" class="headerlink" title="常用包，类"></a>常用包，类</h2><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h2 id="异常-1"><a href="#异常-1" class="headerlink" title="异常"></a>异常</h2><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><h2 id="JDK-8-新特性"><a href="#JDK-8-新特性" class="headerlink" title="JDK 8 新特性"></a>JDK 8 新特性</h2><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h2><h2 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h2><h2 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h2><h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h2 id="Cookie，Session"><a href="#Cookie，Session" class="headerlink" title="Cookie，Session"></a>Cookie，Session</h2><h2 id="Filter，Listener"><a href="#Filter，Listener" class="headerlink" title="Filter，Listener"></a>Filter，Listener</h2><h2 id="文件上传，下载"><a href="#文件上传，下载" class="headerlink" title="文件上传，下载"></a>文件上传，下载</h2><h1 id="JavaEE"><a href="#JavaEE" class="headerlink" title="JavaEE"></a>JavaEE</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><h2 id="Springboot"><a href="#Springboot" class="headerlink" title="Springboot"></a>Springboot</h2><h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h2 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h2><h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><h1 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h1><h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><h2 id="Layui"><a href="#Layui" class="headerlink" title="Layui"></a>Layui</h2><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2>]]></content>
   </entry>
   <entry>
+    <title>异常</title>
+    <url>/2019/11/08/%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="异常体系与分类"><a href="#异常体系与分类" class="headerlink" title="异常体系与分类"></a>异常体系与分类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yctx.PNG" alt=""></p>
+<h2 id="Throwable中的常用方法"><a href="#Throwable中的常用方法" class="headerlink" title="Throwable中的常用方法"></a>Throwable中的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/efgfggklop96.PNG" alt=""></p>
+<h1 id="异常的处理"><a href="#异常的处理" class="headerlink" title="异常的处理"></a>异常的处理</h1><h2 id="抛出异常throw"><a href="#抛出异常throw" class="headerlink" title="抛出异常throw"></a>抛出异常throw</h2><ul>
+<li>throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。</li>
+<li>使用格式： <code>throw new 异常类名(参数)</code><h2 id="声明异常throws"><a href="#声明异常throws" class="headerlink" title="声明异常throws"></a>声明异常throws</h2></li>
+<li>字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常(抛出异常)。</li>
+<li>使用格式：<code>修饰符 返回值类型 方法名(参数) throws 异常类名1,异常类名2…{ }</code></li>
+</ul>
+<h2 id="捕获异常try…catch"><a href="#捕获异常try…catch" class="headerlink" title="捕获异常try…catch"></a>捕获异常try…catch</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/trycatch.PNG" alt=""></p>
+<h2 id="ﬁnally代码块"><a href="#ﬁnally代码块" class="headerlink" title="ﬁnally代码块"></a>ﬁnally代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/finally.PNG" alt=""></p>
+<h1 id="异常的注意事项"><a href="#异常的注意事项" class="headerlink" title="异常的注意事项"></a>异常的注意事项</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zy1.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zy2.PNG" alt=""></p>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><p>异常类如何定义: </p>
+<ol>
+<li>自定义一个编译期异常: 自定义类 并继承于 java.lang.Exception </li>
+<li>自定义一个运行时期的异常类: 自定义类 并继承于 java.lang.RuntimeException</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字节流，字符流</title>
+    <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO的分类"><a href="#IO的分类" class="headerlink" title="IO的分类"></a>IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
+<ul>
+<li><strong>输入流</strong>：把数据从 其他设备 上读取到 内存 中的流   </li>
+<li><strong>输出流</strong>：把数据从 内存 中写出到 其他设备 上的流    </li>
+</ul>
+<p>根据数据的类型分为：<strong>字节流</strong>和<strong>字符流</strong>  </p>
+<ul>
+<li><strong>字节流</strong>：以字节为单位，读写数据的流  </li>
+<li><strong>字符流</strong>：以字符为单位，读写数据的流 <h2 id="IO的体系"><a href="#IO的体系" class="headerlink" title="IO的体系"></a>IO的体系</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png" alt=""><h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><h2 id="字节输出流【OutputStream】"><a href="#字节输出流【OutputStream】" class="headerlink" title="字节输出流【OutputStream】"></a>字节输出流【OutputStream】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG" alt=""><h2 id="FileOutputStream类"><a href="#FileOutputStream类" class="headerlink" title="FileOutputStream类"></a>FileOutputStream类</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG" alt=""><h3 id="写出字节数据"><a href="#写出字节数据" class="headerlink" title="写出字节数据"></a>写出字节数据</h3></li>
+</ul>
+<ol>
+<li>写出字节：<code>write(int b)</code>,每次可以写出一个字节数据</li>
+<li>写出字节数组：<code>write(byte[] b)</code>,每次可以写出数组中的数据 </li>
+<li>写出指定长度字节数组： <code>write(byte[] b, int off, int len)</code>,每次写出从oﬀ索引开始，len个字节 <h3 id="数据追加续写"><a href="#数据追加续写" class="headerlink" title="数据追加续写"></a>数据追加续写</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG" alt=""><h3 id="写出换行"><a href="#写出换行" class="headerlink" title="写出换行"></a>写出换行</h3></li>
+</ol>
+<p><strong>Windows系统</strong>，换行符号是<code>\r\n</code></p>
+<h2 id="字节输入流【InputStream】"><a href="#字节输入流【InputStream】" class="headerlink" title="字节输入流【InputStream】"></a>字节输入流【InputStream】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG" alt=""></p>
+<h2 id="FileIntputStream类"><a href="#FileIntputStream类" class="headerlink" title="FileIntputStream类"></a>FileIntputStream类</h2><h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG" alt=""></p>
+<h3 id="读取字节数据"><a href="#读取字节数据" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
+<li>读取字节：<code>read</code>方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字节数组读取： <code>read(byte[] b)</code> ，每次读取b的长度个字节到数组中，返回读取到的有效字节个数，读取到末尾时，返回 -1<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h1><h2 id="字符输出流【Writer】"><a href="#字符输出流【Writer】" class="headerlink" title="字符输出流【Writer】"></a>字符输出流【Writer】</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG" alt=""><h2 id="FileWriter类"><a href="#FileWriter类" class="headerlink" title="FileWriter类"></a>FileWriter类</h2><h3 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG" alt=""><h3 id="写出字符数据"><a href="#写出字符数据" class="headerlink" title="写出字符数据"></a>写出字符数据</h3></li>
+<li>写出字符： <code>write(int b)</code> 方法，每次可以写出一个字符数据  </li>
+<li>写出字符数组 ： <code>write(char[] cbuf)</code> 和 <code>write(char[] cbuf, int off, int len)</code> ，每次可以写出字符数 组中的数据，用法类似FileOutputStream     </li>
+<li>写出字符串：<code>write(String str)</code>和<code>write(String str, int off, int len)</code>，每次可以写出字符串中的数据，更为方便  </li>
+<li>续写和换行：操作类似于FileOutputStream<h3 id="关闭和刷新"><a href="#关闭和刷新" class="headerlink" title="关闭和刷新"></a>关闭和刷新</h3><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG" alt=""></li>
+</ol>
+<h2 id="字符输入流【Reader】"><a href="#字符输入流【Reader】" class="headerlink" title="字符输入流【Reader】"></a>字符输入流【Reader】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG" alt=""></p>
+<h2 id="FileReader类"><a href="#FileReader类" class="headerlink" title="FileReader类"></a>FileReader类</h2><h3 id="构造方法-3"><a href="#构造方法-3" class="headerlink" title="构造方法"></a>构造方法</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG" alt=""></p>
+<h3 id="读取字节数据-1"><a href="#读取字节数据-1" class="headerlink" title="读取字节数据"></a>读取字节数据</h3><ol>
+<li>读取字符：<code>read</code> 方法，每次可以读取一个字符的数据，提升为int类型，读取到文件末尾，返回 -1  </li>
+<li>使用字符数组读取：<code>read(char[] cbuf)</code>，每次读取b的长度个字符到数组中，返回读取到的有效字符个数， 读取到末尾时，返回 -1 </li>
+</ol>
+<h1 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h1><ol>
+<li>构造方法</li>
+</ol>
+<ul>
+<li><code>public Properties()</code> :创建一个空的属性列表</li>
+</ul>
+<ol start="2">
+<li>基本的存储方法</li>
+</ol>
+<ul>
+<li><code>public Object setProperty(String key, String value)</code> ： 保存一对属性。     </li>
+<li><code>public String getProperty(String key)</code> ：使用此属性列表中指定的键搜索属性值</li>
+<li><code>public Set&lt;String&gt; stringPropertyNames()</code> ：所有键的名称的集合 </li>
+</ul>
+<ol start="3">
+<li>与流相关的方法 </li>
+</ol>
+<ul>
+<li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
+<li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>接口，多态</title>
     <url>/2019/11/04/%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81/</url>
     <content><![CDATA[<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" alt=""></p>
@@ -6187,46 +6187,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据库系统原理一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rrgewrtvwerter52532rdg222.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ffvfvscfrfeggrhrgaeg333.PNG" alt=""></p>
-<h1 id="并发一致性问题"><a href="#并发一致性问题" class="headerlink" title="并发一致性问题"></a>并发一致性问题</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fsfsfbsbfhnahgbs444.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/szdfaadvagafagaf555.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgdfddgyhzcvbsfadsdf666.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sfvgaafajhjuebcvbjstrdgg777.PNG" alt=""></p>
-<h1 id="封锁"><a href="#封锁" class="headerlink" title="封锁"></a>封锁</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfawrgaergeraadg888.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dtbsgvvgscgvwctg999.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/srgrcrcvccsrcfcws101010.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vtvwywvyyveyvww111111.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rthtrsgsfgstysrtg121212.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vfvdfvfvdzfvgsdfsdf131313.PNG" alt=""></p>
-<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fxghsrgsvshrygeatgsfmh141414.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaervdharfbdhgt151515.PNG" alt=""></p>
-<h1 id="多版本并发控制"><a href="#多版本并发控制" class="headerlink" title="多版本并发控制"></a>多版本并发控制</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/tdjydryjwgjxcfjge161616.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/segdbxgjsgbghsbjxh171717.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfarfaegaerwerewrnhn181818.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vdfgafvadnhaefvservdv191919.PNG" alt=""></p>
-<h1 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zfbahbdgbzdjhafvbdxdsb202020.PNG" alt=""></p>
-<h1 id="关系数据库设计理论"><a href="#关系数据库设计理论" class="headerlink" title="关系数据库设计理论"></a>关系数据库设计理论</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaergtegadvxhrg212121.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dvawrgVADBAFGAFADHGVABAETE222222.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/CAWEFRWAGETVAF232323.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/BFHSDFBSGSBDGSBSGxdv242424.PNG" alt=""></p>
-<h1 id="ER-图"><a href="#ER-图" class="headerlink" title="ER 图"></a>ER 图</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/xfgxbxgxffghdfgnshdt252525.PNG" alt=""></p>
-<p>参考链接：</p>
-<ol>
-<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据库系统原理</category>
-      </categories>
-      <tags>
-        <tag>数据库系统原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6358,38 +6318,43 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>数据结构一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
-<p>参考链接：      </p>
+    <title>数据库系统原理一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rrgewrtvwerter52532rdg222.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ffvfvscfrfeggrhrgaeg333.PNG" alt=""></p>
+<h1 id="并发一致性问题"><a href="#并发一致性问题" class="headerlink" title="并发一致性问题"></a>并发一致性问题</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fsfsfbsbfhnahgbs444.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/szdfaadvagafagaf555.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgdfddgyhzcvbsfadsdf666.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sfvgaafajhjuebcvbjstrdgg777.PNG" alt=""></p>
+<h1 id="封锁"><a href="#封锁" class="headerlink" title="封锁"></a>封锁</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfawrgaergeraadg888.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dtbsgvvgscgvwctg999.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/srgrcrcvccsrcfcws101010.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vtvwywvyyveyvww111111.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rthtrsgsfgstysrtg121212.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vfvdfvfvdzfvgsdfsdf131313.PNG" alt=""></p>
+<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/fxghsrgsvshrygeatgsfmh141414.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaervdharfbdhgt151515.PNG" alt=""></p>
+<h1 id="多版本并发控制"><a href="#多版本并发控制" class="headerlink" title="多版本并发控制"></a>多版本并发控制</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/tdjydryjwgjxcfjge161616.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/segdbxgjsgbghsbjxh171717.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfarfaegaerwerewrnhn181818.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/vdfgafvadnhaefvservdv191919.PNG" alt=""></p>
+<h1 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zfbahbdgbzdjhafvbdxdsb202020.PNG" alt=""></p>
+<h1 id="关系数据库设计理论"><a href="#关系数据库设计理论" class="headerlink" title="关系数据库设计理论"></a>关系数据库设计理论</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sgaergtegadvxhrg212121.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dvawrgVADBAFGAFADHGVABAETE222222.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/CAWEFRWAGETVAF232323.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/BFHSDFBSGSBDGSBSGxdv242424.PNG" alt=""></p>
+<h1 id="ER-图"><a href="#ER-图" class="headerlink" title="ER 图"></a>ER 图</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/xfgxbxgxffghdfgnshdt252525.PNG" alt=""></p>
+<p>参考链接：</p>
 <ol>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md" target="_blank" rel="noopener">https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>数据结构</category>
+        <category>数据库系统原理</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法一</title>
-    <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span><span class="comment">//选择排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)<span class="comment">//循环次数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> min = arr[i];</span><br><span class="line">        <span class="keyword">int</span> index = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++) <span class="comment">//找最小值</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&lt;min)</span><br><span class="line">            &#123;</span><br><span class="line">                min=arr[j];</span><br><span class="line">                index=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[index]=arr[i];<span class="comment">//内循环后交换</span></span><br><span class="line">        arr[i]=min;<span class="comment">//当前位置放最小值!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span>    <span class="comment">//冒泡排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ;i&lt;arr.length-<span class="number">1</span>;i++)<span class="comment">//外循环控制趟数n-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++) <span class="comment">//内循环控制每趟次数n-1-i</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>])<span class="comment">//交换</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sequenceSearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span> <span class="comment">//顺序查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] == key)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span>  <span class="comment">//二分查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = arr.length-<span class="number">1</span>;<span class="comment">//注意为什么-1</span></span><br><span class="line">    <span class="keyword">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid]==key)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid]&gt;key)</span><br><span class="line">            right = mid-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
+        <tag>数据库系统原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6435,6 +6400,41 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>数据结构一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" alt=""></p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" alt=""></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" alt=""></p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" alt=""></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法一</title>
+    <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span><span class="comment">//选择排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)<span class="comment">//循环次数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> min = arr[i];</span><br><span class="line">        <span class="keyword">int</span> index = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++) <span class="comment">//找最小值</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&lt;min)</span><br><span class="line">            &#123;</span><br><span class="line">                min=arr[j];</span><br><span class="line">                index=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[index]=arr[i];<span class="comment">//内循环后交换</span></span><br><span class="line">        arr[i]=min;<span class="comment">//当前位置放最小值!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span>    <span class="comment">//冒泡排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ;i&lt;arr.length-<span class="number">1</span>;i++)<span class="comment">//外循环控制趟数n-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++) <span class="comment">//内循环控制每趟次数n-1-i</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>])<span class="comment">//交换</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sequenceSearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span> <span class="comment">//顺序查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] == key)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> key)</span>  <span class="comment">//二分查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = arr.length-<span class="number">1</span>;<span class="comment">//注意为什么-1</span></span><br><span class="line">    <span class="keyword">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid]==key)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (arr[mid]&gt;key)</span><br><span class="line">            right = mid-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>类与对象，封装，构造方法</title>
     <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" alt=""></p>
@@ -6444,31 +6444,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" alt=""></p>
 <h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" alt=""></p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>继承，super，this，抽象类</title>
-    <url>/2019/11/04/%E7%BB%A7%E6%89%BF%EF%BC%8Csuper%EF%BC%8Cthis%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
-<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chongxie.PNG" alt=""></p>
-<h1 id="super和this"><a href="#super和this" class="headerlink" title="super和this"></a>super和this</h1><h2 id="super和this的含义"><a href="#super和this的含义" class="headerlink" title="super和this的含义"></a>super和this的含义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hanyi.PNG" alt=""></p>
-<h2 id="super和this的用法"><a href="#super和this的用法" class="headerlink" title="super和this的用法"></a>super和this的用法</h2><ul>
-<li>访问成员</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/221.PNG" alt=""></p>
-<ul>
-<li>访问构造方法</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/222.PNG" alt=""></p>
-<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx1.PNG" alt=""></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx2.PNG" alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx3.PNG" alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6526,6 +6501,31 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>继承，super，this，抽象类</title>
+    <url>/2019/11/04/%E7%BB%A7%E6%89%BF%EF%BC%8Csuper%EF%BC%8Cthis%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jcdywewewe.PNG" alt=""></p>
+<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chongxie.PNG" alt=""></p>
+<h1 id="super和this"><a href="#super和this" class="headerlink" title="super和this"></a>super和this</h1><h2 id="super和this的含义"><a href="#super和this的含义" class="headerlink" title="super和this的含义"></a>super和this的含义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hanyi.PNG" alt=""></p>
+<h2 id="super和this的用法"><a href="#super和this的用法" class="headerlink" title="super和this的用法"></a>super和this的用法</h2><ul>
+<li>访问成员</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/221.PNG" alt=""></p>
+<ul>
+<li>访问构造方法</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/222.PNG" alt=""></p>
+<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx1.PNG" alt=""></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx2.PNG" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cx3.PNG" alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>缓冲流，转换流，序列化流，打印流</title>
     <url>/2019/11/10/%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81/</url>
     <content><![CDATA[<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>缓冲流,也叫高效流，是对<strong>4个基本的<code>FileXxx</code>流的增强</strong>，所以也是4个流，按照数据类型分类：</p>
@@ -6547,6 +6547,24 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编译原理一</title>
+    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
+<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>编译原理</category>
+      </categories>
+      <tags>
+        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6592,24 +6610,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>编译原理一</title>
-    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
-<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>编译原理</category>
-      </categories>
-      <tags>
-        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
