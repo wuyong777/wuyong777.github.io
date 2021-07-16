@@ -1,439 +1,234 @@
+
+
 <!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
 
 
 
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="秋枫">
+  <meta name="keywords" content="">
+  
+  <title>计算机组成原理一 - 秋枫の博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
   
     
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="计算机组成原理," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="计算机系统 计算机系统由“硬件”和“软件”两大部分组成。 计算机的硬件 所谓“硬件”，是指组成计算机的各种物理装置。最主要的硬件有：主板、CPU、内存、硬盘等。    主板是整个计算机的“交通枢纽”，各种器件都要连接到主板上，才能正常工作。  CPU是计算机的“大脑”，它是计算机的运算核心和控制核心。  内存是计算机的“稿纸”，一般来说，同一个处理器能利用的内存越大，运算速度也就越快。  硬盘是计">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理一">
-<meta property="og:url" content="http://yoursite.com/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/index.html">
-<meta property="og:site_name" content="秋枫の博客">
-<meta property="og:description" content="计算机系统 计算机系统由“硬件”和“软件”两大部分组成。 计算机的硬件 所谓“硬件”，是指组成计算机的各种物理装置。最主要的硬件有：主板、CPU、内存、硬盘等。    主板是整个计算机的“交通枢纽”，各种器件都要连接到主板上，才能正常工作。  CPU是计算机的“大脑”，它是计算机的运算核心和控制核心。  内存是计算机的“稿纸”，一般来说，同一个处理器能利用的内存越大，运算速度也就越快。  硬盘是计">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-75b68d01c1a18ffb.webp">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b6d32a002249.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b702defc6fe1.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706bff6d4271172.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c01bf8cca0fb.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c09a00c1bf76.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c0c704b4d5e4.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c1c88439428c.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c2497c78ea7f.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c9d470edc315.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cbcf713a5daa.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cc3a1c2ac0b4.jpg">
-<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-730c9309df6f4048.webp">
-<meta property="article:published_time" content="2021-03-27T11:45:34.000Z">
-<meta property="article:modified_time" content="2021-05-30T06:57:36.845Z">
-<meta property="article:author" content="秋枫">
-<meta property="article:tag" content="计算机组成原理">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-75b68d01c1a18ffb.webp">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2021/03/27/计算机组成原理一/"/>
-
-
-
-
-
-  <title>计算机组成原理一 | 秋枫の博客</title>
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
 
 
 
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-  
-    
-  
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">秋枫の博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">音乐是救世主</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
-  </div>
-</div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-导航">
-          <a href="https://xydh.fun/QFNAV" target="_blank" rel="section noopener">
-            
-            导航
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-            关于
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" class="popup-trigger">
           
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Startseite
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archiv
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Kategorie
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Etiketten
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                Über mich
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
 
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="秋枫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/Rose.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="秋枫の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">计算机组成原理一</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-27T19:45:34+08:00">
-                2021-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机组成原理</span>
-                  </a>
-                </span>
-
-                
-                
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="计算机组成原理一">
               
             </span>
-          
 
-          
             
-          
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-27 19:45" pubdate>
+        March 27, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
 
           
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.1k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      </div>
+    </div>
+  </header>
 
+  <main>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
-      
-        <h1 id="计算机系统"><a href="#计算机系统" class="headerlink" title="计算机系统"></a>计算机系统</h1><ol>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机组成原理一</h1>
+            
+            <div class="markdown-body">
+              <h1 id="计算机系统"><a href="#计算机系统" class="headerlink" title="计算机系统"></a>计算机系统</h1><ol>
 <li><p>计算机系统由“<code>硬件</code>”和“<code>软件</code>”两大部分组成。</p>
 <h2 id="计算机的硬件"><a href="#计算机的硬件" class="headerlink" title="计算机的硬件"></a>计算机的硬件</h2></li>
 <li><p>所谓“<code>硬件</code>”，是指组成计算机的各种物理装置。最主要的硬件有：<code>主板、CPU、内存、硬盘等</code>。</p>
@@ -466,15 +261,15 @@
 <li><code>控制器</code> (cpu)</li>
 <li><code>输出设备</code>(显示器)</li>
 </ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-75b68d01c1a18ffb.webp" alt=""></p>
-<h1 id="计算机的工作原理"><a href="#计算机的工作原理" class="headerlink" title="计算机的工作原理"></a>计算机的工作原理</h1><h2 id="控制器-—-gt-控制输入设备-—-gt-指令流向内存"><a href="#控制器-—-gt-控制输入设备-—-gt-指令流向内存" class="headerlink" title="控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存"></a>控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存</h2><p>当我们输入数据的时候，cpu里的<code>控制器</code>会让<code>输入设备</code>把这些指令存储到<code>存储器</code>(内存)上<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b6d32a002249.jpg" alt=""></p>
-<h2 id="控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器"><a href="#控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器" class="headerlink" title="控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器"></a>控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器</h2><p><code>控制器</code>分析指令之后， 此时让<code>存储器</code>把数据发送到<code>运算器</code>里(控制器和运算器都在cpu里面)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b702defc6fe1.jpg" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-75b68d01c1a18ffb.webp" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="计算机的工作原理"><a href="#计算机的工作原理" class="headerlink" title="计算机的工作原理"></a>计算机的工作原理</h1><h2 id="控制器-—-gt-控制输入设备-—-gt-指令流向内存"><a href="#控制器-—-gt-控制输入设备-—-gt-指令流向内存" class="headerlink" title="控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存"></a>控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存</h2><p>当我们输入数据的时候，cpu里的<code>控制器</code>会让<code>输入设备</code>把这些指令存储到<code>存储器</code>(内存)上<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b6d32a002249.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器"><a href="#控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器" class="headerlink" title="控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器"></a>控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器</h2><p><code>控制器</code>分析指令之后， 此时让<code>存储器</code>把数据发送到<code>运算器</code>里(控制器和运算器都在cpu里面)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706b702defc6fe1.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>这里需要注意，<code>存储器既能存储数据，还能存储指令</code></p>
-<h2 id="控制器控制运算器做数据的运算-并且将运算结果返回存储器"><a href="#控制器控制运算器做数据的运算-并且将运算结果返回存储器" class="headerlink" title="控制器控制运算器做数据的运算 并且将运算结果返回存储器"></a>控制器控制运算器做数据的运算 并且将运算结果返回存储器</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706bff6d4271172.jpg" alt=""></p>
-<h2 id="控制器控制存储器将结果返回给输出设备"><a href="#控制器控制存储器将结果返回给输出设备" class="headerlink" title="控制器控制存储器将结果返回给输出设备"></a>控制器控制存储器将结果返回给输出设备</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c01bf8cca0fb.jpg" alt=""></p>
+<h2 id="控制器控制运算器做数据的运算-并且将运算结果返回存储器"><a href="#控制器控制运算器做数据的运算-并且将运算结果返回存储器" class="headerlink" title="控制器控制运算器做数据的运算 并且将运算结果返回存储器"></a>控制器控制运算器做数据的运算 并且将运算结果返回存储器</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706bff6d4271172.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="控制器控制存储器将结果返回给输出设备"><a href="#控制器控制存储器将结果返回给输出设备" class="headerlink" title="控制器控制存储器将结果返回给输出设备"></a>控制器控制存储器将结果返回给输出设备</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c01bf8cca0fb.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
 <h1 id="CPU及其工作过程"><a href="#CPU及其工作过程" class="headerlink" title="CPU及其工作过程"></a>CPU及其工作过程</h1><p><code>CPU</code>中比较重要的两个部件是<code>运算器</code>和<code>控制器</code>，我们先来看看运算器的主要作用</p>
-<h2 id="运算器主要部件"><a href="#运算器主要部件" class="headerlink" title="运算器主要部件"></a>运算器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c09a00c1bf76.jpg" alt=""><br>如上图，运算器里最重要的部件是<code>ALU</code>，中文叫<code>算术逻辑单元</code>，用来进行<code>算术</code>和<code>逻辑运算</code>的。其它的<code>MQ,ACC</code>这些我们不用管了，是一些<code>寄存器</code>。</p>
-<h2 id="控制器主要部件"><a href="#控制器主要部件" class="headerlink" title="控制器主要部件"></a>控制器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c0c704b4d5e4.jpg" alt="">    </p>
+<h2 id="运算器主要部件"><a href="#运算器主要部件" class="headerlink" title="运算器主要部件"></a>运算器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c09a00c1bf76.jpg" srcset="/img/loading.gif" lazyload alt=""><br>如上图，运算器里最重要的部件是<code>ALU</code>，中文叫<code>算术逻辑单元</code>，用来进行<code>算术</code>和<code>逻辑运算</code>的。其它的<code>MQ,ACC</code>这些我们不用管了，是一些<code>寄存器</code>。</p>
+<h2 id="控制器主要部件"><a href="#控制器主要部件" class="headerlink" title="控制器主要部件"></a>控制器主要部件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c0c704b4d5e4.jpg" srcset="/img/loading.gif" lazyload alt="">    </p>
 <ul>
 <li>控制器中最重要的部件是<code>CU（控制单元）</code>，只要是<code>分析指令</code>，<code>给出控制信号。</code></li>
 <li><code>IR（指令寄存器</code>），存放<code>当前需要执行的指令</code></li>
@@ -483,7 +278,7 @@
 <li><code>指令和数据以同等的地位放于存储器内，并可按地址寻访</code></li>
 <li><code>指令 = 操作码 + 地址码</code>  </li>
 </ul>
-<p>首先，是<code>取指令的过程</code>如下<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c1c88439428c.jpg" alt="">        </p>
+<p>首先，是<code>取指令的过程</code>如下<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c1c88439428c.jpg" srcset="/img/loading.gif" lazyload alt="">        </p>
 <ul>
 <li><p>第一步，<code>PC</code>，也就是存放指令地址的地方，我们要知道下一条指令是什么，就必须去存储器拿，<code>CPU</code>才知道接下来做什么。<code>PC</code>去了存储器的<code>MAR</code>拿要执行的指令地址，<code>MAR</code>（存储器里专门存指令地址的地方）</p>
 </li>
@@ -493,7 +288,7 @@
 </li>
 </ul>
 <p>然后，<code>分析指令，执行指令的过程</code>如下</p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c2497c78ea7f.jpg" alt="">    </p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c2497c78ea7f.jpg" srcset="/img/loading.gif" lazyload alt="">    </p>
 <ul>
 <li>第五步， <code>IR</code>将指令放入<code>CU</code>中，来分析指令，比如说分析出是一个取数指令，接着就要执行指令了（这里取数指令，其实就是一个地址码，按着这个地址去存储体取数据）</li>
 <li>第六步，第七步 <code>IR</code>就会接着去找存储体里的<code>MAR</code>（存储地址的地方），<code>MAR</code>就根据取数指令里的地址码去存储体里取数据</li>
@@ -502,7 +297,7 @@
 </ul>
 <h1 id="编程语言的前世今生"><a href="#编程语言的前世今生" class="headerlink" title="编程语言的前世今生"></a>编程语言的前世今生</h1><h2 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h2><ol>
 <li>概念<br>“<code>编程语言</code>”是<code>人与计算机进行交流的语言</code>。<code>计算机本质</code>上就是<code>电流</code>加一堆<code>硬件</code>，有了电流，它才能“活”起来。电流其实可以表示两种状态，高电压和低电压两种状态，把这个高电压低电压的这种实际的物理现象用人类所能理解的数字关联起来，叫<code>数字关联</code>，<code>高电压是1</code>，<code>低电压是0</code>。<br>这样有个强制规定的话，就可以跟我们人类的语言有了一定的关联关系，而这两种1，0的状态也能被计算机所识别，计算机本质上其实就是像1010这样的一堆组合干各种事情,那现在我们把<code>0101组合成</code>不同的序列定义相应的规则，这样有了这些规则后我告诉你，最古老的计算机语言就出现了，有了规则它就能称之为语言了，<code>这个最古老的语言就叫机器语言。</code></li>
-<li>举个栗子<br>我们看看机器语言，怎么表示存放一个数的指令<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c9d470edc315.jpg" alt=""><br>我们来看二进制代码 <code>0000，0000，000000010000</code></li>
+<li>举个栗子<br>我们看看机器语言，怎么表示存放一个数的指令<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706c9d470edc315.jpg" srcset="/img/loading.gif" lazyload alt=""><br>我们来看二进制代码 <code>0000，0000，000000010000</code></li>
 </ol>
 <ul>
 <li>其中第一个<code>0000</code>，表示的是汇编语言里的<code>LOAD</code>，也就是<code>加载</code>，加载什么呢</li>
@@ -511,15 +306,15 @@
 <ol>
 <li><p>概念<br><code>机器语言作用是直接跟硬件打交道</code>，所以计算机能够很好的理解，因为这就是它的天生语言。但是计算机能很好的理解，但人却不能很好的理解，像0101这样的组合有很多，人理解起来很费劲。<code>为了让人与计算机之间的沟通效率更高，</code>把那难记的一堆0101组合变成一个对应的人能理解的<code>英文</code>，比如说英文单词ADD，你只要在键盘上敲出了相对应的英文，它就自动给你翻译成0101这样的机器语言，然后让计算机去执行，这个东西就叫做<code>汇编语言。</code></p>
 </li>
-<li><p>举个栗子<br>接下来，我们看看如果是汇编语言怎么表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cbcf713a5daa.jpg" alt=""><br><code>LOAD A, 16</code>意思是将存储体内的<code>16号单元数据</code>，放到<code>寄存器地址A</code>中 <code>ADD C, A, B</code>意思是将寄存器里的<code>A,B数据相加</code>，得到<code>C STORE C, 17</code>意思是将寄存器里的数据存到存储体<code>17号单元内</code></p>
+<li><p>举个栗子<br>接下来，我们看看如果是汇编语言怎么表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cbcf713a5daa.jpg" srcset="/img/loading.gif" lazyload alt=""><br><code>LOAD A, 16</code>意思是将存储体内的<code>16号单元数据</code>，放到<code>寄存器地址A</code>中 <code>ADD C, A, B</code>意思是将寄存器里的<code>A,B数据相加</code>，得到<code>C STORE C, 17</code>意思是将寄存器里的数据存到存储体<code>17号单元内</code></p>
 <h2 id="高级语言"><a href="#高级语言" class="headerlink" title="高级语言"></a>高级语言</h2></li>
 <li><p>概念<br>用字母表示或者用数字、符号表示这样的一些符号语言简单直接、便于记忆，<code>但其实开发效率还是很低</code>，有了汇编语言后只需要记住ADD就可以，但现在有了高级语言后，加号就直接用数学中我们常用的“+”去表示就可以了，这个大家肯定都能明白。<br><code>汇编语言的一个问题在于需要你自己去调用硬件的各种指令</code>，比如你想播放声音，播放声音也是由芯片来控制的，<code>芯片里面已经烧制了各种指令</code>，你要想播放声音，就要调各种相应的指令。<br>汇编语言的问题在于它要亲自去调，自己去写代码去调这种指令，这其实非常复杂，你要想调音卡，就是播放声音，你还要学习音箱的这个硬件的各种操作指令，你要想显示屏幕，你还要看显卡上也就是显示屏幕上的操作芯片的各种指令，还是蛮复杂的。<code>高级语言的好处就是让程序员对底层硬件的各种指令做了封装</code>，我们现在听到的<code>C、C++、JAVA、Python等主流的这些语言都是高级语言</code></p>
 </li>
-<li><p>举个栗子<br>最后，我们看看怎么用高级语言表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cc3a1c2ac0b4.jpg" alt=""><br>高级语言是不是很简单，就一个<code>a+b</code>，你都<code>不用去考虑寄存器，存储体这些事</code>。</p>
+<li><p>举个栗子<br>最后，我们看看怎么用高级语言表示<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/1706cc3a1c2ac0b4.jpg" srcset="/img/loading.gif" lazyload alt=""><br>高级语言是不是很简单，就一个<code>a+b</code>，你都<code>不用去考虑寄存器，存储体这些事</code>。</p>
 <h1 id="高级语言编译过程"><a href="#高级语言编译过程" class="headerlink" title="高级语言编译过程"></a>高级语言编译过程</h1><p>高级语言我们以Java程序为例，从程序员编写的<code>Java代码到CPU可以执行的指令</code>需要经历如下步骤：   </p>
 </li>
 </ol>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-730c9309df6f4048.webp" alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/3739049-730c9309df6f4048.webp" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>参考链接：</p>
 <ol>
 <li><a href="https://www.jianshu.com/p/36aedaa554c7" target="_blank" rel="noopener">https://www.jianshu.com/p/36aedaa554c7</a></li>
@@ -527,389 +322,152 @@
 <li><a href="https://juejin.cn/post/6844904058055032840" target="_blank" rel="noopener">https://juejin.cn/post/6844904058055032840</a></li>
 </ol>
 
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"> 计算机组成原理</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2021/03/23/Mybatis/" rel="next" title="Mybatis">
-                <i class="fa fa-chevron-left"></i> Mybatis
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/" rel="prev" title="操作系统原理一">
-                操作系统原理一 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">  
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-          </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/Rose.jpg"
-                alt="秋枫" />
-            
-              <p class="site-author-name" itemprop="name">秋枫</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">54</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/wuyong777" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:wuyongts@163.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
             </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    
+                  </div>
+                
+              </div>
               
-            
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">操作系统原理一</span>
+                        <span class="visible-mobile">Vorheriger</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/23/Mybatis/">
+                        <span class="hidden-mobile">Mybatis</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机系统"><span class="nav-number">1.</span> <span class="nav-text">计算机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机的硬件"><span class="nav-number">1.1.</span> <span class="nav-text">计算机的硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机的软件"><span class="nav-number">1.2.</span> <span class="nav-text">计算机的软件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机的体系和结构"><span class="nav-number">2.</span> <span class="nav-text">计算机的体系和结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机的工作原理"><span class="nav-number">3.</span> <span class="nav-text">计算机的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器-—-gt-控制输入设备-—-gt-指令流向内存"><span class="nav-number">3.1.</span> <span class="nav-text">控制器 —&gt; 控制输入设备 —-&gt; 指令流向内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器分析指令-—-gt-控制存储器-—-gt-把数据送到运算器"><span class="nav-number">3.2.</span> <span class="nav-text">控制器分析指令 —&gt; 控制存储器 —&gt; 把数据送到运算器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器控制运算器做数据的运算-并且将运算结果返回存储器"><span class="nav-number">3.3.</span> <span class="nav-text">控制器控制运算器做数据的运算 并且将运算结果返回存储器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器控制存储器将结果返回给输出设备"><span class="nav-number">3.4.</span> <span class="nav-text">控制器控制存储器将结果返回给输出设备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPU及其工作过程"><span class="nav-number">4.</span> <span class="nav-text">CPU及其工作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算器主要部件"><span class="nav-number">4.1.</span> <span class="nav-text">运算器主要部件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器主要部件"><span class="nav-number">4.2.</span> <span class="nav-text">控制器主要部件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">4.3.</span> <span class="nav-text">举个栗子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程语言的前世今生"><span class="nav-number">5.</span> <span class="nav-text">编程语言的前世今生</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器语言"><span class="nav-number">5.1.</span> <span class="nav-text">机器语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汇编语言"><span class="nav-number">5.2.</span> <span class="nav-text">汇编语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级语言"><span class="nav-number">5.3.</span> <span class="nav-text">高级语言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高级语言编译过程"><span class="nav-number">6.</span> <span class="nav-text">高级语言编译过程</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-      <!--网易云插件-->
-      <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 
-      src="//music.163.com/outchain/player?type=0&id=6657348266&auto=0&height=66"></iframe>-->
-
-    </div>
-  </aside>
-
-
-        
+          </article>
+        </div>
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">秋枫</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
+    </div>
     
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">58.2k</span>
-  
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
       </div>
     
-
-    
-
   </div>
+</div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<!-- Custom -->
 
 
+    
 
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">Stichwort</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
 
+    
+  </main>
 
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
   
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
 
   
+</footer>
+
+
+  <!-- SCRIPTS -->
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
+<!-- Plugins -->
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
 
 
 
@@ -917,358 +475,57 @@
 
 
 
-
-
-  
-
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
 
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
   </script>
 
 
 
 
 
-  
 
-  
 
-  
 
-  
-  
 
-  
 
-  
 
-  
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
 
 </body>
 </html>
