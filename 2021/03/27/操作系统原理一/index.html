@@ -87,22 +87,23 @@
 
 
 <meta name="description" content="认识操作系统操作系统简介 操作系统（Operating System，简称 OS）是管理计算机硬件与软件资源的程序，是计算机的基石。  操作系统本质上是一个运行在计算机上的软件程序 ，用于管理计算机硬件和软件资源。 举例：运行在你电脑上的所有应用程序都通过操作系统来调用系统内存以及磁盘等等硬件。  操作系统存在屏蔽了硬件层的复杂性。 操作系统就像是硬件使用的负责人，统筹着各种相关事项。  操作系统">
-<meta name="keywords" content="操作系统原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统原理一">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;27&#x2F;%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2021/03/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/index.html">
 <meta property="og:site_name" content="秋枫の博客">
 <meta property="og:description" content="认识操作系统操作系统简介 操作系统（Operating System，简称 OS）是管理计算机硬件与软件资源的程序，是计算机的基石。  操作系统本质上是一个运行在计算机上的软件程序 ，用于管理计算机硬件和软件资源。 举例：运行在你电脑上的所有应用程序都通过操作系统来调用系统内存以及磁盘等等硬件。  操作系统存在屏蔽了硬件层的复杂性。 操作系统就像是硬件使用的负责人，统筹着各种相关事项。  操作系统">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4b65726e656c5f4c61796f75742e706e67.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4b65726e656c5f4c61796f75742e706e67.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4c3138316b6b32456f752d636f6d70726573732e6a7067.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;172e1233f6f160af.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;172e1233fffe9110.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;172e123401080d90.jpg">
-<meta property="og:updated_time" content="2021-05-30T06:58:58.734Z">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4b65726e656c5f4c61796f75742e706e67.png">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4b65726e656c5f4c61796f75742e706e67.png">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4c3138316b6b32456f752d636f6d70726573732e6a7067.jpg">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/172e1233f6f160af.png">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/172e1233fffe9110.png">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/172e123401080d90.jpg">
+<meta property="article:published_time" content="2021-03-27T15:19:49.000Z">
+<meta property="article:modified_time" content="2021-05-30T06:58:58.734Z">
+<meta property="article:author" content="秋枫">
+<meta property="article:tag" content="操作系统原理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img1&#x2F;68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4b65726e656c5f4c61796f75742e706e67.png">
+<meta name="twitter:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f323032302d382f4b65726e656c5f4c61796f75742e706e67.png">
 
 
 
@@ -148,7 +149,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 

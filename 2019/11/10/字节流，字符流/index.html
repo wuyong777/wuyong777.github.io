@@ -87,27 +87,28 @@
 
 
 <meta name="description" content="IO流IO的分类根据数据的流向(以内存为基准)分为：输入流和输出流  输入流：把数据从 其他设备 上读取到 内存 中的流    输出流：把数据从 内存 中写出到 其他设备 上的流      根据数据的类型分为：字节流和字符流    字节流：以字节为单位，读写数据的流   字符流：以字符为单位，读写数据的流 IO的体系字节流字节输出流【OutputStream】FileOutputStream类构造">
-<meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字节流，字符流">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/index.html">
 <meta property="og:site_name" content="秋枫の博客">
 <meta property="og:description" content="IO流IO的分类根据数据的流向(以内存为基准)分为：输入流和输出流  输入流：把数据从 其他设备 上读取到 内存 中的流    输出流：把数据从 内存 中写出到 其他设备 上的流      根据数据的类型分为：字节流和字符流    字节流：以字节为单位，读写数据的流   字符流：以字符为单位，读写数据的流 IO的体系字节流字节输出流【OutputStream】FileOutputStream类构造">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;iotx.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;os.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;fos.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;xvxie.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;is.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;fis.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;w.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;fw.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;flush.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;r.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;fr.PNG">
-<meta property="og:updated_time" content="2021-05-30T08:24:05.631Z">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/os.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fos.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xvxie.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/is.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fis.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/w.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fw.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/flush.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/r.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fr.PNG">
+<meta property="article:published_time" content="2019-11-10T02:38:03.000Z">
+<meta property="article:modified_time" content="2021-05-30T08:24:05.631Z">
+<meta property="article:author" content="秋枫">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;iotx.png">
+<meta name="twitter:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/iotx.png">
 
 
 
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 

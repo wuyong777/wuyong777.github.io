@@ -87,25 +87,26 @@
 
 
 <meta name="description" content="缓冲流概述缓冲流,也叫高效流，是对4个基本的FileXxx流的增强，所以也是4个流，按照数据类型分类：  字节缓冲流： BufferedInputStream ， BufferedOutputStream  字符缓冲流： BufferedReader ， BufferedWriter   缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO次数，从">
-<meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="缓冲流，转换流，序列化流，打印流">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2019/11/10/%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81/index.html">
 <meta property="og:site_name" content="秋枫の博客">
 <meta property="og:description" content="缓冲流概述缓冲流,也叫高效流，是对4个基本的FileXxx流的增强，所以也是4个流，按照数据类型分类：  字节缓冲流： BufferedInputStream ， BufferedOutputStream  字符缓冲流： BufferedReader ， BufferedWriter   缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO次数，从">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;zjhc.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;zfhc.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;tyff.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;isr.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;osw.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;oos.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;ois.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;ois2.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;ps.PNG">
-<meta property="og:updated_time" content="2021-05-30T08:24:41.124Z">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zjhc.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zfhc.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tyff.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/isr.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/osw.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/oos.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ois.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ois2.PNG">
+<meta property="og:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ps.PNG">
+<meta property="article:published_time" content="2019-11-10T02:39:00.000Z">
+<meta property="article:modified_time" content="2021-05-30T08:24:41.124Z">
+<meta property="article:author" content="秋枫">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com&#x2F;img&#x2F;zjhc.PNG">
+<meta name="twitter:image" content="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zjhc.PNG">
 
 
 
@@ -151,7 +152,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 

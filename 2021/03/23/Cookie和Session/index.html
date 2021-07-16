@@ -87,14 +87,15 @@
 
 
 <meta name="description" content="会话技术 会话：一次会话中包含多次请求和响应。   一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止   功能：在一次会话的范围内的多次请求间，共享数据  客户端会话技术：Cookie  服务器端会话技术：Session   Cookie概念客户端会话技术，将数据保存到客户端 快速入门 创建Cookie对象，绑定数据 new Cookie(String name, Stri">
-<meta name="keywords" content="JavaWeb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cookie和Session">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;23&#x2F;Cookie%E5%92%8CSession&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2021/03/23/Cookie%E5%92%8CSession/index.html">
 <meta property="og:site_name" content="秋枫の博客">
 <meta property="og:description" content="会话技术 会话：一次会话中包含多次请求和响应。   一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止   功能：在一次会话的范围内的多次请求间，共享数据  客户端会话技术：Cookie  服务器端会话技术：Session   Cookie概念客户端会话技术，将数据保存到客户端 快速入门 创建Cookie对象，绑定数据 new Cookie(String name, Stri">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-05-30T09:07:30.418Z">
+<meta property="article:published_time" content="2021-03-23T06:09:13.000Z">
+<meta property="article:modified_time" content="2021-05-30T09:07:30.418Z">
+<meta property="article:author" content="秋枫">
+<meta property="article:tag" content="JavaWeb">
 <meta name="twitter:card" content="summary">
 
 
@@ -141,7 +142,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -381,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  789
+                  791
                 </span>
               
 
@@ -509,7 +510,7 @@
 <li><p>session对象调用invalidate() 。</p>
 </li>
 <li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;session-config&gt;</span><br><span class="line">	&lt;session-timeout&gt;30&lt;/session-timeout&gt;</span><br><span class="line">&lt;/session-config&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;session-config&gt;</span><br><span class="line">	&lt;session-timeout&gt;30&lt;&#x2F;session-timeout&gt;</span><br><span class="line">&lt;&#x2F;session-config&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
 </ol>
 </li>
