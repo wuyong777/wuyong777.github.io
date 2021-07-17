@@ -1,6 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS基础</title>
+    <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
+<li><p>CSS：CSS 指的是层叠样式表 (Cascading Style Sheets)</p>
+</li>
+<li><p>实例</p>
+ <figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br> <span class="hljs-attribute">background-color</span>: lightblue;<br>&#125;<br><br><span class="hljs-selector-tag">h1</span> &#123;<br> <span class="hljs-attribute">color</span>: white;<br> <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><br><span class="hljs-selector-tag">p</span> &#123;<br> <span class="hljs-attribute">font-family</span>: verdana;<br> <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1></li>
+<li><p>简单选择器（根据名称、id、类来选取元素）</p>
+<blockquote>
+<p>元素<br>id(#para1)<br>class(.center)<br>分组(h1, h2, p )<br>通用(*)</p>
+</blockquote>
+</li>
+<li><p>组合器选择器（根据它们之间的特定关系来选取元素）</p>
+<blockquote>
+<p>后代选择器 (空格)<br>子选择器 (&gt;)<br>相邻兄弟选择器 (+)<br>通用兄弟选择器 (~)</p>
+</blockquote>
+</li>
+<li><p>伪类选择器（根据特定状态选取元素）</p>
+<blockquote>
+<p>a:link<br>a:visited<br>a:hover<br>a:active<br>:first-child<br>:last-child</p>
+</blockquote>
+</li>
+<li><p>伪元素选择器（选取元素的一部分并设置其样式）  </p>
+<blockquote>
+<p>::first-line<br>::first-letter</p>
+</blockquote>
+</li>
+<li><p>属性选择器（根据属性或属性值来选取元素）</p>
+<blockquote>
+<p>[attribute=value]</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="CSS常用样式"><a href="#CSS常用样式" class="headerlink" title="CSS常用样式"></a>CSS常用样式</h1><ol>
+<li><p>CSS 注释：</p>
+<blockquote>
+<p>以 /* 开始，以 */ 结束</p>
+</blockquote>
+</li>
+<li><p>CSS 颜色</p>
+<blockquote>
+<p>CSS 颜色名<br>RGB 颜色<br>HEX 颜色</p>
+</blockquote>
+</li>
+<li><p>CSS 背景</p>
+<blockquote>
+<p>background-</p>
+</blockquote>
+</li>
+<li><p>CSS 文本</p>
+<blockquote>
+<p>text-</p>
+</blockquote>
+</li>
+<li><p>CSS 字体</p>
+<blockquote>
+<p>font-</p>
+</blockquote>
+</li>
+<li><p>CSS 链接</p>
+<blockquote>
+<p>a:link - 正常的，未访问的链接<br>a:visited - 用户访问过的链接<br>a:hover - 用户将鼠标悬停在链接上时<br>a:active - 链接被点击时</p>
+</blockquote>
+</li>
+<li><p>CSS 列表   </p>
+<blockquote>
+<p>list-style-</p>
+</blockquote>
+</li>
+<li><p>CSS 表格</p>
+</li>
+<li><p>盒子模型</p>
+<blockquote>
+<p>border<br>padding<br>margin</p>
+</blockquote>
+</li>
+<li><p>CSS 高度和宽度</p>
+<blockquote>
+<p>height<br>width</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><ol>
+<li><p>display 属性  </p>
+<blockquote>
+<p>none    此元素不会被显示<br>inline    默认。此元素会被显示为内联元素，元素前后没有换行符<br>block    此元素将显示为块级元素，此元素前后会带有换行符<br>inline-block    行内块元素</p>
+</blockquote>
+</li>
+<li><p>float 属性</p>
+<blockquote>
+<p>left  元素浮动到其容器的左侧<br>right  元素浮动在其容器的右侧</p>
+</blockquote>
+</li>
+<li><p>clear 属性</p>
+<blockquote>
+<p>left  左侧不允许浮动元素<br>right 右侧不允许浮动元素<br>both  左侧或右侧均不允许浮动元素</p>
+</blockquote>
+</li>
+<li><p>position 属性</p>
+<blockquote>
+<p>position: relative; 的元素相对于其正常位置进行定位<br>position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置<br>position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）<br>常用:’子绝父相’</p>
+</blockquote>
+</li>
+<li><p>水平对齐 </p>
+<blockquote>
+<p>使用 margin: auto<br>使用 text-align: center</p>
+</blockquote>
+</li>
+<li><p>垂直对齐</p>
+<blockquote>
+<p>使用 padding<br>使用 line-height: 技巧是使用其值等于 height 属性值的 line-height 属性</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bootstrap入门</title>
+    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
+<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+</li>
+<li><p>优点：</p>
+</li>
+</ol>
+<ul>
+<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
+<li>响应式布局</li>
+</ul>
+<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
+<li><p>下载Bootstrap</p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
+</li>
+<li><p>安装jquery插件，因为js插件依赖于jquery</p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"zh-CN"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Bootstrap HelloWorld<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- Bootstrap --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/bootstrap.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/bootstrap.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>你好，世界！!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AJAX和JSON</title>
     <url>/2021/03/23/AJAX%E5%92%8CJSON/</url>
     <content><![CDATA[<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><ul>
@@ -156,165 +315,6 @@
       </categories>
       <tags>
         <tag>AJAX</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bootstrap入门</title>
-    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
-<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
-</li>
-<li><p>优点：</p>
-</li>
-</ol>
-<ul>
-<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
-<li>响应式布局</li>
-</ul>
-<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
-<li><p>下载Bootstrap</p>
-</li>
-<li><p>解压</p>
-</li>
-<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
-</li>
-<li><p>安装jquery插件，因为js插件依赖于jquery</p>
-</li>
-<li><p>代码实现</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"zh-CN"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Bootstrap HelloWorld<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- Bootstrap --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/bootstrap.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/bootstrap.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>你好，世界！!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Bootstrap</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS基础</title>
-    <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
-<li><p>CSS：CSS 指的是层叠样式表 (Cascading Style Sheets)</p>
-</li>
-<li><p>实例</p>
- <figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br> <span class="hljs-attribute">background-color</span>: lightblue;<br>&#125;<br><br><span class="hljs-selector-tag">h1</span> &#123;<br> <span class="hljs-attribute">color</span>: white;<br> <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><br><span class="hljs-selector-tag">p</span> &#123;<br> <span class="hljs-attribute">font-family</span>: verdana;<br> <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1></li>
-<li><p>简单选择器（根据名称、id、类来选取元素）</p>
-<blockquote>
-<p>元素<br>id(#para1)<br>class(.center)<br>分组(h1, h2, p )<br>通用(*)</p>
-</blockquote>
-</li>
-<li><p>组合器选择器（根据它们之间的特定关系来选取元素）</p>
-<blockquote>
-<p>后代选择器 (空格)<br>子选择器 (&gt;)<br>相邻兄弟选择器 (+)<br>通用兄弟选择器 (~)</p>
-</blockquote>
-</li>
-<li><p>伪类选择器（根据特定状态选取元素）</p>
-<blockquote>
-<p>a:link<br>a:visited<br>a:hover<br>a:active<br>:first-child<br>:last-child</p>
-</blockquote>
-</li>
-<li><p>伪元素选择器（选取元素的一部分并设置其样式）  </p>
-<blockquote>
-<p>::first-line<br>::first-letter</p>
-</blockquote>
-</li>
-<li><p>属性选择器（根据属性或属性值来选取元素）</p>
-<blockquote>
-<p>[attribute=value]</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="CSS常用样式"><a href="#CSS常用样式" class="headerlink" title="CSS常用样式"></a>CSS常用样式</h1><ol>
-<li><p>CSS 注释：</p>
-<blockquote>
-<p>以 /* 开始，以 */ 结束</p>
-</blockquote>
-</li>
-<li><p>CSS 颜色</p>
-<blockquote>
-<p>CSS 颜色名<br>RGB 颜色<br>HEX 颜色</p>
-</blockquote>
-</li>
-<li><p>CSS 背景</p>
-<blockquote>
-<p>background-</p>
-</blockquote>
-</li>
-<li><p>CSS 文本</p>
-<blockquote>
-<p>text-</p>
-</blockquote>
-</li>
-<li><p>CSS 字体</p>
-<blockquote>
-<p>font-</p>
-</blockquote>
-</li>
-<li><p>CSS 链接</p>
-<blockquote>
-<p>a:link - 正常的，未访问的链接<br>a:visited - 用户访问过的链接<br>a:hover - 用户将鼠标悬停在链接上时<br>a:active - 链接被点击时</p>
-</blockquote>
-</li>
-<li><p>CSS 列表   </p>
-<blockquote>
-<p>list-style-</p>
-</blockquote>
-</li>
-<li><p>CSS 表格</p>
-</li>
-<li><p>盒子模型</p>
-<blockquote>
-<p>border<br>padding<br>margin</p>
-</blockquote>
-</li>
-<li><p>CSS 高度和宽度</p>
-<blockquote>
-<p>height<br>width</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><ol>
-<li><p>display 属性  </p>
-<blockquote>
-<p>none    此元素不会被显示<br>inline    默认。此元素会被显示为内联元素，元素前后没有换行符<br>block    此元素将显示为块级元素，此元素前后会带有换行符<br>inline-block    行内块元素</p>
-</blockquote>
-</li>
-<li><p>float 属性</p>
-<blockquote>
-<p>left  元素浮动到其容器的左侧<br>right  元素浮动在其容器的右侧</p>
-</blockquote>
-</li>
-<li><p>clear 属性</p>
-<blockquote>
-<p>left  左侧不允许浮动元素<br>right 右侧不允许浮动元素<br>both  左侧或右侧均不允许浮动元素</p>
-</blockquote>
-</li>
-<li><p>position 属性</p>
-<blockquote>
-<p>position: relative; 的元素相对于其正常位置进行定位<br>position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置<br>position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）<br>常用:’子绝父相’</p>
-</blockquote>
-</li>
-<li><p>水平对齐 </p>
-<blockquote>
-<p>使用 margin: auto<br>使用 text-align: center</p>
-</blockquote>
-</li>
-<li><p>垂直对齐</p>
-<blockquote>
-<p>使用 padding<br>使用 line-height: 技巧是使用其值等于 height 属性值的 line-height 属性</p>
-</blockquote>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -533,17 +533,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Eclipse</title>
-    <url>/2021/06/07/Eclipse/</url>
-    <content><![CDATA[<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1>]]></content>
-      <categories>
-        <category>Eclipse</category>
-      </categories>
-      <tags>
-        <tag>Eclipse</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>English</title>
     <url>/2021/06/06/English/</url>
     <content><![CDATA[<h1 id="10-词类"><a href="#10-词类" class="headerlink" title="10-词类"></a>10-词类</h1><ul>
@@ -647,6 +636,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Eclipse</title>
+    <url>/2021/06/07/Eclipse/</url>
+    <content><![CDATA[<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1>]]></content>
+      <categories>
+        <category>Eclipse</category>
+      </categories>
+      <tags>
+        <tag>Eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>File类，递归</title>
     <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
     <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
@@ -677,126 +677,6 @@
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML基础</title>
-    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
-<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
-</li>
-<li><p>实例 </p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我的第一个标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我的第一个段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
-<li><p>HTML标题</p>
-<blockquote>
-<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
-</blockquote>
-</li>
-<li><p>HTML水平线</p>
-<blockquote>
-<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
-</blockquote>
-</li>
-<li><p>HTML注释  </p>
-<blockquote>
-<p><code>&lt;!-- This is a comment --&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML段落</p>
-<blockquote>
-<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
-</blockquote>
-</li>
-<li><p>HTML折行</p>
-<blockquote>
-<p>使用 <code>&lt;br/&gt;</code>标签</p>
-</blockquote>
-</li>
-<li><p>HTML链接</p>
-<blockquote>
-<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML图像</p>
-<blockquote>
-<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML表格</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Another Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>HTML无序列表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>HTML有序列表</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
-<li><p>HTML 头部</p>
-<blockquote>
-<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML 块</p>
-<blockquote>
-<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
-</blockquote>
-</li>
-<li><p>HTML 路径 </p>
-<blockquote>
-<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
-</blockquote>
-</li>
-<li><p>HTML URL </p>
-<blockquote>
-<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
-</blockquote>
-</li>
-<li><p>HTML CSS</p>
-<blockquote>
-<p>常用：外部样式表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mystyle.css"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></code></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>HTML 脚本</p>
-<blockquote>
-<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
-<li><p>实例</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><br>form elements<br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>Action 属性 &amp; Method 属性</p>
-<blockquote>
-<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p><code>&lt;input&gt;</code> 元素</p>
-</li>
-</ol>
-<ul>
-<li>type 属性<blockquote>
-<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
-</blockquote>
-</li>
-<li>H5 type 属性<blockquote>
-<p>date<br>email</p>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -1017,85 +897,123 @@
       </tags>
   </entry>
   <entry>
-    <title>IDEA</title>
-    <url>/2021/06/03/IDEA/</url>
-    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
-<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+    <title>HTML基础</title>
+    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
+<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
 </li>
-<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
-<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<li><p>实例 </p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我的第一个标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我的第一个段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
+<li><p>HTML标题</p>
+<blockquote>
+<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
+</blockquote>
+</li>
+<li><p>HTML水平线</p>
+<blockquote>
+<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
+</blockquote>
+</li>
+<li><p>HTML注释  </p>
+<blockquote>
+<p><code>&lt;!-- This is a comment --&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML段落</p>
+<blockquote>
+<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
+</blockquote>
+</li>
+<li><p>HTML折行</p>
+<blockquote>
+<p>使用 <code>&lt;br/&gt;</code>标签</p>
+</blockquote>
+</li>
+<li><p>HTML链接</p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML图像</p>
+<blockquote>
+<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML表格</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Another Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>HTML无序列表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>HTML有序列表</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
+<li><p>HTML 头部</p>
+<blockquote>
+<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML 块</p>
+<blockquote>
+<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
+</blockquote>
+</li>
+<li><p>HTML 路径 </p>
+<blockquote>
+<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
+</blockquote>
+</li>
+<li><p>HTML URL </p>
+<blockquote>
+<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
+</blockquote>
+</li>
+<li><p>HTML CSS</p>
+<blockquote>
+<p>常用：外部样式表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mystyle.css"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></code></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>HTML 脚本</p>
+<blockquote>
+<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
+</blockquote>
 </li>
 </ol>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
-<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
-</ol>
-<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
-<li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
-</ol>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h1 id="idea-导入-eclipse-项目-SSM"><a href="#idea-导入-eclipse-项目-SSM" class="headerlink" title="idea 导入 eclipse 项目-SSM"></a>idea 导入 eclipse 项目-SSM</h1><ol start="0">
-<li><p>参考：B站-杰凡it</p>
+<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
+<li><p>实例</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><br>form elements<br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>Action 属性 &amp; Method 属性</p>
+<blockquote>
+<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
+</blockquote>
 </li>
-<li><p>直接 open 打开项目</p>
-</li>
-<li><p>发现报错(红线)</p>
-</li>
-<li><p><strong>设置 project structure</strong></p>
-<ol>
-<li>进入 project-project sdk 配置 jdk</li>
-<li>进入 modules-dependencies 删掉 eclipse 多余的配置</li>
-<li>在 modules-dependencies  添加 tomcat 依赖(右上角+号)</li>
-<li>在 libraries 添加 jar 包依赖</li>
-<li>在 modules 中添加 web 模块(1.左上角+号。2.注意修改路径：web 改为 WebContent)</li>
-<li>配置 artifacts(artifacts–&gt;web application exploded–&gt;from modules)</li>
-</ol>
-</li>
-<li><p><strong>将项目添加到 tomcat 中</strong></p>
-<ol>
-<li><strong>edit configurations</strong>–&gt;左上角+号–&gt;deployment–&gt;右上角+号–&gt;artifact</li>
-<li>如果项目中<strong>文件上传</strong>用的<strong>是绝对路径的话</strong>需要<strong>配置虚拟路径</strong>(例如存放图片的目录)</li>
-</ol>
-</li>
-<li><p><strong>修改数据库配置文件</strong></p>
-<ol>
-<li>数据库配置成自己本地的(driver,url,username,password等等)</li>
-<li>navcat 新建一个数据库(数据库和源代码一致)</li>
-<li>导入运行 .sql 文件(建表和插入数据)</li>
-</ol>
-</li>
-<li><p>启动 tomcat</p>
-</li>
-<li><p>浏览器访问项目</p>
+<li><p><code>&lt;input&gt;</code> 元素</p>
 </li>
 </ol>
-<h1 id="idea-导入-eclipse-项目-Springboot"><a href="#idea-导入-eclipse-项目-Springboot" class="headerlink" title="idea 导入 eclipse 项目-Springboot"></a>idea 导入 eclipse 项目-Springboot</h1><ol start="0">
-<li>参考：B站-杰凡it</li>
-<li>直接 open 打开项目</li>
-<li>删除带有 eclipse 图标的 .classpath 和 .project l两个文件(不限碍眼的话可以不删)</li>
-<li><strong>设置 project structure</strong>(步骤跟上面导入SSM差不多，细节请参考B站-杰凡it)</li>
-<li>导入 maven 依赖(pom.xml 右键点击 add as maven project)</li>
-<li><strong>配置数据库</strong>(注意：pom.xml 的 mysql jar 包版本要兼容，不兼容要修改版本并刷新)</li>
-<li>测试运行</li>
-<li>浏览器访问</li>
-</ol>
-<h1 id="idea-导入-eclipse-项目总结-主要步骤"><a href="#idea-导入-eclipse-项目总结-主要步骤" class="headerlink" title="idea 导入 eclipse 项目总结(主要步骤)"></a>idea 导入 eclipse 项目总结(主要步骤)</h1><ol>
-<li>先全局配置好 idea 的 jdk , maven , git 或 svn , tomcat 等等，mysql , navcat 安装好</li>
-<li>open 打开项目</li>
-<li>配置 project structure</li>
-<li>配置 add/edit configurations</li>
-<li>配置数据库</li>
-</ol>
+<ul>
+<li>type 属性<blockquote>
+<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
+</blockquote>
+</li>
+<li>H5 type 属性<blockquote>
+<p>date<br>email</p>
+</blockquote>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>IDEA</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>IDEA</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -1262,110 +1180,85 @@
       </tags>
   </entry>
   <entry>
-    <title>JDBC连接池</title>
-    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
-    <content><![CDATA[<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ol>
-<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
-<li>实现：<ul>
-<li>标准接口：DataSource   javax.sql包下的<ul>
-<li>获取连接：getConnection()</li>
-<li>归还连接：Connection.close()</li>
-</ul>
+    <title>IDEA</title>
+    <url>/2021/06/03/IDEA/</url>
+    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
+<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
-</ul>
+<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
+<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 </ol>
-<h1 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h1><ul>
-<li><p>步骤：</p>
-<blockquote>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
+<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
+</ol>
+<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
+<li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
+</ol>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h1 id="idea-导入-eclipse-项目-SSM"><a href="#idea-导入-eclipse-项目-SSM" class="headerlink" title="idea 导入 eclipse 项目-SSM"></a>idea 导入 eclipse 项目-SSM</h1><ol start="0">
+<li><p>参考：B站-杰凡it</p>
+</li>
+<li><p>直接 open 打开项目</p>
+</li>
+<li><p>发现报错(红线)</p>
+</li>
+<li><p><strong>设置 project structure</strong></p>
 <ol>
-<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
-<li>定义配置文件：</li>
+<li>进入 project-project sdk 配置 jdk</li>
+<li>进入 modules-dependencies 删掉 eclipse 多余的配置</li>
+<li>在 modules-dependencies  添加 tomcat 依赖(右上角+号)</li>
+<li>在 libraries 添加 jar 包依赖</li>
+<li>在 modules 中添加 web 模块(1.左上角+号。2.注意修改路径：web 改为 WebContent)</li>
+<li>配置 artifacts(artifacts–&gt;web application exploded–&gt;from modules)</li>
 </ol>
-<ul>
-<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
-<li>路径：直接将文件放在src目录下即可。</li>
-</ul>
-<ol start="3">
-<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
-<li>获取连接： getConnection</li>
-</ol>
-</blockquote>
 </li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.创建数据库连接池对象</span><br> DataSource ds  = <span class="hljs-keyword">new</span> ComboPooledDataSource();<br><span class="hljs-comment">//2. 获取连接对象</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
-<h1 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h1></li>
-<li><p>步骤：</p>
-<blockquote>
+<li><p><strong>将项目添加到 tomcat 中</strong></p>
 <ol>
-<li>导入jar包 druid-1.0.9.jar</li>
-<li>定义配置文件：<ul>
-<li>是properties形式的</li>
-<li>可以叫任意名称，可以放在任意目录下</li>
-</ul>
-</li>
-<li>加载配置文件。Properties</li>
-<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
-<li>获取连接：getConnection</li>
+<li><strong>edit configurations</strong>–&gt;左上角+号–&gt;deployment–&gt;右上角+号–&gt;artifact</li>
+<li>如果项目中<strong>文件上传</strong>用的<strong>是绝对路径的话</strong>需要<strong>配置虚拟路径</strong>(例如存放图片的目录)</li>
 </ol>
-</blockquote>
 </li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//加载配置文件</span><br>Properties pro = <span class="hljs-keyword">new</span> Properties();<br>InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="hljs-string">"druid.properties"</span>);<br>pro.load(is);<br><span class="hljs-comment">//获取连接池对象</span><br>DataSource ds = DruidDataSourceFactory.createDataSource(pro);<br><span class="hljs-comment">//获取连接</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><ul>
-<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
-<li>步骤：<blockquote>
+<li><p><strong>修改数据库配置文件</strong></p>
 <ol>
-<li>导入jar包</li>
-<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+<li>数据库配置成自己本地的(driver,url,username,password等等)</li>
+<li>navcat 新建一个数据库(数据库和源代码一致)</li>
+<li>导入运行 .sql 文件(建表和插入数据)</li>
 </ol>
-<ul>
-<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
-</ul>
-<ol start="3">
-<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</li>
+<li><p>启动 tomcat</p>
+</li>
+<li><p>浏览器访问项目</p>
+</li>
 </ol>
-<ul>
-<li><p>update():执行DML语句。增、删、改语句</p>
-</li>
-<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
-<ul>
-<li>注意：这个方法查询的结果集长度只能是1</li>
-</ul>
-</li>
-<li><p>queryForList():查询结果将结果集封装为list集合</p>
-<ul>
-<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
-</ul>
-</li>
-<li><p>query():查询结果，将结果封装为JavaBean对象</p>
-<ul>
-<li><p>query的参数：RowMapper</p>
-<ul>
-<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
-<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>queryForObject()：查询结果，将结果封装为对象</p>
-<ul>
-<li>一般用于聚合函数的查询</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
+<h1 id="idea-导入-eclipse-项目-Springboot"><a href="#idea-导入-eclipse-项目-Springboot" class="headerlink" title="idea 导入 eclipse 项目-Springboot"></a>idea 导入 eclipse 项目-Springboot</h1><ol start="0">
+<li>参考：B站-杰凡it</li>
+<li>直接 open 打开项目</li>
+<li>删除带有 eclipse 图标的 .classpath 和 .project l两个文件(不限碍眼的话可以不删)</li>
+<li><strong>设置 project structure</strong>(步骤跟上面导入SSM差不多，细节请参考B站-杰凡it)</li>
+<li>导入 maven 依赖(pom.xml 右键点击 add as maven project)</li>
+<li><strong>配置数据库</strong>(注意：pom.xml 的 mysql jar 包版本要兼容，不兼容要修改版本并刷新)</li>
+<li>测试运行</li>
+<li>浏览器访问</li>
+</ol>
+<h1 id="idea-导入-eclipse-项目总结-主要步骤"><a href="#idea-导入-eclipse-项目总结-主要步骤" class="headerlink" title="idea 导入 eclipse 项目总结(主要步骤)"></a>idea 导入 eclipse 项目总结(主要步骤)</h1><ol>
+<li>先全局配置好 idea 的 jdk , maven , git 或 svn , tomcat 等等，mysql , navcat 安装好</li>
+<li>open 打开项目</li>
+<li>配置 project structure</li>
+<li>配置 add/edit configurations</li>
+<li>配置数据库</li>
+</ol>
 ]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>IDEA</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1755,6 +1648,113 @@
       </categories>
       <tags>
         <tag>JQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDBC连接池</title>
+    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
+    <content><![CDATA[<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ol>
+<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
+<li>实现：<ul>
+<li>标准接口：DataSource   javax.sql包下的<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h1><ul>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
+<li>定义配置文件：</li>
+</ol>
+<ul>
+<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
+<li>路径：直接将文件放在src目录下即可。</li>
+</ul>
+<ol start="3">
+<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
+<li>获取连接： getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.创建数据库连接池对象</span><br> DataSource ds  = <span class="hljs-keyword">new</span> ComboPooledDataSource();<br><span class="hljs-comment">//2. 获取连接对象</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
+<h1 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h1></li>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 druid-1.0.9.jar</li>
+<li>定义配置文件：<ul>
+<li>是properties形式的</li>
+<li>可以叫任意名称，可以放在任意目录下</li>
+</ul>
+</li>
+<li>加载配置文件。Properties</li>
+<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
+<li>获取连接：getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//加载配置文件</span><br>Properties pro = <span class="hljs-keyword">new</span> Properties();<br>InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="hljs-string">"druid.properties"</span>);<br>pro.load(is);<br><span class="hljs-comment">//获取连接池对象</span><br>DataSource ds = DruidDataSourceFactory.createDataSource(pro);<br><span class="hljs-comment">//获取连接</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><ul>
+<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
+<li>步骤：<blockquote>
+<ol>
+<li>导入jar包</li>
+<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+</ol>
+<ul>
+<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
+</ul>
+<ol start="3">
+<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</ol>
+<ul>
+<li><p>update():执行DML语句。增、删、改语句</p>
+</li>
+<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
+<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
+</ul>
+</li>
+<li><p>queryForList():查询结果将结果集封装为list集合</p>
+<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
+</ul>
+</li>
+<li><p>query():查询结果，将结果封装为JavaBean对象</p>
+<ul>
+<li><p>query的参数：RowMapper</p>
+<ul>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>queryForObject()：查询结果，将结果封装为对象</p>
+<ul>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
