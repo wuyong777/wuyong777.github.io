@@ -1,7 +1,7 @@
 Webstack网址导航
 ===
 ### Demo: [➡️ www.webstack.cc](https://webstack.cc)
-### 项目开源地址: [➡️ www.webstack.cc](https://github.com/WebStackPage/WebStackPage.github.io.git)
+### 项目开源地址: [➡️ https://github.com/WebStackPage/WebStackPage.github.io](https://github.com/WebStackPage/WebStackPage.github.io)
 
 本项目这是一个网址导航网站，原内容均由[viggo](http://viggoz.com)收集并整理，后经[秋枫](https://www.unclens.top)修改。本项目前端基于bootstrap前端框架开发，各后台及主题版本由广大网友提供。
 
@@ -9,7 +9,7 @@ Webstack网址导航
 
 ![](http://www.webstack.cc/assets/images/preview.gif)
 
-这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站。如果你有任何疑问，可以通过原作者个人网站[viggoz.com](http://viggoz.com)中的联系方式找到我，欢迎与我交流分享。
+这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站。
 
 关于图片资源
 ---
@@ -24,10 +24,9 @@ Webstack网址导航
 Copyright © 2017-2018 **[webstack.cc](https://webstack.cc)** Released under the **MIT License**.
 
 > 注：本站开源的目的是大家能够在本站的基础之上有所启发，做出更多新的东西。并不是让大家照搬所有代码。
-> 如果你使用这个开源项目，请**注明**本项目开源地址。
+> 如果你使用这个开源项目，请**注明**本项目开源地址：https://github.com/WebStackPage/WebStackPage.github.io。
 
 Screenshot 📷
 ---
 ![](http://www.webstack.cc/assets/images/webstack_banner_cn.png)
-
 
