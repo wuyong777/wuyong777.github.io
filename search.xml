@@ -1,6 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS基础</title>
+    <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
+<li><p>CSS：CSS 指的是层叠样式表 (Cascading Style Sheets)</p>
+</li>
+<li><p>实例</p>
+ <figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br> <span class="hljs-attribute">background-color</span>: lightblue;<br>&#125;<br><br><span class="hljs-selector-tag">h1</span> &#123;<br> <span class="hljs-attribute">color</span>: white;<br> <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><br><span class="hljs-selector-tag">p</span> &#123;<br> <span class="hljs-attribute">font-family</span>: verdana;<br> <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1></li>
+<li><p>简单选择器（根据名称、id、类来选取元素）</p>
+<blockquote>
+<p>元素<br>id(#para1)<br>class(.center)<br>分组(h1, h2, p )<br>通用(*)</p>
+</blockquote>
+</li>
+<li><p>组合器选择器（根据它们之间的特定关系来选取元素）</p>
+<blockquote>
+<p>后代选择器 (空格)<br>子选择器 (&gt;)<br>相邻兄弟选择器 (+)<br>通用兄弟选择器 (~)</p>
+</blockquote>
+</li>
+<li><p>伪类选择器（根据特定状态选取元素）</p>
+<blockquote>
+<p>a:link<br>a:visited<br>a:hover<br>a:active<br>:first-child<br>:last-child</p>
+</blockquote>
+</li>
+<li><p>伪元素选择器（选取元素的一部分并设置其样式）  </p>
+<blockquote>
+<p>::first-line<br>::first-letter</p>
+</blockquote>
+</li>
+<li><p>属性选择器（根据属性或属性值来选取元素）</p>
+<blockquote>
+<p>[attribute=value]</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="CSS常用样式"><a href="#CSS常用样式" class="headerlink" title="CSS常用样式"></a>CSS常用样式</h1><ol>
+<li><p>CSS 注释：</p>
+<blockquote>
+<p>以 /* 开始，以 */ 结束</p>
+</blockquote>
+</li>
+<li><p>CSS 颜色</p>
+<blockquote>
+<p>CSS 颜色名<br>RGB 颜色<br>HEX 颜色</p>
+</blockquote>
+</li>
+<li><p>CSS 背景</p>
+<blockquote>
+<p>background-</p>
+</blockquote>
+</li>
+<li><p>CSS 文本</p>
+<blockquote>
+<p>text-</p>
+</blockquote>
+</li>
+<li><p>CSS 字体</p>
+<blockquote>
+<p>font-</p>
+</blockquote>
+</li>
+<li><p>CSS 链接</p>
+<blockquote>
+<p>a:link - 正常的，未访问的链接<br>a:visited - 用户访问过的链接<br>a:hover - 用户将鼠标悬停在链接上时<br>a:active - 链接被点击时</p>
+</blockquote>
+</li>
+<li><p>CSS 列表   </p>
+<blockquote>
+<p>list-style-</p>
+</blockquote>
+</li>
+<li><p>CSS 表格</p>
+</li>
+<li><p>盒子模型</p>
+<blockquote>
+<p>border<br>padding<br>margin</p>
+</blockquote>
+</li>
+<li><p>CSS 高度和宽度</p>
+<blockquote>
+<p>height<br>width</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><ol>
+<li><p>display 属性  </p>
+<blockquote>
+<p>none    此元素不会被显示<br>inline    默认。此元素会被显示为内联元素，元素前后没有换行符<br>block    此元素将显示为块级元素，此元素前后会带有换行符<br>inline-block    行内块元素</p>
+</blockquote>
+</li>
+<li><p>float 属性</p>
+<blockquote>
+<p>left  元素浮动到其容器的左侧<br>right  元素浮动在其容器的右侧</p>
+</blockquote>
+</li>
+<li><p>clear 属性</p>
+<blockquote>
+<p>left  左侧不允许浮动元素<br>right 右侧不允许浮动元素<br>both  左侧或右侧均不允许浮动元素</p>
+</blockquote>
+</li>
+<li><p>position 属性</p>
+<blockquote>
+<p>position: relative; 的元素相对于其正常位置进行定位<br>position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置<br>position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）<br>常用:’子绝父相’</p>
+</blockquote>
+</li>
+<li><p>水平对齐 </p>
+<blockquote>
+<p>使用 margin: auto<br>使用 text-align: center</p>
+</blockquote>
+</li>
+<li><p>垂直对齐</p>
+<blockquote>
+<p>使用 padding<br>使用 line-height: 技巧是使用其值等于 height 属性值的 line-height 属性</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bootstrap入门</title>
+    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
+<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+</li>
+<li><p>优点：</p>
+</li>
+</ol>
+<ul>
+<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
+<li>响应式布局</li>
+</ul>
+<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
+<li><p>下载Bootstrap</p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
+</li>
+<li><p>安装jquery插件，因为js插件依赖于jquery</p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"zh-CN"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Bootstrap HelloWorld<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- Bootstrap --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/bootstrap.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/bootstrap.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>你好，世界！!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cookie和Session</title>
+    <url>/2021/03/23/Cookie%E5%92%8CSession/</url>
+    <content><![CDATA[<h1 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h1><ol>
+<li>会话：一次会话中包含多次请求和响应。</li>
+</ol>
+<ul>
+<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</li>
+</ul>
+<ol start="2">
+<li><p>功能：在一次会话的范围内的多次请求间，共享数据</p>
+</li>
+<li><p><code>客户端会话技术：Cookie</code></p>
+</li>
+<li><p><code>服务器端会话技术：Session</code></p>
+</li>
+</ol>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>客户端会话技术，将数据保存到客户端</p>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li><p>创建Cookie对象，绑定数据 <code>new Cookie(String name, String value)</code></p>
+</li>
+<li><p>发送Cookie对象 <code>response.addCookie(Cookie cookie)</code></p>
+</li>
+<li><p>获取Cookie，拿到数据 <code>Cookie[]  request.getCookies()</code> </p>
+</li>
+</ol>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>基于响应头set-cookie和请求头cookie实现</p>
+<h3 id="cookie的细节"><a href="#cookie的细节" class="headerlink" title="cookie的细节"></a>cookie的细节</h3><ol>
+<li><p>一次可不可以发送多个cookie?</p>
+<ul>
+<li>可以</li>
+<li>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</li>
+</ul>
+</li>
+<li><p>cookie在浏览器中保存多长时间？</p>
+<ol>
+<li><p>默认情况下，当浏览器关闭后，Cookie数据被销毁</p>
+</li>
+<li><p>持久化存储：<code>setMaxAge(int seconds)</code></p>
+<ol>
+<li><p>正数：将Cookie数据写到硬盘的文件中。持久化存储。并指定cookie存活时间，时间到后，cookie文件自动失效</p>
+</li>
+<li><p>负数：默认值</p>
+</li>
+<li><p>零：删除cookie信息</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="Cookie的特点和作用"><a href="#Cookie的特点和作用" class="headerlink" title="Cookie的特点和作用"></a>Cookie的特点和作用</h3><ol>
+<li><p>cookie存储数据在客户端浏览器</p>
+</li>
+<li><p>浏览器对于单个cookie 的大小有限制(4kb) 以及 对同一个域名下的总cookie数量也有限制(20个)</p>
+</li>
+</ol>
+<ul>
+<li>作用：<ol>
+<li>cookie一般用于存出少量的不太敏感的数据</li>
+<li>在不登录的情况下，完成服务器对客户端的身份识别</li>
+</ol>
+</li>
+</ul>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中</p>
+<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li>获取HttpSession对象：<br><code>HttpSession session = request.getSession();</code></li>
+<li>使用HttpSession对象：<br><code>Object getAttribute(String name)</code><br><code>void setAttribute(String name, Object value)</code><br><code>void removeAttribute(String name)</code></li>
+</ol>
+<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>Session的实现是依赖于Cookie的</p>
+<h3 id="Session的细节"><a href="#Session的细节" class="headerlink" title="Session的细节"></a>Session的细节</h3><ol>
+<li><p>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</p>
+<ul>
+<li>默认情况下。不是。</li>
+<li>如果需要相同，则可以创建Cookie,键为JSESSIONID，设置最大存活时间，让cookie持久化保存。<br><code>Cookie c = new Cookie(&quot;JSESSIONID&quot;,session.getId());</code><br><code>c.setMaxAge(60*60);</code><br><code>response.addCookie(c);</code></li>
+</ul>
+</li>
+<li><p>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</p>
+<ul>
+<li><p>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作</p>
+<ul>
+<li><code>session的钝化</code>：在服务器正常关闭之前，将session对象系列化到硬盘上</li>
+<li><code>session的活化</code>：在服务器启动后，将session文件转化为内存中的session对象即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>session什么时候被销毁？</p>
+<ol>
+<li><p>服务器关闭</p>
+</li>
+<li><p>session对象调用invalidate() 。</p>
+</li>
+<li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
+ <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">session-config</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">session-timeout</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-name">session-timeout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">session-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
+</ol>
+</li>
+<li><p>session用于存储一次会话的多次请求的数据，存在服务器端</p>
+</li>
+<li><p>session可以存储任意类型，任意大小的数据</p>
+</li>
+</ol>
+<h1 id="session与Cookie的区别"><a href="#session与Cookie的区别" class="headerlink" title="session与Cookie的区别"></a>session与Cookie的区别</h1><ol>
+<li><p>session存储数据在服务器端，Cookie在客户端</p>
+</li>
+<li><p>session没有数据大小限制，Cookie有</p>
+</li>
+<li><p>session数据安全，Cookie相对于不安全</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>English</title>
+    <url>/2021/06/06/English/</url>
+    <content><![CDATA[<h1 id="10-词类"><a href="#10-词类" class="headerlink" title="10-词类"></a>10-词类</h1><ul>
+<li><strong>实词-6</strong><ul>
+<li>动词</li>
+<li>名词</li>
+<li>形容词</li>
+<li>副词</li>
+<li>代词</li>
+<li>数词</li>
+</ul>
+</li>
+<li><strong>虚词-4</strong><ul>
+<li>介词</li>
+<li>连词</li>
+<li>冠词</li>
+<li>感叹词</li>
+</ul>
+</li>
+</ul>
+<h1 id="8-句子成分"><a href="#8-句子成分" class="headerlink" title="8-句子成分"></a>8-句子成分</h1><ul>
+<li>主语</li>
+<li>谓语</li>
+<li>宾语</li>
+<li>定语</li>
+<li>状语</li>
+<li>补语</li>
+<li>表语</li>
+<li>同位语</li>
+</ul>
+<h1 id="7-B站95"><a href="#7-B站95" class="headerlink" title="7-B站95%"></a>7-B站95%</h1><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li><strong>简单句</strong></li>
+<li><strong>并列句</strong></li>
+<li><strong>复合句</strong></li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_15-56-55.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="基"><a href="#基" class="headerlink" title="基"></a>基</h2><ul>
+<li><strong>主 + 谓</strong></li>
+<li><strong>主 + 谓 + 宾</strong></li>
+<li><strong>主 + 系 + 表</strong></li>
+<li><strong>主 + 谓 + 宾 + 宾</strong></li>
+<li><strong>主 + 谓 + 宾 + 补</strong></li>
+<li><strong>There be 句型</strong></li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_15-57-43.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-00-13.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="从"><a href="#从" class="headerlink" title="从"></a>从</h2><ul>
+<li><strong>名词性从句</strong><ul>
+<li><strong>主语从句</strong></li>
+<li><strong>宾语从句</strong></li>
+<li><strong>表语从句</strong></li>
+<li><strong>同位语从句</strong></li>
+</ul>
+</li>
+<li><strong>定语从句</strong></li>
+<li><strong>状语从句</strong></li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-00-36.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-01-03.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-01-40.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-02-03.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-02-41.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-03-17.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-03-42.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-07-25.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-07-51.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="殊"><a href="#殊" class="headerlink" title="殊"></a>殊</h2><ul>
+<li><strong>强调句</strong></li>
+<li><strong>倒装句</strong></li>
+<li><strong>虚拟语气</strong></li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-08-12.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-08-37.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-09-04.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="时"><a href="#时" class="headerlink" title="时"></a>时</h2><ul>
+<li><strong>一般时</strong></li>
+<li><strong>进行时</strong></li>
+<li><strong>完成时</strong></li>
+<li><strong>完成进行时</strong></li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-10-57.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-11-11.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-11-48.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="语"><a href="#语" class="headerlink" title="语"></a>语</h2><ul>
+<li><p><strong>主动语态</strong></p>
+</li>
+<li><p><strong>被动语态</strong></p>
+</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-12-04.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="非"><a href="#非" class="headerlink" title="非"></a>非</h2><ul>
+<li><strong>非谓语</strong></li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-12-51.png" srcset="/img/loading.gif" lazyload alt=""></p>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AJAX和JSON</title>
     <url>/2021/03/23/AJAX%E5%92%8CJSON/</url>
     <content><![CDATA[<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><ul>
@@ -159,6 +540,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Eclipse</title>
+    <url>/2021/06/07/Eclipse/</url>
+    <content><![CDATA[<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1>]]></content>
+      <categories>
+        <category>Eclipse</category>
+      </categories>
+      <tags>
+        <tag>Eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Collection，泛型</title>
     <url>/2019/11/06/Collection%EF%BC%8C%E6%B3%9B%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a>Collection集合</h1><h2 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h2><ul>
@@ -247,431 +639,6 @@
 </ul>
 <p>比如：现已知Object类，String 类，Number类，Integer类，其中Number是Integer的父类</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>    Collection&lt;Integer&gt; list1 = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>    Collection&lt;String&gt; list2 = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();<br>    Collection&lt;Number&gt; list3 = <span class="hljs-keyword">new</span> ArrayList&lt;Number&gt;();<br>    Collection&lt;Object&gt; list4 = <span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;();<br>    <br>    getElement(list1);<br>    getElement(list2);<span class="hljs-comment">//报错</span><br>    getElement(list3);<br>    getElement(list4);<span class="hljs-comment">//报错</span><br>  <br>    getElement2(list1);<span class="hljs-comment">//报错</span><br>    getElement2(list2);<span class="hljs-comment">//报错</span><br>    getElement2(list3);<br>    getElement2(list4);<br>  <br>&#125;<br><span class="hljs-comment">// 泛型的上限：此时的泛型?，必须是Number类型或者Number类型的子类</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getElement1</span><span class="hljs-params">(Collection&lt;? extends Number&gt; coll)</span></span>&#123;&#125;<br><span class="hljs-comment">// 泛型的下限：此时的泛型?，必须是Number类型或者Number类型的父类</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getElement2</span><span class="hljs-params">(Collection&lt;? <span class="hljs-keyword">super</span> Number&gt; coll)</span></span>&#123;&#125;<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cookie和Session</title>
-    <url>/2021/03/23/Cookie%E5%92%8CSession/</url>
-    <content><![CDATA[<h1 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h1><ol>
-<li>会话：一次会话中包含多次请求和响应。</li>
-</ol>
-<ul>
-<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</li>
-</ul>
-<ol start="2">
-<li><p>功能：在一次会话的范围内的多次请求间，共享数据</p>
-</li>
-<li><p><code>客户端会话技术：Cookie</code></p>
-</li>
-<li><p><code>服务器端会话技术：Session</code></p>
-</li>
-</ol>
-<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>客户端会话技术，将数据保存到客户端</p>
-<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li><p>创建Cookie对象，绑定数据 <code>new Cookie(String name, String value)</code></p>
-</li>
-<li><p>发送Cookie对象 <code>response.addCookie(Cookie cookie)</code></p>
-</li>
-<li><p>获取Cookie，拿到数据 <code>Cookie[]  request.getCookies()</code> </p>
-</li>
-</ol>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>基于响应头set-cookie和请求头cookie实现</p>
-<h3 id="cookie的细节"><a href="#cookie的细节" class="headerlink" title="cookie的细节"></a>cookie的细节</h3><ol>
-<li><p>一次可不可以发送多个cookie?</p>
-<ul>
-<li>可以</li>
-<li>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</li>
-</ul>
-</li>
-<li><p>cookie在浏览器中保存多长时间？</p>
-<ol>
-<li><p>默认情况下，当浏览器关闭后，Cookie数据被销毁</p>
-</li>
-<li><p>持久化存储：<code>setMaxAge(int seconds)</code></p>
-<ol>
-<li><p>正数：将Cookie数据写到硬盘的文件中。持久化存储。并指定cookie存活时间，时间到后，cookie文件自动失效</p>
-</li>
-<li><p>负数：默认值</p>
-</li>
-<li><p>零：删除cookie信息</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="Cookie的特点和作用"><a href="#Cookie的特点和作用" class="headerlink" title="Cookie的特点和作用"></a>Cookie的特点和作用</h3><ol>
-<li><p>cookie存储数据在客户端浏览器</p>
-</li>
-<li><p>浏览器对于单个cookie 的大小有限制(4kb) 以及 对同一个域名下的总cookie数量也有限制(20个)</p>
-</li>
-</ol>
-<ul>
-<li>作用：<ol>
-<li>cookie一般用于存出少量的不太敏感的数据</li>
-<li>在不登录的情况下，完成服务器对客户端的身份识别</li>
-</ol>
-</li>
-</ul>
-<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中</p>
-<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li>获取HttpSession对象：<br><code>HttpSession session = request.getSession();</code></li>
-<li>使用HttpSession对象：<br><code>Object getAttribute(String name)</code><br><code>void setAttribute(String name, Object value)</code><br><code>void removeAttribute(String name)</code></li>
-</ol>
-<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>Session的实现是依赖于Cookie的</p>
-<h3 id="Session的细节"><a href="#Session的细节" class="headerlink" title="Session的细节"></a>Session的细节</h3><ol>
-<li><p>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</p>
-<ul>
-<li>默认情况下。不是。</li>
-<li>如果需要相同，则可以创建Cookie,键为JSESSIONID，设置最大存活时间，让cookie持久化保存。<br><code>Cookie c = new Cookie(&quot;JSESSIONID&quot;,session.getId());</code><br><code>c.setMaxAge(60*60);</code><br><code>response.addCookie(c);</code></li>
-</ul>
-</li>
-<li><p>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</p>
-<ul>
-<li><p>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作</p>
-<ul>
-<li><code>session的钝化</code>：在服务器正常关闭之前，将session对象系列化到硬盘上</li>
-<li><code>session的活化</code>：在服务器启动后，将session文件转化为内存中的session对象即可。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>session什么时候被销毁？</p>
-<ol>
-<li><p>服务器关闭</p>
-</li>
-<li><p>session对象调用invalidate() 。</p>
-</li>
-<li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
- <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">session-config</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">session-timeout</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-name">session-timeout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">session-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
-</ol>
-</li>
-<li><p>session用于存储一次会话的多次请求的数据，存在服务器端</p>
-</li>
-<li><p>session可以存储任意类型，任意大小的数据</p>
-</li>
-</ol>
-<h1 id="session与Cookie的区别"><a href="#session与Cookie的区别" class="headerlink" title="session与Cookie的区别"></a>session与Cookie的区别</h1><ol>
-<li><p>session存储数据在服务器端，Cookie在客户端</p>
-</li>
-<li><p>session没有数据大小限制，Cookie有</p>
-</li>
-<li><p>session数据安全，Cookie相对于不安全</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bootstrap入门</title>
-    <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
-<li><p>概念：一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</p>
-</li>
-<li><p>优点：</p>
-</li>
-</ol>
-<ul>
-<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果</li>
-<li>响应式布局</li>
-</ul>
-<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
-<li><p>下载Bootstrap</p>
-</li>
-<li><p>解压</p>
-</li>
-<li><p>将css, fonts, js三个文件夹复制到idea项目下</p>
-</li>
-<li><p>安装jquery插件，因为js插件依赖于jquery</p>
-</li>
-<li><p>代码实现</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"zh-CN"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Bootstrap HelloWorld<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- Bootstrap --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/bootstrap.min.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/bootstrap.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>你好，世界！!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>根据需求查看官网文档使用相关css样式和js插件</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Bootstrap</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Eclipse</title>
-    <url>/2021/06/07/Eclipse/</url>
-    <content><![CDATA[<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1>]]></content>
-      <categories>
-        <category>Eclipse</category>
-      </categories>
-      <tags>
-        <tag>Eclipse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS基础</title>
-    <url>/2021/03/15/CSS%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="CSS简介"><a href="#CSS简介" class="headerlink" title="CSS简介"></a>CSS简介</h1><ol>
-<li><p>CSS：CSS 指的是层叠样式表 (Cascading Style Sheets)</p>
-</li>
-<li><p>实例</p>
- <figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br> <span class="hljs-attribute">background-color</span>: lightblue;<br>&#125;<br><br><span class="hljs-selector-tag">h1</span> &#123;<br> <span class="hljs-attribute">color</span>: white;<br> <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><br><span class="hljs-selector-tag">p</span> &#123;<br> <span class="hljs-attribute">font-family</span>: verdana;<br> <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1></li>
-<li><p>简单选择器（根据名称、id、类来选取元素）</p>
-<blockquote>
-<p>元素<br>id(#para1)<br>class(.center)<br>分组(h1, h2, p )<br>通用(*)</p>
-</blockquote>
-</li>
-<li><p>组合器选择器（根据它们之间的特定关系来选取元素）</p>
-<blockquote>
-<p>后代选择器 (空格)<br>子选择器 (&gt;)<br>相邻兄弟选择器 (+)<br>通用兄弟选择器 (~)</p>
-</blockquote>
-</li>
-<li><p>伪类选择器（根据特定状态选取元素）</p>
-<blockquote>
-<p>a:link<br>a:visited<br>a:hover<br>a:active<br>:first-child<br>:last-child</p>
-</blockquote>
-</li>
-<li><p>伪元素选择器（选取元素的一部分并设置其样式）  </p>
-<blockquote>
-<p>::first-line<br>::first-letter</p>
-</blockquote>
-</li>
-<li><p>属性选择器（根据属性或属性值来选取元素）</p>
-<blockquote>
-<p>[attribute=value]</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="CSS常用样式"><a href="#CSS常用样式" class="headerlink" title="CSS常用样式"></a>CSS常用样式</h1><ol>
-<li><p>CSS 注释：</p>
-<blockquote>
-<p>以 /* 开始，以 */ 结束</p>
-</blockquote>
-</li>
-<li><p>CSS 颜色</p>
-<blockquote>
-<p>CSS 颜色名<br>RGB 颜色<br>HEX 颜色</p>
-</blockquote>
-</li>
-<li><p>CSS 背景</p>
-<blockquote>
-<p>background-</p>
-</blockquote>
-</li>
-<li><p>CSS 文本</p>
-<blockquote>
-<p>text-</p>
-</blockquote>
-</li>
-<li><p>CSS 字体</p>
-<blockquote>
-<p>font-</p>
-</blockquote>
-</li>
-<li><p>CSS 链接</p>
-<blockquote>
-<p>a:link - 正常的，未访问的链接<br>a:visited - 用户访问过的链接<br>a:hover - 用户将鼠标悬停在链接上时<br>a:active - 链接被点击时</p>
-</blockquote>
-</li>
-<li><p>CSS 列表   </p>
-<blockquote>
-<p>list-style-</p>
-</blockquote>
-</li>
-<li><p>CSS 表格</p>
-</li>
-<li><p>盒子模型</p>
-<blockquote>
-<p>border<br>padding<br>margin</p>
-</blockquote>
-</li>
-<li><p>CSS 高度和宽度</p>
-<blockquote>
-<p>height<br>width</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><ol>
-<li><p>display 属性  </p>
-<blockquote>
-<p>none    此元素不会被显示<br>inline    默认。此元素会被显示为内联元素，元素前后没有换行符<br>block    此元素将显示为块级元素，此元素前后会带有换行符<br>inline-block    行内块元素</p>
-</blockquote>
-</li>
-<li><p>float 属性</p>
-<blockquote>
-<p>left  元素浮动到其容器的左侧<br>right  元素浮动在其容器的右侧</p>
-</blockquote>
-</li>
-<li><p>clear 属性</p>
-<blockquote>
-<p>left  左侧不允许浮动元素<br>right 右侧不允许浮动元素<br>both  左侧或右侧均不允许浮动元素</p>
-</blockquote>
-</li>
-<li><p>position 属性</p>
-<blockquote>
-<p>position: relative; 的元素相对于其正常位置进行定位<br>position: fixed; 的元素是相对于视口定位的，这意味着即使滚动页面，它也始终位于同一位置<br>position: absolute; 的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）<br>常用:’子绝父相’</p>
-</blockquote>
-</li>
-<li><p>水平对齐 </p>
-<blockquote>
-<p>使用 margin: auto<br>使用 text-align: center</p>
-</blockquote>
-</li>
-<li><p>垂直对齐</p>
-<blockquote>
-<p>使用 padding<br>使用 line-height: 技巧是使用其值等于 height 属性值的 line-height 属性</p>
-</blockquote>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>English</title>
-    <url>/2021/06/06/English/</url>
-    <content><![CDATA[<h1 id="10-词类"><a href="#10-词类" class="headerlink" title="10-词类"></a>10-词类</h1><ul>
-<li><strong>实词-6</strong><ul>
-<li>动词</li>
-<li>名词</li>
-<li>形容词</li>
-<li>副词</li>
-<li>代词</li>
-<li>数词</li>
-</ul>
-</li>
-<li><strong>虚词-4</strong><ul>
-<li>介词</li>
-<li>连词</li>
-<li>冠词</li>
-<li>感叹词</li>
-</ul>
-</li>
-</ul>
-<h1 id="8-句子成分"><a href="#8-句子成分" class="headerlink" title="8-句子成分"></a>8-句子成分</h1><ul>
-<li>主语</li>
-<li>谓语</li>
-<li>宾语</li>
-<li>定语</li>
-<li>状语</li>
-<li>补语</li>
-<li>表语</li>
-<li>同位语</li>
-</ul>
-<h1 id="7-B站95"><a href="#7-B站95" class="headerlink" title="7-B站95%"></a>7-B站95%</h1><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
-<li><strong>简单句</strong></li>
-<li><strong>并列句</strong></li>
-<li><strong>复合句</strong></li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_15-56-55.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="基"><a href="#基" class="headerlink" title="基"></a>基</h2><ul>
-<li><strong>主 + 谓</strong></li>
-<li><strong>主 + 谓 + 宾</strong></li>
-<li><strong>主 + 系 + 表</strong></li>
-<li><strong>主 + 谓 + 宾 + 宾</strong></li>
-<li><strong>主 + 谓 + 宾 + 补</strong></li>
-<li><strong>There be 句型</strong></li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_15-57-43.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-00-13.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="从"><a href="#从" class="headerlink" title="从"></a>从</h2><ul>
-<li><strong>名词性从句</strong><ul>
-<li><strong>主语从句</strong></li>
-<li><strong>宾语从句</strong></li>
-<li><strong>表语从句</strong></li>
-<li><strong>同位语从句</strong></li>
-</ul>
-</li>
-<li><strong>定语从句</strong></li>
-<li><strong>状语从句</strong></li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-00-36.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-01-03.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-01-40.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-02-03.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-02-41.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-03-17.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-03-42.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-07-25.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-07-51.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="殊"><a href="#殊" class="headerlink" title="殊"></a>殊</h2><ul>
-<li><strong>强调句</strong></li>
-<li><strong>倒装句</strong></li>
-<li><strong>虚拟语气</strong></li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-08-12.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-08-37.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-09-04.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="时"><a href="#时" class="headerlink" title="时"></a>时</h2><ul>
-<li><strong>一般时</strong></li>
-<li><strong>进行时</strong></li>
-<li><strong>完成时</strong></li>
-<li><strong>完成进行时</strong></li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-10-57.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-11-11.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-11-48.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="语"><a href="#语" class="headerlink" title="语"></a>语</h2><ul>
-<li><p><strong>主动语态</strong></p>
-</li>
-<li><p><strong>被动语态</strong></p>
-</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-12-04.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="非"><a href="#非" class="headerlink" title="非"></a>非</h2><ul>
-<li><strong>非谓语</strong></li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/Snipaste_2021-06-06_16-12-51.png" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>File类，递归</title>
-    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
-<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
-<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" srcset="/img/loading.gif" lazyload alt=""><blockquote>
-<p>小贴士：   </p>
-<ol>
-<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
-<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
-</ol>
-</blockquote>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
-</ul>
-<ol>
-<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" srcset="/img/loading.gif" lazyload alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
-</ol>
-<ul>
-<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
-<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
-</ul>
-<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
       <categories>
         <category>JavaSE</category>
       </categories>
@@ -897,126 +864,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HTML基础</title>
-    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
-<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
-</li>
-<li><p>实例 </p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我的第一个标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我的第一个段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
-<li><p>HTML标题</p>
-<blockquote>
-<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
-</blockquote>
-</li>
-<li><p>HTML水平线</p>
-<blockquote>
-<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
-</blockquote>
-</li>
-<li><p>HTML注释  </p>
-<blockquote>
-<p><code>&lt;!-- This is a comment --&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML段落</p>
-<blockquote>
-<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
-</blockquote>
-</li>
-<li><p>HTML折行</p>
-<blockquote>
-<p>使用 <code>&lt;br/&gt;</code>标签</p>
-</blockquote>
-</li>
-<li><p>HTML链接</p>
-<blockquote>
-<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML图像</p>
-<blockquote>
-<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML表格</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Another Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>HTML无序列表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>HTML有序列表</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
-<li><p>HTML 头部</p>
-<blockquote>
-<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
-</blockquote>
-</li>
-<li><p>HTML 块</p>
-<blockquote>
-<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
-</blockquote>
-</li>
-<li><p>HTML 路径 </p>
-<blockquote>
-<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
-</blockquote>
-<blockquote>
-<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
-</blockquote>
-</li>
-<li><p>HTML URL </p>
-<blockquote>
-<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
-</blockquote>
-</li>
-<li><p>HTML CSS</p>
-<blockquote>
-<p>常用：外部样式表</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mystyle.css"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></code></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>HTML 脚本</p>
-<blockquote>
-<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
-<li><p>实例</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><br>form elements<br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>Action 属性 &amp; Method 属性</p>
-<blockquote>
-<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
-</blockquote>
-</li>
-<li><p><code>&lt;input&gt;</code> 元素</p>
-</li>
-</ol>
-<ul>
-<li>type 属性<blockquote>
-<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
-</blockquote>
-</li>
-<li>H5 type 属性<blockquote>
-<p>date<br>email</p>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDEA</title>
     <url>/2021/06/03/IDEA/</url>
     <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
@@ -1099,160 +946,30 @@
       </tags>
   </entry>
   <entry>
-    <title>JDBC总结</title>
-    <url>/2021/03/13/JDBC%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><ol>
-<li><strong>JDBC概念</strong></li>
-</ol>
-<ul>
-<li>概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库</li>
-<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
-</ul>
-<ol start="2">
-<li><p><strong>快速入门：</strong></p>
-<ul>
-<li>步骤：<blockquote>
+    <title>File类，递归</title>
+    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
+<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
+<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" srcset="/img/loading.gif" lazyload alt=""><blockquote>
+<p>小贴士：   </p>
 <ol>
-<li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</li>
-</ol>
-<ul>
-<li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li>
-<li>右键–&gt;Add As Library</li>
-</ul>
-<ol start="2">
-<li>注册驱动</li>
-<li>获取数据库连接对象 Connection</li>
-<li>定义sql</li>
-<li>获取执行sql语句的对象 Statement</li>
-<li>执行sql，接受返回结果</li>
-<li>处理结果</li>
-<li>释放资源</li>
+<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
+<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
 </ol>
 </blockquote>
-</li>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
 </ul>
-</li>
-</ol>
-<ul>
-<li><p><strong>代码实现：</strong></p>
-<blockquote>
 <ol>
-<li>导入驱动jar包</li>
-<li>注册驱动<br>Class.forName(“com.mysql.jdbc.Driver”);</li>
-<li>获取数据库连接对象<br>Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/db3”, “root”, “root”);</li>
-<li>定义sql语句<br>String sql = “update account set balance = 500 where id = 1”;</li>
-<li>获取执行sql的对象 Statement<br>Statement stmt = conn.createStatement();</li>
-<li>执行sql<br>int count = stmt.executeUpdate(sql);</li>
-<li>处理结果<br>System.out.println(count);</li>
-<li>释放资源<br>stmt.close();<br>conn.close();</li>
-</ol>
-</blockquote>
-<h2 id="详解各个对象"><a href="#详解各个对象" class="headerlink" title="详解各个对象"></a><strong>详解各个对象</strong></h2></li>
-</ul>
-<h3 id="DriverManager：驱动管理对象"><a href="#DriverManager：驱动管理对象" class="headerlink" title="DriverManager：驱动管理对象"></a>DriverManager：驱动管理对象</h3><blockquote>
-<p>功能：</p>
-<ol>
-<li>注册驱动：告诉程序该使用哪一个数据库驱动jar</li>
-<li>获取数据库连接：</li>
-</ol>
-</blockquote>
-<h3 id="Connection：数据库连接对象"><a href="#Connection：数据库连接对象" class="headerlink" title="Connection：数据库连接对象"></a>Connection：数据库连接对象</h3><blockquote>
-<p>功能：</p>
-<ol>
-<li>获取执行sql 的对象</li>
+<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" srcset="/img/loading.gif" lazyload alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
 </ol>
 <ul>
-<li>Statement createStatement()</li>
-<li>PreparedStatement prepareStatement(String sql)  </li>
+<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
+<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
 </ul>
-<ol start="2">
-<li>管理事务：</li>
-</ol>
-<ul>
-<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</li>
-<li>提交事务：commit() </li>
-<li>回滚事务：rollback()</li>
-</ul>
-</blockquote>
-<h3 id="Statement：执行sql的对象"><a href="#Statement：执行sql的对象" class="headerlink" title="Statement：执行sql的对象"></a>Statement：执行sql的对象</h3><blockquote>
-<p>功能：</p>
-<ol>
-<li>执行sql</li>
-</ol>
-<ul>
-<li>boolean execute(String sql) ：可以执行任意的sql </li>
-<li>int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</li>
-<li>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</li>
-</ul>
-</blockquote>
-<h3 id="ResultSet：结果集对象-封装查询结果"><a href="#ResultSet：结果集对象-封装查询结果" class="headerlink" title="ResultSet：结果集对象,封装查询结果"></a>ResultSet：结果集对象,封装查询结果</h3><blockquote>
-<ul>
-<li>boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</li>
-<li>getXxx(参数):获取数据<ul>
-<li>Xxx：代表数据类型   如： int getInt() ,    String getString()</li>
-<li>参数：<ol>
-<li>int：代表列的编号,从1开始   如： getString(1)</li>
-<li>String：代表列名称。 如： getDouble(“balance”)</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h3 id="PreparedStatement：执行sql的对象"><a href="#PreparedStatement：执行sql的对象" class="headerlink" title="PreparedStatement：执行sql的对象"></a>PreparedStatement：执行sql的对象</h3><blockquote>
-<ol>
-<li>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接,会造成安全性问题.<br>如:输入密码：a’ or ‘a’ = ‘a</li>
-<li>解决sql注入问题：使用PreparedStatement对象来解决</li>
-<li>预编译的SQL：参数使用?作为占位符</li>
-<li>获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </li>
-<li>给？赋值：<ul>
-<li>方法： setXxx(参数1,参数2)<ul>
-<li>参数1：？的位置编号 从1 开始</li>
-<li>参数2：？的值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>执行sql，接受返回结果，不需要传递sql语句</li>
-</ol>
-</blockquote>
-<h1 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h1><ul>
-<li><p>目的：简化书写</p>
-</li>
-<li><p>解决：配置文件-&gt;<strong>jdbc.properties</strong></p>
-<blockquote>
-<p>url=<br>user=<br>password=</p>
-</blockquote>
-</li>
-<li><p>代码实现：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JDBCUtils</span> </span>&#123;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String url;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String user;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String password;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String driver;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">static</span>&#123;<br>    <span class="hljs-comment">//读取资源文件，获取值。</span><br><br>	<span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-comment">//1. 创建Properties集合类。   </span><br>    Properties pro = <span class="hljs-keyword">new</span> Properties();<br>	<br>    <span class="hljs-comment">//获取src路径下的文件的方式---&gt;ClassLoader 类加载器</span><br>	ClassLoader classLoader = JDBCUtils.class.getClassLoader();<br>	URL res  = classLoader.getResource(<span class="hljs-string">"jdbc.properties"</span>);<br>	String path = res.getPath();<br>	System.out.println(path);<br><br>	<span class="hljs-comment">//2. 加载文件</span><br>	pro.load(<span class="hljs-keyword">new</span> FileReader(path));<br>	<br>	<span class="hljs-comment">//3. 获取数据，赋值</span><br>	url = pro.getProperty(<span class="hljs-string">"url"</span>);<br>	user = pro.getProperty(<span class="hljs-string">"user"</span>);<br>	password = pro.getProperty(<span class="hljs-string">"password"</span>);<br>	driver = pro.getProperty(<span class="hljs-string">"driver"</span>);<br>	<span class="hljs-comment">//4. 注册驱动</span><br>	Class.forName(driver);<br>        &#125;  <br>    <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>	    e.printStackTrace();<br>	        &#125;  <br>    <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>	            e.printStackTrace();<br>	        &#125;<br>	&#125;<br>	<br>	<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 获取连接</span><br><span class="hljs-comment">* <span class="hljs-doctag">@return</span> 连接对象</span><br><span class="hljs-comment">*/</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Connection <span class="hljs-title">getConnection</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> SQLException </span>&#123;<br>	<span class="hljs-keyword">return</span> DriverManager.getConnection(url, user, password);<br>	&#125;<br>	<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 释放资源</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> stmt</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> conn</span><br><span class="hljs-comment">*/</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">(Statement stmt,Connection conn)</span></span>&#123;<br>	    <span class="hljs-keyword">if</span>( stmt != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            stmt.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	<br>	    <span class="hljs-keyword">if</span>( conn != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            conn.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	    &#125;<br>	<br>	<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 释放资源</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> stmt</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> conn</span><br><span class="hljs-comment">*/</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">(ResultSet rs,Statement stmt, Connection conn)</span></span>&#123;<br>	    <span class="hljs-keyword">if</span>( rs != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            rs.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	<br>	    <span class="hljs-keyword">if</span>( stmt != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            stmt.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	<br>	    <span class="hljs-keyword">if</span>( conn != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            conn.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	    &#125;<br>	<br>	&#125;<br></code></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="JDBC控制事务"><a href="#JDBC控制事务" class="headerlink" title="JDBC控制事务"></a>JDBC控制事务</h1><ol>
-<li>事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</li>
-<li>操作：<ol>
-<li>开启事务</li>
-<li>提交事务</li>
-<li>回滚事务</li>
-</ol>
-</li>
-<li><strong>使用Connection对象来管理事务</strong><ul>
-<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务<ul>
-<li>在执行sql之前开启事务</li>
-</ul>
-</li>
-<li>提交事务：commit() <ul>
-<li>当所有sql都执行完提交事务</li>
-</ul>
-</li>
-<li>回滚事务：rollback() <ul>
-<li>在catch中回滚事务</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
+<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -1758,6 +1475,126 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML基础</title>
+    <url>/2021/03/15/HTML%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h1><ol>
+<li><p>HTML : 超文本标记语言 (Hyper Text Markup Language)</p>
+</li>
+<li><p>实例 </p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我的第一个标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我的第一个段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1></li>
+<li><p>HTML标题</p>
+<blockquote>
+<p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code>等标签进行定义的。<br><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
+</blockquote>
+</li>
+<li><p>HTML水平线</p>
+<blockquote>
+<p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。</p>
+</blockquote>
+</li>
+<li><p>HTML注释  </p>
+<blockquote>
+<p><code>&lt;!-- This is a comment --&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML段落</p>
+<blockquote>
+<p>段落是通过 <code>&lt;p&gt;</code>标签定义的。</p>
+</blockquote>
+</li>
+<li><p>HTML折行</p>
+<blockquote>
+<p>使用 <code>&lt;br/&gt;</code>标签</p>
+</blockquote>
+</li>
+<li><p>HTML链接</p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;Visit W3School&lt;/a&gt;</code><br><code>&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blank&quot;&gt;Visit W3School!&lt;/a&gt;</code><br><code>&lt;a name=&quot;tips&quot;&gt;基本的注意事项 - 有用的提示&lt;/a&gt;</code><br>同一个文档中创建指向该锚的链接<br><code>&lt;a href=&quot;#tips&quot;&gt;有用的提示&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML图像</p>
+<blockquote>
+<p><code>&lt;img src=&quot;boat.gif&quot; alt=&quot;Big Boat&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML表格</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"1"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Another Heading<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>row 2, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>HTML无序列表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>HTML有序列表</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="HTML进阶教程"><a href="#HTML进阶教程" class="headerlink" title="HTML进阶教程"></a>HTML进阶教程</h1></li>
+<li><p>HTML 头部</p>
+<blockquote>
+<p>以下标签都可以添加到 head 部分：<code>&lt;title&gt;、&lt;base&gt;、&lt;link&gt;、&lt;meta&gt;、&lt;script&gt; 以及 &lt;style&gt;</code></p>
+</blockquote>
+</li>
+<li><p>HTML 块</p>
+<blockquote>
+<p>HTML <code>&lt;div&gt;</code> 元素是块级元素，它是可用于组合其他 HTML 元素的容器<br>HTML <code>&lt;span&gt;</code>元素是内联元素，可用作文本的容器</p>
+</blockquote>
+</li>
+<li><p>HTML 路径 </p>
+<blockquote>
+<p><code>&lt;img src=&quot;picture.jpg&quot;&gt;</code><br>picture.jpg 位于与当前网页相同的文件夹  </p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;/images/picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前站点根目录的 images 文件夹中</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;img src=&quot;../picture.jpg&quot;&gt;</code><br>picture.jpg 位于当前文件夹的上一级文件夹中</p>
+</blockquote>
+</li>
+<li><p>HTML URL </p>
+<blockquote>
+<p>URL语法规则：<code>scheme://host.domain:port/path/filename</code><br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）<br>filename - 定义文档/资源的名称</p>
+</blockquote>
+</li>
+<li><p>HTML CSS</p>
+<blockquote>
+<p>常用：外部样式表</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mystyle.css"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></code></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>HTML 脚本</p>
+<blockquote>
+<p>常用：外部脚本<br><code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></p>
+</blockquote>
+</li>
+</ol>
+<h1 id="HTML-表单"><a href="#HTML-表单" class="headerlink" title="HTML 表单"></a>HTML 表单</h1><ol>
+<li><p>实例</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><br>form elements<br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>Action 属性 &amp; Method 属性</p>
+<blockquote>
+<p><code>&lt;form action=&quot;action_page.php&quot; method=&quot;GET&quot;&gt;</code><br><code>&lt;form action=&quot;action_page.php&quot; method=&quot;POST&quot;&gt;</code></p>
+</blockquote>
+</li>
+<li><p><code>&lt;input&gt;</code> 元素</p>
+</li>
+</ol>
+<ul>
+<li>type 属性<blockquote>
+<p>text<br>password<br>submit<br>radio<br>checkbox<br>button</p>
+</blockquote>
+</li>
+<li>H5 type 属性<blockquote>
+<p>date<br>email</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JSP和EL_JSTL</title>
     <url>/2021/03/23/JSP%E5%92%8CEL-JSTL/</url>
     <content><![CDATA[<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
@@ -1997,177 +1834,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript基础</title>
-    <url>/2021/03/15/JavaScript%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h1><ol>
-<li>JavaScript 是属于 HTML 和 Web 的编程语言。编程令计算机完成您需要它们做的工作</li>
-<li>JavaScript 是 web 开发者必学的三种语言之一：<blockquote>
-<p>HTML 定义网页的内容<br>CSS 规定网页的布局<br>JavaScript 对网页行为进行编程</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="JavaScript基础语法"><a href="#JavaScript基础语法" class="headerlink" title="JavaScript基础语法"></a>JavaScript基础语法</h1><ol>
-<li><p>注释</p>
-<blockquote>
-<p>单行注释以 // 开头<br>多行注释以 /* 开头，以 */ 结尾</p>
-</blockquote>
-</li>
-<li><p>原始数据类型</p>
-<blockquote>
-<p>number : 整数/小数/NaN<br>boolean : true和false<br>string : 字符串  “abc” “a” ‘abc’<br>null : 一个对象为空的占位符<br>undefined : 未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined</p>
-</blockquote>
-</li>
-<li><p>运算符</p>
-<blockquote>
-<p>算术运算符<br>赋值运算符<br>比较运算符<br>逻辑运算符<br>三元运算符</p>
-</blockquote>
-</li>
-<li><p>语句</p>
-<blockquote>
-<p>if<br>switch<br>for<br>while</p>
-</blockquote>
-</li>
-<li><p>变量</p>
-<blockquote>
-<p>使用var声明变量 : var 变量名 = 初始化值;</p>
-</blockquote>
-</li>
-<li><p>标识符</p>
-<blockquote>
-<p>名称可包含字母、数字、下划线和美元符号</p>
-</blockquote>
-</li>
-<li><p>函数</p>
-<blockquote>
-<p>通过 function 关键词进行定义，其后是函数名和括号 ()</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span>(<span class="hljs-params">p1, p2</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> p1 * p2;              <span class="hljs-comment">// 该函数返回 p1 和 p2 的乘积</span><br>&#125;<br></code></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<h1 id="JavaScript-对象"><a href="#JavaScript-对象" class="headerlink" title="JavaScript 对象"></a>JavaScript 对象</h1><ol>
-<li><p>Array</p>
-</li>
-<li><p>Boolean</p>
-</li>
-<li><p>Date</p>
-</li>
-<li><p>Math</p>
-</li>
-<li><p>Number</p>
-</li>
-<li><p>String</p>
-</li>
-<li><p>RegExp</p>
-<blockquote>
-<p>直接量语法: /pattern/attributes<br>创建 RegExp 对象的语法：new RegExp(pattern, attributes);</p>
-</blockquote>
-</li>
-<li><p>Global</p>
-<blockquote>
-<p>全局属性和函数可用于所有内建的 JavaScript 对象</p>
-</blockquote>
-</li>
-<li><p>JavaScript 事件</p>
-<blockquote>
-<p>onclick    鼠标点击某个对象<br>ondblclick    鼠标双击某个对象<br>onfocus    元素获得焦点<br>onblur    元素失去焦点<br>onreset    重置按钮被点击<br>onsubmit    提交按钮被点击<br>onload    某个页面或图像被完成加载</p>
-</blockquote>
-</li>
-</ol>
-<h1 id="JS-Browser-BOM"><a href="#JS-Browser-BOM" class="headerlink" title="JS Browser BOM"></a>JS Browser BOM</h1><ol>
-<li><p>Window</p>
-<blockquote>
-<p>代表浏览器的窗口</p>
-</blockquote>
-</li>
-<li><p>Screen</p>
-<blockquote>
-<p>window.screen 对象包含用户屏幕的信息<br>window.screen 对象不带 window 前缀也可以</p>
-</blockquote>
-</li>
-<li><p>Location</p>
-<blockquote>
-<p>window.location 对象可用于获取当前页面地址（URL）<br>window.location 对象可不带 window 前缀</p>
-</blockquote>
-</li>
-<li><p>History</p>
-<blockquote>
-<p>window.history 对象包含浏览器历史<br>window.history 对象可不带 window 书写</p>
-</blockquote>
-</li>
-<li><p>Navigator  </p>
-<blockquote>
-<p>window.navigator 对象包含有关浏览器的信息<br>window.navigator 对象可以不带 window 前缀</p>
-</blockquote>
-</li>
-<li><p>弹出框</p>
-<blockquote>
-<p>JavaScript 有三种类型的弹出框<br>警告框： window.alert(“sometext”);<br>确认框： window.confirm(“sometext”);<br>提示框： window.prompt(“sometext”,”defaultText”);</p>
-</blockquote>
-</li>
-<li><p>Timing</p>
-<ul>
-<li>Timing 事件<blockquote>
-<p>setTimeout(function, milliseconds)<br>在等待指定的毫秒数后执行函数。<br>setInterval(function, milliseconds)<br>等同于 setTimeout()，但持续重复执行该函数。</p>
-</blockquote>
-</li>
-<li>如何停止执行？<blockquote>
-<p>clearTimeout() 方法停止执行 setTimeout() 中规定的函数。<br>clearInterval() 方法停止 setInterval() 方法中指定的函数的执行。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="JS-HTML-DOM"><a href="#JS-HTML-DOM" class="headerlink" title="JS HTML DOM"></a>JS HTML DOM</h1><ol>
-<li><p>当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）</p>
-</li>
-<li><p>对象的 HTML DOM 树<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ct_htmltree.gif" srcset="/img/loading.gif" lazyload alt=""></p>
-</li>
-<li><p>核心DOM - 针对任何结构化文档的标准模型</p>
-<blockquote>
-<p>Document：文档对象<br>Element：元素对象<br>Attribute：属性对象<br>Text：文本对象<br>Comment:注释对象</p>
-</blockquote>
-</li>
-<li><p>核心DOM模型：</p>
-</li>
-</ol>
-<ul>
-<li><p>Document：文档对象</p>
-<blockquote>
-<p>创建(获取)：在html dom模型中可以使用window对象来获取<br>window.document<br>document</p>
-</blockquote>
-</li>
-<li><p>方法：</p>
-<ul>
-<li>获取Element对象：<blockquote>
-<ol>
-<li>getElementById()    ： 根据id属性值获取元素对象。id属性值一般唯一           </li>
-<li>getElementsByTagName()：根据元素名称获取元素对象们。返回值是一个数组</li>
-<li>getElementsByClassName():根据Class属性值获取元素对象们。返回值是一个数组</li>
-<li>getElementsByName(): 根据name属性值获取元素对象们。返回值是一个数组</li>
-</ol>
-</blockquote>
-</li>
-<li>创建其他DOM对象：<blockquote>
-<ol>
-<li>createAttribute(name)   </li>
-<li>createElement() </li>
-<li>createTextNode()    </li>
-<li>createComment()</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java基础语法</title>
     <url>/2019/11/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="常用DOC命令"><a href="#常用DOC命令" class="headerlink" title="常用DOC命令"></a>常用DOC命令</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/doc.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
@@ -2232,6 +1898,169 @@
 <li>do-while语句</li>
 </ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dowhile.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDBC总结</title>
+    <url>/2021/03/13/JDBC%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><ol>
+<li><strong>JDBC概念</strong></li>
+</ol>
+<ul>
+<li>概念：Java DataBase Connectivity  即Java 数据库连接、操作数据库</li>
+<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</li>
+</ul>
+<ol start="2">
+<li><p><strong>快速入门：</strong></p>
+<ul>
+<li>步骤：<blockquote>
+<ol>
+<li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</li>
+</ol>
+<ul>
+<li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li>
+<li>右键–&gt;Add As Library</li>
+</ul>
+<ol start="2">
+<li>注册驱动</li>
+<li>获取数据库连接对象 Connection</li>
+<li>定义sql</li>
+<li>获取执行sql语句的对象 Statement</li>
+<li>执行sql，接受返回结果</li>
+<li>处理结果</li>
+<li>释放资源</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p><strong>代码实现：</strong></p>
+<blockquote>
+<ol>
+<li>导入驱动jar包</li>
+<li>注册驱动<br>Class.forName(“com.mysql.jdbc.Driver”);</li>
+<li>获取数据库连接对象<br>Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/db3”, “root”, “root”);</li>
+<li>定义sql语句<br>String sql = “update account set balance = 500 where id = 1”;</li>
+<li>获取执行sql的对象 Statement<br>Statement stmt = conn.createStatement();</li>
+<li>执行sql<br>int count = stmt.executeUpdate(sql);</li>
+<li>处理结果<br>System.out.println(count);</li>
+<li>释放资源<br>stmt.close();<br>conn.close();</li>
+</ol>
+</blockquote>
+<h2 id="详解各个对象"><a href="#详解各个对象" class="headerlink" title="详解各个对象"></a><strong>详解各个对象</strong></h2></li>
+</ul>
+<h3 id="DriverManager：驱动管理对象"><a href="#DriverManager：驱动管理对象" class="headerlink" title="DriverManager：驱动管理对象"></a>DriverManager：驱动管理对象</h3><blockquote>
+<p>功能：</p>
+<ol>
+<li>注册驱动：告诉程序该使用哪一个数据库驱动jar</li>
+<li>获取数据库连接：</li>
+</ol>
+</blockquote>
+<h3 id="Connection：数据库连接对象"><a href="#Connection：数据库连接对象" class="headerlink" title="Connection：数据库连接对象"></a>Connection：数据库连接对象</h3><blockquote>
+<p>功能：</p>
+<ol>
+<li>获取执行sql 的对象</li>
+</ol>
+<ul>
+<li>Statement createStatement()</li>
+<li>PreparedStatement prepareStatement(String sql)  </li>
+</ul>
+<ol start="2">
+<li>管理事务：</li>
+</ol>
+<ul>
+<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</li>
+<li>提交事务：commit() </li>
+<li>回滚事务：rollback()</li>
+</ul>
+</blockquote>
+<h3 id="Statement：执行sql的对象"><a href="#Statement：执行sql的对象" class="headerlink" title="Statement：执行sql的对象"></a>Statement：执行sql的对象</h3><blockquote>
+<p>功能：</p>
+<ol>
+<li>执行sql</li>
+</ol>
+<ul>
+<li>boolean execute(String sql) ：可以执行任意的sql </li>
+<li>int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</li>
+<li>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</li>
+</ul>
+</blockquote>
+<h3 id="ResultSet：结果集对象-封装查询结果"><a href="#ResultSet：结果集对象-封装查询结果" class="headerlink" title="ResultSet：结果集对象,封装查询结果"></a>ResultSet：结果集对象,封装查询结果</h3><blockquote>
+<ul>
+<li>boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</li>
+<li>getXxx(参数):获取数据<ul>
+<li>Xxx：代表数据类型   如： int getInt() ,    String getString()</li>
+<li>参数：<ol>
+<li>int：代表列的编号,从1开始   如： getString(1)</li>
+<li>String：代表列名称。 如： getDouble(“balance”)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="PreparedStatement：执行sql的对象"><a href="#PreparedStatement：执行sql的对象" class="headerlink" title="PreparedStatement：执行sql的对象"></a>PreparedStatement：执行sql的对象</h3><blockquote>
+<ol>
+<li>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接,会造成安全性问题.<br>如:输入密码：a’ or ‘a’ = ‘a</li>
+<li>解决sql注入问题：使用PreparedStatement对象来解决</li>
+<li>预编译的SQL：参数使用?作为占位符</li>
+<li>获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </li>
+<li>给？赋值：<ul>
+<li>方法： setXxx(参数1,参数2)<ul>
+<li>参数1：？的位置编号 从1 开始</li>
+<li>参数2：？的值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行sql，接受返回结果，不需要传递sql语句</li>
+</ol>
+</blockquote>
+<h1 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h1><ul>
+<li><p>目的：简化书写</p>
+</li>
+<li><p>解决：配置文件-&gt;<strong>jdbc.properties</strong></p>
+<blockquote>
+<p>url=<br>user=<br>password=</p>
+</blockquote>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JDBCUtils</span> </span>&#123;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String url;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String user;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String password;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String driver;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">static</span>&#123;<br>    <span class="hljs-comment">//读取资源文件，获取值。</span><br><br>	<span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-comment">//1. 创建Properties集合类。   </span><br>    Properties pro = <span class="hljs-keyword">new</span> Properties();<br>	<br>    <span class="hljs-comment">//获取src路径下的文件的方式---&gt;ClassLoader 类加载器</span><br>	ClassLoader classLoader = JDBCUtils.class.getClassLoader();<br>	URL res  = classLoader.getResource(<span class="hljs-string">"jdbc.properties"</span>);<br>	String path = res.getPath();<br>	System.out.println(path);<br><br>	<span class="hljs-comment">//2. 加载文件</span><br>	pro.load(<span class="hljs-keyword">new</span> FileReader(path));<br>	<br>	<span class="hljs-comment">//3. 获取数据，赋值</span><br>	url = pro.getProperty(<span class="hljs-string">"url"</span>);<br>	user = pro.getProperty(<span class="hljs-string">"user"</span>);<br>	password = pro.getProperty(<span class="hljs-string">"password"</span>);<br>	driver = pro.getProperty(<span class="hljs-string">"driver"</span>);<br>	<span class="hljs-comment">//4. 注册驱动</span><br>	Class.forName(driver);<br>        &#125;  <br>    <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>	    e.printStackTrace();<br>	        &#125;  <br>    <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>	            e.printStackTrace();<br>	        &#125;<br>	&#125;<br>	<br>	<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 获取连接</span><br><span class="hljs-comment">* <span class="hljs-doctag">@return</span> 连接对象</span><br><span class="hljs-comment">*/</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Connection <span class="hljs-title">getConnection</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> SQLException </span>&#123;<br>	<span class="hljs-keyword">return</span> DriverManager.getConnection(url, user, password);<br>	&#125;<br>	<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 释放资源</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> stmt</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> conn</span><br><span class="hljs-comment">*/</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">(Statement stmt,Connection conn)</span></span>&#123;<br>	    <span class="hljs-keyword">if</span>( stmt != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            stmt.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	<br>	    <span class="hljs-keyword">if</span>( conn != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            conn.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	    &#125;<br>	<br>	<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 释放资源</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> stmt</span><br><span class="hljs-comment">* <span class="hljs-doctag">@param</span> conn</span><br><span class="hljs-comment">*/</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">(ResultSet rs,Statement stmt, Connection conn)</span></span>&#123;<br>	    <span class="hljs-keyword">if</span>( rs != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            rs.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	<br>	    <span class="hljs-keyword">if</span>( stmt != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            stmt.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	<br>	    <span class="hljs-keyword">if</span>( conn != <span class="hljs-keyword">null</span>)&#123;<br>	        <span class="hljs-keyword">try</span> &#123;<br>	            conn.close();<br>	            &#125; <br>            <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>	                e.printStackTrace();<br>	            &#125;<br>	        &#125;<br>	    &#125;<br>	<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="JDBC控制事务"><a href="#JDBC控制事务" class="headerlink" title="JDBC控制事务"></a>JDBC控制事务</h1><ol>
+<li>事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。</li>
+<li>操作：<ol>
+<li>开启事务</li>
+<li>提交事务</li>
+<li>回滚事务</li>
+</ol>
+</li>
+<li><strong>使用Connection对象来管理事务</strong><ul>
+<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务<ul>
+<li>在执行sql之前开启事务</li>
+</ul>
+</li>
+<li>提交事务：commit() <ul>
+<li>当所有sql都执行完提交事务</li>
+</ul>
+</li>
+<li>回滚事务：rollback() <ul>
+<li>在catch中回滚事务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -2524,304 +2353,174 @@
       </tags>
   </entry>
   <entry>
-    <title>Map</title>
-    <url>/2019/11/07/Map/</url>
-    <content><![CDATA[<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="Map常用子类"><a href="#Map常用子类" class="headerlink" title="Map常用子类"></a>Map常用子类</h2><ul>
-<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+    <title>JavaScript基础</title>
+    <url>/2021/03/15/JavaScript%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h1><ol>
+<li>JavaScript 是属于 HTML 和 Web 的编程语言。编程令计算机完成您需要它们做的工作</li>
+<li>JavaScript 是 web 开发者必学的三种语言之一：<blockquote>
+<p>HTML 定义网页的内容<br>CSS 规定网页的布局<br>JavaScript 对网页行为进行编程</p>
+</blockquote>
 </li>
-<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+</ol>
+<h1 id="JavaScript基础语法"><a href="#JavaScript基础语法" class="headerlink" title="JavaScript基础语法"></a>JavaScript基础语法</h1><ol>
+<li><p>注释</p>
+<blockquote>
+<p>单行注释以 // 开头<br>多行注释以 /* 开头，以 */ 结尾</p>
+</blockquote>
+</li>
+<li><p>原始数据类型</p>
+<blockquote>
+<p>number : 整数/小数/NaN<br>boolean : true和false<br>string : 字符串  “abc” “a” ‘abc’<br>null : 一个对象为空的占位符<br>undefined : 未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined</p>
+</blockquote>
+</li>
+<li><p>运算符</p>
+<blockquote>
+<p>算术运算符<br>赋值运算符<br>比较运算符<br>逻辑运算符<br>三元运算符</p>
+</blockquote>
+</li>
+<li><p>语句</p>
+<blockquote>
+<p>if<br>switch<br>for<br>while</p>
+</blockquote>
+</li>
+<li><p>变量</p>
+<blockquote>
+<p>使用var声明变量 : var 变量名 = 初始化值;</p>
+</blockquote>
+</li>
+<li><p>标识符</p>
+<blockquote>
+<p>名称可包含字母、数字、下划线和美元符号</p>
+</blockquote>
+</li>
+<li><p>函数</p>
+<blockquote>
+<p>通过 function 关键词进行定义，其后是函数名和括号 ()</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span>(<span class="hljs-params">p1, p2</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> p1 * p2;              <span class="hljs-comment">// 该函数返回 p1 和 p2 的乘积</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<h1 id="JavaScript-对象"><a href="#JavaScript-对象" class="headerlink" title="JavaScript 对象"></a>JavaScript 对象</h1><ol>
+<li><p>Array</p>
+</li>
+<li><p>Boolean</p>
+</li>
+<li><p>Date</p>
+</li>
+<li><p>Math</p>
+</li>
+<li><p>Number</p>
+</li>
+<li><p>String</p>
+</li>
+<li><p>RegExp</p>
+<blockquote>
+<p>直接量语法: /pattern/attributes<br>创建 RegExp 对象的语法：new RegExp(pattern, attributes);</p>
+</blockquote>
+</li>
+<li><p>Global</p>
+<blockquote>
+<p>全局属性和函数可用于所有内建的 JavaScript 对象</p>
+</blockquote>
+</li>
+<li><p>JavaScript 事件</p>
+<blockquote>
+<p>onclick    鼠标点击某个对象<br>ondblclick    鼠标双击某个对象<br>onfocus    元素获得焦点<br>onblur    元素失去焦点<br>onreset    重置按钮被点击<br>onsubmit    提交按钮被点击<br>onload    某个页面或图像被完成加载</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="JS-Browser-BOM"><a href="#JS-Browser-BOM" class="headerlink" title="JS Browser BOM"></a>JS Browser BOM</h1><ol>
+<li><p>Window</p>
+<blockquote>
+<p>代表浏览器的窗口</p>
+</blockquote>
+</li>
+<li><p>Screen</p>
+<blockquote>
+<p>window.screen 对象包含用户屏幕的信息<br>window.screen 对象不带 window 前缀也可以</p>
+</blockquote>
+</li>
+<li><p>Location</p>
+<blockquote>
+<p>window.location 对象可用于获取当前页面地址（URL）<br>window.location 对象可不带 window 前缀</p>
+</blockquote>
+</li>
+<li><p>History</p>
+<blockquote>
+<p>window.history 对象包含浏览器历史<br>window.history 对象可不带 window 书写</p>
+</blockquote>
+</li>
+<li><p>Navigator  </p>
+<blockquote>
+<p>window.navigator 对象包含有关浏览器的信息<br>window.navigator 对象可以不带 window 前缀</p>
+</blockquote>
+</li>
+<li><p>弹出框</p>
+<blockquote>
+<p>JavaScript 有三种类型的弹出框<br>警告框： window.alert(“sometext”);<br>确认框： window.confirm(“sometext”);<br>提示框： window.prompt(“sometext”,”defaultText”);</p>
+</blockquote>
+</li>
+<li><p>Timing</p>
+<ul>
+<li>Timing 事件<blockquote>
+<p>setTimeout(function, milliseconds)<br>在等待指定的毫秒数后执行函数。<br>setInterval(function, milliseconds)<br>等同于 setTimeout()，但持续重复执行该函数。</p>
+</blockquote>
+</li>
+<li>如何停止执行？<blockquote>
+<p>clearTimeout() 方法停止执行 setTimeout() 中规定的函数。<br>clearInterval() 方法停止 setInterval() 方法中指定的函数的执行。</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="Map接口的常用方法"><a href="#Map接口的常用方法" class="headerlink" title="Map接口的常用方法"></a>Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Map集合遍历键找值方式"><a href="#Map集合遍历键找值方式" class="headerlink" title="Map集合遍历键找值方式"></a>Map集合遍历键找值方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。<strong>方法提示: keyset()</strong>   </p>
-</li>
-<li><p>遍历键的Set集合，得到每一个键。  </p>
-</li>
-<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
 </li>
 </ol>
-<h2 id="Entry键值对对象"><a href="#Entry键值对对象" class="headerlink" title="Entry键值对对象"></a>Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Map集合遍历键值对方式"><a href="#Map集合遍历键值对方式" class="headerlink" title="Map集合遍历键值对方式"></a>Map集合遍历键值对方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。*<em>方法提示: entrySet() *</em>   </p>
+<h1 id="JS-HTML-DOM"><a href="#JS-HTML-DOM" class="headerlink" title="JS HTML DOM"></a>JS HTML DOM</h1><ol>
+<li><p>当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）</p>
 </li>
-<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+<li><p>对象的 HTML DOM 树<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ct_htmltree.gif" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
-<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+<li><p>核心DOM - 针对任何结构化文档的标准模型</p>
+<blockquote>
+<p>Document：文档对象<br>Element：元素对象<br>Attribute：属性对象<br>Text：文本对象<br>Comment:注释对象</p>
+</blockquote>
+</li>
+<li><p>核心DOM模型：</p>
 </li>
 </ol>
+<ul>
+<li><p>Document：文档对象</p>
+<blockquote>
+<p>创建(获取)：在html dom模型中可以使用window对象来获取<br>window.document<br>document</p>
+</blockquote>
+</li>
+<li><p>方法：</p>
+<ul>
+<li>获取Element对象：<blockquote>
+<ol>
+<li>getElementById()    ： 根据id属性值获取元素对象。id属性值一般唯一           </li>
+<li>getElementsByTagName()：根据元素名称获取元素对象们。返回值是一个数组</li>
+<li>getElementsByClassName():根据Class属性值获取元素对象们。返回值是一个数组</li>
+<li>getElementsByName(): 根据name属性值获取元素对象们。返回值是一个数组</li>
+</ol>
+</blockquote>
+</li>
+<li>创建其他DOM对象：<blockquote>
+<ol>
+<li>createAttribute(name)   </li>
+<li>createElement() </li>
+<li>createTextNode()    </li>
+<li>createComment()</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL约束</title>
-    <url>/2019/11/13/MySQL%E7%BA%A6%E6%9D%9F/</url>
-    <content><![CDATA[<h1 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL:查询语句"></a>DQL:查询语句</h1><pre><code>1. 排序查询
-    * 语法：order by 子句
-        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...
-
-    * 排序方式：
-        * ASC：升序，默认的。
-        * DESC：降序。
-
-    * 注意：
-        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。
-
-
-2. 聚合函数：将一列数据作为一个整体，进行纵向的计算。
-    1. count：计算个数
-        1. 一般选择非空的列：主键
-        2. count(*)
-    2. max：计算最大值
-    3. min：计算最小值
-    4. sum：计算和
-    5. avg：计算平均值
-
-
-    * 注意：聚合函数的计算，排除null值。
-        解决方案：
-            1. 选择不包含非空的列进行计算
-            2. IFNULL函数
-
-3. 分组查询:
-    1. 语法：group by 分组字段；
-    2. 注意：
-        1. 分组之后查询的字段：分组字段、聚合函数
-        2. where 和 having 的区别？
-            1. where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来
-            2. where 后不可以跟聚合函数，having可以进行聚合函数的判断。
-
-        -- 按照性别分组。分别查询男、女同学的平均分
-
-        SELECT sex , AVG(math) FROM student GROUP BY sex;
-
-        -- 按照性别分组。分别查询男、女同学的平均分,人数
-
-        SELECT sex , AVG(math),COUNT(id) FROM student GROUP BY sex;
-
-        --  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组
-        SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex;
-
-        --  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组,分组之后。人数要大于2个人
-        SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2;
-
-        SELECT sex , AVG(math),COUNT(id) 人数 FROM student WHERE math &gt; 70 GROUP BY sex HAVING 人数 &gt; 2;</code></pre><p>​<br>    4. 分页查询<br>        1. 语法：limit 开始的索引,每页查询的条数;<br>        2. 公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数<br>            – 每页显示3条记录 </p>
-<pre><code>    SELECT * FROM student LIMIT 0,3; -- 第1页
-
-    SELECT * FROM student LIMIT 3,3; -- 第2页
-
-    SELECT * FROM student LIMIT 6,3; -- 第3页
-
-3. limit 是一个MySQL&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念： 对表中的数据进行限定，保证数据的正确性、有效性和完整性。    
-* 分类：
-    1. 主键约束：primary key
-    2. 非空约束：not null
-    3. 唯一约束：unique
-    4. 外键约束：foreign key
-
-* 非空约束：not null，值不能为null
-    1. 创建表时添加约束
-        CREATE TABLE stu(
-            id INT,
-            NAME VARCHAR(20) NOT NULL -- name为非空
-        );
-
-    2. 删除name的非空约束
-        ALTER TABLE stu MODIFY NAME VARCHAR(20);
-
-    3. 创建表完后，添加非空约束
-        ALTER TABLE stu MODIFY NAME VARCHAR(20) NOT NULL;
-
-* 唯一约束：unique，值不能重复
-    1. 创建表时，添加唯一约束
-        CREATE TABLE stu(
-            id INT,
-            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束    
-        );
-        * 注意mysql中，唯一约束限定的列的值可以有多个null
-
-    2. 删除唯一约束
-        ALTER TABLE stu DROP INDEX phone_number;
-
-    3. 在创建表后，添加唯一约束
-        ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;
-
-
-
-* 主键约束：primary key。
-    1. 注意：
-        1. 含义：非空且唯一
-        2. 一张表只能有一个字段为主键
-        3. 主键就是表中记录的唯一标识
-
-    2. 在创建表时，添加主键约束
-        create table stu(
-            id int primary key,-- 给id添加主键约束
-            name varchar(20)
-        );
-
-    3. 删除主键
-        ALTER TABLE stu DROP PRIMARY KEY;
-
-    4. 创建完表后，添加主键
-        ALTER TABLE stu MODIFY id INT PRIMARY KEY;
-
-    5. 自动增长：
-        1.  概念：如果某一列是数值类型的，使用 auto_increment 可以来完成值得自动增长
-
-        2. 在创建表时，添加主键约束，并且完成主键自增长
-        create table stu(
-            id int primary key auto_increment,-- 给id添加主键约束
-            name varchar(20)
-        );
-
-        3. 删除自动增长
-        ALTER TABLE stu MODIFY id INT;
-
-        4. 添加自动增长
-        ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;
-
-
-* 外键约束：foreign key,让表于表产生关系，从而保证数据的正确性。
-    1. 在创建表时，可以添加外键
-        * 语法：
-            create table 表名(
-                ....
-                外键列
-                constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称)
-            );
-
-    2. 删除外键
-        ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;
-
-    3. 创建表之后，添加外键
-        ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称);</code></pre><p>​<br>        4. 级联操作<br>            1. 添加级联操作<br>                语法：ALTER TABLE 表名<br>                        ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称)<br>                        ON UPDATE CASCADE ON DELETE CASCADE;<br>            2. 分类：<br>                1. 级联更新：ON UPDATE CASCADE<br>                2. 级联删除：ON DELETE CASCADE </p>
-<h1 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h1><pre><code>1. 多表之间的关系
-    1. 分类：
-        1. 一对一(了解)：
-            * 如：人和身份证
-            * 分析：一个人只有一个身份证，一个身份证只能对应一个人
-        2. 一对多(多对一)：
-            * 如：部门和员工
-            * 分析：一个部门有多个员工，一个员工只能对应一个部门
-        3. 多对多：
-            * 如：学生和课程
-            * 分析：一个学生可以选择很多门课程，一个课程也可以被很多学生选择
-    2. 实现关系：
-        1. 一对多(多对一)：
-            * 如：部门和员工
-            * 实现方式：在多的一方建立外键，指向一的一方的主键。
-        2. 多对多：
-            * 如：学生和课程
-            * 实现方式：多对多关系实现需要借助第三张中间表。中间表至少包含两个字段，这两个字段作为第三张表的外键，分别指向两张表的主键
-        3. 一对一(了解)：
-            * 如：人和身份证
-            * 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键。
-
-    3. 案例
-        -- 创建旅游线路分类表 tab_category
-        -- cid 旅游线路分类主键，自动增长
-        -- cname 旅游线路分类名称非空，唯一，字符串 100
-        CREATE TABLE tab_category (
-            cid INT PRIMARY KEY AUTO_INCREMENT,
-            cname VARCHAR(100) NOT NULL UNIQUE
-        );
-
-        -- 创建旅游线路表 tab_route
-        /*
-        rid 旅游线路主键，自动增长
-        rname 旅游线路名称非空，唯一，字符串 100
-        price 价格
-        rdate 上架时间，日期类型
-        cid 外键，所属分类
-        */
-        CREATE TABLE tab_route(
-            rid INT PRIMARY KEY AUTO_INCREMENT,
-            rname VARCHAR(100) NOT NULL UNIQUE,
-            price DOUBLE,
-            rdate DATE,
-            cid INT,
-            FOREIGN KEY (cid) REFERENCES tab_category(cid)
-        );
-
-        /*创建用户表 tab_user
-        uid 用户主键，自增长
-        username 用户名长度 100，唯一，非空
-        password 密码长度 30，非空
-        name 真实姓名长度 100
-        birthday 生日
-        sex 性别，定长字符串 1
-        telephone 手机号，字符串 11
-        email 邮箱，字符串长度 100
-        */
-        CREATE TABLE tab_user (
-            uid INT PRIMARY KEY AUTO_INCREMENT,
-            username VARCHAR(100) UNIQUE NOT NULL,
-            PASSWORD VARCHAR(30) NOT NULL,
-            NAME VARCHAR(100),
-            birthday DATE,
-            sex CHAR(1) DEFAULT &apos;男&apos;,
-            telephone VARCHAR(11),
-            email VARCHAR(100)
-        );
-
-        /*
-        创建收藏表 tab_favorite
-        rid 旅游线路 id，外键
-        date 收藏时间
-        uid 用户 id，外键
-        rid 和 uid 不能重复，设置复合主键，同一个用户不能收藏同一个线路两次
-        */
-        CREATE TABLE tab_favorite (
-            rid INT, -- 线路id
-            DATE DATETIME,
-            uid INT, -- 用户id
-            -- 创建复合主键
-            PRIMARY KEY(rid,uid), -- 联合主键
-            FOREIGN KEY (rid) REFERENCES tab_route(rid),
-            FOREIGN KEY(uid) REFERENCES tab_user(uid)
-        );</code></pre><p>​<br>    2. 数据库设计的范式<br>        * 概念：设计数据库时，需要遵循的一些规范。要遵循后边的范式要求，必须先遵循前边的所有范式要求</p>
-<pre><code>    设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。
-    目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式(4NF）和第五范式（5NF，又称完美范式）。
-
-* 分类：
-    1. 第一范式（1NF）：每一列都是不可分割的原子数据项
-    2. 第二范式（2NF）：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）
-        * 几个概念：
-            1. 函数依赖：A--&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A
-                例如：学号--&gt;姓名。  （学号，课程名称） --&gt; 分数
-            2. 完全函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。
-                例如：（学号，课程名称） --&gt; 分数
-            3. 部分函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。
-                例如：（学号，课程名称） --&gt; 姓名
-            4. 传递函数依赖：A--&gt;B, B--&gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称C传递函数依赖于A
-                例如：学号--&gt;系名，系名--&gt;系主任
-            5. 码：如果在一张表中，一个属性或属性组，被其他所有属性所完全依赖，则称这个属性(属性组)为该表的码
-                例如：该表中码为：（学号，课程名称）
-                * 主属性：码属性组中的所有属性
-                * 非主属性：除过码属性组的属性
-
-    3. 第三范式（3NF）：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</code></pre><h1 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h1><pre><code>1. 命令行：
-    * 语法：
-        * 备份： mysqldump -u用户名 -p密码 数据库名称 &gt; 保存的路径
-        * 还原：
-            1. 登录数据库
-            2. 创建数据库
-            3. 使用数据库
-            4. 执行文件： source 文件路径
-2. 图形化工具：</code></pre>]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -3221,6 +2920,307 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
       </tags>
   </entry>
   <entry>
+    <title>Map</title>
+    <url>/2019/11/07/Map/</url>
+    <content><![CDATA[<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="Map常用子类"><a href="#Map常用子类" class="headerlink" title="Map常用子类"></a>Map常用子类</h2><ul>
+<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+</li>
+<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+</li>
+</ul>
+<h2 id="Map接口的常用方法"><a href="#Map接口的常用方法" class="headerlink" title="Map接口的常用方法"></a>Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Map集合遍历键找值方式"><a href="#Map集合遍历键找值方式" class="headerlink" title="Map集合遍历键找值方式"></a>Map集合遍历键找值方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。<strong>方法提示: keyset()</strong>   </p>
+</li>
+<li><p>遍历键的Set集合，得到每一个键。  </p>
+</li>
+<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
+</li>
+</ol>
+<h2 id="Entry键值对对象"><a href="#Entry键值对对象" class="headerlink" title="Entry键值对对象"></a>Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Map集合遍历键值对方式"><a href="#Map集合遍历键值对方式" class="headerlink" title="Map集合遍历键值对方式"></a>Map集合遍历键值对方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。*<em>方法提示: entrySet() *</em>   </p>
+</li>
+<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+</li>
+<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL约束</title>
+    <url>/2019/11/13/MySQL%E7%BA%A6%E6%9D%9F/</url>
+    <content><![CDATA[<h1 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL:查询语句"></a>DQL:查询语句</h1><pre><code>1. 排序查询
+    * 语法：order by 子句
+        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...
+
+    * 排序方式：
+        * ASC：升序，默认的。
+        * DESC：降序。
+
+    * 注意：
+        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。
+
+
+2. 聚合函数：将一列数据作为一个整体，进行纵向的计算。
+    1. count：计算个数
+        1. 一般选择非空的列：主键
+        2. count(*)
+    2. max：计算最大值
+    3. min：计算最小值
+    4. sum：计算和
+    5. avg：计算平均值
+
+
+    * 注意：聚合函数的计算，排除null值。
+        解决方案：
+            1. 选择不包含非空的列进行计算
+            2. IFNULL函数
+
+3. 分组查询:
+    1. 语法：group by 分组字段；
+    2. 注意：
+        1. 分组之后查询的字段：分组字段、聚合函数
+        2. where 和 having 的区别？
+            1. where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来
+            2. where 后不可以跟聚合函数，having可以进行聚合函数的判断。
+
+        -- 按照性别分组。分别查询男、女同学的平均分
+
+        SELECT sex , AVG(math) FROM student GROUP BY sex;
+
+        -- 按照性别分组。分别查询男、女同学的平均分,人数
+
+        SELECT sex , AVG(math),COUNT(id) FROM student GROUP BY sex;
+
+        --  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组
+        SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex;
+
+        --  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组,分组之后。人数要大于2个人
+        SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2;
+
+        SELECT sex , AVG(math),COUNT(id) 人数 FROM student WHERE math &gt; 70 GROUP BY sex HAVING 人数 &gt; 2;</code></pre><p>​<br>    4. 分页查询<br>        1. 语法：limit 开始的索引,每页查询的条数;<br>        2. 公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数<br>            – 每页显示3条记录 </p>
+<pre><code>    SELECT * FROM student LIMIT 0,3; -- 第1页
+
+    SELECT * FROM student LIMIT 3,3; -- 第2页
+
+    SELECT * FROM student LIMIT 6,3; -- 第3页
+
+3. limit 是一个MySQL&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念： 对表中的数据进行限定，保证数据的正确性、有效性和完整性。    
+* 分类：
+    1. 主键约束：primary key
+    2. 非空约束：not null
+    3. 唯一约束：unique
+    4. 外键约束：foreign key
+
+* 非空约束：not null，值不能为null
+    1. 创建表时添加约束
+        CREATE TABLE stu(
+            id INT,
+            NAME VARCHAR(20) NOT NULL -- name为非空
+        );
+
+    2. 删除name的非空约束
+        ALTER TABLE stu MODIFY NAME VARCHAR(20);
+
+    3. 创建表完后，添加非空约束
+        ALTER TABLE stu MODIFY NAME VARCHAR(20) NOT NULL;
+
+* 唯一约束：unique，值不能重复
+    1. 创建表时，添加唯一约束
+        CREATE TABLE stu(
+            id INT,
+            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束    
+        );
+        * 注意mysql中，唯一约束限定的列的值可以有多个null
+
+    2. 删除唯一约束
+        ALTER TABLE stu DROP INDEX phone_number;
+
+    3. 在创建表后，添加唯一约束
+        ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;
+
+
+
+* 主键约束：primary key。
+    1. 注意：
+        1. 含义：非空且唯一
+        2. 一张表只能有一个字段为主键
+        3. 主键就是表中记录的唯一标识
+
+    2. 在创建表时，添加主键约束
+        create table stu(
+            id int primary key,-- 给id添加主键约束
+            name varchar(20)
+        );
+
+    3. 删除主键
+        ALTER TABLE stu DROP PRIMARY KEY;
+
+    4. 创建完表后，添加主键
+        ALTER TABLE stu MODIFY id INT PRIMARY KEY;
+
+    5. 自动增长：
+        1.  概念：如果某一列是数值类型的，使用 auto_increment 可以来完成值得自动增长
+
+        2. 在创建表时，添加主键约束，并且完成主键自增长
+        create table stu(
+            id int primary key auto_increment,-- 给id添加主键约束
+            name varchar(20)
+        );
+
+        3. 删除自动增长
+        ALTER TABLE stu MODIFY id INT;
+
+        4. 添加自动增长
+        ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;
+
+
+* 外键约束：foreign key,让表于表产生关系，从而保证数据的正确性。
+    1. 在创建表时，可以添加外键
+        * 语法：
+            create table 表名(
+                ....
+                外键列
+                constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称)
+            );
+
+    2. 删除外键
+        ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;
+
+    3. 创建表之后，添加外键
+        ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称);</code></pre><p>​<br>        4. 级联操作<br>            1. 添加级联操作<br>                语法：ALTER TABLE 表名<br>                        ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称)<br>                        ON UPDATE CASCADE ON DELETE CASCADE;<br>            2. 分类：<br>                1. 级联更新：ON UPDATE CASCADE<br>                2. 级联删除：ON DELETE CASCADE </p>
+<h1 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h1><pre><code>1. 多表之间的关系
+    1. 分类：
+        1. 一对一(了解)：
+            * 如：人和身份证
+            * 分析：一个人只有一个身份证，一个身份证只能对应一个人
+        2. 一对多(多对一)：
+            * 如：部门和员工
+            * 分析：一个部门有多个员工，一个员工只能对应一个部门
+        3. 多对多：
+            * 如：学生和课程
+            * 分析：一个学生可以选择很多门课程，一个课程也可以被很多学生选择
+    2. 实现关系：
+        1. 一对多(多对一)：
+            * 如：部门和员工
+            * 实现方式：在多的一方建立外键，指向一的一方的主键。
+        2. 多对多：
+            * 如：学生和课程
+            * 实现方式：多对多关系实现需要借助第三张中间表。中间表至少包含两个字段，这两个字段作为第三张表的外键，分别指向两张表的主键
+        3. 一对一(了解)：
+            * 如：人和身份证
+            * 实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键。
+
+    3. 案例
+        -- 创建旅游线路分类表 tab_category
+        -- cid 旅游线路分类主键，自动增长
+        -- cname 旅游线路分类名称非空，唯一，字符串 100
+        CREATE TABLE tab_category (
+            cid INT PRIMARY KEY AUTO_INCREMENT,
+            cname VARCHAR(100) NOT NULL UNIQUE
+        );
+
+        -- 创建旅游线路表 tab_route
+        /*
+        rid 旅游线路主键，自动增长
+        rname 旅游线路名称非空，唯一，字符串 100
+        price 价格
+        rdate 上架时间，日期类型
+        cid 外键，所属分类
+        */
+        CREATE TABLE tab_route(
+            rid INT PRIMARY KEY AUTO_INCREMENT,
+            rname VARCHAR(100) NOT NULL UNIQUE,
+            price DOUBLE,
+            rdate DATE,
+            cid INT,
+            FOREIGN KEY (cid) REFERENCES tab_category(cid)
+        );
+
+        /*创建用户表 tab_user
+        uid 用户主键，自增长
+        username 用户名长度 100，唯一，非空
+        password 密码长度 30，非空
+        name 真实姓名长度 100
+        birthday 生日
+        sex 性别，定长字符串 1
+        telephone 手机号，字符串 11
+        email 邮箱，字符串长度 100
+        */
+        CREATE TABLE tab_user (
+            uid INT PRIMARY KEY AUTO_INCREMENT,
+            username VARCHAR(100) UNIQUE NOT NULL,
+            PASSWORD VARCHAR(30) NOT NULL,
+            NAME VARCHAR(100),
+            birthday DATE,
+            sex CHAR(1) DEFAULT &apos;男&apos;,
+            telephone VARCHAR(11),
+            email VARCHAR(100)
+        );
+
+        /*
+        创建收藏表 tab_favorite
+        rid 旅游线路 id，外键
+        date 收藏时间
+        uid 用户 id，外键
+        rid 和 uid 不能重复，设置复合主键，同一个用户不能收藏同一个线路两次
+        */
+        CREATE TABLE tab_favorite (
+            rid INT, -- 线路id
+            DATE DATETIME,
+            uid INT, -- 用户id
+            -- 创建复合主键
+            PRIMARY KEY(rid,uid), -- 联合主键
+            FOREIGN KEY (rid) REFERENCES tab_route(rid),
+            FOREIGN KEY(uid) REFERENCES tab_user(uid)
+        );</code></pre><p>​<br>    2. 数据库设计的范式<br>        * 概念：设计数据库时，需要遵循的一些规范。要遵循后边的范式要求，必须先遵循前边的所有范式要求</p>
+<pre><code>    设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。
+    目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式(4NF）和第五范式（5NF，又称完美范式）。
+
+* 分类：
+    1. 第一范式（1NF）：每一列都是不可分割的原子数据项
+    2. 第二范式（2NF）：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）
+        * 几个概念：
+            1. 函数依赖：A--&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A
+                例如：学号--&gt;姓名。  （学号，课程名称） --&gt; 分数
+            2. 完全函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。
+                例如：（学号，课程名称） --&gt; 分数
+            3. 部分函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。
+                例如：（学号，课程名称） --&gt; 姓名
+            4. 传递函数依赖：A--&gt;B, B--&gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称C传递函数依赖于A
+                例如：学号--&gt;系名，系名--&gt;系主任
+            5. 码：如果在一张表中，一个属性或属性组，被其他所有属性所完全依赖，则称这个属性(属性组)为该表的码
+                例如：该表中码为：（学号，课程名称）
+                * 主属性：码属性组中的所有属性
+                * 非主属性：除过码属性组的属性
+
+    3. 第三范式（3NF）：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</code></pre><h1 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h1><pre><code>1. 命令行：
+    * 语法：
+        * 备份： mysqldump -u用户名 -p密码 数据库名称 &gt; 保存的路径
+        * 还原：
+            1. 登录数据库
+            2. 创建数据库
+            3. 使用数据库
+            4. 执行文件： source 文件路径
+2. 图形化工具：</code></pre>]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL基础</title>
     <url>/2019/11/13/MySQL%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h1><ol>
@@ -3523,185 +3523,6 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
             -- 查询姓名是3个字的人
             SELECT * FROM student WHERE NAME LIKE &apos;___&apos;;</code></pre><p>​<br>                – 查询姓名中包含德的人<br>                SELECT * FROM student WHERE NAME LIKE ‘%德%’;</p>
 <p>​    </p>
-]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL调优</title>
-    <url>/2021/03/29/MySQL%E8%B0%83%E4%BC%98/</url>
-    <content><![CDATA[<h1 id="数据库命令规范"><a href="#数据库命令规范" class="headerlink" title="数据库命令规范"></a>数据库命令规范</h1><ol>
-<li><p><strong>所有数据库对象名称必须使用小写字母并用下划线分割</strong></p>
-</li>
-<li><p><strong>所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）</strong></p>
-</li>
-<li><p><strong>数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符</strong></p>
-<h1 id="数据库基本设计规范"><a href="#数据库基本设计规范" class="headerlink" title="数据库基本设计规范"></a>数据库基本设计规范</h1></li>
-<li><p><strong>所有表必须使用 Innodb 存储引擎</strong></p>
-</li>
-</ol>
-<ul>
-<li><p>没有特殊要求（即 Innodb 无法满足的功能如：列存储，存储空间数据等）的情况下，所有表必须使用 Innodb 存储引擎</p>
-</li>
-<li><p>（MySQL5.5 之前默认使用 Myisam，5.6 以后默认的为 Innodb）</p>
-</li>
-</ul>
-<ol start="2">
-<li><strong>数据库和表的字符集统一使用 UTF8</strong></li>
-</ol>
-<ul>
-<li><p>兼容性更好，统一字符集可以避免由于字符集转换产生的乱码，不同的字符集进行比较前需要进行转换会造成索引失效</p>
-</li>
-<li><p>如果数据库中有存储 emoji 表情的需要，字符集需要采用 utf8mb4 字符集。</p>
-</li>
-</ul>
-<ol start="3">
-<li><strong>所有表和字段都需要添加注释</strong></li>
-</ol>
-<ul>
-<li>使用 comment 从句添加表和列的备注，从一开始就进行数据字典的维护</li>
-</ul>
-<h1 id="数据库字段设计规范"><a href="#数据库字段设计规范" class="headerlink" title="数据库字段设计规范"></a>数据库字段设计规范</h1><ol>
-<li><strong>优先选择符合存储需要的最小的数据类型</strong></li>
-</ol>
-<ul>
-<li><p>VARCHAR(N) 中的 N 代表的是字符数，而不是字节数，使用 UTF8 存储 255 个汉字 Varchar(255)=765 个字节。</p>
-</li>
-<li><p>过大的长度会消耗更多的内存。</p>
-</li>
-</ul>
-<ol start="2">
-<li><p><strong>尽可能把所有列定义为 NOT NULL</strong></p>
-</li>
-<li><p><strong>使用 TIMESTAMP(4 个字节) 或 DATETIME 类型 (8 个字节) 存储时间</strong></p>
-</li>
-</ol>
-<ul>
-<li><p>TIMESTAMP 存储的时间范围 1970-01-01 00:00:01 ~ 2038-01-19-03:14:07</p>
-</li>
-<li><p>TIMESTAMP 占用 4 字节和 INT 相同，但比 INT 可读性高</p>
-</li>
-<li><p>超出 TIMESTAMP 取值范围的使用 DATETIME 类型存储</p>
-</li>
-</ul>
-<ol start="4">
-<li><strong>同财务相关的金额类数据必须使用 decimal 类型</strong></li>
-</ol>
-<ul>
-<li><p>非精准浮点：float,double</p>
-</li>
-<li><p>精准浮点：decimal</p>
-</li>
-<li><p>Decimal 类型为精准浮点数，在计算时不会丢失精度</p>
-<h1 id="索引设计规范"><a href="#索引设计规范" class="headerlink" title="索引设计规范"></a>索引设计规范</h1></li>
-</ul>
-<ol>
-<li><strong>限制每张表上的索引数量,建议单张表索引不超过 5 个</strong></li>
-</ol>
-<ul>
-<li><p>索引并不是越多越好！索引可以提高效率同样可以降低效率。</p>
-</li>
-<li><p>索引可以增加查询效率，但同样也会降低插入和更新的效率，甚至有些情况下会降低查询效率。</p>
-</li>
-<li><p>因为 MySQL 优化器在选择如何优化查询时，会根据统一信息，对每一个可以用到的索引来进行评估，以生成出一个最好的执行计划，如果同时有很多个索引都可以用于查询，就会增加 MySQL 优化器生成执行计划的时间，同样会降低查询性能</p>
-</li>
-</ul>
-<ol start="2">
-<li><strong>禁止给表中的每一列都建立单独的索引</strong> </li>
-</ol>
-<ul>
-<li><p>5.6 版本之前，一个 sql 只能使用到一个表中的一个索引</p>
-</li>
-<li><p>5.6 以后，虽然有了合并索引的优化方式，但是还是远远没有使用一个联合索引的查询方式好。</p>
-</li>
-</ul>
-<ol start="3">
-<li><strong>每个 Innodb 表必须有个主键</strong>      </li>
-</ol>
-<ul>
-<li><p>Innodb 是一种索引组织表：数据的存储的逻辑顺序和索引的顺序是相同的。每个表都可以有多个索引，但是表的存储顺序只能有一种。</p>
-</li>
-<li><p>Innodb 是按照主键索引的顺序来组织表的</p>
-</li>
-</ul>
-<ul>
-<li><p>不要使用更新频繁的列作为主键，不适用多列主键（相当于联合索引）</p>
-</li>
-<li><p>不要使用 UUID,MD5,HASH,字符串列作为主键（无法保证数据的顺序增长）</p>
-</li>
-<li><p>主键建议使用自增 ID 值</p>
-</li>
-</ul>
-<ol start="4">
-<li><strong>常见索引列建议</strong></li>
-</ol>
-<ul>
-<li><p>出现在 SELECT、UPDATE、DELETE 语句的 WHERE 从句中的列</p>
-</li>
-<li><p>包含在 ORDER BY、GROUP BY、DISTINCT 中的字段</p>
-</li>
-<li><p>并不要将符合 1 和 2 中的字段的列都建立一个索引， 通常将 1、2 中的字段建立联合索引效果更好</p>
-</li>
-<li><p>多表 join 的关联列</p>
-<h1 id="数据库-SQL-开发规范"><a href="#数据库-SQL-开发规范" class="headerlink" title="数据库 SQL 开发规范"></a>数据库 SQL 开发规范</h1></li>
-</ul>
-<ol>
-<li><strong>建议使用预编译语句进行数据库操作</strong></li>
-</ol>
-<ul>
-<li><p>预编译语句可以重复使用这些计划，减少 SQL 编译所需要的时间，还可以解决动态 SQL 所带来的 SQL 注入的问题。</p>
-</li>
-<li><p>只传参数，比传递 SQL 语句更高效。</p>
-</li>
-<li><p>相同语句可以一次解析，多次使用，提高处理效率。</p>
-</li>
-</ul>
-<ol start="2">
-<li><strong>禁止使用 SELECT * 必须使用 SELECT &lt;字段列表&gt; 查询</strong><br>原因：</li>
-</ol>
-<ul>
-<li><p>消耗更多的 CPU 和 IO 以网络带宽资源</p>
-</li>
-<li><p>法使用覆盖索引</p>
-</li>
-<li><p>减少表结构变更带来的影响</p>
-</li>
-</ul>
-<ol start="3">
-<li><p><strong>禁止使用不含字段列表的 INSERT 语句</strong></p>
-</li>
-<li><p><strong>避免使用子查询，可以把子查询优化为 join 操作</strong></p>
-</li>
-</ol>
-<ol start="5">
-<li><strong>对应同一列进行 or 判断时，使用 in 代替 or</strong>  </li>
-</ol>
-<ul>
-<li>in 的值不要超过 500 个，in 操作可以更有效的利用索引，or 大多数情况下很少能利用到索引。</li>
-</ul>
-<h1 id="数据库操作行为规范"><a href="#数据库操作行为规范" class="headerlink" title="数据库操作行为规范"></a>数据库操作行为规范</h1><ol>
-<li><strong>超 100 万行的批量写 (UPDATE,DELETE,INSERT) 操作,要分批多次进行操作</strong></li>
-</ol>
-<ul>
-<li><p><strong>大批量操作可能会造成严重的主从延迟</strong></p>
-<p>主从环境中,大批量操作可能会造成严重的主从延迟，大批量的写操作一般都需要执行一定长的时间， 而只有当主库上执行完成后，            才会在其他从库上执行，所以会造成主库与从库长时间的延迟情况</p>
-</li>
-<li><p><strong>binlog 日志为 row 格式时会产生大量的日志</strong></p>
-<p>大批量写操作会产生大量日志，特别是对于 row 格式二进制数据而言，由于在 row 格式中会记录每一行数据的修改，我们一次修改的数据越多，产生的日志量也就会越多，日志的传输和恢复所需要的时间也就越长，这也是造成主从延迟的一个原因</p>
-</li>
-<li><p><strong>避免产生大事务操作</strong></p>
-<p>大批量修改数据，一定是在一个事务中进行的，这就会造成表中大批量数据进行锁定，从而导致大量的阻塞，阻塞会对 MySQL 的性能产生非常大的影响。</p>
-<p>特别是长时间的阻塞会占满所有数据库的可用连接，这会使生产环境中的其他应用无法连接到数据库，因此一定要注意大批量写操作要进行分批</p>
-<p>参考链接：</p>
-</li>
-</ul>
-<ol>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/database/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/database/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE.md</a></li>
-</ol>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -4876,37 +4697,6 @@ zrange`</code></pre><figure class="highlight java"><table><tr><td class="code"><
       </tags>
   </entry>
   <entry>
-    <title>Scanner类,Random类,ArrayList类</title>
-    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h1><ul>
-<li>ArrayList使用步骤</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>常用方法和遍历 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>基本数据类型包装类</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="ArrayList练习"><a href="#ArrayList练习" class="headerlink" title="ArrayList练习"></a>ArrayList练习</h1><ul>
-<li>生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spring</title>
     <url>/2021/03/23/Spring/</url>
     <content><![CDATA[]]></content>
@@ -5172,6 +4962,185 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>MySQL调优</title>
+    <url>/2021/03/29/MySQL%E8%B0%83%E4%BC%98/</url>
+    <content><![CDATA[<h1 id="数据库命令规范"><a href="#数据库命令规范" class="headerlink" title="数据库命令规范"></a>数据库命令规范</h1><ol>
+<li><p><strong>所有数据库对象名称必须使用小写字母并用下划线分割</strong></p>
+</li>
+<li><p><strong>所有数据库对象名称禁止使用 MySQL 保留关键字（如果表名中包含关键字查询时，需要将其用单引号括起来）</strong></p>
+</li>
+<li><p><strong>数据库对象的命名要能做到见名识意，并且最后不要超过 32 个字符</strong></p>
+<h1 id="数据库基本设计规范"><a href="#数据库基本设计规范" class="headerlink" title="数据库基本设计规范"></a>数据库基本设计规范</h1></li>
+<li><p><strong>所有表必须使用 Innodb 存储引擎</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>没有特殊要求（即 Innodb 无法满足的功能如：列存储，存储空间数据等）的情况下，所有表必须使用 Innodb 存储引擎</p>
+</li>
+<li><p>（MySQL5.5 之前默认使用 Myisam，5.6 以后默认的为 Innodb）</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>数据库和表的字符集统一使用 UTF8</strong></li>
+</ol>
+<ul>
+<li><p>兼容性更好，统一字符集可以避免由于字符集转换产生的乱码，不同的字符集进行比较前需要进行转换会造成索引失效</p>
+</li>
+<li><p>如果数据库中有存储 emoji 表情的需要，字符集需要采用 utf8mb4 字符集。</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>所有表和字段都需要添加注释</strong></li>
+</ol>
+<ul>
+<li>使用 comment 从句添加表和列的备注，从一开始就进行数据字典的维护</li>
+</ul>
+<h1 id="数据库字段设计规范"><a href="#数据库字段设计规范" class="headerlink" title="数据库字段设计规范"></a>数据库字段设计规范</h1><ol>
+<li><strong>优先选择符合存储需要的最小的数据类型</strong></li>
+</ol>
+<ul>
+<li><p>VARCHAR(N) 中的 N 代表的是字符数，而不是字节数，使用 UTF8 存储 255 个汉字 Varchar(255)=765 个字节。</p>
+</li>
+<li><p>过大的长度会消耗更多的内存。</p>
+</li>
+</ul>
+<ol start="2">
+<li><p><strong>尽可能把所有列定义为 NOT NULL</strong></p>
+</li>
+<li><p><strong>使用 TIMESTAMP(4 个字节) 或 DATETIME 类型 (8 个字节) 存储时间</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>TIMESTAMP 存储的时间范围 1970-01-01 00:00:01 ~ 2038-01-19-03:14:07</p>
+</li>
+<li><p>TIMESTAMP 占用 4 字节和 INT 相同，但比 INT 可读性高</p>
+</li>
+<li><p>超出 TIMESTAMP 取值范围的使用 DATETIME 类型存储</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>同财务相关的金额类数据必须使用 decimal 类型</strong></li>
+</ol>
+<ul>
+<li><p>非精准浮点：float,double</p>
+</li>
+<li><p>精准浮点：decimal</p>
+</li>
+<li><p>Decimal 类型为精准浮点数，在计算时不会丢失精度</p>
+<h1 id="索引设计规范"><a href="#索引设计规范" class="headerlink" title="索引设计规范"></a>索引设计规范</h1></li>
+</ul>
+<ol>
+<li><strong>限制每张表上的索引数量,建议单张表索引不超过 5 个</strong></li>
+</ol>
+<ul>
+<li><p>索引并不是越多越好！索引可以提高效率同样可以降低效率。</p>
+</li>
+<li><p>索引可以增加查询效率，但同样也会降低插入和更新的效率，甚至有些情况下会降低查询效率。</p>
+</li>
+<li><p>因为 MySQL 优化器在选择如何优化查询时，会根据统一信息，对每一个可以用到的索引来进行评估，以生成出一个最好的执行计划，如果同时有很多个索引都可以用于查询，就会增加 MySQL 优化器生成执行计划的时间，同样会降低查询性能</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>禁止给表中的每一列都建立单独的索引</strong> </li>
+</ol>
+<ul>
+<li><p>5.6 版本之前，一个 sql 只能使用到一个表中的一个索引</p>
+</li>
+<li><p>5.6 以后，虽然有了合并索引的优化方式，但是还是远远没有使用一个联合索引的查询方式好。</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>每个 Innodb 表必须有个主键</strong>      </li>
+</ol>
+<ul>
+<li><p>Innodb 是一种索引组织表：数据的存储的逻辑顺序和索引的顺序是相同的。每个表都可以有多个索引，但是表的存储顺序只能有一种。</p>
+</li>
+<li><p>Innodb 是按照主键索引的顺序来组织表的</p>
+</li>
+</ul>
+<ul>
+<li><p>不要使用更新频繁的列作为主键，不适用多列主键（相当于联合索引）</p>
+</li>
+<li><p>不要使用 UUID,MD5,HASH,字符串列作为主键（无法保证数据的顺序增长）</p>
+</li>
+<li><p>主键建议使用自增 ID 值</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>常见索引列建议</strong></li>
+</ol>
+<ul>
+<li><p>出现在 SELECT、UPDATE、DELETE 语句的 WHERE 从句中的列</p>
+</li>
+<li><p>包含在 ORDER BY、GROUP BY、DISTINCT 中的字段</p>
+</li>
+<li><p>并不要将符合 1 和 2 中的字段的列都建立一个索引， 通常将 1、2 中的字段建立联合索引效果更好</p>
+</li>
+<li><p>多表 join 的关联列</p>
+<h1 id="数据库-SQL-开发规范"><a href="#数据库-SQL-开发规范" class="headerlink" title="数据库 SQL 开发规范"></a>数据库 SQL 开发规范</h1></li>
+</ul>
+<ol>
+<li><strong>建议使用预编译语句进行数据库操作</strong></li>
+</ol>
+<ul>
+<li><p>预编译语句可以重复使用这些计划，减少 SQL 编译所需要的时间，还可以解决动态 SQL 所带来的 SQL 注入的问题。</p>
+</li>
+<li><p>只传参数，比传递 SQL 语句更高效。</p>
+</li>
+<li><p>相同语句可以一次解析，多次使用，提高处理效率。</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>禁止使用 SELECT * 必须使用 SELECT &lt;字段列表&gt; 查询</strong><br>原因：</li>
+</ol>
+<ul>
+<li><p>消耗更多的 CPU 和 IO 以网络带宽资源</p>
+</li>
+<li><p>法使用覆盖索引</p>
+</li>
+<li><p>减少表结构变更带来的影响</p>
+</li>
+</ul>
+<ol start="3">
+<li><p><strong>禁止使用不含字段列表的 INSERT 语句</strong></p>
+</li>
+<li><p><strong>避免使用子查询，可以把子查询优化为 join 操作</strong></p>
+</li>
+</ol>
+<ol start="5">
+<li><strong>对应同一列进行 or 判断时，使用 in 代替 or</strong>  </li>
+</ol>
+<ul>
+<li>in 的值不要超过 500 个，in 操作可以更有效的利用索引，or 大多数情况下很少能利用到索引。</li>
+</ul>
+<h1 id="数据库操作行为规范"><a href="#数据库操作行为规范" class="headerlink" title="数据库操作行为规范"></a>数据库操作行为规范</h1><ol>
+<li><strong>超 100 万行的批量写 (UPDATE,DELETE,INSERT) 操作,要分批多次进行操作</strong></li>
+</ol>
+<ul>
+<li><p><strong>大批量操作可能会造成严重的主从延迟</strong></p>
+<p>主从环境中,大批量操作可能会造成严重的主从延迟，大批量的写操作一般都需要执行一定长的时间， 而只有当主库上执行完成后，            才会在其他从库上执行，所以会造成主库与从库长时间的延迟情况</p>
+</li>
+<li><p><strong>binlog 日志为 row 格式时会产生大量的日志</strong></p>
+<p>大批量写操作会产生大量日志，特别是对于 row 格式二进制数据而言，由于在 row 格式中会记录每一行数据的修改，我们一次修改的数据越多，产生的日志量也就会越多，日志的传输和恢复所需要的时间也就越长，这也是造成主从延迟的一个原因</p>
+</li>
+<li><p><strong>避免产生大事务操作</strong></p>
+<p>大批量修改数据，一定是在一个事务中进行的，这就会造成表中大批量数据进行锁定，从而导致大量的阻塞，阻塞会对 MySQL 的性能产生非常大的影响。</p>
+<p>特别是长时间的阻塞会占满所有数据库的可用连接，这会使生产环境中的其他应用无法连接到数据库，因此一定要注意大批量写操作要进行分批</p>
+<p>参考链接：</p>
+</li>
+</ul>
+<ol>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/database/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/database/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A7%84%E8%8C%83%E5%BB%BA%E8%AE%AE.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringMVC</title>
     <url>/2021/03/23/SpringMVC/</url>
     <content><![CDATA[]]></content>
@@ -5183,51 +5152,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>String类,static关键字,Arrays类,Math类</title>
-    <url>/2019/11/04/String%E7%B1%BB-static%E5%85%B3%E9%94%AE%E5%AD%97-Arrays%E7%B1%BB-Math%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li>字符串不变：字符串的值在创建后不能被更改。</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>因为String对象是不可变的，所以它们可以被共享。</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>“abc” 等效于 char[] data={ ‘a’ , ‘b’ , ‘c’ } 。</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/td3.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
-<li>判断功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/pdwrer.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>获取功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hqryuzfbk.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>转换功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zhuanhuan.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>分割功能的方法 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fenge.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h1><h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/leibianl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtff.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtdmk.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h1><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sort.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tostring.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h1><h2 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/math1111111.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/4.2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Springboot+Vue</title>
     <url>/2021/05/30/Springboot-Vue/</url>
     <content><![CDATA[]]></content>
@@ -5236,6 +5160,37 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>全栈项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Scanner类,Random类,ArrayList类</title>
+    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h1><ul>
+<li>ArrayList使用步骤</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>常用方法和遍历 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>基本数据类型包装类</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="ArrayList练习"><a href="#ArrayList练习" class="headerlink" title="ArrayList练习"></a>ArrayList练习</h1><ul>
+<li>生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -5380,204 +5335,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>final，权限，内部类</title>
-    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XML基础</title>
-    <url>/2021/03/15/XML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="XML简介"><a href="#XML简介" class="headerlink" title="XML简介"></a>XML简介</h1><ol>
-<li><p>XML 指可扩展标记语言（EXtensible Markup Language）</p>
-</li>
-<li><p>XML 被设计用来传输和存储数据。HTML 被设计用来显示数据。</p>
-</li>
-<li><p>XML 标签都是自定义的</p>
-</li>
-</ol>
-<h1 id="XML基本语法"><a href="#XML基本语法" class="headerlink" title="XML基本语法"></a>XML基本语法</h1><ol>
-<li><p>基本语法：</p>
-<ul>
-<li>xml文档的后缀名 .xml</li>
-<li>xml第一行必须定义为文档声明：<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</code></li>
-<li>xml文档中有且仅有一个根标签</li>
-<li>属性值必须使用引号(单双都可)引起来</li>
-<li>标签必须正确关闭</li>
-<li>xml标签名称区分大小写</li>
-</ul>
-</li>
-<li><p>XML注释<br><code>&lt;!-- This is a comment --&gt;</code></p>
-</li>
-<li><p>最佳命名习惯</p>
-<p> 名称应当比较简短，比如：<code>&lt;book_title&gt;</code></p>
-</li>
-</ol>
-<h1 id="XML技术"><a href="#XML技术" class="headerlink" title="XML技术"></a>XML技术</h1><ol>
-<li>DTD：</li>
-</ol>
-<ul>
-<li>引入dtd文档到xml文档中<ul>
-<li>内部dtd：将约束规则定义在xml文档中</li>
-<li>外部dtd：将约束的规则定义在外部的dtd文件中<ul>
-<li>本地：<code>&lt;!DOCTYPE 根标签名 SYSTEM &quot;dtd文件的位置&quot;&gt;</code></li>
-<li>网络：<code>&lt;!DOCTYPE 根标签名 PUBLIC &quot;dtd文件名字&quot; &quot;dtd文件的位置URL&quot;&gt;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li>Schema(XSD):</li>
-</ol>
-<ul>
-<li>引入：<ol>
-<li>填写xml文档的根元素</li>
-<li>引入xsi前缀.  <code>xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</code></li>
-<li>引入xsd文件命名空间.  <code>xsi:schemaLocation=&quot;http://www.itcast.cn/xml  student.xsd&quot;</code></li>
-<li>为每一个xsd约束声明一个前缀,作为标识.  <code>xmlns=&quot;http://www.itcast.cn/xml&quot;</code> </li>
-</ol>
-</li>
-<li>举例<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">students</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="hljs-tag">		  <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.itcast.cn/xml"</span></span><br><span class="hljs-tag">		  <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.itcast.cn/xml  student.xsd"</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="XML解析器"><a href="#XML解析器" class="headerlink" title="XML解析器"></a>XML解析器</h1><ol>
-<li><p>解析：操作xml文档，将文档中的数据读取到内存中</p>
-<ul>
-<li>操作xml文档<ol>
-<li>解析(读取)：将文档中的数据读取到内存中</li>
-<li>写入：将内存中的数据保存到xml文档中。持久化的存储</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>解析xml的方式：</p>
-<ol>
-<li>DOM：将标记语言文档一次性加载进内存，在内存中形成一颗dom树<ul>
-<li>优点：操作方便，可以对文档进行CRUD的所有操作</li>
-<li>缺点：占内存</li>
-</ul>
-</li>
-<li>SAX：逐行读取，基于事件驱动的。<ul>
-<li>优点：不占内存。</li>
-<li>缺点：只能读取，不能增删改</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>xml常见的解析器：</p>
-<ol>
-<li>JAXP：sun公司提供的解析器，支持dom和sax两种思想</li>
-<li>DOM4J：一款非常优秀的解析器</li>
-<li>Jsoup：jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</li>
-<li>PULL：Android操作系统内置的解析器，sax方式的。</li>
-</ol>
-</li>
-</ol>
-<ol start="4">
-<li><strong>Jsoup</strong>:   jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</li>
-</ol>
-<ul>
-<li><p>快速入门：</p>
-<blockquote>
-<p>步骤：</p>
-<ol>
-<li>导入jar包</li>
-<li>获取Document对象</li>
-<li>获取对应的标签Element对象</li>
-<li>获取数据</li>
-</ol>
-</blockquote>
-</li>
-<li><p>代码：</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//2.1获取student.xml的path</span><br>String path = JsoupDemo1.class.getClassLoader().getResource(<span class="hljs-string">"student.xml"</span>).getPath();<br><br><span class="hljs-comment">//2.2解析xml文档，加载文档进内存，获取dom树---&gt;Document</span><br>Document document = Jsoup.parse(<span class="hljs-keyword">new</span> File(path), <span class="hljs-string">"utf-8"</span>);<br><br><span class="hljs-comment">//3.获取元素对象 Element</span><br>Elements elements = document.getElementsByTag(<span class="hljs-string">"name"</span>);<br>System.out.println(elements.size());<br><br><span class="hljs-comment">//3.1获取第一个name的Element对象</span><br>Element element = elements.get(<span class="hljs-number">0</span>);<br><br><span class="hljs-comment">//3.2获取数据</span><br>String name = element.text();<br>System.out.println(name);<br></code></pre></td></tr></table></figure></li>
-</ul>
-<ol start="5">
-<li><p>对象的使用：</p>
-<ol>
-<li><p>Jsoup：工具类，可以解析html或xml文档，返回Document</p>
-<ul>
-<li>parse：解析html或xml文档，返回Document<ul>
-<li>parse​(File in, String charsetName)：解析xml或html文件的。</li>
-<li>parse​(String html)：解析xml或html字符串</li>
-<li>parse​(URL url, int timeoutMillis)：通过网络路径获取指定的html或xml的文档对象</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Document：文档对象。代表内存中的dom树</p>
-<ul>
-<li>获取Element对象<ul>
-<li>getElementById​(String id)：根据id属性值获取唯一的element对象</li>
-<li>getElementsByTag​(String tagName)：根据标签名称获取元素对象集合</li>
-<li>getElementsByAttribute​(String key)：根据属性名称获取元素对象集合</li>
-<li>getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Elements：元素Element对象的集合。可以当做 ArrayList<Element>来使用</p>
-</li>
-<li><p>Element：元素对象</p>
-<ol>
-<li><p>获取子元素对象</p>
-<ul>
-<li>getElementById​(String id)：根据id属性值获取唯一的element对象</li>
-<li>getElementsByTag​(String tagName)：根据标签名称获取元素对象集合</li>
-<li>getElementsByAttribute​(String key)：根据属性名称获取元素对象集合</li>
-<li>getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合</li>
-</ul>
-</li>
-<li><p>获取属性值</p>
-<ul>
-<li>String attr(String key)：根据属性名称获取属性值</li>
-</ul>
-</li>
-<li><p>获取文本内容</p>
-<ul>
-<li>String text():获取文本内容</li>
-<li>String html():获取标签体的所有内容(包括字标签的字符串内容)</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>快捷查询方式：</p>
-<ol>
-<li>selector:选择器<ul>
-<li>使用的方法：Elements    select​(String cssQuery)</li>
-<li>语法：参考Selector类中定义的语法</li>
-</ul>
-</li>
-<li>XPath：XPath即为XML路径语言，它是一种用来确定XML（标准通用标记语言的子集）文档中某部分位置的语言<ul>
-<li>使用Jsoup的Xpath需要额外导入jar包。</li>
-<li>查询w3cshool参考手册，使用xpath的语法完成查询</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>XML</tag>
       </tags>
   </entry>
   <entry>
@@ -6246,6 +6003,51 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <h1 id="JavaSE"><a href="#JavaSE" class="headerlink" title="JavaSE"></a>JavaSE</h1><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h2 id="常用包，类"><a href="#常用包，类" class="headerlink" title="常用包，类"></a>常用包，类</h2><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h2 id="异常-1"><a href="#异常-1" class="headerlink" title="异常"></a>异常</h2><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><h2 id="JDK-8-新特性"><a href="#JDK-8-新特性" class="headerlink" title="JDK 8 新特性"></a>JDK 8 新特性</h2><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h2><h2 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h2><h2 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h2><h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h2 id="Cookie，Session"><a href="#Cookie，Session" class="headerlink" title="Cookie，Session"></a>Cookie，Session</h2><h2 id="Filter，Listener"><a href="#Filter，Listener" class="headerlink" title="Filter，Listener"></a>Filter，Listener</h2><h2 id="文件上传，下载"><a href="#文件上传，下载" class="headerlink" title="文件上传，下载"></a>文件上传，下载</h2><h1 id="JavaEE"><a href="#JavaEE" class="headerlink" title="JavaEE"></a>JavaEE</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><h2 id="Springboot"><a href="#Springboot" class="headerlink" title="Springboot"></a>Springboot</h2><h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h2 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h2><h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><h1 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h1><h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><h2 id="Layui"><a href="#Layui" class="headerlink" title="Layui"></a>Layui</h2><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2>]]></content>
   </entry>
   <entry>
+    <title>String类,static关键字,Arrays类,Math类</title>
+    <url>/2019/11/04/String%E7%B1%BB-static%E5%85%B3%E9%94%AE%E5%AD%97-Arrays%E7%B1%BB-Math%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>字符串不变：字符串的值在创建后不能被更改。</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>因为String对象是不可变的，所以它们可以被共享。</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>“abc” 等效于 char[] data={ ‘a’ , ‘b’ , ‘c’ } 。</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/td3.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li>判断功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/pdwrer.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>获取功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/hqryuzfbk.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>转换功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zhuanhuan.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>分割功能的方法 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fenge.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h1><h2 id="类变量"><a href="#类变量" class="headerlink" title="类变量"></a>类变量</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/leibianl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtff.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/jtdmk.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h1><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sort.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tostring.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h1><h2 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/math1111111.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/4.2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>字节流，字符流</title>
     <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
     <content><![CDATA[<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO的分类"><a href="#IO的分类" class="headerlink" title="IO的分类"></a>IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
@@ -6310,6 +6112,188 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>XML基础</title>
+    <url>/2021/03/15/XML%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="XML简介"><a href="#XML简介" class="headerlink" title="XML简介"></a>XML简介</h1><ol>
+<li><p>XML 指可扩展标记语言（EXtensible Markup Language）</p>
+</li>
+<li><p>XML 被设计用来传输和存储数据。HTML 被设计用来显示数据。</p>
+</li>
+<li><p>XML 标签都是自定义的</p>
+</li>
+</ol>
+<h1 id="XML基本语法"><a href="#XML基本语法" class="headerlink" title="XML基本语法"></a>XML基本语法</h1><ol>
+<li><p>基本语法：</p>
+<ul>
+<li>xml文档的后缀名 .xml</li>
+<li>xml第一行必须定义为文档声明：<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</code></li>
+<li>xml文档中有且仅有一个根标签</li>
+<li>属性值必须使用引号(单双都可)引起来</li>
+<li>标签必须正确关闭</li>
+<li>xml标签名称区分大小写</li>
+</ul>
+</li>
+<li><p>XML注释<br><code>&lt;!-- This is a comment --&gt;</code></p>
+</li>
+<li><p>最佳命名习惯</p>
+<p> 名称应当比较简短，比如：<code>&lt;book_title&gt;</code></p>
+</li>
+</ol>
+<h1 id="XML技术"><a href="#XML技术" class="headerlink" title="XML技术"></a>XML技术</h1><ol>
+<li>DTD：</li>
+</ol>
+<ul>
+<li>引入dtd文档到xml文档中<ul>
+<li>内部dtd：将约束规则定义在xml文档中</li>
+<li>外部dtd：将约束的规则定义在外部的dtd文件中<ul>
+<li>本地：<code>&lt;!DOCTYPE 根标签名 SYSTEM &quot;dtd文件的位置&quot;&gt;</code></li>
+<li>网络：<code>&lt;!DOCTYPE 根标签名 PUBLIC &quot;dtd文件名字&quot; &quot;dtd文件的位置URL&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Schema(XSD):</li>
+</ol>
+<ul>
+<li>引入：<ol>
+<li>填写xml文档的根元素</li>
+<li>引入xsi前缀.  <code>xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</code></li>
+<li>引入xsd文件命名空间.  <code>xsi:schemaLocation=&quot;http://www.itcast.cn/xml  student.xsd&quot;</code></li>
+<li>为每一个xsd约束声明一个前缀,作为标识.  <code>xmlns=&quot;http://www.itcast.cn/xml&quot;</code> </li>
+</ol>
+</li>
+<li>举例<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">students</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="hljs-tag">		  <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.itcast.cn/xml"</span></span><br><span class="hljs-tag">		  <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.itcast.cn/xml  student.xsd"</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="XML解析器"><a href="#XML解析器" class="headerlink" title="XML解析器"></a>XML解析器</h1><ol>
+<li><p>解析：操作xml文档，将文档中的数据读取到内存中</p>
+<ul>
+<li>操作xml文档<ol>
+<li>解析(读取)：将文档中的数据读取到内存中</li>
+<li>写入：将内存中的数据保存到xml文档中。持久化的存储</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>解析xml的方式：</p>
+<ol>
+<li>DOM：将标记语言文档一次性加载进内存，在内存中形成一颗dom树<ul>
+<li>优点：操作方便，可以对文档进行CRUD的所有操作</li>
+<li>缺点：占内存</li>
+</ul>
+</li>
+<li>SAX：逐行读取，基于事件驱动的。<ul>
+<li>优点：不占内存。</li>
+<li>缺点：只能读取，不能增删改</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>xml常见的解析器：</p>
+<ol>
+<li>JAXP：sun公司提供的解析器，支持dom和sax两种思想</li>
+<li>DOM4J：一款非常优秀的解析器</li>
+<li>Jsoup：jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</li>
+<li>PULL：Android操作系统内置的解析器，sax方式的。</li>
+</ol>
+</li>
+</ol>
+<ol start="4">
+<li><strong>Jsoup</strong>:   jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</li>
+</ol>
+<ul>
+<li><p>快速入门：</p>
+<blockquote>
+<p>步骤：</p>
+<ol>
+<li>导入jar包</li>
+<li>获取Document对象</li>
+<li>获取对应的标签Element对象</li>
+<li>获取数据</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//2.1获取student.xml的path</span><br>String path = JsoupDemo1.class.getClassLoader().getResource(<span class="hljs-string">"student.xml"</span>).getPath();<br><br><span class="hljs-comment">//2.2解析xml文档，加载文档进内存，获取dom树---&gt;Document</span><br>Document document = Jsoup.parse(<span class="hljs-keyword">new</span> File(path), <span class="hljs-string">"utf-8"</span>);<br><br><span class="hljs-comment">//3.获取元素对象 Element</span><br>Elements elements = document.getElementsByTag(<span class="hljs-string">"name"</span>);<br>System.out.println(elements.size());<br><br><span class="hljs-comment">//3.1获取第一个name的Element对象</span><br>Element element = elements.get(<span class="hljs-number">0</span>);<br><br><span class="hljs-comment">//3.2获取数据</span><br>String name = element.text();<br>System.out.println(name);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li><p>对象的使用：</p>
+<ol>
+<li><p>Jsoup：工具类，可以解析html或xml文档，返回Document</p>
+<ul>
+<li>parse：解析html或xml文档，返回Document<ul>
+<li>parse​(File in, String charsetName)：解析xml或html文件的。</li>
+<li>parse​(String html)：解析xml或html字符串</li>
+<li>parse​(URL url, int timeoutMillis)：通过网络路径获取指定的html或xml的文档对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Document：文档对象。代表内存中的dom树</p>
+<ul>
+<li>获取Element对象<ul>
+<li>getElementById​(String id)：根据id属性值获取唯一的element对象</li>
+<li>getElementsByTag​(String tagName)：根据标签名称获取元素对象集合</li>
+<li>getElementsByAttribute​(String key)：根据属性名称获取元素对象集合</li>
+<li>getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Elements：元素Element对象的集合。可以当做 ArrayList<Element>来使用</p>
+</li>
+<li><p>Element：元素对象</p>
+<ol>
+<li><p>获取子元素对象</p>
+<ul>
+<li>getElementById​(String id)：根据id属性值获取唯一的element对象</li>
+<li>getElementsByTag​(String tagName)：根据标签名称获取元素对象集合</li>
+<li>getElementsByAttribute​(String key)：根据属性名称获取元素对象集合</li>
+<li>getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合</li>
+</ul>
+</li>
+<li><p>获取属性值</p>
+<ul>
+<li>String attr(String key)：根据属性名称获取属性值</li>
+</ul>
+</li>
+<li><p>获取文本内容</p>
+<ul>
+<li>String text():获取文本内容</li>
+<li>String html():获取标签体的所有内容(包括字标签的字符串内容)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>快捷查询方式：</p>
+<ol>
+<li>selector:选择器<ul>
+<li>使用的方法：Elements    select​(String cssQuery)</li>
+<li>语法：参考Selector类中定义的语法</li>
+</ul>
+</li>
+<li>XPath：XPath即为XML路径语言，它是一种用来确定XML（标准通用标记语言的子集）文档中某部分位置的语言<ul>
+<li>使用Jsoup的Xpath需要额外导入jar包。</li>
+<li>查询w3cshool参考手册，使用xpath的语法完成查询</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>异常</title>
     <url>/2019/11/08/%E5%BC%82%E5%B8%B8/</url>
     <content><![CDATA[<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="异常体系与分类"><a href="#异常体系与分类" class="headerlink" title="异常体系与分类"></a>异常体系与分类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yctx.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
@@ -6337,6 +6321,25 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>数据结构一</title>
+    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>接口，多态</title>
     <url>/2019/11/04/%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%A4%9A%E6%80%81/</url>
     <content><![CDATA[<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dingyi2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
@@ -6350,6 +6353,22 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <h3 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/xiangxia.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 <h2 id="转型的异常"><a href="#转型的异常" class="headerlink" title="转型的异常"></a>转型的异常</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/yc.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 <h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bmyc.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>final，权限，内部类</title>
+    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6487,6 +6506,22 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>算法一</title>
+    <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">selectSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span><span class="hljs-comment">//选择排序</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;arr.length;i++)<span class="hljs-comment">//循环次数</span><br>    &#123;<br>        <span class="hljs-keyword">int</span> min = arr[i];<br>        <span class="hljs-keyword">int</span> index = i;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=i+<span class="hljs-number">1</span>;j&lt;arr.length;j++) <span class="hljs-comment">//找最小值</span><br>        &#123;<br>            <span class="hljs-keyword">if</span> (arr[j]&lt;min)<br>            &#123;<br>                min=arr[j];<br>                index=j;<br>            &#125;<br>        &#125;<br>        arr[index]=arr[i];<span class="hljs-comment">//内循环后交换</span><br>        arr[i]=min;<span class="hljs-comment">//当前位置放最小值!</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span>    <span class="hljs-comment">//冒泡排序</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span> ;i&lt;arr.length-<span class="hljs-number">1</span>;i++)<span class="hljs-comment">//外循环控制趟数n-1</span><br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;arr.length-<span class="hljs-number">1</span>-i;j++) <span class="hljs-comment">//内循环控制每趟次数n-1-i</span><br>        &#123;<br>            <span class="hljs-keyword">if</span> (arr[j]&gt;arr[j+<span class="hljs-number">1</span>])<span class="hljs-comment">//交换</span><br>            &#123;<br>                <span class="hljs-keyword">int</span> temp=arr[j+<span class="hljs-number">1</span>];<br>                arr[j+<span class="hljs-number">1</span>]=arr[j];<br>                arr[j]=temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sequenceSearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> key)</span> <span class="hljs-comment">//顺序查找</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (arr[i] == key)<br>            <span class="hljs-keyword">return</span> i;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> key)</span>  <span class="hljs-comment">//二分查找</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> right = arr.length-<span class="hljs-number">1</span>;<span class="hljs-comment">//注意为什么-1</span><br>    <span class="hljs-keyword">int</span> mid;<br>    <span class="hljs-keyword">while</span> (left&lt;=right)<br>    &#123;<br>        mid = (left+right)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (arr[mid]==key)<br>            <span class="hljs-keyword">return</span> mid;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (arr[mid]&gt;key)<br>            right = mid-<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span><br>            left = mid+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据库系统原理一</title>
     <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%80/</url>
     <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/rsffvdherthty456256252v111.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
@@ -6527,38 +6562,21 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>数据结构一</title>
-    <url>/2021/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dgrggsrhttyjyiko64525.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/durtdytrsytrxy5651.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/khytfcytdurs49841651.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/ggdrsuety86132465462.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/zdfgsgafva3436634.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sergsgsgg49841654s68gseg.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/esgarfawf35342634343.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dfafarfwefawfre567845.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asgfgfdgsthyuberyvtweywc.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/gvwtwcrtcwertcw5678676272.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sDFdgscgvsgsg5353.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/wtwrgrvtrgctgwrcetwtvrwt.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</a></li>
-</ol>
+    <title>类与对象，封装，构造方法</title>
+    <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/duixiang.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/mol.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/blqu.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
-        <category>数据结构</category>
+        <category>JavaSE</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法一</title>
-    <url>/2021/03/27/%E7%AE%97%E6%B3%95%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">selectSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span><span class="hljs-comment">//选择排序</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;arr.length;i++)<span class="hljs-comment">//循环次数</span><br>    &#123;<br>        <span class="hljs-keyword">int</span> min = arr[i];<br>        <span class="hljs-keyword">int</span> index = i;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=i+<span class="hljs-number">1</span>;j&lt;arr.length;j++) <span class="hljs-comment">//找最小值</span><br>        &#123;<br>            <span class="hljs-keyword">if</span> (arr[j]&lt;min)<br>            &#123;<br>                min=arr[j];<br>                index=j;<br>            &#125;<br>        &#125;<br>        arr[index]=arr[i];<span class="hljs-comment">//内循环后交换</span><br>        arr[i]=min;<span class="hljs-comment">//当前位置放最小值!</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span>    <span class="hljs-comment">//冒泡排序</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span> ;i&lt;arr.length-<span class="hljs-number">1</span>;i++)<span class="hljs-comment">//外循环控制趟数n-1</span><br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;arr.length-<span class="hljs-number">1</span>-i;j++) <span class="hljs-comment">//内循环控制每趟次数n-1-i</span><br>        &#123;<br>            <span class="hljs-keyword">if</span> (arr[j]&gt;arr[j+<span class="hljs-number">1</span>])<span class="hljs-comment">//交换</span><br>            &#123;<br>                <span class="hljs-keyword">int</span> temp=arr[j+<span class="hljs-number">1</span>];<br>                arr[j+<span class="hljs-number">1</span>]=arr[j];<br>                arr[j]=temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sequenceSearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> key)</span> <span class="hljs-comment">//顺序查找</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (arr[i] == key)<br>            <span class="hljs-keyword">return</span> i;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> key)</span>  <span class="hljs-comment">//二分查找</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> right = arr.length-<span class="hljs-number">1</span>;<span class="hljs-comment">//注意为什么-1</span><br>    <span class="hljs-keyword">int</span> mid;<br>    <span class="hljs-keyword">while</span> (left&lt;=right)<br>    &#123;<br>        mid = (left+right)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (arr[mid]==key)<br>            <span class="hljs-keyword">return</span> mid;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (arr[mid]&gt;key)<br>            right = mid-<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span><br>            left = mid+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -6595,24 +6613,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/kbcs.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>代码演示：</p>
 <p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/dmyserejywki.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>类与对象，封装，构造方法</title>
-    <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/duixiang.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/mol.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/blqu.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6695,27 +6695,21 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>缓冲流，转换流，序列化流，打印流</title>
-    <url>/2019/11/10/%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>缓冲流,也叫高效流，是对<strong>4个基本的<code>FileXxx</code>流的增强</strong>，所以也是4个流，按照数据类型分类：</p>
-<ul>
-<li><strong>字节缓冲流</strong>： <code>BufferedInputStream</code> ， <code>BufferedOutputStream</code> </li>
-<li><strong>字符缓冲流</strong>： <code>BufferedReader</code> ， <code>BufferedWriter</code> </li>
-</ul>
-<p>缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO次数，从而提高读写的效率    </p>
-<h2 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zjhc.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="字符缓冲流"><a href="#字符缓冲流" class="headerlink" title="字符缓冲流"></a>字符缓冲流</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zfhc.PNG" srcset="/img/loading.gif" lazyload alt=""><br>特有方法：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tyff.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h1><h2 id="InputStreamReader类"><a href="#InputStreamReader类" class="headerlink" title="InputStreamReader类"></a>InputStreamReader类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/isr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="OutputStreamWriter类"><a href="#OutputStreamWriter类" class="headerlink" title="OutputStreamWriter类"></a>OutputStreamWriter类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/osw.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="序列化流"><a href="#序列化流" class="headerlink" title="序列化流"></a>序列化流</h1><h2 id="ObjectOutputStream类"><a href="#ObjectOutputStream类" class="headerlink" title="ObjectOutputStream类"></a>ObjectOutputStream类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/oos.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="ObjectInputStream类"><a href="#ObjectInputStream类" class="headerlink" title="ObjectInputStream类"></a>ObjectInputStream类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ois.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ois2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ps.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+    <title>编译原理一</title>
+    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
+<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
+<p>参考链接：      </p>
+<ol>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
+</ol>
 ]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>编译原理</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6764,21 +6758,27 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>编译原理一</title>
-    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
-<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
-</ol>
+    <title>缓冲流，转换流，序列化流，打印流</title>
+    <url>/2019/11/10/%E7%BC%93%E5%86%B2%E6%B5%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%B5%81%EF%BC%8C%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81%EF%BC%8C%E6%89%93%E5%8D%B0%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>缓冲流,也叫高效流，是对<strong>4个基本的<code>FileXxx</code>流的增强</strong>，所以也是4个流，按照数据类型分类：</p>
+<ul>
+<li><strong>字节缓冲流</strong>： <code>BufferedInputStream</code> ， <code>BufferedOutputStream</code> </li>
+<li><strong>字符缓冲流</strong>： <code>BufferedReader</code> ， <code>BufferedWriter</code> </li>
+</ul>
+<p>缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO次数，从而提高读写的效率    </p>
+<h2 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zjhc.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="字符缓冲流"><a href="#字符缓冲流" class="headerlink" title="字符缓冲流"></a>字符缓冲流</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/zfhc.PNG" srcset="/img/loading.gif" lazyload alt=""><br>特有方法：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/tyff.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h1><h2 id="InputStreamReader类"><a href="#InputStreamReader类" class="headerlink" title="InputStreamReader类"></a>InputStreamReader类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/isr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="OutputStreamWriter类"><a href="#OutputStreamWriter类" class="headerlink" title="OutputStreamWriter类"></a>OutputStreamWriter类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/osw.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="序列化流"><a href="#序列化流" class="headerlink" title="序列化流"></a>序列化流</h1><h2 id="ObjectOutputStream类"><a href="#ObjectOutputStream类" class="headerlink" title="ObjectOutputStream类"></a>ObjectOutputStream类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/oos.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="ObjectInputStream类"><a href="#ObjectInputStream类" class="headerlink" title="ObjectInputStream类"></a>ObjectInputStream类</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ois.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ois2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/ps.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
-        <category>编译原理</category>
+        <category>JavaSE</category>
       </categories>
       <tags>
-        <tag>编译原理</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
