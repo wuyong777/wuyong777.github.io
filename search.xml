@@ -159,6 +159,125 @@
       </tags>
   </entry>
   <entry>
+    <title>Cookie和Session</title>
+    <url>/2021/03/23/Cookie%E5%92%8CSession/</url>
+    <content><![CDATA[<h1 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h1><ol>
+<li>会话：一次会话中包含多次请求和响应。</li>
+</ol>
+<ul>
+<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</li>
+</ul>
+<ol start="2">
+<li><p>功能：在一次会话的范围内的多次请求间，共享数据</p>
+</li>
+<li><p><code>客户端会话技术：Cookie</code></p>
+</li>
+<li><p><code>服务器端会话技术：Session</code></p>
+</li>
+</ol>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>客户端会话技术，将数据保存到客户端</p>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li><p>创建Cookie对象，绑定数据 <code>new Cookie(String name, String value)</code></p>
+</li>
+<li><p>发送Cookie对象 <code>response.addCookie(Cookie cookie)</code></p>
+</li>
+<li><p>获取Cookie，拿到数据 <code>Cookie[]  request.getCookies()</code> </p>
+</li>
+</ol>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>基于响应头set-cookie和请求头cookie实现</p>
+<h3 id="cookie的细节"><a href="#cookie的细节" class="headerlink" title="cookie的细节"></a>cookie的细节</h3><ol>
+<li><p>一次可不可以发送多个cookie?</p>
+<ul>
+<li>可以</li>
+<li>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</li>
+</ul>
+</li>
+<li><p>cookie在浏览器中保存多长时间？</p>
+<ol>
+<li><p>默认情况下，当浏览器关闭后，Cookie数据被销毁</p>
+</li>
+<li><p>持久化存储：<code>setMaxAge(int seconds)</code></p>
+<ol>
+<li><p>正数：将Cookie数据写到硬盘的文件中。持久化存储。并指定cookie存活时间，时间到后，cookie文件自动失效</p>
+</li>
+<li><p>负数：默认值</p>
+</li>
+<li><p>零：删除cookie信息</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="Cookie的特点和作用"><a href="#Cookie的特点和作用" class="headerlink" title="Cookie的特点和作用"></a>Cookie的特点和作用</h3><ol>
+<li><p>cookie存储数据在客户端浏览器</p>
+</li>
+<li><p>浏览器对于单个cookie 的大小有限制(4kb) 以及 对同一个域名下的总cookie数量也有限制(20个)</p>
+</li>
+</ol>
+<ul>
+<li>作用：<ol>
+<li>cookie一般用于存出少量的不太敏感的数据</li>
+<li>在不登录的情况下，完成服务器对客户端的身份识别</li>
+</ol>
+</li>
+</ul>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中</p>
+<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li>获取HttpSession对象：<br><code>HttpSession session = request.getSession();</code></li>
+<li>使用HttpSession对象：<br><code>Object getAttribute(String name)</code><br><code>void setAttribute(String name, Object value)</code><br><code>void removeAttribute(String name)</code></li>
+</ol>
+<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>Session的实现是依赖于Cookie的</p>
+<h3 id="Session的细节"><a href="#Session的细节" class="headerlink" title="Session的细节"></a>Session的细节</h3><ol>
+<li><p>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</p>
+<ul>
+<li>默认情况下。不是。</li>
+<li>如果需要相同，则可以创建Cookie,键为JSESSIONID，设置最大存活时间，让cookie持久化保存。<br><code>Cookie c = new Cookie(&quot;JSESSIONID&quot;,session.getId());</code><br><code>c.setMaxAge(60*60);</code><br><code>response.addCookie(c);</code></li>
+</ul>
+</li>
+<li><p>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</p>
+<ul>
+<li><p>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作</p>
+<ul>
+<li><code>session的钝化</code>：在服务器正常关闭之前，将session对象系列化到硬盘上</li>
+<li><code>session的活化</code>：在服务器启动后，将session文件转化为内存中的session对象即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>session什么时候被销毁？</p>
+<ol>
+<li><p>服务器关闭</p>
+</li>
+<li><p>session对象调用invalidate() 。</p>
+</li>
+<li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
+ <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">session-config</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">session-timeout</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-name">session-timeout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">session-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
+</ol>
+</li>
+<li><p>session用于存储一次会话的多次请求的数据，存在服务器端</p>
+</li>
+<li><p>session可以存储任意类型，任意大小的数据</p>
+</li>
+</ol>
+<h1 id="session与Cookie的区别"><a href="#session与Cookie的区别" class="headerlink" title="session与Cookie的区别"></a>session与Cookie的区别</h1><ol>
+<li><p>session存储数据在服务器端，Cookie在客户端</p>
+</li>
+<li><p>session没有数据大小限制，Cookie有</p>
+</li>
+<li><p>session数据安全，Cookie相对于不安全</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Bootstrap入门</title>
     <url>/2021/03/15/Bootstrap%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="Bootstrp简介"><a href="#Bootstrp简介" class="headerlink" title="Bootstrp简介"></a>Bootstrp简介</h1><ol>
@@ -425,6 +544,39 @@
       </tags>
   </entry>
   <entry>
+    <title>File类，递归</title>
+    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
+<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
+<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" srcset="/img/loading.gif" lazyload alt=""><blockquote>
+<p>小贴士：   </p>
+<ol>
+<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
+<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
+</ol>
+</blockquote>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
+</ul>
+<ol>
+<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" srcset="/img/loading.gif" lazyload alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
+</ol>
+<ul>
+<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
+<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
+</ul>
+<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>English</title>
     <url>/2021/06/06/English/</url>
     <content><![CDATA[<h1 id="10-词类"><a href="#10-词类" class="headerlink" title="10-词类"></a>10-词类</h1><ul>
@@ -525,240 +677,6 @@
       </categories>
       <tags>
         <tag>English</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cookie和Session</title>
-    <url>/2021/03/23/Cookie%E5%92%8CSession/</url>
-    <content><![CDATA[<h1 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h1><ol>
-<li>会话：一次会话中包含多次请求和响应。</li>
-</ol>
-<ul>
-<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</li>
-</ul>
-<ol start="2">
-<li><p>功能：在一次会话的范围内的多次请求间，共享数据</p>
-</li>
-<li><p><code>客户端会话技术：Cookie</code></p>
-</li>
-<li><p><code>服务器端会话技术：Session</code></p>
-</li>
-</ol>
-<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>客户端会话技术，将数据保存到客户端</p>
-<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li><p>创建Cookie对象，绑定数据 <code>new Cookie(String name, String value)</code></p>
-</li>
-<li><p>发送Cookie对象 <code>response.addCookie(Cookie cookie)</code></p>
-</li>
-<li><p>获取Cookie，拿到数据 <code>Cookie[]  request.getCookies()</code> </p>
-</li>
-</ol>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>基于响应头set-cookie和请求头cookie实现</p>
-<h3 id="cookie的细节"><a href="#cookie的细节" class="headerlink" title="cookie的细节"></a>cookie的细节</h3><ol>
-<li><p>一次可不可以发送多个cookie?</p>
-<ul>
-<li>可以</li>
-<li>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</li>
-</ul>
-</li>
-<li><p>cookie在浏览器中保存多长时间？</p>
-<ol>
-<li><p>默认情况下，当浏览器关闭后，Cookie数据被销毁</p>
-</li>
-<li><p>持久化存储：<code>setMaxAge(int seconds)</code></p>
-<ol>
-<li><p>正数：将Cookie数据写到硬盘的文件中。持久化存储。并指定cookie存活时间，时间到后，cookie文件自动失效</p>
-</li>
-<li><p>负数：默认值</p>
-</li>
-<li><p>零：删除cookie信息</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="Cookie的特点和作用"><a href="#Cookie的特点和作用" class="headerlink" title="Cookie的特点和作用"></a>Cookie的特点和作用</h3><ol>
-<li><p>cookie存储数据在客户端浏览器</p>
-</li>
-<li><p>浏览器对于单个cookie 的大小有限制(4kb) 以及 对同一个域名下的总cookie数量也有限制(20个)</p>
-</li>
-</ol>
-<ul>
-<li>作用：<ol>
-<li>cookie一般用于存出少量的不太敏感的数据</li>
-<li>在不登录的情况下，完成服务器对客户端的身份识别</li>
-</ol>
-</li>
-</ul>
-<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中</p>
-<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
-<li>获取HttpSession对象：<br><code>HttpSession session = request.getSession();</code></li>
-<li>使用HttpSession对象：<br><code>Object getAttribute(String name)</code><br><code>void setAttribute(String name, Object value)</code><br><code>void removeAttribute(String name)</code></li>
-</ol>
-<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>Session的实现是依赖于Cookie的</p>
-<h3 id="Session的细节"><a href="#Session的细节" class="headerlink" title="Session的细节"></a>Session的细节</h3><ol>
-<li><p>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</p>
-<ul>
-<li>默认情况下。不是。</li>
-<li>如果需要相同，则可以创建Cookie,键为JSESSIONID，设置最大存活时间，让cookie持久化保存。<br><code>Cookie c = new Cookie(&quot;JSESSIONID&quot;,session.getId());</code><br><code>c.setMaxAge(60*60);</code><br><code>response.addCookie(c);</code></li>
-</ul>
-</li>
-<li><p>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</p>
-<ul>
-<li><p>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作</p>
-<ul>
-<li><code>session的钝化</code>：在服务器正常关闭之前，将session对象系列化到硬盘上</li>
-<li><code>session的活化</code>：在服务器启动后，将session文件转化为内存中的session对象即可。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>session什么时候被销毁？</p>
-<ol>
-<li><p>服务器关闭</p>
-</li>
-<li><p>session对象调用invalidate() 。</p>
-</li>
-<li><p>session默认失效时间 30分钟<br> 选择性配置修改</p>
- <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">session-config</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">session-timeout</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-name">session-timeout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">session-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="session的特点"><a href="#session的特点" class="headerlink" title="session的特点"></a>session的特点</h3></li>
-</ol>
-</li>
-<li><p>session用于存储一次会话的多次请求的数据，存在服务器端</p>
-</li>
-<li><p>session可以存储任意类型，任意大小的数据</p>
-</li>
-</ol>
-<h1 id="session与Cookie的区别"><a href="#session与Cookie的区别" class="headerlink" title="session与Cookie的区别"></a>session与Cookie的区别</h1><ol>
-<li><p>session存储数据在服务器端，Cookie在客户端</p>
-</li>
-<li><p>session没有数据大小限制，Cookie有</p>
-</li>
-<li><p>session数据安全，Cookie相对于不安全</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>File类，递归</title>
-    <url>/2019/11/10/File%E7%B1%BB%EF%BC%8C%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
-<li><strong>绝对路径</strong>：从盘符开始的路径，这是一个完整的路径</li>
-<li><strong>相对路径</strong>：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gouzhao.PNG" srcset="/img/loading.gif" lazyload alt=""><blockquote>
-<p>小贴士：   </p>
-<ol>
-<li>一个File对象代表硬盘中实际存在的一个文件或者目录    </li>
-<li>无论该路径下是否存在文件或者目录，都不影响File对象的创建    </li>
-</ol>
-</blockquote>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2></li>
-</ul>
-<ol>
-<li>获取功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/huoqu.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>判断功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/panduan.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>创建删除功能的方法<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/chuangjian.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>目录的遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bianli.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/gaishu.PNG" srcset="/img/loading.gif" lazyload alt=""><h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><h2 id="文件搜索：搜索-D-aaa-目录中的-java-文件"><a href="#文件搜索：搜索-D-aaa-目录中的-java-文件" class="headerlink" title="文件搜索：搜索 D:\aaa 目录中的 .java 文件"></a>文件搜索：<em>搜索 D:\aaa 目录中的 .java 文件</em></h2><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli1.PNG" srcset="/img/loading.gif" lazyload alt=""><h2 id="文件过滤器优化"><a href="#文件过滤器优化" class="headerlink" title="文件过滤器优化"></a>文件过滤器优化</h2></li>
-</ol>
-<ul>
-<li><code>java.io.FileFilter</code>是一个接口，是File的过滤器。该接口的对象可以传递给File类的<code>listFiles(FileFilter)</code>作为参数， 接口中只有一个方法： </li>
-<li><code>boolean accept(File pathname)</code>：测试pathname是否应该包含在当前File目录中，符合则返回true </li>
-</ul>
-<p>优化代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/anli2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDEA</title>
-    <url>/2021/06/03/IDEA/</url>
-    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
-<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-</li>
-<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
-<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-</li>
-</ol>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
-<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
-</ol>
-<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
-<li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
-</ol>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h1 id="idea-导入-eclipse-项目-SSM"><a href="#idea-导入-eclipse-项目-SSM" class="headerlink" title="idea 导入 eclipse 项目-SSM"></a>idea 导入 eclipse 项目-SSM</h1><ol start="0">
-<li><p>参考：B站-杰凡it</p>
-</li>
-<li><p>直接 open 打开项目</p>
-</li>
-<li><p>发现报错(红线)</p>
-</li>
-<li><p><strong>设置 project structure</strong></p>
-<ol>
-<li>进入 project-project sdk 配置 jdk</li>
-<li>进入 modules-dependencies 删掉 eclipse 多余的配置</li>
-<li>在 modules-dependencies  添加 tomcat 依赖(右上角+号)</li>
-<li>在 libraries 添加 jar 包依赖</li>
-<li>在 modules 中添加 web 模块(1.左上角+号。2.注意修改路径：web 改为 WebContent)</li>
-<li>配置 artifacts(artifacts–&gt;web application exploded–&gt;from modules)</li>
-</ol>
-</li>
-<li><p><strong>将项目添加到 tomcat 中</strong></p>
-<ol>
-<li><strong>edit configurations</strong>–&gt;左上角+号–&gt;deployment–&gt;右上角+号–&gt;artifact</li>
-<li>如果项目中<strong>文件上传</strong>用的<strong>是绝对路径的话</strong>需要<strong>配置虚拟路径</strong>(例如存放图片的目录)</li>
-</ol>
-</li>
-<li><p><strong>修改数据库配置文件</strong></p>
-<ol>
-<li>数据库配置成自己本地的(driver,url,username,password等等)</li>
-<li>navcat 新建一个数据库(数据库和源代码一致)</li>
-<li>导入运行 .sql 文件(建表和插入数据)</li>
-</ol>
-</li>
-<li><p>启动 tomcat</p>
-</li>
-<li><p>浏览器访问项目</p>
-</li>
-</ol>
-<h1 id="idea-导入-eclipse-项目-Springboot"><a href="#idea-导入-eclipse-项目-Springboot" class="headerlink" title="idea 导入 eclipse 项目-Springboot"></a>idea 导入 eclipse 项目-Springboot</h1><ol start="0">
-<li>参考：B站-杰凡it</li>
-<li>直接 open 打开项目</li>
-<li>删除带有 eclipse 图标的 .classpath 和 .project l两个文件(不限碍眼的话可以不删)</li>
-<li><strong>设置 project structure</strong>(步骤跟上面导入SSM差不多，细节请参考B站-杰凡it)</li>
-<li>导入 maven 依赖(pom.xml 右键点击 add as maven project)</li>
-<li><strong>配置数据库</strong>(注意：pom.xml 的 mysql jar 包版本要兼容，不兼容要修改版本并刷新)</li>
-<li>测试运行</li>
-<li>浏览器访问</li>
-</ol>
-<h1 id="idea-导入-eclipse-项目总结-主要步骤"><a href="#idea-导入-eclipse-项目总结-主要步骤" class="headerlink" title="idea 导入 eclipse 项目总结(主要步骤)"></a>idea 导入 eclipse 项目总结(主要步骤)</h1><ol>
-<li>先全局配置好 idea 的 jdk , maven , git 或 svn , tomcat 等等，mysql , navcat 安装好</li>
-<li>open 打开项目</li>
-<li>配置 project structure</li>
-<li>配置 add/edit configurations</li>
-<li>配置数据库</li>
-</ol>
-]]></content>
-      <categories>
-        <category>IDEA</category>
-      </categories>
-      <tags>
-        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1099,110 +1017,85 @@
       </tags>
   </entry>
   <entry>
-    <title>JDBC连接池</title>
-    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
-    <content><![CDATA[<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ol>
-<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
-<li>实现：<ul>
-<li>标准接口：DataSource   javax.sql包下的<ul>
-<li>获取连接：getConnection()</li>
-<li>归还连接：Connection.close()</li>
-</ul>
+    <title>IDEA</title>
+    <url>/2021/06/03/IDEA/</url>
+    <content><![CDATA[<h1 id="Win-10-环境配置"><a href="#Win-10-环境配置" class="headerlink" title="Win 10 环境配置"></a>Win 10 环境配置</h1><h2 id="JDK-1-8-Maven-Tomcat"><a href="#JDK-1-8-Maven-Tomcat" class="headerlink" title="JDK 1.8 + Maven + Tomcat"></a>JDK 1.8 + Maven + Tomcat</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/qewfsefwerfewr.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Path配置"><a href="#Path配置" class="headerlink" title="Path配置"></a>Path配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/argarefafesfae.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="IDEA-2018-3-配置"><a href="#IDEA-2018-3-配置" class="headerlink" title="IDEA 2018.3 配置"></a>IDEA 2018.3 配置</h1><h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ol>
+<li><p><strong>方式一</strong>：<code>Configure--&gt;Settings</code></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sdfvdfafaerfwerfwg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
-</ul>
+<li><p><strong>方式二</strong>:<code>File--&gt;Other Settings--&gt;Settings for New Projects</code></p>
+<p> <img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/asffsrgwetqhgw4trgwgwetg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 </li>
 </ol>
-<h1 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h1><ul>
-<li><p>步骤：</p>
-<blockquote>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/dasdfqerwtg2tgwetwrg.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="JDK-配置"><a href="#JDK-配置" class="headerlink" title="JDK 配置"></a>JDK 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/afqerfwerwerwegwegtq.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Maven-配置"><a href="#Maven-配置" class="headerlink" title="Maven 配置"></a>Maven 配置</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img1/sadagatatdthh.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="SVN-配置"><a href="#SVN-配置" class="headerlink" title="SVN 配置"></a>SVN 配置</h2><ol>
+<li><code>VCS--&gt;import into version control--&gt;import into subversion</code></li>
+</ol>
+<h2 id="GIT-配置"><a href="#GIT-配置" class="headerlink" title="GIT 配置"></a>GIT 配置</h2><ol>
+<li><code>VCS--&gt;Enable version control integration--&gt;git</code></li>
+</ol>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h1 id="idea-导入-eclipse-项目-SSM"><a href="#idea-导入-eclipse-项目-SSM" class="headerlink" title="idea 导入 eclipse 项目-SSM"></a>idea 导入 eclipse 项目-SSM</h1><ol start="0">
+<li><p>参考：B站-杰凡it</p>
+</li>
+<li><p>直接 open 打开项目</p>
+</li>
+<li><p>发现报错(红线)</p>
+</li>
+<li><p><strong>设置 project structure</strong></p>
 <ol>
-<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
-<li>定义配置文件：</li>
+<li>进入 project-project sdk 配置 jdk</li>
+<li>进入 modules-dependencies 删掉 eclipse 多余的配置</li>
+<li>在 modules-dependencies  添加 tomcat 依赖(右上角+号)</li>
+<li>在 libraries 添加 jar 包依赖</li>
+<li>在 modules 中添加 web 模块(1.左上角+号。2.注意修改路径：web 改为 WebContent)</li>
+<li>配置 artifacts(artifacts–&gt;web application exploded–&gt;from modules)</li>
 </ol>
-<ul>
-<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
-<li>路径：直接将文件放在src目录下即可。</li>
-</ul>
-<ol start="3">
-<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
-<li>获取连接： getConnection</li>
-</ol>
-</blockquote>
 </li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.创建数据库连接池对象</span><br> DataSource ds  = <span class="hljs-keyword">new</span> ComboPooledDataSource();<br><span class="hljs-comment">//2. 获取连接对象</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
-<h1 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h1></li>
-<li><p>步骤：</p>
-<blockquote>
+<li><p><strong>将项目添加到 tomcat 中</strong></p>
 <ol>
-<li>导入jar包 druid-1.0.9.jar</li>
-<li>定义配置文件：<ul>
-<li>是properties形式的</li>
-<li>可以叫任意名称，可以放在任意目录下</li>
-</ul>
-</li>
-<li>加载配置文件。Properties</li>
-<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
-<li>获取连接：getConnection</li>
+<li><strong>edit configurations</strong>–&gt;左上角+号–&gt;deployment–&gt;右上角+号–&gt;artifact</li>
+<li>如果项目中<strong>文件上传</strong>用的<strong>是绝对路径的话</strong>需要<strong>配置虚拟路径</strong>(例如存放图片的目录)</li>
 </ol>
-</blockquote>
 </li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//加载配置文件</span><br>Properties pro = <span class="hljs-keyword">new</span> Properties();<br>InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="hljs-string">"druid.properties"</span>);<br>pro.load(is);<br><span class="hljs-comment">//获取连接池对象</span><br>DataSource ds = DruidDataSourceFactory.createDataSource(pro);<br><span class="hljs-comment">//获取连接</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><ul>
-<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
-<li>步骤：<blockquote>
+<li><p><strong>修改数据库配置文件</strong></p>
 <ol>
-<li>导入jar包</li>
-<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+<li>数据库配置成自己本地的(driver,url,username,password等等)</li>
+<li>navcat 新建一个数据库(数据库和源代码一致)</li>
+<li>导入运行 .sql 文件(建表和插入数据)</li>
 </ol>
-<ul>
-<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
-</ul>
-<ol start="3">
-<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</li>
+<li><p>启动 tomcat</p>
+</li>
+<li><p>浏览器访问项目</p>
+</li>
 </ol>
-<ul>
-<li><p>update():执行DML语句。增、删、改语句</p>
-</li>
-<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
-<ul>
-<li>注意：这个方法查询的结果集长度只能是1</li>
-</ul>
-</li>
-<li><p>queryForList():查询结果将结果集封装为list集合</p>
-<ul>
-<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
-</ul>
-</li>
-<li><p>query():查询结果，将结果封装为JavaBean对象</p>
-<ul>
-<li><p>query的参数：RowMapper</p>
-<ul>
-<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
-<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>queryForObject()：查询结果，将结果封装为对象</p>
-<ul>
-<li>一般用于聚合函数的查询</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
+<h1 id="idea-导入-eclipse-项目-Springboot"><a href="#idea-导入-eclipse-项目-Springboot" class="headerlink" title="idea 导入 eclipse 项目-Springboot"></a>idea 导入 eclipse 项目-Springboot</h1><ol start="0">
+<li>参考：B站-杰凡it</li>
+<li>直接 open 打开项目</li>
+<li>删除带有 eclipse 图标的 .classpath 和 .project l两个文件(不限碍眼的话可以不删)</li>
+<li><strong>设置 project structure</strong>(步骤跟上面导入SSM差不多，细节请参考B站-杰凡it)</li>
+<li>导入 maven 依赖(pom.xml 右键点击 add as maven project)</li>
+<li><strong>配置数据库</strong>(注意：pom.xml 的 mysql jar 包版本要兼容，不兼容要修改版本并刷新)</li>
+<li>测试运行</li>
+<li>浏览器访问</li>
+</ol>
+<h1 id="idea-导入-eclipse-项目总结-主要步骤"><a href="#idea-导入-eclipse-项目总结-主要步骤" class="headerlink" title="idea 导入 eclipse 项目总结(主要步骤)"></a>idea 导入 eclipse 项目总结(主要步骤)</h1><ol>
+<li>先全局配置好 idea 的 jdk , maven , git 或 svn , tomcat 等等，mysql , navcat 安装好</li>
+<li>open 打开项目</li>
+<li>配置 project structure</li>
+<li>配置 add/edit configurations</li>
+<li>配置数据库</li>
+</ol>
 ]]></content>
       <categories>
-        <category>JavaSE</category>
+        <category>IDEA</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -1360,6 +1253,113 @@
 </ul>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDBC连接池</title>
+    <url>/2021/03/15/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
+    <content><![CDATA[<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ol>
+<li>概念：其实就是一个容器(集合)，存放数据库连接的容器。</li>
+<li>实现：<ul>
+<li>标准接口：DataSource   javax.sql包下的<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="C3P0：数据库连接池技术"><a href="#C3P0：数据库连接池技术" class="headerlink" title="C3P0：数据库连接池技术"></a>C3P0：数据库连接池技术</h1><ul>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar<br>不要忘记导入数据库驱动jar包</li>
+<li>定义配置文件：</li>
+</ol>
+<ul>
+<li>名称： c3p0.properties 或者 c3p0-config.xml</li>
+<li>路径：直接将文件放在src目录下即可。</li>
+</ul>
+<ol start="3">
+<li>创建核心对象 数据库连接池对象 ComboPooledDataSource</li>
+<li>获取连接： getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1.创建数据库连接池对象</span><br> DataSource ds  = <span class="hljs-keyword">new</span> ComboPooledDataSource();<br><span class="hljs-comment">//2. 获取连接对象</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
+<h1 id="Druid：数据库连接池实现技术，由阿里巴巴提供"><a href="#Druid：数据库连接池实现技术，由阿里巴巴提供" class="headerlink" title="Druid：数据库连接池实现技术，由阿里巴巴提供"></a>Druid：数据库连接池实现技术，由阿里巴巴提供</h1></li>
+<li><p>步骤：</p>
+<blockquote>
+<ol>
+<li>导入jar包 druid-1.0.9.jar</li>
+<li>定义配置文件：<ul>
+<li>是properties形式的</li>
+<li>可以叫任意名称，可以放在任意目录下</li>
+</ul>
+</li>
+<li>加载配置文件。Properties</li>
+<li>获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory</li>
+<li>获取连接：getConnection</li>
+</ol>
+</blockquote>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//加载配置文件</span><br>Properties pro = <span class="hljs-keyword">new</span> Properties();<br>InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(<span class="hljs-string">"druid.properties"</span>);<br>pro.load(is);<br><span class="hljs-comment">//获取连接池对象</span><br>DataSource ds = DruidDataSourceFactory.createDataSource(pro);<br><span class="hljs-comment">//获取连接</span><br>Connection conn = ds.getConnection();<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><ul>
+<li>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发</li>
+<li>步骤：<blockquote>
+<ol>
+<li>导入jar包</li>
+<li>创建JdbcTemplate对象。依赖于数据源DataSource</li>
+</ol>
+<ul>
+<li>JdbcTemplate template = new JdbcTemplate(ds);</li>
+</ul>
+<ol start="3">
+<li>调用JdbcTemplate的方法来完成CRUD的操作</li>
+</ol>
+<ul>
+<li><p>update():执行DML语句。增、删、改语句</p>
+</li>
+<li><p>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合</p>
+<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
+</ul>
+</li>
+<li><p>queryForList():查询结果将结果集封装为list集合</p>
+<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
+</ul>
+</li>
+<li><p>query():查询结果，将结果封装为JavaBean对象</p>
+<ul>
+<li><p>query的参数：RowMapper</p>
+<ul>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>queryForObject()：查询结果，将结果封装为对象</p>
+<ul>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -2241,6 +2241,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux部署</title>
+    <url>/2021/09/24/Linux%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="安装VMware"><a href="#安装VMware" class="headerlink" title="安装VMware"></a>安装VMware</h1><h1 id="安装CentOS"><a href="#安装CentOS" class="headerlink" title="安装CentOS"></a>安装CentOS</h1><h1 id="安装Xshell"><a href="#安装Xshell" class="headerlink" title="安装Xshell"></a>安装Xshell</h1><h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><h1 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h1><h1 id="项目打包与部署"><a href="#项目打包与部署" class="headerlink" title="项目打包与部署"></a>项目打包与部署</h1><h1 id="内容总结"><a href="#内容总结" class="headerlink" title="内容总结"></a>内容总结</h1>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Map</title>
+    <url>/2019/11/07/Map/</url>
+    <content><![CDATA[<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="Map常用子类"><a href="#Map常用子类" class="headerlink" title="Map常用子类"></a>Map常用子类</h2><ul>
+<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
+</li>
+<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
+</li>
+</ul>
+<h2 id="Map接口的常用方法"><a href="#Map接口的常用方法" class="headerlink" title="Map接口的常用方法"></a>Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Map集合遍历键找值方式"><a href="#Map集合遍历键找值方式" class="headerlink" title="Map集合遍历键找值方式"></a>Map集合遍历键找值方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。<strong>方法提示: keyset()</strong>   </p>
+</li>
+<li><p>遍历键的Set集合，得到每一个键。  </p>
+</li>
+<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
+</li>
+</ol>
+<h2 id="Entry键值对对象"><a href="#Entry键值对对象" class="headerlink" title="Entry键值对对象"></a>Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="Map集合遍历键值对方式"><a href="#Map集合遍历键值对方式" class="headerlink" title="Map集合遍历键值对方式"></a>Map集合遍历键值对方式</h2><p>分析步骤：  </p>
+<ol>
+<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。*<em>方法提示: entrySet() *</em>   </p>
+</li>
+<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
+</li>
+<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Junit，反射，注解</title>
     <url>/2019/11/12/Junit%EF%BC%8C%E5%8F%8D%E5%B0%84%EF%BC%8C%E6%B3%A8%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h1><h2 id="测试分类"><a href="#测试分类" class="headerlink" title="测试分类"></a>测试分类</h2><ol>
@@ -2514,43 +2562,6 @@
 </ol>
 </li>
 <li>注解不是程序的一部分，可以理解为注解就是一个标签</li>
-</ol>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Map</title>
-    <url>/2019/11/07/Map/</url>
-    <content><![CDATA[<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="Map常用子类"><a href="#Map常用子类" class="headerlink" title="Map常用子类"></a>Map常用子类</h2><ul>
-<li><p><strong>HashMap</strong>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。  </p>
-</li>
-<li><p><strong>LinkedHashMap</strong>：HashMap下有个子类LinkedHashMap，存储数据采用的哈希表结构+链表结构。通过链表结构可以保证元素的存取顺序一致；通过哈希表结构可以保证的键的唯一、不重复，需要重写键的 hashCode()方法、equals()方法。</p>
-</li>
-</ul>
-<h2 id="Map接口的常用方法"><a href="#Map接口的常用方法" class="headerlink" title="Map接口的常用方法"></a>Map接口的常用方法</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cyffqh53f7.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Map集合遍历键找值方式"><a href="#Map集合遍历键找值方式" class="headerlink" title="Map集合遍历键找值方式"></a>Map集合遍历键找值方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map中所有的键，由于键是唯一的，所以返回一个Set集合存储所有的键。<strong>方法提示: keyset()</strong>   </p>
-</li>
-<li><p>遍历键的Set集合，得到每一个键。  </p>
-</li>
-<li><p>根据键，获取键所对应的值。方法提示: get(K key)</p>
-</li>
-</ol>
-<h2 id="Entry键值对对象"><a href="#Entry键值对对象" class="headerlink" title="Entry键值对对象"></a>Entry键值对对象</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/entry.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="Map集合遍历键值对方式"><a href="#Map集合遍历键值对方式" class="headerlink" title="Map集合遍历键值对方式"></a>Map集合遍历键值对方式</h2><p>分析步骤：  </p>
-<ol>
-<li><p>获取Map集合中，所有的键值对(Entry)对象，以Set集合形式返回。*<em>方法提示: entrySet() *</em>   </p>
-</li>
-<li><p>遍历包含键值对(Entry)对象的Set集合，得到每一个键值对(Entry)对象。</p>
-</li>
-<li><p>通过键值对(Entry)对象，获取Entry对象中的键与值。  方法提示: getkey() getValue()     </p>
-</li>
 </ol>
 ]]></content>
       <categories>
@@ -4647,48 +4658,6 @@ ON t1.`mgr` = t2.`id`;</code></pre><h1 id="事务"><a href="#事务" class="head
       </tags>
   </entry>
   <entry>
-    <title>Scanner类,Random类,ArrayList类</title>
-    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h1><ul>
-<li>ArrayList使用步骤</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>常用方法和遍历 </li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>基本数据类型包装类</li>
-</ul>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="ArrayList练习"><a href="#ArrayList练习" class="headerlink" title="ArrayList练习"></a>ArrayList练习</h1><ul>
-<li>生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring</title>
-    <url>/2021/03/23/Spring/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Redis和Jedis</title>
     <url>/2021/03/23/Redis%E5%92%8CJedis/</url>
     <content><![CDATA[<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>redis是一款高性能的NOSQL系列的非关系型数据库</p>
@@ -5172,6 +5141,59 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>Scanner类,Random类,ArrayList类</title>
+    <url>/2019/11/03/Scanner%E7%B1%BB-Random%E7%B1%BB-ArrayList%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/scanner.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/random.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h1><ul>
+<li>ArrayList使用步骤</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>常用方法和遍历 </li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/al2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>基本数据类型包装类</li>
+</ul>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/baoz.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="ArrayList练习"><a href="#ArrayList练习" class="headerlink" title="ArrayList练习"></a>ArrayList练习</h1><ul>
+<li>生成6个1~33之间的随机整数,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx1.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>自定义4个学生对象,添加到集合,并遍历<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>定义以指定格式打印集合的方法(ArrayList类型作为参数)，使用{}扩起集合，使用@分隔每个元素。格式参照 {元素 @元素@元素}。<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx3.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>定义获取所有偶数元素集合的方法(ArrayList类型作为返回值)<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.1.PNG" srcset="/img/loading.gif" lazyload alt=""><br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lx4.2.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringMVC</title>
+    <url>/2021/03/23/SpringMVC/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>SpringMVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/2021/03/23/Spring/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Springboot+Vue</title>
     <url>/2021/05/30/Springboot-Vue/</url>
     <content><![CDATA[]]></content>
@@ -5225,161 +5247,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringMVC</title>
-    <url>/2021/03/23/SpringMVC/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>JavaEE</category>
-      </categories>
-      <tags>
-        <tag>SpringMVC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Web概述</title>
-    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h1><h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><ol>
-<li><code>C/S：</code>客户端/服务器端</li>
-<li><code>B/S：</code>浏览器/服务器端</li>
-</ol>
-<h2 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h2><ol>
-<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
-<li>如： <code>html,css,JavaScript</code></li>
-</ul>
-</li>
-<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
-<li>如：<code>servlet/jsp,php,asp....</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h2><ol>
-<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
-<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
-<li>传输协议：规定了数据传输的规则</li>
-</ol>
-<ul>
-<li>基础协议：<ol>
-<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
-<li><code>UDP</code>: 不安全协议。 速度快</li>
-</ol>
-</li>
-</ul>
-<h1 id="web服务器软件"><a href="#web服务器软件" class="headerlink" title="web服务器软件"></a>web服务器软件</h1><ul>
-<li>服务器：安装了服务器软件的计算机</li>
-<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
-<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
-<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
-<li>web容器</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>常见的java相关的web服务器软件：<ul>
-<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
-<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
-</ul>
-<h1 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h1><ol>
-<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
-</li>
-<li><p>安装：解压压缩包即可</p>
-<ul>
-<li>注意：安装目录建议不要有中文和空格</li>
-</ul>
-</li>
-<li><p>卸载：删除目录即可</p>
-</li>
-<li><p>启动：</p>
-</li>
-</ol>
-<ul>
-<li><p>bin/startup.bat ,双击运行该文件即可</p>
-</li>
-<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
-</li>
-<li><p>可能遇到的问题：</p>
-<ol>
-<li><p>黑窗口一闪而过：</p>
-<ul>
-<li>原因： 没有正确配置JAVA_HOME环境变量</li>
-<li>解决方案：正确配置JAVA_HOME环境变量</li>
-</ul>
-</li>
-<li><p>启动报错：</p>
-<ol>
-<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
-<li><code>netstat -ano</code></li>
-</ul>
-</li>
-<li>温柔：修改自身的端口号<ul>
-<li><code>conf/server.xml</code></li>
-<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="5">
-<li>关闭：<ol>
-<li>正常关闭：<ul>
-<li><code>bin/shutdown.bat</code></li>
-<li><code>ctrl+c</code></li>
-</ul>
-</li>
-<li>强制关闭：<ul>
-<li>点击启动窗口的×<h1 id="Tomcat-配置"><a href="#Tomcat-配置" class="headerlink" title="Tomcat 配置"></a>Tomcat 配置</h1></li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<ul>
-<li><p><strong>部署项目的方式：</strong> </p>
-<ol>
-<li>直接将项目放到<code>webapps目录</code>下即可。</li>
-</ol>
-<ul>
-<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
-<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
-</ul>
-<ol start="2">
-<li><p>配置<code>conf/server.xml</code>文件<br>   <code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></p>
-<ul>
-<li><code>docBase</code>:项目存放的路径</li>
-<li><code>path</code>：虚拟目录</li>
-</ul>
-</li>
-<li><p>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br> <code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></p>
-<ul>
-<li>虚拟目录：xml文件的名称</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><strong>目录结构</strong><ul>
-<li>java动态项目的目录结构：  </li>
-</ul>
-  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaWeb</category>
-      </categories>
-      <tags>
-        <tag>JavaWeb</tag>
       </tags>
   </entry>
   <entry>
@@ -5565,6 +5432,166 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
+    <title>Web概述</title>
+    <url>/2021/03/23/Web%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h1><h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><ol>
+<li><code>C/S：</code>客户端/服务器端</li>
+<li><code>B/S：</code>浏览器/服务器端</li>
+</ol>
+<h2 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h2><ol>
+<li>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<ul>
+<li>如： <code>html,css,JavaScript</code></li>
+</ul>
+</li>
+<li>动态资源: 每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<ul>
+<li>如：<code>servlet/jsp,php,asp....</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h2><ol>
+<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
+<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
+<li>传输协议：规定了数据传输的规则</li>
+</ol>
+<ul>
+<li>基础协议：<ol>
+<li><code>TCP</code>: 安全协议，三次握手。 速度稍慢</li>
+<li><code>UDP</code>: 不安全协议。 速度快</li>
+</ol>
+</li>
+</ul>
+<h1 id="web服务器软件"><a href="#web服务器软件" class="headerlink" title="web服务器软件"></a>web服务器软件</h1><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+<li>服务器软件：接收用户的请求，处理请求，做出响应</li>
+<li>web服务器软件：接收用户的请求，处理请求，做出响应。<ul>
+<li>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</li>
+<li>web容器</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>常见的java相关的web服务器软件：<ul>
+<li><code>webLogic：</code>oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>webSphere：</code>IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>JBOSS：</code>JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</li>
+<li><code>Tomcat：</code>Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</li>
+</ul>
+<h1 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h1><ol>
+<li><p>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></p>
+</li>
+<li><p>安装：解压压缩包即可</p>
+<ul>
+<li>注意：安装目录建议不要有中文和空格</li>
+</ul>
+</li>
+<li><p>卸载：删除目录即可</p>
+</li>
+<li><p>启动：</p>
+</li>
+</ol>
+<ul>
+<li><p>bin/startup.bat ,双击运行该文件即可</p>
+</li>
+<li><p>访问：浏览器输入：<code>http://localhost:8080</code> 回车访问自己</p>
+</li>
+<li><p>可能遇到的问题：</p>
+<ol>
+<li><p>黑窗口一闪而过：</p>
+<ul>
+<li>原因： 没有正确配置JAVA_HOME环境变量</li>
+<li>解决方案：正确配置JAVA_HOME环境变量</li>
+</ul>
+</li>
+<li><p>启动报错：</p>
+<ol>
+<li>暴力：找到占用的端口号，并且找到对应的进程，杀死该进程<ul>
+<li><code>netstat -ano</code></li>
+</ul>
+</li>
+<li>温柔：修改自身的端口号<ul>
+<li><code>conf/server.xml</code></li>
+<li>一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。在访问时，就不用输入端口号</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>关闭：<ol>
+<li>正常关闭：<ul>
+<li><code>bin/shutdown.bat</code></li>
+<li><code>ctrl+c</code></li>
+</ul>
+</li>
+<li>强制关闭：<ul>
+<li>点击启动窗口的×<h1 id="Tomcat-配置"><a href="#Tomcat-配置" class="headerlink" title="Tomcat 配置"></a>Tomcat 配置</h1></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><p><strong>部署项目的方式：</strong> </p>
+<ol>
+<li>直接将项目放到<code>webapps目录</code>下即可。</li>
+</ol>
+<ul>
+<li><code>/hello</code>：项目的访问路径–&gt;<code>虚拟目录</code></li>
+<li>简化部署：将项目打成一个war包，再将war包放置到webapps目录下。war包会自动解压缩</li>
+</ul>
+<ol start="2">
+<li><p>配置<code>conf/server.xml</code>文件<br>   <code>&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</code></p>
+<ul>
+<li><code>docBase</code>:项目存放的路径</li>
+<li><code>path</code>：虚拟目录</li>
+</ul>
+</li>
+<li><p>在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写<br> <code>&lt;Context docBase=&quot;D:\hello&quot; /&gt;</code></p>
+<ul>
+<li>虚拟目录：xml文件的名称</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><strong>目录结构</strong><ul>
+<li>java动态项目的目录结构：  </li>
+</ul>
+  – 项目的根目录<br>  – <code>WEB-INF目录：</code><br>  – <code>web.xml：</code>web项目的核心配置文件<br>  – <code>classes目录：</code>放置字节码文件的目录<br>  –<code>lib目录：</code>放置依赖的jar包</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>final，权限，内部类</title>
+    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>字节流，字符流</title>
     <url>/2019/11/10/%E5%AD%97%E8%8A%82%E6%B5%81%EF%BC%8C%E5%AD%97%E7%AC%A6%E6%B5%81/</url>
     <content><![CDATA[<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="IO的分类"><a href="#IO的分类" class="headerlink" title="IO的分类"></a>IO的分类</h2><p>根据数据的流向(以内存为基准)分为：<strong>输入流</strong>和<strong>输出流</strong></p>
@@ -5620,22 +5647,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
 <li><code>public void load(InputStream inStream)</code> ： 从字节输入流中读取键值对。 </li>
 <li>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了</li>
 </ul>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>final，权限，内部类</title>
-    <url>/2019/11/04/final%EF%BC%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/final.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/quanxian.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/cynbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h3 id="访问特点"><a href="#访问特点" class="headerlink" title="访问特点"></a>访问特点</h3><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/fwtd.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="匿名内部类【重点】"><a href="#匿名内部类【重点】" class="headerlink" title="匿名内部类【重点】"></a>匿名内部类【重点】</h2><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/nmnbl.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6604,24 +6615,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>类与对象，封装，构造方法</title>
-    <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/duixiang.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/mol.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/blqu.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
-]]></content>
-      <categories>
-        <category>JavaSE</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线程</title>
     <url>/2019/11/08/%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="并发与并行"><a href="#并发与并行" class="headerlink" title="并发与并行"></a>并发与并行</h2><ul>
@@ -6661,6 +6654,24 @@ HttpServlet  -- 抽象类</code></pre><ul>
 </li>
 <li>代码演示：<br>Runnable实现类代码：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/sxl.PNG" srcset="/img/loading.gif" lazyload alt=""><br>线程池测试类：<br><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/csl.PNG" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
+]]></content>
+      <categories>
+        <category>JavaSE</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类与对象，封装，构造方法</title>
+    <url>/2019/11/03/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B0%81%E8%A3%85%EF%BC%8C%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="类的定义格式"><a href="#类的定义格式" class="headerlink" title="类的定义格式"></a>类的定义格式</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/lei.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/duixiang.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/mol.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/blqu.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="this的含义"><a href="#this的含义" class="headerlink" title="this的含义"></a>this的含义</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/this.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<h1 id="标准代码-JavaBean"><a href="#标准代码-JavaBean" class="headerlink" title="标准代码-JavaBean"></a>标准代码-JavaBean</h1><p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean1.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="https://hexo-next-blog-image.oss-cn-hangzhou.aliyuncs.com/img/bean2.PNG" srcset="/img/loading.gif" lazyload alt=""></p>
 ]]></content>
       <categories>
         <category>JavaSE</category>
@@ -6716,24 +6727,6 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>编译原理一</title>
-    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
-<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
-<p>参考链接：      </p>
-<ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
-<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>编译原理</category>
-      </categories>
-      <tags>
-        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
@@ -6886,58 +6879,21 @@ HttpServlet  -- 抽象类</code></pre><ul>
       </tags>
   </entry>
   <entry>
-    <title>面向对象思想</title>
-    <url>/2021/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h1><ol>
-<li><strong><code>封装</code></strong>       </li>
-</ol>
-<p>所谓封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。        </p>
-<p>简单的说，一个类就是一个封装了数据以及操作这些数据的代码的逻辑实体。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，对象对内部数据提供了不同级别的保护，以防止程序中无关的部分意外的改变或错误的使用了对象的私有部分。</p>
-<ol start="2">
-<li><strong><code>继承</code></strong></li>
-</ol>
-<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
-<p>通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。</p>
-<ol start="3">
-<li><strong><code>多态</code></strong></li>
-</ol>
-<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。</p>
-<p>这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
-<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
-<p><strong>多态的必要条件</strong></p>
-<p>为了实现运行期的多态，或者说是动态绑定，<strong><code>需要满足三个条件</code></strong>：</p>
-<ul>
-<li><p>有类继承或者接口实现</p>
-</li>
-<li><p>子类要重写父类的方法</p>
-</li>
-<li><p>父类的引用指向子类的对象</p>
-<h1 id="面向对象五大原则"><a href="#面向对象五大原则" class="headerlink" title="面向对象五大原则"></a>面向对象五大原则</h1></li>
-<li><p><em>S.O.L.I.D*</em></p>
-</li>
-</ul>
-<ol>
-<li><p><strong><code>单一职责原则</code>（Single-Responsibility Principle）</strong><br><code>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化。</code>单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。通常意义下的单一职责，就是指只有一种单一功能，不要为类实现过多的功能点，以保证实体只有一个引起它变化的原因。 专注，是一个人优良的品质；同样的，单一也是一个类的优良设计。交杂不清的职责将使得代码看起来特别别扭牵一发而动全身，有失美感和必然导致丑陋的系统错误风险。</p>
-</li>
-<li><p><strong><code>开放封闭原则</code>（Open-Closed principle）</strong><br><code>其核心思想是：软件实体应该是可扩展的，而不可修改的。</code>也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。让类依赖于固定的抽象，所以修改就是封闭的；而通过面向对象的继承和多态机制，又可以实现对抽象类的继承，通过覆写其方法来改变固有行为，实现新的拓展方法，所以就是开放的。 “需求总是变化”没有不变的软件，所以就需要用封闭开放原则来封闭变化满足需求，同时还能保持软件内部的封装体系稳定，不被需求的变化影响。</p>
-</li>
-<li><p><strong><code>Liskov替换原则</code>（Liskov-Substitution Principle）</strong><br><code>其核心思想是：子类必须能够替换其基类。</code>这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。 Liskov替换原则，主要着眼于对抽象和多态建立在继承的基础上，因此只有遵循了Liskov替换原则，才能保证继承复用是可靠地。实现的方法是面向接口编程：将公共部分抽象为基类接口或抽象类，通过Extract Abstract Class，在子类中通过覆写父类的方法实现新的方式支持同样的职责。 Liskov替换原则是关于继承机制的设计原则，违反了Liskov替换原则就必然导致违反开放封闭原则。 Liskov替换原则能够保证系统具有良好的拓展性，同时实现基于多态的抽象机制，能够减少代码冗余，避免运行期的类型判别。</p>
-</li>
-<li><p><strong><code>接口隔离原则</code>（Interface-Segregation Principle）</strong><br><code>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。</code> 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 接口有效地将细节和抽象隔离，体现了对抽象编程的一切好处，接口隔离强调接口的单一性。而胖接口存在明显的弊端，会导致实现的类型必须完全实现接口的所有方法、属性等；而某些时候，实现类型并非需要所有的接口定义，在设计上这是“浪费”，而且在实施上这会带来潜在的问题，对胖接口的修改将导致一连串的客户端程序需要修改，有时候这是一种灾难。在这种情况下，将胖接口分解为多个特点的定制化方法，使得客户端仅仅依赖于它们的实际调用的方法，从而解除了客户端不会依赖于它们不用的方法。 分离的手段主要有以下两种：1、委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2、多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
-</li>
-<li><p><strong><code>依赖倒置原则</code>（Dependecy-Inversion Principle）</strong><br><code>其核心思想是：依赖于抽象。</code>具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。 抽象的稳定性决定了系统的稳定性，因为抽象是不变的，依赖于抽象是面向对象设计的精髓，也是依赖倒置原则的核心。 依赖于抽象是一个通用的原则，而某些时候依赖于细节则是在所难免的，必须权衡在抽象和具体之间的取舍，方法不是一层不变的。依赖于抽象，就是对接口编程，不要对实现编程。<br>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的<code>金科玉律</code>，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。<code>不同的设计模式对应不同的需求，而设计原则则代表永恒的灵魂</code>，需要在实践中时时刻刻地遵守。     </p>
-</li>
-</ol>
+    <title>编译原理一</title>
+    <url>/2021/03/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Java-编译原理"><a href="#Java-编译原理" class="headerlink" title="Java 编译原理"></a>Java 编译原理</h1><p>请点链接：<a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">编译原理基础</a></p>
+<h1 id="Java-虚拟机-JVM"><a href="#Java-虚拟机-JVM" class="headerlink" title="Java 虚拟机(JVM)"></a>Java 虚拟机(JVM)</h1><p>请点链接：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">大白话带你认识JVM</a></p>
 <p>参考链接：      </p>
 <ol>
-<li><a href="http://hollischuang.gitee.io/tobetopjavaer" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer</a></li>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/platform-independent?id=%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%9f%ba%e7%a1%80</a>     </li>
+<li><a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/%5B%E5%8A%A0%E9%A4%90%5D%E5%A4%A7%E7%99%BD%E8%AF%9D%E5%B8%A6%E4%BD%A0%E8%AE%A4%E8%AF%86JVM.md</a></li>
 </ol>
 ]]></content>
       <categories>
-        <category>面向对象思想</category>
+        <category>编译原理</category>
       </categories>
       <tags>
-        <tag>面向对象思想</tag>
+        <tag>编译原理</tag>
       </tags>
   </entry>
   <entry>
@@ -7222,6 +7178,61 @@ IMAP 协议中客户端和服务器上的邮件保持同步，如果不手动删
       </categories>
       <tags>
         <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象思想</title>
+    <url>/2021/03/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h1><ol>
+<li><strong><code>封装</code></strong>       </li>
+</ol>
+<p>所谓封装，也就是把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。        </p>
+<p>简单的说，一个类就是一个封装了数据以及操作这些数据的代码的逻辑实体。在一个对象内部，某些代码或某些数据可以是私有的，不能被外界访问。通过这种方式，对象对内部数据提供了不同级别的保护，以防止程序中无关的部分意外的改变或错误的使用了对象的私有部分。</p>
+<ol start="2">
+<li><strong><code>继承</code></strong></li>
+</ol>
+<p>继承是指这样一种能力：它可以使用现有类的所有功能，并在无需重新编写原来的类的情况下对这些功能进行扩展。</p>
+<p>通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。</p>
+<ol start="3">
+<li><strong><code>多态</code></strong></li>
+</ol>
+<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。</p>
+<p>这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
+<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
+<p><strong>多态的必要条件</strong></p>
+<p>为了实现运行期的多态，或者说是动态绑定，<strong><code>需要满足三个条件</code></strong>：</p>
+<ul>
+<li><p>有类继承或者接口实现</p>
+</li>
+<li><p>子类要重写父类的方法</p>
+</li>
+<li><p>父类的引用指向子类的对象</p>
+<h1 id="面向对象五大原则"><a href="#面向对象五大原则" class="headerlink" title="面向对象五大原则"></a>面向对象五大原则</h1></li>
+<li><p><em>S.O.L.I.D*</em></p>
+</li>
+</ul>
+<ol>
+<li><p><strong><code>单一职责原则</code>（Single-Responsibility Principle）</strong><br><code>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化。</code>单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。通常意义下的单一职责，就是指只有一种单一功能，不要为类实现过多的功能点，以保证实体只有一个引起它变化的原因。 专注，是一个人优良的品质；同样的，单一也是一个类的优良设计。交杂不清的职责将使得代码看起来特别别扭牵一发而动全身，有失美感和必然导致丑陋的系统错误风险。</p>
+</li>
+<li><p><strong><code>开放封闭原则</code>（Open-Closed principle）</strong><br><code>其核心思想是：软件实体应该是可扩展的，而不可修改的。</code>也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。让类依赖于固定的抽象，所以修改就是封闭的；而通过面向对象的继承和多态机制，又可以实现对抽象类的继承，通过覆写其方法来改变固有行为，实现新的拓展方法，所以就是开放的。 “需求总是变化”没有不变的软件，所以就需要用封闭开放原则来封闭变化满足需求，同时还能保持软件内部的封装体系稳定，不被需求的变化影响。</p>
+</li>
+<li><p><strong><code>Liskov替换原则</code>（Liskov-Substitution Principle）</strong><br><code>其核心思想是：子类必须能够替换其基类。</code>这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。 Liskov替换原则，主要着眼于对抽象和多态建立在继承的基础上，因此只有遵循了Liskov替换原则，才能保证继承复用是可靠地。实现的方法是面向接口编程：将公共部分抽象为基类接口或抽象类，通过Extract Abstract Class，在子类中通过覆写父类的方法实现新的方式支持同样的职责。 Liskov替换原则是关于继承机制的设计原则，违反了Liskov替换原则就必然导致违反开放封闭原则。 Liskov替换原则能够保证系统具有良好的拓展性，同时实现基于多态的抽象机制，能够减少代码冗余，避免运行期的类型判别。</p>
+</li>
+<li><p><strong><code>接口隔离原则</code>（Interface-Segregation Principle）</strong><br><code>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。</code> 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 接口有效地将细节和抽象隔离，体现了对抽象编程的一切好处，接口隔离强调接口的单一性。而胖接口存在明显的弊端，会导致实现的类型必须完全实现接口的所有方法、属性等；而某些时候，实现类型并非需要所有的接口定义，在设计上这是“浪费”，而且在实施上这会带来潜在的问题，对胖接口的修改将导致一连串的客户端程序需要修改，有时候这是一种灾难。在这种情况下，将胖接口分解为多个特点的定制化方法，使得客户端仅仅依赖于它们的实际调用的方法，从而解除了客户端不会依赖于它们不用的方法。 分离的手段主要有以下两种：1、委托分离，通过增加一个新的类型来委托客户的请求，隔离客户和接口的直接依赖，但是会增加系统的开销。2、多重继承分离，通过接口多继承来实现客户的需求，这种方式是较好的。</p>
+</li>
+<li><p><strong><code>依赖倒置原则</code>（Dependecy-Inversion Principle）</strong><br><code>其核心思想是：依赖于抽象。</code>具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。 抽象的稳定性决定了系统的稳定性，因为抽象是不变的，依赖于抽象是面向对象设计的精髓，也是依赖倒置原则的核心。 依赖于抽象是一个通用的原则，而某些时候依赖于细节则是在所难免的，必须权衡在抽象和具体之间的取舍，方法不是一层不变的。依赖于抽象，就是对接口编程，不要对实现编程。<br>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的<code>金科玉律</code>，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。<code>不同的设计模式对应不同的需求，而设计原则则代表永恒的灵魂</code>，需要在实践中时时刻刻地遵守。     </p>
+</li>
+</ol>
+<p>参考链接：      </p>
+<ol>
+<li><a href="http://hollischuang.gitee.io/tobetopjavaer" target="_blank" rel="noopener">http://hollischuang.gitee.io/tobetopjavaer</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>面向对象思想</category>
+      </categories>
+      <tags>
+        <tag>面向对象思想</tag>
       </tags>
   </entry>
 </search>

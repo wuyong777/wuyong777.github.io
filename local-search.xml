@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Linux部署</title>
+    <link href="/2021/09/24/Linux%E9%83%A8%E7%BD%B2/"/>
+    <url>/2021/09/24/Linux%E9%83%A8%E7%BD%B2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装VMware"><a href="#安装VMware" class="headerlink" title="安装VMware"></a>安装VMware</h1><h1 id="安装CentOS"><a href="#安装CentOS" class="headerlink" title="安装CentOS"></a>安装CentOS</h1><h1 id="安装Xshell"><a href="#安装Xshell" class="headerlink" title="安装Xshell"></a>安装Xshell</h1><h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><h1 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h1><h1 id="项目打包与部署"><a href="#项目打包与部署" class="headerlink" title="项目打包与部署"></a>项目打包与部署</h1><h1 id="内容总结"><a href="#内容总结" class="headerlink" title="内容总结"></a>内容总结</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux部署</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Eclipse</title>
     <link href="/2021/06/07/Eclipse/"/>
     <url>/2021/06/07/Eclipse/</url>
