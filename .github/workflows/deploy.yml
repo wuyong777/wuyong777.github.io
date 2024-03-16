@@ -1,0 +1,51 @@
+name: Deploy GitBook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+    - name: Checkout the source code
+      uses: actions/checkout@v2
+      with:
+        repository: wuyong777/wuyong777.github.io
+        ref: master
+        token: ${{ secrets.GIT_GITBOOK_TOKEN }}
+
+    # 使用actions/setup-node来安装Node.js v10.24.1
+    - name: Use Node.js 10.24.1
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.24.1
+
+    - name: Install GitBook CLI 
+      run: npm install -g gitbook-cli                   
+    - name: Install GitBook Plugins # 安装插件
+      run: gitbook install
+
+    - name: Build GitBook 
+      run: gitbook build .
+
+    - name: Deploy to GitHub Pages
+      run: |
+        cd _book
+        git init
+        git config user.name "${{ secrets.GIT_USER_NAME }}"
+        git config user.email "${{ secrets.GIT_USER_EMAIL }}"
+        git add .
+        git commit -m "Auto Deploy to GitHub Pages"
+        git push -f "https://${{ secrets.GIT_GITBOOK_TOKEN }}@github.com/wuyong777/wuyong777.github.io.git" master:gh-pages
+
+env:
+  GIT_GITBOOK_TOKEN: ${{ secrets.GIT_GITBOOK_TOKEN }}
+  GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
+  GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
+
+
+# 上述的secrets需要在GitHub仓库的Settings -> Secrets中配置.

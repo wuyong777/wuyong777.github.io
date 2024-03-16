@@ -1,0 +1,49 @@
+{
+
+    "title": "My GitBook",
+
+
+
+    "plugins": [
+        "expandable-chapters",
+        "chapter-fold",
+        "splitter",
+        "-lunr", 
+        "-search", 
+        "search-pro",
+        "github",
+        "-sharing",
+        "hide-element",
+        "back-to-top-button",
+        "page-toc-button",
+        "custom-favicon",
+        "bottom-navigation",
+        "code"
+    ],
+
+
+
+    "pluginsConfig": {
+        "favicon": "/gitbook/images/favicon.ico",
+        
+        "github": {
+            "url": "https://github.com/wuyong777/"
+        },
+
+        "hide-element": {
+            "elements": [".gitbook-link"]
+        },
+
+        "page-toc-button": {
+            "maxTocDepth": 2,
+            "minTocSize": 2    
+        },
+
+        "bottom-navigation": {
+            "iconColor": "#3884FE",
+            "titleColor": "#3884FE",
+            "borderColor": "#3884FE"
+          }   
+    }
+}
+
