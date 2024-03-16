@@ -8,8 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
     - name: Checkout the source code
       uses: actions/checkout@v2
