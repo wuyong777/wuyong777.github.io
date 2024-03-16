@@ -41,11 +41,17 @@
     <h4>LeetCode</h4>
     <p>在线编程挑战平台</p>
   </a>
-  
+
   <a href="https://www.hello-algo.com" target="_blank" class="nav-link">
     <img src="img/hello-algo.png" class="nav-icon">
     <h4>Hello Algo</h4>
     <p>在线算法学习资源</p>
+  </a>
+  
+  <a href="https://kimi.moonshot.cn" target="_blank" class="nav-link">
+    <img src="img/kimi-moonshot.png" class="nav-icon">
+    <h4>Kimi Moonshot</h4>
+    <p>帮你看更大的世界</p>
   </a>
 </div>
 
