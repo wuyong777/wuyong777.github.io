@@ -1,4 +1,4 @@
-# 阅读指南...test
+# 阅读指南
 
 - [JavaFullStackDeveloper](https://wuyong777.github.io/)
 
