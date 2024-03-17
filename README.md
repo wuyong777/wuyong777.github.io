@@ -1,12 +1,10 @@
 # 阅读指南
 
-- [JavaFullStackDeveloper](https://wuyong777.github.io/)
-
 - 为什么建这个网站
 
 - 适合什么人阅读
 
-# 面试相关知识体系
+# 本站知识体系
 
 # 组成原理
 
@@ -70,7 +68,7 @@
 
 ## MQ
 
-### Kafka
+### 消息队列
 
 # 开发工具
 
