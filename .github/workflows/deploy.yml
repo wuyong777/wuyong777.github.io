@@ -38,7 +38,7 @@ jobs:
         git config user.email "${{ secrets.USER_EMAIL }}"
         git add .
         git commit -m "Auto Deploy to GitHub Pages"
-        git push -f "https://${{ secrets.GITBOOK_TOKEN }}@github.com/wuyong777/wuyong777.github.io.git" master:gh-pages
+        git push -f "https://${{ secrets.GITBOOK_TOKEN }}@github.com/wuyong777/wuyong777.github.io.git" master:github-pages
 
 env:
   GIT_GITBOOK_TOKEN: ${{ secrets.GITBOOK_TOKEN }}
