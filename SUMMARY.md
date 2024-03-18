@@ -54,5 +54,7 @@
     
 * [Spring Boot Cloud]()
 
+    - [认证授权](98SpringBootCloud/认证授权.md)
+
 - [WebStack](99WebStack/nav.md)
 
