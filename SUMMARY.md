@@ -54,7 +54,7 @@
     
 * [Spring Boot Cloud]()
 
-    - [认证授权](98SpringBootCloud/认证授权.md)
+    - [认证授权方案](98SpringBootCloud/jwt.md)
     
 * [over]()
 
