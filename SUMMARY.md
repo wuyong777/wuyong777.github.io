@@ -54,7 +54,8 @@
     
 * [Spring Boot Cloud]()
 
-    - [认证授权方案](98SpringBootCloud/jwt.md)
+    - [RBAC](98SpringBootCloud/RBAC.md)
+    - [SSO](98SpringBootCloud/SSO.md)
     
 * [over]()
 
