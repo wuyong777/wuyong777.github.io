@@ -35,6 +35,12 @@
     <h4>通义千问</h4>
     <p>阿里巴巴人工智能模型</p>
   </a>
+  
+  <a href="https://kimi.moonshot.cn" target="_blank" class="nav-link">
+    <img src="img/kimi-moonshot.png" class="nav-icon">
+    <h4>Kimi Moonshot</h4>
+    <p>帮你看更大的世界</p>
+  </a>
 
   <a href="https://leetcode.com" target="_blank" class="nav-link">
     <img src="img/leetcode.png" class="nav-icon">
@@ -47,11 +53,17 @@
     <h4>Hello Algo</h4>
     <p>在线算法学习资源</p>
   </a>
+
+  <a href="https://chat.openai.com" target="_blank" class="nav-link">
+    <img src="img/openai-chat.png" class="nav-icon">
+    <h4>ChatGPT</h4>
+    <p>Open AI 交互式聊天平台</p>
+  </a>
   
-  <a href="https://kimi.moonshot.cn" target="_blank" class="nav-link">
-    <img src="img/kimi-moonshot.png" class="nav-icon">
-    <h4>Kimi Moonshot</h4>
-    <p>帮你看更大的世界</p>
+  <a href="https://gemini.google.com" target="_blank" class="nav-link">
+    <img src="img/gemini.png" class="nav-icon">
+    <h4>Gemini</h4>
+    <p>Google AI 交互式聊天平台</p>
   </a>
 </div>
 
