@@ -16,7 +16,7 @@
     * [Java 集合](6Java/Java/Java集合.md)
     * [Java 并发](6Java/Java/Java并发.md)
     * [Java IO](6Java/Java/JavaIO.md)
-    * [Java8新特性](6Java/Java/Java8新特性.md)
+    * [Java8 新特性](6Java/Java/Java8新特性.md)
     
     - [JVM](6Java/JVM/JVM.md)
     
