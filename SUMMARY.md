@@ -57,6 +57,12 @@
 
     - [RBAC](98SpringBootCloud/RBAC.md)
     - [SSO](98SpringBootCloud/SSO.md)
+    - [OAuth2](98SpringBootCloud/OAuth2.md)
+    - [FileUpload](98SpringBootCloud/FileUpload.md)
+    - [VideoPlay](98SpringBootCloud/VideoPlay.md)
+    - [WebSocket](98SpringBootCloud/WebSocket.md)
+    - [WXPay](98SpringBootCloud/WXPay.md)
+    - [Activiti7](98SpringBootCloud/Activiti7.md)
     
 * [over]()
 
