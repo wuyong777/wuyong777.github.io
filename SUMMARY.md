@@ -62,6 +62,7 @@
     - [VideoPlay](98SpringBootCloud/VideoPlay.md)
     - [WebSocket](98SpringBootCloud/WebSocket.md)
     - [WXPay](98SpringBootCloud/WXPay.md)
+    - [WXLogin](98SpringBootCloud/WXLogin.md)
     - [Activiti7](98SpringBootCloud/Activiti7.md)
     
 * [over]()
