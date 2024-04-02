@@ -35,7 +35,7 @@
     <h4>通义千问</h4>
     <p>阿里巴巴人工智能模型</p>
   </a>
-  
+
   <a href="https://kimi.moonshot.cn" target="_blank" class="nav-link">
     <img src="img/kimi-moonshot.png" class="nav-icon">
     <h4>Kimi Moonshot</h4>
@@ -59,11 +59,17 @@
     <h4>ChatGPT</h4>
     <p>Open AI 交互式聊天平台</p>
   </a>
-  
+
   <a href="https://gemini.google.com" target="_blank" class="nav-link">
     <img src="img/gemini.png" class="nav-icon">
     <h4>Gemini</h4>
     <p>Google AI 交互式聊天平台</p>
+  </a>
+  
+  <a href="  https://docs.oracle.com/en/java/javase/index.html" target="_blank" class="nav-link">
+    <img src="img/java-logo.png" class="nav-icon">
+    <h4>Java API</h4>
+    <p>Java SE API 官方文档</p>
   </a>
 </div>
 
