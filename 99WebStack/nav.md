@@ -65,11 +65,17 @@
     <h4>Gemini</h4>
     <p>Google AI 交互式聊天平台</p>
   </a>
-  
-  <a href="  https://docs.oracle.com/en/java/javase/index.html" target="_blank" class="nav-link">
+
+  <a href="https://docs.oracle.com/en/java/javase/index.html" target="_blank" class="nav-link">
     <img src="img/java-logo.png" class="nav-icon">
     <h4>Java API</h4>
     <p>Java SE API 官方文档</p>
+  </a>
+  
+  <a href="https://ai-bot.cn" target="_blank" class="nav-link">
+    <img src="img/ai-bot.png" class="nav-icon">
+    <h4>ai-bot</h4>
+    <p>AI 工具集</p>
   </a>
 </div>
 
