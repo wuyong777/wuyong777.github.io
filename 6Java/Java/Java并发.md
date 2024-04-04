@@ -8,7 +8,7 @@
 
 ![](img-concurrent/juc.png)
 
-# 相关概念
+# 线程的相关概念
 
 1. **进程**：
    - 进程是操作系统中资源分配和调度的基本单位，代表着系统中运行的一个程序实例。
@@ -56,9 +56,7 @@ Java实现多线程的方式主要有以下4种：
 3. **实现Callable接口** 
 4. **开启线程池**
 
-代码示例：
-
-**继承Thread类**
+## 继承Thread类
 
 ```java
 public class MyThread extends Thread {
@@ -74,6 +72,8 @@ public class MyThread extends Thread {
     }
 }
 ```
+
+### start()方法源码
 
 **注意：**Java语言本身是不能直接开启线程的，通过查看**start()方法的源代码**，可以看到Java是通过调用一个叫**start0()的native方法**来实现开启线程的操作的。
 
@@ -107,7 +107,19 @@ public synchronized void start() {
     private native void start0();
 ```
 
-**实现Runnable接口**
+### Java中的线程
+
+- **Java默认有两个线程：main 和 GC**
+- main是用户线程
+- GC是守护线程
+
+用户线程和守护线程：
+
+- 用户线程：自定义线程（比如new Thread()）
+- 守护线程：后台中一种特殊的线程，比如垃圾回收
+- **当JVM中所有的用户线程都结束后，JVM会自动关闭，即使此时还有守护线程在运行。**
+
+## 实现Runnable接口
 
 ```java
 public class RunnableExample implements Runnable {
@@ -125,7 +137,7 @@ public class RunnableExample implements Runnable {
 }
 ```
 
-**实现Callable接口** 
+## 实现Callable接口
 
 ```java
 public class CallableExample implements Callable<String> {
@@ -149,7 +161,13 @@ public class CallableExample implements Callable<String> {
 }
 ```
 
-**开启线程池**
+### Runnable接口和Callable接口区别
+
+1. 是否有返回值：Runnable无返回值，Callable有返回值
+2. 是否抛出异常：call方法计算一个结果，如果不能这样做，就会抛出异常
+3. 实现方法名称不同，Runnable接口是run方法，Callable接口是call方法
+
+## 开启线程池
 
 ```java
 public class ThreadPoolExample implements Runnable {
@@ -174,12 +192,15 @@ public class ThreadPoolExample implements Runnable {
 }
 ```
 
-# 多线程编程步骤
+# 多线程的编程步骤
 
-- 创建资源类，定义属性和操作方法
-- 创建多线程调用资源类的方法
+## 编程步骤
 
-**卖票例子：**
+**第一步：创建资源类，定义属性和操作方法**
+
+**第二步：创建多线程去调用资源类的方法**
+
+## 卖票例子
 
 ```java
 public class SaleTicket {
@@ -187,7 +208,7 @@ public class SaleTicket {
 
         Ticket ticket = new Ticket();
         
-        // 创建多线程调用资源类的方法:这里开启三个线程A,B,C卖票
+        // 第二步：创建多线程调用资源类的方法，这里开启三个线程A,B,C卖票
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -218,7 +239,7 @@ public class SaleTicket {
     }
 }
 
-// 创建资源类，定义属性和操作方法
+// 第一步：创建资源类，定义属性和操作方法
 class Ticket {
     private int num = 1000;
 
@@ -236,7 +257,7 @@ class Ticket {
 
 线程从开启到执行完成，会经历一些状态，这些状态一起组成了线程的生命周期。
 
-**线程的状态：**
+## 线程的状态
 
 ```java
 /**
@@ -258,7 +279,7 @@ public enum State {
     }
 ```
 
-**线程的生命周期：**
+## 线程的生命周期
 
 ![](img-concurrent/java-thread-lifecycle.png)
 
@@ -304,16 +325,27 @@ public enum State {
 
    一旦线程达到终止状态，就不能再次变为其他状态。
 
+## wait()和sleep()的区别
+
+1. 来自不同的类
+
+   wait => Object，任何对象实例都能调用
+
+   sleep => Thread，Thread的静态方法
+
+2. 关于锁的释放
+
+   wait会释放锁；sleep不会释放锁，它也不需要占用锁
+
+3. 使用范围、捕获异常不同
+
+   wait：必须在同步代码块中使用，不需要捕获异常
+
+   sleep：可以在任何地方使用，必须要捕获异常
+
 # Synchronized与Lock锁
 
-## 多线程编程步骤
-
-- 创建资源类，定义属性和操作方法
-- 创建多线程调用资源类的方法
-
-**卖票例子：**
-
-- **synchronized实现**
+## synchronized实现卖票例子
 
 ```java
 public class SaleTicket {
@@ -366,7 +398,7 @@ class Ticket {
 
 ```
 
-- **lock锁实现**
+## lock锁实现卖票例子
 
 ```java
 import java.util.concurrent.locks.ReentrantLock;
@@ -421,36 +453,37 @@ class LTicket {
 
 ## 两者对比
 
-- **synchronized**
+| 特性           | Synchronized                | Lock接口（如ReentrantLock）                          |
+| -------------- | --------------------------- | ---------------------------------------------------- |
+| 语法级别       | 关键字（JVM内置）           | 类/接口（API级别）                                   |
+| 使用方式       | 修饰方法或代码块            | 显示调用lock/unlock方法                              |
+| 自动释放锁     | 发生异常时会自动释放        | 必须手动unlock                                       |
+| 异常安全性     | 内置异常安全                | 需要在finally块中unlock确保释放                      |
+| 可中断性       | 不支持中断                  | 支持中断（tryLockInterruptibly）                     |
+| 超时等待       | 不支持                      | 支持超时等待（tryLock(long timeout, TimeUnit unit)） |
+| 非阻塞尝试获取 | 不支持                      | 支持非阻塞尝试（tryLock()）                          |
+| 锁定粒度       | 对象级别的锁                | 支持更细粒度的锁控制                                 |
+| 公平性         | 非公平锁（默认）            | 可选公平锁或非公平锁                                 |
+| 锁绑定条件     | 不直接支持                  | 提供 Condition 接口，可精确唤醒线程                  |
+| 性能优化       | JVM 1.6及以后有多种优化策略 | 用户可以根据场景选择合适的锁实现                     |
 
-  - 内置关键字，使用简单，无需手动获取和释放锁。
-  - 作用于方法或代码块，隐式关联对象锁。
-  - 线程在获取不到锁时会自动进入阻塞状态，无需手动处理异常。
-  - 不支持超时获取锁和尝试获取锁，也无法得知锁的状态。
-  - 发生异常时会自动释放锁，避免死锁的发生。
-  - 支持可重入，即持有锁的线程可以再次申请同一把锁。
-
-- **Lock接口及其实现类（如ReentrantLock）**
-
-  - 是Java并发包（java.util.concurrent）中提供的一个接口，相比`synchronized`更灵活、功能更多样。
-  - 需要手动调用`lock()`和`unlock()`方法来获取和释放锁。
-  - 支持尝试获取锁（tryLock()）、超时获取锁（tryLock(long timeout, TimeUnit unit)）以及公平锁和非公平锁的选择。
-  - 可以在finally块中释放锁以确保锁一定会被释放，增强了代码的健壮性。
-  - 通过`newCondition()`方法可以创建Condition对象，实现多路分支通知和等待，比`synchronized`的wait()/notify()机制更强大和灵活。
-  - 也支持可重入，如ReentrantLock。
-
-  综上所述，虽然`synchronized`使用起来相对简单，但对于更复杂的同步需求，如超时控制、中断、多条件等待等场景，使用`Lock`接口及其实现类能提供更多的控制能力。同时，`Lock`在性能方面也有一定的优化空间。
+注：`synchronized` 在 Java 1.6 及更高版本进行了大量性能优化，例如适应性自旋、锁消除、锁粗化、轻量级锁和偏向锁等机制，使其在许多常见场景下的性能并不一定逊色于 Lock。然而，在高度竞争和需要更多高级特性的场合，Lock 接口及其实现提供了更大的灵活性和控制力。
 
 # 八锁现象
 
-“8锁现象”（Eight Lock Phenomena）是在Java并发编程中讨论同步机制时提到的一个概念，它并不是指代具体的8种锁类型，而是用来形象化表示在使用`synchronized`关键字时可能出现的几种典型的同步状况或问题。这些状况揭示了如何正确理解和运用`synchronized`关键字，以及在不同的上下文中锁住的对象和锁的粒度。
+## 简介
+
+- “8锁现象”（Eight Lock Phenomena）是在Java并发编程中讨论同步机制时提到的一个概念，它并不是指代具体的8种锁类型，而是用来形象化表示在使用`synchronized`关键字时可能出现的几种典型的同步状况或问题。
+- 这些状况揭示了如何正确理解和运用`synchronized`关键字，以及在不同的上下文中锁住的对象和锁的粒度。
+
+## 总结
 
 1. **普通同步方法**：锁住的是调用方法的对象实例，谁先拿到锁谁先执行，同一个对象拿到的是同一把锁。
 2. **静态同步方法**：锁住的是类的Class对象（ClassName.Class），由于类只加载一 次，因此同一类的所有实例共享同一把锁。
 3. **同步代码块**：锁住的是Synchonized 括号里配置的对象，可以指定任意对象作为锁，与普通同步方法的区别在于锁对象的灵活性。
 4. **非静态非同步方法：**由于不受锁控制，因此不受锁的影响。
 
-**代码举例：**
+## 代码举例
 
 1. **两个同步方法，同一个对象演示**
 
@@ -819,7 +852,7 @@ class LTicket {
    ```
    
 
-# 线程间通
+# 线程间通信
 
 ## 概念
 
@@ -843,7 +876,7 @@ class LTicket {
 3. Object 类的 notifyAll() 方法
    - 唤醒当前对象监视器上等待的所有线程。
 
-## 案例演示
+### 代码演示
 
 - **模拟生产者消费者模型**
 
@@ -908,30 +941,16 @@ class Share {
 
 ```
 
-## 虚假唤醒
-
-> 当上面的例子中，线程数量从两个增加到四个，计算结果就会出错：
-> thread-a 线程：1
-> thread-c 线程：2
-> thread-a 线程：3
-> thread-b 线程：2
-> thread-d 线程：1
-
-**原因：**使用 if 的情况（仅判断一次）
-
-> 假设C线程判断`num<=0`后，进行等待（在哪里等就在哪里醒），被别的线程唤醒后不会再进行`num判断`，会导致数值不符合预期。
-
-![](img-concurrent/if.png)
-
-**解决：**使用 while 解决问题
-
-> 要解决虚假唤醒问题，就需要对线程间通信时的判断条件使用 while 循环结构来执行，而不是 if 分支判断。
-
-![](img-concurrent/while.png)
-
 **Lock代码实现**
 
 ```java
+/**
+* 与上面案例使用的方法不同
+* Condition.await()--->Object.wait()
+* Condition.signal()--->Object.notify()
+* Condition.signalAll()--->Object.notifyAll()
+*/
+
 public class Demo02 {
     public static void main(String[] args) {
         Share share = new Share();
@@ -1018,6 +1037,29 @@ class Share {
 
 ```
 
+### 虚假唤醒（使用 while 解决）
+
+> 当上面的例子中，线程数量从两个增加到四个，计算结果就会出错：
+> thread-a 线程：1
+> thread-c 线程：2
+> thread-a 线程：3
+> thread-b 线程：2
+> thread-d 线程：1
+
+**原因：**使用 if 的情况（仅判断一次）
+
+> 假设C线程判断`num<=0`后，进行等待（在哪里等就在哪里醒），被别的线程唤醒后不会再进行`num判断`，会导致数值不符合预期。
+
+![](img-concurrent/if.png)
+
+**解决：**使用 while 解决问题
+
+> 要解决虚假唤醒问题，就需要对线程间通信时的判断条件使用 while 循环结构来执行，而不是 if 分支判断。
+
+![](img-concurrent/while.png)
+
+
+
 ## 定制化通信
 
 可以通过可重入锁的多种情况来达成，每把钥匙都对应同一把重入锁
@@ -1038,7 +1080,7 @@ conditionA.await();  //A等待
 conditionA.signal(); //唤醒A
 ```
 
-## 代码演示
+### 代码演示
 
 - A 线程打印 5 次 A，B 线程打印 10 次 B，C 线程打印 15 次 C
 - 按照此顺序循环 10 轮
@@ -1357,7 +1399,149 @@ public class ParkingLotExample {
 /*在这个例子中，Semaphore初始化为3，代表有3个车位。每辆车作为一个线程运行，当尝试获取一个车位（调用parkingSpots.acquire()）时，如果车位已满（即信号量的许可证为0），那么该线程将被阻塞直至有车离开并释放车位。当车辆离开时，会调用parkingSpots.release()释放车位，允许下一辆车停入。这样就能保证任何时候最多只有3辆车在车位上停放。*/
 ```
 
-# 多线程锁
+# 读写锁
+
+## 概念
+
+一个资源可以被多个读线程访问，也可以被一个写线程访问。但不能同时存在读写线程，读写互斥，读读共享。
+
+- 读写锁：ReentrantReadWriteLock
+
+  1、 读锁为ReentrantReadWriteLock.ReadLock，readLock()方法
+  2、 写锁为ReentrantReadWriteLock.WriteLock，writeLock()方法
+
+- 创建读写锁对象：`private ReadWriteLock rwLock = new ReentrantReadWriteLock();`
+
+  1、写锁 加锁`rwLock.writeLock().lock();`
+  2、写锁 解锁`rwLock.writeLock().unlock();`
+  3、读锁 加锁`rwLock.readLock().lock();`
+  4、读锁 解锁`rwLock.readLock().unlock();`
+
+**代码演示：**
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+public class ReadWriteLockDemo {
+    public static void main(String[] args) {
+        MyCache myCache = new MyCache();
+
+        // 写锁线程
+        for (int i = 1; i <= 20; i++) {
+            int num = i;
+            new Thread(() -> {
+                myCache.put(num + "", num + "");
+            }, String.valueOf(i)).start();
+        }
+
+        // 读锁线程
+        for (int i = 1; i <= 20; i++) {
+            int num = i;
+            new Thread(() -> {
+                myCache.get(num + "");
+            }, String.valueOf(i)).start();
+        }
+    }
+}
+
+
+class MyCache {
+
+    ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+    private volatile Map<String, Object> map = new HashMap<>();
+
+    // 写数据
+    public void put(String key, Object value) {
+        // 写锁 加锁
+        readWriteLock.writeLock().lock();
+        try {
+            System.out.println(Thread.currentThread().getName() + " 正在写操作" + key);
+            // 模拟写操作花时
+            TimeUnit.MICROSECONDS.sleep(300);
+            
+            map.put(key, value);
+            System.out.println(Thread.currentThread().getName() + " 写完了" + key);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            // 写锁 解锁
+            readWriteLock.writeLock().unlock();
+        }
+    }
+
+    // 读数据
+    public Object get(String key) {
+        Object result = null;
+        // 读锁 加锁
+        readWriteLock.readLock().lock();
+        try {
+            System.out.println(Thread.currentThread().getName() + " 正在读操作" + key);
+            TimeUnit.MICROSECONDS.sleep(300);
+            result = map.get(key);
+            System.out.println(Thread.currentThread().getName() + " 读完了" + key);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            // 读锁 解锁
+            readWriteLock.readLock().unlock();
+        }
+        return result;
+    }
+
+}
+
+```
+
+## 锁的局限性
+
+1. 无锁：多线程抢夺资源
+2. synchronized和ReentrantLock：都是独占，每次只可以一个操作，不能共享
+3. ReentrantReadWriteLock：读读可以共享，提升性能，但是不能多人写
+4. 缺点：造成死锁（一直读，不能写），读进程不能写，写进程可以读。
+5. 通过（写锁释放前可以读这一特性）进行锁降级，可以提高效率
+
+## 写锁的锁降级
+
+1. 目的： 写锁降级为读锁（一般等级写锁高于读锁）（利用写锁时可以读这一特性）
+2. 正常情况是获取写锁，释放写锁，获取读锁，释放读锁
+3. 降级流程：获取写锁->获取读锁->释放写锁->释放读锁--->**其实就是在写锁释放前进行获取读锁，可以提高线程效率**
+
+**代码演示：**
+
+```java
+public class Demo1 {
+
+    public static void main(String[] args) {
+        //可重入读写锁对象
+        ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+        ReentrantReadWriteLock.ReadLock readLock = rwLock.readLock();//读锁
+        ReentrantReadWriteLock.WriteLock writeLock = rwLock.writeLock();//写锁
+
+        //锁降级
+        //1 获取写锁
+        writeLock.lock();
+        System.out.println("laptoy");
+        
+        //2 获取读锁
+        readLock.lock();
+        System.out.println("---read---");
+        
+        //3 释放写锁
+        writeLock.unlock();
+
+        //4 释放读锁
+        readLock.unlock();
+    }
+}
+
+```
+
+# Java中各种锁的理解
+
+![]()
 
 ## 公平锁与非公平锁
 
@@ -1520,145 +1704,9 @@ public class DeadLock {
 
 ![](img-concurrent/dead-lock.png)
 
-## 读写锁
-
-### 概念
-
-一个资源可以被多个读线程访问，也可以被一个写线程访问。但不能同时存在读写线程，读写互斥，读读共享。
-
-- 读写锁：ReentrantReadWriteLock
-
-  1、 读锁为ReentrantReadWriteLock.ReadLock，readLock()方法
-  2、 写锁为ReentrantReadWriteLock.WriteLock，writeLock()方法
-
-- 创建读写锁对象：`private ReadWriteLock rwLock = new ReentrantReadWriteLock();`
-
-  1、写锁 加锁`rwLock.writeLock().lock();`
-  2、写锁 解锁`rwLock.writeLock().unlock();`
-  3、读锁 加锁`rwLock.readLock().lock();`
-  4、读锁 解锁`rwLock.readLock().unlock();`
-
-**代码演示：**
-
-```java
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-public class ReadWriteLockDemo {
-    public static void main(String[] args) {
-        MyCache myCache = new MyCache();
-
-        // 写锁线程
-        for (int i = 1; i <= 20; i++) {
-            int num = i;
-            new Thread(() -> {
-                myCache.put(num + "", num + "");
-            }, String.valueOf(i)).start();
-        }
-
-        // 读锁线程
-        for (int i = 1; i <= 20; i++) {
-            int num = i;
-            new Thread(() -> {
-                myCache.get(num + "");
-            }, String.valueOf(i)).start();
-        }
-    }
-}
+### 排查死锁
 
 
-class MyCache {
-
-    ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
-    private volatile Map<String, Object> map = new HashMap<>();
-
-    // 写数据
-    public void put(String key, Object value) {
-        // 写锁 加锁
-        readWriteLock.writeLock().lock();
-        try {
-            System.out.println(Thread.currentThread().getName() + " 正在写操作" + key);
-            // 模拟写操作花时
-            TimeUnit.MICROSECONDS.sleep(300);
-            
-            map.put(key, value);
-            System.out.println(Thread.currentThread().getName() + " 写完了" + key);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            // 写锁 解锁
-            readWriteLock.writeLock().unlock();
-        }
-    }
-
-    // 读数据
-    public Object get(String key) {
-        Object result = null;
-        // 读锁 加锁
-        readWriteLock.readLock().lock();
-        try {
-            System.out.println(Thread.currentThread().getName() + " 正在读操作" + key);
-            TimeUnit.MICROSECONDS.sleep(300);
-            result = map.get(key);
-            System.out.println(Thread.currentThread().getName() + " 读完了" + key);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            // 读锁 解锁
-            readWriteLock.readLock().unlock();
-        }
-        return result;
-    }
-
-}
-
-```
-
-### 锁的局限性
-
-1. 无锁：多线程抢夺资源
-2. synchronized和ReentrantLock：都是独占，每次只可以一个操作，不能共享
-3. ReentrantReadWriteLock：读读可以共享，提升性能，但是不能多人写
-4. 缺点：造成死锁（一直读，不能写），读进程不能写，写进程可以读。
-5. 通过（写锁释放前可以读这一特性）进行锁降级，可以提高效率
-
-### 写锁的锁降级
-
-1. 目的： 写锁降级为读锁（一般等级写锁高于读锁）（利用写锁时可以读这一特性）
-2. 正常情况是获取写锁，释放写锁，获取读锁，释放读锁
-3. 降级流程：获取写锁->获取读锁->释放写锁->释放读锁--->**其实就是在写锁释放前进行获取读锁，可以提高线程效率**
-
-**代码演示：**
-
-```java
-public class Demo1 {
-
-    public static void main(String[] args) {
-        //可重入读写锁对象
-        ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
-        ReentrantReadWriteLock.ReadLock readLock = rwLock.readLock();//读锁
-        ReentrantReadWriteLock.WriteLock writeLock = rwLock.writeLock();//写锁
-
-        //锁降级
-        //1 获取写锁
-        writeLock.lock();
-        System.out.println("laptoy");
-        
-        //2 获取读锁
-        readLock.lock();
-        System.out.println("---read---");
-        
-        //3 释放写锁
-        writeLock.unlock();
-
-        //4 释放读锁
-        readLock.unlock();
-    }
-}
-
-```
 
 # 阻塞队列
 
@@ -1823,6 +1871,10 @@ public class Demo1 {
    ```
 
 # 线程池
+
+- **三大方式**
+- **七大参数**
+- **四种拒绝策略**
 
 ## 概念
 
@@ -2219,30 +2271,6 @@ public class Demo01 {
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # stream流式计算
 
 ## 四大函数式接口
@@ -2258,7 +2286,12 @@ public class Demo01 {
 
 
 
+
+
+
+
 > 引用：
 >
 > - 学习JUC高并发编程这一篇就够了（上篇）https://blog.csdn.net/apple_53947466/article/details/123656594
 > - 学习JUC高并发编程这一篇就够了（下篇）https://blog.csdn.net/apple_53947466/article/details/123664861
+> - JUC基础【万字篇】https://blog.csdn.net/qq_43417581/article/details/127217919
