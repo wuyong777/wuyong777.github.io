@@ -112,57 +112,62 @@
 - **BioServer：**
 
 ```java
+package com.walle.javaIO.bioDemo;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 /**
- * @Author 三分恶
- * @Date 2023/4/30
- * @Description BIO服务端
+ * BIO（同步阻塞IO）模式下的服务器端示例类。
+ * @Author wuyong
+ * @Date 2024-04-04
  */
 public class BioServer {
-
     public static void main(String[] args) throws IOException {
-        //定义一个ServerSocket服务端对象，并为其绑定端口号
+        // 创建ServerSocket对象，并绑定到8888端口
         ServerSocket server = new ServerSocket(8888);
         System.out.println("===========BIO服务端启动================");
-        //对BIO来讲，每个Socket都需要一个Thread
+
+        // 不断监听客户端连接，每个连接都创建一个新的线程处理
         while (true) {
-            //监听客户端Socket连接
+            // 接受客户端的Socket连接
             Socket socket = server.accept();
-            new BioServerThread(socket).start();
+            new BioServerThread(socket).start(); // 启动处理线程
         }
 
     }
 
     /**
-     * BIO Server线程
+     * 处理客户端请求的线程类。
+     * 使用同步阻塞IO方式读取客户端消息并回复。
      */
-    static class BioServerThread extends Thread{
-        //socket连接
+    static class BioServerThread extends Thread {
+        // 客户端的Socket连接
         private Socket socket;
-        public BioServerThread(Socket socket){
-            this.socket=socket;
+
+        public BioServerThread(Socket socket) {
+            this.socket = socket;
         }
 
         @Override
         public void run() {
             try {
-                //从socket中获取输入流
-                InputStream inputStream=socket.getInputStream();
-                //转换为
-                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
+                // 读取客户端发送的消息
+                InputStream inputStream = socket.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 String msg;
-                //从Buffer中读取信息，如果读取到信息则输出
-                while((msg=bufferedReader.readLine())!=null){
-                    System.out.println("收到客户端消息："+msg);
+                while ((msg = bufferedReader.readLine()) != null) {
+                    System.out.println("收到客户端消息：" + msg);
                 }
 
-                //从socket中获取输出流
-                OutputStream outputStream=socket.getOutputStream();
-                PrintStream printStream=new PrintStream(outputStream);
-                //通过输出流对象向客户端传递信息
+                // 向客户端发送消息
+                OutputStream outputStream = socket.getOutputStream();
+                PrintStream printStream = new PrintStream(outputStream);
                 printStream.println("你好，吊毛！");
-                //清空输出流
-                printStream.flush();
-                //关闭socket
+                printStream.flush(); // 刷新输出流，确保消息被发送
+
+                // 关闭Socket的输出流，表示服务端已发送完消息
                 socket.shutdownOutput();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -170,50 +175,60 @@ public class BioServer {
         }
     }
 }
-
 ```
 
 - **BioClient：**
 
 ```java
+package com.walle.javaIO.bioDemo;
+
+import java.io.*;
+import java.net.Socket;
+import java.util.Arrays;
+import java.util.List;
+
 /**
- * @Author 三分恶
- * @Date 2023/4/30
- * @Description BIO客户端
+ * BIO（同步阻塞IO）模式的客户端示例类。
+ * 该类用于创建一个简单的客户端，它会连接到服务器，发送一个消息，然后接收并打印服务器的响应。
+ *
+ * @Author wuyong
+ * @Date 2024-04-04
  */
 public class BioClient {
-
     public static void main(String[] args) throws IOException {
-        List<String> names= Arrays.asList("帅哥","靓仔","坤坤");
-        //通过循环创建多个多个client
-        for (String name:names){
-            //创建socket并根据IP地址与端口连接服务端
-            Socket socket=new Socket("127.0.0.1",8888);
+        List<String> names = Arrays.asList("帅哥", "靓仔", "坤坤");
+        // 循环创建多个客户端连接，每个连接发送不同的问候消息
+        for (String name : names) {
+            // 创建Socket对象并连接到服务器
+            Socket socket = new Socket("127.0.0.1", 8888);
             System.out.println("===========BIO客户端启动================");
-            //从socket中获取字节输出流
-            OutputStream outputStream=socket.getOutputStream();
-            //通过输出流向服务端传递信息
-            String hello="你好，"+name+"!";
+
+            // 获取Socket的输出流，用于向服务器发送数据
+            OutputStream outputStream = socket.getOutputStream();
+            // 构建要发送的消息，并将其转换为字节流发送给服务器
+            String hello = "你好，" + name + "!";
             outputStream.write(hello.getBytes());
-            //清空流，关闭socket输出
+
+            // 清空输出流并关闭Socket的输出功能，准备读取输入流
             outputStream.flush();
             socket.shutdownOutput();
 
-            //从socket中获取字节输入流
-            InputStream inputStream=socket.getInputStream();
-            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
-            //读取服务端消息
+            // 获取Socket的输入流，用于读取服务器返回的数据
+            InputStream inputStream = socket.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            // 读取并打印服务器发送的消息
             String msg;
-            while((msg=bufferedReader.readLine())!=null){
-                System.out.println("收到服务端消息："+msg);
+            while ((msg = bufferedReader.readLine()) != null) {
+                System.out.println("收到服务端消息：" + msg);
             }
+
+            // 关闭输入流、输出流和Socket
             inputStream.close();
             outputStream.close();
             socket.close();
         }
     }
 }
-
 ```
 
 - 先启动`BioServer`，再启动`BioClient`，运行结果：
@@ -223,7 +238,6 @@ public class BioClient {
 收到客户端消息：你好，帅哥!
 收到客户端消息：你好，靓仔!
 收到客户端消息：你好，坤坤!
-
 ```
 
 ```java
@@ -233,7 +247,6 @@ public class BioClient {
 收到服务端消息：你好，吊毛！
 ===========BIO客户端启动================
 收到服务端消息：你好，吊毛！
-
 ```
 
 - 在上述Java-BIO的通信过程中，如果客户端一直没有发送消息过来，服务端则会一直等待下去，从而服务端陷入阻塞状态。同理，由于客户端也一直在等待服务端的消息，如果服务端一直未响应消息回来，客户端也会陷入阻塞状态。
@@ -263,145 +276,169 @@ public class BioClient {
 - **NioServer：**
 
 ```java
+package com.walle.javaIO.nioDemo;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.Iterator;
+
 /**
- * @Author 三分恶
- * @Date 2023/4/30
- * @Description NIO服务端
+ * NIO服务器示例，用于演示非阻塞I/O的服务器端实现。
+ * @Author wuyong
+ * @Date 2024-04-04
  */
 public class NioServer {
-
     public static void main(String[] args) throws IOException {
-        //创建一个选择器selector
-        Selector selector= Selector.open();
-        //创建serverSocketChannel
-        ServerSocketChannel serverSocketChannel=ServerSocketChannel.open();
-        //绑定端口
+        // 初始化选择器
+        Selector selector = Selector.open();
+        // 打开服务端套接字通道
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        // 绑定端口
         serverSocketChannel.socket().bind(new InetSocketAddress(8888));
-        //必须得设置成非阻塞模式
+        // 设置非阻塞模式
         serverSocketChannel.configureBlocking(false);
-        //将channel注册到selector并设置监听事件为ACCEPT
+        // 注册选择器，监听连接请求
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         System.out.println("===========NIO服务端启动============");
-        while(true){
-            //超时等待
-            if(selector.select(1000)==0){
+
+        while (true) {
+            // 超时等待客户端连接，避免无限阻塞
+            if (selector.select(1000) == 0) {
                 System.out.println("===========NIO服务端超时等待============");
                 continue;
             }
-            // 有客户端请求被轮询监听到，获取返回的SelectionKey集合
-            Iterator<SelectionKey> iterator=selector.selectedKeys().iterator();
-            //迭代器遍历SelectionKey集合
-            while (iterator.hasNext()){
-                SelectionKey key=iterator.next();
-                // 判断是否为ACCEPT事件
-                if (key.isAcceptable()){
-                    // 处理接收请求事件
-                    SocketChannel socketChannel=((ServerSocketChannel) key.channel()).accept();
-                    //非阻塞模式
+
+            // 处理就绪的客户端连接请求
+            Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
+            while (iterator.hasNext()) {
+                SelectionKey key = iterator.next();
+
+                // 处理连接请求
+                if (key.isAcceptable()) {
+                    SocketChannel socketChannel = ((ServerSocketChannel) key.channel()).accept();
                     socketChannel.configureBlocking(false);
-                    // 注册到Selector并设置监听事件为READ
-                    socketChannel.register(selector,SelectionKey.OP_READ, ByteBuffer.allocate(1024));
+                    // 注册读事件，准备读取客户端数据
+                    socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(1024));
                     System.out.println("成功连接客户端");
                 }
-                //判断是否为READ事件
-                if (key.isReadable()){
-                    SocketChannel socketChannel = (SocketChannel) key.channel();
 
+                // 处理读事件，读取客户端数据
+                if (key.isReadable()) {
+                    SocketChannel socketChannel = (SocketChannel) key.channel();
                     try {
-                        // 获取以前设置的附件对象，如果没有则新建一个
                         ByteBuffer buffer = (ByteBuffer) key.attachment();
                         if (buffer == null) {
                             buffer = ByteBuffer.allocate(1024);
                             key.attach(buffer);
                         }
-                        // 清空缓冲区
                         buffer.clear();
-                        // 将通道中的数据读到缓冲区
                         int len = socketChannel.read(buffer);
                         if (len > 0) {
                             buffer.flip();
                             String message = new String(buffer.array(), 0, len);
                             System.out.println("收到客户端消息：" + message);
                         } else if (len < 0) {
-                            // 接收到-1，表示连接已关闭
+                            // 关闭连接
                             key.cancel();
                             socketChannel.close();
                             continue;
                         }
-                        // 注册写事件，下次向客户端发送消息
+                        // 准备写事件，向客户端发送消息
                         socketChannel.register(selector, SelectionKey.OP_WRITE, buffer);
                     } catch (IOException e) {
-                        // 取消SelectionKey并关闭对应的SocketChannel
+                        // 异常处理：关闭连接
                         key.cancel();
                         socketChannel.close();
                     }
                 }
-                //判断是否为WRITE事件
-                if (key.isWritable()){
+
+                // 处理写事件，向客户端发送消息
+                if (key.isWritable()) {
                     SocketChannel socketChannel = (SocketChannel) key.channel();
-                    //获取buffer
                     ByteBuffer buffer = (ByteBuffer) key.attachment();
                     String hello = "你好，坤坤！";
-                    //清空buffer
                     buffer.clear();
-                    //buffer中写入消息
                     buffer.put(hello.getBytes());
                     buffer.flip();
-                    //向channel中写入消息
                     socketChannel.write(buffer);
                     buffer.clear();
                     System.out.println("向客户端发送消息：" + hello);
-                    // 设置下次读写操作，向 Selector 进行注册
+                    // 准备读事件，等待客户端的下一次消息
                     socketChannel.register(selector, SelectionKey.OP_READ, buffer);
                 }
-                // 移除本次处理的SelectionKey,防止重复处理
+
+                // 移除已处理的SelectionKey
                 iterator.remove();
             }
         }
 
     }
 }
-
 ```
 
 - **NioClient：**
 
 ```java
-public class NioClient {
+package com.walle.javaIO.nioDemo;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.SocketChannel;
+
+/**
+ * NIO客户端示例。用于演示如何使用非阻塞I/O与服务器进行通信。
+ * @Author wuyong
+ * @Date 2024-04-04
+ */
+public class NioClient {
     public static void main(String[] args) throws IOException {
-        // 创建SocketChannel并指定ip地址和端口号
+        // 创建SocketChannel并初始化连接地址
         SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 8888));
         System.out.println("==============NIO客户端启动================");
-        // 非阻塞模式
+
+        // 设置SocketChannel为非阻塞模式
         socketChannel.configureBlocking(false);
+
+        // 准备发送的消息
         String hello="你好，靓仔！";
         ByteBuffer buffer = ByteBuffer.wrap(hello.getBytes());
-        // 向通道中写入数据
+
+        // 向服务器发送消息
         socketChannel.write(buffer);
         System.out.println("发送消息：" + hello);
         buffer.clear();
-        // 将channel注册到Selector并监听READ事件
+
+        // 注册Selector并设置监听读事件，为接收服务器响应做准备
         socketChannel.register(Selector.open(), SelectionKey.OP_READ, buffer);
+
         while (true) {
-            // 读取服务端数据
+            // 从服务器读取数据
             if (socketChannel.read(buffer) > 0) {
                 buffer.flip();
+                // 处理接收到的数据
                 String msg = new String(buffer.array(), 0, buffer.limit());
                 System.out.println("收到服务端消息：" + msg);
-                break;
+                break; // 接收到消息后退出循环
             }
         }
-        // 关闭输入流
+
+        // 关闭SocketChannel的输入流，准备关闭连接
         socketChannel.shutdownInput();
-        // 关闭SocketChannel连接
+        // 关闭SocketChannel
         socketChannel.close();
     }
 }
-
 ```
 
-- 先运行NioServer，再运行NioClient，运行结果：
+- 先运行`NioServer`，再运行`NioClient`，运行结果：
 
 ```java
 ===========NIO服务端启动============
@@ -410,14 +447,12 @@ public class NioClient {
 成功连接客户端
 收到客户端消息：你好，靓仔！
 向客户端发送消息：你好，坤坤！
-
 ```
 
 ```java
 ==============NIO客户端启动================
 发送消息：你好，靓仔！
 收到服务端消息：你好，坤坤！
-
 ```
 
 - 我们在这个案例里实现了一个比较简单的Java NIO 客户端服务端通信，里面有两个小的点需要注意，注册到选择器上的通道都必须要为非阻塞模型，同时通过缓冲区传输数据时，必须要调用`flip()`方法切换为读取模式。
@@ -453,23 +488,36 @@ Java-NIO中有三个核心概念：**`Buffer`（缓冲区）、`Channel`（通�
 - **AioServer：**
 
 ```java
+package com.walle.javaIO.aioDemo;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousChannelGroup;
+import java.nio.channels.AsynchronousServerSocketChannel;
+import java.nio.channels.AsynchronousSocketChannel;
+import java.nio.channels.CompletionHandler;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 /**
- * @Author 三分恶
- * @Date 2023/5/1
- * @Description AIO服务端
+ * 异步IO（AIO）服务器示例类。
+ * 主要用于演示如何使用AIO方式实现一个简单的服务器，能够接收客户端连接并发送消息。
+ *
+ * @Author wuyong
+ * @Date 2024-04-04
  */
 public class AioServer {
-
     public static void main(String[] args) throws Exception {
-        // 创建异步通道组，处理IO事件
+        // 创建异步通道组，指定线程池大小，用于处理IO事件
         AsynchronousChannelGroup group = AsynchronousChannelGroup.withFixedThreadPool(10, Executors.defaultThreadFactory());
-        //创建异步服务器Socket通道，并绑定端口
+        // 创建异步服务器Socket通道，并绑定到指定端口
         AsynchronousServerSocketChannel server = AsynchronousServerSocketChannel.open(group).bind(new InetSocketAddress(8888));
         System.out.println("=============AIO服务端启动=========");
 
-        // 异步等待接收客户端连接
+        // 异步等待接收客户端连接请求
         server.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {
-            // 创建ByteBuffer
+            // 用于读取数据的ByteBuffer
             final ByteBuffer buffer = ByteBuffer.allocate(1024);
 
             @Override
@@ -477,19 +525,20 @@ public class AioServer {
                 System.out.println("客户端连接成功");
                 try {
                     buffer.clear();
-                    // 异步读取客户端发送的消息
+                    // 异步读取客户端发送的数据
                     channel.read(buffer, null, new CompletionHandler<Integer, Object>() {
                         @Override
                         public void completed(Integer len, Object attachment) {
                             buffer.flip();
+                            // 将读取到的数据转换为字符串
                             String message = new String(buffer.array(), 0, len);
                             System.out.println("收到客户端消息：" + message);
 
-                            // 异步发送消息给客户端
+                            // 异步向客户端发送消息
                             channel.write(ByteBuffer.wrap(("你好，阿坤！").getBytes()), null, new CompletionHandler<Integer, Object>() {
                                 @Override
                                 public void completed(Integer result, Object attachment) {
-                                    // 关闭输出流
+                                    // 关闭通道的输出流
                                     try {
                                         channel.shutdownOutput();
                                     } catch (IOException e) {
@@ -500,6 +549,7 @@ public class AioServer {
                                 @Override
                                 public void failed(Throwable exc, Object attachment) {
                                     exc.printStackTrace();
+                                    // 关闭通道
                                     try {
                                         channel.close();
                                     } catch (IOException e) {
@@ -512,6 +562,7 @@ public class AioServer {
                         @Override
                         public void failed(Throwable exc, Object attachment) {
                             exc.printStackTrace();
+                            // 关闭通道
                             try {
                                 channel.close();
                             } catch (IOException e) {
@@ -522,64 +573,80 @@ public class AioServer {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // 继续异步等待接收客户端连接
+                // 继续等待下一个客户端连接
                 server.accept(null, this);
             }
 
             @Override
             public void failed(Throwable exc, Object attachment) {
                 exc.printStackTrace();
-                // 继续异步等待接收客户端连接
+                // 继续等待下一个客户端连接
                 server.accept(null, this);
             }
         });
-        // 等待所有连接都处理完毕
+        // 等待异步通道组处理所有连接，直到程序被终止
         group.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
     }
 
 }
-
 ```
 
 - **AioClient：**
 
 ```java
+package com.walle.javaIO.aioDemo;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousSocketChannel;
+import java.nio.channels.CompletionHandler;
+
 /**
- * @Author 三分恶
- * @Date 2023/5/1
- * @Description AIO客户端
+ * 异步IO客户端示例类
+ * 主要用于演示如何使用异步方式与服务器进行通信。
+ *
+ * @Author wuyong
+ * @Date 2024-04-04
  */
 public class AioClient {
-
     public static void main(String[] args) throws Exception {
         // 创建异步Socket通道
         AsynchronousSocketChannel client = AsynchronousSocketChannel.open();
+
+        // 创建ByteBuffer
+        final ByteBuffer buffer = ByteBuffer.wrap(("你好，靓仔！").getBytes());
         // 异步连接服务器
         client.connect(new InetSocketAddress("127.0.0.1", 8888), null, new CompletionHandler<Void, Object>() {
-            // 创建ByteBuffer
-            final ByteBuffer buffer = ByteBuffer.wrap(("你好，靓仔！").getBytes());
-
+            // 当连接操作完成时调用此方法
             @Override
             public void completed(Void result, Object attachment) {
                 // 异步发送消息给服务器
                 client.write(buffer, null, new CompletionHandler<Integer, Object>() {
+
                     // 创建ByteBuffer
                     final ByteBuffer readBuffer = ByteBuffer.allocate(1024);
 
+                    // 当消息写入完成时调用此方法
                     @Override
                     public void completed(Integer result, Object attachment) {
+                        // 准备读取服务器响应
                         readBuffer.clear();
-                        // 异步读取服务器发送的消息
+                        // 异步读取数据
                         client.read(readBuffer, null, new CompletionHandler<Integer, Object>() {
+                            // 当数据读取完成时调用此方法
                             @Override
                             public void completed(Integer result, Object attachment) {
+                                // 处理接收到的数据
                                 readBuffer.flip();
                                 String msg = new String(readBuffer.array(), 0, result);
                                 System.out.println("收到服务端消息：" + msg);
                             }
 
+                            // 当读取操作失败时调用此方法
                             @Override
                             public void failed(Throwable exc, Object attachment) {
+                                // 处理异常并关闭连接
                                 exc.printStackTrace();
                                 try {
                                     client.close();
@@ -590,8 +657,10 @@ public class AioClient {
                         });
                     }
 
+                    // 当写操作失败时调用此方法
                     @Override
                     public void failed(Throwable exc, Object attachment) {
+                        // 处理异常并关闭连接
                         exc.printStackTrace();
                         try {
                             client.close();
@@ -602,8 +671,10 @@ public class AioClient {
                 });
             }
 
+            // 当连接操作失败时调用此方法
             @Override
             public void failed(Throwable exc, Object attachment) {
+                // 处理异常并关闭连接
                 exc.printStackTrace();
                 try {
                     client.close();
@@ -612,28 +683,25 @@ public class AioClient {
                 }
             }
         });
-        // 等待连接处理完毕
+        // 等待一段时间以确保连接操作完成
         Thread.sleep(1000);
         // 关闭输入流和Socket通道
         client.shutdownInput();
         client.close();
     }
 }
-
 ```
 
-- 运行结果：
+- 先运行`AioServer`，再运行`AioClient`，运行结果：
 
 ```java
 =============AIO服务端启动=========
 客户端连接成功
 收到客户端消息：你好，靓仔！
-
 ```
 
 ```java
 收到服务端消息：你好，阿坤！
-
 ```
 
 - 可以看到，所有的操作都是异步进行，通过completed接收异步回调，通过failed接收错误回调。
@@ -661,6 +729,8 @@ public class AioClient {
 # Netty
 
 - 未完待续...
+
+  
 
 > 引用：
 >
