@@ -1704,9 +1704,10 @@ public class DeadLock {
 
 ![](img-concurrent/dead-lock.png)
 
-### 排查死锁
+### 排查死锁（工作中）
 
-
+- 日志信息90%
+- 堆栈信息10%
 
 # 阻塞队列
 
@@ -2211,26 +2212,26 @@ class MyTask extends RecursiveTask<Integer> {
 
 ## 简介
 
-CompletableFuture 就是 Callable + FutureTask 组合的『超级强化版』
+- CompletableFuture 就是 Callable + FutureTask 组合的『超级强化版』
 
-FutureTask 的核心接口 Futrue 通常用来表示一个异步任务的引用，比如我们将任务提交到线程池里面，然后我们会得到一个 Futrue 对象。在 Future 里面有 isDone() 方法来判断任务是否处理结束，还有 get() 方法可以一直阻塞直到任务结束然后获取结果。但整体来说这种方式，还是同步的，因为需要客户端不断阻塞等待或者不断轮询才能知道任务是否完成。
+- FutureTask 的核心接口 Futrue 通常用来表示一个异步任务的引用，比如我们将任务提交到线程池里面，然后我们会得到一个 Futrue 对象。在 Future 里面有 isDone() 方法来判断任务是否处理结束，还有 get() 方法可以一直阻塞直到任务结束然后获取结果。但整体来说这种方式，还是同步的，因为需要客户端不断阻塞等待或者不断轮询才能知道任务是否完成。
 
 Future 的主要缺点如下：
 
-不支持手动完成
-我提交了一个任务，但是执行太慢了，我通过其他路径已经获取到了任务结果，现在没法把这个任务结果通知到正在执行的线程，所以必须主动取消或者一直等待它执行完成
+1. 不支持手动完成
+   我提交了一个任务，但是执行太慢了，我通过其他路径已经获取到了任务结果，现在没法把这个任务结果通知到正在执行的线程，所以必须主动取消或者一直等待它执行完成
 
-不支持进一步的非阻塞调用
-通过Future的get方法会一直阻塞到任务完成，但是想在获取任务之后执行额外的任务，因为Future不支持回调函数，所以无法实现这个功能
+2. 不支持进一步的非阻塞调用
+   通过Future的get方法会一直阻塞到任务完成，但是想在获取任务之后执行额外的任务，因为Future不支持回调函数，所以无法实现这个功能
 
-不支持链式调用
-对于 Future 的执行结果，我们想继续传到下一个 Future 处理使用，从而形成一个链式的 pipeline 调用，这在Future 中是没法实现的。
+3. 不支持链式调用
+   对于 Future 的执行结果，我们想继续传到下一个 Future 处理使用，从而形成一个链式的 pipeline 调用，这在Future 中是没法实现的。
 
-不支持多个 Future 合并
-比如我们有 10 个 Future 并行执行，我们想在所有的Future运行完毕之后，执行某些函数，是没法通过 Future 实现的。
+4. 不支持多个 Future 合并
+   比如我们有 10 个 Future 并行执行，我们想在所有的Future运行完毕之后，执行某些函数，是没法通过 Future 实现的。
 
-不支持异常处理
-Future 的 API 没有任何的异常处理的 api，所以在异步运行时，如果出了问题是不好定位的。
+5. 不支持异常处理
+   Future 的 API 没有任何的异常处理的 api，所以在异步运行时，如果出了问题是不好定位的。
 
 ## 用法
 
@@ -2284,9 +2285,97 @@ public class Demo01 {
 | Function<T,R> 函数型接口 |    T     |    R     | 对类型为T的对象应用操作，并返回结果。结果是R类型的对象。包含方法：R apply(T t); |
 | Predicate<T> 断定型接口  |    T     | boolean  | 确定类型为T的对象是否满足某约束，并返回boolean值。包含方法：boolean test(T t); |
 
+## 代码举例
 
+- 我们以一个简单的数组求和作为例子
+- 三六九等：三（普通方法） 六（ForkJoin） 九（Stream并行流）
 
+1. 普通方法（顺序执行）：
 
+```java
+public class SumArrayExample {
+    public static void main(String[] args) {
+        SumArray sumArray = new SumArray();
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        long startTime = System.nanoTime();
+        int sum = sumArray.sumSequentially(numbers);
+        long endTime = System.nanoTime();
+        System.out.println("Sequential sum: " + sum);
+        System.out.println("Sequential execution time: " + ((endTime - startTime) / 1_000_000) + "ms");
+    }
+
+    public int sumSequentially(int[] array) {
+        int sum = 0;
+        for (int number : array) {
+            sum += number;
+        }
+        return sum;
+    }
+}
+```
+
+2. 使用Fork/Join框架进行并行计算：
+
+```java
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveTask;
+
+public class SumArrayExample {
+    public static void main(String[] args) {
+        SumArray sumArray = new SumArray();
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        long startTime = System.nanoTime();
+        int sum = forkJoinPool.invoke(sumArray.new ParallelSumTask(numbers, 0, numbers.length));
+        long endTime = System.nanoTime();
+        System.out.println("Parallel sum: " + sum);
+        System.out.println("Parallel execution time using Fork/Join: " + ((endTime - startTime) / 1_000_000) + "ms");
+    }
+
+    public class ParallelSumTask extends RecursiveTask<Integer> {
+        private final int[] array;
+        private final int start;
+        private final int end;
+
+        public ParallelSumTask(int[] array, int start, int end) {
+            this.array = array;
+            this.start = start;
+            this.end = end;
+        }
+
+        @Override
+        protected Integer compute() {
+            if (end - start <= 1) {
+                return array[start];
+            } else {
+                int middle = (start + end) / 2;
+                ParallelSumTask leftTask = new ParallelSumTask(array, start, middle);
+                ParallelSumTask rightTask = new ParallelSumTask(array, middle, end);
+                invokeAll(leftTask, rightTask);
+                return leftTask.join() + rightTask.join();
+            }
+        }
+    }
+}
+```
+
+3. 使用Java Stream并行流：
+
+```java
+public class SumArrayExample {
+    public static void main(String[] args) {
+        SumArray sumArray = new SumArray();
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        long startTime = System.nanoTime();
+        int sum = Arrays.stream(numbers)
+                        .parallel()
+                        .sum();
+        long endTime = System.nanoTime();
+        System.out.println("Parallel sum using Java Stream: " + sum);
+        System.out.println("Parallel execution time using Java Stream: " + ((endTime - startTime) / 1_000_000) + "ms");
+    }
+}
+```
 
 
 
