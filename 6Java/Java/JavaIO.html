@@ -1,0 +1,1711 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java IO · My GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bottom-navigation/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Java8新特性.html" />
+    
+    
+    <link rel="prev" href="Java并发.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../面试题.html">
+            
+                <a href="../../面试题.html">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    阅读指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../1CompositionPrinciple/组成原理.html">
+            
+                <a href="../../1CompositionPrinciple/组成原理.html">
+            
+                    
+                    组成原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../2OperatingSystem/操作系统.html">
+            
+                <a href="../../2OperatingSystem/操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../3Network/网络.html">
+            
+                <a href="../../3Network/网络.html">
+            
+                    
+                    网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../4DataStructure/数据结构.html">
+            
+                <a href="../../4DataStructure/数据结构.html">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../5Algorithm/算法.html">
+            
+                <a href="../../5Algorithm/算法.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="Java基础.html">
+            
+                <a href="Java基础.html">
+            
+                    
+                    Java 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="Java集合.html">
+            
+                <a href="Java集合.html">
+            
+                    
+                    Java 集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="Java并发.html">
+            
+                <a href="Java并发.html">
+            
+                    
+                    Java 并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.4" data-path="JavaIO.html">
+            
+                <a href="JavaIO.html">
+            
+                    
+                    Java IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="Java8新特性.html">
+            
+                <a href="Java8新特性.html">
+            
+                    
+                    Java8 新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../JVM/JVM.html">
+            
+                <a href="../JVM/JVM.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../Design Pattern/设计模式.html">
+            
+                <a href="../Design Pattern/设计模式.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../7Database/MySQL/MySQL.html">
+            
+                <a href="../../7Database/MySQL/MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../../7Database/Redis/Redis基础.html">
+            
+                <a href="../../7Database/Redis/Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="../../7Database/Redis/Redis应用.html">
+            
+                <a href="../../7Database/Redis/Redis应用.html">
+            
+                    
+                    Redis应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../7Database/MongoDB/MongoDB.html">
+            
+                <a href="../../7Database/MongoDB/MongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../7Database/ES/ES.html">
+            
+                <a href="../../7Database/ES/ES.html">
+            
+                    
+                    ES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../8Spring/IOC.html">
+            
+                <a href="../../8Spring/IOC.html">
+            
+                    
+                    IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../8Spring/AOP.html">
+            
+                <a href="../../8Spring/AOP.html">
+            
+                    
+                    AOP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../8Spring/MVC.html">
+            
+                <a href="../../8Spring/MVC.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Spring Boot
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../9SpringBoot/Boot.html">
+            
+                <a href="../../9SpringBoot/Boot.html">
+            
+                    
+                    Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../9SpringBoot/Mybatis.html">
+            
+                <a href="../../9SpringBoot/Mybatis.html">
+            
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../9SpringBoot/Jpa.html">
+            
+                <a href="../../9SpringBoot/Jpa.html">
+            
+                    
+                    Jpa
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Spring Cloud
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                    Netflix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../../10SpringCloud/Netflix/Eureka.html">
+            
+                <a href="../../10SpringCloud/Netflix/Eureka.html">
+            
+                    
+                    Eureka
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                    Alibaba
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../10SpringCloud/Alibaba/Nacos.html">
+            
+                <a href="../../10SpringCloud/Alibaba/Nacos.html">
+            
+                    
+                    Nacos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                    MQ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../../10SpringCloud/MQ/消息队列.html">
+            
+                <a href="../../10SpringCloud/MQ/消息队列.html">
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Spring Boot Cloud
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../98SpringBootCloud/RBAC.html">
+            
+                <a href="../../98SpringBootCloud/RBAC.html">
+            
+                    
+                    RBAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../98SpringBootCloud/SSO.html">
+            
+                <a href="../../98SpringBootCloud/SSO.html">
+            
+                    
+                    SSO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../98SpringBootCloud/OAuth2.html">
+            
+                <a href="../../98SpringBootCloud/OAuth2.html">
+            
+                    
+                    OAuth2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../../98SpringBootCloud/FileUpload.html">
+            
+                <a href="../../98SpringBootCloud/FileUpload.html">
+            
+                    
+                    FileUpload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../../98SpringBootCloud/VideoPlay.html">
+            
+                <a href="../../98SpringBootCloud/VideoPlay.html">
+            
+                    
+                    VideoPlay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../../98SpringBootCloud/WebSocket.html">
+            
+                <a href="../../98SpringBootCloud/WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../../98SpringBootCloud/WXPay.html">
+            
+                <a href="../../98SpringBootCloud/WXPay.html">
+            
+                    
+                    WXPay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../../98SpringBootCloud/WXLogin.html">
+            
+                <a href="../../98SpringBootCloud/WXLogin.html">
+            
+                    
+                    WXLogin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.9" data-path="../../98SpringBootCloud/Activiti7.html">
+            
+                <a href="../../98SpringBootCloud/Activiti7.html">
+            
+                    
+                    Activiti7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.10" data-path="../../98SpringBootCloud/Excel.html">
+            
+                <a href="../../98SpringBootCloud/Excel.html">
+            
+                    
+                    Excel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    over
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../99WebStack/nav.html">
+            
+                <a href="../../99WebStack/nav.html">
+            
+                    
+                    WebStack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Java IO</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="io&#x7684;&#x5B9A;&#x4E49;">I/O&#x7684;&#x5B9A;&#x4E49;</h1>
+<ul>
+<li>I/O &#x662F; Input/Output &#x7684;&#x9996;&#x5B57;&#x6BCD;&#x7F29;&#x5199;&#xFF0C;&#x5373;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#xFF0C;&#x5B83;&#x63CF;&#x8FF0;&#x7684;&#x662F;&#x6570;&#x636E;&#x6D41;&#x52A8;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li>&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x662F;&#x76F8;&#x5BF9;&#x800C;&#x8A00;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x5C06;&#x4ECE;&#x4E24;&#x4E2A;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#x6765;&#x8FDB;&#x4E00;&#x6B65;&#x7406;&#x89E3; IO&#xFF1A;</li>
+</ul>
+<h2 id="&#x8BA1;&#x7B97;&#x673A;&#x7ED3;&#x6784;&#x7684;&#x89C6;&#x89D2;">&#x8BA1;&#x7B97;&#x673A;&#x7ED3;&#x6784;&#x7684;&#x89C6;&#x89D2;</h2>
+<p><img src="img-io/computer-io.png" alt=""></p>
+<ul>
+<li><p>&#x6839;&#x636E;&#x51AF;&#xB7;&#x8BFA;&#x4F9D;&#x66FC;&#x7ED3;&#x6784;&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x5206;&#x4E3A;&#x4E94;&#x5927;&#x90E8;&#x5206;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A;&#x63A7;&#x5236;&#x5668;&#x3001;&#x8FD0;&#x7B97;&#x5668;&#x3001;&#x5B58;&#x50A8;&#x5668;&#x3001;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#x3001;&#x8F93;&#x51FA;&#x8BBE;&#x5907;&#x3002;</p>
+</li>
+<li><p>&#x8F93;&#x5165;&#x8BBE;&#x5907;&#xFF08;&#x5982;&#x9F20;&#x6807;&#x952E;&#x76D8;&#xFF09;&#x548C;&#x8F93;&#x51FA;&#x8BBE;&#x5907;&#xFF08;&#x5982;&#x663E;&#x793A;&#x5668;&#xFF09;&#x90FD;&#x5C5E;&#x4E8E;&#x5916;&#x8BBE;&#xFF08;&#x5916;&#x90E8;&#x8BBE;&#x5907;&#xFF09;&#xFF0C;&#x800C;&#x50CF;<strong>&#x78C1;&#x76D8;&#x3001;&#x7F51;&#x5361;&#x8FD9;&#x79CD;&#x65E2;&#x5C5E;&#x4E8E;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#x53C8;&#x5C5E;&#x4E8E;&#x8F93;&#x51FA;&#x8BBE;&#x5907;</strong>&#x3002;</p>
+</li>
+<li><p>&#x4ECE;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#x7684;&#x8BDD;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C06;&#x4ECE;&#x8F93;&#x5165;&#x8BBE;&#x5907;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#x5199;&#x5165;&#x5230;&#x8F93;&#x51FA;&#x8BBE;&#x5907;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x6B21;&#x5B8C;&#x6574;&#x7684; I/O &#x8FC7;&#x7A0B;&#x3002;</p>
+</li>
+<li><p>&#x5373; I/O &#x63CF;&#x8FF0;&#x4E86;&#x8BA1;&#x7B97;&#x673A;&#x6838;&#x5FC3;&#xFF08;CPU&#x548C;&#x5185;&#x5B58;&#xFF09;&#x4E0E;&#x5916;&#x90E8;&#x8BBE;&#x5907;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x79FB;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x89C6;&#x89D2;">&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x89C6;&#x89D2;</h2>
+<p><img src="img-io/application-io.png" alt=""></p>
+<ul>
+<li>&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x5728;&#x78C1;&#x76D8;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x624D;&#x80FD;&#x591F;&#x8FD0;&#x884C;&#x3002;</li>
+<li><p>&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5B89;&#x5168;&#x6027;&#x548C;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5C06;&#x5185;&#x5B58;&#x5206;&#x4E3A; <strong>&#x5185;&#x6838;&#x7A7A;&#x95F4;</strong> &#x548C; <strong>&#x7528;&#x6237;&#x7A7A;&#x95F4;</strong>&#xFF0C;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x9694;&#x79BB;&#x3002;</p>
+</li>
+<li><p>&#x800C;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90FD;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x7CFB;&#x7EDF;&#x6001;&#x7EA7;&#x522B;&#x7684;&#x8D44;&#x6E90;&#x6709;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x3001;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7B49;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8FDB;&#x884C; I/O &#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x4F9D;&#x8D56;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x7684;&#x80FD;&#x529B;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x7684;&#x7A0B;&#x5E8F;&#x662F;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x53D1;&#x8D77;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x8BF7;&#x6C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5E2E;&#x5FD9;&#x5B8C;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x60F3;&#x8981;&#x6267;&#x884C; I/O &#x64CD;&#x4F5C;&#x7684;&#x8BDD;&#xFF0C;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5185;&#x6838;&#x63D0;&#x4F9B;&#x7684; <strong>&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</strong> &#x8FDB;&#x884C;&#x95F4;&#x63A5;&#x8BBF;&#x95EE;&#x3002;</p>
+</li>
+<li><p>&#x6211;&#x4EEC;&#x5728;&#x5E73;&#x5E38;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x63A5;&#x89E6;&#x6700;&#x591A;&#x7684;&#x5C31;&#x662F; <strong>&#x78C1;&#x76D8; I/O&#xFF08;&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#xFF09;</strong>&#x548C; <strong>&#x7F51;&#x7EDC; I/O&#xFF08;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#xFF09;</strong></p>
+</li>
+<li><p>&#x4ECE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5BF9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5185;&#x6838;&#x53D1;&#x8D77; I/O &#x8C03;&#x7528;&#xFF08;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF09;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8D1F;&#x8D23;&#x7684;&#x5185;&#x6838;&#x6267;&#x884C;&#x5177;&#x4F53;&#x7684; I/O &#x64CD;&#x4F5C;&#x3002;&#x5373;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#x901A;&#x8FC7;&#x5411;&#x5185;&#x6838;&#x53D1;&#x8D77;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x5BF9; I/O &#x7684;&#x95F4;&#x63A5;&#x8BBF;&#x95EE;&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x4E0A;&#x8FF0;&#x8FC7;&#x7A0B;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#x5373;&#x4E00;&#x6B21; I/O &#x64CD;&#x4F5C;&#x5B9E;&#x9645;&#x4E0A;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x9636;&#x6BB5;&#xFF1A;</strong></p>
+<ol>
+<li><strong>I/O &#x8C03;&#x7528;&#x9636;&#x6BB5;&#xFF1A;</strong>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;&#x5411;&#x5185;&#x6838;&#x53D1;&#x8D77;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</li>
+<li><strong>I/O &#x6267;&#x884C;&#x9636;&#x6BB5;&#xFF1A;</strong>&#x5185;&#x6838;&#x6267;&#x884C; I/O &#x64CD;&#x4F5C;&#x5E76;&#x8FD4;&#x56DE;<ul>
+<li>&#x5185;&#x6838;&#x7B49;&#x5F85; I/O &#x8BBE;&#x5907;&#x51C6;&#x5907;&#x597D;&#x6570;&#x636E;</li>
+<li>&#x5185;&#x6838;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x62F7;&#x8D1D;&#x5230;&#x7528;&#x6237;&#x7A7A;&#x95F4;</li>
+</ul>
+</li>
+</ol>
+<h1 id="linux&#x4E2D;&#x7684;5&#x79CD;io&#x6A21;&#x578B;">Linux&#x4E2D;&#x7684;5&#x79CD;IO&#x6A21;&#x578B;</h1>
+<ul>
+<li><strong>&#x963B;&#x585E; I/O</strong><code>(Blocking I/O, BIO)</code></li>
+<li><strong>&#x975E;&#x963B;&#x585E; I/O</strong><code>(Non-blocking I/O, NIO)</code></li>
+<li><strong>&#x591A;&#x8DEF;&#x590D;&#x7528; I/O </strong><code>(I/O Multiplexing)</code></li>
+<li><strong>&#x4FE1;&#x53F7;&#x9A71;&#x52A8; I/O</strong><code>(Signal-driven I/O)</code></li>
+<li><strong>&#x5F02;&#x6B65; I/O</strong><code>(Asynchronous I/O, AIO)</code></li>
+</ul>
+<h2 id="&#x963B;&#x585E;-io">&#x963B;&#x585E; I/O</h2>
+<ul>
+<li><p>&#x963B;&#x585E;IO&#x662F;&#x6700;&#x5E38;&#x89C1;&#x7684;IO&#x6A21;&#x578B;&#x3002;</p>
+</li>
+<li><p>&#x5F53;&#x53D1;&#x8D77;&#x4E00;&#x4E2A;IO&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x6BD4;&#x5982;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x8C03;&#x7528;read()&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x6B64;&#x65F6;&#x8FDB;&#x7A0B;&#x4F1A;&#x88AB;&#x6302;&#x8D77;&#xFF08;blocked&#xFF09;&#xFF0C;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x3002;&#x76F4;&#x5230;&#x6570;&#x636E;&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x800C;&#x4E14;&#x590D;&#x5236;&#x5230;&#x5E94;&#x7528;&#x8FDB;&#x7A0B;&#x7684;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x8FD4;&#x56DE;&#x3002;</p>
+</li>
+<li><p>&#x4ECE;&#x8C03;&#x7528;&#x5230;&#x8FD4;&#x56DE;&#xFF0C;&#x6574;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x90FD;&#x662F;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x88AB;&#x79F0;&#x4E3A;&#x963B;&#x585E;IO&#x3002;</p>
+</li>
+</ul>
+<p><img src="img-io/linux-bio.png" alt=""></p>
+<h2 id="&#x975E;&#x963B;&#x585E;-io">&#x975E;&#x963B;&#x585E; I/O</h2>
+<ul>
+<li><p>&#x963B;&#x585E;IO&#xFF0C;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x6D6A;&#x8D39;&#x8D44;&#x6E90;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x975E;&#x963B;&#x585E;IO&#x5C31;&#x6765;&#x4E86;&#x3002;</p>
+</li>
+<li><p>&#x6240;&#x8C13;&#x975E;&#x963B;&#x585E;IO&#xFF0C;&#x662F;&#x5728;&#x8C03;&#x7528;IO&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x7F13;&#x51B2;&#x533A;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7801;&#x3002;&#x5E94;&#x7528;&#x8FDB;&#x7A0B;&#x9700;&#x8981;&#x4E0D;&#x65AD;&#x8F6E;&#x8BE2;&#xFF0C;&#x6765;&#x68C0;&#x67E5;&#x6570;&#x636E;&#x662F;&#x5426;&#x51C6;&#x5907;&#x597D;&#x3002;&#x6570;&#x636E;&#x51C6;&#x5907;&#x597D;&#x4E86;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x3002;</p>
+</li>
+</ul>
+<p><img src="img-io/linux-nio.png" alt=""></p>
+<h2 id="&#x591A;&#x8DEF;&#x590D;&#x7528;-io">&#x591A;&#x8DEF;&#x590D;&#x7528; I/O</h2>
+<ul>
+<li><p>&#x867D;&#x7136;&#x975E;&#x963B;&#x585E;IO&#x76F8;&#x6BD4;&#x963B;&#x585E;IO&#xFF0C;&#x6027;&#x80FD;&#x63D0;&#x5347;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x8F6E;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FD8;&#x662F;&#x6709;&#x5927;&#x91CF;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x7684;&#x5F00;&#x9500;&#x6BD4;&#x8F83;&#x5927;&#x3002;</p>
+</li>
+<li><p>&#x90A3;&#x4E48;&#xFF0C;&#x591A;&#x8DEF;&#x590D;&#x7528;IO&#x5C31;&#x6765;&#x4E86;&#x3002;</p>
+</li>
+<li><p>&#x591A;&#x8DEF;&#x6307;&#x7684;&#x662F;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x901A;&#x9053;&#xFF0C;&#x590D;&#x7528;&#x6307;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x76D1;&#x63A7;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF08;&#x6BD4;&#x5982;socket&#xFF09;&#xFF0C;&#x5F53;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF08;&#x6BD4;&#x5982;&#x53D8;&#x5F97;&#x53EF;&#x8BFB;&#x6216;&#x53EF;&#x5199;&#xFF09;&#xFF0C;&#x591A;&#x8DEF;&#x590D;&#x7528;&#x7684;&#x51FD;&#x6570;&#x5C06;&#x8FD4;&#x56DE;&#x53D8;&#x5316;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;</p>
+</li>
+<li><p>&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x80FD;&#x88AB;&#x5904;&#x7406;&#x3002;&#x7279;&#x70B9;&#x662F;&#x5728;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FDB;&#x7A0B;&#x80FD;&#x591F;&#x540C;&#x65F6;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x7A0B;&#x5E8F;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+</li>
+<li><p>select&#x3001;poll&#x3001;epoll &#x7B49;&#x90FD;&#x662F; I/O &#x591A;&#x8DEF;&#x590D;&#x7528;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;</p>
+</li>
+<li><p>&#x4EE5;select/poll&#x4E3A;&#x4F8B;&#xFF0C;&#x8FDB;&#x7A0B;&#x901A;&#x8FC7;&#x5C06;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;fd&#xFF08;&#x5168;&#x79F0;&#x662F;File Descriptor&#xFF08;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF09;&#xFF09;&#x4F20;&#x9012;&#x7ED9;select&#x6216;poll&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF0C;&#x963B;&#x585E;&#x5728;select&#x64CD;&#x4F5C;&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;select/poll&#x53EF;&#x4EE5;&#x4FA6;&#x6D4B;&#x591A;&#x4E2A;fd&#x662F;&#x5426;&#x5904;&#x4E8E;&#x5C31;&#x7EEA;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x6709;fd&#x5C31;&#x7EEA;&#x65F6;&#xFF0C;&#x7ACB;&#x5373;&#x56DE;&#x8C03;&#x51FD;&#x6570;rollback&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x3002;</p>
+</li>
+</ul>
+<p><img src="img-io/linux-mio.png" alt=""></p>
+<h2 id="&#x4FE1;&#x53F7;&#x9A71;&#x52A8;-io">&#x4FE1;&#x53F7;&#x9A71;&#x52A8; I/O</h2>
+<ul>
+<li><p>&#x4FE1;&#x53F7;&#x9A71;&#x52A8;&#x5F0F;IO&#x5229;&#x7528;&#x4FE1;&#x53F7;&#x673A;&#x5236;&#x6765;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x3002;</p>
+</li>
+<li><p>&#x8FDB;&#x7A0B;&#x9996;&#x5148;&#x544A;&#x8BC9;&#x5185;&#x6838;&#xFF0C;&#x5F53;&#x6570;&#x636E;&#x51C6;&#x5907;&#x597D;&#x65F6;&#xFF0C;&#x8BF7;&#x53D1;&#x9001;&#x4E00;&#x4E2A;SIGIO&#x4FE1;&#x53F7;&#x3002;&#x8FDB;&#x7A0B;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#xFF0C;&#x7B49;&#x5230;&#x6536;&#x5230;&#x4FE1;&#x53F7;&#x540E;&#xFF0C;&#x518D;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x3002;</p>
+</li>
+</ul>
+<p><img src="img-io/linux-sio.png" alt=""></p>
+<h2 id="&#x5F02;&#x6B65;-io">&#x5F02;&#x6B65; I/O</h2>
+<ul>
+<li>&#x5F02;&#x6B65;IO&#x662F;&#x6307;&#x5F53;&#x53D1;&#x8D77;&#x4E00;&#x4E2A;IO&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#x3002;&#x5F02;&#x6B65;IO&#x64CD;&#x4F5C;&#x5728;&#x540E;&#x53F0;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#xFF0C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x901A;&#x77E5;&#x8FDB;&#x7A0B;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FDB;&#x7A0B;&#x90FD;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x3002;</li>
+</ul>
+<p><img src="img-io/linux-aio.png" alt=""></p>
+<h1 id="java&#x4E2D;&#x7684;3&#x79CD;io&#x6A21;&#x578B;">Java&#x4E2D;&#x7684;3&#x79CD;IO&#x6A21;&#x578B;</h1>
+<ul>
+<li><strong>&#x963B;&#x585E; I/O</strong><code>(Blocking I/O, BIO)</code></li>
+<li><strong>&#x975E;&#x963B;&#x585E; I/O</strong><code>(Non-blocking I/O, NIO)</code></li>
+<li><strong>&#x5F02;&#x6B65; I/O</strong><code>(Asynchronous I/O, AIO)</code></li>
+</ul>
+<p><img src="img-io/java-three-io.png" alt=""></p>
+<h2 id="&#x963B;&#x585E;-io">&#x963B;&#x585E; I/O</h2>
+<ul>
+<li><p>Java BIO&#x5C31;&#x662F;Java&#x7684;&#x4F20;&#x7EDF;IO&#x6A21;&#x578B;&#xFF0C;&#x5BF9;&#x5E94;&#x4E86;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;IO&#x6A21;&#x578B;&#x91CC;&#x7684;&#x963B;&#x585E;IO&#x3002;</p>
+</li>
+<li><p>Java BIO&#x76F8;&#x5173;&#x7684;&#x5B9E;&#x73B0;&#x90FD;&#x4F4D;&#x4E8E;java.io&#x5305;&#x4E0B;&#xFF0C;&#x5176;&#x901A;&#x4FE1;&#x539F;&#x7406;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x670D;&#x52A1;&#x7AEF;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;Socket&#x5957;&#x63A5;&#x5B57;&#x5EFA;&#x7ACB;&#x7BA1;&#x9053;&#x8FDE;&#x63A5;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x7BA1;&#x9053;&#x4E2D;&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x6700;&#x540E;&#x5229;&#x7528;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x6D41;&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#x53D1;&#x9001;/&#x63A5;&#x6536;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h3>
+<ul>
+<li><strong>BioServer&#xFF1A;</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.walle.javaIO.bioDemo;
+
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.net.ServerSocket;
+<span class="hljs-keyword">import</span> java.net.Socket;
+
+<span class="hljs-comment">/**
+ * BIO&#xFF08;&#x540C;&#x6B65;&#x963B;&#x585E;IO&#xFF09;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x793A;&#x4F8B;&#x7C7B;&#x3002;
+ * <span class="hljs-doctag">@Author</span> wuyong
+ * <span class="hljs-doctag">@Date</span> 2024-04-04
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BioServer</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-comment">// &#x521B;&#x5EFA;ServerSocket&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x7ED1;&#x5B9A;&#x5230;8888&#x7AEF;&#x53E3;</span>
+        ServerSocket server = <span class="hljs-keyword">new</span> ServerSocket(<span class="hljs-number">8888</span>);
+        System.out.println(<span class="hljs-string">&quot;===========BIO&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;================&quot;</span>);
+
+        <span class="hljs-comment">// &#x4E0D;&#x65AD;&#x76D1;&#x542C;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDE;&#x63A5;&#x90FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x5904;&#x7406;</span>
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+            <span class="hljs-comment">// &#x63A5;&#x53D7;&#x5BA2;&#x6237;&#x7AEF;&#x7684;Socket&#x8FDE;&#x63A5;</span>
+            Socket socket = server.accept();
+            <span class="hljs-keyword">new</span> BioServerThread(socket).start(); <span class="hljs-comment">// &#x542F;&#x52A8;&#x5904;&#x7406;&#x7EBF;&#x7A0B;</span>
+        }
+
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5904;&#x7406;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x7684;&#x7EBF;&#x7A0B;&#x7C7B;&#x3002;
+     * &#x4F7F;&#x7528;&#x540C;&#x6B65;&#x963B;&#x585E;IO&#x65B9;&#x5F0F;&#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#x5E76;&#x56DE;&#x590D;&#x3002;
+     */</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BioServerThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>{
+        <span class="hljs-comment">// &#x5BA2;&#x6237;&#x7AEF;&#x7684;Socket&#x8FDE;&#x63A5;</span>
+        <span class="hljs-keyword">private</span> Socket socket;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BioServerThread</span><span class="hljs-params">(Socket socket)</span> </span>{
+            <span class="hljs-keyword">this</span>.socket = socket;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;</span>
+                InputStream inputStream = socket.getInputStream();
+                BufferedReader bufferedReader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(inputStream));
+                String msg;
+                <span class="hljs-keyword">while</span> ((msg = bufferedReader.readLine()) != <span class="hljs-keyword">null</span>) {
+                    System.out.println(<span class="hljs-string">&quot;&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + msg);
+                }
+
+                <span class="hljs-comment">// &#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+                OutputStream outputStream = socket.getOutputStream();
+                PrintStream printStream = <span class="hljs-keyword">new</span> PrintStream(outputStream);
+                printStream.println(<span class="hljs-string">&quot;&#x4F60;&#x597D;&#xFF0C;&#x540A;&#x6BDB;&#xFF01;&quot;</span>);
+                printStream.flush(); <span class="hljs-comment">// &#x5237;&#x65B0;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x786E;&#x4FDD;&#x6D88;&#x606F;&#x88AB;&#x53D1;&#x9001;</span>
+
+                <span class="hljs-comment">// &#x5173;&#x95ED;Socket&#x7684;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x8868;&#x793A;&#x670D;&#x52A1;&#x7AEF;&#x5DF2;&#x53D1;&#x9001;&#x5B8C;&#x6D88;&#x606F;</span>
+                socket.shutdownOutput();
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+</code></pre>
+<ul>
+<li><strong>BioClient&#xFF1A;</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.walle.javaIO.bioDemo;
+
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.net.Socket;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-comment">/**
+ * BIO&#xFF08;&#x540C;&#x6B65;&#x963B;&#x585E;IO&#xFF09;&#x6A21;&#x5F0F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x793A;&#x4F8B;&#x7C7B;&#x3002;
+ * &#x8BE5;&#x7C7B;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5B83;&#x4F1A;&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x63A5;&#x6536;&#x5E76;&#x6253;&#x5370;&#x670D;&#x52A1;&#x5668;&#x7684;&#x54CD;&#x5E94;&#x3002;
+ *
+ * <span class="hljs-doctag">@Author</span> wuyong
+ * <span class="hljs-doctag">@Date</span> 2024-04-04
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BioClient</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        List&lt;String&gt; names = Arrays.asList(<span class="hljs-string">&quot;&#x5E05;&#x54E5;&quot;</span>, <span class="hljs-string">&quot;&#x9753;&#x4ED4;&quot;</span>, <span class="hljs-string">&quot;&#x5764;&#x5764;&quot;</span>);
+        <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDE;&#x63A5;&#x53D1;&#x9001;&#x4E0D;&#x540C;&#x7684;&#x95EE;&#x5019;&#x6D88;&#x606F;</span>
+        <span class="hljs-keyword">for</span> (String name : names) {
+            <span class="hljs-comment">// &#x521B;&#x5EFA;Socket&#x5BF9;&#x8C61;&#x5E76;&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;</span>
+            Socket socket = <span class="hljs-keyword">new</span> Socket(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8888</span>);
+            System.out.println(<span class="hljs-string">&quot;===========BIO&#x5BA2;&#x6237;&#x7AEF;&#x542F;&#x52A8;================&quot;</span>);
+
+            <span class="hljs-comment">// &#x83B7;&#x53D6;Socket&#x7684;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x7528;&#x4E8E;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x6570;&#x636E;</span>
+            OutputStream outputStream = socket.getOutputStream();
+            <span class="hljs-comment">// &#x6784;&#x5EFA;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x8282;&#x6D41;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;</span>
+            String hello = <span class="hljs-string">&quot;&#x4F60;&#x597D;&#xFF0C;&quot;</span> + name + <span class="hljs-string">&quot;!&quot;</span>;
+            outputStream.write(hello.getBytes());
+
+            <span class="hljs-comment">// &#x6E05;&#x7A7A;&#x8F93;&#x51FA;&#x6D41;&#x5E76;&#x5173;&#x95ED;Socket&#x7684;&#x8F93;&#x51FA;&#x529F;&#x80FD;&#xFF0C;&#x51C6;&#x5907;&#x8BFB;&#x53D6;&#x8F93;&#x5165;&#x6D41;</span>
+            outputStream.flush();
+            socket.shutdownOutput();
+
+            <span class="hljs-comment">// &#x83B7;&#x53D6;Socket&#x7684;&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x7528;&#x4E8E;&#x8BFB;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;</span>
+            InputStream inputStream = socket.getInputStream();
+            BufferedReader bufferedReader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(inputStream));
+            <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x5E76;&#x6253;&#x5370;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;</span>
+            String msg;
+            <span class="hljs-keyword">while</span> ((msg = bufferedReader.readLine()) != <span class="hljs-keyword">null</span>) {
+                System.out.println(<span class="hljs-string">&quot;&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + msg);
+            }
+
+            <span class="hljs-comment">// &#x5173;&#x95ED;&#x8F93;&#x5165;&#x6D41;&#x3001;&#x8F93;&#x51FA;&#x6D41;&#x548C;Socket</span>
+            inputStream.close();
+            outputStream.close();
+            socket.close();
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>&#x5148;&#x542F;&#x52A8;<code>BioServer</code>&#xFF0C;&#x518D;&#x542F;&#x52A8;<code>BioClient</code>&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java">===========BIO&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;================
+&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x5E05;&#x54E5;!
+&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x9753;&#x4ED4;!
+&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x5764;&#x5764;!
+</code></pre>
+<pre><code class="lang-java">===========BIO&#x5BA2;&#x6237;&#x7AEF;&#x542F;&#x52A8;================
+&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x540A;&#x6BDB;&#xFF01;
+===========BIO&#x5BA2;&#x6237;&#x7AEF;&#x542F;&#x52A8;================
+&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x540A;&#x6BDB;&#xFF01;
+===========BIO&#x5BA2;&#x6237;&#x7AEF;&#x542F;&#x52A8;================
+&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x540A;&#x6BDB;&#xFF01;
+</code></pre>
+<ul>
+<li>&#x5728;&#x4E0A;&#x8FF0;Java-BIO&#x7684;&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x8FC7;&#x6765;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x5219;&#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#x4E0B;&#x53BB;&#xFF0C;&#x4ECE;&#x800C;&#x670D;&#x52A1;&#x7AEF;&#x9677;&#x5165;&#x963B;&#x585E;&#x72B6;&#x6001;&#x3002;&#x540C;&#x7406;&#xFF0C;&#x7531;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x4E5F;&#x4E00;&#x76F4;&#x5728;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x670D;&#x52A1;&#x7AEF;&#x4E00;&#x76F4;&#x672A;&#x54CD;&#x5E94;&#x6D88;&#x606F;&#x56DE;&#x6765;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4E5F;&#x4F1A;&#x9677;&#x5165;&#x963B;&#x585E;&#x72B6;&#x6001;&#x3002;</li>
+<li><p>&#x5728;BioServer&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;BioServerThread&#xFF0C;&#x7EE7;&#x627F;&#x4E86;Thread&#x7C7B;&#xFF0C;run&#x65B9;&#x6CD5;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x8FC7;socket&#x548C;&#x6D41;&#x6765;&#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x4EE5;&#x53CA;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x6BCF;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x7684;Socket&#x8FDE;&#x63A5;&#xFF0C;&#x5C31;&#x5F97;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;</p>
+</li>
+<li><p>&#x540C;&#x65F6;&#xFF0C;IO&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x4E5F;&#x662F;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x8FC7;&#x6765;&#xFF0C;&#x7EBF;&#x7A0B;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x72B6;&#x6001;&#xFF0C;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#x4E0B;&#x53BB;&#x3002;</p>
+</li>
+<li><p>&#x5728;BioClient&#x91CC;&#xFF0C;&#x5FAA;&#x73AF;&#x521B;&#x5EFA;Socket&#xFF0C;&#x5411;&#x670D;&#x52A1;&#x7AEF;&#x6536;&#x53D1;&#x6D88;&#x606F;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BFB;&#x5199;&#x4E5F;&#x662F;&#x963B;&#x585E;&#x7684;&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x5728;&#x8FD9;&#x4E2A;Demo&#x91CC;&#x5C31;&#x4F53;&#x73B0;&#x4E86;BIO&#x7684;&#x4E24;&#x4E2A;&#x7279;&#x70B9;&#xFF1A;</strong></p>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x7EBF;&#x7A0B;</li>
+<li>&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x963B;&#x585E;&#x7684;</li>
+</ul>
+<p><img src="img-io/java-bio.png" alt=""></p>
+<p>&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x521B;&#x5EFA;&#x592A;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD8;&#x662F;&#x963B;&#x585E;&#x8BFB;&#x5199;&#xFF0C;&#x90FD;&#x4F1A;&#x6D6A;&#x8D39;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<h2 id="&#x975E;&#x963B;&#x585E;-io">&#x975E;&#x963B;&#x585E; I/O</h2>
+<ul>
+<li><p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x8FDB;&#x5165;Java&#x7684;&#x4E0B;&#x4E00;&#x79CD;IO&#x6A21;&#x578B;&#x2014;&#x2014;Java NIO&#xFF0C;&#x5B83;&#x5BF9;&#x5E94;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;IO&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x591A;&#x8DEF;&#x590D;&#x7528;IO&#xFF0C;&#x5E95;&#x5C42;&#x91C7;&#x7528;&#x4E86;epoll&#x5B9E;&#x73B0;&#x3002;</p>
+</li>
+<li><p>Java-NIO&#x5219;&#x662F;JDK1.4&#x4E2D;&#x65B0;&#x5F15;&#x5165;&#x7684;API&#xFF0C;&#x5B83;&#x5728;BIO&#x529F;&#x80FD;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x5B9E;&#x73B0;&#x4E86;&#x975E;&#x963B;&#x585E;&#x5F0F;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5176;&#x6240;&#x6709;&#x5B9E;&#x73B0;&#x90FD;&#x4F4D;&#x4E8E;java.nio&#x5305;&#x4E0B;&#x3002;NIO&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x901A;&#x9053;&#x3001;&#x9762;&#x5411;&#x7F13;&#x51B2;&#x533A;&#x7684;IO&#x64CD;&#x4F5C;&#xFF0C;&#x76F8;&#x8F83;BIO&#x800C;&#x8A00;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x66F4;&#x4E3A;&#x9AD8;&#x6548;&#x7684;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x65F6;&#x4E0E;&#x539F;&#x5148;&#x7684;BIO&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E5F;&#x5927;&#x6709;&#x4E0D;&#x540C;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h3>
+<ul>
+<li><strong>NioServer&#xFF1A;</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.walle.javaIO.nioDemo;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetSocketAddress;
+<span class="hljs-keyword">import</span> java.nio.ByteBuffer;
+<span class="hljs-keyword">import</span> java.nio.channels.SelectionKey;
+<span class="hljs-keyword">import</span> java.nio.channels.Selector;
+<span class="hljs-keyword">import</span> java.nio.channels.ServerSocketChannel;
+<span class="hljs-keyword">import</span> java.nio.channels.SocketChannel;
+<span class="hljs-keyword">import</span> java.util.Iterator;
+
+<span class="hljs-comment">/**
+ * NIO&#x670D;&#x52A1;&#x5668;&#x793A;&#x4F8B;&#xFF0C;&#x7528;&#x4E8E;&#x6F14;&#x793A;&#x975E;&#x963B;&#x585E;I/O&#x7684;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B9E;&#x73B0;&#x3002;
+ * <span class="hljs-doctag">@Author</span> wuyong
+ * <span class="hljs-doctag">@Date</span> 2024-04-04
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NioServer</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x9009;&#x62E9;&#x5668;</span>
+        Selector selector = Selector.open();
+        <span class="hljs-comment">// &#x6253;&#x5F00;&#x670D;&#x52A1;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x901A;&#x9053;</span>
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        <span class="hljs-comment">// &#x7ED1;&#x5B9A;&#x7AEF;&#x53E3;</span>
+        serverSocketChannel.socket().bind(<span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-number">8888</span>));
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;</span>
+        serverSocketChannel.configureBlocking(<span class="hljs-keyword">false</span>);
+        <span class="hljs-comment">// &#x6CE8;&#x518C;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</span>
+        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+        System.out.println(<span class="hljs-string">&quot;===========NIO&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;============&quot;</span>);
+
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+            <span class="hljs-comment">// &#x8D85;&#x65F6;&#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#xFF0C;&#x907F;&#x514D;&#x65E0;&#x9650;&#x963B;&#x585E;</span>
+            <span class="hljs-keyword">if</span> (selector.select(<span class="hljs-number">1000</span>) == <span class="hljs-number">0</span>) {
+                System.out.println(<span class="hljs-string">&quot;===========NIO&#x670D;&#x52A1;&#x7AEF;&#x8D85;&#x65F6;&#x7B49;&#x5F85;============&quot;</span>);
+                <span class="hljs-keyword">continue</span>;
+            }
+
+            <span class="hljs-comment">// &#x5904;&#x7406;&#x5C31;&#x7EEA;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</span>
+            Iterator&lt;SelectionKey&gt; iterator = selector.selectedKeys().iterator();
+            <span class="hljs-keyword">while</span> (iterator.hasNext()) {
+                SelectionKey key = iterator.next();
+
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</span>
+                <span class="hljs-keyword">if</span> (key.isAcceptable()) {
+                    SocketChannel socketChannel = ((ServerSocketChannel) key.channel()).accept();
+                    socketChannel.configureBlocking(<span class="hljs-keyword">false</span>);
+                    <span class="hljs-comment">// &#x6CE8;&#x518C;&#x8BFB;&#x4E8B;&#x4EF6;&#xFF0C;&#x51C6;&#x5907;&#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;</span>
+                    socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(<span class="hljs-number">1024</span>));
+                    System.out.println(<span class="hljs-string">&quot;&#x6210;&#x529F;&#x8FDE;&#x63A5;&#x5BA2;&#x6237;&#x7AEF;&quot;</span>);
+                }
+
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x8BFB;&#x4E8B;&#x4EF6;&#xFF0C;&#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;</span>
+                <span class="hljs-keyword">if</span> (key.isReadable()) {
+                    SocketChannel socketChannel = (SocketChannel) key.channel();
+                    <span class="hljs-keyword">try</span> {
+                        ByteBuffer buffer = (ByteBuffer) key.attachment();
+                        <span class="hljs-keyword">if</span> (buffer == <span class="hljs-keyword">null</span>) {
+                            buffer = ByteBuffer.allocate(<span class="hljs-number">1024</span>);
+                            key.attach(buffer);
+                        }
+                        buffer.clear();
+                        <span class="hljs-keyword">int</span> len = socketChannel.read(buffer);
+                        <span class="hljs-keyword">if</span> (len &gt; <span class="hljs-number">0</span>) {
+                            buffer.flip();
+                            String message = <span class="hljs-keyword">new</span> String(buffer.array(), <span class="hljs-number">0</span>, len);
+                            System.out.println(<span class="hljs-string">&quot;&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + message);
+                        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len &lt; <span class="hljs-number">0</span>) {
+                            <span class="hljs-comment">// &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+                            key.cancel();
+                            socketChannel.close();
+                            <span class="hljs-keyword">continue</span>;
+                        }
+                        <span class="hljs-comment">// &#x51C6;&#x5907;&#x5199;&#x4E8B;&#x4EF6;&#xFF0C;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+                        socketChannel.register(selector, SelectionKey.OP_WRITE, buffer);
+                    } <span class="hljs-keyword">catch</span> (IOException e) {
+                        <span class="hljs-comment">// &#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF1A;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+                        key.cancel();
+                        socketChannel.close();
+                    }
+                }
+
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x5199;&#x4E8B;&#x4EF6;&#xFF0C;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+                <span class="hljs-keyword">if</span> (key.isWritable()) {
+                    SocketChannel socketChannel = (SocketChannel) key.channel();
+                    ByteBuffer buffer = (ByteBuffer) key.attachment();
+                    String hello = <span class="hljs-string">&quot;&#x4F60;&#x597D;&#xFF0C;&#x5764;&#x5764;&#xFF01;&quot;</span>;
+                    buffer.clear();
+                    buffer.put(hello.getBytes());
+                    buffer.flip();
+                    socketChannel.write(buffer);
+                    buffer.clear();
+                    System.out.println(<span class="hljs-string">&quot;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + hello);
+                    <span class="hljs-comment">// &#x51C6;&#x5907;&#x8BFB;&#x4E8B;&#x4EF6;&#xFF0C;&#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4E0B;&#x4E00;&#x6B21;&#x6D88;&#x606F;</span>
+                    socketChannel.register(selector, SelectionKey.OP_READ, buffer);
+                }
+
+                <span class="hljs-comment">// &#x79FB;&#x9664;&#x5DF2;&#x5904;&#x7406;&#x7684;SelectionKey</span>
+                iterator.remove();
+            }
+        }
+
+    }
+}
+</code></pre>
+<ul>
+<li><strong>NioClient&#xFF1A;</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.walle.javaIO.nioDemo;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetSocketAddress;
+<span class="hljs-keyword">import</span> java.nio.ByteBuffer;
+<span class="hljs-keyword">import</span> java.nio.channels.SelectionKey;
+<span class="hljs-keyword">import</span> java.nio.channels.Selector;
+<span class="hljs-keyword">import</span> java.nio.channels.SocketChannel;
+
+<span class="hljs-comment">/**
+ * NIO&#x5BA2;&#x6237;&#x7AEF;&#x793A;&#x4F8B;&#x3002;&#x7528;&#x4E8E;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x975E;&#x963B;&#x585E;I/O&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;
+ * <span class="hljs-doctag">@Author</span> wuyong
+ * <span class="hljs-doctag">@Date</span> 2024-04-04
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NioClient</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-comment">// &#x521B;&#x5EFA;SocketChannel&#x5E76;&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x63A5;&#x5730;&#x5740;</span>
+        SocketChannel socketChannel = SocketChannel.open(<span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8888</span>));
+        System.out.println(<span class="hljs-string">&quot;==============NIO&#x5BA2;&#x6237;&#x7AEF;&#x542F;&#x52A8;================&quot;</span>);
+
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;SocketChannel&#x4E3A;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;</span>
+        socketChannel.configureBlocking(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-comment">// &#x51C6;&#x5907;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;</span>
+        String hello=<span class="hljs-string">&quot;&#x4F60;&#x597D;&#xFF0C;&#x9753;&#x4ED4;&#xFF01;&quot;</span>;
+        ByteBuffer buffer = ByteBuffer.wrap(hello.getBytes());
+
+        <span class="hljs-comment">// &#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+        socketChannel.write(buffer);
+        System.out.println(<span class="hljs-string">&quot;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + hello);
+        buffer.clear();
+
+        <span class="hljs-comment">// &#x6CE8;&#x518C;Selector&#x5E76;&#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x8BFB;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E3A;&#x63A5;&#x6536;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#x505A;&#x51C6;&#x5907;</span>
+        socketChannel.register(Selector.open(), SelectionKey.OP_READ, buffer);
+
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+            <span class="hljs-comment">// &#x4ECE;&#x670D;&#x52A1;&#x5668;&#x8BFB;&#x53D6;&#x6570;&#x636E;</span>
+            <span class="hljs-keyword">if</span> (socketChannel.read(buffer) &gt; <span class="hljs-number">0</span>) {
+                buffer.flip();
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;</span>
+                String msg = <span class="hljs-keyword">new</span> String(buffer.array(), <span class="hljs-number">0</span>, buffer.limit());
+                System.out.println(<span class="hljs-string">&quot;&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + msg);
+                <span class="hljs-keyword">break</span>; <span class="hljs-comment">// &#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#x540E;&#x9000;&#x51FA;&#x5FAA;&#x73AF;</span>
+            }
+        }
+
+        <span class="hljs-comment">// &#x5173;&#x95ED;SocketChannel&#x7684;&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x51C6;&#x5907;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+        socketChannel.shutdownInput();
+        <span class="hljs-comment">// &#x5173;&#x95ED;SocketChannel</span>
+        socketChannel.close();
+    }
+}
+</code></pre>
+<ul>
+<li>&#x5148;&#x8FD0;&#x884C;<code>NioServer</code>&#xFF0C;&#x518D;&#x8FD0;&#x884C;<code>NioClient</code>&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java">===========NIO&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;============
+===========NIO&#x670D;&#x52A1;&#x7AEF;&#x8D85;&#x65F6;&#x7B49;&#x5F85;============
+===========NIO&#x670D;&#x52A1;&#x7AEF;&#x8D85;&#x65F6;&#x7B49;&#x5F85;============
+&#x6210;&#x529F;&#x8FDE;&#x63A5;&#x5BA2;&#x6237;&#x7AEF;
+&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x9753;&#x4ED4;&#xFF01;
+&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x5764;&#x5764;&#xFF01;
+</code></pre>
+<pre><code class="lang-java">==============NIO&#x5BA2;&#x6237;&#x7AEF;&#x542F;&#x52A8;================
+&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x9753;&#x4ED4;&#xFF01;
+&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x5764;&#x5764;&#xFF01;
+</code></pre>
+<ul>
+<li>&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x91CC;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;Java NIO &#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#x7AEF;&#x901A;&#x4FE1;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x5C0F;&#x7684;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x6CE8;&#x518C;&#x5230;&#x9009;&#x62E9;&#x5668;&#x4E0A;&#x7684;&#x901A;&#x9053;&#x90FD;&#x5FC5;&#x987B;&#x8981;&#x4E3A;&#x975E;&#x963B;&#x585E;&#x6A21;&#x578B;&#xFF0C;&#x540C;&#x65F6;&#x901A;&#x8FC7;&#x7F13;&#x51B2;&#x533A;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x8C03;&#x7528;<code>flip()</code>&#x65B9;&#x6CD5;&#x5207;&#x6362;&#x4E3A;&#x8BFB;&#x53D6;&#x6A21;&#x5F0F;&#x3002;</li>
+</ul>
+<p><img src="img-io/java-nio1.png" alt=""></p>
+<p>Java-NIO&#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#xFF1A;<strong><code>Buffer</code>&#xFF08;&#x7F13;&#x51B2;&#x533A;&#xFF09;&#x3001;<code>Channel</code>&#xFF08;&#x901A;&#x9053;&#xFF09;&#x3001;<code>Selector</code>&#xFF08;&#x9009;&#x62E9;&#x5668;&#xFF09;</strong>&#x3002;</p>
+<p><img src="img-io/java-nio2.png" alt=""></p>
+<ul>
+<li><p>&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x8FDE;&#x63A5;&#x672C;&#x8D28;&#x4E0A;&#x5BF9;&#x5E94;&#x7740;&#x4E00;&#x4E2A;Channel&#x901A;&#x9053;&#xFF0C;&#x6BCF;&#x4E2A;&#x901A;&#x9053;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;Buffer&#x7F13;&#x51B2;&#x533A;&#x6765;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#xFF0C;&#x8FD9;&#x4E9B;Channel&#x88AB;Selector&#x9009;&#x62E9;&#x5668;&#x7BA1;&#x7406;&#x8C03;&#x5EA6;</p>
+</li>
+<li><p>Selector&#x8D1F;&#x8D23;&#x8F6E;&#x8BE2;&#x6240;&#x6709;&#x5DF2;&#x6CE8;&#x518C;&#x7684;Channel&#xFF0C;&#x76D1;&#x542C;&#x5230;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#xFF0C;&#x624D;&#x63D0;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x7EBF;&#x7A0B;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x963B;&#x585E;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x63A5;&#x5728;Buffer&#x91CC;&#x5904;&#x7406;Channel&#x4E8B;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x5373;&#x53EF;&#xFF0C;&#x5904;&#x7406;&#x5B8C;&#x9A6C;&#x4E0A;&#x7ED3;&#x675F;&#xFF0C;&#x6216;&#x8FD4;&#x56DE;&#x7EBF;&#x7A0B;&#x6C60;&#x4F9B;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x4E8B;&#x4EF6;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;Selector&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4E00;&#x4E2A;Thread&#x5C31;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;</p>
+</li>
+<li><p>Buffer&#xFF08;&#x7F13;&#x51B2;&#x533A;&#xFF09;&#x5C31;&#x662F;&#x996D;&#x5E97;&#x7528;&#x6765;&#x5B58;&#x653E;&#x98DF;&#x6750;&#x7684;&#x50A8;&#x85CF;&#x5BA4;&#xFF0C;&#x5F53;&#x670D;&#x52A1;&#x5458;&#x70B9;&#x9910;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4ECE;&#x50A8;&#x85CF;&#x5BA4;&#x4E2D;&#x53D6;&#x51FA;&#x98DF;&#x6750;&#x8FDB;&#x884C;&#x5236;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>Channel&#xFF08;&#x901A;&#x9053;&#xFF09;&#x662F;&#x7528;&#x4E8E;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x7684;&#x8F66;&#x9053;&#xFF0C;&#x5C31;&#x50CF;&#x996D;&#x5E97;&#x91CC;&#x7684;&#x4E0A;&#x83DC;&#x7A97;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x628A;&#x70B9;&#x597D;&#x7684;&#x83DC;&#x54C1;&#x9001;&#x5230;&#x5BA2;&#x4EBA;&#x7684;&#x684C;&#x4E0A;&#x3002;</p>
+</li>
+<li><p>Selector&#xFF08;&#x9009;&#x62E9;&#x5668;&#xFF09;&#x5C31;&#x662F;&#x5927;&#x5802;&#x7ECF;&#x7406;&#xFF0C;&#x8D1F;&#x8D23;&#x534F;&#x8C03;&#x670D;&#x52A1;&#x5458;&#x3001;&#x53A8;&#x5E08;&#x548C;&#x5BA2;&#x4EBA;&#x7684;&#x914D;&#x5408;&#x548C;&#x6C9F;&#x901A;&#xFF0C;&#x4EE5;&#x4FDD;&#x8BC1;&#x6574;&#x4E2A;&#x5C31;&#x9910;&#x8FC7;&#x7A0B;&#x7684;&#x6548;&#x7387;&#x548C;&#x987A;&#x7545;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x5F02;&#x6B65;-io">&#x5F02;&#x6B65; I/O</h2>
+<ul>
+<li><code>Java-AIO</code>&#x4E5F;&#x88AB;&#x6210;&#x4E3A;<code>NIO2</code>&#xFF0C;&#x5B83;&#x662F;&#x5728;<code>NIO</code>&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x5F15;&#x5165;&#x4E86;&#x65B0;&#x7684;&#x5F02;&#x6B65;&#x901A;&#x9053;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E86;&#x5F02;&#x6B65;&#x6587;&#x4EF6;&#x901A;&#x9053;&#x548C;&#x5F02;&#x6B65;&#x5957;&#x63A5;&#x5B57;&#x7684;&#x5B9E;&#x73B0;&#x3002;</li>
+</ul>
+<p><img src="img-io/java-aio1.png" alt=""></p>
+<ul>
+<li>&#x5B83;&#x4EEC;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x5C31;&#x5728;&#x4E8E;&#x8FD9;&#x4E2A;&#x5F02;&#x6B65;&#x901A;&#x9053;&#xFF0C;&#x89C1;&#x540D;&#x77E5;&#x610F;&#xFF1A;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x901A;&#x9053;&#x53BB;&#x8FDB;&#x884C;IO&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x4E3A;&#x5F02;&#x6B65;&#x975E;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x5F53;&#x8C03;&#x7528;read()/write()/accept()/connect()&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x4F1A;&#x4EA4;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53BB;&#x5B8C;&#x6210;&#xFF0C;&#x6BD4;&#x5982;&#x8981;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F1A;&#x5148;&#x5C06;&#x901A;&#x9053;&#x4E2D;&#x53EF;&#x8BFB;&#x7684;&#x6570;&#x636E;&#x5148;&#x4F20;&#x5165;read()&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x6307;&#x5B9A;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4E3B;&#x52A8;&#x901A;&#x77E5;Java&#x7A0B;&#x5E8F;&#x53BB;&#x5904;&#x7406;&#x3002;</li>
+</ul>
+<h3 id="&#x4EE3;&#x7801;&#x793A;&#x4F8B;">&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h3>
+<ul>
+<li><strong>AioServer&#xFF1A;</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.walle.javaIO.aioDemo;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetSocketAddress;
+<span class="hljs-keyword">import</span> java.nio.ByteBuffer;
+<span class="hljs-keyword">import</span> java.nio.channels.AsynchronousChannelGroup;
+<span class="hljs-keyword">import</span> java.nio.channels.AsynchronousServerSocketChannel;
+<span class="hljs-keyword">import</span> java.nio.channels.AsynchronousSocketChannel;
+<span class="hljs-keyword">import</span> java.nio.channels.CompletionHandler;
+<span class="hljs-keyword">import</span> java.util.concurrent.Executors;
+<span class="hljs-keyword">import</span> java.util.concurrent.TimeUnit;
+
+<span class="hljs-comment">/**
+ * &#x5F02;&#x6B65;IO&#xFF08;AIO&#xFF09;&#x670D;&#x52A1;&#x5668;&#x793A;&#x4F8B;&#x7C7B;&#x3002;
+ * &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;AIO&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x80FD;&#x591F;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5E76;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3002;
+ *
+ * <span class="hljs-doctag">@Author</span> wuyong
+ * <span class="hljs-doctag">@Date</span> 2024-04-04
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AioServer</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x5F02;&#x6B65;&#x901A;&#x9053;&#x7EC4;&#xFF0C;&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;IO&#x4E8B;&#x4EF6;</span>
+        AsynchronousChannelGroup group = AsynchronousChannelGroup.withFixedThreadPool(<span class="hljs-number">10</span>, Executors.defaultThreadFactory());
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x5F02;&#x6B65;&#x670D;&#x52A1;&#x5668;Socket&#x901A;&#x9053;&#xFF0C;&#x5E76;&#x7ED1;&#x5B9A;&#x5230;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;</span>
+        AsynchronousServerSocketChannel server = AsynchronousServerSocketChannel.open(group).bind(<span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-number">8888</span>));
+        System.out.println(<span class="hljs-string">&quot;=============AIO&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;=========&quot;</span>);
+
+        <span class="hljs-comment">// &#x5F02;&#x6B65;&#x7B49;&#x5F85;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</span>
+        server.accept(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> CompletionHandler&lt;AsynchronousSocketChannel, Object&gt;() {
+            <span class="hljs-comment">// &#x7528;&#x4E8E;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;ByteBuffer</span>
+            <span class="hljs-keyword">final</span> ByteBuffer buffer = ByteBuffer.allocate(<span class="hljs-number">1024</span>);
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completed</span><span class="hljs-params">(AsynchronousSocketChannel channel, Object attachment)</span> </span>{
+                System.out.println(<span class="hljs-string">&quot;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x6210;&#x529F;&quot;</span>);
+                <span class="hljs-keyword">try</span> {
+                    buffer.clear();
+                    <span class="hljs-comment">// &#x5F02;&#x6B65;&#x8BFB;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;</span>
+                    channel.read(buffer, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> CompletionHandler&lt;Integer, Object&gt;() {
+                        <span class="hljs-meta">@Override</span>
+                        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completed</span><span class="hljs-params">(Integer len, Object attachment)</span> </span>{
+                            buffer.flip();
+                            <span class="hljs-comment">// &#x5C06;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</span>
+                            String message = <span class="hljs-keyword">new</span> String(buffer.array(), <span class="hljs-number">0</span>, len);
+                            System.out.println(<span class="hljs-string">&quot;&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + message);
+
+                            <span class="hljs-comment">// &#x5F02;&#x6B65;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+                            channel.write(ByteBuffer.wrap((<span class="hljs-string">&quot;&#x4F60;&#x597D;&#xFF0C;&#x963F;&#x5764;&#xFF01;&quot;</span>).getBytes()), <span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> CompletionHandler&lt;Integer, Object&gt;() {
+                                <span class="hljs-meta">@Override</span>
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completed</span><span class="hljs-params">(Integer result, Object attachment)</span> </span>{
+                                    <span class="hljs-comment">// &#x5173;&#x95ED;&#x901A;&#x9053;&#x7684;&#x8F93;&#x51FA;&#x6D41;</span>
+                                    <span class="hljs-keyword">try</span> {
+                                        channel.shutdownOutput();
+                                    } <span class="hljs-keyword">catch</span> (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                <span class="hljs-meta">@Override</span>
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">failed</span><span class="hljs-params">(Throwable exc, Object attachment)</span> </span>{
+                                    exc.printStackTrace();
+                                    <span class="hljs-comment">// &#x5173;&#x95ED;&#x901A;&#x9053;</span>
+                                    <span class="hljs-keyword">try</span> {
+                                        channel.close();
+                                    } <span class="hljs-keyword">catch</span> (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            });
+                        }
+
+                        <span class="hljs-meta">@Override</span>
+                        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">failed</span><span class="hljs-params">(Throwable exc, Object attachment)</span> </span>{
+                            exc.printStackTrace();
+                            <span class="hljs-comment">// &#x5173;&#x95ED;&#x901A;&#x9053;</span>
+                            <span class="hljs-keyword">try</span> {
+                                channel.close();
+                            } <span class="hljs-keyword">catch</span> (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                } <span class="hljs-keyword">catch</span> (Exception e) {
+                    e.printStackTrace();
+                }
+                <span class="hljs-comment">// &#x7EE7;&#x7EED;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;</span>
+                server.accept(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">this</span>);
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">failed</span><span class="hljs-params">(Throwable exc, Object attachment)</span> </span>{
+                exc.printStackTrace();
+                <span class="hljs-comment">// &#x7EE7;&#x7EED;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;</span>
+                server.accept(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">this</span>);
+            }
+        });
+        <span class="hljs-comment">// &#x7B49;&#x5F85;&#x5F02;&#x6B65;&#x901A;&#x9053;&#x7EC4;&#x5904;&#x7406;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#xFF0C;&#x76F4;&#x5230;&#x7A0B;&#x5E8F;&#x88AB;&#x7EC8;&#x6B62;</span>
+        group.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
+    }
+
+}
+</code></pre>
+<ul>
+<li><strong>AioClient&#xFF1A;</strong></li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.walle.javaIO.aioDemo;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetSocketAddress;
+<span class="hljs-keyword">import</span> java.nio.ByteBuffer;
+<span class="hljs-keyword">import</span> java.nio.channels.AsynchronousSocketChannel;
+<span class="hljs-keyword">import</span> java.nio.channels.CompletionHandler;
+
+<span class="hljs-comment">/**
+ * &#x5F02;&#x6B65;IO&#x5BA2;&#x6237;&#x7AEF;&#x793A;&#x4F8B;&#x7C7B;
+ * &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x65B9;&#x5F0F;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;
+ *
+ * <span class="hljs-doctag">@Author</span> wuyong
+ * <span class="hljs-doctag">@Date</span> 2024-04-04
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AioClient</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x5F02;&#x6B65;Socket&#x901A;&#x9053;</span>
+        AsynchronousSocketChannel client = AsynchronousSocketChannel.open();
+
+        <span class="hljs-comment">// &#x521B;&#x5EFA;ByteBuffer</span>
+        <span class="hljs-keyword">final</span> ByteBuffer buffer = ByteBuffer.wrap((<span class="hljs-string">&quot;&#x4F60;&#x597D;&#xFF0C;&#x9753;&#x4ED4;&#xFF01;&quot;</span>).getBytes());
+        <span class="hljs-comment">// &#x5F02;&#x6B65;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;</span>
+        client.connect(<span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">8888</span>), <span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> CompletionHandler&lt;Void, Object&gt;() {
+            <span class="hljs-comment">// &#x5F53;&#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completed</span><span class="hljs-params">(Void result, Object attachment)</span> </span>{
+                <span class="hljs-comment">// &#x5F02;&#x6B65;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x670D;&#x52A1;&#x5668;</span>
+                client.write(buffer, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> CompletionHandler&lt;Integer, Object&gt;() {
+
+                    <span class="hljs-comment">// &#x521B;&#x5EFA;ByteBuffer</span>
+                    <span class="hljs-keyword">final</span> ByteBuffer readBuffer = ByteBuffer.allocate(<span class="hljs-number">1024</span>);
+
+                    <span class="hljs-comment">// &#x5F53;&#x6D88;&#x606F;&#x5199;&#x5165;&#x5B8C;&#x6210;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completed</span><span class="hljs-params">(Integer result, Object attachment)</span> </span>{
+                        <span class="hljs-comment">// &#x51C6;&#x5907;&#x8BFB;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;</span>
+                        readBuffer.clear();
+                        <span class="hljs-comment">// &#x5F02;&#x6B65;&#x8BFB;&#x53D6;&#x6570;&#x636E;</span>
+                        client.read(readBuffer, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> CompletionHandler&lt;Integer, Object&gt;() {
+                            <span class="hljs-comment">// &#x5F53;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x5B8C;&#x6210;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+                            <span class="hljs-meta">@Override</span>
+                            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">completed</span><span class="hljs-params">(Integer result, Object attachment)</span> </span>{
+                                <span class="hljs-comment">// &#x5904;&#x7406;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;</span>
+                                readBuffer.flip();
+                                String msg = <span class="hljs-keyword">new</span> String(readBuffer.array(), <span class="hljs-number">0</span>, result);
+                                System.out.println(<span class="hljs-string">&quot;&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&quot;</span> + msg);
+                            }
+
+                            <span class="hljs-comment">// &#x5F53;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+                            <span class="hljs-meta">@Override</span>
+                            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">failed</span><span class="hljs-params">(Throwable exc, Object attachment)</span> </span>{
+                                <span class="hljs-comment">// &#x5904;&#x7406;&#x5F02;&#x5E38;&#x5E76;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+                                exc.printStackTrace();
+                                <span class="hljs-keyword">try</span> {
+                                    client.close();
+                                } <span class="hljs-keyword">catch</span> (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+
+                    <span class="hljs-comment">// &#x5F53;&#x5199;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">failed</span><span class="hljs-params">(Throwable exc, Object attachment)</span> </span>{
+                        <span class="hljs-comment">// &#x5904;&#x7406;&#x5F02;&#x5E38;&#x5E76;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+                        exc.printStackTrace();
+                        <span class="hljs-keyword">try</span> {
+                            client.close();
+                        } <span class="hljs-keyword">catch</span> (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+
+            <span class="hljs-comment">// &#x5F53;&#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">failed</span><span class="hljs-params">(Throwable exc, Object attachment)</span> </span>{
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x5F02;&#x5E38;&#x5E76;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+                exc.printStackTrace();
+                <span class="hljs-keyword">try</span> {
+                    client.close();
+                } <span class="hljs-keyword">catch</span> (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        <span class="hljs-comment">// &#x7B49;&#x5F85;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4EE5;&#x786E;&#x4FDD;&#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;</span>
+        Thread.sleep(<span class="hljs-number">1000</span>);
+        <span class="hljs-comment">// &#x5173;&#x95ED;&#x8F93;&#x5165;&#x6D41;&#x548C;Socket&#x901A;&#x9053;</span>
+        client.shutdownInput();
+        client.close();
+    }
+}
+</code></pre>
+<ul>
+<li>&#x5148;&#x8FD0;&#x884C;<code>AioServer</code>&#xFF0C;&#x518D;&#x8FD0;&#x884C;<code>AioClient</code>&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java">=============AIO&#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;=========
+&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x6210;&#x529F;
+&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x9753;&#x4ED4;&#xFF01;
+</code></pre>
+<pre><code class="lang-java">&#x6536;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x6D88;&#x606F;&#xFF1A;&#x4F60;&#x597D;&#xFF0C;&#x963F;&#x5764;&#xFF01;
+</code></pre>
+<ul>
+<li><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x8FDB;&#x884C;&#xFF0C;&#x901A;&#x8FC7;completed&#x63A5;&#x6536;&#x5F02;&#x6B65;&#x56DE;&#x8C03;&#xFF0C;&#x901A;&#x8FC7;failed&#x63A5;&#x6536;&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#x3002;</p>
+</li>
+<li><p>&#x800C;&#x4E14;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x76F8;&#x8F83;&#x4E8E;&#x4E4B;&#x524D;&#x7684;NIO&#x800C;&#x8A00;&#xFF0C;AIO&#x5176;&#x4E2D;&#x5C11;&#x4E86;Selector&#x9009;&#x62E9;&#x5668;&#x8FD9;&#x4E2A;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x5728;NIO&#x4E2D;&#x5145;&#x5F53;&#x4E86;&#x534F;&#x8C03;&#x8005;&#x7684;&#x89D2;&#x8272;&#x3002;</p>
+</li>
+<li><p>&#x4F46;&#x5728;Java-AIO&#x4E2D;&#xFF0C;&#x7C7B;&#x4F3C;&#x7684;&#x89D2;&#x8272;&#x76F4;&#x63A5;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x62C5;&#x5F53;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x662F;&#x91C7;&#x7528;&#x8F6E;&#x8BE2;&#x7684;&#x65B9;&#x5F0F;&#x76D1;&#x542C;IO&#x4E8B;&#x4EF6;&#xFF0C;&#x800C;&#x662F;&#x91C7;&#x7528;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;&#x8BA2;&#x9605;-&#x901A;&#x77E5;&#x201D;&#x7684;&#x6A21;&#x5F0F;&#x3002;</p>
+</li>
+</ul>
+<p><img src="img-io/java-aio2.png" alt=""></p>
+<ul>
+<li><p>&#x5728;AIO&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x521B;&#x5EFA;&#x7684;&#x901A;&#x9053;&#x90FD;&#x4F1A;&#x76F4;&#x63A5;&#x5728;OS&#x4E0A;&#x6CE8;&#x518C;&#x76D1;&#x542C;&#xFF0C;&#x5F53;&#x51FA;&#x73B0;IO&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63A5;&#x6536;&#x3001;&#x51C6;&#x5907;&#x3001;&#x62F7;&#x8D1D;&#x597D;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x901A;&#x77E5;&#x76D1;&#x542C;&#x5BF9;&#x5E94;&#x901A;&#x9053;&#x7684;&#x7A0B;&#x5E8F;&#x5904;&#x7406;&#x6570;&#x636E;&#x3002;</p>
+</li>
+<li><p>Java-AIO&#x8FD9;&#x79CD;&#x5F02;&#x6B65;&#x975E;&#x963B;&#x585E;&#x5F0F;IO&#x4E5F;&#x662F;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x652F;&#x6301;&#x7684;&#xFF0C;&#x5728;Windows&#x7CFB;&#x7EDF;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5F02;&#x6B65;IO&#x6280;&#x672F;&#xFF1A;IOCP(I/O Completion Port&#xFF0C;&#x6240;&#x4EE5;Windows&#x4E0B;&#x7684;Java-AIO&#x5219;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5B9E;&#x73B0;&#x3002;&#x4E0D;&#x8FC7;&#x5728;Linux&#x7CFB;&#x7EDF;&#x4E2D;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x8FD9;&#x79CD;&#x5F02;&#x6B65;IO&#x6280;&#x672F;&#xFF0C;&#x6240;&#x4EE5;Java-AIO&#x5728;Linux&#x73AF;&#x5883;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x8FD8;&#x662F;epoll&#x8FD9;&#x79CD;&#x591A;&#x8DEF;&#x590D;&#x7528;&#x6280;&#x672F;&#x8FDB;&#x884C;&#x6A21;&#x62DF;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+</li>
+<li><p>&#x56E0;&#x4E3A;Linux&#x7684;&#x5F02;&#x6B65;IO&#x6280;&#x672F;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x592A;&#x6210;&#x719F;&#xFF0C;&#x6240;&#x4EE5;Java-AIO&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x5E76;&#x4E0D;&#x662F;&#x592A;&#x591A;&#xFF0C;&#x6BD4;&#x5982;&#x5927;&#x540D;&#x9F0E;&#x9F0E;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x6846;&#x67B6;Netty&#x5C31;&#x6CA1;&#x6709;&#x91C7;&#x7528;Java-AIO&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;Java-NIO&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#xFF0C;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+<ul>
+<li>Java&#x7684;&#x4E09;&#x79CD;IO&#x673A;&#x5236;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x770B;&#x4E0B;&#x56FE;&#xFF1A;</li>
+</ul>
+<p><img src="img-io/java-io-summary.png" alt=""></p>
+<ul>
+<li>&#x6211;&#x4EEC;&#x4E5F;&#x53D1;&#x73B0;&#xFF0C;&#x867D;&#x7136;Java-NIO&#x3001;Java-AIO&#xFF0C;&#x5728;&#x6027;&#x80FD;&#x4E0A;&#x6BD4;Java-BIO&#x8981;&#x5F3A;&#x5F88;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5199;&#x6CD5;&#x4E0A;&#x4E00;&#x4E2A;&#x6BD4;&#x4E00;&#x4E2A;&#x96BE;&#x641E;&#xFF0C;&#x4E0D;&#x8FC7;&#x597D;&#x5728;&#x57FA;&#x672C;&#x4E5F;&#x6CA1;&#x4EBA;&#x76F4;&#x63A5;&#x7528;Java-NIO&#x3001;Java-AIO&#xFF0C;&#x5982;&#x679C;&#x8981;&#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x4F1A;&#x91C7;&#x7528;Netty&#xFF0C;&#x5B83;&#x5BF9;&#x539F;&#x751F;&#x7684;Java-NIO&#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x88C5;&#x4F18;&#x5316;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x7EE7;&#x7EED;&#x8D70;&#x8FD1;Netty&#xFF0C;&#x656C;&#x8BF7;&#x671F;&#x5F85;&#x3002;</li>
+</ul>
+<h1 id="netty">Netty</h1>
+<ul>
+<li>&#x672A;&#x5B8C;&#x5F85;&#x7EED;...</li>
+</ul>
+<blockquote>
+<p>&#x5F15;&#x7528;&#xFF1A;</p>
+<ul>
+<li><p>Java IO&#x6A21;&#x578B;&#x8BE6;&#x89E3; <a href="https://blog.csdn.net/m0_53067943/article/details/128957719" target="_blank">https://blog.csdn.net/m0_53067943/article/details/128957719</a></p>
+</li>
+<li><p>&#x4E00;&#x987F;&#x996D;&#x7684;&#x4E8B;&#x513F;&#xFF0C;&#x641E;&#x61C2;&#x4E86;Linux5&#x79CD;IO&#x6A21;&#x578B; <a href="https://fighter3.blog.csdn.net/article/details/130571808" target="_blank">https://fighter3.blog.csdn.net/article/details/130571808</a></p>
+</li>
+<li>Java 3&#x79CD;IO&#x6A21;&#x578B;&#xFF0C;&#x4E00;&#x6B21;&#x641E;&#x61C2; <a href="https://fighter3.blog.csdn.net/article/details/130614023" target="_blank">https://fighter3.blog.csdn.net/article/details/130614023</a></li>
+</ul>
+</blockquote>
+<div class="navPagesContainer"> <div class="navPagesLinks"> <a class="card cardPrevious"> <div class="cardIcon"> <i class="fa fa-angle-left"></i> </div> <div class="cardPreviousBody"> <div class="cardHint"> <span>Previous</span> </div> <div class="cardTitle"> <span>Java &#x5E76;&#x53D1;</span> </div> </div> </a> <a class="card cardNext"> <div class="cardNextBody"> <div class="cardHint"> <span>Next</span> </div> <div class="cardTitle"> <span>Java8 &#x65B0;&#x7279;&#x6027;</span> </div> </div> <div class="cardIcon"> <i class="fa fa-angle-right"></i> </div> </a> </div> </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Java并发.html" class="navigation navigation-prev " aria-label="Previous page: Java 并发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Java8新特性.html" class="navigation navigation-next " aria-label="Next page: Java8 新特性">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java IO","level":"1.8.4","depth":2,"next":{"title":"Java8 新特性","level":"1.8.5","depth":2,"path":"6Java/Java/Java8新特性.md","ref":"6Java/Java/Java8新特性.md","articles":[]},"previous":{"title":"Java 并发","level":"1.8.3","depth":2,"path":"6Java/Java/Java并发.md","ref":"6Java/Java/Java并发.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","chapter-fold","splitter","-lunr","-search","search-pro","github","-sharing","hide-element","back-to-top-button","page-toc-button","custom-favicon","bottom-navigation","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/wuyong777/"},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"/gitbook/images/favicon.ico","page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"bottom-navigation":{"borderColor":"#3884FE","iconColor":"#3884FE","navNextSelector":null,"navPrevSelector":null,"nextText":"Next","pageInnerWidth":null,"prevText":"Previous","titleColor":"#3884FE"},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","gitbook":"*"},"file":{"path":"6Java/Java/JavaIO.md","mtime":"2024-04-16T11:14:44.055Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-16T11:15:21.270Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-bottom-navigation/stylish.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-bottom-navigation/href.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

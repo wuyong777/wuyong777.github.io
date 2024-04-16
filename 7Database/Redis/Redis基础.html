@@ -1,0 +1,1102 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redis基础 · My GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bottom-navigation/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Redis应用.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../面试题.html">
+            
+                <a href="../../面试题.html">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    阅读指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../1CompositionPrinciple/组成原理.html">
+            
+                <a href="../../1CompositionPrinciple/组成原理.html">
+            
+                    
+                    组成原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../2OperatingSystem/操作系统.html">
+            
+                <a href="../../2OperatingSystem/操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../3Network/网络.html">
+            
+                <a href="../../3Network/网络.html">
+            
+                    
+                    网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../4DataStructure/数据结构.html">
+            
+                <a href="../../4DataStructure/数据结构.html">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../5Algorithm/算法.html">
+            
+                <a href="../../5Algorithm/算法.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../6Java/Java/Java基础.html">
+            
+                <a href="../../6Java/Java/Java基础.html">
+            
+                    
+                    Java 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../6Java/Java/Java集合.html">
+            
+                <a href="../../6Java/Java/Java集合.html">
+            
+                    
+                    Java 集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../6Java/Java/Java并发.html">
+            
+                <a href="../../6Java/Java/Java并发.html">
+            
+                    
+                    Java 并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../6Java/Java/JavaIO.html">
+            
+                <a href="../../6Java/Java/JavaIO.html">
+            
+                    
+                    Java IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../../6Java/Java/Java8新特性.html">
+            
+                <a href="../../6Java/Java/Java8新特性.html">
+            
+                    
+                    Java8 新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../../6Java/JVM/JVM.html">
+            
+                <a href="../../6Java/JVM/JVM.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../../6Java/Design Pattern/设计模式.html">
+            
+                <a href="../../6Java/Design Pattern/设计模式.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../MySQL/MySQL.html">
+            
+                <a href="../MySQL/MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.2.1" data-path="Redis基础.html">
+            
+                <a href="Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2.2" data-path="Redis应用.html">
+            
+                <a href="Redis应用.html">
+            
+                    
+                    Redis应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../MongoDB/MongoDB.html">
+            
+                <a href="../MongoDB/MongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../ES/ES.html">
+            
+                <a href="../ES/ES.html">
+            
+                    
+                    ES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../8Spring/IOC.html">
+            
+                <a href="../../8Spring/IOC.html">
+            
+                    
+                    IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../8Spring/AOP.html">
+            
+                <a href="../../8Spring/AOP.html">
+            
+                    
+                    AOP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../8Spring/MVC.html">
+            
+                <a href="../../8Spring/MVC.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Spring Boot
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../9SpringBoot/Boot.html">
+            
+                <a href="../../9SpringBoot/Boot.html">
+            
+                    
+                    Boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../9SpringBoot/Mybatis.html">
+            
+                <a href="../../9SpringBoot/Mybatis.html">
+            
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../9SpringBoot/Jpa.html">
+            
+                <a href="../../9SpringBoot/Jpa.html">
+            
+                    
+                    Jpa
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Spring Cloud
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                    Netflix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../../10SpringCloud/Netflix/Eureka.html">
+            
+                <a href="../../10SpringCloud/Netflix/Eureka.html">
+            
+                    
+                    Eureka
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                    Alibaba
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../10SpringCloud/Alibaba/Nacos.html">
+            
+                <a href="../../10SpringCloud/Alibaba/Nacos.html">
+            
+                    
+                    Nacos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                    MQ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../../10SpringCloud/MQ/消息队列.html">
+            
+                <a href="../../10SpringCloud/MQ/消息队列.html">
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Spring Boot Cloud
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../98SpringBootCloud/RBAC.html">
+            
+                <a href="../../98SpringBootCloud/RBAC.html">
+            
+                    
+                    RBAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../98SpringBootCloud/SSO.html">
+            
+                <a href="../../98SpringBootCloud/SSO.html">
+            
+                    
+                    SSO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../98SpringBootCloud/OAuth2.html">
+            
+                <a href="../../98SpringBootCloud/OAuth2.html">
+            
+                    
+                    OAuth2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../../98SpringBootCloud/FileUpload.html">
+            
+                <a href="../../98SpringBootCloud/FileUpload.html">
+            
+                    
+                    FileUpload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../../98SpringBootCloud/VideoPlay.html">
+            
+                <a href="../../98SpringBootCloud/VideoPlay.html">
+            
+                    
+                    VideoPlay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../../98SpringBootCloud/WebSocket.html">
+            
+                <a href="../../98SpringBootCloud/WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../../98SpringBootCloud/WXPay.html">
+            
+                <a href="../../98SpringBootCloud/WXPay.html">
+            
+                    
+                    WXPay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../../98SpringBootCloud/WXLogin.html">
+            
+                <a href="../../98SpringBootCloud/WXLogin.html">
+            
+                    
+                    WXLogin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.9" data-path="../../98SpringBootCloud/Activiti7.html">
+            
+                <a href="../../98SpringBootCloud/Activiti7.html">
+            
+                    
+                    Activiti7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.10" data-path="../../98SpringBootCloud/Excel.html">
+            
+                <a href="../../98SpringBootCloud/Excel.html">
+            
+                    
+                    Excel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    over
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../99WebStack/nav.html">
+            
+                <a href="../../99WebStack/nav.html">
+            
+                    
+                    WebStack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Redis基础</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="redis&#x57FA;&#x7840;">Redis&#x57FA;&#x7840;</h1>
+<h1 id="&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<h2 id="1-string-&#x5B57;&#x7B26;&#x4E32;">1. String &#x5B57;&#x7B26;&#x4E32;</h2>
+<h2 id="2-list-&#x5217;&#x8868;">2. LIst &#x5217;&#x8868;</h2>
+<h2 id="3-set-&#x96C6;&#x5408;">3. Set &#x96C6;&#x5408;</h2>
+<h2 id="4-sortedset-&#x6709;&#x5E8F;&#x96C6;&#x5408;">4. SortedSet &#x6709;&#x5E8F;&#x96C6;&#x5408;</h2>
+<h2 id="5-hash-&#x54C8;&#x5E0C;">5. Hash &#x54C8;&#x5E0C;</h2>
+<h1 id="&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<h2 id="1-stream-&#x6D88;&#x606F;&#x961F;&#x5217;mq">1. Stream &#x6D88;&#x606F;&#x961F;&#x5217;(MQ)</h2>
+<ul>
+<li>&#x751F;&#x4EA7;&#x4FE1;&#x606F;</li>
+<li>&#x6D88;&#x8D39;&#x6D88;&#x606F;</li>
+</ul>
+<h2 id="2-geospatial-&#x5730;&#x7406;&#x7A7A;&#x95F4;">2. Geospatial &#x5730;&#x7406;&#x7A7A;&#x95F4;</h2>
+<ul>
+<li>&#x7ECF;&#x5EA6;</li>
+<li>&#x7EAC;&#x5EA6;</li>
+</ul>
+<h2 id="3-hyperloglog">3. HyperLogLog</h2>
+<h2 id="4-bitmap-&#x4F4D;&#x56FE;">4. Bitmap &#x4F4D;&#x56FE;</h2>
+<h2 id="5-bitfield-&#x4F4D;&#x57DF;">5. Bitfield &#x4F4D;&#x57DF;</h2>
+<h1 id="&#x9AD8;&#x7EA7;&#x5185;&#x5BB9;">&#x9AD8;&#x7EA7;&#x5185;&#x5BB9;</h1>
+<h2 id="1-&#x53D1;&#x5E03;&#x8BA2;&#x9605;">1. &#x53D1;&#x5E03;&#x8BA2;&#x9605;</h2>
+<ul>
+<li>&#x53D1;&#x5E03;&#x6D88;&#x606F;</li>
+<li>&#x8BA2;&#x9605;&#x6D88;&#x606F;</li>
+<li>&#x6D88;&#x606F;&#x65E0;&#x6CD5;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x901A;&#x8FC7;Stream&#x6D88;&#x606F;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#x6301;&#x4E45;&#x5316;</li>
+</ul>
+<h2 id="2-&#x6301;&#x4E45;&#x5316;">2. &#x6301;&#x4E45;&#x5316;</h2>
+<ul>
+<li><strong>RDB</strong>&#xFF1A;&#x5FEB;&#x7167;<ul>
+<li><code>redis.conf</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li><code>save</code>&#x547D;&#x4EE4;</li>
+<li><code>bgsave</code>&#x547D;&#x4EE4;</li>
+</ul>
+</li>
+<li><strong>AOF</strong>&#xFF1A;&#x8FFD;&#x52A0;&#x6587;&#x4EF6;<ul>
+<li><code>redis.conf</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-&#x4E8B;&#x52A1;">3. &#x4E8B;&#x52A1;</h2>
+<ul>
+<li>&#x4E0E;mysql&#x4E2D;&#x7684;&#x4E8B;&#x52A1;&#x6982;&#x5FF5;&#x4E0D;&#x540C;</li>
+<li>&#x4E0E;shell&#x811A;&#x672C;&#x4E2D;<strong>&#x6267;&#x884C;&#x6279;&#x91CF;&#x547D;&#x4EE4;</strong>&#x7684;&#x6982;&#x5FF5;&#x7C7B;&#x4F3C;</li>
+</ul>
+<h2 id="4-&#x4E3B;&#x4ECE;&#x6A21;&#x5F0F;">4. &#x4E3B;&#x4ECE;&#x6A21;&#x5F0F;</h2>
+<h2 id="5-&#x54E8;&#x5175;&#x6A21;&#x5F0F;">5. &#x54E8;&#x5175;&#x6A21;&#x5F0F;</h2>
+<h1 id="&#x9AD8;&#x53EF;&#x7528;&#x90E8;&#x7F72;">&#x9AD8;&#x53EF;&#x7528;&#x90E8;&#x7F72;</h1>
+<h2 id="redis-&#x96C6;&#x7FA4;&#xFF08;&#x4E00;&#x4E3B;&#x4E24;&#x4ECE;&#x4E09;&#x54E8;&#x5175;&#xFF09;">Redis &#x96C6;&#x7FA4;&#xFF08;&#x4E00;&#x4E3B;&#x4E24;&#x4ECE;&#x4E09;&#x54E8;&#x5175;&#xFF09;</h2>
+<p><strong>&#x6574;&#x4F53;&#x67B6;&#x6784;</strong></p>
+<p><img src="img/2696113-20220420111716101-551764421.png" alt=""></p>
+<p><strong>&#x642D;&#x5EFA;&#x6B65;&#x9AA4;</strong></p>
+<ol>
+<li>&#x4F7F;&#x7528;3&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;<strong>&#x5206;&#x522B;&#x5B89;&#x88C5; redis&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x9632;&#x706B;&#x5899;&#x8BBE;&#x7F6E;</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>ip</th>
+<th>port</th>
+<th>role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.180.197</td>
+<td>6379</td>
+<td>master</td>
+</tr>
+<tr>
+<td>192.168.180.198</td>
+<td>6380</td>
+<td>slave</td>
+</tr>
+<tr>
+<td>192.168.180.199</td>
+<td>6381</td>
+<td>slave</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x914D;&#x7F6E;&#x4E3B;&#x8282;&#x70B9;</strong>&#xFF08;192.168.180.197&#xFF09;&#xFF1A;</p>
+<ol>
+<li>&#x4FEE;&#x6539;&#x4E3B;&#x8282;&#x70B9; redis.conf &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</li>
+</ol>
+<pre><code class="lang-shell"># &#x4E3B;&#x8282;&#x70B9;&#x914D;&#x7F6E;
+bind 192.168.180.197  # &#x7ED1;&#x5B9A;&#x4E3B;&#x8282;&#x70B9;IP&#x5730;&#x5740;
+port 6379             # &#x4E3B;&#x8282;&#x70B9;&#x7AEF;&#x53E3;&#x53F7;
+daemonize yes         # &#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;
+logfile &quot;/var/log/redis/redis.log&quot;  # &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+save 900 1
+save 300 10
+save 60 10000
+</code></pre>
+<p><strong>&#x914D;&#x7F6E;&#x4ECE;&#x8282;&#x70B9;</strong>&#xFF08;192.168.180.198&#x3001;192.168.180.199&#xFF09;&#xFF1A;</p>
+<ol>
+<li>&#x4FEE;&#x6539;&#x4ECE;&#x8282;&#x70B9; redis.conf &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;<code>replicaof 192.168.180.197 6379</code></li>
+</ol>
+<pre><code class="lang-shell"># &#x4ECE;&#x8282;&#x70B9;&#x914D;&#x7F6E;
+bind 192.168.180.198 (&#x6216;&#x8005;192.168.180.199)  # &#x7ED1;&#x5B9A;&#x4ECE;&#x8282;&#x70B9;IP&#x5730;&#x5740;
+port 6380 (&#x6216;&#x8005;6381)            # &#x4ECE;&#x8282;&#x70B9;&#x7AEF;&#x53E3;&#x53F7;
+daemonize yes         # &#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;
+logfile &quot;/var/log/redis/redis.log&quot;  # &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+save 900 1
+save 300 10
+save 60 10000
+replicaof 192.168.180.197 6379  # &#x8BBE;&#x7F6E;&#x4E3B;&#x4ECE;&#x5173;&#x7CFB;
+</code></pre>
+<p><strong>&#x914D;&#x7F6E;&#x54E8;&#x5175;&#x8282;&#x70B9;</strong>&#xFF1A;</p>
+<ol>
+<li><strong>&#x5728;&#x6BCF;&#x4E2A;&#x54E8;&#x5175;&#x8282;&#x70B9;&#xFF08;&#x6BCF;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF09;&#x4E0A;&#x521B;&#x5EFA; sentinel.conf &#x914D;&#x7F6E;&#x6587;&#x4EF6;</strong></li>
+<li>&#x5E76;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;<code>sentinel monitor mymaster 192.168.180.197 6379 2</code></li>
+</ol>
+<pre><code class="lang-shell"># &#x54E8;&#x5175;&#x8282;&#x70B9;&#x914D;&#x7F6E;
+port 26379 (&#x6216;26380)(&#x6216;26381)           # &#x54E8;&#x5175;&#x8282;&#x70B9;&#x76D1;&#x542C;&#x7AEF;&#x53E3;
+daemonize yes        # &#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;
+logfile &quot;/var/log/redis/sentinel.log&quot;  # &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+sentinel monitor mymaster 192.168.180.197 6379 2  # &#x76D1;&#x63A7;&#x4E3B;&#x8282;&#x70B9;&#xFF0C;&#x6307;&#x5B9A;&#x5F53;&#x6709;2&#x53F0;&#x54E8;&#x5175;&#x8BA4;&#x4E3A;&#x4E3B;&#x673A;&#x6302;&#x4E86;&#xFF0C;&#x5219;&#x5BF9;&#x4E3B;&#x673A;&#x8FDB;&#x884C;&#x5207;&#x6362;
+sentinel down-after-milliseconds mymaster 5000     # &#x6545;&#x969C;&#x5224;&#x5B9A;&#x65F6;&#x95F4;
+sentinel failover-timeout mymaster 60000          # &#x6545;&#x969C;&#x8F6C;&#x79FB;&#x8D85;&#x65F6;&#x65F6;&#x95F4;
+sentinel parallel-syncs mymaster 1                # &#x540C;&#x6B65;&#x590D;&#x5236;&#x7684;&#x6570;&#x91CF;
+</code></pre>
+<ol>
+<li>&#x5728;&#x53D1;&#x751F;&#x4E3B;&#x8282;&#x70B9;&#x6545;&#x969C;&#x65F6;&#xFF0C;&#x54E8;&#x5175;&#x8282;&#x70B9;&#x4F1A;&#x68C0;&#x6D4B;&#x5230;&#x5E76;&#x89E6;&#x53D1;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;<strong>&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4ECE;&#x8282;&#x70B9;&#x5C06;&#x88AB;&#x9009;&#x4E3E;&#x4E3A;&#x65B0;&#x7684;&#x4E3B;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x54E8;&#x5175;&#x8282;&#x70B9;&#x4F1A;&#x66F4;&#x65B0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4EE5;&#x53CD;&#x6620;&#x8FD9;&#x4E00;&#x53D8;&#x5316;</strong>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5373;&#x4F7F;&#x51FA;&#x73B0;&#x4E3B;&#x4ECE;&#x8282;&#x70B9;&#x5207;&#x6362;&#xFF0C;&#x54E8;&#x5175;&#x8282;&#x70B9;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x8D77;&#x5230;&#x76D1;&#x63A7;&#x548C;&#x81EA;&#x52A8;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x7684;&#x4F5C;&#x7528;&#x3002;</li>
+</ol>
+<div class="navPagesContainer"> <div class="navPagesLink"> <a class="card cardNext"> <div class="cardNextBody"> <div class="cardHint"> <span>Next</span> </div> <div class="cardTitle"> <span>Redis&#x5E94;&#x7528;</span> </div> </div> <div class="cardIcon"> <i class="fa fa-angle-right"></i> </div> </a> </div> </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Redis应用.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Redis应用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redis基础","level":"1.9.2.1","depth":3,"next":{"title":"Redis应用","level":"1.9.2.2","depth":3,"path":"7Database/Redis/Redis应用.md","ref":"7Database/Redis/Redis应用.md","articles":[]},"previous":{"title":"Redis","level":"1.9.2","depth":2,"ref":"","articles":[{"title":"Redis基础","level":"1.9.2.1","depth":3,"path":"7Database/Redis/Redis基础.md","ref":"7Database/Redis/Redis基础.md","articles":[]},{"title":"Redis应用","level":"1.9.2.2","depth":3,"path":"7Database/Redis/Redis应用.md","ref":"7Database/Redis/Redis应用.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","chapter-fold","splitter","-lunr","-search","search-pro","github","-sharing","hide-element","back-to-top-button","page-toc-button","custom-favicon","bottom-navigation","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/wuyong777/"},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"/gitbook/images/favicon.ico","page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"bottom-navigation":{"borderColor":"#3884FE","iconColor":"#3884FE","navNextSelector":null,"navPrevSelector":null,"nextText":"Next","pageInnerWidth":null,"prevText":"Previous","titleColor":"#3884FE"},"custom-favicon":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","gitbook":"*"},"file":{"path":"7Database/Redis/Redis基础.md","mtime":"2024-04-16T11:14:44.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-16T11:15:21.270Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-bottom-navigation/stylish.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-bottom-navigation/href.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
